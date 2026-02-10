@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — أحكام اجتماعية — الإنفاق والزواج والطلاق</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١٥ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#16a085">
+            <div class="section-num">١٥</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">أحكام اجتماعية — الإنفاق والزواج والطلاق</h2>
+                <h3 class="section-title-en">Social Rulings — Charity, Marriage & Divorce</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٢١٥ – ٢٤٢</div>
+        </div>
+
+        <div class="section-desc">
+            <p>أحكام الإنفاق والنفقة، والقتال، والخمر والميسر، واليتامى، والزواج من المشركات، والمحيض، وأحكام الطلاق والعدة والرضاعة</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="215">
+                        <div class="flow-node-num">٢١٥</div>
+                        <div class="flow-node-text">السؤال عن الإنفاق ومصارفه</div>
+                        <div class="flow-node-key">یَسۡـَٔلُونَكَ مَاذَا یُنفِقُونَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="216">
+                        <div class="flow-node-num">٢١٦</div>
+                        <div class="flow-node-text">فرض القتال وحكمة الله</div>
+                        <div class="flow-node-key">كُتِبَ عَلَیۡكُمُ ٱلۡقِتَالُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="217-218">
+                        <div class="flow-node-num">٢١٧ – ٢١٨</div>
+                        <div class="flow-node-text">القتال في الشهر الحرام وجزاء المهاجرين</div>
+                        <div class="flow-node-key">یَسۡـَٔلُونَكَ عَنِ ٱلشَّهۡرِ ٱلۡحَرَامِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="219-220">
+                        <div class="flow-node-num">٢١٩ – ٢٢٠</div>
+                        <div class="flow-node-text">الخمر والميسر واليتامى</div>
+                        <div class="flow-node-key">یَسۡـَٔلُونَكَ عَنِ ٱلۡخَمۡرِ وَٱلۡمَیۡسِرِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="221">
+                        <div class="flow-node-num">٢٢١</div>
+                        <div class="flow-node-text">تحريم نكاح المشركين</div>
+                        <div class="flow-node-key">وَلَا تَنكِحُو<span class="tj-slt">ا۟</span> ٱلۡمُشۡرِكَـٰتِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="222-223">
+                        <div class="flow-node-num">٢٢٢ – ٢٢٣</div>
+                        <div class="flow-node-text">أحكام المحيض والعلاقة الزوجية</div>
+                        <div class="flow-node-key">وَیَسۡـَٔلُونَكَ عَنِ ٱلۡمَحِیضِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="224-225">
+                        <div class="flow-node-num">٢٢٤ – ٢٢٥</div>
+                        <div class="flow-node-text">أحكام الأيمان واللغو فيها</div>
+                        <div class="flow-node-key">وَلَا تَجۡعَلُو<span class="tj-slt">ا۟</span> ٱللَّهَ عُرۡضَةࣰ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="226-227">
+                        <div class="flow-node-num">٢٢٦ – ٢٢٧</div>
+                        <div class="flow-node-text">الإيلاء وعزم الطلاق</div>
+                        <div class="flow-node-key">لِّلَّذِینَ یُؤۡلُونَ مِن نِّسَاۤىِٕهِمۡ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="228-230">
+                        <div class="flow-node-num">٢٢٨ – ٢٣٠</div>
+                        <div class="flow-node-text">عدة المطلقة وأحكام الطلاق</div>
+                        <div class="flow-node-key">ٱلطَّلَـٰقُ مَرَّتَانِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="231-232">
+                        <div class="flow-node-num">٢٣١ – ٢٣٢</div>
+                        <div class="flow-node-text">النهي عن الإمساك ضراراً والعضل</div>
+                        <div class="flow-node-key">فَأَمۡسِكُوهُنَّ بِمَعۡرُوفٍ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="233">
+                        <div class="flow-node-num">٢٣٣</div>
+                        <div class="flow-node-text">أحكام الرضاعة والنفقة</div>
+                        <div class="flow-node-key">وَٱلۡوَ ٰ⁠لِدَ ٰ⁠تُ یُرۡضِعۡنَ أَوۡلَـٰدَهُنَّ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="234-235">
+                        <div class="flow-node-num">٢٣٤ – ٢٣٥</div>
+                        <div class="flow-node-text">عدة المتوفى عنها زوجها والخطبة</div>
+                        <div class="flow-node-key">یَتَرَبَّصۡنَ بِأَنفُسِهِنَّ أَرۡبَعَةَ أَشۡهُرࣲ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="236-237">
+                        <div class="flow-node-num">٢٣٦ – ٢٣٧</div>
+                        <div class="flow-node-text">المتعة والمهر في الطلاق</div>
+                        <div class="flow-node-key">وَمَتِّعُوهُنَّ عَلَى ٱلۡمُوسِعِ قَدَرُهُۥ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="238-239">
+                        <div class="flow-node-num">٢٣٨ – ٢٣٩</div>
+                        <div class="flow-node-text">المحافظة على الصلاة</div>
+                        <div class="flow-node-key">حَـٰفِظُو<span class="tj-slt">ا۟</span> عَلَى ٱلصَّلَوَ ٰ⁠تِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="240-241">
+                        <div class="flow-node-num">٢٤٠ – ٢٤١</div>
+                        <div class="flow-node-text">الوصية للأزواج والمتعة للمطلقات</div>
+                        <div class="flow-node-key">وَصِیَّةࣰ لِّأَزۡوَ ٰ⁠جِهِم</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="242">
+                        <div class="flow-node-num">٢٤٢</div>
+                        <div class="flow-node-text">خاتمة: بيان الآيات للتعقل</div>
+                        <div class="flow-node-key">لَعَلَّكُمۡ تَعۡقِلُونَ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-215">
+                <div class="ayah-text">یَسۡـَٔلُونَكَ مَاذَا یُ<span class="tj-khf">نفِ</span>قُونَۖ قُلۡ مَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">نفَ</span><span class="tj-qlq">قۡ</span>تُم <span class="tj-ghn">مِّ</span>نۡ خَیۡ<span class="tj-khf">رࣲ فَ</span>لِلۡوَ ٰ⁠لِدَیۡنِ وَ<span class="tj-slt">ٱ</span>لۡأَ<span class="tj-qlq">قۡ</span>رَبِینَ وَ<span class="tj-slt">ٱ</span>لۡیَ<span class="tj-mdd">تَـٰ</span>مَىٰ وَ<span class="tj-slt">ٱ</span>لۡمَ<span class="tj-mdd">سَـٰ</span>كِینِ وَ<span class="tj-slt">ٱ</span>بۡنِ <span class="tj-slt">ٱل</span>سَّبِیلِۗ وَمَا تَفۡعَلُو<span class="tj-slt">ا۟</span> مِنۡ خَیۡ<span class="tj-khf">رࣲ فَ</span>إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ بِهِۦ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢١٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">سألوا النبي ﷺ ماذا ينفقون، فبيّن الله أن ما أُنفق من خير فللوالدين والأقربين واليتامى والمساكين وابن السبيل، وما تفعلوا من خير فإن الله به عليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-215">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-215">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-215">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-215">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-215">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-215">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-215">سألوا النبي ﷺ عن النفقة ماذا ينفقون وعلى من. فأجاب بأن ما أنفقتم من خير فللوالدين والأقربين واليتامى والمساكين وابن السبيل. فبيّن المصارف الأهم والأولى بالإنفاق وبدأ بالوالدين لعظم حقهما. وما تفعلوا من خير يعلمه الله ويجازيكم عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-215', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-215">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-215">سأل عمرو بن الجموح وكان شيخًا كبيرًا ذا مال: ماذا ننفق وعلى من؟ فنزلت الآية. فبيّن الله مصارف النفقة: الوالدان والأقربون واليتامى والمساكين وابن السبيل. وقدّم الوالدين لأنهما أحق الناس ببرّك. وما تفعلوا من خير فإن الله به عليم لا يضيع أجره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-215', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-215">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-215">{يَسْأَلُونَكَ مَاذَا يُنْفِقُونَ} نزلت في عمرو بن الجموح سأل النبي ﷺ ماذا ننفق وعلى من. {قُلْ مَا أَنْفَقْتُمْ مِنْ خَيْرٍ} أي مال. {فَلِلْوَالِدَيْنِ وَالْأَقْرَبِينَ وَالْيَتَامَى وَالْمَسَاكِينِ وَابْنِ السَّبِيلِ} بيّن المصارف. {وَمَا تَفْعَلُوا مِنْ خَيْرٍ فَإِنَّ اللَّهَ بِهِ عَلِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-215', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-215">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-215">السؤال عن النفقة: ماذا ينفقون وعلى من. فأجاب الله ببيان المصارف وبدأ بالوالدين لعظم حقهما ثم الأقربين ثم اليتامى ثم المساكين ثم ابن السبيل. والآية في نفقة التطوع عند الجمهور. وما تفعلوا من خير فإن الله به عليم أي يعلمه ويجزي عليه فلا تخافوا ضياع أجوركم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-215', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-215">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-215">يقول تعالى: يسألك أصحابك ماذا ينفقون ولمن. قل لهم: ما أنفقتم من مال فاجعلوه للوالدين والأقربين واليتامى والمساكين وأبناء السبيل. وما تفعلوا من برّ وإحسان فإن الله يعلمه ويحصيه ليجزيكم عليه أحسن الجزاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-215', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-216">
+                <div class="ayah-text">كُتِبَ عَلَیۡكُمُ <span class="tj-slt">ٱ</span>لۡقِتَالُ وَهُوَ كُرۡ<span class="tj-dgm">هࣱ لَّ</span>كُمۡۖ وَعَسَ<span class="tj-mdd">ىٰۤ</span> أَ<span class="tj-khf">ن تَ</span>كۡرَهُو<span class="tj-slt">ا۟</span> شَیۡ<span class="tj-dgm">ـࣰٔا وَ</span>هُوَ خَیۡ<span class="tj-dgm">رࣱ لَّ</span>كُمۡۖ وَعَسَ<span class="tj-mdd">ىٰۤ</span> أَ<span class="tj-khf">ن تُ</span>حِبُّو<span class="tj-slt">ا۟</span> شَیۡ<span class="tj-dgm">ـࣰٔا وَ</span>هُوَ شَ<span class="tj-dgm">رࣱّ لَّ</span>كُمۡۚ وَ<span class="tj-slt">ٱ</span>للَّهُ یَعۡلَمُ وَأَ<span class="tj-khf">نتُ</span>مۡ لَا تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢١٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">فُرض القتال وهو مكروه بالطبع، لكن عسى أن تكرهوا شيئًا وهو خير لكم وعسى أن تحبوا شيئًا وهو شر لكم، والله يعلم وأنتم لا تعلمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-216">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-216">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-216">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-216">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-216">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-216">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-216">فرض الله القتال وهو كره للنفوس لما فيه من المشقة والخطر. ثم بيّن حكمة عظيمة: قد تكرهون شيئًا وفيه خيركم كالقتال، وقد تحبون شيئًا وفيه شركم كالقعود. والله يعلم ما يصلح لكم وأنتم لا تعلمون فسلّموا لحكمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-216', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-216">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-216">فرض الله الجهاد وهو شاقّ على النفوس. ثم قال: {وَعَسَى أَنْ تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَكُمْ} فإن في القتال إعلاء كلمة الله والغنيمة والشهادة. {وَعَسَى أَنْ تُحِبُّوا شَيْئًا وَهُوَ شَرٌّ لَكُمْ} كالقعود عن الجهاد وإيثار الراحة. {وَاللَّهُ يَعْلَمُ وَأَنْتُمْ لَا تَعْلَمُونَ} فامتثلوا أمره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-216', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-216">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-216">{كُتِبَ عَلَيْكُمُ الْقِتَالُ} فُرض. {وَهُوَ كُرْهٌ لَكُمْ} أي شاق على النفوس. {وَعَسَى أَنْ تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَكُمْ} لأن في الجهاد الظفر والغنيمة والشهادة. {وَعَسَى أَنْ تُحِبُّوا شَيْئًا وَهُوَ شَرٌّ لَكُمْ} كالقعود وإيثار الدنيا. {وَاللَّهُ يَعْلَمُ} ما هو خير لكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-216', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-216">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-216">كتب: فُرض. والقتال فرض كفاية عند الجمهور. وهو كره: مشقة على الطبع. ثم بيّن أن الإنسان قد يكره ما فيه نفعه كالجهاد لما فيه من النصر والغنيمة والشهادة، وقد يحب ما فيه ضرره كالراحة والقعود. والله يعلم العواقب وأنتم لا تعلمون فثقوا بتدبيره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-216', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-216">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-216">يقول تعالى: فُرض عليكم قتال أعداء الله وهو مكروه لكم بطبعكم. وقد تكرهون شيئًا كالقتال وهو خير لكم فيه إعلاء الدين والغنيمة والأجر. وقد تحبون شيئًا كالراحة وهو شر لكم. والله يعلم ما يصلحكم وما يفسدكم وأنتم لا تعلمون ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-216', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-217">
+                <div class="ayah-text">یَسۡـَٔلُونَكَ عَنِ <span class="tj-slt">ٱل</span>شَّهۡرِ <span class="tj-slt">ٱ</span>لۡحَرَامِ قِتَا<span class="tj-khf">لࣲ فِ</span>یهِۖ قُلۡ قِتَا<span class="tj-khf">لࣱ فِ</span>یهِ كَبِیرࣱۚ وَصَدٌّ عَ<span class="tj-khf">ن سَ</span>بِیلِ <span class="tj-slt">ٱ</span>للَّهِ وَكُفۡ<span class="tj-qlb">رُۢ بِ</span>هِۦ وَ<span class="tj-slt">ٱ</span>لۡمَسۡجِدِ <span class="tj-slt">ٱ</span>لۡحَرَامِ وَإِخۡرَاجُ أَهۡلِهِۦ مِنۡهُ أَكۡبَرُ عِ<span class="tj-khf">ندَ</span> <span class="tj-slt">ٱ</span>للَّهِۚ وَ<span class="tj-slt">ٱ</span>لۡفِتۡنَةُ أَكۡبَرُ مِنَ <span class="tj-slt">ٱ</span>لۡقَتۡلِۗ وَلَا یَزَالُونَ یُ<span class="tj-mdd">قَـٰ</span>تِلُونَكُمۡ حَتَّىٰ یَرُدُّوكُمۡ عَ<span class="tj-khf">ن دِ</span>ینِكُمۡ إِنِ <span class="tj-slt">ٱ</span>سۡتَ<span class="tj-mdd">طَـٰ</span>عُو<span class="tj-slt">ا۟</span>ۚ وَمَ<span class="tj-dgm">ن یَ</span>رۡتَدِ<span class="tj-qlq">دۡ</span> مِ<span class="tj-khf">نكُ</span>مۡ عَ<span class="tj-khf">ن دِ</span>ینِهِۦ فَیَمُتۡ وَهُوَ كَافِ<span class="tj-khf">رࣱ فَ</span>أُ<span class="tj-slt">و۟</span><span class="tj-mdd">لَـٰۤ</span>ىِٕكَ حَبِطَتۡ أَعۡ<span class="tj-mdd">مَـٰ</span>لُهُمۡ فِی <span class="tj-slt">ٱل</span>دُّنۡیَا وَ<span class="tj-slt">ٱ</span>لۡـَٔاخِرَةِۖ وَأُ<span class="tj-slt">و۟</span><span class="tj-mdd">لَـٰۤ</span>ىِٕكَ أَصۡ<span class="tj-mdd">حَـٰ</span>بُ <span class="tj-slt">ٱل</span>نَّارِۖ هُمۡ فِیهَا <span class="tj-mdd">خَـٰ</span>لِدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢١٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">سألوا عن القتال في الشهر الحرام فقال: قتال فيه كبير لكن الصد عن سبيل الله والكفر والإخراج أكبر عند الله، ومن يرتدد فيمت كافرًا فقد حبط عمله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-217">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-217">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-217">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-217">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-217">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-217">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-217">سألوا عن القتال في الشهر الحرام فقال: قتال فيه إثم كبير لكن ما يفعله المشركون من الصد عن سبيل الله والكفر به وإخراج المسلمين من المسجد الحرام أكبر إثمًا عند الله. والفتنة وهي الشرك أكبر من القتل. ولا يزالون يقاتلونكم حتى يردوكم عن دينكم إن استطاعوا. ومن يرتدد ويمت كافرًا فقد حبط عمله وأولئك أصحاب النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-217', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-217">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-217">نزلت في سرية عبد الله بن جحش حين قتلوا عمرو بن الحضرمي في آخر يوم من رجب. فعاب المشركون ذلك فنزلت: قتال في الشهر الحرام إثم كبير لكن ما تفعلونه أيها المشركون من الصد والكفر والإخراج أعظم عند الله. والفتنة أكبر من القتل. ومن يرتدد فيمت كافرًا حبط عمله في الدنيا والآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-217', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-217">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-217">نزلت في سرية عبد الله بن جحش. {قُلْ قِتَالٌ فِيهِ كَبِيرٌ} إثم عظيم. {وَصَدٌّ عَنْ سَبِيلِ اللَّهِ وَكُفْرٌ بِهِ وَالْمَسْجِدِ الْحَرَامِ وَإِخْرَاجُ أَهْلِهِ مِنْهُ أَكْبَرُ عِنْدَ اللَّهِ}. {وَمَنْ يَرْتَدِدْ مِنْكُمْ عَنْ دِينِهِ فَيَمُتْ وَهُوَ كَافِرٌ فَأُولَئِكَ حَبِطَتْ أَعْمَالُهُمْ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-217', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-217">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-217">سبب النزول: سرية عبد الله بن جحش. القتال في الشهر الحرام ذنب كبير لكن ما يصنعه الكفار من الصد عن الإسلام والكفر بالله وإخراج المسلمين من مكة أعظم إثمًا. والفتنة (الشرك) أكبر من القتل. ومن ارتد فمات كافرًا فقد بطل عمله وهو من أصحاب النار خالدًا فيها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-217', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-217">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-217">يقول تعالى: يسألونك عن القتال في الشهر الحرام. قل: القتال فيه إثم عظيم ولكن الذي تفعله قريش من الصد عن دين الله والكفر به وصد المسلمين عن المسجد الحرام وإخراج أهله أكبر عند الله من القتال في الشهر الحرام. ومن يرتدد منكم عن دينه فيمت كافرًا فقد بطل عمله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-217', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-218">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> وَ<span class="tj-slt">ٱلَّ</span>ذِینَ هَاجَرُو<span class="tj-slt">ا۟</span> وَ<span class="tj-mdd">جَـٰ</span>هَدُو<span class="tj-slt">ا۟</span> فِی سَبِیلِ <span class="tj-slt">ٱ</span>للَّهِ أُ<span class="tj-slt">و۟</span><span class="tj-mdd">لَـٰۤ</span>ىِٕكَ یَرۡجُونَ رَحۡمَتَ <span class="tj-slt">ٱ</span>للَّهِۚ وَ<span class="tj-slt">ٱ</span>للَّهُ غَفُو<span class="tj-dgm">رࣱ رَّ</span>حِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢١٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الذين آمنوا وهاجروا وجاهدوا في سبيل الله أولئك يرجون رحمة الله، والله غفور رحيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-218">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-218">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-218">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-218">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-218">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-218">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-218">لما ذكر الوعيد على الردة ذكر فضل المؤمنين المهاجرين المجاهدين: أولئك يرجون رحمة الله أي ثوابه وجنته. والرجاء المحمود هو الذي يكون مع العمل. والله غفور لذنوبهم رحيم بهم يضاعف لهم الحسنات ويتجاوز عن السيئات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-218', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-218">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-218">لما ذكر حال المرتدين ذكر حال المؤمنين الذين آمنوا بالله ورسوله وهاجروا من ديارهم وجاهدوا في سبيل الله أولئك يرجون ثواب الله ورحمته وهم أهل لذلك. والله غفور رحيم. وفيه فضيلة الإيمان والهجرة والجهاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-218', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-218">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-218">{إِنَّ الَّذِينَ آمَنُوا وَالَّذِينَ هَاجَرُوا وَجَاهَدُوا فِي سَبِيلِ اللَّهِ} نزلت في أصحاب سرية عبد الله بن جحش لما تخوفوا من القتال في الشهر الحرام. {أُولَئِكَ يَرْجُونَ رَحْمَتَ اللَّهِ} أي ثوابه. {وَاللَّهُ غَفُورٌ رَحِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-218', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-218">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-218">ذكر الله أصناف الخير: الإيمان والهجرة والجهاد، وأن أصحاب هذه الصفات يرجون رحمة الله. وفي قوله (يرجون) إشعار بأن أحدًا لا يقطع لنفسه بالجنة بل يرجو رحمة الله ويخاف عذابه. والله غفور لما سلف رحيم بعباده المؤمنين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-218', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-218">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-218">يقول تعالى: إن الذين صدّقوا الله ورسوله وهاجروا أوطانهم في سبيل الله وجاهدوا أعداء الله أولئك يطمعون في رحمة الله وثوابه. والله غفور لذنوب عباده المؤمنين رحيم بهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-218', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-219">
+                <div class="ayah-text">۞ یَسۡـَٔلُونَكَ عَنِ <span class="tj-slt">ٱ</span>لۡخَمۡرِ وَ<span class="tj-slt">ٱ</span>لۡمَیۡسِرِۖ قُلۡ فِیهِمَ<span class="tj-mdd">اۤ</span> إِثۡ<span class="tj-khf">مࣱ كَ</span>بِیرࣱ وَمَ<span class="tj-mdd">نَـٰ</span>فِعُ لِل<span class="tj-ghn">نَّ</span>اسِ وَإِثۡمُهُمَ<span class="tj-mdd">اۤ</span> أَكۡبَرُ مِ<span class="tj-dgm">ن نَّ</span>فۡعِهِمَاۗ وَیَسۡـَٔلُونَكَ مَاذَا یُ<span class="tj-khf">نفِ</span>قُونَۖ قُلِ <span class="tj-slt">ٱ</span>لۡعَفۡوَۗ كَذَ ٰ⁠لِكَ یُبَیِّنُ <span class="tj-slt">ٱ</span>للَّهُ لَكُمُ <span class="tj-slt">ٱ</span>لۡـَٔا<span class="tj-mdd">یَـٰ</span>تِ لَعَلَّكُمۡ تَتَفَكَّرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢١٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">سألوا عن الخمر والميسر فبيّن أن فيهما إثمًا كبيرًا ومنافع لكن إثمهما أكبر، وسألوا ماذا ينفقون فقال: العفو، كذلك يبيّن الله الآيات لعلكم تتفكرون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-219">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-219">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-219">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-219">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-219">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-219">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-219">سألوا عن الخمر والميسر فبيّن الله أن فيهما إثمًا كبيرًا بما يترتب عليهما من المفاسد ومنافع مالية لبعض الناس لكن إثمهما أكبر من نفعهما. وهذا تمهيد لتحريمهما. وسألوا عن مقدار النفقة فقال العفو أي الفاضل عن حاجتكم. كذلك يبيّن الله لكم الآيات لعلكم تتفكرون في أمور دينكم ودنياكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-219', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-219">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-219">سألوا عن الخمر والميسر فأجاب بأن فيهما إثمًا كبيرًا وهو ما يترتب عليهما من الفساد والعداوة والبغضاء، ومنافع دنيوية كالتجارة والربح. لكن إثمهما أكبر. وهذه الآية مقدمة لتحريم الخمر. وسألوا ماذا ينفقون فقال العفو وهو ما فضل عن الحاجة. كذلك يبيّن الله لكم الآيات لعلكم تتفكرون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-219', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-219">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-219">{يَسْأَلُونَكَ عَنِ الْخَمْرِ وَالْمَيْسِرِ} الخمر ما خامر العقل والميسر القمار. {قُلْ فِيهِمَا إِثْمٌ كَبِيرٌ} بالمعاصي المترتبة عليهما. {وَمَنَافِعُ لِلنَّاسِ} بالتجارة والربح. {وَإِثْمُهُمَا أَكْبَرُ مِنْ نَفْعِهِمَا}. {وَيَسْأَلُونَكَ مَاذَا يُنْفِقُونَ قُلِ الْعَفْوَ} ما فضل عن الحاجة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-219', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-219">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-219">الخمر: ما خامر العقل وغطّاه. والميسر: القمار وكل ما فيه مخاطرة. فيهما إثم كبير بذهاب العقل والعداوة والبغضاء وتضييع المال، ومنافع مادية. لكن المفاسد تغلب المصالح. والعفو: ما زاد عن الحاجة. وهذه الآية من مراحل تحريم الخمر قبل التحريم القاطع في المائدة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-219', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-219">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-219">يقول تعالى: يسألونك عن الخمر والميسر. الخمر كل ما أسكر والميسر كل قمار. فيهما إثم كبير بفساد العقول والأموال والعداوة، ومنافع مالية. لكن ما فيهما من الإثم والمفسدة أعظم من نفعهما. ويسألونك ماذا ينفقون قل الفاضل عن حاجتكم. كذلك يبيّن الله لكم آياته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-219', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-220">
+                <div class="ayah-text">فِی <span class="tj-slt">ٱل</span>دُّنۡیَا وَ<span class="tj-slt">ٱ</span>لۡـَٔاخِرَةِۗ وَیَسۡـَٔلُونَكَ عَنِ <span class="tj-slt">ٱ</span>لۡیَ<span class="tj-mdd">تَـٰ</span>مَىٰۖ قُلۡ إِصۡلَا<span class="tj-dgm">حࣱ لَّ</span>هُمۡ خَیۡرࣱۖ وَإِ<span class="tj-khf">ن تُ</span>خَالِطُوهُمۡ فَإِخۡوَ ٰ⁠نُكُمۡۚ وَ<span class="tj-slt">ٱ</span>للَّهُ یَعۡلَمُ <span class="tj-slt">ٱ</span>لۡمُفۡسِدَ مِنَ <span class="tj-slt">ٱ</span>لۡمُصۡلِحِۚ وَلَوۡ شَ<span class="tj-mdd">اۤ</span>ءَ <span class="tj-slt">ٱ</span>للَّهُ لَأَعۡنَتَكُمۡۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ عَزِیزٌ حَكِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">التفكر في الدنيا والآخرة، والسؤال عن اليتامى: إصلاح أمورهم خير، وإن تخالطوهم فإخوانكم، والله يعلم المفسد من المصلح.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-220">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-220">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-220">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-220">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-220">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-220">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-220">لعلكم تتفكرون في الدنيا والآخرة فتؤثرون ما هو أبقى. وسألوا عن اليتامى وكيفية التعامل معهم فقال: إصلاح أمورهم وتنمية أموالهم خير. وإن خالطتموهم في المأكل والمسكن فإخوانكم والأخ يخالط أخاه. والله يعلم من قصد الإفساد ممن قصد الإصلاح. ولو شاء الله لأعنتكم وشدد عليكم لكنه يسّر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-220', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-220">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-220">لما نزلت آية اليتامى تحرّج الصحابة من مخالطتهم وعزلوا طعامهم فشقّ ذلك عليهم فنزلت: إصلاح لهم خير. وإن تخالطوهم في المأكل والمسكن والمال فهم إخوانكم في الدين. والله يعلم المفسد لأموال اليتامى من المصلح لها. ولو شاء الله لأعنتكم أي لشدد وضيّق عليكم ولكنه خفف.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-220', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-220">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-220">{فِي الدُّنْيَا وَالْآخِرَةِ} أي تتفكرون فيهما. {وَيَسْأَلُونَكَ عَنِ الْيَتَامَى} لما نزلت {إِنَّ الَّذِينَ يَأْكُلُونَ أَمْوَالَ الْيَتَامَى} عزلوا أطعمتهم فنزلت هذه. {قُلْ إِصْلَاحٌ لَهُمْ خَيْرٌ وَإِنْ تُخَالِطُوهُمْ فَإِخْوَانُكُمْ}. {وَلَوْ شَاءَ اللَّهُ لَأَعْنَتَكُمْ} لضيّق عليكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-220', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-220">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-220">تتفكرون في أمر الدارين وتقدمون ما هو أنفع. وسألوا عن معاملة اليتامى لما خافوا من أكل أموالهم. فقال: إصلاح شؤونهم خير، والمخالطة جائزة فهم إخوانكم. والله يميز من يقصد الإفساد ممن يقصد الإصلاح. ولو شاء لشقّ عليكم ولكنه خفف ويسّر. إن الله عزيز في ملكه حكيم في تشريعه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-220', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-220">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-220">يقول تعالى: تتفكرون في أمر الدنيا والآخرة. ويسألونك عن اليتامى ومعاملتهم. قل إصلاح أمورهم وأموالهم خير. وإن خلطتم أموالكم بأموالهم فهم إخوانكم في الدين. والله يعلم من يريد إفساد مال اليتيم ممن يريد إصلاحه. ولو شاء الله لأعنتكم وشدد عليكم في أمر اليتامى لكنه رحمكم وخفف.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-220', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-221">
+                <div class="ayah-text">وَلَا تَ<span class="tj-khf">نكِ</span>حُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡمُشۡرِ<span class="tj-mdd">كَـٰ</span>تِ حَتَّىٰ یُؤۡمِ<span class="tj-ghn">نَّ</span>ۚ وَلَأَمَ<span class="tj-dgm">ةࣱ مُّ</span>ؤۡمِنَةٌ خَیۡ<span class="tj-dgm">رࣱ مِّ</span><span class="tj-dgm">ن مُّ</span>شۡرِ<span class="tj-dgm">كَةࣲ وَ</span>لَوۡ أَعۡجَبَتۡكُمۡۗ وَلَا تُ<span class="tj-khf">نكِ</span>حُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡمُشۡرِكِینَ حَتَّىٰ یُؤۡمِنُو<span class="tj-slt">ا۟</span>ۚ وَلَعَبۡ<span class="tj-dgm">دࣱ مُّ</span>ؤۡمِنٌ خَیۡ<span class="tj-dgm">رࣱ مِّ</span><span class="tj-dgm">ن مُّ</span>شۡرِ<span class="tj-dgm">كࣲ وَ</span>لَوۡ أَعۡجَبَكُمۡۗ أُ<span class="tj-slt">و۟</span><span class="tj-mdd">لَـٰۤ</span>ىِٕكَ یَدۡعُونَ إِلَى <span class="tj-slt">ٱل</span>نَّارِۖ وَ<span class="tj-slt">ٱ</span>للَّهُ یَدۡعُوۤ<span class="tj-slt">ا۟</span> إِلَى <span class="tj-slt">ٱ</span>لۡجَ<span class="tj-ghn">نَّ</span>ةِ وَ<span class="tj-slt">ٱ</span>لۡمَغۡفِرَةِ بِإِذۡنِهِۦۖ وَیُبَیِّنُ ءَا<span class="tj-mdd">یَـٰ</span>تِهِۦ لِل<span class="tj-ghn">نَّ</span>اسِ لَعَلَّهُمۡ یَتَذَكَّرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">نهى عن نكاح المشركات حتى يؤمنّ ولأمة مؤمنة خير من مشركة، وعن تزويج المشركين حتى يؤمنوا، فأولئك يدعون إلى النار والله يدعو إلى الجنة والمغفرة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-221">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-221">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-221">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-221">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-221">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-221">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-221">نهى الله عن نكاح المشركات حتى يؤمنّ، ولأمة مؤمنة خير من حرّة مشركة ولو أعجبتكم. وكذلك لا تنكحوا المؤمنات من المشركين حتى يؤمنوا ولعبد مؤمن خير من مشرك. لأن المشركين يدعون إلى النار بأقوالهم وأفعالهم والله يدعو إلى الجنة والمغفرة بإذنه. ويبيّن آياته للناس لعلهم يتذكرون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-221', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-221">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-221">نهى تعالى عن التزوج بالمشركات عابدات الأوثان. واختلف هل يشمل الكتابيات فالجمهور على جواز نكاح الكتابيات. ولا تنكحوا المشركين حتى يؤمنوا. والعلة: أن المشركين يدعون إلى النار والله يدعو إلى الجنة والمغفرة. ولأمة مؤمنة خير من مشركة حرّة ولعبد مؤمن خير من مشرك حرّ.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-221', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-221">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-221">{وَلَا تَنْكِحُوا الْمُشْرِكَاتِ حَتَّى يُؤْمِنَّ} قيل في عابدات الأوثان خاصة وقيل عامة ثم خُصّت الكتابيات. {وَلَأَمَةٌ مُؤْمِنَةٌ خَيْرٌ مِنْ مُشْرِكَةٍ وَلَوْ أَعْجَبَتْكُمْ}. {وَلَا تُنْكِحُوا الْمُشْرِكِينَ حَتَّى يُؤْمِنُوا}. {أُولَئِكَ يَدْعُونَ إِلَى النَّارِ وَاللَّهُ يَدْعُو إِلَى الْجَنَّةِ وَالْمَغْفِرَةِ بِإِذْنِهِ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-221', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-221">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-221">تحريم نكاح المشركات وهنّ عابدات الأوثان إجماعًا. واختُلف في الكتابيات والراجح جوازه لآية المائدة. والحكمة: أن الزوج المشرك يدعو إلى النار. ولأمة مؤمنة خير من مشركة حرّة جميلة. وكذلك لا يُزوَّج المسلمات من المشركين. والله يدعو إلى الجنة والمغفرة فاختاروا ما يدعوكم الله إليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-221', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-221">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-221">يقول تعالى: لا تتزوجوا المشركات حتى يُسلمن. ولأمة مسلمة أفضل من حرة مشركة. ولا تزوّجوا نساءكم المسلمات من المشركين حتى يؤمنوا. ولعبد مسلم خير من حرّ مشرك. لأن هؤلاء المشركين يدعون من خالطهم إلى النار والله يدعو إلى الجنة والمغفرة بتوفيقه وهدايته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-221', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-222">
+                <div class="ayah-text">وَیَسۡـَٔلُونَكَ عَنِ <span class="tj-slt">ٱ</span>لۡمَحِیضِۖ قُلۡ هُوَ أَ<span class="tj-khf">ذࣰى فَ</span><span class="tj-slt">ٱ</span>عۡتَزِلُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>نِّسَ<span class="tj-mdd">اۤ</span>ءَ فِی <span class="tj-slt">ٱ</span>لۡمَحِیضِ وَلَا تَقۡرَبُوهُ<span class="tj-ghn">نَّ</span> حَتَّىٰ یَطۡهُرۡنَۖ فَإِذَا تَطَهَّرۡنَ فَأۡتُوهُ<span class="tj-ghn">نَّ</span> مِنۡ حَیۡثُ أَمَرَكُمُ <span class="tj-slt">ٱ</span>للَّهُۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ یُحِبُّ <span class="tj-slt">ٱل</span>تَّوَّ ٰ⁠بِینَ وَیُحِبُّ <span class="tj-slt">ٱ</span>لۡمُتَطَهِّرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">سألوا عن المحيض فبيّن أنه أذى فاعتزلوا النساء فيه حتى يطهرن، فإذا تطهرن فأتوهن من حيث أمر الله، إن الله يحب التوابين ويحب المتطهرين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-222">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-222">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-222">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-222">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-222">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-222">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-222">سألوا عن المحيض فبيّن أنه أذى فاعتزلوا جماع النساء في المحيض. فإذا طهرن واغتسلن فأتوهن من حيث أمر الله وهو القُبُل لا الدبر. إن الله يحب التوابين من الذنوب ويحب المتطهرين من الأقذار والأنجاس.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-222', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-222">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-222">كانت اليهود تعتزل المرأة كليًا في حيضها فسأل المسلمون فنزلت. المحيض أذى فاعتزلوا الجماع فقط ولا بأس بالمباشرة فيما دون الفرج. {فَإِذَا تَطَهَّرْنَ} اغتسلن {فَأْتُوهُنَّ مِنْ حَيْثُ أَمَرَكُمُ اللَّهُ} في القُبُل لا في الدبر. إن الله يحب التوابين ويحب المتطهرين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-222', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-222">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-222">{يَسْأَلُونَكَ عَنِ الْمَحِيضِ} أي الحيض. {قُلْ هُوَ أَذًى} قذر ونجس. {فَاعْتَزِلُوا النِّسَاءَ فِي الْمَحِيضِ} اجتنبوا جماعهن. {وَلَا تَقْرَبُوهُنَّ حَتَّى يَطْهُرْنَ} ينقطع دمهن ويغتسلن. {فَأْتُوهُنَّ مِنْ حَيْثُ أَمَرَكُمُ اللَّهُ} في القُبُل. {إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-222', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-222">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-222">المحيض: الحيض. أذى: نجاسة وقذر. والاعتزال: اجتناب الجماع فقط عند الجمهور. ويجوز الاستمتاع بما فوق الإزار. حتى يطهرن: ينقطع الدم ثم يغتسلن. من حيث أمركم الله: في القُبُل لا في الدبر. يحب التوابين: الراجعين عن الذنوب. ويحب المتطهرين: بالماء والتنزه عن الفواحش.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-222', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-222">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-222">يقول تعالى: يسألونك عن الحيض. قل هو أذى ونجس فاعتزلوا جماع النساء في حيضهن ولا تقربوهن حتى يطهرن بانقطاع الدم والاغتسال. فإذا اغتسلن فجامعوهن في القُبُل الذي أذن الله فيه. إن الله يحب التوابين من الذنوب ويحب المتطهرين من الأنجاس.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-222', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-223">
+                <div class="ayah-text">نِسَ<span class="tj-mdd">اۤ</span>ؤُكُمۡ حَرۡ<span class="tj-dgm">ثࣱ لَّ</span>كُمۡ فَأۡتُو<span class="tj-slt">ا۟</span> حَرۡثَكُمۡ أَنَّىٰ شِئۡتُمۡۖ وَقَدِّمُو<span class="tj-slt">ا۟</span> لِأَنفُسِكُمۡۚ وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ وَٱعۡلَمُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span>كُم <span class="tj-ghn">مُّ</span><span class="tj-mdd">لَـٰ</span>قُوهُۗ وَبَشِّرِ <span class="tj-slt">ٱ</span>لۡمُؤۡمِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">النساء حرث لأزواجهن فليأتوا حرثهم أنّى شاؤوا بأي كيفية في موضع الحرث، وقدّموا لأنفسكم واتقوا الله واعلموا أنكم ملاقوه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-223">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-223">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-223">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-223">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-223">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-223">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-223">نساؤكم حرث لكم أي موضع زرعكم وولدكم. فأتوا حرثكم أنّى شئتم أي بأي كيفية شئتم من قيام أو قعود أو اضطجاع ما دام في موضع الحرث وهو القُبُل. وقدّموا لأنفسكم الأعمال الصالحة. واتقوا الله واعلموا أنكم ملاقوه فيجازيكم على أعمالكم. وبشّر المؤمنين بالخير والثواب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-223', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-223">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-223">نساؤكم حرث لكم أي محلّ ولدكم. فأتوا حرثكم أنّى شئتم: كيف شئتم من أي جهة في القُبُل. قال جابر: كانت اليهود تقول: من أتى امرأته من خلفها في قُبُلها جاء الولد أحول فنزلت الآية تردّ ذلك. وقدّموا لأنفسكم أي الأعمال الصالحة. واتقوا الله واعلموا أنكم ملاقوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-223', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-223">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-223">{نِسَاؤُكُمْ حَرْثٌ لَكُمْ} مزرع ولدكم. {فَأْتُوا حَرْثَكُمْ أَنَّى شِئْتُمْ} كيف شئتم مقبلة ومدبرة في موضع الحرث. نزلت ردًّا على ما قالته اليهود. {وَقَدِّمُوا لِأَنْفُسِكُمْ} الأعمال الصالحة وطلب الولد. {وَاتَّقُوا اللَّهَ وَاعْلَمُوا أَنَّكُمْ مُلَاقُوهُ وَبَشِّرِ الْمُؤْمِنِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-223', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-223">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-223">الحرث: موضع الزرع والنسل. فأتوا حرثكم: في موضع الولد وهو القُبُل بأي كيفية. والآية ترخيص في الهيئات لا في المواضع. وقدّموا لأنفسكم: الأعمال الصالحة والتسمية عند الجماع. واتقوا الله واعلموا أنكم ملاقوه فسيحاسبكم على أعمالكم. وبشّر المؤمنين بثواب الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-223', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-223">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-223">يقول تعالى: نساؤكم حرث لكم موضع نسلكم. فأتوا حرثكم أنّى شئتم أي كيف شئتم من قُبُلها ومن دُبُرها في الفرج. وقدّموا لأنفسكم من الأعمال الصالحة ما ينفعكم. واتقوا الله بطاعته واعلموا أنكم ملاقوه يوم القيامة فمجازيكم بأعمالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-223', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-224">
+                <div class="ayah-text">وَلَا تَجۡعَلُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ عُرۡضَ<span class="tj-dgm">ةࣰ لِّ</span>أَیۡ<span class="tj-mdd">مَـٰ</span>نِكُمۡ أَ<span class="tj-khf">ن تَ</span>بَرُّو<span class="tj-slt">ا۟</span> وَتَتَّقُو<span class="tj-slt">ا۟</span> وَتُصۡلِحُو<span class="tj-slt">ا۟</span> بَیۡنَ <span class="tj-slt">ٱل</span>نَّاسِۚ وَ<span class="tj-slt">ٱ</span>للَّهُ سَمِیعٌ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لا تجعلوا الحلف بالله عائقًا عن فعل البرّ والتقوى والإصلاح بين الناس، والله سميع عليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-224">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-224">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-224">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-224">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-224">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-224">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-224">لا تجعلوا أيمانكم بالله مانعة لكم من البرّ والتقوى والإصلاح. فمن حلف ألا يفعل خيرًا فليكفّر عن يمينه وليفعل الخير. والله سميع لأقوالكم عليم بنياتكم. وهذا نهي عن التعلل باليمين لترك الطاعة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-224', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-224">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-224">لا تجعلوا الحلف بالله حجة في ترك فعل الخير. فمن حلف على ترك بر أو صلة رحم فليحنث وليكفّر عن يمينه. قال النبي ﷺ: من حلف على يمين فرأى خيرًا منها فليأت الذي هو خير وليكفّر عن يمينه. والله سميع عليم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-224', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-224">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-224">{وَلَا تَجْعَلُوا اللَّهَ عُرْضَةً لِأَيْمَانِكُمْ} أي مانعًا. والمعنى: لا تحلفوا بالله ألا تبروا ولا تتقوا ولا تصلحوا. نزلت في أبي بكر حين حلف ألا ينفق على مسطح بعد حادثة الإفك. {وَاللَّهُ سَمِيعٌ} لأيمانكم {عَلِيمٌ} بنياتكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-224', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-224">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-224">عرضة: مانعًا وحاجزًا. المعنى: لا تجعلوا الحلف بالله ذريعة لترك الخير. فمن حلف على ترك طاعة فليكفّر وليفعل الطاعة. وهذا أصل في أن من حلف على معصية أو ترك واجب فيجب عليه الحنث والكفارة. والله سميع لما تقولون عليم بما تنوون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-224', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-224">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-224">يقول تعالى: لا تجعلوا حلفكم بالله حجة تمتنعون بها من فعل البر والتقوى والإصلاح بين الناس. بل من حلف على ترك خير فليكفّر عن يمينه وليفعل الخير فإنه أولى. والله سميع لأيمانكم عليم بمقاصدكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-224', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-225">
+                <div class="ayah-text">لَّا یُؤَاخِذُكُمُ <span class="tj-slt">ٱ</span>للَّهُ بِ<span class="tj-slt">ٱل</span>لَّغۡوِ فِ<span class="tj-mdd">یۤ</span> أَیۡ<span class="tj-mdd">مَـٰ</span>نِكُمۡ وَ<span class="tj-mdd">لَـٰ</span>كِن یُؤَاخِذُكُم بِمَا كَسَبَتۡ قُلُوبُكُمۡۗ وَ<span class="tj-slt">ٱ</span>للَّهُ غَفُورٌ حَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لا يؤاخذ الله بلغو اليمين غير المقصود، ولكن يؤاخذ بما كسبت القلوب أي ما عقدتم عليه بقصد ونية، والله غفور حليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-225">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-225">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-225">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-225">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-225">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-225">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-225">اللغو في اليمين: ما يجري على اللسان بلا قصد كقول لا والله وبلى والله في عرض الحديث. فهذا لا مؤاخذة فيه. ولكن يؤاخذكم بما كسبت قلوبكم أي ما قصدتموه ونويتموه من الأيمان. والله غفور يعفو عن اللغو حليم لا يعاجل بالعقوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-225', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-225">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-225">اللغو: ما لا يقصده الحالف كقوله لا والله وبلى والله في كلامه. قالت عائشة: نزلت في قوم يحلفون في حديثهم بغير قصد فلا كفارة فيه. {وَلَكِنْ يُؤَاخِذُكُمْ بِمَا كَسَبَتْ قُلُوبُكُمْ} أي ما عقدتموه بقصد ونية. {وَاللَّهُ غَفُورٌ حَلِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-225', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-225">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-225">{لَا يُؤَاخِذُكُمُ اللَّهُ بِاللَّغْوِ فِي أَيْمَانِكُمْ} قالت عائشة: هو قول الرجل لا والله وبلى والله في حديثه من غير عقد. {وَلَكِنْ يُؤَاخِذُكُمْ بِمَا كَسَبَتْ قُلُوبُكُمْ} أي ما تعمدتم وقصدتم. {وَاللَّهُ غَفُورٌ} للغو {حَلِيمٌ} لا يعجل بالعقوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-225', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-225">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-225">اللغو: ما يسبق إليه اللسان من غير قصد كقول لا والله وبلى والله. وقيل: أن يحلف على ما يظنه ثم يتبيّن خلافه. فلا إثم فيه ولا كفارة. ولكن يؤاخذ بما عقده القلب وقصده من الأيمان. والله غفور يتجاوز عن اللغو حليم لا يعاجل العاصي بالعقوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-225', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-225">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-225">يقول تعالى: لا يعاقبكم الله على لغو أيمانكم الذي يجري على ألسنتكم بغير قصد. ولكن يعاقبكم على ما عقدت عليه قلوبكم وتعمدتموه من الأيمان. والله غفور لعباده فيما يلغون حليم لا يعاجلهم بالعقوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-225', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-226">
+                <div class="ayah-text">لِّلَّذِینَ یُؤۡلُونَ مِ<span class="tj-dgm">ن نِّ</span>سَ<span class="tj-mdd">اۤ</span>ىِٕهِمۡ تَرَبُّصُ أَرۡبَعَةِ أَشۡهُ<span class="tj-khf">رࣲۖ فَ</span>إِ<span class="tj-khf">ن فَ</span><span class="tj-mdd">اۤ</span>ءُو فَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ غَفُو<span class="tj-dgm">رࣱ رَّ</span>حِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">حكم الإيلاء: من حلف ألا يقرب امرأته فله تربص أربعة أشهر، فإن فاء ورجع فإن الله غفور رحيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-226">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-226">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-226">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-226">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-226">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-226">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-226">الإيلاء: أن يحلف الزوج ألا يجامع امرأته. فأمهله الله أربعة أشهر فإن رجع وجامعها فالله غفور لما صدر منه رحيم به. وفي ختمها بالمغفرة والرحمة ترغيب في الرجوع إلى الزوجة وعدم الإضرار بها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-226', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-226">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-226">الإيلاء: الحلف على ترك الجماع. كان أهل الجاهلية يُحرّمون نساءهم بالأيمان. فجعل الله المدة أربعة أشهر فإن رجع إلى امرأته قبل انقضائها فالله غفور لما فرّط رحيم به. والفيء: الرجوع إلى الجماع. وكفارة يمينه واجبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-226', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-226">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-226">{لِلَّذِينَ يُؤْلُونَ مِنْ نِسَائِهِمْ} يحلفون ألا يجامعوا. {تَرَبُّصُ أَرْبَعَةِ أَشْهُرٍ} مهلة. {فَإِنْ فَاءُوا} رجعوا إلى الجماع. {فَإِنَّ اللَّهَ غَفُورٌ رَحِيمٌ} يغفر لهم ما صنعوا ويرحمهم. وعليه كفارة يمين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-226', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-226">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-226">الإيلاء: حلف الزوج بالله ألا يطأ زوجته. والتربص أربعة أشهر حدّ أقصى. فإن جامعها فيها فقد فاء وعليه كفارة يمين. والله غفور لحنثه رحيم بعباده حيث رخّص في الرجعة. وفيه حفظ لحق المرأة حتى لا يُضارّ بها بطول الامتناع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-226', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-226">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-226">يقول تعالى: للذين يحلفون ألا يجامعوا نساءهم انتظار أربعة أشهر. فإن رجعوا إلى نسائهم وجامعوهن فإن الله غفور لحنثهم في أيمانهم رحيم بهم. وإنما جعل لهم أربعة أشهر لأنها أقصى ما تصبر المرأة عن زوجها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-226', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-227">
+                <div class="ayah-text">وَإِنۡ عَزَمُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>طَّ<span class="tj-mdd">لَـٰ</span>قَ فَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ سَمِیعٌ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وإن عزموا الطلاق بعد انقضاء الأشهر الأربعة ولم يرجعوا فإن الله سميع لأقوالهم عليم بنياتهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-227">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-227">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-227">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-227">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-227">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-227">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-227">وإن عزموا الطلاق أي صمّموا عليه ولم يرجعوا بعد الأربعة أشهر فإن الله سميع لطلاقهم عليم بأحوالهم. واختلف العلماء: هل يقع الطلاق بمجرد مضي المدة أم لا بد من إيقاعه. والمهم أنه لا يجوز الإضرار بالمرأة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-227', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-227">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-227">وإن عزموا الطلاق فإن الله سميع عليم. اختلف العلماء: قال مالك والشافعي وأحمد: إذا مضت أربعة أشهر وُقف فإما أن يفيء وإما أن يطلّق. وقال أبو حنيفة: تطلق بمضي المدة. والله سميع لأقوالهم عليم بمقاصدهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-227', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-227">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-227">{وَإِنْ عَزَمُوا الطَّلَاقَ} ولم يفيئوا. {فَإِنَّ اللَّهَ سَمِيعٌ} لطلاقهم {عَلِيمٌ} بنياتهم. قال الجمهور: يُوقف بعد الأربعة أشهر فإما يفيء وإما يطلق. وقال أبو حنيفة: إذا مضت ولم يفئ بانت بتطليقة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-227', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-227">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-227">إن لم يرجعوا وعزموا الفراق فإن الله سميع عليم. واختلف: هل يقع الطلاق بمضي المدة أم يُوقف؟ مذهب مالك والشافعي وأحمد: يُوقف ويُطالب بالفيء أو الطلاق. ومذهب أبي حنيفة: يقع بانقضاء الأربعة. وختمها بالسميع العليم ترهيب من العزم على الطلاق بلا سبب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-227', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-227">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-227">يقول تعالى: وإن عزم المؤلون على الطلاق ولم يراجعوا نساءهم فإن الله سميع لما يقولونه من الطلاق عليم بما ينوونه في أنفسهم. والأولى أن الطلاق لا يقع بمجرد مضي المدة بل يُوقف فيُؤمر بالرجعة أو بإيقاع الطلاق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-227', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-228">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱ</span>لۡمُطَلَّ<span class="tj-mdd">قَـٰ</span>تُ یَتَرَبَّصۡنَ بِأَ<span class="tj-khf">نفُ</span>سِهِ<span class="tj-ghn">نَّ</span> ثَ<span class="tj-mdd">لَـٰ</span>ثَةَ قُرُ<span class="tj-mdd">وۤ</span>ءࣲۚ وَلَا یَحِلُّ لَهُ<span class="tj-ghn">نَّ</span> أَ<span class="tj-dgm">ن یَ</span>كۡتُمۡنَ مَا خَلَقَ <span class="tj-slt">ٱ</span>للَّهُ فِ<span class="tj-mdd">یۤ</span> أَرۡحَامِهِ<span class="tj-ghn">نَّ</span> إِ<span class="tj-khf">ن كُ</span><span class="tj-ghn">نَّ</span> یُؤۡمِ<span class="tj-ghn">نَّ</span> بِ<span class="tj-slt">ٱ</span>للَّهِ وَ<span class="tj-slt">ٱ</span>لۡیَوۡمِ <span class="tj-slt">ٱ</span>لۡـَٔاخِرِۚ وَبُعُولَتُهُ<span class="tj-ghn">نَّ</span> أَحَقُّ بِرَدِّهِ<span class="tj-ghn">نَّ</span> فِی ذَ ٰ⁠لِكَ إِنۡ أَرَادُوۤ<span class="tj-slt">ا۟</span> إِصۡ<span class="tj-mdd">لَـٰ</span>حࣰاۚ وَلَهُ<span class="tj-ghn">نَّ</span> مِثۡلُ <span class="tj-slt">ٱلَّ</span>ذِی عَلَیۡهِ<span class="tj-ghn">نَّ</span> بِ<span class="tj-slt">ٱ</span>لۡمَعۡرُوفِۚ وَلِلرِّجَالِ عَلَیۡهِ<span class="tj-ghn">نَّ</span> دَرَجَةࣱۗ وَ<span class="tj-slt">ٱ</span>للَّهُ عَزِیزٌ حَكِیمٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">المطلقات يتربصن ثلاثة قروء، ولا يحل لهن كتمان الحمل، وأزواجهن أحق بردّهن في العدة، ولهن مثل الذي عليهن بالمعروف وللرجال عليهن درجة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-228">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-228">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-228">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-228">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-228">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-228">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-228">عدة المطلقة ثلاثة قروء (حيضات أو أطهار). ولا يحل لها أن تكتم ما في رحمها من حمل أو حيض. وأزواجهن أحق بردّهن في العدة إن أرادوا إصلاحًا لا إضرارًا. ولهن من الحقوق مثل ما عليهن بالمعروف. وللرجال عليهن درجة بالقوامة والنفقة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-228', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-228">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-228">عدة المطلقة التي تحيض ثلاثة قروء. واختلف في القُرء: هل هو الحيض أم الطهر. ولا يحل لها كتمان ما خلق الله في رحمها. وبعولتهن أحق بردهن ما دامت في العدة إن أراد إصلاحًا. ولهن حقوق كما عليهن واجبات. وللرجال درجة: القوامة والنفقة وفضل الجهاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-228', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-228">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-228">{وَالْمُطَلَّقَاتُ يَتَرَبَّصْنَ بِأَنْفُسِهِنَّ ثَلَاثَةَ قُرُوءٍ} جمع قُرء. القُرء: الحيض عند أبي حنيفة وأحمد، والطهر عند مالك والشافعي. {وَلَا يَحِلُّ لَهُنَّ أَنْ يَكْتُمْنَ مَا خَلَقَ اللَّهُ فِي أَرْحَامِهِنَّ} من حمل أو حيض. {وَبُعُولَتُهُنَّ أَحَقُّ بِرَدِّهِنَّ} في العدة. {وَلِلرِّجَالِ عَلَيْهِنَّ دَرَجَةٌ} فضيلة في الحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-228', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-228">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-228">العدة ثلاثة قروء في المطلقة الرجعية ذات الحيض. والقُرء فيه خلاف مشهور بين الحيض والطهر. والنهي عن كتمان ما في الأرحام حفظ لحق الزوج في الرجعة والنسب. وأحقية الزوج في الردّ مقيّدة بإرادة الإصلاح. ولهن حقوق مقابل ما عليهن. والدرجة: القوامة والإنفاق والميراث.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-228', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-228">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-228">يقول تعالى: المطلقات ينتظرن ثلاث حيضات أو أطهار. ولا يحل لهن أن يخفين ما في أرحامهن من حبل أو حيض. وأزواجهن أولى بردّهن في العدة إن أرادوا إصلاحًا. ولهن من الحقوق ما عليهن من الواجبات. وللرجال فضيلة على النساء بالقوامة والنفقة والجهاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-228', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-229">
+                <div class="ayah-text"><span class="tj-slt">ٱل</span>طَّ<span class="tj-mdd">لَـٰ</span>قُ مَرَّتَانِۖ فَإِمۡسَا<span class="tj-qlb">كُۢ بِ</span>مَعۡرُوفٍ أَوۡ تَسۡرِی<span class="tj-qlb">حُۢ بِ</span>إِحۡ<span class="tj-mdd">سَـٰ</span>نࣲۗ وَلَا یَحِلُّ لَكُمۡ أَ<span class="tj-khf">ن تَ</span>أۡخُذُو<span class="tj-slt">ا۟</span> مِ<span class="tj-ghn">مَّ</span><span class="tj-mdd">اۤ</span> ءَاتَیۡتُمُوهُ<span class="tj-ghn">نَّ</span> شَیۡـًٔا إِلَّ<span class="tj-mdd">اۤ</span> أَ<span class="tj-dgm">ن یَ</span>خَافَ<span class="tj-mdd">اۤ</span> أَلَّا یُقِیمَا حُدُودَ <span class="tj-slt">ٱ</span>للَّهِۖ فَإِنۡ خِفۡتُمۡ أَلَّا یُقِیمَا حُدُودَ <span class="tj-slt">ٱ</span>للَّهِ فَلَا جُنَاحَ عَلَیۡهِمَا فِیمَا <span class="tj-slt">ٱ</span>فۡتَدَتۡ بِهِۦۗ تِلۡكَ حُدُودُ <span class="tj-slt">ٱ</span>للَّهِ فَلَا تَعۡتَدُوهَاۚ وَمَ<span class="tj-dgm">ن یَ</span>تَعَدَّ حُدُودَ <span class="tj-slt">ٱ</span>للَّهِ فَأُ<span class="tj-slt">و۟</span><span class="tj-mdd">لَـٰۤ</span>ىِٕكَ هُمُ <span class="tj-slt">ٱل</span>ظَّ<span class="tj-mdd">ـٰ</span>لِمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الطلاق مرتان: فإمساك بمعروف أو تسريح بإحسان، ولا يحل أخذ شيء مما أعطيتموهن إلا في الخلع، تلك حدود الله فلا تعتدوها.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-229">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-229">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-229">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-229">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-229">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-229">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-229">الطلاق الذي يملك فيه الرجعة مرتان: بعد كل طلقة إما إمساك بمعروف أو تسريح بإحسان. ولا يحل أخذ شيء من المهر والنفقة إلا أن يخافا ألا يقيما حدود الله فلا جناح فيما افتدت به وهو الخلع. تلك حدود الله فلا تتجاوزوها ومن تعداها فأولئك هم الظالمون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-229', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-229">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-229">كان الطلاق في الجاهلية بلا عدد فحدّه الله بثلاث: مرتان ثم إمساك أو تسريح. ولا يحل أخذ شيء مما أُعطيت إلا في الخلع حين يخافا ألا يقيما حدود الله. وأصل الخلع: قصة امرأة ثابت بن قيس التي جاءت النبي ﷺ فقالت لا أعيب عليه خُلقًا ولكن أكره الكفر في الإسلام فقال: أتردين حديقته؟ قالت نعم. فأمره بطلاقها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-229', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-229">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-229">{الطَّلَاقُ مَرَّتَانِ} الطلاق الرجعي مرتان. {فَإِمْسَاكٌ بِمَعْرُوفٍ} مراجعة بإحسان. {أَوْ تَسْرِيحٌ بِإِحْسَانٍ} تخلية بلا ضرر. ولا يحل أخذ المهر إلا في الخلع إن خافا ألا يقيما حدود الله. تلك حدود الله التي شرعها فلا تتعدوها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-229', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-229">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-229">حُدّ الطلاق الرجعي بمرتين: بعد كل طلقة إما إمساك بمعروف بأداء الحقوق وحسن العشرة، أو تسريح بإحسان بإتمام العدة دون ضرار. ولا يجوز أخذ المهر إلا في الخلع حين تطلب المرأة الفراق وتفتدي بما أُعطيت. تلك حدود الله ومن تعداها فهو ظالم لنفسه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-229', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-229">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-229">يقول تعالى: الطلاق الذي يملك فيه المراجعة اثنتان. بعد كل طلقة إما رجعة بإحسان أو تخلية بمعروف. ولا يحل للرجل أخذ شيء مما أعطاها إلا أن يخاف الزوجان ألا يقيما ما أمر الله به فلا بأس أن تفتدي المرأة نفسها. تلك حدود الله فلا تتجاوزوها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-229', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-230">
+                <div class="ayah-text">فَإِ<span class="tj-khf">ن طَ</span>لَّقَهَا فَلَا تَحِلُّ لَهُۥ مِ<span class="tj-qlb">نۢ بَ</span>عۡدُ حَتَّىٰ تَ<span class="tj-khf">نكِ</span>حَ زَوۡجًا غَیۡرَهُۥۗ فَإِ<span class="tj-khf">ن طَ</span>لَّقَهَا فَلَا جُنَاحَ عَلَیۡهِمَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-dgm">ن یَ</span>تَرَاجَعَ<span class="tj-mdd">اۤ</span> إِ<span class="tj-khf">ن ظَ</span><span class="tj-ghn">نَّ</span><span class="tj-mdd">اۤ</span> أَ<span class="tj-dgm">ن یُ</span>قِیمَا حُدُودَ <span class="tj-slt">ٱ</span>للَّهِۗ وَتِلۡكَ حُدُودُ <span class="tj-slt">ٱ</span>للَّهِ یُبَیِّنُهَا لِقَوۡ<span class="tj-dgm">مࣲ یَ</span>عۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن طلّقها الثالثة فلا تحل له حتى تنكح زوجًا غيره نكاحًا صحيحًا ثم يطلقها، فحينئذ يجوز أن يتراجعا إن ظنّا أن يقيما حدود الله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-230">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-230">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-230">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-230">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-230">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-230">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-230">فإن طلّقها الثالثة فلا تحل له حتى تتزوج زوجًا آخر نكاحًا صحيحًا يدخل بها ثم يفارقها بموت أو طلاق. فإن طلقها الزوج الثاني فلا جناح على الأولين أن يتراجعا إن غلب على ظنهما إقامة حدود الله. وتلك حدود الله يبيّنها لقوم يعلمون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-230', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-230">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-230">إن طلّقها الثالثة حُرّمت عليه حتى تنكح زوجًا غيره نكاحًا صحيحًا يطأها فيه. قال النبي ﷺ لامرأة رفاعة: لا حتى تذوقي عسيلته ويذوق عسيلتك. فلا بد من نكاح رغبة لا تحليل. فإن طلقها الثاني جاز للأول أن يتزوجها إن ظنا إقامة حدود الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-230', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-230">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-230">{فَإِنْ طَلَّقَهَا} الثالثة {فَلَا تَحِلُّ لَهُ مِنْ بَعْدُ حَتَّى تَنْكِحَ زَوْجًا غَيْرَهُ} نكاح رغبة لا تحليل. ولا بد من الدخول لحديث رفاعة. {فَإِنْ طَلَّقَهَا} الثاني {فَلَا جُنَاحَ عَلَيْهِمَا أَنْ يَتَرَاجَعَا إِنْ ظَنَّا أَنْ يُقِيمَا حُدُودَ اللَّهِ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-230', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-230">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-230">الطلقة الثالثة تُبين المرأة بينونة كبرى فلا تحل للأول حتى تتزوج غيره زواجًا صحيحًا يدخل بها. ونكاح التحليل لعنه النبي ﷺ. فإن فارقها الثاني جاز للأول نكاحها من جديد بعقد ومهر جديدين إن ظنا حسن العشرة. وتلك حدود الله يوضحها للعالمين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-230', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-230">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-230">يقول تعالى: فإن طلقها الثالثة فلا تحل له إلا بعد أن تتزوج زوجًا آخر زواجًا صحيحًا يدخل بها ثم يطلقها أو يموت عنها. فحينئذ يجوز للأول أن يتزوجها إن ظنا أن يقيما حدود الله. تلك حدود الله يبينها لمن يفقهها ويعمل بها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-230', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-231">
+                <div class="ayah-text">وَإِذَا طَلَّقۡتُمُ <span class="tj-slt">ٱل</span>نِّسَ<span class="tj-mdd">اۤ</span>ءَ فَبَلَغۡنَ أَجَلَهُ<span class="tj-ghn">نَّ</span> فَأَمۡسِكُوهُ<span class="tj-ghn">نَّ</span> بِمَعۡرُوفٍ أَوۡ سَرِّحُوهُ<span class="tj-ghn">نَّ</span> بِمَعۡرُوفࣲۚ وَلَا تُمۡسِكُوهُ<span class="tj-ghn">نَّ</span> ضِرَارَ<span class="tj-dgm">ࣰا لِّ</span>تَعۡتَدُو<span class="tj-slt">ا۟</span>ۚ وَمَ<span class="tj-dgm">ن یَ</span>فۡعَلۡ ذَ ٰ⁠لِكَ فَقَدۡ ظَلَمَ نَفۡسَهُۥۚ وَلَا تَتَّخِذُوۤ<span class="tj-slt">ا۟</span> ءَا<span class="tj-mdd">یَـٰ</span>تِ <span class="tj-slt">ٱ</span>للَّهِ هُزُوࣰاۚ وَٱذۡكُرُو<span class="tj-slt">ا۟</span> نِعۡمَتَ <span class="tj-slt">ٱ</span>للَّهِ عَلَیۡكُمۡ وَمَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">نزَ</span>لَ عَلَیۡكُم <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>لۡكِ<span class="tj-mdd">تَـٰ</span>بِ وَ<span class="tj-slt">ٱ</span>لۡحِكۡمَةِ یَعِظُكُم بِهِۦۚ وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ وَٱعۡلَمُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ بِكُلِّ شَیۡءٍ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إذا طلقتم النساء وقاربت عدتهن فأمسكوهن بمعروف أو سرّحوهن بمعروف، ولا تمسكوهن ضرارًا لتعتدوا، ولا تتخذوا آيات الله هزوًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-231">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-231">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-231">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-231">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-231">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-231">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-231">إذا طلقتم فقاربن انقضاء العدة فإما أن تراجعوهن بمعروف مع حسن العشرة أو تتركوهن حتى تنقضي عدتهن بمعروف. ولا تراجعوهن للإضرار بهن وتطويل العدة فمن فعل ذلك فقد ظلم نفسه. ولا تتخذوا آيات الله وأحكامه هزوًا بالتلاعب بها. واذكروا نعمة الله عليكم وما أنزل من الكتاب والحكمة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-231', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-231">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-231">إذا طلق الرجل فقاربت المرأة انقضاء عدتها فليمسكها بمعروف بالمراجعة أو يتركها حتى تنقضي عدتها. ولا يراجعها ثم يطلقها للإضرار لتطويل العدة عليها فمن فعل ذلك ظلم نفسه. ولا تتخذوا آيات الله هزوًا وتلعبًا. واذكروا نعمة الله وما أنزل عليكم يعظكم به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-231', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-231">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-231">{فَبَلَغْنَ أَجَلَهُنَّ} قاربن انقضاء العدة. {فَأَمْسِكُوهُنَّ بِمَعْرُوفٍ} راجعوهن بنية الإصلاح. {أَوْ سَرِّحُوهُنَّ بِمَعْرُوفٍ} اتركوهن حتى تنقضي عدتهن. {وَلَا تُمْسِكُوهُنَّ ضِرَارًا لِتَعْتَدُوا} كان الرجل يطلق ثم يراجع قبل انقضاء العدة للإضرار. {وَلَا تَتَّخِذُوا آيَاتِ اللَّهِ هُزُوًا}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-231', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-231">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-231">بلغن أجلهن: قاربن انقضاء العدة. فإما إمساك بمعروف بحسن العشرة أو ترك بمعروف حتى تنقضي العدة. والنهي عن الإمساك ضرارًا لإطالة العدة وهو من كبائر الظلم. ولا تتخذوا آيات الله هزوًا: لا تتلاعبوا بأحكام الله في الطلاق والنكاح. واتقوا الله واعلموا أنه بكل شيء عليم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-231', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-231">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-231">يقول تعالى: إذا طلقتم النساء فقاربن نهاية عدتهن فراجعوهن بمعروف أو دعوهن حتى تنقضي عدتهن. ولا تراجعوهن لتضروا بهن وتطيلوا عليهن. ومن فعل ذلك فقد ظلم نفسه بمعصية الله. ولا تتخذوا أحكام الله لعبًا وهزوًا. واذكروا نعمته عليكم وما أنزل من الكتاب والسنة يعظكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-231', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-232">
+                <div class="ayah-text">وَإِذَا طَلَّقۡتُمُ <span class="tj-slt">ٱل</span>نِّسَ<span class="tj-mdd">اۤ</span>ءَ فَبَلَغۡنَ أَجَلَهُ<span class="tj-ghn">نَّ</span> فَلَا تَعۡضُلُوهُ<span class="tj-ghn">نَّ</span> أَ<span class="tj-dgm">ن یَ</span><span class="tj-khf">نكِ</span>حۡنَ أَزۡوَ ٰ⁠جَهُ<span class="tj-ghn">نَّ</span> إِذَا تَرَ ٰ⁠ضَوۡ<span class="tj-slt">ا۟</span> بَیۡنَهُم بِ<span class="tj-slt">ٱ</span>لۡمَعۡرُوفِۗ ذَ ٰ⁠لِكَ یُوعَظُ بِهِۦ مَن كَانَ مِ<span class="tj-khf">نكُ</span>مۡ یُؤۡمِنُ بِ<span class="tj-slt">ٱ</span>للَّهِ وَ<span class="tj-slt">ٱ</span>لۡیَوۡمِ <span class="tj-slt">ٱ</span>لۡـَٔاخِرِۗ ذَ ٰ⁠لِكُمۡ أَزۡكَىٰ لَكُمۡ وَأَطۡهَرُۚ وَ<span class="tj-slt">ٱ</span>للَّهُ یَعۡلَمُ وَأَ<span class="tj-khf">نتُ</span>مۡ لَا تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إذا طلقتم النساء وانقضت عدتهن فلا تمنعوهن من الرجوع إلى أزواجهن إذا تراضوا بالمعروف، ذلك أزكى لكم وأطهر والله يعلم وأنتم لا تعلمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-232">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-232">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-232">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-232">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-232">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-232">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-232">نهي عن العضل وهو منع المرأة المطلقة بعد انقضاء عدتها من نكاح من ترضاه. فلا تعضلوهن أن ينكحن أزواجهن الذين يرغبن فيهم إذا تراضوا بالمعروف. ذلك أزكى لكم وأطهر لقلوبكم. والله يعلم ما فيه مصلحتكم وأنتم لا تعلمون فثقوا بحكمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-232', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-232">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-232">نزلت في معقل بن يسار حين حلف ألا يزوّج أخته من طليقها. فنزلت تنهاه عن العضل. فلا تمنعوا النساء من الرجوع إلى أزواجهن بعقد جديد إذا تراضوا. ذلك أزكى وأطهر من كتمان ما في القلوب من الرغبة. والله يعلم ما تخفونه وأنتم لا تعلمون ما فيه الخير.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-232', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-232">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-232">نزلت في معقل بن يسار منع أخته من الرجوع إلى زوجها الأول. {فَلَا تَعْضُلُوهُنَّ} لا تمنعوهن. {أَنْ يَنْكِحْنَ أَزْوَاجَهُنَّ} يعني الزوج الأول بعقد جديد. {إِذَا تَرَاضَوْا بَيْنَهُمْ بِالْمَعْرُوفِ}. {ذَلِكُمْ أَزْكَى لَكُمْ وَأَطْهَرُ وَاللَّهُ يَعْلَمُ وَأَنْتُمْ لَا تَعْلَمُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-232', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-232">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-232">الخطاب للأولياء: لا تمنعوا النساء من نكاح من يرغبن فيه إذا انقضت عدتهن وتراضى الطرفان بالمعروف. نزلت في معقل بن يسار. والعضل حرام لأنه ظلم للمرأة. ذلكم أزكى لكم: أطهر لقلوبكم من الريبة. والله يعلم ما في قلوبكم وأنتم لا تحيطون بعواقب الأمور.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-232', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-232">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-232">يقول تعالى: إذا طلقتم النساء وانقضت عدتهن فلا تمنعوهن أيها الأولياء من التزوج بمن يرغبن فيه إذا تراضى الطرفان بالمعروف. ذلكم أزكى لكم أي أطهر من دنس المعصية. والله يعلم ما فيه مصالحكم وأنتم لا تعلمون ذلك فاعملوا بما أمركم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-232', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-233">
+                <div class="ayah-text">۞ وَ<span class="tj-slt">ٱ</span>لۡوَ ٰ⁠لِدَ ٰ⁠تُ یُرۡضِعۡنَ أَوۡ<span class="tj-mdd">لَـٰ</span>دَهُ<span class="tj-ghn">نَّ</span> حَوۡلَیۡنِ كَامِلَیۡنِۖ لِمَنۡ أَرَادَ أَن یُتِمَّ <span class="tj-slt">ٱل</span>رَّضَاعَةَۚ وَعَلَى <span class="tj-slt">ٱ</span>لۡمَوۡلُودِ لَهُۥ رِزۡقُهُ<span class="tj-ghn">نَّ</span> وَكِسۡوَتُهُ<span class="tj-ghn">نَّ</span> بِ<span class="tj-slt">ٱ</span>لۡمَعۡرُوفِۚ لَا تُكَلَّفُ نَفۡسٌ إِلَّا وُسۡعَهَاۚ لَا تُضَ<span class="tj-mdd">اۤ</span>رَّ وَ ٰ⁠لِدَةُۢ بِوَلَدِهَا وَلَا مَوۡلُو<span class="tj-dgm">دࣱ لَّ</span>هُۥ بِوَلَدِهِۦۚ وَعَلَى <span class="tj-slt">ٱ</span>لۡوَارِثِ مِثۡلُ ذَ ٰ⁠لِكَۗ فَإِنۡ أَرَادَا فِصَالًا عَن تَرَاضࣲ <span class="tj-ghn">مِّ</span>نۡهُمَا وَتَشَاوُرࣲ فَلَا جُنَاحَ عَلَیۡهِمَاۗ وَإِنۡ أَرَدتُّمۡ أَ<span class="tj-khf">ن تَ</span>سۡتَرۡضِعُوۤ<span class="tj-slt">ا۟</span> أَوۡ<span class="tj-mdd">لَـٰ</span>دَكُمۡ فَلَا جُنَاحَ عَلَیۡكُمۡ إِذَا سَلَّمۡتُم <span class="tj-ghn">مَّ</span><span class="tj-mdd">اۤ</span> ءَاتَیۡتُم بِ<span class="tj-slt">ٱ</span>لۡمَعۡرُوفِۗ وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ وَٱعۡلَمُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ بِمَا تَعۡمَلُونَ بَصِیرࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الوالدات يرضعن أولادهن حولين كاملين، وعلى الأب رزقهن وكسوتهن بالمعروف، لا تضار والدة بولدها ولا مولود له بولده، ويجوز الفطام بالتراضي والاسترضاع.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-233">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-233">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-233">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-233">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-233">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-233">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-233">الوالدات يرضعن حولين كاملين وهو أقصى مدة الرضاع. وعلى الأب نفقة الأم وكسوتها بالمعروف بحسب حاله. لا تكلف نفس إلا وسعها. لا تضار والدة بانتزاع ولدها ولا أب بإلزامه فوق طاقته. وعلى وارث الأب مثل ذلك. ويجوز الفطام قبل الحولين بالتراضي والتشاور ولا حرج في الاسترضاع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-233', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-233">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-233">أرشد الله الوالدات إلى إرضاع أولادهن الرضاعة الكاملة حولين. وعلى والد الطفل نفقة المرضع وكسوتها بالمعروف. لا يكلف الله نفسًا إلا وسعها. لا تضار والدة بسبب ولدها ولا أب. وعلى الوارث مثل ذلك. فإن أراد الأبوان الفطام قبل الحولين عن تراض وتشاور فلا بأس. وإن أردتم مرضعة أخرى فلا حرج.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-233', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-233">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-233">{وَالْوَالِدَاتُ يُرْضِعْنَ أَوْلَادَهُنَّ حَوْلَيْنِ كَامِلَيْنِ} وهو أقصى مدة الرضاع. {وَعَلَى الْمَوْلُودِ لَهُ} الأب {رِزْقُهُنَّ وَكِسْوَتُهُنَّ بِالْمَعْرُوفِ}. {لَا تُضَارَّ وَالِدَةٌ بِوَلَدِهَا} بانتزاعه منها. {وَعَلَى الْوَارِثِ مِثْلُ ذَلِكَ}. ويجوز الفصال قبل الحولين بالتراضي والتشاور.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-233', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-233">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-233">حدّ الرضاعة حولان كاملان لمن أراد إتمامها. وعلى الأب نفقة الأم المرضع وكسوتها. لا تضار والدة بنزع ولدها ولا أب بإرهاقه فوق طاقته. وعلى الوارث مثل النفقة. والفطام قبل الحولين جائز بالتراضي والتشاور بين الأبوين. والاسترضاع جائز مع تسليم الأجرة بالمعروف.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-233', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-233">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-233">يقول تعالى: الأمهات يرضعن أولادهن سنتين كاملتين. وعلى أب الطفل أجرة الرضاع ونفقة المرضع وكسوتها. لا يكلف أحد فوق طاقته. لا يضار أحد الأبوين بالولد. وعلى وارث الأب النفقة. وإن أرادا فطامه قبل الحولين بالتراضي فلا حرج. وإن أردتم مرضعة فلا حرج إذا سلمتم أجرتها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-233', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-234">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱلَّ</span>ذِینَ یُتَوَفَّوۡنَ مِ<span class="tj-khf">نكُ</span>مۡ وَیَذَرُونَ أَزۡوَ ٰ⁠جࣰا یَتَرَبَّصۡنَ بِأَنفُسِهِنَّ أَرۡبَعَةَ أَشۡهُرࣲ وَعَشۡرࣰاۖ فَإِذَا بَلَغۡنَ أَجَلَهُنَّ فَلَا جُنَاحَ عَلَیۡكُمۡ فِیمَا فَعَلۡنَ فِیۤ أَنفُسِهِنَّ بِ<span class="tj-slt">ٱ</span>لۡمَعۡرُوفِۗ وَ<span class="tj-slt">ٱ</span>للَّهُ بِمَا تَعۡمَلُونَ خَبِیرࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">عدة المتوفى عنها زوجها أربعة أشهر وعشرًا، فإذا انقضت فلا جناح فيما فعلن في أنفسهن بالمعروف من التزين والنكاح.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-234">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-234">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-234">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-234">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-234">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-234">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-234">من توفي عنها زوجها تعتدّ أربعة أشهر وعشرة أيام سواء دخل بها أم لا إلا الحامل فعدتها بوضع الحمل. تتربص ولا تتزين ولا تتعرض للخطّاب. فإذا انقضت العدة فلا حرج فيما فعلن في أنفسهن من التزين والخروج والنكاح بالمعروف.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-234', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-234">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-234">عدة المتوفى عنها أربعة أشهر وعشر تلزم الإحداد فيها بترك الزينة والطيب. وهذا في غير ذات الحمل فعدتها بوضع حملها. فإذا انقضت العدة فلا حرج عليها في التزين والنكاح بالمعروف. والله خبير بما تعملون لا يخفى عليه شيء من أحوالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-234', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-234">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-234">{وَالَّذِينَ يُتَوَفَّوْنَ مِنْكُمْ وَيَذَرُونَ أَزْوَاجًا} عدة الوفاة أربعة أشهر وعشر ليال. تعتد المرأة بالإحداد وترك الزينة. {فَإِذَا بَلَغْنَ أَجَلَهُنَّ} انقضت عدتهن. {فَلَا جُنَاحَ عَلَيْكُمْ فِيمَا فَعَلْنَ فِي أَنْفُسِهِنَّ بِالْمَعْرُوفِ} من التزين والتعرض للنكاح.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-234', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-234">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-234">عدة المتوفى عنها زوجها أربعة أشهر وعشرة أيام وهي عدة واجبة بالإجماع سواء دُخل بها أم لا. وتلزمها الإحداد بترك الزينة والطيب والكحل. فإذا انقضت فلها أن تتزين وتنكح. والحامل عدتها بوضع حملها. والله بما تعملون خبير فاتقوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-234', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-234">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-234">يقول تعالى: من مات عنها زوجها تنتظر أربعة أشهر وعشرة أيام ولا تتزين ولا تتعرض للخطّاب في هذه المدة. فإذا انقضت فلا حرج عليها في التزين والنكاح بالمعروف. والله بما تعملون خبير يعلم ما تسرّون وما تعلنون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-234', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-235">
+                <div class="ayah-text">وَلَا جُنَاحَ عَلَیۡكُمۡ فِیمَا عَرَّضۡتُم بِهِۦ مِنۡ خِطۡبَةِ <span class="tj-slt">ٱل</span>نِّسَ<span class="tj-mdd">اۤ</span>ءِ أَوۡ أَكۡنَنتُمۡ فِ<span class="tj-mdd">یۤ</span> أَ<span class="tj-khf">نفُ</span>سِكُمۡۚ عَلِمَ <span class="tj-slt">ٱ</span>للَّهُ أَ<span class="tj-ghn">نَّ</span>كُمۡ سَتَذۡكُرُونَهُ<span class="tj-ghn">نَّ</span> وَ<span class="tj-mdd">لَـٰ</span>كِ<span class="tj-dgm">ن لَّ</span>ا تُوَاعِدُوهُ<span class="tj-ghn">نَّ</span> سِرًّا إِلَّ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">ن تَ</span>قُولُو<span class="tj-slt">ا۟</span> قَوۡلَ<span class="tj-dgm">ࣰا مَّ</span>عۡرُوفࣰاۚ وَلَا تَعۡزِمُو<span class="tj-slt">ا۟</span> عُقۡدَةَ <span class="tj-slt">ٱل</span>نِّكَاحِ حَتَّىٰ یَبۡلُغَ <span class="tj-slt">ٱ</span>لۡكِ<span class="tj-mdd">تَـٰ</span>بُ أَجَلَهُۥۚ وَٱعۡلَمُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ یَعۡلَمُ مَا فِ<span class="tj-mdd">یۤ</span> أَ<span class="tj-khf">نفُ</span>سِكُمۡ فَ<span class="tj-slt">ٱ</span>حۡذَرُوهُۚ وَٱعۡلَمُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ غَفُورٌ حَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لا حرج في التعريض بخطبة المعتدة من وفاة لكن لا تواعدوهن سرًّا ولا تعزموا عقدة النكاح حتى تنقضي العدة، والله غفور حليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-235">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-235">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-235">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-235">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-235">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-235">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-235">لا حرج في التعريض بالخطبة للمعتدة من وفاة كقوله: إني في مثلك لراغب. أو أن تُكنّوا في أنفسكم. لكن لا تواعدوهن صريحًا بالنكاح في العدة. ولا تعقدوا النكاح حتى تنقضي العدة. واعلموا أن الله يعلم ما في أنفسكم فاحذروه. وهو غفور حليم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-235', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-235">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-235">التعريض: التلميح بالرغبة دون التصريح. كقوله: إنك لجميلة، وإن الله لسائق إليك خيرًا. فهذا جائز في عدة الوفاة. أما المواعدة السرية الصريحة فلا تجوز. ولا يُعقد النكاح حتى تبلغ الكتاب أجله أي تنتهي العدة. واعلموا أن الله يعلم ما في أنفسكم فاحذروه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-235', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-235">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-235">{فِيمَا عَرَّضْتُمْ بِهِ مِنْ خِطْبَةِ النِّسَاءِ} التعريض: التلميح بالرغبة. {أَوْ أَكْنَنْتُمْ فِي أَنْفُسِكُمْ} أضمرتم. {وَلَكِنْ لَا تُوَاعِدُوهُنَّ سِرًّا} صريح النكاح. {وَلَا تَعْزِمُوا عُقْدَةَ النِّكَاحِ حَتَّى يَبْلُغَ الْكِتَابُ أَجَلَهُ} تنقضي العدة. والله غفور حليم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-235', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-235">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-235">أباح التعريض بالخطبة في عدة الوفاة وهو الكلام الذي يفهم منه الرغبة دون التصريح. وحرّم المواعدة السرية الصريحة لما فيها من الطمع في ما لا يحلّ. ولا يحل عقد النكاح حتى تنقضي العدة. والله يعلم ما في القلوب فاحذروه ولا تتجاوزوا حدوده وهو غفور لمن تاب حليم لا يعاجل بالعقوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-235', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-235">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-235">يقول تعالى: لا إثم عليكم في التلميح بالخطبة للمعتدة من وفاة أو فيما أخفيتم في أنفسكم من الرغبة. لكن لا تصرّحوا بالنكاح ولا تعقدوه حتى تنقضي العدة المكتوبة. واعلموا أن الله يعلم ما تنوونه فاحذروا مخالفته. والله غفور لمن أخطأ ثم تاب حليم لا يعجل بالعقوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-235', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-236">
+                <div class="ayah-text">لَّا جُنَاحَ عَلَیۡكُمۡ إِ<span class="tj-khf">ن طَ</span>لَّقۡتُمُ <span class="tj-slt">ٱل</span>نِّسَ<span class="tj-mdd">اۤ</span>ءَ مَا لَمۡ تَمَسُّوهُ<span class="tj-ghn">نَّ</span> أَوۡ تَفۡرِضُو<span class="tj-slt">ا۟</span> لَهُ<span class="tj-ghn">نَّ</span> فَرِیضَةࣰۚ وَمَتِّعُوهُ<span class="tj-ghn">نَّ</span> عَلَى <span class="tj-slt">ٱ</span>لۡمُوسِعِ قَدَرُهُۥ وَعَلَى <span class="tj-slt">ٱ</span>لۡمُقۡتِرِ قَدَرُهُۥ مَ<span class="tj-mdd">تَـٰ</span>عَ<span class="tj-qlb">ۢا بِ</span><span class="tj-slt">ٱ</span>لۡمَعۡرُوفِۖ حَقًّا عَلَى <span class="tj-slt">ٱ</span>لۡمُحۡسِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لا حرج في الطلاق قبل المسيس أو فرض المهر، ولكن متّعوهن بحسب حال الزوج الموسع والمقتر، متاعًا بالمعروف حقًّا على المحسنين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-236">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-236">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-236">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-236">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-236">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-236">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-236">لا حرج في طلاق المرأة قبل الدخول بها وقبل تسمية المهر. ولكن أوجب الله المتعة وهي ما يُعطاها تطييبًا لخاطرها: على الغني بقدره وعلى الفقير بقدره. متاعًا بالمعروف بلا إسراف ولا تقتير. حقًّا على المحسنين الذين يحسنون إلى غيرهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-236', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-236">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-236">إذا طلّق قبل الدخول ولم يكن فرض مهرًا فلا مهر عليه لكن عليه المتعة. على الموسع قدره وعلى المقتر قدره. أعلاها خادم وأوسطها ثوب وأدناها نفقة. متاعًا بالمعروف حقًّا على المحسنين أي واجب على أهل الإحسان والفضل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-236', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-236">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-236">{لَا جُنَاحَ عَلَيْكُمْ إِنْ طَلَّقْتُمُ النِّسَاءَ مَا لَمْ تَمَسُّوهُنَّ} قبل الدخول. {أَوْ تَفْرِضُوا لَهُنَّ فَرِيضَةً} قبل تسمية المهر. {وَمَتِّعُوهُنَّ} أعطوهن شيئًا. {عَلَى الْمُوسِعِ قَدَرُهُ وَعَلَى الْمُقْتِرِ قَدَرُهُ} كلّ بحسب حاله. {مَتَاعًا بِالْمَعْرُوفِ حَقًّا عَلَى الْمُحْسِنِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-236', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-236">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-236">الطلاق قبل الدخول وقبل فرض المهر جائز ولا مهر فيه لكن تجب المتعة وهي عطاء يقدّم للمطلقة تطييبًا لخاطرها. على الغني قدره وعلى الفقير قدره. واختلف في وجوبها: فقيل واجبة لكل مطلقة وقيل مستحبة. حقًّا على المحسنين أي ثابتًا على أهل الإحسان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-236', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-236">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-236">يقول تعالى: لا إثم عليكم إن طلقتم النساء قبل أن تمسوهن أو تفرضوا لهن مهرًا. ولكن أعطوهن متعة يتبلّغن بها: على الموسع بقدر سعته وعلى المقتر بقدر ما يجد. متاعًا بالمعروف حقًّا على من يريد الإحسان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-236', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-237">
+                <div class="ayah-text">وَإِ<span class="tj-khf">ن طَ</span>لَّقۡتُمُوهُ<span class="tj-ghn">نَّ</span> مِ<span class="tj-khf">ن قَ</span>بۡلِ أَ<span class="tj-khf">ن تَ</span>مَسُّوهُ<span class="tj-ghn">نَّ</span> وَقَدۡ فَرَضۡتُمۡ لَهُ<span class="tj-ghn">نَّ</span> فَرِیضَةࣰ فَنِصۡفُ مَا فَرَضۡتُمۡ إِلَّ<span class="tj-mdd">اۤ</span> أَ<span class="tj-dgm">ن یَ</span>عۡفُونَ أَوۡ یَعۡفُوَ<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱلَّ</span>ذِی بِیَدِهِۦ عُقۡدَةُ <span class="tj-slt">ٱل</span>نِّكَاحِۚ وَأَن تَعۡفُوۤ<span class="tj-slt">ا۟</span> أَقۡرَبُ لِل<span class="tj-slt">تَّ</span>قۡوَىٰۚ وَلَا تَنسَوُ<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡفَضۡلَ بَیۡنَكُمۡۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ بِمَا تَعۡمَلُونَ بَصِیرٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن طلّقتم قبل المسيس وقد فُرض المهر فنصفه، إلا أن تعفو المرأة أو يعفو الزوج فيكمله، والعفو أقرب للتقوى ولا تنسوا الفضل بينكم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-237">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-237">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-237">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-237">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-237">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-237">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-237">إن طلق قبل الدخول وقد سُمّي المهر فلها نصفه. إلا أن تعفو المرأة عن نصفها أو يعفو الذي بيده عقدة النكاح وهو الزوج فيكمل المهر. والعفو أقرب للتقوى. ولا تنسوا الفضل والإحسان بينكم في المعاملات. إن الله بما تعملون بصير لا يخفى عليه شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-237', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-237">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-237">إذا طلّقها قبل الدخول وقد فُرض لها مهر فعليه نصفه. إلا أن تعفو المرأة فتتنازل عن نصفها أو يعفو الزوج فيدفع المهر كاملًا. وأن تعفوا أقرب للتقوى. ولا تنسوا الفضل بينكم أي المعروف والإحسان في المعاملة. إن الله بما تعملون بصير.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-237', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-237">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-237">{وَإِنْ طَلَّقْتُمُوهُنَّ مِنْ قَبْلِ أَنْ تَمَسُّوهُنَّ وَقَدْ فَرَضْتُمْ لَهُنَّ فَرِيضَةً فَنِصْفُ مَا فَرَضْتُمْ} نصف المهر. {إِلَّا أَنْ يَعْفُونَ} النساء عن النصف. {أَوْ يَعْفُوَ الَّذِي بِيَدِهِ عُقْدَةُ النِّكَاحِ} الزوج فيكمل. {وَأَنْ تَعْفُوا أَقْرَبُ لِلتَّقْوَى وَلَا تَنْسَوُا الْفَضْلَ بَيْنَكُمْ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-237', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-237">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-237">الطلاق قبل الدخول مع فرض المهر يوجب نصفه. إلا أن تعفو المرأة أو يعفو الذي بيده عقدة النكاح. واختُلف فيه: الزوج عند مالك والشافعي أو الولي عند أبي حنيفة. والعفو أقرب للتقوى ترغيب في التسامح. ولا تنسوا الفضل أي الإحسان والمعروف.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-237', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-237">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-237">يقول تعالى: وإن فارقتموهن قبل الدخول وقد سميتم مهرًا فلهن نصفه. إلا أن تتنازل المرأة عن نصفها أو يسمح الزوج بدفع المهر كاملًا. والتسامح أقرب لتقوى الله. ولا تتركوا الإحسان بينكم والتفضل. إن الله بما تعملون بصير يراقب أعمالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-237', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-238">
+                <div class="ayah-text">حَـٰفِظُو<span class="tj-slt">ا۟</span> عَلَى <span class="tj-slt">ٱل</span>صَّلَوَ ٰ⁠تِ وَ<span class="tj-slt">ٱل</span>صَّلَوٰةِ <span class="tj-slt">ٱ</span>لۡوُسۡطَىٰ وَقُومُو<span class="tj-slt">ا۟</span> لِلَّهِ <span class="tj-mdd">قَـٰ</span>نِتِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله بالمحافظة على الصلوات عمومًا والصلاة الوسطى خصوصًا، وأن يقوموا لله في الصلاة قانتين خاشعين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-238">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-238">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-238">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-238">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-238">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-238">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-238">أمر بالمحافظة على الصلوات الخمس بأدائها في أوقاتها بأركانها وشروطها وخشوعها. وخصّ الصلاة الوسطى لفضلها وهي العصر على الراجح. وقوموا لله قانتين أي خاشعين مطيعين ساكنين فيها. وهذه الآية جاءت وسط آيات الأحكام الأسرية تنبيهًا على أهمية الصلاة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-238', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-238">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-238">أمر بالمحافظة على الصلوات في أوقاتها وأدائها كاملة. والصلاة الوسطى: اختلف فيها والأرجح أنها العصر لحديث: شغلونا عن الصلاة الوسطى صلاة العصر. وقوموا لله قانتين أي مطيعين خاشعين. وقد كانوا يتكلمون في الصلاة فنُهوا عن ذلك بهذه الآية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-238', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-238">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-238">{حَافِظُوا عَلَى الصَّلَوَاتِ} الخمس المفروضة. {وَالصَّلَاةِ الْوُسْطَى} اختلف فيها: قيل العصر وهو الأرجح، وقيل الظهر، وقيل الصبح. {وَقُومُوا لِلَّهِ قَانِتِينَ} مطيعين خاشعين. وكانوا يتكلمون في الصلاة فنُهوا عن الكلام فيها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-238', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-238">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-238">المحافظة على الصلاة: أداؤها في أوقاتها بشروطها وأركانها. والصلاة الوسطى: أشهر الأقوال أنها العصر لأحاديث كثيرة. والقنوت: الطاعة والخشوع والسكوت. وفي الآية دليل على تحريم الكلام في الصلاة. وجاءت وسط أحكام الطلاق للتنبيه على ألا يُشغلكم شأن عن الصلاة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-238', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-238">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-238">يقول تعالى: حافظوا على صلواتكم الخمس وعلى الصلاة الوسطى وهي صلاة العصر عند أكثر أهل العلم. وقوموا لله في صلاتكم مطيعين خاشعين تاركين للكلام ولما لا يليق في الصلاة. وكانوا قبل ذلك يتكلمون في الصلاة فنُهوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-238', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-239">
+                <div class="ayah-text">فَإِنۡ خِفۡتُمۡ فَرِجَالًا أَوۡ رُكۡبَانࣰاۖ فَإِذَ<span class="tj-mdd">اۤ</span> أَمِ<span class="tj-khf">نتُ</span>مۡ فَ<span class="tj-slt">ٱ</span>ذۡكُرُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ كَمَا عَلَّمَكُم <span class="tj-ghn">مَّ</span>ا لَمۡ تَكُونُو<span class="tj-slt">ا۟</span> تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">صلاة الخوف: إن خفتم فصلّوا مشاة أو ركبانًا، فإذا أمنتم فاذكروا الله كما علّمكم ما لم تكونوا تعلمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-239">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-239">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-239">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-239">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-239">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-239">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-239">إن خفتم من عدو أو غيره فصلوا على أي حال: مشاة أو ركبانًا مستقبلي القبلة أو غير مستقبليها. فالصلاة لا تسقط بحال. فإذا أمنتم وزال الخوف فصلوا الصلاة تامة واذكروا الله كما هداكم وعلّمكم ما لم تكونوا تعلمون من أحكام الدين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-239', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-239">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-239">فإن خفتم من عدو فصلوا رجالًا أي مشاة أو ركبانًا على دوابكم مستقبلي القبلة أو مستدبريها. فإذا أمنتم فاذكروا الله بالصلاة التامة كما علّمكم. وفي الآية دليل على أن الصلاة لا تسقط بحال ولو في شدة الخوف والقتال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-239', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-239">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-239">{فَإِنْ خِفْتُمْ فَرِجَالًا أَوْ رُكْبَانًا} مشاة أو على دواب. يصلون إيماءً إلى أي جهة. {فَإِذَا أَمِنْتُمْ} زال الخوف. {فَاذْكُرُوا اللَّهَ كَمَا عَلَّمَكُمْ} أي صلوا الصلاة تامة مستقبلين القبلة. {مَا لَمْ تَكُونُوا تَعْلَمُونَ} من أمر دينكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-239', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-239">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-239">رخّص في الصلاة عند الخوف مشاة أو ركبانًا إلى أي جهة. ورجالًا جمع راجل أي ماشٍ. وهذا في شدة الخوف. فإذا أمنتم فصلوا الصلاة الكاملة بركوعها وسجودها واستقبال القبلة. واذكروا الله واشكروه على ما علّمكم من أحكام دينكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-239', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-239">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-239">يقول تعالى: فإن كنتم في حال خوف من عدو فصلوا مشاة على أقدامكم أو ركبانًا على دوابكم إلى أي جهة بالإيماء. فإذا زال الخوف فأتموا الصلاة كما أمركم الله. واذكروا الله واشكروه على ما علّمكم من الدين ما لم تكونوا تعلمون من قبل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-239', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-240">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱلَّ</span>ذِینَ یُتَوَفَّوۡنَ مِ<span class="tj-khf">نكُ</span>مۡ وَیَذَرُونَ أَزۡوَ ٰ⁠جَ<span class="tj-dgm">ࣰا وَ</span>صِیَّ<span class="tj-dgm">ةࣰ لِّ</span>أَزۡوَ ٰ⁠جِهِم <span class="tj-ghn">مَّ</span><span class="tj-mdd">تَـٰ</span>عًا إِلَى <span class="tj-slt">ٱ</span>لۡحَوۡلِ غَیۡرَ إِخۡرَاجࣲۚ فَإِنۡ خَرَ<span class="tj-qlq">جۡ</span>نَ فَلَا جُنَاحَ عَلَیۡكُمۡ فِی مَا فَعَلۡنَ فِ<span class="tj-mdd">یۤ</span> أَ<span class="tj-khf">نفُ</span>سِهِ<span class="tj-ghn">نَّ</span> مِ<span class="tj-dgm">ن مَّ</span>عۡرُوفࣲۗ وَ<span class="tj-slt">ٱ</span>للَّهُ عَزِیزٌ حَكِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الذين يتوفون ويذرون أزواجًا: وصية لأزواجهم بالمتاع إلى الحول بلا إخراج، فإن خرجن فلا جناح فيما فعلن بالمعروف.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-240">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-240">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-240">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-240">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-240">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-240">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-240">كان في أول الإسلام تعتدّ المتوفى عنها حولًا كاملًا تسكن في بيت زوجها ويُنفق عليها من تركته. ثم نُسخ بآية أربعة أشهر وعشرًا وبآية الميراث. فإن خرجت من بيتها قبل الحول فلا جناح على الأولياء فيما فعلت من معروف كالتزيّن والنكاح بعد انقضاء العدة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-240', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-240">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-240">كانت عدة الوفاة حولًا كاملًا فنُسخت بأربعة أشهر وعشرًا. وكان لها السكنى في بيت الزوج حولًا فنُسخ بالميراث. وكان حقها من الميراث مقصورًا على الوصية فنُسخ بالفرض الثمن أو الربع. فإن خرجت قبل الحول فلا جناح فيما فعلته بالمعروف.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-240', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-240">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-240">هذه الآية منسوخة عند الجمهور. كانت المرأة تعتد حولًا وينفق عليها من تركة زوجها ولا تخرج. فنُسخت العدة بأربعة أشهر وعشرًا ونُسخت النفقة بالميراث. {فَإِنْ خَرَجْنَ فَلَا جُنَاحَ عَلَيْكُمْ فِي مَا فَعَلْنَ فِي أَنْفُسِهِنَّ مِنْ مَعْرُوفٍ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-240', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-240">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-240">الجمهور على أن هذه الآية منسوخة بآية أربعة أشهر وعشرًا في العدة وبآيات المواريث في النفقة. فكانت المرأة في أول الإسلام تمكث حولًا في بيت الزوج المتوفى ثم خُففت إلى أربعة أشهر وعشر. والله عزيز في حكمه حكيم في تشريعه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-240', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-240">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-240">يقول تعالى: كانت المرأة إذا توفي عنها زوجها تسكن في بيته حولًا وينفق عليها من ماله وصية. فنُسخ ذلك بآية أربعة أشهر وعشرًا في العدة وبآية الميراث في النفقة. فإن خرجت بعد انقضاء عدتها فلا حرج عليها فيما صنعت في نفسها من تزيّن وتعرّض للنكاح.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-240', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-241">
+                <div class="ayah-text">وَلِلۡمُطَلَّ<span class="tj-mdd">قَـٰ</span>تِ مَ<span class="tj-mdd">تَـٰ</span><span class="tj-qlb">عُۢ بِ</span><span class="tj-slt">ٱ</span>لۡمَعۡرُوفِۖ حَقًّا عَلَى <span class="tj-slt">ٱ</span>لۡمُتَّقِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وللمطلقات جميعًا متاع بالمعروف، حقًّا على المتقين الذين يخافون الله ويحسنون إلى خلقه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-241">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-241">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-241">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-241">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-241">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-241">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-241">لكل مطلقة متاع بالمعروف أي عطاء يناسب حالها وحال مطلّقها. حقًّا على المتقين لأن من تمام التقوى الإحسان إلى المطلقة بما يجبر خاطرها ويعوّضها شيئًا من الضرر الذي لحقها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-241', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-241">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-241">هذا أمر من الله بالمتعة لكل مطلقة. قال ابن عباس: لكل مطلقة متعة. حقًّا على المتقين. وقد ذكر الله المتعة في ثلاث آيات: ذكرها حقًّا على المحسنين وحقًّا على المتقين وأطلقها في آية أخرى. فهي واجبة أو مستحبة مؤكدة على اختلاف العلماء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-241', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-241">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-241">{وَلِلْمُطَلَّقَاتِ مَتَاعٌ بِالْمَعْرُوفِ} قيل عامة في كل مطلقة، وقيل خاصة بغير المدخول بها التي لم يُفرض لها. {حَقًّا عَلَى الْمُتَّقِينَ} أي ثابتًا ولازمًا على من يتقي الله ويخاف عقابه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-241', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-241">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-241">ذهب كثير من العلماء إلى أن لكل مطلقة متعة لعموم الآية. والمتعة: ما يُعطى للمطلقة جبرًا لخاطرها كثوب أو نفقة. حقًّا على المتقين: ثابتًا لازمًا على من اتقى الله. وفي التعبير بالمتقين ترغيب في الإحسان إلى المطلقات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-241', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-241">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-241">يقول تعالى: ولكل مطلقة حقّ في المتعة بالمعروف. حقًّا على المتقين الذين يخافون الله ويرجون ثوابه. وهذا يعمّ كل مطلقة سواء دُخل بها أم لا فُرض لها أم لا فلها حقّ في المتعة بحسب المعروف.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-241', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-242">
+                <div class="ayah-text">كَذَ ٰ⁠لِكَ یُبَیِّنُ <span class="tj-slt">ٱ</span>للَّهُ لَكُمۡ ءَا<span class="tj-mdd">یَـٰ</span>تِهِۦ لَعَلَّكُمۡ تَعۡقِلُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">خاتمة أحكام الأسرة: كذلك يبيّن الله لكم آياته وأحكامه لعلكم تعقلون وتعملون بما فيها من الحكم والمصالح.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-242">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-242">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-242">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-242">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-242">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-242">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-242">كذلك كما بيّن لكم هذه الأحكام العظيمة في النكاح والطلاق والعدة يبيّن الله لكم آياته الدالة على الحق لعلكم تعقلون وتفهمون حكمته وتعملون بمقتضاها. وفي هذا دلالة على أن هذه الأحكام فيها حِكم عظيمة تُدرك بالعقل والتدبر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-242', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-242">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-242">كما بيّن لكم الأحكام والحلال والحرام في أمور النكاح والطلاق والرجعة والعدة والمتعة كذلك يبيّن لكم سائر أحكامه لعلكم تعقلون عن الله أمره ونهيه وتعملون بما شرع لكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-242', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-242">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-242">{كَذَلِكَ يُبَيِّنُ اللَّهُ لَكُمْ آيَاتِهِ} أي كما بيّن لكم أحكام الطلاق والعدة يبيّن لكم سائر أحكامه. {لَعَلَّكُمْ تَعْقِلُونَ} تفهمون وتعملون بما يقتضيه العقل من طاعة الله واجتناب نواهيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-242', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-242">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-242">كذلك يبيّن الله أحكامه في أمور الأسرة والمعاملات ليتدبرها أولو الألباب ويعقلوا حكمة التشريع ومقاصده من حفظ النسل والمال والعرض. لعلكم تعقلون: أي تستعملون عقولكم فيما شرع لكم من الأحكام العادلة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-242', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-242">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-242">يقول تعالى: كما بيّنت لكم أحكام الطلاق والعدة والمتعة والنكاح كذلك أبيّن لكم سائر آياتي وأحكامي لعلكم تعقلون عن الله ما بيّنه لكم وتعملون بما أمركم به وتنتهون عما نهاكم عنه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-242', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-14.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">أصناف الناس والابتلاء</span>
+            </a>
+            <a href="section-16.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">قصص الأمم السابقة والقتال في سبيل الله</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١٥: أحكام اجتماعية — الإنفاق والزواج والطلاق<br>
+        <small>آيات ٢١٥ – ٢٤٢ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

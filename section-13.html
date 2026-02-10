@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — أحكام الأهلّة والحج والقتال</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١٣ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#1abc9c">
+            <div class="section-num">١٣</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">أحكام الأهلّة والحج والقتال</h2>
+                <h3 class="section-title-en">Rulings: New Moons, Hajj & Fighting</h3>
+            </div>
+            <div class="section-ayah-range">آيات ١٨٩ – ٢٠٣</div>
+        </div>
+
+        <div class="section-desc">
+            <p>السؤال عن الأهلة وبيان أنها مواقيت للناس والحج، وأحكام القتال في سبيل الله والقتال في الأشهر الحرم، وأحكام الحج والعمرة</p>
+        </div>
+
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="189">
+                        <div class="flow-node-num">١٨٩</div>
+                        <div class="flow-node-text">الأهلّة مواقيت للناس والحج</div>
+                        <div class="flow-node-key">یَسۡـٔلُونَكَ عَنِ ٱلۡأَهِلَّةِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="190-194">
+                        <div class="flow-node-num">١٩٠–١٩٤</div>
+                        <div class="flow-node-text">أحكام القتال في سبيل الله</div>
+                        <div class="flow-node-key">وَقَـٰتِلُو۟ا فِی سَبِیلِ ٱللَّهِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="195">
+                        <div class="flow-node-num">١٩٥</div>
+                        <div class="flow-node-text">الإنفاق في سبيل الله والإحسان</div>
+                        <div class="flow-node-key">وَأَنفِقُو۟ا فِی سَبِیلِ ٱللَّهِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="196-197">
+                        <div class="flow-node-num">١٩٦–١٩٧</div>
+                        <div class="flow-node-text">إتمام الحج والعمرة وآدابهما</div>
+                        <div class="flow-node-key">وَأَتِمُّو۟ا ٱلۡحَجَّ وَٱلۡعُمۡرَةَ لِلَّهِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="198-199">
+                        <div class="flow-node-num">١٩٨–١٩٩</div>
+                        <div class="flow-node-text">الإفاضة من عرفات والاستغفار</div>
+                        <div class="flow-node-key">فَإِذَاۤ أَفَضۡتُم مِّنۡ عَرَفَـٰتࣲ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="200-203">
+                        <div class="flow-node-num">٢٠٠–٢٠٣</div>
+                        <div class="flow-node-text">ذكر الله بعد المناسك وأيام التشريق</div>
+                        <div class="flow-node-key">فَإِذَا قَضَیۡتُم مَّنَـٰسِكَكُمۡ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-189">
+                <div class="ayah-text">۞ یَسۡـَٔلُونَكَ عَنِ <span class="tj-slt">ٱ</span>لۡأَهِلَّةِۖ قُلۡ هِیَ مَوَ<span class="tj-mdd"> ٰ⁠</span>قِیتُ لِل<span class="tj-ghn">نَّ</span>اسِ وَ<span class="tj-slt">ٱ</span>لۡحَجِّۗ وَلَیۡسَ <span class="tj-slt">ٱ</span>لۡبِرُّ بِأَ<span class="tj-khf">ن</span> تَأۡتُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡبُیُوتَ مِ<span class="tj-khf">ن</span> ظُهُورِهَا وَلَ<span class="tj-mdd">ـٰ</span>كِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>لۡبِرَّ مَنِ <span class="tj-slt">ٱ</span>تَّقَ<span class="tj-mdd">ىٰۗ</span> وَأۡتُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡبُیُوتَ مِنۡ أَ<span class="tj-qlq">بۡ</span>وَ<span class="tj-mdd"> ٰ⁠</span>بِهَاۚ وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَ لَعَلَّكُمۡ تُفۡلِحُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">سألوا النبي ﷺ عن الأهلّة وتغيّر أحوال القمر، فأجاب الله بأنها مواقيت للناس يعرفون بها أوقاتهم وللحج، ونهى عن عادة جاهلية في إتيان البيوت من ظهورها.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-189">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-189">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-189">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-189">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-189">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-189">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-189">سألوا عن الأهلّة وتقلّب القمر فأجابهم الله بالحكمة من ذلك وهي أنها مواقيت للناس يعرفون بها أوقات عباداتهم ومعاملاتهم وللحج خاصة. ثم نهى عن عادة جاهلية كانوا إذا أحرموا يدخلون بيوتهم من ظهورها لا من أبوابها، فقال: ليس البر هذا ولكن البر من اتقى الله. وأتوا البيوت من أبوابها واتقوا الله لعلكم تفلحون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-189', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-189">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-189">سأل معاذ بن جبل وثعلبة بن غنم النبي ﷺ عن الأهلة فنزلت. فأجاب بأنها مواقيت للناس في صومهم وإفطارهم وعِدد نسائهم وحجهم. ثم ذكر عادة الأنصار في الجاهلية أنهم إذا أحرموا لم يدخلوا بيوتهم من أبوابها بل من ظهورها، فنهاهم الله عن ذلك وأمرهم بإتيان البيوت من أبوابها وبتقوى الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-189', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-189">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-189">{يَسْأَلُونَكَ عَنِ الْأَهِلَّةِ} عن تغيّر القمر وزيادته ونقصانه. {قُلْ هِيَ مَوَاقِيتُ لِلنَّاسِ} يعرفون بها أوقات صومهم وحجهم وعِدد نسائهم وآجال ديونهم. {وَلَيْسَ الْبِرُّ بِأَنْ تَأْتُوا الْبُيُوتَ مِنْ ظُهُورِهَا} كانوا في الجاهلية إذا أحرموا نقبوا ظهور بيوتهم. فنهاهم الله عن ذلك وأمرهم بإتيان البيوت من أبوابها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-189', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-189">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-189">الأهلّة جمع هلال. سألوا عن حكمة تغيّر القمر فأجاب الله بالفائدة العملية وهي التوقيت. فبالأهلة تُعرف مواقيت العبادات والمعاملات والحج. ثم نهى عن عادة جاهلية كانوا يأتون البيوت من ظهورها إذا أحرموا ويرونها برًّا، فبيّن أن البر ليس في ذلك بل في تقوى الله. وأتوا البيوت من أبوابها أي ائتوا الأمور من وجوهها الصحيحة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-189', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-189">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-189">يقول تعالى: يسألونك يا محمد عن الأهلة ما بالها تبدو دقيقة ثم تعظم ثم ترجع. قل هي مواقيت للناس يعرفون بها آجال ديونهم وعدد نسائهم ووقت صومهم وإفطارهم وللحج. وليس البر بأن تأتوا البيوت من ظهورها كما كنتم تفعلون في الجاهلية ولكن البر من اتقى الله. وأتوا البيوت من أبوابها واتقوا الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-189', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-190">
+                <div class="ayah-text">وَقَ<span class="tj-mdd">ـٰ</span>تِلُو<span class="tj-slt">ا۟</span> فِی سَبِیلِ <span class="tj-slt">ٱل</span>لَّهِ <span class="tj-slt">ٱلَّ</span>ذِینَ یُقَ<span class="tj-mdd">ـٰ</span>تِلُونَكُمۡ وَلَا تَعۡتَدُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟ۚ</span> إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ لَا یُحِبُّ <span class="tj-slt">ٱ</span>لۡمُعۡتَدِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله بقتال من يقاتل المسلمين في سبيل الله، مع النهي عن الاعتداء وتجاوز الحدود، فإن الله لا يحب المعتدين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-190">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-190">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-190">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-190">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-190">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-190">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-190">أمر الله بالقتال في سبيله وهو قتال لإعلاء كلمة الله وإزالة الفتنة. وقيّده بمن يقاتلكم فلا تقاتلوا من لا يقاتلكم. {وَلَا تَعْتَدُوا} بقتل النساء والأطفال والشيوخ ومن لم يقاتل. {إِنَّ اللَّهَ لَا يُحِبُّ الْمُعْتَدِينَ} المتجاوزين لحدود الله في القتال وغيره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-190', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-190">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-190">هذه أول آية نزلت في الأمر بالقتال. أمر الله بقتال الكفار المقاتلين ونهى عن الاعتداء وهو قتل النساء والصبيان والرهبان ومن لا يقاتل. قال الحسن البصري: يقاتلونهم بمثل ما يقاتلونهم. {إِنَّ اللَّهَ لَا يُحِبُّ الْمُعْتَدِينَ} المتجاوزين لما أمرهم الله به في القتال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-190', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-190">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-190">{وَقَاتِلُوا فِي سَبِيلِ اللَّهِ الَّذِينَ يُقَاتِلُونَكُمْ} أمر بقتال المقاتلين دون غيرهم من النساء والصبيان والشيوخ. {وَلَا تَعْتَدُوا} بقتل من لا يقاتل أو بالمثلة أو بالغدر. {إِنَّ اللَّهَ لَا يُحِبُّ الْمُعْتَدِينَ} المتجاوزين لحدوده في كل شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-190', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-190">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-190">أمر بقتال من يقاتل المسلمين. والاعتداء المنهي عنه يشمل: قتل النساء والصبيان والمجانين والرهبان ومن لا يقاتل، والمثلة بالقتلى، وتجاوز حدود الله. وقيل الآية منسوخة بآية السيف، وقيل محكمة وأن المراد قتال المقاتلين. {إِنَّ اللَّهَ لَا يُحِبُّ الْمُعْتَدِينَ} في كل شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-190', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-190">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-190">يقول تعالى: وقاتلوا أيها المؤمنون في سبيل الله الذين يقاتلونكم من المشركين ولا تعتدوا بقتل النساء والذراري ومن لم يكن من أهل القتال. إن الله لا يحب من اعتدى وتجاوز ما أمره الله به وأذن له فيه من القتال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-190', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-191">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱ</span><span class="tj-qlq">قۡ</span>تُلُوهُمۡ حَیۡثُ ثَقِفۡتُمُوهُمۡ وَأَخۡرِجُوهُم <span class="tj-ghn">مِّ</span>نۡ حَیۡثُ أَخۡرَجُوكُمۡۚ وَ<span class="tj-slt">ٱ</span>لۡفِتۡنَةُ أَشَدُّ مِنَ <span class="tj-slt">ٱ</span>لۡقَتۡلِۚ وَلَا تُقَ<span class="tj-mdd">ـٰ</span>تِلُوهُمۡ عِ<span class="tj-khf">ن</span>دَ <span class="tj-slt">ٱ</span>لۡمَسۡجِدِ <span class="tj-slt">ٱ</span>لۡحَرَامِ حَتَّ<span class="tj-mdd">ىٰ</span> یُقَ<span class="tj-mdd">ـٰ</span>تِلُوكُمۡ فِیهِۖ فَإِ<span class="tj-khf">ن</span> قَ<span class="tj-mdd">ـٰ</span>تَلُوكُمۡ فَ<span class="tj-slt">ٱ</span><span class="tj-qlq">قۡ</span>تُلُوهُمۡۗ كَذَ<span class="tj-mdd"> ٰ⁠</span>لِكَ جَزَ<span class="tj-mdd">اۤ</span>ءُ <span class="tj-slt">ٱ</span>لۡكَ<span class="tj-mdd">ـٰ</span>فِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر بقتال المشركين حيث وُجدوا وإخراجهم كما أخرجوا المسلمين، وبيّن أن الفتنة والشرك أشد من القتل، مع النهي عن القتال عند المسجد الحرام إلا دفاعًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-191">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-191">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-191">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-191">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-191">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-191">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-191">أمر بقتال المشركين حيث ثُقفوا أي وُجدوا وأُدركوا، وإخراجهم من ديارهم كما أخرجوا المسلمين من مكة. والفتنة وهي الشرك والكفر أشد من القتل. ونهى عن القتال عند المسجد الحرام احترامًا لحرمته إلا أن يبدأوا هم بالقتال فيه فيُردّ عليهم. كذلك جزاء الكافرين المعتدين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-191', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-191">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-191">{وَاقْتُلُوهُمْ حَيْثُ ثَقِفْتُمُوهُمْ} أي حيث وجدتموهم في أي مكان. {وَأَخْرِجُوهُمْ مِنْ حَيْثُ أَخْرَجُوكُمْ} أي من مكة. {وَالْفِتْنَةُ أَشَدُّ مِنَ الْقَتْلِ} الشرك بالله أعظم إثمًا من القتل. {وَلَا تُقَاتِلُوهُمْ عِنْدَ الْمَسْجِدِ الْحَرَامِ حَتَّى يُقَاتِلُوكُمْ فِيهِ} فإن بدأوا فاقتلوهم جزاءً لكفرهم واعتدائهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-191', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-191">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-191">{وَاقْتُلُوهُمْ حَيْثُ ثَقِفْتُمُوهُمْ} أي وجدتموهم وأدركتموهم. {وَأَخْرِجُوهُمْ مِنْ حَيْثُ أَخْرَجُوكُمْ} يعني مكة. {وَالْفِتْنَةُ} الشرك {أَشَدُّ مِنَ الْقَتْلِ}. ولا تبدأوهم بالقتال عند المسجد الحرام حتى يبدأوكم، فإن قاتلوكم فيه فاقتلوهم. كذلك جزاء الكافرين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-191', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-191">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-191">ثقفتموهم: وجدتموهم وأدركتموهم. والفتنة هنا: الشرك والكفر، وهو أعظم عند الله من القتل. ونهى عن ابتداء القتال عند المسجد الحرام تعظيمًا لحرمته، إلا أن يبدأ الكفار فحينئذ يجوز الدفاع. وهذا الحكم عند بعض العلماء منسوخ بآيات القتال المطلقة، وعند آخرين محكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-191', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-191">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-191">يقول تعالى: واقتلوا المشركين حيث وجدتموهم وأخرجوهم من مكة كما أخرجوكم منها. والفتنة وهي الشرك بالله أعظم من القتل. ولا تقاتلوهم عند المسجد الحرام حتى يقاتلوكم فيه، فإن بدأوكم بالقتال فاقتلوهم فيه. كذلك يُجزى كل كافر بكفره وعدوانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-191', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-192">
+                <div class="ayah-text">فَإِنِ <span class="tj-slt">ٱ</span><span class="tj-khf">ن</span>تَهَوۡ<span class="tj-slt">ا۟</span> فَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ غَفُو<span class="tj-dgm">رࣱ</span> رَّحِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">فإن انتهى الكفار عن كفرهم وقتالهم فإن الله غفور رحيم يقبل توبتهم ويرحمهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-192">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-192">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-192">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-192">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-192">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-192">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-192">فإن انتهوا عن الكفر والقتال ورجعوا إلى الإيمان فإن الله غفور لما سلف من ذنوبهم رحيم بهم. وفي هذا فتح لباب التوبة وترغيب في الدخول في الإسلام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-192', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-192">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-192">{فَإِنِ انْتَهَوْا} أي عن الكفر والشرك وقتال المسلمين. {فَإِنَّ اللَّهَ غَفُورٌ} لما سلف من ذنوبهم {رَحِيمٌ} بهم إذا تابوا. والإسلام يجبّ ما قبله. وفي هذا ترغيب عظيم للكفار في الدخول في الإسلام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-192', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-192">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-192">{فَإِنِ انْتَهَوْا} عن الكفر والقتال ودخلوا الإسلام. {فَإِنَّ اللَّهَ غَفُورٌ رَحِيمٌ} يغفر لهم ما سلف ويرحمهم. والإسلام يجبّ ما قبله كما جاء في الحديث.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-192', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-192">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-192">فإن كفّوا عن الشرك والقتال وآمنوا فإن الله يغفر لهم ما تقدم من الشرك والقتل لأن الإسلام يمحو ما قبله. وختم بالغفور الرحيم ترغيبًا في التوبة والإيمان وفتحًا لباب الرجاء أمام المشركين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-192', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-192">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-192">يقول تعالى: فإن انتهى هؤلاء المشركون عن شركهم بالله وقتالهم إياكم ودخلوا في الإسلام فإن الله غفور لذنوبهم السابقة رحيم بهم. فدعوهم وكفوا عنهم فإن الله قد عفا عمن تاب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-192', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-193">
+                <div class="ayah-text">وَقَ<span class="tj-mdd">ـٰ</span>تِلُوهُمۡ حَتَّ<span class="tj-mdd">ىٰ</span> لَا تَكُونَ فِتۡنَ<span class="tj-dgm">ةࣱ</span> وَیَكُونَ <span class="tj-slt">ٱل</span>دِّینُ لِلَّهِۖ فَإِنِ <span class="tj-slt">ٱ</span><span class="tj-khf">ن</span>تَهَوۡ<span class="tj-slt">ا۟</span> فَلَا عُ<span class="tj-qlq">دۡ</span>وَ<span class="tj-mdd"> ٰ⁠</span>نَ إِلَّا عَلَى <span class="tj-slt">ٱل</span>ظَّ<span class="tj-mdd">ـٰ</span>لِمِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الأمر بالقتال حتى لا تكون فتنة (شرك) ويكون الدين كله لله، فإن انتهوا فلا عدوان إلا على الظالمين المصرّين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-193">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-193">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-193">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-193">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-193">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-193">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-193">أمر الله بالقتال حتى تزول الفتنة وهي الشرك ويكون الدين كله لله وحده. فإن انتهوا عن الشرك فلا عدوان إلا على الظالمين المستمرين في ظلمهم وكفرهم. وهذا يدل على أن من أسلم وجب الكف عنه ومن بقي على كفره فهو ظالم يُقاتَل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-193', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-193">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-193">{وَقَاتِلُوهُمْ حَتَّى لَا تَكُونَ فِتْنَةٌ} أي شرك. قال ابن عباس: حتى لا يكون شرك. {وَيَكُونَ الدِّينُ لِلَّهِ} أي تكون العبادة كلها لله وحده لا شريك له. {فَإِنِ انْتَهَوْا فَلَا عُدْوَانَ إِلَّا عَلَى الظَّالِمِينَ} أي من انتهى فلا سبيل عليه، وإنما العدوان على الظالمين المصرّين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-193', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-193">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-193">{وَقَاتِلُوهُمْ حَتَّى لَا تَكُونَ فِتْنَةٌ} أي شرك. {وَيَكُونَ الدِّينُ لِلَّهِ} أي الطاعة والعبادة لله وحده. {فَإِنِ انْتَهَوْا} عن الشرك وأسلموا. {فَلَا عُدْوَانَ إِلَّا عَلَى الظَّالِمِينَ} أي لا قتال إلا على من ظلم بالاستمرار في الكفر والعدوان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-193', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-193">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-193">الفتنة هنا: الشرك والكفر. والغاية من القتال أن يزول الشرك ويكون الدين خالصًا لله. {فَإِنِ انْتَهَوْا} عن الشرك. {فَلَا عُدْوَانَ} سمّاه عدوانًا من باب المقابلة والمشاكلة. والمعنى: لا قتال إلا على من بقي ظالمًا مشركًا مصرًّا على عدوانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-193', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-193">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-193">يقول تعالى: قاتلوا المشركين حتى لا يبقى شرك ويكون الدين والعبادة لله وحده لا لغيره. فإن انتهوا عن الشرك فلا سبيل لكم عليهم، وإنما العقوبة والقتال على الظالمين الذين أبوا الانتهاء عن شركهم وعدوانهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-193', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-194">
+                <div class="ayah-text"><span class="tj-slt">ٱل</span>شَّهۡرُ <span class="tj-slt">ٱ</span>لۡحَرَامُ بِ<span class="tj-slt">ٱل</span>شَّهۡرِ <span class="tj-slt">ٱ</span>لۡحَرَامِ وَ<span class="tj-slt">ٱ</span>لۡحُرُمَ<span class="tj-mdd">ـٰ</span>تُ قِصَا<span class="tj-khf">صࣱۚ</span> فَمَنِ <span class="tj-slt">ٱ</span>عۡتَدَ<span class="tj-mdd">ىٰ</span> عَلَیۡكُمۡ فَ<span class="tj-slt">ٱ</span>عۡتَدُو<span class="tj-slt">ا۟</span> عَلَیۡهِ بِمِثۡلِ مَا <span class="tj-slt">ٱ</span>عۡتَدَ<span class="tj-mdd">ىٰ</span> عَلَیۡكُمۡۚ وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَ وَ<span class="tj-slt">ٱ</span>عۡلَمُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ مَعَ <span class="tj-slt">ٱ</span>لۡمُتَّقِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الشهر الحرام بالشهر الحرام والحرمات قصاص، فمن اعتدى عليكم فردّوا عليه بمثل ما اعتدى، واتقوا الله واعلموا أنه مع المتقين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-194">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-194">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-194">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-194">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-194">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-194">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-194">الشهر الحرام بالشهر الحرام أي إذا قاتلوكم في الشهر الحرام فقاتلوهم فيه. والحرمات قصاص أي من انتهك حرمة جاز الرد عليه بالمثل. فمن اعتدى عليكم فاعتدوا عليه بمثل ما اعتدى لا أكثر. واتقوا الله في ذلك فلا تتجاوزوا الحد. واعلموا أن الله مع المتقين بالنصر والتأييد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-194', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-194">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-194">نزلت حين صدّ المشركون المسلمين عن المسجد الحرام عام الحديبية في ذي القعدة وهو شهر حرام، فقاتلهم المسلمون من العام القادم في نفس الشهر فكان الشهر الحرام بالشهر الحرام. {وَالْحُرُمَاتُ قِصَاصٌ} من انتهك حرمتكم فلكم أن تردوا بالمثل. {وَاتَّقُوا اللَّهَ وَاعْلَمُوا أَنَّ اللَّهَ مَعَ الْمُتَّقِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-194', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-194">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-194">{الشَّهْرُ الْحَرَامُ بِالشَّهْرِ الْحَرَامِ} نزلت في عمرة القضاء حين دخل النبي ﷺ مكة في ذي القعدة كما صُدّ فيه. {وَالْحُرُمَاتُ قِصَاصٌ} من انتهك حرمة فلكم الرد بالمثل. {فَمَنِ اعْتَدَى عَلَيْكُمْ فَاعْتَدُوا عَلَيْهِ بِمِثْلِ مَا اعْتَدَى عَلَيْكُمْ} سمّي عدوانًا على سبيل المقابلة. {وَاتَّقُوا اللَّهَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-194', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-194">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-194">الحرمات قصاص: أي من انتهك حرمة فلكم أن تنتهكوا حرمته بالمثل. وهذا أصل في مشروعية القصاص والردّ بالمثل. {فَمَنِ اعْتَدَى عَلَيْكُمْ} سُمّي اعتداءً مجازًا لأنه ردّ على اعتداء. والقاعدة: المعاقبة بالمثل لا بالزيادة. {وَاتَّقُوا اللَّهَ} فلا تتجاوزوا في الرد. {وَاعْلَمُوا أَنَّ اللَّهَ مَعَ الْمُتَّقِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-194', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-194">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-194">يقول تعالى: الشهر الحرام بالشهر الحرام إذا انتهكوا حرمته بقتالكم فيه فلكم قتالهم فيه. والحرمات قصاص فمن انتهك حرمتكم فلكم أن تنتهكوا حرمته بالمثل. فمن اعتدى عليكم فردوا عليه بمثل ما فعل. واتقوا الله ولا تتجاوزوا الحد واعلموا أن الله مع المتقين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-194', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-195">
+                <div class="ayah-text">وَأَ<span class="tj-khf">ن</span>فِقُو<span class="tj-slt">ا۟</span> فِی سَبِیلِ <span class="tj-slt">ٱل</span>لَّهِ وَلَا تُلۡقُو<span class="tj-slt">ا۟</span> بِأَیۡدِیكُمۡ إِلَى <span class="tj-slt">ٱل</span>تَّهۡلُكَةِ وَأَحۡسِنُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟ۚ</span> إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ یُحِبُّ <span class="tj-slt">ٱ</span>لۡمُحۡسِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله بالإنفاق في سبيله ونهى عن إلقاء النفس إلى التهلكة بترك الإنفاق أو ترك الجهاد، وأمر بالإحسان فإن الله يحب المحسنين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-195">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-195">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-195">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-195">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-195">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-195">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-195">أمر الله بالإنفاق في سبيله وهو يشمل الإنفاق في الجهاد وجميع طرق الخير. {وَلَا تُلْقُوا بِأَيْدِيكُمْ إِلَى التَّهْلُكَةِ} بترك الإنفاق في سبيل الله أو بترك الجهاد أو بالإقدام على ما فيه هلاككم. {وَأَحْسِنُوا} في عبادة الله وإلى خلق الله. {إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ} في عبادتهم ومعاملتهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-195', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-195">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-195">أمر بالإنفاق في سبيل الله في سائر وجوه القربات والطاعات، ونهى عن إلقاء اليد إلى التهلكة. قال أبو أيوب الأنصاري: نزلت فينا معشر الأنصار حين أعزّ الله الإسلام، قلنا نقيم في أموالنا ونصلحها، فالتهلكة ترك الإنفاق في سبيل الله. وقيل: الإلقاء إلى التهلكة هو ترك الجهاد. {وَأَحْسِنُوا إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-195', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-195">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-195">{وَأَنْفِقُوا فِي سَبِيلِ اللَّهِ} في الجهاد وطاعة الله. {وَلَا تُلْقُوا بِأَيْدِيكُمْ إِلَى التَّهْلُكَةِ} قال ابن عباس: أنفق في سبيل الله ولو بسهم أو نعل ولا تلقوا بأيديكم إلى التهلكة بترك النفقة في سبيل الله. وقيل: لا تيأسوا فتتركوا الجهاد. {وَأَحْسِنُوا إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-195', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-195">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-195">أمر بالإنفاق في الجهاد وأعمال البر. والتهلكة: الهلاك. واختلف في المراد: قيل ترك الإنفاق في سبيل الله، وقيل ترك الجهاد والإقامة على الأموال، وقيل الإسراف حتى لا يبقى للنفس شيء. والأظهر أنه عامّ في كل ما يؤدي إلى الهلاك. {وَأَحْسِنُوا} أمر عامّ بالإحسان في كل شيء. {إِنَّ اللَّهَ يُحِبُّ الْمُحْسِنِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-195', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-195">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-195">يقول تعالى: أنفقوا أموالكم في سبيل الله ولا تتركوا النفقة في سبيل الله فتهلكوا. والتهلكة: ترك النفقة في الجهاد والاشتغال بالأموال عن طاعة الله. قال حذيفة: نزلت في النفقة. وأحسنوا أعمالكم فإن الله يحب من أحسن عبادته وأحسن إلى عباده.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-195', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-196">
+                <div class="ayah-text">وَأَتِ<span class="tj-ghn">مُّ</span>و<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡحَجَّ وَ<span class="tj-slt">ٱ</span>لۡعُمۡرَةَ لِلَّهِۚ فَإِنۡ أُحۡصِرۡتُمۡ فَمَا <span class="tj-slt">ٱ</span>سۡتَیۡسَرَ مِنَ <span class="tj-slt">ٱ</span>لۡهَ<span class="tj-qlq">دۡ</span>یِۖ وَلَا تَحۡلِقُو<span class="tj-slt">ا۟</span> رُءُوسَكُمۡ حَتَّ<span class="tj-mdd">ىٰ</span> یَ<span class="tj-qlq">بۡ</span>لُغَ <span class="tj-slt">ٱ</span>لۡهَ<span class="tj-qlq">دۡ</span>یُ مَحِلَّهُۥۚ فَمَ<span class="tj-khf">ن</span> كَانَ مِ<span class="tj-khf">ن</span>كُم <span class="tj-ghn">مَّ</span>رِیضًا أَوۡ بِهِ<span class="tj-mdd">ۦۤ</span> أَذࣰى <span class="tj-ghn">مِّ</span><span class="tj-dgm">ن</span> رَّأۡسِهِۦ فَفِ<span class="tj-qlq">دۡ</span>یَ<span class="tj-dgm">ةࣱ</span> <span class="tj-ghn">مِّ</span><span class="tj-khf">ن</span> صِیَامٍ أَوۡ صَدَقَةٍ أَوۡ نُسُ<span class="tj-khf">كࣲۚ</span> فَإِذَ<span class="tj-mdd">اۤ</span> أَمِ<span class="tj-khf">ن</span>تُمۡ فَمَ<span class="tj-khf">ن</span> تَمَتَّعَ بِ<span class="tj-slt">ٱ</span>لۡعُمۡرَةِ إِلَى <span class="tj-slt">ٱ</span>لۡحَجِّ فَمَا <span class="tj-slt">ٱ</span>سۡتَیۡسَرَ مِنَ <span class="tj-slt">ٱ</span>لۡهَ<span class="tj-qlq">دۡ</span>یِۚ فَمَ<span class="tj-dgm">ن</span> لَّمۡ یَجِ<span class="tj-qlq">دۡ</span> فَصِیَامُ ثَلَ<span class="tj-mdd">ـٰ</span>ثَةِ أَیَّا<span class="tj-khf">مࣲ</span> فِی <span class="tj-slt">ٱ</span>لۡحَجِّ وَسَ<span class="tj-qlq">بۡ</span>عَةٍ إِذَا رَجَعۡتُمۡۗ تِلۡكَ عَشَرَ<span class="tj-khf">ةࣱ</span> كَامِلَ<span class="tj-khf">ةࣱۗ</span> ذَ<span class="tj-mdd"> ٰ⁠</span>لِكَ لِمَ<span class="tj-dgm">ن</span> لَّمۡ یَكُنۡ أَهۡلُهُۥ حَاضِرِی <span class="tj-slt">ٱ</span>لۡمَسۡجِدِ <span class="tj-slt">ٱ</span>لۡحَرَامِۚ وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَ وَ<span class="tj-slt">ٱ</span>عۡلَمُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ شَدِیدُ <span class="tj-slt">ٱ</span>لۡعِقَابِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله بإتمام الحج والعمرة لله خالصتين، وبيّن حكم من أُحصر فعليه ما تيسر من الهدي، وحكم فدية الأذى، وحكم التمتع بالعمرة إلى الحج.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-196">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-196">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-196">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-196">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-196">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-196">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-196">أمر بإتمام الحج والعمرة لله بأدائهما تامّين بأركانهما وواجباتهما وشروطهما خالصين لله. فإن أُحصرتم بعدوّ أو مرض فاذبحوا ما تيسر من الهدي. ولا تحلقوا رؤوسكم حتى يبلغ الهدي محله. فمن كان مريضًا أو به أذى من رأسه ففدية من صيام ثلاثة أيام أو إطعام ستة مساكين أو ذبح شاة. فإذا أمنتم فمن تمتع بالعمرة إلى الحج فعليه ما تيسر من الهدي، فمن لم يجد فصيام عشرة أيام. واتقوا الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-196', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-196">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-196">أمر بإتمام الحج والعمرة وأدائهما تامّين لله. فإن أُحصرتم أي مُنعتم من إتمام النسك بعدوّ أو مرض فعليكم ما تيسر من الهدي شاة. ولا تحلقوا حتى يُنحر الهدي. ومن كان مريضًا أو به أذى كقمل ففدية من صيام أو صدقة أو نسك كما فعل كعب بن عُجرة. فإذا أمنتم فمن تمتع بالعمرة إلى الحج فعليه هدي فمن لم يجد فصيام ثلاثة في الحج وسبعة إذا رجع. ذلك لغير أهل مكة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-196', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-196">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-196">{وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ} أي أدّوهما تامّتين بمناسكهما خالصتين لله. {فَإِنْ أُحْصِرْتُمْ} بعدوّ أو مرض {فَمَا اسْتَيْسَرَ مِنَ الْهَدْيِ} شاة. ولا تحلقوا حتى يبلغ الهدي محله فيُنحر. ومن كان به مرض أو أذى ففدية من صيام ثلاثة أيام أو إطعام ستة مساكين أو ذبح شاة. فمن تمتع بالعمرة فعليه الهدي أو صيام عشرة أيام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-196', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-196">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-196">الإتمام: أداء الحج والعمرة بأركانهما وواجباتهما وسننهما لله خالصتين. والإحصار عند الجمهور يشمل العدو والمرض. وما استيسر: شاة فما فوقها. ومن احتاج لحلق رأسه لمرض أو أذى فعليه فدية مخيّر فيها بين صيام ثلاثة أو إطعام ستة مساكين أو ذبح شاة. والتمتع: أن يعتمر في أشهر الحج ثم يحج من عامه فعليه هدي أو صيام عشرة أيام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-196', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-196">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-196">يقول تعالى: أتمّوا الحج والعمرة لله أي أدّوهما بجميع مناسكهما لله خالصتين. فإن حُبستم عن إتمامهما بعدو فانحروا ما تيسر من الهدي وهو شاة. ولا تحلقوا رؤوسكم حتى يُنحر الهدي. ومن كان مريضًا ففدية يتخير فيها. فمن تمتع بالعمرة إلى الحج فعليه ما استيسر من الهدي فمن لم يجد فصيام ثلاثة في الحج وسبعة إذا رجع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-196', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-197">
+                <div class="ayah-text"><span class="tj-slt">ٱ</span>لۡحَجُّ أَشۡهُ<span class="tj-dgm">رࣱ</span> <span class="tj-ghn">مَّ</span>عۡلُومَ<span class="tj-mdd">ـٰ</span><span class="tj-khf">تࣱۚ</span> فَمَ<span class="tj-khf">ن</span> فَرَضَ فِیهِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>لۡحَجَّ فَلَا رَفَثَ وَلَا فُسُوقَ وَلَا جِدَالَ فِی <span class="tj-slt">ٱ</span>لۡحَجِّۗ وَمَا تَفۡعَلُو<span class="tj-slt">ا۟</span> مِنۡ خَیۡرࣲ یَعۡلَمۡهُ <span class="tj-slt">ٱل</span>لَّهُۗ وَتَزَوَّدُو<span class="tj-slt">ا۟</span> فَإِ<span class="tj-ghn">نَّ</span> خَیۡرَ <span class="tj-slt">ٱل</span>زَّادِ <span class="tj-slt">ٱل</span>تَّ<span class="tj-qlq">قۡ</span>وَ<span class="tj-mdd">ىٰۖ</span> وَ<span class="tj-slt">ٱ</span>تَّقُونِ یَ<span class="tj-mdd">ـٰۤ</span>أُ<span class="tj-slt">و۟</span>لِی <span class="tj-slt">ٱ</span>لۡأَلۡبَ<span class="tj-mdd">ـٰ</span>بِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بيّن أن الحج أشهر معلومات، ومن فرض فيهن الحج فلا رفث ولا فسوق ولا جدال، وأمر بالتزوّد فإن خير الزاد التقوى.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-197">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-197">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-197">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-197">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-197">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-197">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-197">أشهر الحج: شوال وذو القعدة وعشر ذي الحجة. فمن أحرم بالحج فيهن فليتجنب الرفث وهو الجماع ومقدماته، والفسوق وهو المعاصي كلها، والجدال وهو المراء والمخاصمة. وما تفعلوا من خير يعلمه الله ويجازيكم عليه. وتزودوا لسفركم زاد الدنيا وزاد الآخرة وهو التقوى فإنها خير الزاد. واتقون يا أصحاب العقول.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-197', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-197">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-197">أشهر الحج: شوال وذو القعدة وعشر من ذي الحجة عند ابن عباس. فمن أوجب على نفسه الحج بالإحرام فليتجنب الرفث وهو الجماع، والفسوق وهو المعاصي، والجدال وهو المراء. وما تفعلوا من خير يعلمه الله. وتزودوا فكان أهل اليمن لا يتزودون ويقولون نحن متوكلون فأمرهم الله بالتزود وأخبر أن خير الزاد التقوى.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-197', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-197">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-197">{الْحَجُّ أَشْهُرٌ مَعْلُومَاتٌ} شوال وذو القعدة وعشر ذي الحجة. {فَمَنْ فَرَضَ فِيهِنَّ الْحَجَّ} أي أحرم بالحج. {فَلَا رَفَثَ} الجماع ومقدماته {وَلَا فُسُوقَ} المعاصي {وَلَا جِدَالَ} المراء والمخاصمة. {وَتَزَوَّدُوا} نزلت في أهل اليمن كانوا يحجون بلا زاد {فَإِنَّ خَيْرَ الزَّادِ التَّقْوَى} واتقون يا ذوي الألباب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-197', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-197">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-197">أشهر الحج المعلومات: شوال وذو القعدة وذو الحجة أو عشره. فمن ألزم نفسه الحج بالإحرام فلا رفث (جماع) ولا فسوق (معاصي) ولا جدال (مراء ومخاصمة). وأمر بالتزود لأن قومًا كانوا يحجون بلا زاد ويسألون الناس. فأمرهم بالتزود وأخبر أن أفضل الزاد تقوى الله عز وجل. واتقون يا أولي الألباب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-197', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-197">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-197">يقول تعالى: وقت الحج أشهر معلومات وهي شوال وذو القعدة وعشر ذي الحجة. فمن أوجب على نفسه الحج فيهن فلا يجامع ولا يفسق ولا يجادل. وما تفعلوا من خير يعلمه الله ويثبكم عليه. وتزودوا لسفركم ما يكفيكم فإن خير ما تتزودون به تقوى الله. واتقون يا أهل العقول والبصائر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-197', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-198">
+                <div class="ayah-text">لَیۡسَ عَلَیۡكُمۡ جُنَاحٌ أَ<span class="tj-khf">ن</span> تَ<span class="tj-qlq">بۡ</span>تَغُو<span class="tj-slt">ا۟</span> فَضۡلࣰا <span class="tj-ghn">مِّ</span><span class="tj-dgm">ن</span> رَّبِّكُمۡۚ فَإِذَ<span class="tj-mdd">اۤ</span> أَفَضۡتُم <span class="tj-ghn">مِّ</span>نۡ عَرَفَ<span class="tj-mdd">ـٰ</span><span class="tj-khf">تࣲ</span> فَ<span class="tj-slt">ٱ</span>ذۡكُرُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَ عِ<span class="tj-khf">ن</span>دَ <span class="tj-slt">ٱ</span>لۡمَشۡعَرِ <span class="tj-slt">ٱ</span>لۡحَرَامِۖ وَ<span class="tj-slt">ٱ</span>ذۡكُرُوهُ كَمَا هَدَ<span class="tj-mdd">ىٰ</span>كُمۡ وَإِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">ن</span>تُم <span class="tj-ghn">مِّ</span><span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لِهِۦ لَمِنَ <span class="tj-slt">ٱل</span>ضَّ<span class="tj-mdd">اۤ</span>لِّینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لا حرج في التجارة أيام الحج، وأمر بذكر الله عند المشعر الحرام (مزدلفة) بعد الإفاضة من عرفات شكرًا على الهداية.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-198">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-198">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-198">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-198">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-198">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-198">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-198">لا جناح عليكم أن تبتغوا فضلًا من ربكم بالتجارة في مواسم الحج. فإذا أفضتم من عرفات فاذكروا الله عند المشعر الحرام وهو مزدلفة بالدعاء والتلبية والذكر. واذكروه كما هداكم للإيمان والمناسك واشكروه على ذلك، وإن كنتم من قبل هدايته لمن الضالين عن الحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-198', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-198">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-198">كانوا يتحرجون من التجارة في الحج فأباحها الله لهم. {فَإِذَا أَفَضْتُمْ مِنْ عَرَفَاتٍ} أي دفعتم منها بعد الوقوف بها. {فَاذْكُرُوا اللَّهَ عِنْدَ الْمَشْعَرِ الْحَرَامِ} وهو مزدلفة، وقف النبي ﷺ عندها فدعا وذكر الله حتى أسفر جدًّا. {وَاذْكُرُوهُ كَمَا هَدَاكُمْ} أي اشكروه على هدايته إياكم كما كنتم من قبله ضالين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-198', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-198">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-198">{لَيْسَ عَلَيْكُمْ جُنَاحٌ أَنْ تَبْتَغُوا فَضْلًا مِنْ رَبِّكُمْ} بالتجارة في مواسم الحج. {فَإِذَا أَفَضْتُمْ مِنْ عَرَفَاتٍ} أي دفعتم منها. {فَاذْكُرُوا اللَّهَ عِنْدَ الْمَشْعَرِ الْحَرَامِ} هو جبل بمزدلفة يقال له قُزَح. {وَاذْكُرُوهُ كَمَا هَدَاكُمْ} اشكروه على نعمة الهداية. {وَإِنْ كُنْتُمْ مِنْ قَبْلِهِ لَمِنَ الضَّالِّينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-198', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-198">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-198">أباح الله التجارة في أيام الحج لأن قومًا تحرجوا منها. والإفاضة من عرفات: الاندفاع منها بعد غروب شمس يوم عرفة. والمشعر الحرام: هو مزدلفة أو جبل قُزح بها. أمر بالذكر عندها وهو موضع الوقوف والمبيت. واذكروه كما هداكم أي بقدر ما أنعم عليكم بالهداية. وكنتم قبل الإسلام ضالين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-198', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-198">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-198">يقول تعالى: لا إثم عليكم في أن تتّجروا في مواسم الحج وتطلبوا فضل الله بالبيع والشراء. فإذا دفعتم من عرفات فاذكروا الله بالتلبية والدعاء عند المشعر الحرام وهو مزدلفة. واذكروه ذكرًا يوافق ما هداكم إليه من التوحيد والمناسك، وقد كنتم من قبل هذه الهداية من الضالين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-198', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-199">
+                <div class="ayah-text">ثُ<span class="tj-ghn">مَّ</span> أَفِیضُو<span class="tj-slt">ا۟</span> مِنۡ حَیۡثُ أَفَاضَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسُ وَ<span class="tj-slt">ٱ</span>سۡتَغۡفِرُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ غَفُو<span class="tj-dgm">رࣱ</span> رَّحِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر بالإفاضة من حيث أفاض الناس وهو عرفات — وكانت قريش تقف بمزدلفة فقط — وأمر بالاستغفار فإن الله غفور رحيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-199">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-199">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-199">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-199">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-199">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-199">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-199">أمر بالإفاضة من حيث أفاض الناس وهو عرفات، فكانت قريش ومن دان بدينها (الحُمْس) لا يخرجون من الحرم ويقفون بمزدلفة، فأمرهم الله بالوقوف بعرفات كسائر الناس. واستغفروا الله من ذنوبكم وتقصيركم فإن الله غفور رحيم يغفر لمن استغفره وتاب إليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-199', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-199">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-199">{ثُمَّ أَفِيضُوا مِنْ حَيْثُ أَفَاضَ النَّاسُ} كانت قريش (الحُمْس) لا يقفون بعرفة بل بمزدلفة ويقولون نحن أهل الحرم لا نخرج منه، فأمرهم الله بالوقوف بعرفة كسائر الحجاج ثم الإفاضة منها كما فعل إبراهيم عليه السلام. {وَاسْتَغْفِرُوا اللَّهَ إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ} أمر بالاستغفار بعد أداء المناسك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-199', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-199">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-199">{ثُمَّ أَفِيضُوا مِنْ حَيْثُ أَفَاضَ النَّاسُ} نزلت في قريش والحُمْس كانوا لا يخرجون من الحرم ولا يقفون بعرفة بل بمزدلفة، فأمرهم الله بالوقوف بعرفات والإفاضة منها كسائر الناس. {وَاسْتَغْفِرُوا اللَّهَ} من ذنوبكم وما كنتم عليه في الجاهلية. {إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ} لمن استغفره وتاب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-199', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-199">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-199">الخطاب لقريش والحُمْس الذين كانوا يترفعون عن الوقوف بعرفة ويقولون نحن أهل حرم الله فلا نخرج منه، فيقفون بمزدلفة. فأمرهم الله بالإفاضة من عرفات كسائر الناس اتّباعًا لسنة إبراهيم. واستغفروا الله مما كنتم عليه من مخالفة سنة إبراهيم. إن الله غفور رحيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-199', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-199">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-199">يقول تعالى لقريش: ثم أفيضوا من عرفات حيث يفيض سائر الناس، فإنكم كنتم لا تقفون بعرفة وتقفون بجَمْع (مزدلفة) وتقولون نحن أهل الله وأهل حرمه. فأمرهم بالوقوف بعرفة والإفاضة منها كبقية الحجاج. واستغفروا الله من صنيعكم في الجاهلية إن الله غفور رحيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-199', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-200">
+                <div class="ayah-text">فَإِذَا قَضَیۡتُم <span class="tj-ghn">مَّ</span>نَ<span class="tj-mdd">ـٰ</span>سِكَكُمۡ فَ<span class="tj-slt">ٱ</span>ذۡكُرُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَ كَذِكۡرِكُمۡ ءَابَ<span class="tj-mdd">اۤ</span>ءَكُمۡ أَوۡ أَشَدَّ ذِكۡرࣰاۗ فَمِنَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسِ مَن یَقُولُ رَبَّنَ<span class="tj-mdd">اۤ</span> ءَاتِنَا فِی <span class="tj-slt">ٱل</span>دُّنۡیَا وَمَا لَهُۥ فِی <span class="tj-slt">ٱ</span>لۡـَٔاخِرَةِ مِنۡ خَلَ<span class="tj-mdd">ـٰ</span>قࣲ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٠٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إذا فرغتم من مناسككم فأكثروا من ذكر الله كذكركم آباءكم أو أشد، ومن الناس من لا يسأل إلا الدنيا فليس له في الآخرة نصيب.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-200">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-200">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-200">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-200">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-200">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-200">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-200">إذا قضيتم مناسككم وفرغتم منها فأكثروا من ذكر الله كذكركم آباءكم وتفاخركم بهم أو أشد ذكرًا. فكان أهل الجاهلية إذا فرغوا من الحج يتفاخرون بآبائهم فأمرهم بذكر الله بدلًا من ذلك. فمن الناس من يسأل الدنيا فقط وما له في الآخرة من نصيب لأنه لم يطلبها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-200', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-200">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-200">كان أهل الجاهلية إذا فرغوا من حجهم وقفوا عند الجمرات يتفاخرون بآبائهم ومآثرهم، فأمرهم الله بذكره بدل ذلك كذكرهم آباءهم أو أشد. ثم ذمّ من لا همّ له إلا الدنيا فقال: {فَمِنَ النَّاسِ مَنْ يَقُولُ رَبَّنَا آتِنَا فِي الدُّنْيَا} يسأل أمور الدنيا فقط {وَمَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ} أي نصيب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-200', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-200">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-200">{فَإِذَا قَضَيْتُمْ مَنَاسِكَكُمْ} فرغتم من أعمال الحج. {فَاذْكُرُوا اللَّهَ كَذِكْرِكُمْ آبَاءَكُمْ} كانوا يذكرون مفاخر آبائهم بعد الحج فأمروا بذكر الله بدل ذلك. {أَوْ أَشَدَّ ذِكْرًا} بل أشد. {فَمِنَ النَّاسِ مَنْ يَقُولُ رَبَّنَا آتِنَا فِي الدُّنْيَا} كان المشركون لا يسألون إلا الدنيا. {وَمَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ} نصيب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-200', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-200">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-200">المناسك: أعمال الحج من وقوف وطواف ورمي وذبح. كان أهل الجاهلية يتفاخرون بآبائهم بعد إتمام الحج، فأمر الله بذكره عوض ذلك وأن يكون أشد من ذكرهم آباءهم. ثم بيّن أن من الناس من همّه الدنيا فقط يقول ربنا آتنا في الدنيا ولا يسأل الآخرة، فهذا ليس له في الآخرة من نصيب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-200', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-200">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-200">يقول تعالى: فإذا فرغتم من مناسك حجكم فاذكروا الله كما كنتم تذكرون آباءكم وتتفاخرون بهم في الجاهلية أو أشد من ذلك ذكرًا. فمن الناس من يقول ربنا آتنا في الدنيا أي يسأل حظوظ الدنيا ولا يسأل الآخرة. وما له في الآخرة من نصيب لأنه لم يطلبها ولم يعمل لها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-200', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-201">
+                <div class="ayah-text">وَمِنۡهُم <span class="tj-ghn">مَّ</span>ن یَقُولُ رَبَّنَ<span class="tj-mdd">اۤ</span> ءَاتِنَا فِی <span class="tj-slt">ٱل</span>دُّنۡیَا حَسَنَ<span class="tj-dgm">ةࣰ</span> وَفِی <span class="tj-slt">ٱ</span>لۡـَٔاخِرَةِ حَسَنَ<span class="tj-dgm">ةࣰ</span> وَقِنَا عَذَابَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>ارِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٠١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ومنهم من يجمع بين خيرَي الدنيا والآخرة فيقول: ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار، وهذا أكمل الدعاء.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-201">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-201">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-201">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-201">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-201">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-201">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-201">هذا الصنف الفاضل من الناس يسأل الله خيرَي الدنيا والآخرة. والحسنة في الدنيا تشمل كل مطلوب دنيوي من صحة وعلم ورزق وعمل صالح. والحسنة في الآخرة: الجنة ورضوان الله. وقنا عذاب النار: سلّمنا من النار وما يقرّب إليها. وكان النبي ﷺ يكثر من هذا الدعاء لأنه جامع لخيرَي الدنيا والآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-201', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-201">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-201">هذا الفريق يسأل خير الدنيا والآخرة معًا. والحسنة في الدنيا تشمل العافية والرزق الواسع والعلم والعمل الصالح والزوجة الصالحة. والحسنة في الآخرة: الجنة والثواب العظيم. وقنا عذاب النار: نجّنا منها. وكان النبي ﷺ أكثر دعائه: ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار. وهذا أجمع دعاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-201', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-201">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-201">{وَمِنْهُمْ مَنْ يَقُولُ رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً} قيل: عافية وكفاية، وقيل: علمًا وعبادة، وقيل: رزقًا حلالًا وزوجة صالحة. {وَفِي الْآخِرَةِ حَسَنَةً} الجنة. {وَقِنَا عَذَابَ النَّارِ} نجّنا من النار. وكان أنس يقول: كان النبي ﷺ أكثر دعائه: ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-201', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-201">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-201">هؤلاء المؤمنون يسألون خير الدارين. والحسنة في الدنيا: قيل العلم والعبادة، وقيل العافية والرزق الحلال، وقيل الزوجة الصالحة، والصحيح أنها عامة في كل خير. وحسنة الآخرة: الجنة ورؤية الله. وقنا عذاب النار: احفظنا من كل ما يوصل إلى النار. وهذا أجمع دعاء وأفضله كما كان النبي ﷺ يكثر منه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-201', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-201">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-201">يقول تعالى: ومن الناس من يقول ربنا آتنا في الدنيا حسنة وهي العافية والرزق الطيب والعمل الصالح وفي الآخرة حسنة وهي الجنة والنعيم الدائم وقنا عذاب النار. فهؤلاء جمعوا بين طلب الدنيا والآخرة وسألوا الله الوقاية من النار. وهذا الدعاء من أجمع الأدعية وأفضلها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-201', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-202">
+                <div class="ayah-text">أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ لَهُمۡ نَصِی<span class="tj-dgm">بࣱ</span> <span class="tj-ghn">مِّ</span><span class="tj-ghn">مَّ</span>ا كَسَبُو<span class="tj-slt">ا۟ۚ</span> وَ<span class="tj-slt">ٱل</span>لَّهُ سَرِیعُ <span class="tj-slt">ٱ</span>لۡحِسَابِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٠٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أولئك الذين سألوا خير الدارين لهم نصيب وافر مما كسبوا من الأعمال الصالحة والدعاء، والله سريع الحساب.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-202">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-202">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-202">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-202">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-202">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-202">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-202">أولئك الذين دعوا بهذا الدعاء الجامع لهم نصيب وافر مما كسبوا من الأعمال الصالحة والدعاء المستجاب. والله سريع الحساب يحاسب الخلائق كلهم في وقت يسير لإحاطة علمه وكمال قدرته، فيوفّي كل عامل أجر عمله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-202', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-202">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-202">{أُولَئِكَ لَهُمْ نَصِيبٌ مِمَّا كَسَبُوا} أي حظّ وافر من ثواب أعمالهم ودعائهم ينالهم سريعًا. {وَاللَّهُ سَرِيعُ الْحِسَابِ} لا يشغله حساب عبد عن حساب آخر، يحاسب الخلائق كلهم كما يرزقهم كلهم. وفيه حثّ على الجمع بين خيرَي الدنيا والآخرة في الدعاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-202', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-202">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-202">{أُولَئِكَ لَهُمْ نَصِيبٌ مِمَّا كَسَبُوا} حظّ من ثواب أعمالهم ودعائهم. {وَاللَّهُ سَرِيعُ الْحِسَابِ} يحاسب الخلق كلهم في مقدار نصف يوم من أيام الدنيا كما جاء في الأثر. وقيل: سريع الحساب لأنه لا يحتاج إلى عدّ وإحصاء فهو يعلم كل شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-202', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-202">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-202">أولئك الداعون بخير الدارين لهم نصيب وافر من ثواب ما كسبوا من الأعمال الصالحة والدعاء. والله سريع الحساب: لا يشغله شأن عن شأن، يحاسب جميع الخلق في أقرب وقت لكمال علمه وقدرته سبحانه. وفي هذا ترغيب في الدعاء الجامع وبيان أن الله يجازي كلًّا بعمله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-202', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-202">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-202">يقول تعالى: أولئك الذين سألوا ربهم حسنة الدنيا والآخرة لهم حظّ ونصيب مما عملوا من الصالحات ومما دعوا به. والله سريع الحساب أي لا يحتاج في محاسبة عباده إلى وقت طويل لأنه محيط بكل شيء علمًا فيجازي كل عامل بما عمل في أسرع وقت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-202', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-203">
+                <div class="ayah-text">۞ وَ<span class="tj-slt">ٱ</span>ذۡكُرُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَ فِ<span class="tj-mdd">یۤ</span> أَیَّا<span class="tj-dgm">مࣲ</span> <span class="tj-ghn">مَّ</span>عۡدُودَ<span class="tj-mdd"> ٰ⁠</span><span class="tj-khf">تࣲۚ</span> فَمَ<span class="tj-khf">ن</span> تَعَجَّلَ فِی یَوۡمَیۡنِ فَلَ<span class="tj-mdd">اۤ</span> إِثۡمَ عَلَیۡهِ وَمَ<span class="tj-khf">ن</span> تَأَخَّرَ فَلَ<span class="tj-mdd">اۤ</span> إِثۡمَ عَلَیۡهِۖ لِمَنِ <span class="tj-slt">ٱ</span>تَّقَ<span class="tj-mdd">ىٰۗ</span> وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَ وَ<span class="tj-slt">ٱ</span>عۡلَمُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span>كُمۡ إِلَیۡهِ تُحۡشَرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٠٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر بذكر الله في أيام التشريق المعدودات، ورخّص في التعجّل في يومين أو التأخّر لليوم الثالث، وختم بالأمر بالتقوى والتذكير بالحشر.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-203">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-203">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-203">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-203">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-203">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-203">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-203">الأيام المعدودات: أيام التشريق الثلاثة بعد يوم النحر (11 و12 و13 من ذي الحجة). أمر الله بذكره فيها بالتكبير والتسبيح وذكر الله على الأكل والشرب. فمن تعجل في يومين ونفر فلا إثم عليه ومن تأخر لليوم الثالث فلا إثم عليه. {لِمَنِ اتَّقَى} أي رفع الإثم لمن اتقى الله. واتقوا الله واعلموا أنكم إليه تُحشرون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-203', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-203">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-203">الأيام المعدودات: أيام التشريق وهي ثلاثة أيام بعد يوم العيد. أمر بذكر الله فيها وهو التكبير أدبار الصلوات وعند رمي الجمار وفي سائر الأحوال. فمن تعجل في يومين أي نفر في اليوم الثاني عشر فلا إثم عليه ومن تأخر إلى الثالث عشر فلا إثم عليه. قال ابن عباس: {لِمَنِ اتَّقَى} أي من اتقى الله فلا إثم عليه. واتقوا الله واعلموا أنكم إليه تُحشرون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-203', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-203">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-203">{وَاذْكُرُوا اللَّهَ فِي أَيَّامٍ مَعْدُودَاتٍ} أيام التشريق: الحادي عشر والثاني عشر والثالث عشر من ذي الحجة. {فَمَنْ تَعَجَّلَ فِي يَوْمَيْنِ} نفر في اليوم الثاني عشر بعد رمي الجمار {فَلَا إِثْمَ عَلَيْهِ وَمَنْ تَأَخَّرَ} إلى الثالث عشر {فَلَا إِثْمَ عَلَيْهِ}. {لِمَنِ اتَّقَى} أي ذلك لمن اتقى الله في حجه. واتقوا الله واعلموا أنكم تُحشرون إليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-203', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-203">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-203">الأيام المعدودات: أيام التشريق الثلاثة. والذكر فيها: التكبير عند الجمرات وأدبار الصلوات والذكر على الطعام والشراب. رخّص في التعجل لمن نفر في اليوم الثاني عشر قبل الغروب وفي التأخر لمن بقي للثالث عشر. {لِمَنِ اتَّقَى} أي رفع الإثم مشروط بالتقوى. واتقوا الله واعلموا أنكم إليه تُحشرون فيجازيكم بأعمالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-203', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-203">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-203">يقول تعالى: واذكروا الله في أيام معدودات وهي أيام التشريق: الحادي عشر والثاني عشر والثالث عشر من ذي الحجة. فمن استعجل وخرج من منى في اليوم الثاني عشر بعد رمي الجمار فلا إثم عليه ومن تأخر إلى الثالث عشر فرمى فلا إثم عليه. ذلك لمن اتقى الله. واتقوا الله واعلموا أنكم إليه راجعون فيحاسبكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-203', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-12.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">أحكام القصاص والوصية والصيام</span>
+            </a>
+            <a href="section-14.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">أصناف الناس والابتلاء</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١٣: أحكام الأهلّة والحج والقتال<br>
+        <small>آيات ١٨٩ – ٢٠٣ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — آية الدَّيْن — توثيق المعاملات المالية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ٢٠ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#d35400">
+            <div class="section-num">٢٠</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">آية الدَّيْن — توثيق المعاملات المالية</h2>
+                <h3 class="section-title-en">The Verse of Debt — Documenting Financial Transactions</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٢٨٢ – ٢٨٣</div>
+        </div>
+
+        <div class="section-desc">
+            <p>أطول آية في القرآن الكريم، تُبيّن أحكام كتابة الديون والإشهاد عليها والرهن، حفظاً للحقوق ومنعاً للنزاع</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="282">
+                        <div class="flow-node-num">٢٨٢</div>
+                        <div class="flow-node-text">آية الدَّيْن: أحكام كتابة الديون والإشهاد عليها</div>
+                        <div class="flow-node-key">إِذَا تَدَایَنتُم بِدَیۡنٍ إِلَىٰۤ أَجَلࣲ مُّسَمࣰّى فَٱكۡتُبُوهُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="283">
+                        <div class="flow-node-num">٢٨٣</div>
+                        <div class="flow-node-text">الرهن في السفر وأداء الأمانة وعدم كتمان الشهادة</div>
+                        <div class="flow-node-key">فَرِهَـٰنࣱ مَّقۡبُوضَةࣱ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-282">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُوۤ<span class="tj-slt">ا۟</span> إِذَا تَدَایَ<span class="tj-khf">نت</span>ُم بِدَیۡنٍ إِلَ<span class="tj-mdd">ىٰۤ</span> أَجَ<span class="tj-dgm">لࣲ</span> <span class="tj-ghn">مُّ</span>سَ<span class="tj-ghn">مّ</span>ى فَ<span class="tj-slt">ٱ</span>كۡتُبُوهُۚ وَلۡیَكۡتُب بَّیۡنَكُمۡ كَاتِ<span class="tj-qlb">بُۢ</span> بِ<span class="tj-slt">ٱ</span>لۡعَ<span class="tj-qlq">دۡ</span>لِۚ وَلَا یَأۡبَ كَاتِبٌ أَ<span class="tj-dgm">ن</span> یَكۡتُبَ كَمَا عَلَّمَهُ <span class="tj-slt">ٱ</span>للَّهُۚ فَلۡیَكۡتُ<span class="tj-qlq">بۡ</span> وَلۡیُمۡلِلِ <span class="tj-slt">ٱلَّ</span>ذِی عَلَیۡهِ <span class="tj-slt">ٱ</span>لۡحَقُّ وَلۡیَتَّقِ <span class="tj-slt">ٱ</span>للَّهَ رَبَّهُۥ وَلَا یَ<span class="tj-qlq">بۡ</span>خَسۡ مِنۡهُ شَیۡـࣰٔاۚ فَإِ<span class="tj-khf">ن</span> كَانَ <span class="tj-slt">ٱلَّ</span>ذِی عَلَیۡهِ <span class="tj-slt">ٱ</span>لۡحَقُّ سَفِیهًا أَوۡ ضَعِیفًا أَوۡ لَا یَسۡتَطِیعُ أَ<span class="tj-dgm">ن</span> یُمِلَّ هُوَ فَلۡیُمۡلِلۡ وَلِیُّهُۥ بِ<span class="tj-slt">ٱ</span>لۡعَ<span class="tj-qlq">دۡ</span>لِۚ وَ<span class="tj-slt">ٱ</span>سۡتَشۡهِدُو<span class="tj-slt">ا۟</span> شَهِیدَیۡنِ مِ<span class="tj-dgm">ن</span> رِّجَالِكُمۡۖ فَإِ<span class="tj-dgm">ن</span> لَّمۡ یَكُونَا رَجُلَیۡنِ فَرَجُ<span class="tj-dgm">لࣱ</span> وَ<span class="tj-slt">ٱ</span>مۡرَأَتَانِ مِ<span class="tj-ghn">مَّ</span>ن تَرۡضَوۡنَ مِنَ <span class="tj-slt">ٱل</span>شُّهَدَ<span class="tj-mdd">اۤ</span>ءِ أَ<span class="tj-khf">ن</span> تَضِلَّ إِحۡدَ<span class="tj-mdd">ىٰ</span>هُمَا فَتُذَكِّرَ إِحۡدَ<span class="tj-mdd">ىٰ</span>هُمَا <span class="tj-slt">ٱ</span>لۡأُخۡرَ<span class="tj-mdd">ىٰ</span>ۚ وَلَا یَأۡبَ <span class="tj-slt">ٱل</span>شُّهَدَ<span class="tj-mdd">اۤ</span>ءُ إِذَا مَا دُعُو<span class="tj-slt">ا۟</span>ۚ وَلَا تَسۡـَٔمُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-khf">ن</span> تَكۡتُبُوهُ صَغِیرًا أَوۡ كَبِیرًا إِلَ<span class="tj-mdd">ىٰۤ</span> أَجَلِهِۦۚ ذَ ٰ⁠لِكُمۡ أَ<span class="tj-qlq">قۡ</span>سَطُ عِ<span class="tj-khf">ند</span>َ <span class="tj-slt">ٱ</span>للَّهِ وَأَ<span class="tj-qlq">قۡ</span>وَمُ لِلشَّهَ<span class="tj-mdd">ـٰ</span>دَةِ وَأَدۡنَ<span class="tj-mdd">ىٰۤ</span> أَلَّا تَرۡتَابُوۤ<span class="tj-slt">ا۟</span> إِلَّ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">ن</span> تَكُونَ تِجَ<span class="tj-mdd">ـٰ</span>رَةً حَاضِرَ<span class="tj-khf">ةࣰ</span> تُدِیرُونَهَا بَیۡنَكُمۡ فَلَیۡسَ عَلَیۡكُمۡ جُنَاحٌ أَلَّا تَكۡتُبُوهَاۗ وَأَشۡهِدُوۤ<span class="tj-slt">ا۟</span> إِذَا تَبَایَعۡتُمۡۚ وَلَا یُضَ<span class="tj-mdd">اۤ</span>رَّ كَاتِ<span class="tj-dgm">بࣱ</span> وَلَا شَهِیدࣱۚ وَإِ<span class="tj-khf">ن</span> تَفۡعَلُو<span class="tj-slt">ا۟</span> فَإِ<span class="tj-ghn">نَّ</span>هُۥ فُسُو<span class="tj-qlb">قُۢ</span> بِكُمۡۗ وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَۖ وَیُعَلِّمُكُمُ <span class="tj-slt">ٱ</span>للَّهُۗ وَ<span class="tj-slt">ٱ</span>للَّهُ بِكُلِّ شَیۡءٍ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٨٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أطول آية في القرآن: أمر الله بكتابة الدين المؤجل وتوثيقه بكاتب عدل، وأن يملي المدين ولا ينقص شيئاً، والإشهاد برجلين أو رجل وامرأتين، والنهي عن الملل من كتابة الصغير والكبير، واستثناء التجارة الحاضرة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-282">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-282">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-282">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-282">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-282">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-282">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-282">هذه أطول آية في القرآن وتتضمن أحكاماً عظيمة في المعاملات المالية. أمر الله بكتابة الدين المؤجل حفظاً للحقوق ومنعاً للنزاع. وأن يكون الكاتب عدلاً لا يميل لأحد الطرفين. وأن يُملي المدين لأنه المقرّ على نفسه ولا ينقص من الحق شيئاً. فإن كان المدين سفيهاً أو ضعيفاً أو عاجزاً عن الإملاء فليملل وليه. والشهادة برجلين فإن لم يتيسرا فرجل وامرأتان حتى إذا نسيت إحداهما ذكّرتها الأخرى. ولا تملّوا كتابة الدين صغيراً كان أو كبيراً لأن ذلك أعدل عند الله وأقوم للشهادة وأبعد عن الشك. إلا التجارة الحاضرة فلا حرج في تركها دون كتابة. ولا يُضارَّ كاتب ولا شهيد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-282', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-282">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-282">هذه الآية الكريمة أطول آية في كتاب الله العزيز. أرشد الله تعالى عباده إلى كتابة المعاملات المؤجلة ليكون ذلك أحفظ لمقدارها وميقاتها وأضبط للشهادة. وأمر بالكاتب العادل الذي لا يجور على أحد. والإملاء من المدين لأنه المعترف على نفسه. والشهادة برجلين عدلين فإن لم يتيسرا فرجل وامرأتان. وأمر بكتابة الحق صغيراً كان أو كبيراً إلى أجله. واستثنى التجارة الحاضرة التي تتم فوراً لعدم الحاجة إلى كتابتها. ونهى عن مضارة الكاتب والشهيد. وختم بتقوى الله والتعلم منه سبحانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-282', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-282">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-282">آية الدين أطول آيات القرآن تتضمن أحكام التوثيق المالي. أمر الله بكتابة الدين المؤجل بيد كاتب عدل لا يحيف. وأن يملي المدين بنفسه ولا ينقص شيئاً. فإن كان سفيهاً أو ضعيفاً أو عاجزاً فليملل وليه. والشهادة برجلين أو برجل وامرأتين ممن يُرضى عنهم. ولا ينبغي أن يمتنع الشهود عن أداء الشهادة إذا دُعوا. ولا يسأموا من كتابة الدين صغيراً أو كبيراً. والتجارة الحاضرة مستثناة. ولا يجوز إيذاء الكاتب أو الشاهد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-282', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-282">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-282">هذه أطول آية في القرآن وأجمع آية لأحكام المعاملات. تضمنت أحكاماً كثيرة: وجوب كتابة الدين المؤجل عند الجمهور، وعدل الكاتب، وإملاء المدين، وولاية السفيه والضعيف، والشهادة وأنواعها، والنهي عن امتناع الشهود، والحث على الكتابة مهما صغر المبلغ، واستثناء التجارة الحاضرة، والإشهاد عند التبايع، وحماية الكاتب والشاهد من الضرر. وختمت بالأمر بتقوى الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-282', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-282">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-282">يقول تعالى للمؤمنين: إذا تعاملتم بدين مؤجل إلى وقت معلوم فاكتبوه. وليتولَّ الكتابة كاتب بالعدل لا يزيد ولا ينقص. ولا يرفض كاتب أن يكتب فإن الله علّمه فليؤدِّ هذه النعمة بالكتابة. وليملل المدين ولا ينقص من الحق شيئاً. فإن كان عاجزاً فليملل وليه. واستشهدوا شاهدين من رجالكم فإن لم يكونا رجلين فرجل وامرأتان. ولا تكسلوا عن كتابة الدين قليلاً كان أو كثيراً. والتجارة الحاضرة بينكم لا حرج في عدم كتابتها. ولا يضر أحد الكاتب ولا الشاهد. واتقوا الله يعلمكم الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-282', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-283">
+                <div class="ayah-text">۞ وَإِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">نت</span>ُمۡ عَلَ<span class="tj-mdd">ىٰ</span> سَفَ<span class="tj-dgm">رࣲ</span> وَلَمۡ تَجِدُو<span class="tj-slt">ا۟</span> كَاتِبࣰا فَرِهَ<span class="tj-mdd">ـٰ</span><span class="tj-dgm">نࣱ</span> <span class="tj-ghn">مَّ</span><span class="tj-qlq">قۡ</span>بُوضَةࣱۖ فَإِنۡ أَمِنَ بَعۡضُكُم بَعۡ<span class="tj-khf">ضࣰا</span> فَلۡیُؤَدِّ <span class="tj-slt">ٱلَّ</span>ذِی <span class="tj-slt">ٱ</span>ؤۡتُمِنَ أَمَ<span class="tj-mdd">ـٰ</span>نَتَهُۥ وَلۡیَتَّقِ <span class="tj-slt">ٱ</span>للَّهَ رَبَّهُۥۗ وَلَا تَكۡتُمُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>شَّهَ<span class="tj-mdd">ـٰ</span>دَةَۚ وَمَ<span class="tj-dgm">ن</span> یَكۡتُمۡهَا فَإِ<span class="tj-ghn">نَّ</span>هُۥۤ ءَاثِ<span class="tj-khf">مࣱ</span> قَلۡبُهُۥۗ وَ<span class="tj-slt">ٱ</span>للَّهُ بِمَا تَعۡمَلُونَ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٨٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن كنتم مسافرين ولم تجدوا كاتباً فالرهن بديل عن الكتابة. وإن أمن بعضكم بعضاً فليؤدِّ الأمانة وليتق الله. ولا تكتموا الشهادة فمن كتمها فقلبه آثم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-283">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-283">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-283">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-283">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-283">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-283">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-283">إن كنتم في سفر ولم تجدوا كاتباً يوثق الدين فالبديل رهن مقبوض يحفظ الحق. فإن وُجدت ثقة بين الطرفين فليؤدِّ المؤتمن أمانته كاملة وليتق الله ربه في ذلك. ثم حذّر من كتمان الشهادة وأخبر أن من يكتمها فقلبه آثم لأن كتمانها ظلم يضيع الحقوق. والله بما تعملون عليم فلا يخفى عليه من أدى الأمانة ومن خان ومن شهد بالحق ومن كتمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-283', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-283">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-283">ذكر الله الرهن بديلاً عن الكتابة في السفر حين لا يتيسر الكاتب. والرهن يكون مقبوضاً في يد الدائن ضماناً لحقه. وإن تعامل الناس بالثقة والأمانة دون رهن ولا كتابة فعلى المؤتمن أن يؤدي أمانته كاملة. ونهى عن كتمان الشهادة وجعله إثماً للقلب لأن القلب هو محل العلم والنية فإذا علم الشاهد بالحق وكتمه فقد أثم قلبه. والله عليم بجميع الأعمال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-283', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-283">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-283">إذا كنتم مسافرين وتداينتم ولم يكن كاتب فاجعلوا رهناً مقبوضاً توثيقاً للحق. والقبض شرط عند بعض العلماء. وإن حصلت ثقة بين الدائن والمدين فليؤدِّ المدين أمانته كاملة ويتقي الله في ذلك. ولا تكتموا الشهادة إذا دُعيتم لأدائها فمن كتمها فقلبه آثم أي فاجر عاصٍ. وخصّ القلب بالذكر لأنه محل العلم بالشهادة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-283', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-283">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-283">الرهن مشروع في السفر عند عدم الكاتب وهو جائز في الحضر أيضاً عند الجمهور. والقبض شرط صحة عند الشافعي ولزوم عند غيره. وإن كان بين الطرفين ثقة فلا حرج في ترك الرهن ولكن تجب الأمانة والتقوى. وكتمان الشهادة من أكبر الكبائر لما فيه من ضياع الحقوق وشيوع الظلم. وخص القلب بالإثم لأنه ملك الأعضاء وبصلاحه يصلح الجسد كله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-283', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-283">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-283">يقول تعالى: وإن كنتم في سفر وتداينتم ولم يكن معكم كاتب فاجعلوا بدل الكتابة رهوناً مقبوضة بأيدي الدائنين حفظاً للحقوق. فإن وثق بعضكم في بعض وتعاملتم بالأمانة فليؤدِّ المؤتمن ما ائتمن عليه كاملاً وليتق الله. ولا تكتموا الشهادة إذا دُعيتم إليها فإن من كتمها فقلبه آثم فاجر. والله بأعمالكم كلها عليم لا يخفى عليه شيء منها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-283', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-19.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">تحريم الربا</span>
+            </a>
+            <a href="section-21.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">خاتمة السورة</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ٢٠: آية الدَّيْن — توثيق المعاملات المالية<br>
+        <small>آيات ٢٨٢ – ٢٨٣ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

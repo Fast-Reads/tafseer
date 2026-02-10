@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — المتشابهات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <style>
+        .mts-intro {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            line-height: 2.2;
+        }
+        .mts-intro h2 {
+            font-family: var(--font-ui);
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .mts-intro p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .mts-group {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            animation: fadeIn 0.4s ease both;
+        }
+        .mts-group-header {
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .mts-group-header:hover {
+            background: var(--highlight-bg);
+        }
+        .mts-group-color {
+            width: 6px;
+            min-height: 50px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .mts-group-info {
+            flex: 1;
+        }
+        .mts-group-ending {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.5rem;
+            color: var(--text-ayah, var(--text-primary));
+            line-height: 2;
+            margin-bottom: 4px;
+        }
+        .mts-group-meaning {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-family: var(--font-ui);
+        }
+        .mts-group-count {
+            background: var(--highlight-bg);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-family: var(--font-ui);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .mts-group-arrow {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .mts-group.open .mts-group-arrow {
+            transform: rotate(90deg);
+        }
+        .mts-group-body {
+            display: none;
+            border-top: 1px solid var(--border);
+        }
+        .mts-group.open .mts-group-body {
+            display: block;
+        }
+        .mts-secret {
+            padding: 16px 24px;
+            background: var(--highlight-bg);
+            border-bottom: 1px solid var(--border);
+        }
+        .mts-secret-label {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .mts-secret-text {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 2.2;
+            font-family: var(--font-ui);
+        }
+        .mts-secret-text strong {
+            color: var(--gold);
+        }
+        .mts-verse {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+        .mts-verse:last-child {
+            border-bottom: none;
+        }
+        .mts-verse:hover {
+            background: var(--highlight-bg);
+        }
+        .mts-verse-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .mts-ayah-num {
+            background: var(--gold);
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .mts-verse-context {
+            font-family: var(--font-ui);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            flex: 1;
+            line-height: 1.8;
+        }
+        .mts-section-link {
+            font-size: 0.78rem;
+            color: var(--gold);
+            text-decoration: none;
+            padding: 3px 10px;
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-family: var(--font-ui);
+        }
+        .mts-section-link:hover {
+            background: var(--gold);
+            color: #fff;
+        }
+        .mts-verse-text {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.25rem;
+            color: var(--text-ayah, var(--text-primary));
+            line-height: 2.4;
+            padding: 4px 0;
+        }
+        .mts-verse-ending {
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: inherit;
+        }
+        .mts-memory-key {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 5px 14px;
+            background: var(--highlight-bg);
+            border-radius: 10px;
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        .mts-grammar-note {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            padding-right: 48px;
+            line-height: 1.8;
+        }
+        .mts-grammar-note code {
+            background: var(--highlight-bg);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+        .mts-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+            padding: 16px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+        .mts-nav-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .mts-nav-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        /* Grammar section */
+        .mts-grammar-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .mts-grammar-title {
+            font-family: var(--font-ui);
+            color: var(--gold);
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 18px 24px 10px;
+        }
+        .mts-grammar-subtitle {
+            font-family: var(--font-ui);
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            padding: 0 24px 16px;
+            line-height: 2;
+        }
+        .mts-formula-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .mts-formula {
+            display: flex;
+            align-items: stretch;
+            border-top: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+        .mts-formula:hover {
+            background: var(--highlight-bg);
+        }
+        .mts-formula-num {
+            min-width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .mts-formula-arabic {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.25rem;
+            color: var(--text-ayah, var(--text-primary));
+            padding: 14px 12px;
+            min-width: 220px;
+            line-height: 2;
+            flex-shrink: 0;
+            border-left: 1px solid var(--border);
+        }
+        .mts-formula-info {
+            padding: 14px 16px;
+            flex: 1;
+        }
+        .mts-formula-grammar {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .mts-formula-when {
+            font-family: var(--font-ui);
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            line-height: 2;
+        }
+        .mts-formula-examples {
+            font-family: var(--font-ui);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.8;
+        }
+        .mts-def-indef {
+            display: flex;
+            gap: 16px;
+            padding: 16px 24px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .mts-def-card {
+            flex: 1;
+            min-width: 250px;
+            background: var(--highlight-bg);
+            border-radius: 12px;
+            padding: 14px 18px;
+        }
+        .mts-def-label {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .mts-def-label.definite { color: #2ecc71; }
+        .mts-def-label.indefinite { color: #e67e22; }
+        .mts-def-example {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.1rem;
+            color: var(--text-ayah, var(--text-primary));
+            line-height: 2.2;
+            margin-bottom: 6px;
+        }
+        .mts-def-note {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        @media (max-width: 600px) {
+            .mts-formula {
+                flex-wrap: wrap;
+            }
+            .mts-formula-arabic {
+                min-width: 100%;
+                border-left: none;
+                border-bottom: 1px solid var(--border);
+                padding: 10px 16px;
+                font-size: 1.1rem;
+            }
+            .mts-formula-num {
+                min-width: 30px;
+            }
+            .mts-def-indef {
+                flex-direction: column;
+            }
+        }
+        /* Dense zone markers */
+        .mts-dense-zone {
+            background: var(--bg-card);
+            border: 2px dashed var(--gold);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+        .mts-dense-zone h3 {
+            font-family: var(--font-ui);
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .mts-dense-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .mts-dense-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 2;
+        }
+        .mts-dense-num {
+            font-weight: 700;
+            color: var(--gold);
+            min-width: 28px;
+            text-align: center;
+        }
+        .mts-dense-ending {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.05rem;
+        }
+        .mts-dense-arrow {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        .mts-dense-topic {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+        /* Color classes for each group */
+        .clr-baseer { background-color: rgba(52, 152, 219, 0.15); border-color: #3498db; }
+        .clr-baseer .mts-group-color { background: #3498db; }
+        .clr-khabeer { background-color: rgba(155, 89, 182, 0.15); border-color: #9b59b6; }
+        .clr-khabeer .mts-group-color { background: #9b59b6; }
+        .clr-samee { background-color: rgba(46, 204, 113, 0.15); border-color: #2ecc71; }
+        .clr-samee .mts-group-color { background: #2ecc71; }
+        .clr-azeez { background-color: rgba(231, 76, 60, 0.15); border-color: #e74c3c; }
+        .clr-azeez .mts-group-color { background: #e74c3c; }
+        .clr-ghafoor-haleem { background-color: rgba(241, 196, 15, 0.15); border-color: #f1c40f; }
+        .clr-ghafoor-haleem .mts-group-color { background: #f1c40f; }
+        .clr-waasi { background-color: rgba(230, 126, 34, 0.15); border-color: #e67e22; }
+        .clr-waasi .mts-group-color { background: #e67e22; }
+        .clr-ghafil { background-color: rgba(192, 57, 43, 0.15); border-color: #c0392b; }
+        .clr-ghafil .mts-group-color { background: #c0392b; }
+        .clr-qadeer { background-color: rgba(26, 188, 156, 0.15); border-color: #1abc9c; }
+        .clr-qadeer .mts-group-color { background: #1abc9c; }
+        .clr-ghanee { background-color: rgba(142, 68, 173, 0.15); border-color: #8e44ad; }
+        .clr-ghanee .mts-group-color { background: #8e44ad; }
+        .clr-aleem { background-color: rgba(243, 156, 18, 0.15); border-color: #f39c12; }
+        .clr-aleem .mts-group-color { background: #f39c12; }
+        .mts-verse-ending.hl-baseer { background: rgba(52, 152, 219, 0.2); }
+        .mts-verse-ending.hl-khabeer { background: rgba(155, 89, 182, 0.2); }
+        .mts-verse-ending.hl-samee { background: rgba(46, 204, 113, 0.2); }
+        .mts-verse-ending.hl-azeez { background: rgba(231, 76, 60, 0.2); }
+        .mts-verse-ending.hl-ghafoor { background: rgba(241, 196, 15, 0.2); }
+        .mts-verse-ending.hl-waasi { background: rgba(230, 126, 34, 0.2); }
+        .mts-verse-ending.hl-ghafil { background: rgba(192, 57, 43, 0.2); }
+        .mts-verse-ending.hl-qadeer { background: rgba(26, 188, 156, 0.2); }
+        .mts-verse-ending.hl-ghanee { background: rgba(142, 68, 173, 0.2); }
+        .mts-verse-ending.hl-aleem { background: rgba(243, 156, 18, 0.2); }
+
+        /* Tips section */
+        .mts-tips {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .mts-tips-title {
+            font-family: var(--font-ui);
+            color: var(--gold);
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 18px 24px 6px;
+        }
+        .mts-test-card {
+            padding: 16px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: background 0.2s;
+        }
+        .mts-test-card:hover { background: var(--highlight-bg); }
+        .mts-test-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            width: 36px;
+            text-align: center;
+        }
+        .mts-test-body { flex: 1; }
+        .mts-test-q {
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            line-height: 2;
+        }
+        .mts-test-a {
+            font-family: var(--font-ui);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 2.2;
+        }
+        .mts-test-a strong { color: var(--text-primary); }
+        .mts-test-result {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.15rem;
+            padding: 3px 12px;
+            border-radius: 8px;
+            display: inline;
+        }
+
+        /* Story section */
+        .mts-story {
+            background: var(--highlight-bg);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 12px 24px;
+            font-family: var(--font-ui);
+            line-height: 2.6;
+            font-size: 0.92rem;
+        }
+        .mts-story-verse {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 2px;
+        }
+        .mts-story-num {
+            background: var(--gold);
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .mts-story-arrow {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+        .mts-story-ending {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.05rem;
+            padding: 1px 8px;
+            border-radius: 6px;
+        }
+
+        /* Quiz section */
+        .mts-quiz {
+            background: var(--bg-card);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .mts-quiz-title {
+            font-family: var(--font-ui);
+            color: var(--gold);
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 18px 24px 6px;
+        }
+        .mts-quiz-subtitle {
+            font-family: var(--font-ui);
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            padding: 0 24px 16px;
+            line-height: 2;
+        }
+        .mts-quiz-area {
+            padding: 20px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .mts-quiz-verse {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.3rem;
+            color: var(--text-ayah, var(--text-primary));
+            line-height: 2.4;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .mts-quiz-blank {
+            display: inline-block;
+            min-width: 160px;
+            border-bottom: 3px dashed var(--gold);
+            color: var(--gold);
+            font-weight: 700;
+            text-align: center;
+            padding: 0 8px;
+            transition: all 0.3s;
+        }
+        .mts-quiz-blank.correct {
+            border-bottom-color: #2ecc71;
+            color: #2ecc71;
+            background: rgba(46, 204, 113, 0.1);
+            border-radius: 6px;
+        }
+        .mts-quiz-blank.wrong {
+            border-bottom-color: #e74c3c;
+            color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 6px;
+        }
+        .mts-quiz-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .mts-quiz-opt {
+            font-family: var(--font-quran, 'Scheherazade New', serif);
+            font-size: 1.05rem;
+            padding: 8px 18px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .mts-quiz-opt:hover {
+            border-color: var(--gold);
+            background: var(--highlight-bg);
+        }
+        .mts-quiz-opt.correct {
+            border-color: #2ecc71;
+            background: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+        }
+        .mts-quiz-opt.wrong {
+            border-color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+            color: #e74c3c;
+            opacity: 0.6;
+        }
+        .mts-quiz-opt:disabled { cursor: default; }
+        .mts-quiz-feedback {
+            text-align: center;
+            font-family: var(--font-ui);
+            font-size: 0.92rem;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            line-height: 2.2;
+            display: none;
+        }
+        .mts-quiz-feedback.show { display: block; }
+        .mts-quiz-feedback.correct-fb {
+            background: rgba(46, 204, 113, 0.1);
+            color: #2ecc71;
+        }
+        .mts-quiz-feedback.wrong-fb {
+            background: rgba(231, 76, 60, 0.1);
+            color: #e74c3c;
+        }
+        .mts-quiz-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 24px;
+            border-top: 1px solid var(--border);
+        }
+        .mts-quiz-btn {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            padding: 10px 24px;
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            background: transparent;
+            color: var(--gold);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .mts-quiz-btn:hover {
+            background: var(--gold);
+            color: #fff;
+        }
+        .mts-quiz-btn.primary {
+            background: var(--gold);
+            color: #fff;
+        }
+        .mts-quiz-btn.primary:hover { opacity: 0.85; }
+        .mts-quiz-score {
+            font-family: var(--font-ui);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 0 24px 6px;
+        }
+        .mts-quiz-context {
+            text-align: center;
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .mts-group-ending { font-size: 1.25rem; }
+            .mts-verse-text { font-size: 1.1rem; }
+            .mts-group-header { padding: 14px 16px; }
+            .mts-verse { padding: 14px 16px; }
+            .mts-secret { padding: 14px 16px; }
+            .mts-grammar-note { padding-right: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">المتشابهات</h1>
+            <p class="surah-subtitle">Similar Verse Endings &mdash; Memorization Helper</p>
+            <div class="header-badges">
+                <span class="header-badge">سورة البقرة</span>
+                <span class="header-badge">١٠ مجموعات</span>
+                <span class="header-badge">٤٠+ آية</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <button onclick="cycleTheme()">المظهر</button>
+        <button onclick="toggleAllGroups()">فتح/إغلاق الكل</button>
+        <a href="index.html" class="toolbar-btn" style="text-decoration:none;">الفهرس</a>
+    </div>
+
+    <div class="container">
+
+        <!-- Introduction -->
+        <div class="mts-intro">
+            <h2>أسرار حفظ المتشابهات</h2>
+            <p>
+                الآيات المتشابهة في خواتيمها هي أكثر ما يَلتبس على الحافظ.
+                هذه الصفحة تكشف <strong>السر</strong> وراء اختيار كل اسم من أسماء الله في ختام كل آية:
+                ليس عشوائيًا بل مرتبط بـ<strong>سياق الآية ومعناها</strong>.
+                افهم السر ← تحفظ بلا خلط.
+            </p>
+        </div>
+
+        <!-- Grammar Section -->
+        <div class="mts-grammar-section">
+            <div class="mts-grammar-title">المفتاح النحوي — الصيغة تكشف الاسم</div>
+            <div class="mts-grammar-subtitle">
+                قبل اسم الله في كل آية تأتي <strong>صيغة افتتاحية</strong> محددة.
+                هذه الصيغة ليست عشوائية — هي مفتاح نحوي يساعدك على تذكّر أي اسم يأتي بعدها.
+            </div>
+
+            <div class="mts-formula-grid">
+                <div class="mts-formula">
+                    <div class="mts-formula-num">١</div>
+                    <div class="mts-formula-arabic">إِنَّ ٱللَّهَ ...</div>
+                    <div class="mts-formula-info">
+                        <div class="mts-formula-grammar">إِنَّ + اسمها + خبرها — توكيد مباشر</div>
+                        <div class="mts-formula-when">تأتي عند <strong>تقرير حقيقة جديدة</strong> — بداية بيان عن صفة الله، لا علاقة بما قبلها مباشرة</div>
+                        <div class="mts-formula-examples">آية ١١٠ (بصیر) • ١٨١ (سمیع علیم) • ٢٢٠ (عزیز حكیم)</div>
+                    </div>
+                </div>
+
+                <div class="mts-formula">
+                    <div class="mts-formula-num">٢</div>
+                    <div class="mts-formula-arabic">وَٱللَّهُ ...</div>
+                    <div class="mts-formula-info">
+                        <div class="mts-formula-grammar">واو استئناف + مبتدأ + خبر — تعليق</div>
+                        <div class="mts-formula-when">تأتي <strong>بعد ذكر حكم أو حدث</strong> كتعليق عليه — الأكثر شيوعًا في السورة</div>
+                        <div class="mts-formula-examples">آية ٢٣٤ (خبیر) • ٢٦٥ (بصیر) • ٢٢٤ (سمیع) • ٢٢٨ (عزیز) • ٢٢٥ (غفور حلیم) • ٢٤٧، ٢٦١، ٢٦٨ (واسع)</div>
+                    </div>
+                </div>
+
+                <div class="mts-formula">
+                    <div class="mts-formula-num">٣</div>
+                    <div class="mts-formula-arabic">وَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ ...</div>
+                    <div class="mts-formula-info">
+                        <div class="mts-formula-grammar">فعل أمر + أنّ + اسمها + خبرها — أمر بالعِلم</div>
+                        <div class="mts-formula-when">تأتي بعد <strong>آية طويلة فيها أحكام كثيرة</strong> — كأن الله يقول: بعد كل هذه الأحكام، لا تنسَوا هذا!</div>
+                        <div class="mts-formula-examples">آية ٢٣٣ (بصیر — بعد آية الرضاعة الطويلة!) • ٢٣٥ (غفور حلیم) • ٢٤٤ (سمیع) • ٢٦٧ (غنی حمید)</div>
+                    </div>
+                </div>
+
+                <div class="mts-formula">
+                    <div class="mts-formula-num">٤</div>
+                    <div class="mts-formula-arabic">فَإِنَّ ٱللَّهَ ...</div>
+                    <div class="mts-formula-info">
+                        <div class="mts-formula-grammar">فاء جواب الشرط + إنّ — نتيجة شرط</div>
+                        <div class="mts-formula-when">تأتي بعد <strong>شرط: إِنۡ / فَمَن</strong> — إذا فعلتم كذا فإنّ الله كذا</div>
+                        <div class="mts-formula-examples">آية ٢٢٧ (سمیع — إن عزموا الطلاق) • ١٥٨ (شاكر — من تطوّع) • ٢١٥، ٢٧٣ (بهِ علیم — ما تفعلوا/تنفقوا)</div>
+                    </div>
+                </div>
+
+                <div class="mts-formula">
+                    <div class="mts-formula-num">٥</div>
+                    <div class="mts-formula-arabic">فَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ ...</div>
+                    <div class="mts-formula-info">
+                        <div class="mts-formula-grammar">فاء + فعل أمر + أنّ — أقوى صيغة في السورة</div>
+                        <div class="mts-formula-when">تأتي مرة <strong>واحدة فقط</strong> في كل السورة! بعد أخطر تحذير: الزلل بعد البيّنات</div>
+                        <div class="mts-formula-examples">آية ٢٠٩ فقط! (عزیز حكیم — فإن زللتم من بعد ما جاءتكم البيّنات)</div>
+                    </div>
+                </div>
+
+                <div class="mts-formula">
+                    <div class="mts-formula-num">٦</div>
+                    <div class="mts-formula-arabic">وَمَا ٱللَّهُ بِـ...</div>
+                    <div class="mts-formula-info">
+                        <div class="mts-formula-grammar">ما نافية + مبتدأ + باء زائدة + خبر مجرور — نفي صفة</div>
+                        <div class="mts-formula-when">تأتي <strong>فقط مع بِغَافِلٍ</strong> — لا تأتي مع أي اسم آخر! حفظتَ الصيغة = حفظتَ الاسم</div>
+                        <div class="mts-formula-examples">آيات ٧٤، ٨٥، ١٤٠، ١٤٩ — كلها (بغافل عما تعملون)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Definite vs Indefinite -->
+            <div class="mts-def-indef">
+                <div class="mts-def-card">
+                    <div class="mts-def-label definite">بالألف واللام (معرفة) — صفة ذاتية</div>
+                    <div class="mts-def-example">إِنَّكَ أَنتَ <strong>ٱلسَّمِیعُ ٱلۡعَلِیمُ</strong></div>
+                    <div class="mts-def-example">وَهُوَ <strong>ٱلسَّمِیعُ ٱلۡعَلِیمُ</strong></div>
+                    <div class="mts-def-note">مرتان فقط: ١٢٧ (دعاء إبراهيم) و ١٣٧ (فسيكفيكهم الله). في كلتيهما وصف لذات الله مباشرة، لا لفعله في سياق حكم.</div>
+                </div>
+                <div class="mts-def-card">
+                    <div class="mts-def-label indefinite">بدون ال (نكرة) — خبر عن فعل</div>
+                    <div class="mts-def-example">إِنَّ ٱللَّهَ <strong>سَمِیعٌ عَلِیمࣱ</strong></div>
+                    <div class="mts-def-example">وَٱللَّهُ <strong>سَمِیعٌ عَلِیمࣱ</strong></div>
+                    <div class="mts-def-note">٤ مرات: ١٨١، ٢٢٤، ٢٢٧، ٢٤٤. كلها خبر إنّ أو خبر المبتدأ، تصف ما يفعله الله في سياق حكم معين.</div>
+                </div>
+            </div>
+
+            <!-- Practical Rule -->
+            <div style="padding: 16px 24px; border-top: 1px solid var(--border);">
+                <div style="font-family: var(--font-ui); font-size: 0.95rem; color: var(--text-primary); line-height: 2.4;">
+                    <strong style="color: var(--gold);">القاعدة العملية:</strong>
+                    <br>
+                    &bull; سمعتَ <code style="background:var(--highlight-bg); padding:1px 6px; border-radius:4px; font-family:var(--font-quran); font-size:1rem;">وَمَا ٱللَّهُ بِـ</code> &rarr; الاسم <strong>بِغَافِلٍ</strong> حتمًا (لا يأتي غيره)
+                    <br>
+                    &bull; سمعتَ <code style="background:var(--highlight-bg); padding:1px 6px; border-radius:4px; font-family:var(--font-quran); font-size:1rem;">فَٱعۡلَمُوۤا۟</code> بالفاء &rarr; <strong>عَزِیزٌ حَكِیم</strong> (مرة واحدة!)
+                    <br>
+                    &bull; سمعتَ <code style="background:var(--highlight-bg); padding:1px 6px; border-radius:4px; font-family:var(--font-quran); font-size:1rem;">وَٱعۡلَمُوۤا۟</code> بالواو &rarr; ابحث عن سياق الآية (بعد آية طويلة)
+                    <br>
+                    &bull; سمعتَ <code style="background:var(--highlight-bg); padding:1px 6px; border-radius:4px; font-family:var(--font-quran); font-size:1rem;">ٱلسَّمِیعُ ٱلۡعَلِیمُ</code> بالألف واللام &rarr; أنت في آيات إبراهيم (١٢٧ أو ١٣٧)
+                    <br>
+                    &bull; سمعتَ <code style="background:var(--highlight-bg); padding:1px 6px; border-radius:4px; font-family:var(--font-quran); font-size:1rem;">فَإِنَّ ٱللَّهَ</code> بالفاء &rarr; جواب شرط، ارجع للشرط قبلها لتعرف الاسم
+                </div>
+            </div>
+        </div>
+
+        <!-- Dense Zones Warning -->
+        <div class="mts-dense-zone">
+            <h3>المناطق الأكثر كثافة — احذر هنا!</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:14px; font-family:var(--font-ui); line-height:2;">
+                هاتان المنطقتان تحتويان أكبر تركيز للمتشابهات في السورة كلها:
+            </p>
+            <div style="display:flex; flex-direction:column; gap:20px;">
+                <div>
+                    <div style="font-weight:700; color:var(--gold); font-family:var(--font-ui); margin-bottom:8px;">
+                        المنطقة ١: آيات الأحكام الاجتماعية (٢١٥–٢٤٠) — ١٢ خاتمة متشابهة في ٢٦ آية!
+                    </div>
+                    <div class="mts-dense-list">
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢١٥</span> <span class="mts-dense-ending">بِهِۦ عَلِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">الإنفاق</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٢٠</span> <span class="mts-dense-ending">عَزِیزٌ حَكِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">اليتامى</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٢٤</span> <span class="mts-dense-ending">سَمِیعٌ عَلِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">الأيمان</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٢٥</span> <span class="mts-dense-ending">غَفُورٌ حَلِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">لغو اليمين</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٢٧</span> <span class="mts-dense-ending">سَمِیعٌ عَلِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">الطلاق (الإيلاء)</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٢٨</span> <span class="mts-dense-ending">عَزِیزٌ حَكِیمٌ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">عدة المطلقة</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٣١</span> <span class="mts-dense-ending">بِكُلِّ شَیۡءٍ عَلِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">إمساك أو تسريح</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٣٣</span> <span class="mts-dense-ending">بِمَا تَعۡمَلُونَ بَصِیرࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">الرضاعة</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٣٤</span> <span class="mts-dense-ending">بِمَا تَعۡمَلُونَ خَبِیرࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">عدة الوفاة</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٣٥</span> <span class="mts-dense-ending">غَفُورٌ حَلِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">التعريض بالخطبة</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٣٧</span> <span class="mts-dense-ending">بِمَا تَعۡمَلُونَ بَصِیرٌ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">العفو عن المهر</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٤٠</span> <span class="mts-dense-ending">عَزِیزٌ حَكِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">وصية المتوفى</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-weight:700; color:var(--gold); font-family:var(--font-ui); margin-bottom:8px;">
+                        المنطقة ٢: آيات الإنفاق (٢٦١–٢٧٣) — ٧ خواتم متشابهة في ١٣ آية!
+                    </div>
+                    <div class="mts-dense-list">
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٦١</span> <span class="mts-dense-ending">وَ ٰ⁠سِعٌ عَلِیمٌ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">حبة ٧٠٠</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٦٣</span> <span class="mts-dense-ending">غَنِیٌّ حَلِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">قول معروف</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٦٥</span> <span class="mts-dense-ending">بِمَا تَعۡمَلُونَ بَصِیرٌ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">الإنفاق الحسن</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٦٧</span> <span class="mts-dense-ending">غَنِیٌّ حَمِیدٌ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">الإنفاق من الخبيث</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٦٨</span> <span class="mts-dense-ending">وَ ٰ⁠سِعٌ عَلِیمࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">وعد الشيطان</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٧١</span> <span class="mts-dense-ending">بِمَا تَعۡمَلُونَ خَبِیرࣱ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">إخفاء الصدقة</span></div>
+                        <div class="mts-dense-item"><span class="mts-dense-num">٢٧٣</span> <span class="mts-dense-ending">بِهِۦ عَلِیمٌ</span> <span class="mts-dense-arrow">&larr;</span> <span class="mts-dense-topic">الفقراء المتعففون</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="mts-nav">
+            <a href="#grp-baseer" class="mts-nav-btn">بَصِیر</a>
+            <a href="#grp-khabeer" class="mts-nav-btn">خَبِیر</a>
+            <a href="#grp-samee" class="mts-nav-btn">سَمِیعٌ عَلِیم</a>
+            <a href="#grp-azeez" class="mts-nav-btn">عَزِیزٌ حَكِیم</a>
+            <a href="#grp-ghafoor-haleem" class="mts-nav-btn">غَفُورٌ حَلِیم</a>
+            <a href="#grp-waasi" class="mts-nav-btn">وَ ٰ⁠سِعٌ عَلِیم</a>
+            <a href="#grp-ghafil" class="mts-nav-btn">بِغَ ٰ⁠فِلٍ</a>
+            <a href="#grp-qadeer" class="mts-nav-btn">قَدِیر</a>
+            <a href="#grp-ghanee" class="mts-nav-btn">غَنِیّ</a>
+            <a href="#grp-bihi-aleem" class="mts-nav-btn">بِهِ عَلِیم</a>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 1: بما تعملون بصير -->
+        <!--=======================================================-->
+        <div class="mts-group clr-baseer open" id="grp-baseer">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... بِمَا تَعۡمَلُونَ بَصِیر</div>
+                    <div class="mts-group-meaning">All-Seeing of what you do</div>
+                </div>
+                <div class="mts-group-count">٤ آيات</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>بَصِیر = يَرى بعينه</strong> &larr; كل هذه الآيات فيها <strong>أفعال مرئية ظاهرة</strong> يراها الناس:
+                        صلاة تُقام، زكاة تُعطى، رضاعة تُشاهد، مهر يُدفع، إنفاق يُرى.
+                        <br>
+                        <strong>القاعدة:</strong> إذا كان الفعل يمكن أن تراه بعينك &rarr; بَصِیر
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١١٠</div>
+                        <div class="mts-verse-context">الصلاة والزكاة — أفعال ظاهرة مرئية</div>
+                        <a href="section-08.html#ayah-110" class="mts-section-link">القسم ٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَأَقِیمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنۡ خَیۡرٍ تَجِدُوهُ عِندَ ٱللَّهِ <span class="mts-verse-ending hl-baseer">إِنَّ ٱللَّهَ بِمَا تَعۡمَلُونَ بَصِیرࣱ</span>
+                    </div>
+                    <div class="mts-grammar-note">الصيغة: <code>إِنَّ ٱللَّهَ</code> — تأكيد مباشر</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٣٣</div>
+                        <div class="mts-verse-context">الرضاعة — فعل جسدي مرئي (أم ترضع)</div>
+                        <a href="section-15.html#ayah-233" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَٱلۡوَ ٰ⁠لِدَ ٰ⁠تُ یُرۡضِعۡنَ أَوۡلَـٰدَهُنَّ حَوۡلَیۡنِ كَامِلَیۡنِ ... وَٱتَّقُوا۟ ٱللَّهَ <span class="mts-verse-ending hl-baseer">وَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ بِمَا تَعۡمَلُونَ بَصِیرࣱ</span>
+                    </div>
+                    <div class="mts-grammar-note">الصيغة: <code>وَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ</code> — أمر بالعِلم، لأن الرضاعة حق يجهل كثيرون أحكامه</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٣٧</div>
+                        <div class="mts-verse-context">العفو عن المهر — فعل مالي مرئي</div>
+                        <a href="section-15.html#ayah-237" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَإِن طَلَّقۡتُمُوهُنَّ مِن قَبۡلِ أَن تَمَسُّوهُنَّ وَقَدۡ فَرَضۡتُمۡ لَهُنَّ فَرِیضَةً ... وَلَا تَنسَوُا۟ ٱلۡفَضۡلَ بَیۡنَكُمۡ <span class="mts-verse-ending hl-baseer">إِنَّ ٱللَّهَ بِمَا تَعۡمَلُونَ بَصِیرٌ</span>
+                    </div>
+                    <div class="mts-grammar-note">الصيغة: <code>إِنَّ ٱللَّهَ</code> — تأكيد، لأن العفو المالي يحتاج تشجيعًا</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٦٥</div>
+                        <div class="mts-verse-context">الإنفاق ابتغاء مرضات الله — فعل إنفاق مرئي</div>
+                        <a href="section-18.html#ayah-265" class="mts-section-link">القسم ١٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَمَثَلُ ٱلَّذِینَ یُنفِقُونَ أَمۡوَ ٰ⁠لَهُمُ ٱبۡتِغَاۤءَ مَرۡضَاتِ ٱللَّهِ ... فَإِن لَّمۡ یُصِبۡهَا وَابِلٌ فَطَلٌّ <span class="mts-verse-ending hl-baseer">وَٱللَّهُ بِمَا تَعۡمَلُونَ بَصِیرٌ</span>
+                    </div>
+                    <div class="mts-grammar-note">الصيغة: <code>وَٱللَّهُ</code> — إضافة وصف بعد مثل الجنة، مناسب للسياق القصصي</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 2: بما تعملون خبير -->
+        <!--=======================================================-->
+        <div class="mts-group clr-khabeer" id="grp-khabeer">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... بِمَا تَعۡمَلُونَ خَبِیر</div>
+                    <div class="mts-group-meaning">All-Aware of what you do</div>
+                </div>
+                <div class="mts-group-count">٢ آيتان</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>خَبِیر = يعلم الخفايا والبواطن</strong> &larr; كلتا الآيتين فيهما <strong>أمر مخفي لا يراه أحد</strong>:
+                        امرأة تنتظر في عدة الوفاة (حالة داخلية)، وإخفاء الصدقة عمدًا.
+                        <br>
+                        <strong>القاعدة:</strong> إذا كان الفعل مخفيًا عن الأعين &rarr; خَبِیر
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٣٤</div>
+                        <div class="mts-verse-context">عدة الوفاة — انتظار داخلي لا يراه أحد</div>
+                        <a href="section-15.html#ayah-234" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَٱلَّذِینَ یُتَوَفَّوۡنَ مِنكُمۡ وَیَذَرُونَ أَزۡوَ ٰ⁠جًا یَتَرَبَّصۡنَ بِأَنفُسِهِنَّ أَرۡبَعَةَ أَشۡهُرٍ وَعَشۡرًا ... <span class="mts-verse-ending hl-khabeer">وَٱللَّهُ بِمَا تَعۡمَلُونَ خَبِیرࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">التربص والانتظار = حالة نفسية باطنة &rarr; خبیر</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٧١</div>
+                        <div class="mts-verse-context">إخفاء الصدقة — فعل مخفي عمدًا</div>
+                        <a href="section-18.html#ayah-271" class="mts-section-link">القسم ١٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        إِن تُبۡدُوا۟ ٱلصَّدَقَـٰتِ فَنِعِمَّا هِیَ وَإِن تُخۡفُوهَا وَتُؤۡتُوهَا ٱلۡفُقَرَاۤءَ فَهُوَ خَیۡرٌ لَّكُمۡ <span class="mts-verse-ending hl-khabeer">وَٱللَّهُ بِمَا تَعۡمَلُونَ خَبِیرࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">إن تُخفوها = إخفاء متعمد &rarr; خبیر يعلم المخفي</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 3: سمیع علیم -->
+        <!--=======================================================-->
+        <div class="mts-group clr-samee" id="grp-samee">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... سَمِیعٌ عَلِیم</div>
+                    <div class="mts-group-meaning">All-Hearing, All-Knowing</div>
+                </div>
+                <div class="mts-group-count">٦ آيات</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>سَمِیع = يسمع</strong> &larr; كل هذه الآيات فيها <strong>كلام يُقال باللسان</strong>:
+                        دعاء، ادعاء، وصية، يمين، طلاق، إعلان قتال.
+                        <br>
+                        <strong>القاعدة:</strong> إذا كان في الآية قول أو كلام يُنطق &rarr; سَمِیعٌ عَلِیم
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١٢٧</div>
+                        <div class="mts-verse-context">دعاء إبراهيم عند بناء الكعبة — كلام ودعاء</div>
+                        <a href="section-09.html#ayah-127" class="mts-section-link">القسم ٩</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَإِذۡ یَرۡفَعُ إِبۡرَ ٰ⁠هِـۧمُ ٱلۡقَوَاعِدَ مِنَ ٱلۡبَیۡتِ وَإِسۡمَـٰعِیلُ رَبَّنَا تَقَبَّلۡ مِنَّاۤ <span class="mts-verse-ending hl-samee">إِنَّكَ أَنتَ ٱلسَّمِیعُ ٱلۡعَلِیمُ</span>
+                    </div>
+                    <div class="mts-grammar-note">الصيغة: <code>إِنَّكَ أَنتَ ٱلسَّمِیعُ ٱلۡعَلِیمُ</code> — بالألف واللام (معرفة) لأنه دعاء مباشر لله</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١٣٧</div>
+                        <div class="mts-verse-context">ادعاءات أهل الكتاب — أقوال وشقاق</div>
+                        <a href="section-09.html#ayah-137" class="mts-section-link">القسم ٩</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        فَإِنۡ ءَامَنُوا۟ بِمِثۡلِ مَاۤ ءَامَنتُم بِهِۦ فَقَدِ ٱهۡتَدَوا۟ وَّإِن تَوَلَّوۡا۟ فَإِنَّمَا هُمۡ فِی شِقَاقٍ فَسَیَكۡفِیكَهُمُ ٱللَّهُ <span class="mts-verse-ending hl-samee">وَهُوَ ٱلسَّمِیعُ ٱلۡعَلِیمُ</span>
+                    </div>
+                    <div class="mts-grammar-note">الصيغة: <code>وَهُوَ ٱلسَّمِیعُ ٱلۡعَلِیمُ</code> — بالألف واللام (معرفة) لأنه وصف ذاتي</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١٨١</div>
+                        <div class="mts-verse-context">الوصية — كلام يُملى ويُسمع</div>
+                        <a href="section-12.html#ayah-181" class="mts-section-link">القسم ١٢</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        فَمَنۢ بَدَّلَهُۥ بَعۡدَ مَا سَمِعَهُۥ فَإِنَّمَاۤ إِثۡمُهُۥ عَلَى ٱلَّذِینَ یُبَدِّلُونَهُۥۤ <span class="mts-verse-ending hl-samee">إِنَّ ٱللَّهَ سَمِیعٌ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">بعد ما سَمِعَه ← سَمِیع! (الكلمة نفسها في الآية تذكّرك)</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٢٤</div>
+                        <div class="mts-verse-context">الأيمان — حَلِف باللسان</div>
+                        <a href="section-15.html#ayah-224" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَلَا تَجۡعَلُوا۟ ٱللَّهَ عُرۡضَةً لِّأَیۡمَـٰنِكُمۡ أَن تَبَرُّوا۟ وَتَتَّقُوا۟ وَتُصۡلِحُوا۟ بَیۡنَ ٱلنَّاسِ <span class="mts-verse-ending hl-samee">وَٱللَّهُ سَمِیعٌ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">أَیمَان = كلام يُقال &rarr; سَمِیع</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٢٧</div>
+                        <div class="mts-verse-context">عزم الطلاق — لفظ يُنطق</div>
+                        <a href="section-15.html#ayah-227" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَإِنۡ عَزَمُوا۟ ٱلطَّلَـٰقَ <span class="mts-verse-ending hl-samee">فَإِنَّ ٱللَّهَ سَمِیعٌ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">الطلاق لا يقع إلا بلفظ &rarr; سَمِیع يسمع اللفظ</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٤٤</div>
+                        <div class="mts-verse-context">إعلان القتال — أمر يُعلن</div>
+                        <a href="section-16.html#ayah-244" class="mts-section-link">القسم ١٦</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَقَـٰتِلُوا۟ فِی سَبِیلِ ٱللَّهِ <span class="mts-verse-ending hl-samee">وَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ سَمِیعٌ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-grammar-note">الصيغة: <code>وَٱعۡلَمُوۤا۟ أَنَّ</code> — أمر بالعلم، تنبيه قبل القتال</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 4: عزیز حكیم -->
+        <!--=======================================================-->
+        <div class="mts-group clr-azeez" id="grp-azeez">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... عَزِیزٌ حَكِیم</div>
+                    <div class="mts-group-meaning">Almighty, All-Wise</div>
+                </div>
+                <div class="mts-group-count">٥ آيات</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>عَزِیز = صاحب القوة والسلطان، حَكِیم = صاحب الحُكم والتشريع</strong>
+                        <br>
+                        كل هذه الآيات فيها <strong>حُكم إلهي أو إظهار قدرة</strong>:
+                        حكم على المنزلقين، حكم في اليتامى، أحكام الطلاق، حكم الوصية، إحياء الموتى.
+                        <br>
+                        <strong>القاعدة:</strong> إذا كان السياق تشريعًا أو إظهار قدرة إلهية &rarr; عَزِیزٌ حَكِیم
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٠٩</div>
+                        <div class="mts-verse-context">تحذير من الزلل — سلطان الله في العقوبة</div>
+                        <a href="section-14.html#ayah-209" class="mts-section-link">القسم ١٤</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        فَإِن زَلَلۡتُم مِّنۢ بَعۡدِ مَا جَاۤءَتۡكُمُ ٱلۡبَیِّنَـٰتُ <span class="mts-verse-ending hl-azeez">فَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ عَزِیزٌ حَكِیمٌ</span>
+                    </div>
+                    <div class="mts-memory-key">زَلَل + بَيِّنات = عصيان بعد وضوح &rarr; عزیز ينتقم</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٢٠</div>
+                        <div class="mts-verse-context">حكم اليتامى — تشريع وحكمة</div>
+                        <a href="section-15.html#ayah-220" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَیَسۡـَٔلُونَكَ عَنِ ٱلۡیَتَـٰمَىٰ قُلۡ إِصۡلَاحٌ لَّهُمۡ خَیۡرٌ ... وَلَوۡ شَاۤءَ ٱللَّهُ لَأَعۡنَتَكُمۡ <span class="mts-verse-ending hl-azeez">إِنَّ ٱللَّهَ عَزِیزٌ حَكِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">لَأَعۡنَتَكُمۡ = لشدّد عليكم &rarr; عزیز قادر + حكیم خفف</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٢٨</div>
+                        <div class="mts-verse-context">أحكام المطلقات — تشريع</div>
+                        <a href="section-15.html#ayah-228" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَٱلۡمُطَلَّقَـٰتُ یَتَرَبَّصۡنَ بِأَنفُسِهِنَّ ثَلَـٰثَةَ قُرُوۤءٍ ... وَلِلرِّجَالِ عَلَیۡهِنَّ دَرَجَةٌ <span class="mts-verse-ending hl-azeez">وَٱللَّهُ عَزِیزٌ حَكِیمٌ</span>
+                    </div>
+                    <div class="mts-memory-key">دَرَجَة = ترتيب حقوق &rarr; حكیم يشرّع بحكمة</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٤٠</div>
+                        <div class="mts-verse-context">وصية المتوفى لزوجته — حكم شرعي</div>
+                        <a href="section-15.html#ayah-240" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَٱلَّذِینَ یُتَوَفَّوۡنَ مِنكُمۡ وَیَذَرُونَ أَزۡوَ ٰ⁠جًا وَصِیَّةً لِّأَزۡوَ ٰ⁠جِهِم مَّتَـٰعًا إِلَى ٱلۡحَوۡلِ ... <span class="mts-verse-ending hl-azeez">وَٱللَّهُ عَزِیزٌ حَكِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">وَصِیَّة = حكم شرعي مُلزِم &rarr; عزیز حكیم</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٦٠</div>
+                        <div class="mts-verse-context">إحياء الطيور — إظهار قدرة إلهية</div>
+                        <a href="section-18.html#ayah-260" class="mts-section-link">القسم ١٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَإِذۡ قَالَ إِبۡرَ ٰ⁠هِـۧمُ رَبِّ أَرِنِی كَیۡفَ تُحۡیِ ٱلۡمَوۡتَىٰ ... ثُمَّ ٱدۡعُهُنَّ یَأۡتِینَكَ سَعۡیًا <span class="mts-verse-ending hl-azeez">وَٱعۡلَمۡ أَنَّ ٱللَّهَ عَزِیزٌ حَكِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">إحياء الموتى = أعظم مظاهر العزة والقدرة</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 5: غفور حلیم -->
+        <!--=======================================================-->
+        <div class="mts-group clr-ghafoor-haleem" id="grp-ghafoor-haleem">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... غَفُورٌ حَلِیم</div>
+                    <div class="mts-group-meaning">Forgiving, Forbearing</div>
+                </div>
+                <div class="mts-group-count">٢ آيتان</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>غَفُور = يغفر الذنب، حَلِیم = لا يُعاجل بالعقوبة</strong>
+                        <br>
+                        كلتا الآيتين فيهما <strong>ضعف بشري طبيعي</strong> يحتاج رحمة وإمهالًا:
+                        لغو اليمين (زلة لسان غير مقصودة)، والتعريض بخطبة المعتدة (رغبة بشرية طبيعية).
+                        <br>
+                        <strong>القاعدة:</strong> إذا كان الخطأ من ضعف بشري طبيعي لا عمد &rarr; غَفُورٌ حَلِیم
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٢٥</div>
+                        <div class="mts-verse-context">لغو اليمين — زلة لسان</div>
+                        <a href="section-15.html#ayah-225" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        لَّا یُؤَاخِذُكُمُ ٱللَّهُ بِٱللَّغۡوِ فِیۤ أَیۡمَـٰنِكُمۡ وَلَـٰكِن یُؤَاخِذُكُم بِمَا كَسَبَتۡ قُلُوبُكُمۡ <span class="mts-verse-ending hl-ghafoor">وَٱللَّهُ غَفُورٌ حَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">لَّا یُؤَاخِذُكُمُ = لا عقاب &rarr; حَلِیم لا يعاجل</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٣٥</div>
+                        <div class="mts-verse-context">التعريض بالخطبة في العدة — رغبة بشرية</div>
+                        <a href="section-15.html#ayah-235" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَلَا جُنَاحَ عَلَیۡكُمۡ فِیمَا عَرَّضۡتُم بِهِۦ مِنۡ خِطۡبَةِ ٱلنِّسَاۤءِ ... فَٱحۡذَرُوهُ <span class="mts-verse-ending hl-ghafoor">وَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ غَفُورٌ حَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">لَا جُنَاحَ = رخصة &rarr; غفور حلیم يخفف عن الضعف البشري</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 6: واسع علیم -->
+        <!--=======================================================-->
+        <div class="mts-group clr-waasi" id="grp-waasi">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... وَ ٰ⁠سِعٌ عَلِیم</div>
+                    <div class="mts-group-meaning">All-Encompassing, All-Knowing</div>
+                </div>
+                <div class="mts-group-count">٣ آيات</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>وَاسِع = واسع العطاء والفضل</strong> &larr; كل هذه الآيات فيها <strong>عطاء ورزق ومضاعفة</strong>:
+                        إعطاء المُلك لطالوت، مضاعفة الأجر ٧٠٠ ضعف، وعد بمغفرة وفضل.
+                        <br>
+                        <strong>القاعدة:</strong> إذا كان السياق عطاء وسعة رزق &rarr; وَ ٰ⁠سِعٌ عَلِیم
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٤٧</div>
+                        <div class="mts-verse-context">ملك طالوت — عطاء الملك لمن يشاء</div>
+                        <a href="section-16.html#ayah-247" class="mts-section-link">القسم ١٦</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَٱللَّهُ یُؤۡتِی مُلۡكَهُۥ مَن یَشَاۤءُ <span class="mts-verse-ending hl-waasi">وَٱللَّهُ وَ ٰ⁠سِعٌ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">یُؤۡتِی مُلۡكَهُ = عطاء واسع &rarr; وَاسِع</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٦١</div>
+                        <div class="mts-verse-context">مثل الحبة ٧٠٠ — مضاعفة هائلة</div>
+                        <a href="section-18.html#ayah-261" class="mts-section-link">القسم ١٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        مَّثَلُ ٱلَّذِینَ یُنفِقُونَ أَمۡوَ ٰ⁠لَهُمۡ فِی سَبِیلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتۡ سَبۡعَ سَنَابِلَ ... <span class="mts-verse-ending hl-waasi">وَٱللَّهُ وَ ٰ⁠سِعٌ عَلِیمٌ</span>
+                    </div>
+                    <div class="mts-memory-key">سبعمائة ضعف = سعة عظيمة &rarr; وَاسِع</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٦٨</div>
+                        <div class="mts-verse-context">وعد الله بالمغفرة والفضل مقابل وعد الشيطان</div>
+                        <a href="section-18.html#ayah-268" class="mts-section-link">القسم ١٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        ٱلشَّیۡطَـٰنُ یَعِدُكُمُ ٱلۡفَقۡرَ ... وَٱللَّهُ یَعِدُكُم مَّغۡفِرَةً مِّنۡهُ وَفَضۡلًا <span class="mts-verse-ending hl-waasi">وَٱللَّهُ وَ ٰ⁠سِعٌ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">الشيطان يعد فقرًا، الله يعد فضلًا وسعة &rarr; وَاسِع</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 7: بغافل عما تعملون -->
+        <!--=======================================================-->
+        <div class="mts-group clr-ghafil" id="grp-ghafil">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... وَمَا ٱللَّهُ بِغَ ٰ⁠فِلٍ عَمَّا تَعۡمَلُونَ</div>
+                    <div class="mts-group-meaning">Allah is not unaware of what you do</div>
+                </div>
+                <div class="mts-group-count">٤ آيات</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>بِغَ ٰ⁠فِلٍ = نفي الغفلة = تحذير ووعيد</strong>
+                        <br>
+                        كل هذه الآيات فيها <strong>تحذير لمن يظن أن الله لا يرى</strong>:
+                        قسوة القلوب بعد الآيات، الإيمان ببعض الكتاب والكفر ببعض، ادعاءات كاذبة عن الأنبياء، الطعن في القبلة.
+                        <br>
+                        <strong>القاعدة:</strong> إذا كان السياق تحذيرًا من عناد أو نفاق &rarr; بِغَ ٰ⁠فِلٍ عَمَّا تَعۡمَلُونَ
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٧٤</div>
+                        <div class="mts-verse-context">قسوة قلوب بني إسرائيل بعد الآيات</div>
+                        <a href="section-06.html#ayah-74" class="mts-section-link">القسم ٦</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        ثُمَّ قَسَتۡ قُلُوبُكُم مِّنۢ بَعۡدِ ذَ ٰ⁠لِكَ فَهِیَ كَٱلۡحِجَارَةِ أَوۡ أَشَدُّ قَسۡوَةً ... <span class="mts-verse-ending hl-ghafil">وَمَا ٱللَّهُ بِغَ ٰ⁠فِلٍ عَمَّا تَعۡمَلُونَ</span>
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٨٥</div>
+                        <div class="mts-verse-context">الإيمان ببعض الكتاب والكفر ببعض</div>
+                        <a href="section-06.html#ayah-85" class="mts-section-link">القسم ٦</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        أَفَتُؤۡمِنُونَ بِبَعۡضِ ٱلۡكِتَـٰبِ وَتَكۡفُرُونَ بِبَعۡضٍ ... یُرَدُّونَ إِلَىٰۤ أَشَدِّ ٱلۡعَذَابِ <span class="mts-verse-ending hl-ghafil">وَمَا ٱللَّهُ بِغَ ٰ⁠فِلٍ عَمَّا تَعۡمَلُونَ</span>
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١٤٠</div>
+                        <div class="mts-verse-context">ادعاء أن الأنبياء كانوا يهودًا أو نصارى</div>
+                        <a href="section-09.html#ayah-140" class="mts-section-link">القسم ٩</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        أَمۡ تَقُولُونَ إِنَّ إِبۡرَ ٰ⁠هِـۧمَ وَإِسۡمَـٰعِیلَ ... كَانُوا۟ هُودًا أَوۡ نَصَـٰرَىٰ ... <span class="mts-verse-ending hl-ghafil">وَمَا ٱللَّهُ بِغَ ٰ⁠فِلٍ عَمَّا تَعۡمَلُونَ</span>
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١٤٩</div>
+                        <div class="mts-verse-context">القبلة — تحذير من الطعن في تحويلها</div>
+                        <a href="section-10.html#ayah-149" class="mts-section-link">القسم ١٠</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَمِنۡ حَیۡثُ خَرَجۡتَ فَوَلِّ وَجۡهَكَ شَطۡرَ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ وَإِنَّهُۥ لَلۡحَقُّ مِن رَّبِّكَ <span class="mts-verse-ending hl-ghafil">وَمَا ٱللَّهُ بِغَ ٰ⁠فِلٍ عَمَّا تَعۡمَلُونَ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 8: على كل شيء قدیر -->
+        <!--=======================================================-->
+        <div class="mts-group clr-qadeer" id="grp-qadeer">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... عَلَىٰ كُلِّ شَیۡءٍ قَدِیر</div>
+                    <div class="mts-group-meaning">Over all things Capable</div>
+                </div>
+                <div class="mts-group-count">٤ آيات</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>قَدِیر = القدرة المطلقة</strong> &larr; كل هذه الآيات فيها <strong>أمر خارق أو مستحيل بشريًا</strong>:
+                        إذهاب السمع والبصر، نسخ الآيات، كفاية أعداء كُثر، الحساب على ما في النفوس.
+                        <br>
+                        <strong>القاعدة:</strong> إذا ذُكر ما يبدو مستحيلًا لكن الله يقدر عليه &rarr; قَدِیر
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٠</div>
+                        <div class="mts-verse-context">المنافقون — لو شاء لذهب بسمعهم وأبصارهم</div>
+                        <a href="section-03.html#ayah-20" class="mts-section-link">القسم ٣</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَلَوۡ شَاۤءَ ٱللَّهُ لَذَهَبَ بِسَمۡعِهِمۡ وَأَبۡصَـٰرِهِمۡ <span class="mts-verse-ending hl-qadeer">إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَیۡءٍ قَدِیرࣱ</span>
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١٠٦</div>
+                        <div class="mts-verse-context">النسخ — قدرة الله على تبديل الأحكام</div>
+                        <a href="section-08.html#ayah-106" class="mts-section-link">القسم ٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        مَا نَنسَخۡ مِنۡ ءَایَةٍ أَوۡ نُنسِهَا نَأۡتِ بِخَیۡرٍ مِّنۡهَاۤ أَوۡ مِثۡلِهَاۤ أَلَمۡ تَعۡلَمۡ <span class="mts-verse-ending hl-qadeer">أَنَّ ٱللَّهَ عَلَىٰ كُلِّ شَیۡءٍ قَدِیرٌ</span>
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١٠٩</div>
+                        <div class="mts-verse-context">حسد أهل الكتاب — الله قادر على حمايتكم</div>
+                        <a href="section-08.html#ayah-109" class="mts-section-link">القسم ٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        فَٱعۡفُوا۟ وَٱصۡفَحُوا۟ حَتَّىٰ یَأۡتِیَ ٱللَّهُ بِأَمۡرِهِۦۤ <span class="mts-verse-ending hl-qadeer">إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَیۡءٍ قَدِیرࣱ</span>
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٨٤</div>
+                        <div class="mts-verse-context">الحساب على ما في النفوس — قدرة شاملة</div>
+                        <a href="section-21.html#ayah-284" class="mts-section-link">القسم ٢١</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَإِن تُبۡدُوا۟ مَا فِیۤ أَنفُسِكُمۡ أَوۡ تُخۡفُوهُ یُحَاسِبۡكُم بِهِ ٱللَّهُ فَیَغۡفِرُ لِمَن یَشَاۤءُ وَیُعَذِّبُ مَن یَشَاۤءُ <span class="mts-verse-ending hl-qadeer">وَٱللَّهُ عَلَىٰ كُلِّ شَیۡءٍ قَدِیرٌ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 9: غنيّ + صفة -->
+        <!--=======================================================-->
+        <div class="mts-group clr-ghanee" id="grp-ghanee">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... غَنِیٌّ حَلِیم / غَنِیٌّ حَمِید</div>
+                    <div class="mts-group-meaning">Self-Sufficient + Forbearing / Praiseworthy</div>
+                </div>
+                <div class="mts-group-count">٢ آيتان</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>غَنِیّ = مستغنٍ عن العباد</strong> &larr; كلتاهما في الصدقة والإنفاق، والمعنى: الله غني عن صدقاتكم!
+                        <br>
+                        <strong>الفرق:</strong>
+                        <br>
+                        &bull; <strong>غَنِیٌّ حَلِیم</strong> (٢٦٣): صدقة يتبعها أذى &rarr; حَلِیم لا يعاجلكم بالعقوبة رغم أنه غني عنكم
+                        <br>
+                        &bull; <strong>غَنِیٌّ حَمِید</strong> (٢٦٧): إنفاق من الخبيث &rarr; حَمِید يستحق الأفضل لا الرديء
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٦٣</div>
+                        <div class="mts-verse-context">قول معروف خير من صدقة يتبعها أذى</div>
+                        <a href="section-18.html#ayah-263" class="mts-section-link">القسم ١٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        قَوۡلٌ مَّعۡرُوفٌ وَمَغۡفِرَةٌ خَیۡرٌ مِّن صَدَقَةٍ یَتۡبَعُهَاۤ أَذًى <span class="mts-verse-ending hl-ghanee">وَٱللَّهُ غَنِیٌّ حَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">أَذًى = إيذاء &rarr; حَلِیم يتحمّل ولا يعاجل</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٦٧</div>
+                        <div class="mts-verse-context">الإنفاق من الرديء — الله يستحق الأفضل</div>
+                        <a href="section-18.html#ayah-267" class="mts-section-link">القسم ١٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        یَـٰۤأَیُّهَا ٱلَّذِینَ ءَامَنُوۤا۟ أَنفِقُوا۟ مِن طَیِّبَـٰتِ مَا كَسَبۡتُمۡ ... وَلَسۡتُم بِـَٔاخِذِیهِ إِلَّاۤ أَن تُغۡمِضُوا۟ فِیهِ <span class="mts-verse-ending hl-ghanee">وَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ غَنِیٌّ حَمِیدٌ</span>
+                    </div>
+                    <div class="mts-memory-key">الخبیث لا یلیق بالمحمود &rarr; حَمِید يستحق الطيب</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- GROUP 10: به علیم / بكل شيء علیم -->
+        <!--=======================================================-->
+        <div class="mts-group clr-aleem" id="grp-bihi-aleem">
+            <div class="mts-group-header" onclick="toggleGroup(this)">
+                <div class="mts-group-color"></div>
+                <div class="mts-group-info">
+                    <div class="mts-group-ending">... بِهِۦ عَلِیم / بِكُلِّ شَیۡءٍ عَلِیم / شَاكِرٌ عَلِیم</div>
+                    <div class="mts-group-meaning">Various عَلِیم endings</div>
+                </div>
+                <div class="mts-group-count">٥ آيات</div>
+                <div class="mts-group-arrow">&lsaquo;</div>
+            </div>
+            <div class="mts-group-body">
+                <div class="mts-secret">
+                    <div class="mts-secret-label">&#9733; سر الحفظ</div>
+                    <div class="mts-secret-text">
+                        <strong>عَلِیم</strong> يأتي في صيغ مختلفة حسب ما يُعلم:
+                        <br>
+                        &bull; <strong>بِهِ عَلِیم</strong> = يعلم هذا الشيء بالذات (خير محدد)
+                        <br>
+                        &bull; <strong>بِكُلِّ شَیۡءٍ عَلِیم</strong> = يعلم كل شيء (سياق شامل)
+                        <br>
+                        &bull; <strong>شَاكِرٌ عَلِیم</strong> = يشكر ويعلم (تطوع بالعبادة)
+                    </div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">١٥٨</div>
+                        <div class="mts-verse-context">الصفا والمروة — تطوع بالعبادة</div>
+                        <a href="section-11.html#ayah-158" class="mts-section-link">القسم ١١</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        إِنَّ ٱلصَّفَا وَٱلۡمَرۡوَةَ مِن شَعَاۤىِٕرِ ٱللَّهِ ... وَمَن تَطَوَّعَ خَیۡرًا <span class="mts-verse-ending hl-aleem">فَإِنَّ ٱللَّهَ شَاكِرٌ عَلِیمٌ</span>
+                    </div>
+                    <div class="mts-memory-key">تَطَوَّعَ = عبادة زائدة &rarr; شَاكِر يشكر المتطوع</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢١٥</div>
+                        <div class="mts-verse-context">السؤال عن الإنفاق — خير محدد</div>
+                        <a href="section-15.html#ayah-215" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        یَسۡـَٔلُونَكَ مَاذَا یُنفِقُونَ قُلۡ مَاۤ أَنفَقۡتُم مِّنۡ خَیۡرٍ فَلِلۡوَ ٰ⁠لِدَیۡنِ ... وَمَا تَفۡعَلُوا۟ مِنۡ خَیۡرٍ <span class="mts-verse-ending hl-aleem">فَإِنَّ ٱللَّهَ بِهِۦ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">مِنۡ خَیۡرٍ = شيء محدد &rarr; بِهِ عَلِیم (يعلمه تحديدًا)</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٧٣</div>
+                        <div class="mts-verse-context">الفقراء المتعففون — خير محدد</div>
+                        <a href="section-18.html#ayah-273" class="mts-section-link">القسم ١٨</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        لِلۡفُقَرَاۤءِ ٱلَّذِینَ أُحۡصِرُوا۟ فِی سَبِیلِ ٱللَّهِ ... وَمَا تُنفِقُوا۟ مِنۡ خَیۡرٍ <span class="mts-verse-ending hl-aleem">فَإِنَّ ٱللَّهَ بِهِۦ عَلِیمٌ</span>
+                    </div>
+                    <div class="mts-memory-key">مِنۡ خَیۡرٍ (نفس الصيغة!) &rarr; بِهِ عَلِیم</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٣١</div>
+                        <div class="mts-verse-context">إمساك أو تسريح — تشريع شامل</div>
+                        <a href="section-15.html#ayah-231" class="mts-section-link">القسم ١٥</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَإِذَا طَلَّقۡتُمُ ٱلنِّسَاۤءَ ... وَٱتَّقُوا۟ ٱللَّهَ <span class="mts-verse-ending hl-aleem">وَٱعۡلَمُوۤا۟ أَنَّ ٱللَّهَ بِكُلِّ شَیۡءٍ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-grammar-note">بِكُلِّ شَیۡءٍ = شامل &rarr; لأن آية الطلاق ذكرت أحكامًا كثيرة متنوعة</div>
+                </div>
+
+                <div class="mts-verse">
+                    <div class="mts-verse-top">
+                        <div class="mts-ayah-num">٢٨٣</div>
+                        <div class="mts-verse-context">الرهن والشهادة — أمانة وعلم</div>
+                        <a href="section-20.html#ayah-283" class="mts-section-link">القسم ٢٠</a>
+                    </div>
+                    <div class="mts-verse-text">
+                        وَلَا تَكۡتُمُوا۟ ٱلشَّهَـٰدَةَ وَمَن یَكۡتُمۡهَا فَإِنَّهُۥۤ ءَاثِمٌ قَلۡبُهُۥ <span class="mts-verse-ending hl-aleem">وَٱللَّهُ بِمَا تَعۡمَلُونَ عَلِیمࣱ</span>
+                    </div>
+                    <div class="mts-memory-key">كتمان الشهادة = إخفاء عِلم &rarr; عَلِیم يعلم المكتوم (وليس بصیر لأنه مخفي في القلب)</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Summary Table -->
+        <div class="mts-intro" style="margin-top: 30px;">
+            <h2>خلاصة القواعد</h2>
+            <div style="text-align: right; font-family: var(--font-ui); line-height: 2.8; font-size: 0.95rem;">
+                <div><strong style="color:#3498db;">بَصِیر</strong> &larr; أفعال مرئية ظاهرة (صلاة، زكاة، رضاعة، إنفاق)</div>
+                <div><strong style="color:#9b59b6;">خَبِیر</strong> &larr; أمور مخفية باطنة (عدة وفاة، إخفاء صدقة)</div>
+                <div><strong style="color:#2ecc71;">سَمِیعٌ عَلِیم</strong> &larr; كلام يُنطق باللسان (دعاء، يمين، طلاق، وصية)</div>
+                <div><strong style="color:#e74c3c;">عَزِیزٌ حَكِیم</strong> &larr; تشريع وأحكام وإظهار قدرة (طلاق، يتامى، إحياء)</div>
+                <div><strong style="color:#f1c40f;">غَفُورٌ حَلِیم</strong> &larr; ضعف بشري طبيعي (لغو يمين، رغبة في الخطبة)</div>
+                <div><strong style="color:#e67e22;">وَاسِعٌ عَلِیم</strong> &larr; عطاء ورزق ومضاعفة (ملك، ٧٠٠ ضعف، فضل)</div>
+                <div><strong style="color:#c0392b;">بِغَافِلٍ</strong> &larr; تحذير ووعيد للمعاندين (قسوة، نفاق، ادعاء)</div>
+                <div><strong style="color:#1abc9c;">قَدِیر</strong> &larr; أمر خارق مستحيل بشريًا (سمع/بصر، نسخ، حساب)</div>
+                <div><strong style="color:#8e44ad;">غَنِیّ</strong> &larr; صدقة: الله غني عنها (+ حلیم للأذى، + حمید للخبيث)</div>
+                <div><strong style="color:#f39c12;">عَلِیم</strong> &larr; بِهِ = خير محدد، بكل شيء = سياق شامل</div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- TIPS: 5-Second Decision Tests -->
+        <!--=======================================================-->
+        <div class="mts-tips">
+            <div class="mts-tips-title">اختبار الـ ٥ ثوانٍ — كيف تقرر بسرعة؟</div>
+            <div style="padding: 6px 24px 14px; font-family: var(--font-ui); font-size: 0.88rem; color: var(--text-muted); line-height: 2;">
+                عندما تصل لنهاية آية وتتردد، اسأل نفسك سؤالًا واحدًا:
+            </div>
+
+            <div class="mts-test-card">
+                <div class="mts-test-icon">&#128065;</div>
+                <div class="mts-test-body">
+                    <div class="mts-test-q">اختبار «بما تعملون»: هل أستطيع رؤية هذا الفعل بعيني؟</div>
+                    <div class="mts-test-a">
+                        <strong>نعم</strong> (صلاة، زكاة، رضاعة، دفع مهر، إنفاق) &rarr; <span class="mts-test-result hl-baseer">بَصِیر</span>
+                        <br>
+                        <strong>لا</strong> (انتظار أرملة، صدقة مخفية) &rarr; <span class="mts-test-result hl-khabeer">خَبِیر</span>
+                        <br>
+                        <strong>عِلم وشهادة</strong> (كتمان شهادة) &rarr; <span class="mts-test-result hl-aleem">عَلِیم</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mts-test-card">
+                <div class="mts-test-icon">&#128483;</div>
+                <div class="mts-test-body">
+                    <div class="mts-test-q">هل في الآية كلام يُنطق باللسان؟</div>
+                    <div class="mts-test-a">
+                        دعاء، يمين، طلاق، وصية، إعلان حرب &rarr; <span class="mts-test-result hl-samee">سَمِیعٌ عَلِیم</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mts-test-card">
+                <div class="mts-test-icon">&#9878;</div>
+                <div class="mts-test-body">
+                    <div class="mts-test-q">هل هذا حُكم شرعي أو إظهار سلطان إلهي؟</div>
+                    <div class="mts-test-a">
+                        حكم طلاق، حكم يتامى، وصية، إحياء موتى &rarr; <span class="mts-test-result hl-azeez">عَزِیزٌ حَكِیم</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mts-test-card">
+                <div class="mts-test-icon">&#128148;</div>
+                <div class="mts-test-body">
+                    <div class="mts-test-q">هل هذا ضعف بشري طبيعي أو زلّة غير مقصودة؟</div>
+                    <div class="mts-test-a">
+                        لغو يمين، رغبة في خطبة معتدة &rarr; <span class="mts-test-result hl-ghafoor">غَفُورٌ حَلِیم</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mts-test-card">
+                <div class="mts-test-icon">&#127873;</div>
+                <div class="mts-test-body">
+                    <div class="mts-test-q">هل السياق عطاء ورزق ومضاعفة؟</div>
+                    <div class="mts-test-a">
+                        ملك، ٧٠٠ ضعف، وعد بفضل &rarr; <span class="mts-test-result hl-waasi">وَاسِعٌ عَلِیم</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mts-test-card">
+                <div class="mts-test-icon">&#9888;</div>
+                <div class="mts-test-body">
+                    <div class="mts-test-q">هل هذا تحذير لمن يعاند ويظن أن الله لا يرى؟</div>
+                    <div class="mts-test-a">
+                        قسوة قلوب، إيمان ببعض الكتاب، ادعاءات كاذبة &rarr; <span class="mts-test-result hl-ghafil">بِغَافِلٍ عَمَّا تَعۡمَلُونَ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mts-test-card">
+                <div class="mts-test-icon">&#9889;</div>
+                <div class="mts-test-body">
+                    <div class="mts-test-q">هل ذُكِر شيء مستحيل بشريًا لكن الله يقدر عليه؟</div>
+                    <div class="mts-test-a">
+                        إذهاب سمع وبصر، نسخ آيات، حساب على ما في النفوس &rarr; <span class="mts-test-result hl-qadeer">عَلَىٰ كُلِّ شَیۡءٍ قَدِیر</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- CONSECUTIVE PAIRS STORIES -->
+        <!--=======================================================-->
+        <div class="mts-tips">
+            <div class="mts-tips-title">قصص الآيات المتتالية — أخطر مواضع الالتباس</div>
+            <div style="padding: 6px 24px 10px; font-family: var(--font-ui); font-size: 0.88rem; color: var(--text-muted); line-height: 2;">
+                هذه الآيات متجاورة في المصحف وأكثرها خلطًا. احفظها كقصة متسلسلة:
+            </div>
+
+            <!-- Story 1: 233-234-235 -->
+            <div style="padding: 14px 24px 0; border-top: 1px solid var(--border);">
+                <div style="font-family: var(--font-ui); font-weight: 700; color: var(--gold); font-size: 0.95rem; margin-bottom: 4px;">
+                    القصة ١: ثلاثية الأحوال الشخصية (٢٣٣ ← ٢٣٤ ← ٢٣٥)
+                </div>
+            </div>
+            <div class="mts-story">
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٣٣</span>
+                    <span>الأم <strong>تُرضع</strong> طفلها — تراها بعينك</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-baseer">بَصِیر</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٣٤</span>
+                    <span>الأرملة <strong>تنتظر</strong> في عدتها — لا تراها، حزنها بداخلها</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-khabeer">خَبِیر</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٣٥</span>
+                    <span>الخاطب <strong>يُلمِّح</strong> — رغبة طبيعية، ضعف بشري</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-ghafoor">غَفُور حَلِیم</span>
+                </div>
+                <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 8px;">
+                    تذكّر: رُضع تُرى ← حزن يُخفى ← رغبة تُغفر
+                </div>
+            </div>
+
+            <!-- Story 2: 224-225-227-228 -->
+            <div style="padding: 14px 24px 0; border-top: 1px solid var(--border);">
+                <div style="font-family: var(--font-ui); font-weight: 700; color: var(--gold); font-size: 0.95rem; margin-bottom: 4px;">
+                    القصة ٢: رباعية الأيمان والطلاق (٢٢٤ ← ٢٢٥ ← ٢٢٧ ← ٢٢٨)
+                </div>
+            </div>
+            <div class="mts-story">
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٢٤</span>
+                    <span>الرجل <strong>يَحلِف</strong> بالله — كلام باللسان</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-samee">سَمِیع</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٢٥</span>
+                    <span>لكنه <strong>لم يقصد</strong> (لغو) — زلة طبيعية</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-ghafoor">غَفُور حَلِیم</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٢٧</span>
+                    <span>فإن <strong>نطق بالطلاق</strong> — كلام باللسان مرة أخرى</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-samee">سَمِیع</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٢٨</span>
+                    <span>وجاء <strong>حُكم العدة</strong> — تشريع إلهي</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-azeez">عَزِیز حَكِیم</span>
+                </div>
+                <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 8px;">
+                    تذكّر: كلام ← زلة ← كلام ← حُكم (سمیع ← غفور ← سمیع ← عزیز)
+                </div>
+            </div>
+
+            <!-- Story 3: Section 18 charity -->
+            <div style="padding: 14px 24px 0; border-top: 1px solid var(--border);">
+                <div style="font-family: var(--font-ui); font-weight: 700; color: var(--gold); font-size: 0.95rem; margin-bottom: 4px;">
+                    القصة ٣: سلسلة الإنفاق (٢٦١ ← ٢٦٣ ← ٢٦٥ ← ٢٦٧ ← ٢٦٨ ← ٢٧١ ← ٢٧٣)
+                </div>
+            </div>
+            <div class="mts-story">
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٦١</span>
+                    <span><strong>بذرة تُضاعَف</strong> ٧٠٠ — سعة الأجر</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-waasi">وَاسِع</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٦٣</span>
+                    <span>كلمة طيبة خير من صدقة <strong>يتبعها أذى</strong></span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-ghanee">غَنِیّ حَلِیم</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٦٥</span>
+                    <span>جنّة على ربوة <strong>تُرى</strong> ثمارها</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-baseer">بَصِیر</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٦٧</span>
+                    <span>لا تنفقوا <strong>الخبيث</strong> — الله يستحق الأفضل</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-ghanee">غَنِیّ حَمِید</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٦٨</span>
+                    <span>الشيطان يُخوّف <strong>بالفقر</strong> — والله يَعِد بالسعة</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-waasi">وَاسِع</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٧١</span>
+                    <span>إن <strong>تُخفوها</strong> — صدقة سرية</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-khabeer">خَبِیر</span>
+                </div>
+                <div class="mts-story-verse">
+                    <span class="mts-story-num">٢٧٣</span>
+                    <span>فقراء <strong>يتعففون</strong> — الله يعلم حالهم</span>
+                    <span class="mts-story-arrow">&larr;</span>
+                    <span class="mts-story-ending hl-aleem">بِهِ عَلِیم</span>
+                </div>
+                <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 8px;">
+                    تذكّر: سعة ← أذى ← ثمر ← خبيث ← فقر ← سر ← تعفف
+                </div>
+            </div>
+        </div>
+
+
+        <!--=======================================================-->
+        <!-- INTERACTIVE QUIZ -->
+        <!--=======================================================-->
+        <div class="mts-quiz" id="quiz-section">
+            <div class="mts-quiz-title">اختبر نفسك</div>
+            <div class="mts-quiz-subtitle">
+                تظهر لك الآية بدون الخاتمة — اختر الاسم الصحيح.
+            </div>
+            <div class="mts-quiz-score" id="quiz-score"></div>
+
+            <div class="mts-quiz-area" id="quiz-area">
+                <div class="mts-quiz-context" id="quiz-context"></div>
+                <div class="mts-quiz-verse" id="quiz-verse"></div>
+                <div class="mts-quiz-options" id="quiz-options"></div>
+                <div class="mts-quiz-feedback" id="quiz-feedback"></div>
+            </div>
+
+            <div class="mts-quiz-controls">
+                <button class="mts-quiz-btn primary" id="quiz-next" onclick="quizNext()">ابدأ الاختبار</button>
+                <button class="mts-quiz-btn" onclick="quizReset()">إعادة</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        سورة البقرة &mdash; المتشابهات<br>
+        <small><a href="index.html" style="color:var(--text-muted);">العودة للفهرس</a></small>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    function toggleGroup(header) {
+        header.closest('.mts-group').classList.toggle('open');
+    }
+    function toggleAllGroups() {
+        const groups = document.querySelectorAll('.mts-group');
+        const allOpen = [...groups].every(g => g.classList.contains('open'));
+        groups.forEach(g => {
+            if (allOpen) g.classList.remove('open');
+            else g.classList.add('open');
+        });
+    }
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+
+    // =============================================
+    // INTERACTIVE QUIZ ENGINE
+    // =============================================
+    const quizData = [
+        // GROUP 1: بصیر (4 verses)
+        {
+            ayah: 110,
+            verse: 'وَأَقِیمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنۡ خَیۡرٍ تَجِدُوهُ عِندَ ٱللَّهِ ...',
+            context: 'الصلاة والزكاة — أفعال مرئية',
+            correct: 'بِمَا تَعۡمَلُونَ بَصِیر',
+            group: 'baseer'
+        },
+        {
+            ayah: 233,
+            verse: 'وَٱلۡوَ ٰ⁠لِدَ ٰ⁠تُ یُرۡضِعۡنَ أَوۡلَـٰدَهُنَّ حَوۡلَیۡنِ كَامِلَیۡنِ ... وَٱتَّقُوا۟ ٱللَّهَ ...',
+            context: 'الرضاعة — فعل ظاهر',
+            correct: 'بِمَا تَعۡمَلُونَ بَصِیر',
+            group: 'baseer'
+        },
+        {
+            ayah: 237,
+            verse: 'وَإِن طَلَّقۡتُمُوهُنَّ مِن قَبۡلِ أَن تَمَسُّوهُنَّ وَقَدۡ فَرَضۡتُمۡ لَهُنَّ فَرِیضَةً ... وَلَا تَنسَوُا۟ ٱلۡفَضۡلَ بَیۡنَكُمۡ ...',
+            context: 'العفو عن المهر — تنازل مرئي',
+            correct: 'بِمَا تَعۡمَلُونَ بَصِیر',
+            group: 'baseer'
+        },
+        {
+            ayah: 265,
+            verse: 'وَمَثَلُ ٱلَّذِینَ یُنفِقُونَ أَمۡوَ ٰ⁠لَهُمُ ٱبۡتِغَاۤءَ مَرۡضَاتِ ٱللَّهِ ... فَإِن لَّمۡ یُصِبۡهَا وَابِلٌ فَطَلٌّ ...',
+            context: 'الإنفاق الحسن — فعل ظاهر',
+            correct: 'بِمَا تَعۡمَلُونَ بَصِیر',
+            group: 'baseer'
+        },
+        // GROUP 2: خبیر (2 verses)
+        {
+            ayah: 234,
+            verse: 'وَٱلَّذِینَ یُتَوَفَّوۡنَ مِنكُمۡ وَیَذَرُونَ أَزۡوَ ٰ⁠جًا یَتَرَبَّصۡنَ بِأَنفُسِهِنَّ أَرۡبَعَةَ أَشۡهُرٍ وَعَشۡرًا ...',
+            context: 'عدة الوفاة — انتظار خفي',
+            correct: 'بِمَا تَعۡمَلُونَ خَبِیر',
+            group: 'khabeer'
+        },
+        {
+            ayah: 271,
+            verse: 'إِن تُبۡدُوا۟ ٱلصَّدَقَـٰتِ فَنِعِمَّا هِیَ وَإِن تُخۡفُوهَا وَتُؤۡتُوهَا ٱلۡفُقَرَاۤءَ فَهُوَ خَیۡرٌ لَّكُمۡ ...',
+            context: 'إخفاء الصدقة — أمر باطن',
+            correct: 'بِمَا تَعۡمَلُونَ خَبِیر',
+            group: 'khabeer'
+        },
+        // GROUP 3: سمیع علیم (6 verses)
+        {
+            ayah: 127,
+            verse: 'وَإِذۡ یَرۡفَعُ إِبۡرَ ٰ⁠هِـۧمُ ٱلۡقَوَاعِدَ مِنَ ٱلۡبَیۡتِ وَإِسۡمَـٰعِیلُ رَبَّنَا تَقَبَّلۡ مِنَّاۤ ...',
+            context: 'دعاء إبراهيم — كلام ودعاء',
+            correct: 'سَمِیعٌ عَلِیم',
+            group: 'samee'
+        },
+        {
+            ayah: 137,
+            verse: 'فَإِنۡ ءَامَنُوا۟ بِمِثۡلِ مَاۤ ءَامَنتُم بِهِۦ فَقَدِ ٱهۡتَدَوا۟ وَّإِن تَوَلَّوۡا۟ فَإِنَّمَا هُمۡ فِی شِقَاقٍ ...',
+            context: 'أقوال أهل الكتاب — كلام وشقاق',
+            correct: 'سَمِیعٌ عَلِیم',
+            group: 'samee'
+        },
+        {
+            ayah: 181,
+            verse: 'فَمَنۢ بَدَّلَهُۥ بَعۡدَ مَا سَمِعَهُۥ فَإِنَّمَاۤ إِثۡمُهُۥ عَلَى ٱلَّذِینَ یُبَدِّلُونَهُۥۤ ...',
+            context: 'الوصية — كلام يُسمع',
+            correct: 'سَمِیعٌ عَلِیم',
+            group: 'samee'
+        },
+        {
+            ayah: 224,
+            verse: 'وَلَا تَجۡعَلُوا۟ ٱللَّهَ عُرۡضَةً لِّأَیۡمَـٰنِكُمۡ أَن تَبَرُّوا۟ وَتَتَّقُوا۟ وَتُصۡلِحُوا۟ بَیۡنَ ٱلنَّاسِ ...',
+            context: 'الأيمان — حَلِف باللسان',
+            correct: 'سَمِیعٌ عَلِیم',
+            group: 'samee'
+        },
+        {
+            ayah: 227,
+            verse: 'وَإِنۡ عَزَمُوا۟ ٱلطَّلَـٰقَ ...',
+            context: 'عزم الطلاق — لفظ يُنطق',
+            correct: 'سَمِیعٌ عَلِیم',
+            group: 'samee'
+        },
+        {
+            ayah: 244,
+            verse: 'وَقَـٰتِلُوا۟ فِی سَبِیلِ ٱللَّهِ ...',
+            context: 'إعلان القتال — أمر يُعلن',
+            correct: 'سَمِیعٌ عَلِیم',
+            group: 'samee'
+        },
+        // GROUP 4: عزیز حكیم (5 verses)
+        {
+            ayah: 209,
+            verse: 'فَإِن زَلَلۡتُم مِّنۢ بَعۡدِ مَا جَاۤءَتۡكُمُ ٱلۡبَیِّنَـٰتُ ...',
+            context: 'الزلل بعد البينات — حكم إلهي',
+            correct: 'عَزِیزٌ حَكِیم',
+            group: 'azeez'
+        },
+        {
+            ayah: 220,
+            verse: 'وَیَسۡـَٔلُونَكَ عَنِ ٱلۡیَتَـٰمَىٰ قُلۡ إِصۡلَاحٌ لَّهُمۡ خَیۡرٌ ... وَلَوۡ شَاۤءَ ٱللَّهُ لَأَعۡنَتَكُمۡ ...',
+            context: 'حكم اليتامى — تشريع',
+            correct: 'عَزِیزٌ حَكِیم',
+            group: 'azeez'
+        },
+        {
+            ayah: 228,
+            verse: 'وَٱلۡمُطَلَّقَـٰتُ یَتَرَبَّصۡنَ بِأَنفُسِهِنَّ ثَلَـٰثَةَ قُرُوۤءٍ ... وَلِلرِّجَالِ عَلَیۡهِنَّ دَرَجَةٌ ...',
+            context: 'عدة المطلقة — حكم شرعي',
+            correct: 'عَزِیزٌ حَكِیم',
+            group: 'azeez'
+        },
+        {
+            ayah: 240,
+            verse: 'وَٱلَّذِینَ یُتَوَفَّوۡنَ مِنكُمۡ وَیَذَرُونَ أَزۡوَ ٰ⁠جًا وَصِیَّةً لِّأَزۡوَ ٰ⁠جِهِم مَّتَـٰعًا إِلَى ٱلۡحَوۡلِ ...',
+            context: 'وصية المتوفى — تشريع',
+            correct: 'عَزِیزٌ حَكِیم',
+            group: 'azeez'
+        },
+        {
+            ayah: 260,
+            verse: 'وَإِذۡ قَالَ إِبۡرَ ٰ⁠هِـۧمُ رَبِّ أَرِنِی كَیۡفَ تُحۡیِ ٱلۡمَوۡتَىٰ ... ثُمَّ ٱدۡعُهُنَّ یَأۡتِینَكَ سَعۡیًا ...',
+            context: 'إحياء الموتى — قدرة وحكمة',
+            correct: 'عَزِیزٌ حَكِیم',
+            group: 'azeez'
+        },
+        // GROUP 5: غفور حلیم (2 verses)
+        {
+            ayah: 225,
+            verse: 'لَّا یُؤَاخِذُكُمُ ٱللَّهُ بِٱللَّغۡوِ فِیۤ أَیۡمَـٰنِكُمۡ وَلَـٰكِن یُؤَاخِذُكُم بِمَا كَسَبَتۡ قُلُوبُكُمۡ ...',
+            context: 'لغو اليمين — ضعف بشري',
+            correct: 'غَفُورٌ حَلِیم',
+            group: 'ghafoor'
+        },
+        {
+            ayah: 235,
+            verse: 'وَلَا جُنَاحَ عَلَیۡكُمۡ فِیمَا عَرَّضۡتُم بِهِۦ مِنۡ خِطۡبَةِ ٱلنِّسَاۤءِ ... فَٱحۡذَرُوهُ ...',
+            context: 'التعريض بالخطبة — رغبة بشرية',
+            correct: 'غَفُورٌ حَلِیم',
+            group: 'ghafoor'
+        },
+        // GROUP 6: واسع علیم (3 verses)
+        {
+            ayah: 247,
+            verse: 'وَٱللَّهُ یُؤۡتِی مُلۡكَهُۥ مَن یَشَاۤءُ ...',
+            context: 'ملك طالوت — عطاء واسع',
+            correct: 'وَ ٰ⁠سِعٌ عَلِیم',
+            group: 'waasi'
+        },
+        {
+            ayah: 261,
+            verse: 'مَّثَلُ ٱلَّذِینَ یُنفِقُونَ أَمۡوَ ٰ⁠لَهُمۡ فِی سَبِیلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتۡ سَبۡعَ سَنَابِلَ ...',
+            context: 'مضاعفة ٧٠٠ — سعة عطاء',
+            correct: 'وَ ٰ⁠سِعٌ عَلِیم',
+            group: 'waasi'
+        },
+        {
+            ayah: 268,
+            verse: 'ٱلشَّیۡطَـٰنُ یَعِدُكُمُ ٱلۡفَقۡرَ ... وَٱللَّهُ یَعِدُكُم مَّغۡفِرَةً مِّنۡهُ وَفَضۡلًا ...',
+            context: 'وعد الله بالفضل — سعة',
+            correct: 'وَ ٰ⁠سِعٌ عَلِیم',
+            group: 'waasi'
+        },
+        // GROUP 7: بغافل عما تعملون (4 verses)
+        {
+            ayah: 74,
+            verse: 'ثُمَّ قَسَتۡ قُلُوبُكُم مِّنۢ بَعۡدِ ذَ ٰ⁠لِكَ فَهِیَ كَٱلۡحِجَارَةِ أَوۡ أَشَدُّ قَسۡوَةً ...',
+            context: 'قسوة قلوب بني إسرائيل',
+            correct: 'بِغَافِلٍ عَمَّا تَعۡمَلُونَ',
+            group: 'ghafil'
+        },
+        {
+            ayah: 85,
+            verse: 'أَفَتُؤۡمِنُونَ بِبَعۡضِ ٱلۡكِتَـٰبِ وَتَكۡفُرُونَ بِبَعۡضٍ ... یُرَدُّونَ إِلَىٰۤ أَشَدِّ ٱلۡعَذَابِ ...',
+            context: 'الإيمان ببعض الكتاب',
+            correct: 'بِغَافِلٍ عَمَّا تَعۡمَلُونَ',
+            group: 'ghafil'
+        },
+        {
+            ayah: 140,
+            verse: 'أَمۡ تَقُولُونَ إِنَّ إِبۡرَ ٰ⁠هِـۧمَ وَإِسۡمَـٰعِیلَ ... كَانُوا۟ هُودًا أَوۡ نَصَـٰرَىٰ ...',
+            context: 'ادعاء كاذب عن الأنبياء',
+            correct: 'بِغَافِلٍ عَمَّا تَعۡمَلُونَ',
+            group: 'ghafil'
+        },
+        {
+            ayah: 149,
+            verse: 'وَمِنۡ حَیۡثُ خَرَجۡتَ فَوَلِّ وَجۡهَكَ شَطۡرَ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ وَإِنَّهُۥ لَلۡحَقُّ مِن رَّبِّكَ ...',
+            context: 'القبلة — تحذير',
+            correct: 'بِغَافِلٍ عَمَّا تَعۡمَلُونَ',
+            group: 'ghafil'
+        },
+        // GROUP 8: قدیر (4 verses)
+        {
+            ayah: 20,
+            verse: 'وَلَوۡ شَاۤءَ ٱللَّهُ لَذَهَبَ بِسَمۡعِهِمۡ وَأَبۡصَـٰرِهِمۡ ...',
+            context: 'المنافقون — إذهاب السمع والبصر',
+            correct: 'عَلَىٰ كُلِّ شَیۡءٍ قَدِیر',
+            group: 'qadeer'
+        },
+        {
+            ayah: 106,
+            verse: 'مَا نَنسَخۡ مِنۡ ءَایَةٍ أَوۡ نُنسِهَا نَأۡتِ بِخَیۡرٍ مِّنۡهَاۤ أَوۡ مِثۡلِهَاۤ ...',
+            context: 'نسخ الآيات — قدرة إلهية',
+            correct: 'عَلَىٰ كُلِّ شَیۡءٍ قَدِیر',
+            group: 'qadeer'
+        },
+        {
+            ayah: 109,
+            verse: 'فَٱعۡفُوا۟ وَٱصۡفَحُوا۟ حَتَّىٰ یَأۡتِیَ ٱللَّهُ بِأَمۡرِهِۦۤ ...',
+            context: 'حسد أهل الكتاب — قدرة',
+            correct: 'عَلَىٰ كُلِّ شَیۡءٍ قَدِیر',
+            group: 'qadeer'
+        },
+        {
+            ayah: 284,
+            verse: 'وَإِن تُبۡدُوا۟ مَا فِیۤ أَنفُسِكُمۡ أَوۡ تُخۡفُوهُ یُحَاسِبۡكُم بِهِ ٱللَّهُ ...',
+            context: 'الحساب على ما في النفوس',
+            correct: 'عَلَىٰ كُلِّ شَیۡءٍ قَدِیر',
+            group: 'qadeer'
+        },
+        // GROUP 9: غنیّ (2 verses)
+        {
+            ayah: 263,
+            verse: 'قَوۡلٌ مَّعۡرُوفٌ وَمَغۡفِرَةٌ خَیۡرٌ مِّن صَدَقَةٍ یَتۡبَعُهَاۤ أَذًى ...',
+            context: 'صدقة يتبعها أذى',
+            correct: 'غَنِیٌّ حَلِیم',
+            group: 'ghanee'
+        },
+        {
+            ayah: 267,
+            verse: 'یَـٰۤأَیُّهَا ٱلَّذِینَ ءَامَنُوۤا۟ أَنفِقُوا۟ مِن طَیِّبَـٰتِ مَا كَسَبۡتُمۡ ... وَلَسۡتُم بِـَٔاخِذِیهِ إِلَّاۤ أَن تُغۡمِضُوا۟ فِیهِ ...',
+            context: 'الإنفاق من الرديء',
+            correct: 'غَنِیٌّ حَمِید',
+            group: 'ghanee'
+        },
+        // GROUP 10: علیم endings (5 verses)
+        {
+            ayah: 158,
+            verse: 'إِنَّ ٱلصَّفَا وَٱلۡمَرۡوَةَ مِن شَعَاۤىِٕرِ ٱللَّهِ ... وَمَن تَطَوَّعَ خَیۡرًا ...',
+            context: 'الصفا والمروة — تطوع',
+            correct: 'شَاكِرٌ عَلِیم',
+            group: 'aleem'
+        },
+        {
+            ayah: 215,
+            verse: 'یَسۡـَٔلُونَكَ مَاذَا یُنفِقُونَ قُلۡ مَاۤ أَنفَقۡتُم مِّنۡ خَیۡرٍ فَلِلۡوَ ٰ⁠لِدَیۡنِ ... وَمَا تَفۡعَلُوا۟ مِنۡ خَیۡرٍ ...',
+            context: 'السؤال عن الإنفاق — خير محدد',
+            correct: 'بِهِۦ عَلِیم',
+            group: 'aleem'
+        },
+        {
+            ayah: 273,
+            verse: 'لِلۡفُقَرَاۤءِ ٱلَّذِینَ أُحۡصِرُوا۟ فِی سَبِیلِ ٱللَّهِ ... وَمَا تُنفِقُوا۟ مِنۡ خَیۡرٍ ...',
+            context: 'الفقراء المتعففون — خير محدد',
+            correct: 'بِهِۦ عَلِیم',
+            group: 'aleem'
+        },
+        {
+            ayah: 231,
+            verse: 'وَإِذَا طَلَّقۡتُمُ ٱلنِّسَاۤءَ ... وَٱتَّقُوا۟ ٱللَّهَ ...',
+            context: 'أحكام الطلاق — سياق شامل',
+            correct: 'بِكُلِّ شَیۡءٍ عَلِیم',
+            group: 'aleem'
+        },
+        {
+            ayah: 283,
+            verse: 'وَلَا تَكۡتُمُوا۟ ٱلشَّهَـٰدَةَ وَمَن یَكۡتُمۡهَا فَإِنَّهُۥۤ ءَاثِمٌ قَلۡبُهُۥ ...',
+            context: 'كتمان الشهادة — إخفاء',
+            correct: 'بِمَا تَعۡمَلُونَ عَلِیم',
+            group: 'aleem'
+        }
+    ];
+
+    // All possible endings for wrong options
+    const allEndings = [
+        'بِمَا تَعۡمَلُونَ بَصِیر',
+        'بِمَا تَعۡمَلُونَ خَبِیر',
+        'سَمِیعٌ عَلِیم',
+        'عَزِیزٌ حَكِیم',
+        'غَفُورٌ حَلِیم',
+        'وَ ٰ⁠سِعٌ عَلِیم',
+        'بِغَافِلٍ عَمَّا تَعۡمَلُونَ',
+        'عَلَىٰ كُلِّ شَیۡءٍ قَدِیر',
+        'غَنِیٌّ حَلِیم',
+        'غَنِیٌّ حَمِید',
+        'شَاكِرٌ عَلِیم',
+        'بِهِۦ عَلِیم',
+        'بِكُلِّ شَیۡءٍ عَلِیم',
+        'بِمَا تَعۡمَلُونَ عَلِیم'
+    ];
+
+    const groupColors = {
+        baseer: '#3498db', khabeer: '#9b59b6', samee: '#2ecc71',
+        azeez: '#e74c3c', ghafoor: '#f1c40f', waasi: '#e67e22',
+        ghafil: '#c0392b', qadeer: '#1abc9c', ghanee: '#8e44ad',
+        aleem: '#f39c12'
+    };
+
+    let quizState = { correct: 0, total: 0, remaining: [], current: null };
+
+    function shuffleArray(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+    function quizReset() {
+        quizState = { correct: 0, total: 0, remaining: shuffleArray(quizData), current: null };
+        document.getElementById('quiz-score').textContent = '';
+        document.getElementById('quiz-verse').textContent = '';
+        document.getElementById('quiz-options').innerHTML = '';
+        document.getElementById('quiz-feedback').className = 'mts-quiz-feedback';
+        document.getElementById('quiz-feedback').textContent = '';
+        document.getElementById('quiz-context').textContent = '';
+        document.getElementById('quiz-next').textContent = 'ابدأ الاختبار';
+    }
+
+    function quizNext() {
+        // First call or after answering
+        if (quizState.remaining.length === 0) {
+            if (quizState.total === 0) {
+                // Fresh start
+                quizState.remaining = shuffleArray(quizData);
+            } else {
+                // Finished all questions
+                document.getElementById('quiz-verse').textContent = '';
+                document.getElementById('quiz-options').innerHTML = '';
+                document.getElementById('quiz-context').textContent = '';
+                const fb = document.getElementById('quiz-feedback');
+                fb.className = 'mts-quiz-feedback show correct-fb';
+                const pct = Math.round((quizState.correct / quizState.total) * 100);
+                fb.innerHTML = `انتهى! نتيجتك: <strong>${quizState.correct} / ${quizState.total}</strong> (${pct}%)`;
+                document.getElementById('quiz-next').textContent = 'إعادة';
+                document.getElementById('quiz-next').onclick = function() {
+                    quizReset();
+                    quizNext();
+                };
+                return;
+            }
+        }
+
+        // Pick next question
+        quizState.current = quizState.remaining.pop();
+        const q = quizState.current;
+
+        // Update score
+        if (quizState.total > 0) {
+            document.getElementById('quiz-score').textContent =
+                `✓ ${quizState.correct} / ${quizState.total}`;
+        }
+
+        // Show verse
+        document.getElementById('quiz-context').textContent = `آية ${q.ayah} — ${q.context}`;
+        document.getElementById('quiz-verse').textContent = q.verse;
+
+        // Clear feedback
+        const fb = document.getElementById('quiz-feedback');
+        fb.className = 'mts-quiz-feedback';
+        fb.textContent = '';
+
+        // Generate options: correct + 3 random wrong
+        let wrongOptions = allEndings.filter(e => e !== q.correct);
+        wrongOptions = shuffleArray(wrongOptions).slice(0, 3);
+        const options = shuffleArray([q.correct, ...wrongOptions]);
+
+        // Render buttons
+        const optDiv = document.getElementById('quiz-options');
+        optDiv.innerHTML = '';
+        options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'mts-quiz-opt';
+            btn.textContent = opt;
+            btn.onclick = function() { checkAnswer(opt, btn); };
+            optDiv.appendChild(btn);
+        });
+
+        document.getElementById('quiz-next').textContent = 'التالي ←';
+        document.getElementById('quiz-next').onclick = quizNext;
+    }
+
+    function checkAnswer(selected, btn) {
+        const q = quizState.current;
+        const fb = document.getElementById('quiz-feedback');
+        const optBtns = document.querySelectorAll('.mts-quiz-opt');
+
+        // Disable all buttons
+        optBtns.forEach(b => { b.disabled = true; });
+
+        quizState.total++;
+
+        if (selected === q.correct) {
+            quizState.correct++;
+            btn.style.background = '#27ae60';
+            btn.style.color = '#fff';
+            btn.style.borderColor = '#27ae60';
+            fb.className = 'mts-quiz-feedback show correct-fb';
+            fb.textContent = 'صحيح! ✓';
+        } else {
+            btn.style.background = '#e74c3c';
+            btn.style.color = '#fff';
+            btn.style.borderColor = '#e74c3c';
+            // Highlight correct answer
+            optBtns.forEach(b => {
+                if (b.textContent === q.correct) {
+                    b.style.background = '#27ae60';
+                    b.style.color = '#fff';
+                    b.style.borderColor = '#27ae60';
+                }
+            });
+            fb.className = 'mts-quiz-feedback show wrong-fb';
+            fb.innerHTML = `الجواب: <strong>${q.correct}</strong>`;
+        }
+
+        // Update score display
+        document.getElementById('quiz-score').textContent =
+            `✓ ${quizState.correct} / ${quizState.total}`;
+    }
+    </script>
+</body>
+</html>

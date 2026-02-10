@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — قصة خلق آدم عليه السلام</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ٥ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#9b59b6">
+            <div class="section-num">٥</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">قصة خلق آدم عليه السلام</h2>
+                <h3 class="section-title-en">The Story of Adam's Creation</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٣٠ – ٣٩</div>
+        </div>
+
+        <div class="section-desc">
+            <p>قصة جعل آدم خليفة في الأرض، وتعليمه الأسماء، وسجود الملائكة له، وإباء إبليس واستكباره، ثم هبوط آدم إلى الأرض</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="30">
+                        <div class="flow-node-num">٣٠</div>
+                        <div class="flow-node-text">إعلان الخلافة وسؤال الملائكة</div>
+                        <div class="flow-node-key">إِنِّی جَاعِلٌ فِی ٱلۡأَرۡضِ خَلِیفَةً</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="31">
+                        <div class="flow-node-num">٣١</div>
+                        <div class="flow-node-text">تعليم آدم الأسماء كلها</div>
+                        <div class="flow-node-key">وَعَلَّمَ ءَادَمَ ٱلۡأَسۡمَاۤءَ كُلَّهَا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="32-33">
+                        <div class="flow-node-num">٣٢–٣٣</div>
+                        <div class="flow-node-text">عجز الملائكة وإنباء آدم بالأسماء</div>
+                        <div class="flow-node-key">سُبۡحَـٰنَكَ لَا عِلۡمَ لَنَاۤ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="34">
+                        <div class="flow-node-num">٣٤</div>
+                        <div class="flow-node-text">سجود الملائكة وإباء إبليس</div>
+                        <div class="flow-node-key">ٱسۡجُدُو<span class="tj-slt">ا۟</span> لِـَٔادَمَ فَسَجَدُوۤ<span class="tj-slt">ا۟</span> إِلَّاۤ إِبۡلِیسَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="35">
+                        <div class="flow-node-num">٣٥</div>
+                        <div class="flow-node-text">سكنى الجنة والنهي عن الشجرة</div>
+                        <div class="flow-node-key">ٱسۡكُنۡ أَنتَ وَزَوۡجُكَ ٱلۡجَنَّةَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="36">
+                        <div class="flow-node-num">٣٦</div>
+                        <div class="flow-node-text">إزلال الشيطان والهبوط إلى الأرض</div>
+                        <div class="flow-node-key">فَأَزَلَّهُمَا ٱلشَّیۡطَـٰنُ عَنۡهَا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="37">
+                        <div class="flow-node-num">٣٧</div>
+                        <div class="flow-node-text">تلقي الكلمات والتوبة</div>
+                        <div class="flow-node-key">فَتَلَقَّىٰۤ ءَادَمُ مِن رَّبِّهِۦ كَلِمَـٰتٍ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="38-39">
+                        <div class="flow-node-num">٣٨–٣٩</div>
+                        <div class="flow-node-text">الهبوط ومصير المتّبعين والمكذّبين</div>
+                        <div class="flow-node-key">ٱهۡبِطُو<span class="tj-slt">ا۟</span> مِنۡهَا جَمِیعًا</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <!-- Ayah 30 -->
+            <div class="ayah" id="ayah-30">
+                <div class="ayah-text">وَإِذۡ قَالَ رَبُّكَ لِلۡمَلَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَةِ إِ<span class="tj-ghn">نِّ</span><span class="tj-mdd">ی</span> جَاعِ<span class="tj-khf">لࣱ</span> فِ<span class="tj-mdd">ی</span> <span class="tj-slt">ٱ</span>لۡأَرۡضِ خَلِ<span class="tj-mdd">ی</span>فَ<span class="tj-khf">ةࣰ</span>ۖ قَالُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> أَتَ<span class="tj-qlq">جۡ</span>عَلُ فِ<span class="tj-mdd">ی</span>هَا مَ<span class="tj-dgm">ن</span> یُفۡسِدُ فِ<span class="tj-mdd">ی</span>هَا وَیَسۡفِكُ <span class="tj-slt">ٱل</span>دِّمَ<span class="tj-mdd">اۤ</span>ءَ وَنَحۡنُ نُسَبِّحُ بِحَمۡدِكَ وَنُقَدِّسُ لَكَۖ قَالَ إِ<span class="tj-ghn">نِّ</span><span class="tj-mdd">یۤ</span> أَعۡلَمُ مَا لَا تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إخبار الله الملائكة بجعل خليفة في الأرض، وسؤالهم عن الحكمة في ذلك، وجواب الله بأنه يعلم ما لا يعلمون من الحكم العظيمة في استخلاف آدم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-30">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-30">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-30">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-30">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-30">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-30">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-30">هذا شروع في ذكر فضل آدم عليه السلام أبي البشر أن الله حين أراد خلقه أخبر الملائكة بذلك, وأن الله مستخلفه في الأرض. فقالت الملائكة عليهم السلام: أتجعل فيها من يفسد فيها بالمعاصي ويسفك الدماء وهذا تخصيص بعد تعميم, لبيان شدة مفسدة القتل، وهذا بحسب ظنهم أن الخليفة المجعول في الأرض سيحدث منه ذلك, فنزهوا الباري عن ذلك, وعظموه, وأخبروا أنهم قائمون بعبادة الله على وجه خال من المفسدة فقالوا: ونحن نسبح بحمدك أي: ننزهك التنزيه اللائق بحمدك وجلالك، ونقدس لك يحتمل أن معناها: ونقدسك, فتكون اللام مفيدة للتخصيص والإخلاص، ويحتمل أن يكون: ونقدس لك أنفسنا، أي: نطهرها بالأخلاق الجميلة. قال الله تعالى للملائكة: إني أعلم من هذا الخليفة ما لا تعلمون لأن كلامكم بحسب ما ظننتم, وأنا عالم بالظواهر والسرائر, وأعلم أن الخير الحاصل بخلق هذا الخليفة, أضعاف أضعاف ما في ضمن ذلك من الشر فلو لم يكن في ذلك, إلا أن الله تعالى أراد أن يجتبي منهم الأنبياء والصديقين, والشهداء والصالحين, ولتظهر آياته للخلق, ويحصل من العبوديات التي لم تكن تحصل بدون خلق هذا الخليفة, كالجهاد وغيره, وليظهر ما كمن في غرائز بني آدم من الخير والشر بالامتحان, وليتبين عدوه من وليه, وحزبه من حربه, وليظهر ما كمن في نفس إبليس من الشر الذي انطوى عليه, واتصف به, فهذه حكم عظيمة, يكفي بعضها في ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-30', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-30">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-30">يخبر تعالى بامتنانه على بني آدم، بتنويهه بذكرهم في الملأ الأعلى قبل إيجادهم. والخليفة هنا يعني قوماً يخلف بعضهم بعضاً قرناً بعد قرن وجيلاً بعد جيل. وقول الملائكة ليس على وجه الاعتراض على الله ولا الحسد لبني آدم، بل هو سؤال استعلام واستكشاف عن الحكمة. يقولون: ما الحكمة في خلق هؤلاء مع أن منهم من يفسد ويسفك الدماء؟ وجواب الله لهم: «إني أعلم ما لا تعلمون» أي أعلم المصلحة الراجحة في خلق هذا الصنف. فسيجعل فيهم الأنبياء والرسل، والصديقين والشهداء، والصالحين والعباد، والزهاد والأولياء، والعلماء العاملين والخاشعين. ومن أقوال المفسرين: روي عن ابن عباس أن الجن أفسدوا في الأرض قبل بني آدم وسفكوا الدماء، فقالت الملائكة ذلك قياساً عليهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-30', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-30">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-30">قوله تعالى ( وإذ قال ربك ) أي وقال ربك وإذ زائدة وقيل معناه واذكر إذ قال ربك. ( للملائكة ) جمع ملك وأصله مألك من المألكة والألوكة وهي الرسالة. وأراد بهم الملائكة الذين كانوا في الأرض وذلك أن الله تعالى خلق السماء والأرض وخلق الملائكة والجن فأسكن الملائكة السماء وأسكن الجن الأرض فعبدوا دهراً طويلاً ثم ظهر فيهم الحسد والبغي فأفسدوا وقتلوا فبعث الله إليهم جنداً من الملائكة رأسهم إبليس فطردوا الجن إلى شعوب الجبال وجزائر البحور وسكنوا الأرض. ( إني جاعل ) خالق. ( في الأرض خليفة ) أي بدلاً منكم والمراد بالخليفة هاهنا آدم سماه خليفة لأنه خلف الجن. والصحيح أنه خليفة الله في أرضه لإقامة أحكامه وتنفيذ وصاياه. ( قالوا أتجعل فيها من يفسد فيها ) بالمعاصي ( ويسفك الدماء ) بغير حق أي كما فعل بنو الجان فقاسوا الشاهد على الغائب. ( ونحن نسبح بحمدك ) قال الحسن: نقول سبحان الله وبحمده. ( ونقدس لك ) أي نثني عليك بالقدس والطهارة. وقيل لم يكن هذا من الملائكة على طريق الاعتراض بل على سبيل التعجب وطلب وجه الحكمة فيه. ( قال إني أعلم ما لا تعلمون ) المصلحة فيه، وقيل إني أعلم أن في ذريته من يطيعني ويعبدني من الأنبياء والأولياء والعلماء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-30', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-30">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-30">قوله تعالى: وإذ قال ربك للملائكة إني جاعل في الأرض خليفة. فيه سبع عشرة مسألة: إذ وإذا حرفا توقيت، فإذ للماضي، وإذا للمستقبل. والملائكة واحدها ملك. وجاعل هنا بمعنى خالق. والمعني بالخليفة هنا في قول ابن مسعود وابن عباس وجميع أهل التأويل آدم عليه السلام، وهو خليفة الله في إمضاء أحكامه وأوامره. وهذه الآية أصل في نصب إمام وخليفة يسمع له ويطاع لتجتمع به الكلمة وتنفذ به أحكام الخليفة ولا خلاف في وجوب ذلك بين الأمة ولا بين الأئمة. قالوا أتجعل فيها من يفسد فيها، قد علمنا قطعاً أن الملائكة لا تعلم إلا ما أُعلمت ولا تسبق بالقول. فقيل: المعنى أنهم لما سمعوا لفظ خليفة فهموا أن في بني آدم من يفسد؛ إذ الخليفة المقصود منه الإصلاح وترك الفساد. وقيل: إن الملائكة قد رأت ما كان من إفساد الجن وسفكهم الدماء في الأرض قبل خلق آدم. ونحن نسبح بحمدك أي ننزهك عما لا يليق بصفاتك. ونقدس لك أي نعظمك ونمجدك. قال إني أعلم ما لا تعلمون، قال ابن عباس: كان إبليس قد أعجب ودخله الكبر فقال الله تعالى لهم: إني أعلم ما لا تعلمون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-30', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-30">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-30">معنى «إذ» حرف يفيد الجزاء والزمان وليس حرفاً زائداً كما ذهب البعض. ومعنى «جاعل» أي مستخلف في الأرض أو مصيّر فيها خلفاً. ومعنى «خليفة» من خلف فلان فلاناً أي قام مقامه، أي آدم وذريته يخلفون بعضهم بعضاً. وسؤال الملائكة استخبار عن حال هذا الخليفة وليس إنكاراً، قالوا ذلك استفهاماً واستعلاماً. والتسبيح والتقديس تعظيم الله بالحمد والشكر والتبرئة له من النقائص. وقوله «إني أعلم ما لا تعلمون» قال قتادة: لما قالت الملائكة ما قالت وقد علم الله أن فيمن يستخلف في الأرض أنبياء وفضلاء وأهل طاعة قال لهم: إني أعلم ما لا تعلمون مما كان ومما يكون ومما هو كائن فهو عام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-30', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 31 -->
+            <div class="ayah" id="ayah-31">
+                <div class="ayah-text">وَعَلَّمَ ءَادَمَ <span class="tj-slt">ٱ</span>لۡأَسۡمَ<span class="tj-mdd">اۤ</span>ءَ كُلَّهَا ثُ<span class="tj-ghn">مَّ</span> عَرَضَهُمۡ عَلَى <span class="tj-slt">ٱ</span>لۡمَلَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَةِ فَقَالَ أَ<span class="tj-qlb">نۢ</span>بِـُٔونِی بِأَسۡمَ<span class="tj-mdd">اۤ</span>ءِ هَ<span class="tj-mdd">ـٰۤ</span>ؤُلَ<span class="tj-mdd">اۤ</span>ءِ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">ن</span>تُمۡ صَ<span class="tj-mdd">ـٰ</span>دِقِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تعليم الله آدم أسماء الأشياء كلها ثم عرضها على الملائكة امتحاناً لهم، وطلبه منهم الإنباء بها إن كانوا صادقين في ظنهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-31">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-31">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-31">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-31">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-31">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-31">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-31">ثم لما كان قول الملائكة عليهم السلام, فيه إشارة إلى فضلهم على الخليفة الذي يجعله الله في الأرض, أراد الله تعالى أن يبين لهم من فضل آدم ما يعرفون به فضله وكمال حكمة الله وعلمه فـ { عَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا } أي: أسماء الأشياء وما هو مسمى بها، فعلمه الاسم والمسمى أي الألفاظ والمعاني حتى المكبر من الأسماء كالقصعة والمصغر كالقصيعة. { ثُمَّ عَرَضَهُمْ } أي: عرض المسميات { عَلَى الْمَلَائِكَةِ } امتحاناً لهم هل يعرفونها أم لا؟ { فَقَالَ أَنْبِئُونِي بِأَسْمَاءِ هَٰؤُلَاءِ إِنْ كُنتُمْ صَادِقِينَ } في قولكم وظنكم أنكم أفضل من هذا الخليفة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-31', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-31">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-31">هذا مقام ذكر الله تعالى فيه شرف آدم على الملائكة، بما اختصه به من علم أسماء كل شيء دونهم، وهذا كان بعد سجودهم له، وإنما قدم هذا الفصل على ذاك لمناسبة ما بين هذا المقام وعدم علمهم بحكمة خلق الخليفة حين سألوا عن ذلك، فأخبرهم الله تعالى بأنه يعلم ما لا يعلمون؛ ولهذا ذكر تعالى هذا المقام عقيب هذا ليبين لهم شرف آدم بما فضل به عليهم في العلم. قال ابن عباس ومجاهد وقتادة: علمه اسم كل شيء حتى القصعة والقصيعة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-31', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-31">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-31">سمي آدم لأنه خلق من أديم الأرض، وقيل لأنه كان آدم اللون وكنيته أبو محمد وأبو البشر فلما خلقه الله تعالى علمه أسماء الأشياء وذلك أن الملائكة قالوا: ليخلق ربنا ما شاء فلن يخلق خلقاً أكرم عليه منا وإن كان فنحن أعلم منه. فأظهر الله تعالى فضله عليهم بالعلم وفيه دليل على أن الأنبياء أفضل من الملائكة كما ذهب إليه أهل السنة والجماعة. قال ابن عباس ومجاهد وقتادة: «علمه اسم كل شيء حتى القصعة والقصيعة». وقيل اسم ما كان وما يكون إلى يوم القيامة. قال أهل التأويل: إن الله عز وجل علم آدم جميع اللغات ثم تكلم كل واحد من أولاده بلغة فتفرقوا في البلاد واختص كل فرقة منهم بلغة. { فقال أنبئوني } أخبروني { بأسماء هؤلاء إن كنتم صادقين } في أني لا أخلق خلقاً إلا وكنتم أفضل وأعلم منه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-31', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-31">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-31">قوله تعالى: وعلم آدم الأسماء كلها. فيه سبع مسائل: الأولى: معنى «وعلم آدم الأسماء كلها» علّم عرّف والتعليم هنا إلهام. الثانية: لفظة «الأسماء» تعني العبارات والتسميات. الثالثة: اختلف المفسرون في نوع الأسماء المعلَّمة؛ قيل أسماء الأشياء كلها وقيل أسماء الملائكة وقيل أسماء الذرية. الرابعة: الخلاف حول ما تم عرضه على الملائكة. الخامسة: من أول من تكلم بالعربية. السادسة: معنى «إن كنتم صادقين» كشرط. السابعة: هل هذا تكليف ما لا يطاق أم توقيف. والصواب أن الله تعالى علم آدم أسماء جميع المخلوقات بجميع اللغات وأن ذلك من خصائصه التي فضله الله بها على الملائكة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-31', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-31">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-31">ينقل الطبري عن ابن عباس أن الله خلق آدم من أديم الأرض وجهها الظاهر وسُمي بذلك لأنه أُخذ من سطح الأرض. وقد جاء حديث صحيح عن النبي صلى الله عليه وسلم: «إن الله خلق آدم من قبضة قبضها من جميع الأرض فجاء بنو آدم على قدر الأرض». بشأن الأسماء اختلف المفسرون: قال ابن عباس ومجاهد علّم آدم أسماء كل شيء من المخلوقات. وقال آخرون أسماء الملائكة فقط. وقال آخرون أسماء ذريته كلها. ويرجح الطبري أن الأسماء المقصودة هي أسماء أعيان بني آدم والملائكة معتمداً على استخدام الضمير «هم» في «عرضهم» والذي لا يُستخدم للحيوانات والجماد. وقوله «أنبئوني» معناه أخبروني وقوله «إن كنتم صادقين» تعريف لهم بقصور علمهم عما هو موجود أمام أعينهم فكيف بما غاب عنهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-31', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 32 -->
+            <div class="ayah" id="ayah-32">
+                <div class="ayah-text">قَالُو<span class="tj-slt">ا۟</span> سُ<span class="tj-qlq">بۡ</span>حَ<span class="tj-mdd">ـٰ</span>نَكَ لَا عِلۡمَ لَنَ<span class="tj-mdd">اۤ</span> إِلَّا مَا عَلَّمۡتَنَ<span class="tj-mdd">اۤ</span>ۖ إِ<span class="tj-ghn">نَّ</span>كَ أَ<span class="tj-khf">ن</span>تَ <span class="tj-slt">ٱ</span>لۡعَلِ<span class="tj-mdd">ی</span>مُ <span class="tj-slt">ٱ</span>لۡحَكِ<span class="tj-mdd">ی</span>مُ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">اعتراف الملائكة بقصور علمهم وتنزيههم لله عن الاعتراض عليه، وإقرارهم بأنه العليم الحكيم الذي لا يخرج عن حكمته شيء.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-32">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-32">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-32">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-32">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-32">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-32">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-32">{ قَالُوا سُبْحَانَكَ } أي: ننزهك من الاعتراض منا عليك ومخالفة أمرك. { لَا عِلْمَ لَنَا } بوجه من الوجوه { إِلَّا مَا عَلَّمْتَنَا } إياه فضلاً منك وجوداً، { إِنَّكَ أَنْتَ الْعَلِيمُ الْحَكِيمُ } العليم الذي أحاط علماً بكل شيء فلا يغيب عنه ولا يعزب مثقال ذرة في السماوات والأرض ولا أصغر من ذلك ولا أكبر. الحكيم: من له الحكمة التامة التي لا يخرج عنها مخلوق ولا يشذ عنها مأمور، فما خلق شيئاً إلا لحكمة ولا أمر بشيء إلا لحكمة، والحكمة: وضع الشيء في موضعه اللائق به، فأقروا واعترفوا بعلم الله وحكمته وقصورهم عن معرفة أدنى شيء واعترافهم بفضل الله عليهم وتعليمه إياهم ما لا يعلمون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-32', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-32">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-32">هذا تقديس وتنزيه من الملائكة لله تعالى أن يحيط أحد بشيء من علمه إلا بما شاء، وأن يعلموا شيئاً إلا ما علمهم الله تعالى. العليم بكل شيء، الحكيم في خلقك وأمرك وفي تعليمك من تشاء ومنعك من تشاء، لك الحكمة في ذلك والعدل التام. وتضمن التفسير شرحاً لمعنى «سبحانك» كتنزيه الله عن السوء، مع إيراد آثار عن ابن عباس وعلي بن أبي طالب في بيان معنى هذه الكلمة الجليلة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-32', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-32">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-32">{قالوا سبحانك} تنزيهاً لك. {لا علم لنا إلا ما علمتنا} معناه فإنك أجلّ من أن نحيط بشيء من علمك إلا ما علمتنا. {إنك أنت العليم} بخلقك {الحكيم} في أمرك. والحكيم له معنيان: أحدهما الحاكم وهو القاضي العدل والثاني المحكم للأمر كي لا يتطرق إليه الفساد. وأصل الحكمة في اللغة: المنع فهي تمنع صاحبها من الباطل؛ ومنه حكمة الدابة لأنها تمنعها من الاعوجاج.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-32', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-32">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-32">قوله تعالى: قالوا سبحانك لا علم لنا إلا ما علمتنا إنك أنت العليم الحكيم. فيه ثلاث مسائل: الأولى: سبحانك أي تنزيهاً لك عن أن يعلم الغيب أحد سواك. وهذا جوابهم عن قوله أنبئوني فأجابوا أنهم لا يعلمون إلا ما أعلمهم به ولم يتعاطوا ما لا علم لهم به كما يفعله الجهال منا. الثانية: الواجب على من سُئل عن علم أن يقول إن لم يعلم: الله أعلم ولا أدري، اقتداءً بالملائكة والأنبياء والفضلاء من العلماء. الثالثة: سبحانك منصوب على المصدر عند الخليل وسيبويه يؤدي عن معنى نسبحك تسبيحاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-32', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-32">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-32">قال أبو جعفر: وهذا خبر من الله جل ذكره عن ملائكته بالأوبة إليه وتسليم علم ما لم يعلموه له وتبرّيهم من أن يعلموا أو يعلم أحد شيئاً إلا ما علّمه تعالى ذكره. وأما تأويل قوله «سبحانك لا علم لنا إلا ما علمتنا» فهو تنزيهاً لله من أن يكون أحدٌ يعلم الغيب غيره تبرّياً منهم من علم الغيب. وسُبحان مصدر لا تصرف له ومعناه نسبّحك كأنهم قالوا: نسبحك تسبيحاً وننزهك تنزيهاً ونبرّئك من أن نعلم شيئاً غير ما علمتنا. وتأويل قوله «إنك أنت العليم الحكيم»: أنك أنت يا ربنا العليم من غير تعليم بجميع ما قد كان وما هو كائن والعالم للغيوب دون جميع خلقك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-32', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 33 -->
+            <div class="ayah" id="ayah-33">
+                <div class="ayah-text">قَالَ یَ<span class="tj-mdd">ـٰۤ</span>ـَٔادَمُ أَ<span class="tj-qlb">نۢ</span>بِئۡهُم بِأَسۡمَ<span class="tj-mdd">اۤ</span>ىِٕهِمۡۖ فَلَ<span class="tj-ghn">مَّ</span><span class="tj-mdd">اۤ</span> أَ<span class="tj-qlb">نۢ</span>بَأَهُم بِأَسۡمَ<span class="tj-mdd">اۤ</span>ىِٕهِمۡ قَالَ أَلَمۡ أَقُل لَّكُمۡ إِ<span class="tj-ghn">نِّ</span><span class="tj-mdd">یۤ</span> أَعۡلَمُ غَیۡبَ <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">ـٰ</span>وَ<span class="tj-mdd">ٰ</span>تِ وَ<span class="tj-slt">ٱ</span>لۡأَرۡضِ وَأَعۡلَمُ مَا تُ<span class="tj-qlq">بۡ</span>دُونَ وَمَا كُ<span class="tj-khf">ن</span>تُمۡ تَكۡتُمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله آدم بإخبار الملائكة بالأسماء فأخبرهم، فبان فضله عليهم بالعلم، وبيّن الله أنه يعلم غيب السماوات والأرض وما يبدون وما يكتمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-33">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-33">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-33">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-33">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-33">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-33">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-33">فحينئذ قال الله: { يَا آدَمُ أَنْبِئْهُمْ بِأَسْمَائِهِمْ } أي: أسماء المسميات التي عرضها الله على الملائكة; فعجزوا عنها، { فَلَمَّا أَنْبَأَهُمْ بِأَسْمَائِهِمْ } تبين للملائكة فضل آدم عليهم; وحكمة الباري وعلمه في استخلاف هذا الخليفة، { قَالَ أَلَمْ أَقُلْ لَكُمْ إِنِّي أَعْلَمُ غَيْبَ السَّمَاوَاتِ وَالْأَرْضِ } وهو ما غاب عنا; فلم نشاهده، فإذا كان عالما بالغيب; فالشهادة من باب أولى، { وَأَعْلَمُ مَا تُبْدُونَ } أي: تظهرون { وَمَا كُنْتُمْ تَكْتُمُونَ }</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-33', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-33">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-33">وقوله تعالى : ( قال يا آدم أنبئهم بأسمائهم فلما أنبأهم بأسمائهم قال ألم أقل لكم إني أعلم غيب السماوات والأرض وأعلم ما تبدون وما كنتم تكتمون ) قال زيد بن أسلم . قال : أنت جبريل ، أنت ميكائيل ، أنت إسرافيل ، حتى عدد الأسماء كلها ، حتى بلغ الغراب . وقال مجاهد في قول الله : ( يا آدم أنبئهم بأسمائهم ) قال : اسم الحمامة ، والغراب ، واسم كل شيء . وروي عن سعيد بن جبير ، والحسن ، وقتادة ، نحو ذلك . فلما ظهر فضل آدم ، عليه السلام ، على الملائكة ، عليهم السلام ، في سرده ما علمه الله تعالى من أسماء الأشياء ، قال الله تعالى للملائكة : ( ألم أقل لكم إني أعلم غيب السماوات والأرض وأعلم ما تبدون وما كنتم تكتمون ) أي : ألم أتقدم إليكم أني أعلم الغيب الظاهر والخفي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-33', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-33">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-33">{قال} الله تعالى: {يا آدم أنبئهم بأسمائهم} أخبرهم بأسمائهم فسمى آدم كل شئ باسمه وذكر الحكمة التي لأجلها خلق. {فلما أنبأهم بأسمائهم قال} الله تعالى {ألم أقل لكم} يا ملائكتي {إني أعلم غيب السماوات والأرض} ما كان منهما وما يكون لأنه قد قال لهم {إني أعلم ما لا تعلمون}. {وأعلم ما تبدون} قال الحسن وقتادة: يعني قولهم أتجعل فيها من يفسد فيها. {وما كنتم تكتمون} قولكم لن يخلق الله خلقاً أكرم عليه منا. قال ابن عباس رضي الله عنهما: «هو أن إبليس مر على جسد آدم وهو ملقى بين مكة والطائف لا روح فيها فقال: لأمر ما خلق هذا ثم دخل في فيه وخرج من دبره وقال: إنه خلق لا يتماسك لأنه أجوف، ثم قال للملائكة الذين معه أرأيتم إن فضل هذا عليكم وأمرتم بطاعته ماذا تصنعون؟، قالوا: نطيع أمر ربنا، فقال إبليس في نفسه: والله لئن سلطت عليه لأهلكنه ولئن سلط علي لأعصينه فقال الله تعالى: {وأعلم ما تبدون} يعني ما تبديه الملائكة من الطاعة {وما كنتم تكتمون} يعني إبليس من المعصية».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-33', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-33">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-33">قوله تعالى: «قال يا آدم أنبئهم بأسمائهم فلما أنبأهم بأسمائهم قال ألم أقل لكم إني أعلم غيب السماوات والأرض وأعلم ما تبدون وما كنتم تكتمون». فيه خمس مسائل: الأولى: أمر الله آدم بتعليم الملائكة الأسماء ليظهر علمه الفائق وفضله. حصلت له رتبة الجلال «بأن جعله مسجوداً له، مختصاً بالعلم». الثانية: الآية تدل على فضل العلم وأهله. الملائكة «تضع أجنحتها رضاً لطالب العلم» أي تتواضع له. الثالثة: اختلف العلماء في تفضيل الملائكة أو بني آدم على قولين معروضين بأدلتهما. الرابعة: لا أحد يعلم الغيب إلا بتعليم من الله، «فالمنجمون والكهان وغيرهم كذبة». الخامسة: المكتوم إما ما أبداه الملائكة بالسجود لآدم أو ما أخفاه إبليس من الكبر والمعصية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-33', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-33">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-33">القول في تأويل قوله تعالى: «قال يا آدم أنبئهم بأسمائهم فلما أنبأهم بأسمائهم قال ألم أقل لكم إني أعلم غيب السموات والأرض». يشرح أبو جعفر الطبري أن الله أراد تعليم الملائكة درساً في محدودية علمهم. فقد سألوا ربهم عن جعل الخلفاء في الأرض، لكنهم لم يعلموا أسماء هؤلاء الخلفاء. هذا الجهل بالأسماء يعكس جهلهم بحكمة الله تعالى وتدبيره. بشأن قوله «وأعلم ما تبدون وما كنتم تكتمون»: يرى الطبري أن التفسير الأولى للآية هو ما ذهب إليه ابن عباس: أن معنى ذلك أن الله يعلم ما يظهره الملائكة بألسنتهم مما قالوه: «أتجعل فيها من يفسد فيها»، وما كانوا يخفونه في أنفسهم. وخاصة ما كان كامناً في إبليس من الكبر والمعصية. ويؤكد الطبري أن الله سبحانه يعلم السرائر والعلانيات، ولا يخفى عليه شيء من الأقوال والأفعال والنيات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-33', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 34 -->
+            <div class="ayah" id="ayah-34">
+                <div class="ayah-text">وَإِذۡ قُلۡنَا لِلۡمَلَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَةِ <span class="tj-slt">ٱ</span>سۡجُدُو<span class="tj-slt">ا۟</span> لِـَٔادَمَ فَسَجَدُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> إِلَّ<span class="tj-mdd">اۤ</span> إِ<span class="tj-qlq">بۡ</span>لِ<span class="tj-mdd">ی</span>سَ أَبَ<span class="tj-mdd">ىٰ</span> وَ<span class="tj-slt">ٱ</span>سۡتَكۡبَرَ وَكَانَ مِنَ <span class="tj-slt">ٱ</span>لۡكَ<span class="tj-mdd">ـٰ</span>فِرِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله الملائكة بالسجود لآدم إكراماً له فسجدوا جميعاً إلا إبليس الذي أبى واستكبر فكان من الكافرين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-34">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-34">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-34">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-34">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-34">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-34">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-34">ثم أمرهم تعالى بالسجود لآدم; إكراماً له وتعظيماً; وعبودية لله تعالى، فامتثلوا أمر الله; وبادروا كلهم بالسجود، { إِلَّا إِبْلِيسَ أَبَى } امتنع عن السجود; واستكبر عن أمر الله وعلى آدم، قال: { أَأَسْجُدُ لِمَنْ خَلَقْتَ طِينًا } وهذا الإباء منه والاستكبار; نتيجة الكفر الذي هو منطو عليه; فتبينت حينئذ عداوته لله ولآدم وكفره واستكباره. وفي هذه الآيات من العبر والآيات; إثبات الكلام لله تعالى; وأنه لم يزل متكلماً; يقول ما شاء; ويتكلم بما شاء; وأنه عليم حكيم، وفيه أن العبد إذا خفيت عليه حكمة الله في بعض المخلوقات والمأمورات فالواجب عليه; التسليم; واتهام عقله; والإقرار لله بالحكمة، وفيه اعتناء الله بشأن الملائكة; وإحسانه بهم; بتعليمهم ما جهلوا; وتنبيههم على ما لم يعلموه. وفيه فضيلة العلم من وجوه عديدة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-34', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-34">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-34">يؤكد ابن كثير أن هذه «كرامة عظيمة من الله تعالى لآدم» حيث أمر الله الملائكة بالسجود له. يستند إلى روايات حديثية متعددة توضح أحداث خلق آدم والامتحان الذي تعرضت له الملائكة. ينقل التفسير روايات عن ابن عباس وغيره تفصل كيفية خلق آدم، ودور إبليس في رفضه السجود. يُذكر أن إبليس كان من قبيلة الملائكة تسمى «الجن» (خزان الجنة)، وعندما أمر الله بالسجود، «استكبر» و«أبى» لاعتقاده أنه أفضل لكونه «خلقتني من نار وخلقته من طين». ويناقش ابن كثير طبيعة السجود، مشيراً إلى أنه «سجود تحية وسلام وإكرام»، مع ملاحظة أن هذا النوع من السجود نُسخ في الشريعة الإسلامية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-34', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-34">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-34">وقوله تعالى: {وإذ قلنا للملائكة اسجدوا لآدم} واختلفوا في أن هذا الخطاب مع أي الملائكة فقال بعضهم: مع الذين كانوا سكان الأرض. والأصح: أنه مع جميع الملائكة لقوله تعالى: {فسجد الملائكة كلهم أجمعون}. وقوله: (اسجدوا) فيه قولان: الأصح أن السجود كان لآدم على الحقيقة، وتضمن معنى الطاعة لله عز وجل بامتثال أمره، وكان ذلك سجود تعظيم وتحية لا سجود عبادة، كسجود إخوة يوسف له. وقيل: معنى قوله {اسجدوا لآدم} أي إلى آدم قِبلة، والسجود لله تعالى. {فسجدوا} يعني: الملائكة. {إلا إبليس} وكان اسمه عزازيل بالسريانية، وبالعربية: الحارث، فلما عصى غير اسمه وصورته فقيل: إبليس، لأنه أبلس من رحمة الله تعالى أي يئس. واختلفوا فيه فقال ابن عباس رضي الله عنهما وأكثر المفسرين: «كان إبليس من الملائكة»، وقال الحسن: «كان من الجن ولم يكن من الملائكة». قوله: {أبى} أي امتنع فلم يسجد. {واستكبر} أي تكبر عن السجود. {وكان} أي: صار {من الكافرين} وقال أكثر المفسرين: وكان في سابق علم الله من الكافرين الذين وجبت لهم الشقاوة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-34', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-34">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-34">وَإِذْ قُلْنَا لِلْمَلَائِكَةِ اسْجُدُوا لِآدَمَ فَسَجَدُوا إِلَّا إِبْلِيسَ أَبَى وَاسْتَكْبَرَ وَكَانَ مِنَ الْكَافِرِينَ. التفسير يتناول عشر مسائل أساسية: الأولى: معنى «وإذ قلنا» أي واذكر، و«قلنا» بصيغة الجمع تفخيماً من الله الجبار. الثانية: معنى السجود — التذلل والخضوع في اللغة العربية. الثالثة: الاستدلال بهذا على فضل آدم، مع توضيح أن المسجود له ليس أفضل من الساجد بالضرورة. الرابعة: اختلاف العلماء في كيفية السجود — هل كان وضع الجباه على الأرض أم مجرد خضوع واستسلام. الخامسة: حكم السجود للمخلوقات — كان مباحاً إلى عهد النبي صلى الله عليه وسلم، ثم حرّمه. السادسة: معنى «أبى» — امتناعه من فعل ما أمر به. السابعة: معنى «استكبر» — الاستعظام والكبر. الثامنة: معنى «كان من الكافرين» — إما بمعنى صار، أو بمعنى أنه كان في علم الله سيكفر. التاسعة: الكرامات والخوارق ليست دليلاً على الولاية. العاشرة: اختلاف في هل كفر إبليس جهلاً أو عناداً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-34', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-34">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-34">القول في تأويل قوله تعالى: «وَإِذْ قُلْنَا لِلْمَلائِكَةِ اسْجُدُوا لآدَمَ فَسَجَدُوا إِلا إِبْلِيسَ أَبَى وَاسْتَكْبَرَ وَكَانَ مِنَ الْكَافِرِينَ». يذكّر الله تعالى بفضله حيث أمر الملائكة بالسجود لآدم تكريماً له، فامتثلوا الأمر جميعاً باستثناء إبليس، الذي امتنع وأبى، متكبراً عن طاعة الله. الطبري يعرض آراء متعددة حول طبيعة إبليس: الرأي الأول: إبليس من قبيلة من الملائكة تسمى «الجن»، كان خازناً على الجنة وله سلطان على السماء الدنيا. الرأي الثاني: إبليس أصل الجن كما أن آدم أصل الإنس، وليس من الملائكة في الأصل. معنى لفظ «إبليس»: الكلمة مشتقة من «الإبلاس» أي اليأس والحزن. سُميّ إبليس بهذا الاسم حين أبلس متحيراً من رحمة الله. دلالات الآية: الأبى: امتناعه من السجود. الاستكبار: تعاليه عن طاعة الله. الكفر: جحوده لنعم الله عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-34', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 35 -->
+            <div class="ayah" id="ayah-35">
+                <div class="ayah-text">وَقُلۡنَا یَ<span class="tj-mdd">ـٰۤ</span>ـَٔادَمُ <span class="tj-slt">ٱ</span>سۡكُنۡ أَ<span class="tj-khf">ن</span>تَ وَزَوۡجُكَ <span class="tj-slt">ٱ</span>لۡجَ<span class="tj-ghn">نَّ</span>ةَ وَكُلَا مِنۡهَا رَغَدًا حَیۡثُ شِئۡتُمَا وَلَا تَقۡرَبَا هَ<span class="tj-mdd">ـٰ</span>ذِهِ <span class="tj-slt">ٱل</span>شَّجَرَةَ فَتَكُونَا مِنَ <span class="tj-slt">ٱل</span>ظَّ<span class="tj-mdd">ـٰ</span>لِمِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أسكن الله آدم وزوجه حواء الجنة وأباح لهما الأكل منها حيث شاءا رغداً، ونهاهما عن شجرة واحدة امتحاناً لهما.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-35">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-35">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-35">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-35">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-35">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-35">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-35">لما خلق الله آدم وفضله; أتم نعمته عليه; بأن خلق منه زوجة ليسكن إليها; ويستأنس بها; وأمرهما بسكنى الجنة; والأكل منها رغداً; أي: واسعاً هنيئاً، { حَيْثُ شِئْتُمَا } أي: من أصناف الثمار والفواكه; وقال الله له: { إِنَّ لَكَ أَلَّا تَجُوعَ فِيهَا وَلَا تَعْرَى وَأَنَّكَ لَا تَظْمَأُ فِيهَا وَلَا تَضْحَى } { وَلَا تَقْرَبَا هَذِهِ الشَّجَرَةَ } نوع من أنواع شجر الجنة; الله أعلم بها، وإنما نهاهما عنها امتحاناً وابتلاء [أو لحكمة غير معلومة لنا] { فَتَكُونَا مِنَ الظَّالِمِينَ } دل على أن النهي للتحريم; لأنه رتب عليه الظلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-35', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-35">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-35">يقول الله تعالى إخباراً عما أكرم به آدم: بعد أن أمر الملائكة بالسجود له، فسجدوا إلا إبليس: إنه أباحه الجنة يسكن منها حيث يشاء، ويأكل منها ما شاء رغداً، أي: هنيئاً واسعاً طيباً. وقد اختلف في الجنة التي أسكنها آدم، أهي في السماء أم في الأرض؟ والأكثرون على الأول، وسياق الآية يقتضي أن حواء خلقت قبل دخول آدم الجنة. بخصوص الشجرة التي نهي عنها آدم، اختلف العلماء فيها: قيل إنها الكرم، وقيل السنبلة، وقيل البر، وقيل التين، وقيل النخلة. قال ابن جرير: «الصواب في ذلك أن يقال: إن الله نهى آدم وزوجته عن أكل شجرة بعينها من أشجار الجنة، ولا علم عندنا بأي شجرة كانت على التعيين، لأن الله لم يضع لعباده دليلاً على ذلك في القرآن ولا من السنة الصحيحة».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-35', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-35">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-35">قوله تعالى: {وقلنا يا آدم اسكن أنت وزوجك الجنة} وذلك أن آدم لم يكن له في الجنة من يجانسه فنام نومة فخلق الله زوجته حواء من قصيراء من شقه الأيسر، وسميت حواء لأنها خلقت من حي، خلقها الله عز وجل من غير أن أحس به آدم ولا وجد له ألماً، ولو وجد ألماً لما عطف رجل على امرأة قط فلما هب من نومه رآها جالسة عند رأسه كأحسن ما في خلق الله فقال لها: من أنتِ؟، قالت: زوجتك خلقني الله لك تسكن إلي وأسكن إليك. {وكلا منها رغداً} واسعاً كثيراً. {حيث شئتما} كيف شئتما ومتى شئتما وأين شئتما. {ولا تقربا هذه الشجرة} يعني للأكل، واختلفوا في تلك الشجرة. قال ابن عباس ومحمد بن كعب ومقاتل: «هي السنبلة». وقال ابن مسعود: «هي شجرة العنب». وقال ابن جريج: «شجرة التين». وقال قتادة: «شجرة العلم وفيها من كل شيء». {فتكونا} فتصيرا. {من الظالمين} أي: الضارين بأنفسكما بالمعصية. وأصل الظلم: وضع الشيء في غير موضعه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-35', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-35">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-35">قوله تعالى: «وَقُلْنَا يَا آدَمُ اسْكُنْ أَنتَ وَزَوْجُكَ الْجَنَّةَ وَكُلَا مِنْهَا رَغَدًا حَيْثُ شِئْتُمَا وَلَا تَقْرَبَا هَٰذِهِ الشَّجَرَةَ فَتَكُونَا مِنَ الظَّالِمِينَ». يتناول القرطبي هذه الآية عبر ثلاث عشرة مسألة: أن «اسكن» يعني الإقامة المؤقتة وليست ملكاً دائماً، مما يشير إلى احتمالية الخروج. معنى الزوج: زوج آدم هي حواء، وفسّر سبب تسميتها بأنها «خُلقت من حي». الرغد: العيش الهني والرزق الوفير بلا تعب أو مشقة. الشجرة: اختلف العلماء في تحديدها — قيل الكرم، السنبلة، أو التين — لكن الصحيح أنها «شجرة المحنة» دون تعيين محدد. كيفية الأكل: أكلت حواء أولاً بإغواء من إبليس، ثم أكل آدم بعدها. الظلم: وضع الشيء في غير موضعه، والشرك أعظم أنواع الظلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-35', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-35">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-35">القول في تأويل قوله تعالى: «وَقُلْنَا يَا آدَمُ اسْكُنْ أَنْتَ وَزَوْجُكَ الْجَنَّةَ». يشرح الطبري أن هذه الآية توضح أن إبليس أُخرج من الجنة بعد امتناعه عن السجود لآدم، وأسكن الله آدم الجنة قبل هبوط إبليس إلى الأرض. ينقل عن ابن عباس وابن مسعود أن إبليس لُعِن وأُخرج من الجنة، ثم أقسم ليغوين آدم وذريته قبل أن يهبط إلى الأرض. بخصوص خلق حواء، يروي عن ابن عباس أن آدم كان يمشي في الجنة وحيداً، فنام واستيقظ ليجد امرأة عند رأسه خُلقت من ضلعه. شرح «رَغَداً»: الرغد يعني الواسع الهنيء من العيش الذي لا يعنّي صاحبه. الشجرة المحرمة: اختلف المفسرون في تحديد الشجرة. قيل السنبلة، وقيل الكرمة، وقيل التين. لكن الطبري يرى أن الله لم يحدد نوعها في القرآن أو السنة الصحيحة، فلا حاجة لمعرفة عينها. «فَتَكُونَا مِنَ الظَّالِمِينَ»: أي يكونان من المتعدين الذين تجاوزوا حدود الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-35', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 36 -->
+            <div class="ayah" id="ayah-36">
+                <div class="ayah-text">فَأَزَلَّهُمَا <span class="tj-slt">ٱل</span>شَّیۡطَ<span class="tj-mdd">ـٰ</span>نُ عَنۡهَا فَأَخۡرَجَهُمَا مِ<span class="tj-ghn">مَّ</span>ا كَانَا فِ<span class="tj-mdd">ی</span>هِۖ وَقُلۡنَا <span class="tj-slt">ٱ</span>هۡبِطُو<span class="tj-slt">ا۟</span> بَعۡضُكُمۡ لِبَعۡضٍ عَدُ<span class="tj-dgm">وࣱّ</span>ۖ وَلَكُمۡ فِ<span class="tj-mdd">ی</span> <span class="tj-slt">ٱ</span>لۡأَرۡضِ مُسۡتَقَرࣱّ وَمَتَ<span class="tj-mdd">ـٰ</span>عٌ إِلَ<span class="tj-mdd">ىٰ</span> حِینࣲ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أزل الشيطان آدم وحواء فأكلا من الشجرة المحرمة، فأخرجهما الله مما كانا فيه من النعيم وأهبطهم إلى الأرض مستقراً ومتاعاً إلى حين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-36">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-36">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-36">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-36">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-36">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-36">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-36">فلم يزل عدوهما يوسوس لهما ويزين لهما تناول ما نهيا عنه; حتى أزلهما، أي: حملهما على الزلل بتزيينه. { وَقَاسَمَهُمَا } بالله { إِنِّي لَكُمَا لَمِنَ النَّاصِحِينَ } فاغترا به وأطاعاه; فأخرجهما مما كانا فيه من النعيم والرغد; وأهبطوا إلى دار التعب والنصب والمجاهدة. { بَعْضُكُمْ لِبَعْضٍ عَدُوٌّ } أي: آدم وذريته; أعداء لإبليس وذريته، ومن المعلوم أن العدو; يجد ويجتهد في ضرر عدوه وإيصال الشر إليه بكل طريق; وحرمانه الخير بكل طريق، ففي ضمن هذا, تحذير بني آدم من الشيطان كما قال تعالى { إِنَّ الشَّيْطَانَ لَكُمْ عَدُوٌّ فَاتَّخِذُوهُ عَدُوًّا } ثم ذكر منتهى الإهباط إلى الأرض، فقال: { وَلَكُمْ فِي الْأَرْضِ مُسْتَقَرٌّ } أي: مسكن وقرار، { وَمَتَاعٌ إِلَى حِينٍ } انقضاء آجالكم, ثم تنتقلون منها للدار التي خلقتم لها, وخلقت لكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-36', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-36">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-36">وقوله تعالى: (فأزلهما الشيطان عنها) يصح أن يكون الضمير في قوله: (عنها) عائداً إلى الجنة، فيكون معنى الكلام فأزالهما، أي: فنجاهما. ويصح أن يكون عائداً على أقرب المذكورين، وهو الشجرة، فيكون معنى الكلام كما قال الحسن وقتادة (فأزلهما) أي: من قبيل الزلل، فعلى هذا يكون تقدير الكلام (فأزلهما الشيطان عنها) أي: بسببها؛ ولهذا قال تعالى: (فأخرجهما مما كانا فيه) أي: من اللباس والمنزل الرحب والرزق الهنيء والراحة. (وقلنا اهبطوا بعضكم لبعض عدو ولكم في الأرض مستقر ومتاع إلى حين) أي: قرار وأرزاق وآجال (إلى حين) أي: إلى وقت مؤقت ومقدار معين، ثم تقوم القيامة. وقد ذكر المفسرون من السلف هاهنا أخباراً إسرائيلية عن قصة الحية، وإبليس، وكيف جرى من دخول إبليس إلى الجنة ووسوسته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-36', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-36">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-36">{فأزلهما} استزل. {الشيطان} آدم وحواء أي دعاهما إلى الزلة. وقرأ حمزة: فأزالهما، أي نحاهما. الشيطان فيعال من شطن، أي: بعد، سمي به لبعده عن الخير وعن الرحمة. {عنها} عن الجنة. {فأخرجهما مما كانا فيه} من النعيم، وذلك أن إبليس أراد أن يدخل ليوسوس إلى آدم وحواء فمنعته الخزنة فأتى الحية وكانت صديقة لإبليس وكانت من أحسن الدواب، لها أربع قوائم كقوائم البعير، وكانت من خزان الجنة. فسألها إبليس أن تدخله فمها فأدخلته ومرت به على الخزانة وهم لا يعلمون فأدخلته الجنة. {وقلنا اهبطوا} أي انزلوه إلى الأرض يعني آدم وحواء وإبليس والحية، فهبط آدم بسرنديب من أرض الهند على جبل يقال له نود، وحواء بجدة وإبليس بالأيلة والحية بأصفهان. {بعضكم لبعض عدو} أراد العداوة التي بين ذرية آدم والحية وبين المؤمنين من ذرية آدم وبين إبليس. {ولكم في الأرض مستقر} موضع قرار. {ومتاع} بلغة ومستمتع. {إلى حين} إلى انقضاء آجالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-36', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-36">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-36">قوله تعالى: فأزلهما الشيطان عنها فأخرجهما مما كانا فيه وقلنا اهبطوا بعضكم لبعض عدو ولكم في الأرض مستقر ومتاع إلى حين. يتناول القرطبي هذه الآية عبر عشر مسائل، تشمل مناقشة تفصيلية للقراءات في «أزلهما»، والإخراج من الجنة، والعداوة بين البشر والشيطان، وهبوط آدم إلى الأرض، وتفسيرات «حين» (مدة من الزمن)، مع إسنادات علمية متعددة وآراء متنوعة للعلماء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-36', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-36">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-36">يشرح الطبري أن القراءة الأصح هي «فأزَلَّهما» بمعنى استزلّهما أي أغواهما. الشيطان سبّب خطيئتهما التي أدت لإخراجهما من الجنة. يروي الطبري روايات متعددة عن كيفية دخول الشيطان للجنة عبر الحية، وتحريضه آدم وحواء على أكل الشجرة المحرمة. بخصوص «اهبطوا»: يقصد آدم وحواء والحية وإبليس يصيرون أعداء بعضهم. «ولكم في الأرض مستقر»: أي مساكن تستقرون فيها في الدنيا وفي القبور بعد الموت. «ومتاع إلى حين»: أي متاع الحياة الدنيا بكل منافعها إلى أن تنقضي وتستبدل بغيرها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-36', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 37 -->
+            <div class="ayah" id="ayah-37">
+                <div class="ayah-text">فَتَلَقَّ<span class="tj-mdd">ىٰۤ</span> ءَادَمُ مِ<span class="tj-dgm">ن</span> رَّبِّهِۦ كَلِمَ<span class="tj-mdd">ـٰ</span><span class="tj-khf">تࣲ</span> فَتَابَ عَلَیۡهِۚ إِ<span class="tj-ghn">نَّ</span>هُۥ هُوَ <span class="tj-slt">ٱل</span>تَّوَّابُ <span class="tj-slt">ٱل</span>رَّحِ<span class="tj-mdd">ی</span>مُ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تلقى آدم من ربه كلمات فتاب وأناب واعترف بذنبه فقبل الله توبته ورحمه، إنه هو التواب الرحيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-37">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-37">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-37">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-37">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-37">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-37">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-37">{ فَتَلَقَّى آدَمُ } أي: تلقف وتلقن, وألهمه الله { مِنْ رَبِّهِ كَلِمَاتٍ } وهي قوله: { رَبَّنَا ظَلَمْنَا أَنْفُسَنَا } الآية، فاعترف بذنبه وسأل الله مغفرته { فَتَابَ } الله { عَلَيْهِ } ورحمه { إِنَّهُ هُوَ التَّوَّابُ } لمن تاب إليه وأناب. وتوبته نوعان: توفيقه أولاً, ثم قبوله للتوبة إذا اجتمعت شروطها ثانياً. { الرَّحِيمِ } بعباده, ومن رحمته بهم, أن وفقهم للتوبة, وعفا عنهم وصفح.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-37', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-37">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-37">قيل إن الكلمات مفسرة بقوله تعالى: «قالا ربنا ظلمنا أنفسنا وإن لم تغفر لنا وترحمنا لنكونن من الخاسرين» [الأعراف: 23]. روي هذا عن مجاهد وسعيد بن جبير وأبي العالية والربيع بن أنس والحسن وقتادة ومحمد بن كعب القرظي وخالد بن معدان وعطاء الخراساني وعبد الرحمن بن زيد بن أسلم. وقال أبو إسحاق السبيعي: قال رجل من بني تميم أنه سأل ابن عباس عن الكلمات فأجاب أن آدم تعلم «شأن الحج». وروى سفيان الثوري حديثاً يتضمن أن آدم سأل الله عما إذا كانت خطيئته مكتوبة قبل خلقه أم ابتدعها، فأخبره أنها مكتوبة عليه وطلب المغفرة. وختم ابن كثير بأن «الله تواب رحيم» يقبل التوبة من عباده الذين يتوبون إليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-37', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-37">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-37">{فتلقى} تلقى، والتلقي: هو قبول عن فطنة وفهم، وقيل: هو التعلم. {آدم من ربه كلمات} واختلفوا في تلك الكلمات؛ قال سعيد بن جبير ومجاهد والحسن: «هي قوله {ربنا ظلمنا أنفسنا} الآية». وقال مجاهد ومحمد بن كعب القرظي: «هي قوله لا إله إلا أنت سبحانك وبحمدك رب عملت سوءاً وظلمت نفسي فاغفر لي إنك أنت التواب الرحيم». وقال عبيد بن عمير: «هي أن آدم قال يا رب أرأيت ما أتيت بشيء ابتدعته من تلقاء نفسي أم شيء قدرته عليّ قبل أن تخلقني؟، قال الله تعالى: بل شيء قدرته عليك قبل أن أخلقك، قال: يا رب فكما قدرته قبل أن تخلقني فاغفر لي». وقيل: هي ثلاثة أشياء الحياء والدعاء والبكاء. قال ابن عباس: «بكى آدم وحواء على ما فاتهما من نعيم الجنة مائتي سنة». قوله: {فتاب عليه} فتجاوز عنه. {إنه هو التواب} يقبل توبة عباده. {الرحيم} بخلقه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-37', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-37">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-37">قوله تعالى: فتلقى آدم من ربه كلمات فتاب عليه إنه هو التواب الرحيم. المسألة الأولى: التلقي يعني الفهم والقبول والأخذ. كان آدم عليه السلام يتلقى الوحي بمعنى يستقبله ويتلقفه. المسألة الثانية: اختلف العلماء في الكلمات المقصودة: قال ابن عباس والحسن: هي الدعاء «ربنا ظلمنا أنفسنا وإن لم تغفر لنا وترحمنا لنكونن من الخاسرين». وروي عن مجاهد: «سبحانك اللهم لا إله إلا أنت ربي ظلمت نفسي فاغفر لي». وقيل: الكلمات تعني البكاء والحياء والدعاء والندم والاستغفار. المسألة الثالثة: قوله «فتاب عليه» معناه قبل توبته ووفقه للتوبة. المسألة الرابعة: لم يقل «عليهما» بل قال «عليه» لأن آدم خوطب بشكل مباشر. المسألة الخامسة: وصف الله نفسه بـ «التواب الرحيم» — معنى التواب هو الذي يقبل توبة عباده بكثرة ومبالغة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-37', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-37">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-37">القول في تأويل قوله تعالى: فَتَلَقَّىٰ آدَمُ مِن رَّبِّهِ كَلِمَاتٌ فَتَابَ عَلَيْهِ إِنَّهُ هُوَ التَّوَّابُ الرَّحِيمُ. يشرح الطبري أن «تلقى» معناها أخذ وقبل. آدم استقبل الكلمات من ربه بالقبول والعمل بها. اختلف المفسرون في تحديد الكلمات: الرأي الأول: أن الكلمات تتضمن أسئلة آدم لربه: «ألم تخلقني بيدك؟ ألم تنفخ فيّ من روحك؟ ألم تسكني جنتك؟ ألم تسبق رحمتك غضبك؟» وسؤاله عن عودته للجنة إن تاب. الرأي الثاني: أن الكلمات هي دعاؤه قائلاً: «خطيئتي التي أخطأتها، أشيء كتبته عليّ قبل خلقك إياي؟». الرأي الثالث: أن الكلمات الكاملة هي: «رَبَّنَا ظَلَمْنَا أَنْفُسَنَا وَإِنْ لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ» [الأعراف: 23]. والطبري يرجح أن معاني هذه الأقوال متفقة: آدم تلقى كلمات من ربه بالتوبة والاعتراف بالذنب والندم، فتاب الله عليه بقبوله توبته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-37', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 38 -->
+            <div class="ayah" id="ayah-38">
+                <div class="ayah-text">قُلۡنَا <span class="tj-slt">ٱ</span>هۡبِطُو<span class="tj-slt">ا۟</span> مِنۡهَا جَمِ<span class="tj-mdd">ی</span><span class="tj-khf">عࣰا</span>ۖ فَإِ<span class="tj-ghn">مَّ</span>ا یَأۡتِیَ<span class="tj-ghn">نَّ</span>كُم <span class="tj-ghn">مِّ</span><span class="tj-ghn">نِّ</span><span class="tj-mdd">ی</span> هُ<span class="tj-khf">دࣰى</span> فَمَ<span class="tj-khf">ن</span> تَبِعَ هُدَایَ فَلَا خَوۡفٌ عَلَیۡهِمۡ وَلَا هُمۡ یَحۡزَنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله بالهبوط إلى الأرض جميعاً، ووعد من اتبع هداه من الرسل والكتب بالأمن من الخوف والحزن يوم القيامة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-38">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-38">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-38">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-38">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-38">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-38">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-38">كرر الإهباط ليرتب عليه ما يلي: عندما يأتيكم هدى مني — رسول وكتاب يهديكم لما يقربكم مني ويدنيكم من رضائي — فمن تبع هداي منكم بأن آمن برسلي وكتبي واهتدى بهم، وذلك بتصديق جميع أخبار الرسل والكتب والامتثال للأمر والاجتناب للنهي، { فَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ }. والفرق بين الخوف والحزن أن المكروه إن كان قد مضى أحدث الحزن، وإن كان منتظراً أحدث الخوف، فنفاهما عمن اتبع هداه وإذا انتفيا حصل ضدهما وهو الأمن التام. وكذلك نفي الضلال والشقاء عمن اتبع هداه وإذا انتفيا ثبت ضدهما وهو الهدى والسعادة. فمن اتبع هداه حصل له الأمن والسعادة الدنيوية والأخروية والهدى، وانتفى عنه كل مكروه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-38', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-38">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-38">قول تعالى مخبراً عما أنذر به آدم وزوجته وإبليس حتى أهبطهم من الجنة، والمراد الذرية — أنه سينزل الكتب، ويبعث الأنبياء والرسل؛ كما قال أبو العالية: الهدى: الأنبياء والرسل والبيان، وقال مقاتل بن حيان: الهدى: محمد صلى الله عليه وسلم. وقال الحسن: الهدى القرآن. وهذان القولان صحيحان، وقول أبي العالية أعم. (فمن تبع هداي) أي: من أقبل على ما أنزلت به الكتب وأرسلت به الرسل (فلا خوف عليهم) أي: فيما يستقبلونه من أمر الآخرة (ولا هم يحزنون) على ما فاتهم من أمور الدنيا، كما قال في سورة طه: (فمن اتبع هداي فلا يضل ولا يشقى). قال ابن عباس: فلا يضل في الدنيا ولا يشقى في الآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-38', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-38">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-38">وقوله تعالى: (قلنا اهبطوا منها جميعاً) يعني هؤلاء الأربعة. وقيل: الهبوط الأول من الجنة إلى السماء الدنيا والهبوط الآخر من السماء الدنيا إلى الأرض. (فإما يأتينكم) أي فإن يأتكم يا ذرية آدم (مني هدى) أي رشد وبيان شريعة وقيل كتاب ورسول (فمن تبع هداي فلا خوف عليهم ولا هم يحزنون) فلا خوف عليهم فيما يستقبلون (ولا هم يحزنون) على ما خلفوا. وقيل لا خوف عليهم في الدنيا ولا هم يحزنون في الآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-38', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-38">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-38">قوله تعالى: قلنا اهبطوا — كرر الأمر على جهة التغليظ وتأكيده، كما تقول لرجل: قم قم. وقيل: كرر الأمر لما علق بكل أمر منهما حكم غير حكم الآخر فعلق بالأول العداوة وبالثاني إتيان الهدى. وقيل: الهبوط الأول من الجنة إلى السماء والثاني من السماء إلى الأرض. جميعاً نصب على الحال. قوله تعالى: فإما يأتينكم مني هدى — اختلف في معنى الهدى فقيل: كتاب الله، وقيل: التوفيق للهداية، وقالت فرقة: الهدى الرسل. قوله تعالى: فلا خوف عليهم ولا هم يحزنون — الخوف هو الذعر ولا يكون إلا في المستقبل، والحزن ضد السرور ولا يكون إلا على ماض. والمعنى: فلا خوف عليهم فيما بين أيديهم من الآخرة ولا هم يحزنون على ما فاتهم من الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-38', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-38">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-38">قال أبو جعفر: وقد ذكرنا القول في تأويل قوله: «قلنا اهبطوا منها جميعاً» فيما مضى. قال آدم وحواء والحية وإبليس. القول في تأويل قوله تعالى: فَإِمَّا يَأْتِيَنَّكُمْ مِنِّي هُدًى — والهدى في هذا الموضع البيان والرشاد. وقوله: «فمن تَبعَ هُدَايَ» يعني: فمن اتبع بَياني الذي آتيتُه على ألسن رُسُلي، أو مع رسلي. وقوله: «فلا خوفٌ عليهم» يعني فهم آمنون في أهوال القيامة من عقاب الله، غير خائفين عذابه، بما أطاعوا الله في الدنيا واتبعوا أمرَه وهُداه وسبيله، ولا هم يحزنون يومئذ على ما خلّفوا بعد وفاتهم في الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-38', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 39 -->
+            <div class="ayah" id="ayah-39">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱلَّ</span>ذِینَ كَفَرُو<span class="tj-slt">ا۟</span> وَكَذَّبُو<span class="tj-slt">ا۟</span> بِـَٔایَ<span class="tj-mdd">ـٰ</span>تِنَ<span class="tj-mdd">اۤ</span> أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ أَصۡحَ<span class="tj-mdd">ـٰ</span>بُ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>ارِۖ هُمۡ فِ<span class="tj-mdd">ی</span>هَا خَ<span class="tj-mdd">ـٰ</span>لِدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بيان مصير الكافرين المكذبين بآيات الله وأنهم أصحاب النار خالدين فيها أبداً، لا يخرجون منها ولا يُنصرون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-39">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-39">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-39">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-39">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-39">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-39">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-39">وهذا عكس من لم يتبع هداه، فكفر به، وكذب بآياته. فـ { أولئك أصحاب النار } أي: الملازمون لها، ملازمة الصاحب لصاحبه، والغريم لغريمه، { هُمْ فِيهَا خَالِدُونَ } لا يخرجون منها، ولا يفتر عنهم العذاب ولا هم ينصرون. وفي هذه الآيات وما أشبهها، انقسام الخلق من الجن والإنس، إلى أهل السعادة، وأهل الشقاوة، وفيها صفات الفريقين والأعمال الموجبة لذلك، وأن الجن كالإنس في الثواب والعقاب، كما أنهم مثلهم، في الأمر والنهي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-39', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-39">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-39">كما قال هاهنا : ( والذين كفروا وكذبوا بآياتنا أولئك أصحاب النار هم فيها خالدون ) أي : مخلدون فيها ، لا محيد لهم عنها ، ولا محيص . وقد أورد ابن جرير ، رحمه الله ، هاهنا حديثاً ساقه من طريقين ، عن أبي مسلمة سعيد بن يزيد ، عن أبي نضرة المنذر بن مالك بن قطعة عن أبي سعيد — واسمه سعد بن مالك بن سنان الخدري — قال : قال رسول الله صلى الله عليه وسلم : أما أهل النار الذين هم أهلها فإنهم لا يموتون فيها ولا يحيون ، لكن أقواماً أصابتهم النار بخطاياهم ، أو بذنوبهم فأماتتهم إماتة ، حتى إذا صاروا فحماً أذن في الشفاعة . وقد رواه مسلم من حديث شعبة عن أبي سلمة به .</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-39', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-39">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-39">{والذين كفروا} يعني جحدوا {وكذبوا بآياتنا} بالقرآن. {أولئك أصحاب النار} يوم القيامة {هم فيها خالدون} لا يخرجون منها ولا يموتون فيها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-39', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-39">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-39">قوله تعالى : والذين كفروا أي أشركوا ، لقوله : وكذبوا بآياتنا أولئك أصحاب النار هم فيها خالدون. الصحبة : الاقتران بالشيء في حالة ما ، في زمان ما ، فإن كانت الملازمة والخلطة فهي كمال الصحبة ، وهكذا هي صحبة أهل النار لها ، وبهذا القول ينفك الخلاف في تسمية الصحابة رضي الله عنهم إذ مراتبهم متباينة على ما نبينه في «براءة» إن شاء الله وباقي ألفاظ الآية تقدم معناها والحمد لله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-39', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-39">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-39">وقوله: «والذين كفروا وكذبوا بآياتنا أولئك أصحاب النار هم فيها خالدون». يشرح الطبري أن الكفر والتكذيب بآيات الله يعني جحد آياته وتكذيب رسله. آيات الله تشمل «حُجَجه وأدلتُه على وحدانيّته وربوبيّته» وما جاءت به الرسل من معجزات وشواهد. أما قوله «أصحاب النار»، فيقصد بهم «أهلُها الذين هم أهلها دون غيرهم، المخلدون فيها أبداً إلى غير أمَدٍ ولا نهاية». يسند الطبري حديثاً عن أبي سعيد الخدري عن النبي صلى الله عليه وسلم يوضح أن أهل النار الحقيقيين لا يموتون فيها ولا يحيون، بينما هناك آخرون تصيبهم النار بذنوبهم فتميتهم حتى يصيروا فحماً، وعندها «أُذِنَ في الشفاعة».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-39', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-04.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">دعوة الناس لعبادة الله وتوحيده</span>
+            </a>
+            <a href="section-06.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">خطاب بني إسرائيل — التذكير بالنعم</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ٥: قصة خلق آدم عليه السلام<br>
+        <small>آيات ٣٠ – ٣٩ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

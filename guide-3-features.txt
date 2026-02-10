@@ -1,0 +1,142 @@
+========================================================
+  الدليل ٣: الميزات التفاعلية وواجهة المستخدم
+  Guide 3: Interactive Features & UI
+========================================================
+
+This guide covers the interactive features that are already
+handled by script.js and style.css. These work automatically
+as long as the HTML structure from guide-1 is correct.
+
+Use this guide to understand how each feature works and
+to verify everything functions properly after building a section.
+
+Steps:
+  1. Verify toolbar buttons are present in the HTML
+  2. Understand each feature's behavior
+  3. Test all keyboard shortcuts and interactions
+
+
+========================================================
+1. TOOLBAR FEATURES (all handled by script.js)
+========================================================
+
+Button            | Function              | Keyboard | Persists?
+------------------+-----------------------+----------+----------
+−  ١٠٠%  +       | Font size (70–150%)   | —        | Yes (bq-fontscale)
+المظهر            | Cycle theme           | T        | Yes (bq-theme)
+                  | (light→dark→sepia)    |          |
+وضع الحفظ         | Memorize mode         | M        | No
+                  | (4 levels: off→1→2→3) |          |
+الكلمات الأولى     | First-words hints     | H        | No
+                  | (slide-in panel)      |          |
+التجويد           | Tajweed colors toggle  | J        | Yes (bq-tajweed)
+العلامات          | Bookmarks panel        | B        | No (panel state)
+                  |                       |          | Yes (bookmark data: bq-bookmarks)
+الفهرس            | Link to index.html    | —        | —
+
+Required HTML in toolbar:
+    <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+    <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+
+
+========================================================
+2. MEMORIZE MODE (3 levels)
+========================================================
+
+Level 0: Off (normal view)
+Level 1: القراءة — reading mode (subtle highlight, no hiding)
+Level 2: الكلمة الأولى — shows only first word, rest blurred
+         Click ayah to reveal/hide
+Level 3: الاختبار — full test, everything hidden
+         Click ayah to reveal/hide
+
+The JS handles all this automatically via body classes:
+  .memorize-level-1, .memorize-level-2, .memorize-level-3, .memorize-mode
+
+No extra HTML needed — just ensure the ayah structure from
+guide-1 is correct (div.ayah > div.ayah-text).
+
+
+========================================================
+3. BOOKMARKS
+========================================================
+
+- Double-click any ayah to bookmark/unbookmark it
+- Adds .bookmarked class to the ayah div
+- Stored in localStorage as array: bq-bookmarks = [3, 5, 12]
+- The bookmarks panel (العلامات) shows bookmarked ayahs on current page
+- Each item shows ayah number + first 3 words
+- Click × to remove, click item to scroll to ayah
+- Bookmarks work across pages (stored globally)
+
+No extra HTML needed — just ensure each ayah has id="ayah-[N]".
+
+
+========================================================
+4. NAVIGATION BAR
+========================================================
+
+At the bottom of each section, two links:
+- Previous section (right side, RTL)
+- Next section (left side, RTL)
+
+First section: use <span class="nav-btn disabled"></span> for prev
+Last section: use <span class="nav-btn disabled"></span> for next
+
+Template:
+    <div class="nav-bar">
+        <a href="section-[PREV].html" class="nav-btn">
+            <span class="nav-label">الموضوع السابق →</span>
+            <span class="nav-title">[PREV_TITLE]</span>
+        </a>
+        <a href="section-[NEXT].html" class="nav-btn" style="text-align:left">
+            <span class="nav-label">← الموضوع التالي</span>
+            <span class="nav-title">[NEXT_TITLE]</span>
+        </a>
+    </div>
+
+
+========================================================
+5. THEMES (3 modes)
+========================================================
+
+Light (default): no body class
+Dark:            body.dark-mode
+Sepia:           body.sepia-mode
+
+All CSS uses custom properties (--bg-primary, --text-ayah, etc.)
+that change per theme. Tajweed colors also adapt per theme.
+
+No extra HTML needed — theme cycling is handled by script.js
+and styles are in style.css.
+
+
+========================================================
+6. VERIFICATION CHECKLIST
+========================================================
+
+After building a section, test the following:
+
+[ ] Font size buttons work (− / +)
+[ ] Theme cycling works (click المظهر or press T)
+    [ ] Light → Dark → Sepia → Light
+[ ] Memorize mode works (click وضع الحفظ or press M)
+    [ ] Level 1: subtle highlight
+    [ ] Level 2: first word visible, rest blurred
+    [ ] Level 3: all hidden, click to reveal
+[ ] First-words hints panel works (click الكلمات الأولى or press H)
+[ ] Tajweed toggle works (click التجويد or press J)
+    [ ] Colors appear when ON
+    [ ] Colors disappear when OFF
+[ ] Bookmarks work
+    [ ] Double-click ayah to bookmark
+    [ ] Bookmark icon appears
+    [ ] Press B to open bookmarks panel
+    [ ] Bookmarked ayahs listed in panel
+    [ ] Click item to scroll to ayah
+    [ ] Click × to remove bookmark
+[ ] Flow diagram collapses/expands
+[ ] Flow diagram nodes scroll to correct ayah on click
+[ ] Navigation bar links go to correct prev/next sections
+[ ] Back to top button appears on scroll
+[ ] Footer shows correct section info and scholar names

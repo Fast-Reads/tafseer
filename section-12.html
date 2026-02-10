@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — أحكام القصاص والوصية والصيام</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١٢ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#9b59b6">
+            <div class="section-num">١٢</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">أحكام القصاص والوصية والصيام</h2>
+                <h3 class="section-title-en">Rulings: Retribution, Wills & Fasting</h3>
+            </div>
+            <div class="section-ayah-range">آيات ١٧٨ – ١٨٨</div>
+        </div>
+
+        <div class="section-desc">
+            <p>أحكام القصاص في القتلى، والوصية عند الموت، وفريضة صيام شهر رمضان وأحكامه، وتحريم أكل أموال الناس بالباطل</p>
+        </div>
+
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                <div class="flow-node" data-ayahs="178-179">
+                    <div class="flow-node-num">١٧٨–١٧٩</div>
+                    <div class="flow-node-text">أحكام القصاص في القتلى</div>
+                    <div class="flow-node-key">كُتِبَ عَلَيْكُمُ ٱلْقِصَاصُ</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node" data-ayahs="180-182">
+                    <div class="flow-node-num">١٨٠–١٨٢</div>
+                    <div class="flow-node-text">الوصية عند حضور الموت</div>
+                    <div class="flow-node-key">ٱلْوَصِيَّةُ لِلْوَـٰلِدَيْنِ</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node" data-ayahs="183-184">
+                    <div class="flow-node-num">١٨٣–١٨٤</div>
+                    <div class="flow-node-text">فرض الصيام ورخصه</div>
+                    <div class="flow-node-key">كُتِبَ عَلَيْكُمُ ٱلصِّيَامُ</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node" data-ayahs="185">
+                    <div class="flow-node-num">١٨٥</div>
+                    <div class="flow-node-text">شهر رمضان ونزول القرآن</div>
+                    <div class="flow-node-key">شَهْرُ رَمَضَانَ</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node" data-ayahs="186">
+                    <div class="flow-node-num">١٨٦</div>
+                    <div class="flow-node-text">قرب الله وإجابة الدعاء</div>
+                    <div class="flow-node-key">فَإِنِّی قَرِيبٌ</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node" data-ayahs="187">
+                    <div class="flow-node-num">١٨٧</div>
+                    <div class="flow-node-text">أحكام ليلة الصيام والاعتكاف</div>
+                    <div class="flow-node-key">أُحِلَّ لَكُمْ لَيْلَةَ ٱلصِّيَامِ</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node" data-ayahs="188">
+                    <div class="flow-node-num">١٨٨</div>
+                    <div class="flow-node-text">تحريم أكل الأموال بالباطل</div>
+                    <div class="flow-node-key">لَا تَأْكُلُوا أَمْوَـٰلَكُم</div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-178">
+                <div class="ayah-text"><span class="tj-mdd">یَـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> كُتِبَ عَلَیۡكُمُ <span class="tj-slt">ٱ</span>لۡقِصَاصُ فِی <span class="tj-slt">ٱ</span>لۡقَتۡلَىۖ <span class="tj-slt">ٱ</span>لۡحُرُّ بِ<span class="tj-slt">ٱ</span>لۡحُرِّ وَ<span class="tj-slt">ٱ</span>لۡعَ<span class="tj-qlq">بۡ</span>دُ بِ<span class="tj-slt">ٱ</span>لۡعَ<span class="tj-qlq">بۡ</span>دِ وَ<span class="tj-slt">ٱ</span>لۡأُنثَ<span class="tj-mdd">ىٰ</span> بِ<span class="tj-slt">ٱ</span>لۡأُنثَ<span class="tj-mdd">ىٰ</span>ۚ فَمَنۡ عُفِیَ لَهُۥ مِنۡ أَخِیهِ شَیۡ<span class="tj-khf">ءࣱ</span> فَ<span class="tj-slt">ٱ</span>تِّبَاعُ<span class="tj-qlb">ۢ بِ</span><span class="tj-slt">ٱ</span>لۡمَعۡرُوفِ وَأَدَ<span class="tj-mdd">اۤ</span>ءٌ إِلَیۡهِ بِإِحۡ<span class="tj-mdd">سَـٰ</span><span class="tj-khf">نࣲ</span>ۗ ذَ ٰ⁠لِكَ تَخۡفِی<span class="tj-dgm">فࣱ</span> <span class="tj-ghn">مِّ</span>ن رَّبِّكُمۡ وَرَحۡمَ<span class="tj-khf">ةࣱ</span>ۗ فَمَنِ <span class="tj-slt">ٱ</span>عۡتَدَ<span class="tj-mdd">ىٰ</span> بَعۡدَ ذَ ٰ⁠لِكَ فَلَهُۥ عَذَابٌ أَلِیمࣱ
+</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">فرض الله القصاص في القتلى: الحر بالحر والعبد بالعبد والأنثى بالأنثى، مع فتح باب العفو والدية، وهو تخفيف ورحمة من الله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-178">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-178">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-178">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-178">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-178">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-178">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-178">فرض الله القصاص في القتلى وهو قتل القاتل بمن قتله، فالحر يُقتل بالحر والعبد بالعبد والأنثى بالأنثى. ثم فتح باب العفو فمن عُفي له من أخيه شيء فليتبع بالمعروف في المطالبة بالدية وليؤدِّ القاتل الدية بإحسان. ذلك تخفيف من ربكم ورحمة حيث شرع العفو والدية. فمن اعتدى بعد ذلك فقتل بعد العفو فله عذاب أليم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-178', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-178">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-178">أوجب الله القصاص وهو المساواة في القتل: الحر بالحر والعبد بالعبد والأنثى بالأنثى. وقد كان أهل الجاهلية يتجاوزون في ذلك فيقتلون غير القاتل. فجاء الإسلام بالعدل. ثم فتح الله باب العفو فمن عفا وقبل الدية فليطالب بالمعروف وليؤدِّ القاتل بإحسان. وهذا تخفيف من الله ورحمة لم تكن في الأمم السابقة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-178', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-178">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-178">فرض الله القصاص وهو أن يُفعل بالفاعل مثل ما فعل. والسبب أن حيًّين من العرب اقتتلوا فأراد أحدهما أن يقتل بعبده حرًا فنزلت. {فَمَنْ عُفِيَ لَهُ مِنْ أَخِيهِ شَيْءٌ} أي من عفا عن القصاص إلى الدية. {فَاتِّبَاعٌ بِالْمَعْرُوفِ} مطالبة بلا عنف. {وَأَدَاءٌ إِلَيْهِ بِإِحْسَانٍ} دفع الدية بلا مماطلة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-178', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-178">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-178">القصاص: المماثلة في العقوبة. كُتب بمعنى فُرض. والحكمة فيه حفظ الأنفس وصون الدماء. وقوله: {الْحُرُّ بِالْحُرِّ} بيان للمساواة في القصاص. {فَمَنْ عُفِيَ لَهُ} فتح لباب العفو وهو أفضل. {ذَلِكَ تَخْفِيفٌ مِنْ رَبِّكُمْ} لأن التوراة كان فيها القصاص فقط والإنجيل فيه العفو فقط، فجمع الله لهذه الأمة بين الخيارين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-178', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-178">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-178">يقول تعالى: يا أيها الذين آمنوا فُرض عليكم القصاص في القتلى فيُقتل الحر بالحر والعبد بالعبد والأنثى بالأنثى. فمن عفا له وليّ المقتول عن القصاص إلى الدية فليطالب بالمعروف من غير إضرار، وليؤدِّ القاتل الدية بإحسان من غير مطل. ذلك تخفيف ورحمة من الله. فمن اعتدى بعد قبول الدية فقتل فله عذاب أليم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-178', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-179">
+                <div class="ayah-text">وَلَكُمۡ فِی <span class="tj-slt">ٱ</span>لۡقِصَاصِ حَیَ<span class="tj-mdd">وٰ</span><span class="tj-dgm">ةࣱ</span> <span class="tj-mdd">یَـٰۤ</span>أُ<span class="tj-slt">و۟</span>لِی <span class="tj-slt">ٱ</span>لۡأَلۡ<span class="tj-mdd">بَـٰ</span>بِ لَعَلَّكُمۡ تَتَّقُونَ
+</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">في القصاص حياة لأنه يردع عن القتل، فمن علم أنه سيُقتل إذا قتل امتنع عن القتل، وهذا خطاب لأولي الألباب ليتقوا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-179">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-179">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-179">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-179">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-179">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-179">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-179">أي في شرع القصاص حكمة عظيمة وهي حفظ الحياة، لأن من علم أنه يُقتل إذا قتل ارتدع وامتنع عن القتل فيكون في ذلك حياة له ولمن أراد قتله. {يَا أُولِي الْأَلْبَابِ} أي يا أصحاب العقول السليمة. {لَعَلَّكُمْ تَتَّقُونَ} أي لتتقوا القتل وتحذروا أسبابه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-179', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-179">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-179">في تشريع القصاص حكمة بالغة وهي صيانة الأرواح، فإذا علم القاتل أنه سيُقتل ارتدع وكفّ، فيحيا هو ويحيا من أراد قتله. وهذه الآية أبلغ وأوجز من قول العرب: «القتل أنفى للقتل». {يَا أُولِي الْأَلْبَابِ} خصّ أهل العقول لأنهم أهل التدبر. {لَعَلَّكُمْ تَتَّقُونَ} لتجتنبوا ما يوجب القصاص.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-179', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-179">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-179">{وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ} أي في شرع القصاص بقاء لأنفسكم لأن من همّ بالقتل وعلم أنه يُقتص منه امتنع فكان ذلك سبب حياته وحياة من أراد قتله. {يَا أُولِي الْأَلْبَابِ} يا أصحاب العقول. {لَعَلَّكُمْ تَتَّقُونَ} لعلكم تنزجرون عن القتل خوفًا من القصاص.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-179', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-179">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-179">من أبلغ آيات القرآن إيجازًا وبلاغة. في القصاص حياة لأنه يزجر عن القتل فيحيا بذلك النفوس. وهذا أبلغ من قول العرب «القتل أنفى للقتل» لعدة أوجه منها: اختصار اللفظ ووضوح المعنى وانتفاء التكرار. {يَا أُولِي الْأَلْبَابِ} خصّ العقلاء لأنهم ينتفعون بالحكم. {لَعَلَّكُمْ تَتَّقُونَ} أي تتقون القتل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-179', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-179">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-179">يقول تعالى: ولكم فيما فرضت عليكم من القصاص حياة أي بقاء ونماء لأنفسكم، لأن الناس إذا علموا أن القاتل يُقتل ارتدعوا عن القتل فحَيوا. يا أولي الألباب أي أصحاب العقول والحجى. لعلكم تتقون الله فتنتهون عما نهاكم عنه من قتل الأنفس.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-179', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-180">
+                <div class="ayah-text">كُتِبَ عَلَیۡكُمۡ إِذَا حَضَرَ أَحَدَكُمُ <span class="tj-slt">ٱ</span>لۡمَوۡتُ إِ<span class="tj-khf">ن</span> تَرَكَ خَیۡرًا <span class="tj-slt">ٱ</span>لۡوَصِیَّةُ لِلۡوَ ٰ⁠لِدَیۡنِ وَ<span class="tj-slt">ٱ</span>لۡأَ<span class="tj-qlq">قۡ</span>رَبِینَ بِ<span class="tj-slt">ٱ</span>لۡمَعۡرُوفِۖ حَقًّا عَلَى <span class="tj-slt">ٱ</span>لۡمُتَّقِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">فرض الوصية عند حضور الموت لمن ترك مالًا أن يوصي للوالدين والأقربين بالمعروف، وهو حق على المتقين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-180">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-180">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-180">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-180">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-180">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-180">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-180">فرض الله الوصية على من حضره الموت إن ترك خيرًا أي مالًا كثيرًا، بأن يوصي للوالدين والأقربين بالمعروف أي بالعدل من غير حيف ولا زيادة على الثلث. وهذا الحكم كان قبل نزول آيات المواريث، فلما نزلت آيات الفرائض نُسخت الوصية للوارثين وبقيت لغير الوارثين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-180', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-180">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-180">كان هذا الحكم قبل نزول آيات المواريث، فكان الواجب على من ترك مالًا أن يوصي للوالدين والأقربين. فلما نزلت آيات الفرائض في سورة النساء نسخت هذا الحكم للوارثين، وقال ﷺ: «إن الله قد أعطى كل ذي حق حقه فلا وصية لوارث». فبقيت الوصية مشروعة لغير الوارثين من الأقارب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-180', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-180">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-180">{كُتِبَ عَلَيْكُمْ} فُرض عليكم. {إِذَا حَضَرَ أَحَدَكُمُ الْمَوْتُ} أي قاربه وظهرت أسبابه. {إِنْ تَرَكَ خَيْرًا} مالًا كثيرًا. {الْوَصِيَّةُ لِلْوَالِدَيْنِ وَالْأَقْرَبِينَ بِالْمَعْرُوفِ} بالعدل من غير حيف. وهذا منسوخ بآيات المواريث عند جمهور العلماء. {حَقًّا عَلَى الْمُتَّقِينَ} تأكيد لوجوبه قبل النسخ.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-180', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-180">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-180">اختلف العلماء في نسخ هذه الآية: فذهب الجمهور إلى أنها منسوخة بآيات المواريث وحديث «لا وصية لوارث». والوصية هنا كانت فريضة قبل تقرير نظام المواريث. وقوله {بِالْمَعْرُوفِ} أي بالعدل من غير إسراف ولا تقتير ولا ميل لبعض على بعض. {حَقًّا عَلَى الْمُتَّقِينَ} تأكيد للإلزام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-180', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-180">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-180">يقول تعالى: فُرض عليكم أيها المؤمنون إذا حضر أحدكم الموت وأيقن به، إن ترك مالًا، أن يوصي للوالدين والأقربين بالمعروف. والخير هنا: المال الكثير. وبالمعروف: بالعدل من غير حيف ولا جور. حقًا على المتقين أي إلزامًا واجبًا. وذهب أكثر العلماء إلى نسخها بآيات الفرائض.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-180', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-181">
+                <div class="ayah-text">فَمَ<span class="tj-qlb">نۢ بَ</span>دَّلَهُۥ بَعۡدَ مَا سَمِعَهُۥ فَإِ<span class="tj-ghn">نَّ</span>مَ<span class="tj-mdd">اۤ</span> إِثۡمُهُۥ عَلَى <span class="tj-slt">ٱلَّ</span>ذِینَ یُبَدِّلُونَهُۥۤۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ سَمِیعٌ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">من بدّل الوصية بعد سماعها فإثم التبديل على المبدّلين لا على الموصي، والله سميع عليم يعلم من غيّر ومن أمِن.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-181">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-181">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-181">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-181">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-181">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-181">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-181">من بدّل الوصية وغيّرها بعد ما سمعها من الموصي فإنما الإثم على الذين يبدلونها لا على الموصي، لأنه قد وفى بما عليه وبرئت ذمته. إن الله سميع لما قال الموصي عليم بمن بدّل وغيّر، وسيجازي كلًّا بعمله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-181', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-181">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-181">توعد الله من بدّل الوصية بعد سماعها بأن الإثم ينتقل إلى المبدّل لا إلى الموصي لأنه أدى ما عليه. والتبديل يشمل: تغيير الوصية أو الزيادة فيها أو النقصان منها أو كتمانها. {إِنَّ اللَّهَ سَمِيعٌ} لما أوصى به الميت {عَلِيمٌ} بمن بدّل ذلك وغيّره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-181', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-181">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-181">{فَمَنْ بَدَّلَهُ} أي غيّر الوصية. {بَعْدَ مَا سَمِعَهُ} بعد ما سمعها من الموصي وعلمها. {فَإِنَّمَا إِثْمُهُ عَلَى الَّذِينَ يُبَدِّلُونَهُ} أي إثم التبديل على المبدّلين والموصي بريء. {إِنَّ اللَّهَ سَمِيعٌ} لوصية الموصي {عَلِيمٌ} بتبديل المبدّل فيجازي كلًّا بما يستحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-181', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-181">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-181">من بدّل الوصية فغيّرها عما أوصى به الموصي فالإثم على المبدّل. والتبديل يكون في اللفظ أو في المعنى أو في الزيادة والنقصان. والضمير في {سَمِعَهُ} يعود على الإيصاء. وختم بالسميع العليم تهديدًا للمبدّلين وتسلية للموصين بأن الله يسمع وصاياهم ويعلم من غيّرها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-181', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-181">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-181">يقول تعالى: فمن غيّر الوصية وحرّفها عن وجهها بعد ما سمعها من الموصي وعلم بها فإنما إثم ذلك التبديل والتغيير على من بدّلها وغيّرها دون الموصي، فإن الموصي قد برئ بوصيته. إن الله سميع لما يقول الموصي عليم بمن بدّل ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-181', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-182">
+                <div class="ayah-text">فَمَنۡ خَافَ مِ<span class="tj-dgm">ن</span> <span class="tj-ghn">مُّ</span>و<span class="tj-khf">صࣲ</span> جَنَفًا أَوۡ إِثۡ<span class="tj-khf">مࣰا</span> فَأَصۡلَحَ بَیۡنَهُمۡ فَلَ<span class="tj-mdd">اۤ</span> إِثۡمَ عَلَیۡهِۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ غَفُو<span class="tj-dgm">رࣱ</span> رَّحِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">من خاف من الموصي ميلًا أو ظلمًا في وصيته فأصلح بين الورثة فلا إثم عليه، إن الله غفور رحيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-182">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-182">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-182">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-182">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-182">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-182">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-182">من خاف من الموصي جنفًا أي ميلًا وخطأً في وصيته أو إثمًا أي تعمّد الظلم، فأصلح بين الورثة والموصى لهم بما هو أقرب للعدل فلا إثم عليه في هذا التغيير لأنه إصلاح لا إفساد. إن الله غفور رحيم يغفر لمن قصد الإصلاح بين الناس.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-182', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-182">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-182">من علم أو ظن أن الموصي جنف في وصيته أي مال عن الحق خطأً أو عمدًا فأصلح بين الأطراف وعدّل الوصية بما يوافق الشرع فلا إثم عليه. وهذا ليس من التبديل المنهي عنه في الآية السابقة لأنه إصلاح وتعديل نحو العدل. {إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ} لمن قصد الإصلاح.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-182', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-182">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-182">{فَمَنْ خَافَ مِنْ مُوصٍ جَنَفًا} الجنف: الميل والعدول عن الحق خطأً. {أَوْ إِثْمًا} ميلًا عمدًا. {فَأَصْلَحَ بَيْنَهُمْ} أي بين الموصي والموصى لهم أو بين الورثة. {فَلَا إِثْمَ عَلَيْهِ} في هذا التعديل لأنه إصلاح ورفع للظلم لا تبديل. {إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-182', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-182">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-182">الجنف: الميل في الوصية خطأً كأن يوصي بأكثر من الثلث أو يوصي لوارث. والإثم: التعمد في الحيف. فمن رأى ذلك فأصلح بين الأطراف فردّ الوصية إلى العدل فلا إثم عليه. وهذا استثناء من تحريم التبديل لأن هذا تبديل إلى الأفضل والأعدل. {إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-182', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-182">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-182">يقول تعالى: فمن خاف من موصٍ ميلًا في وصيته عن الحق بخطأ أو بتعمد فأصلح بين الموصى لهم والورثة فلا إثم عليه في ذلك. والفرق بين هذا والتبديل المحرّم أن هذا تعديل نحو العدل والشرع وذاك تغيير للوصية العادلة. إن الله غفور لمن أصلح رحيم به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-182', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-183">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> كُتِبَ عَلَیۡكُمُ <span class="tj-slt">ٱل</span>صِّیَامُ كَمَا كُتِبَ عَلَى <span class="tj-slt">ٱلَّ</span>ذِینَ مِ<span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">فرض الله الصيام على المؤمنين كما فرضه على الأمم السابقة، والحكمة منه تحقيق التقوى وتهذيب النفس.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-183">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-183">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-183">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-183">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-183">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-183">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-183">يأمر الله المؤمنين بالصيام وهو الإمساك عن الأكل والشرب والجماع من طلوع الفجر إلى غروب الشمس. وذكر أنه فرضه على الأمم السابقة تسهيلًا لقبوله، لأن الحكم إذا عمّ هان. والحكمة من الصيام تحقيق التقوى لأنه يكسر شهوة النفس ويُضعف دواعي المعصية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-183', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-183">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-183">يخبر تعالى أنه فرض الصيام على هذه الأمة كما فرضه على من قبلهم ليتأسوا بهم ويعلموا أنه شريعة قديمة. {لَعَلَّكُمْ تَتَّقُونَ} فإن الصوم فيه تزكية للنفس وتطهير وتنقية لها من الأخلاط الرديئة. قال النبي ﷺ: «الصيام جُنّة» أي وقاية من النار ومن المعاصي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-183', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-183">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-183">{كُتِبَ عَلَيْكُمُ الصِّيَامُ} فُرض عليكم. {كَمَا كُتِبَ عَلَى الَّذِينَ مِنْ قَبْلِكُمْ} من الأنبياء والأمم السابقة. وهذا تسلية وتهوين للأمر بأنه ليس خاصًا بكم. {لَعَلَّكُمْ تَتَّقُونَ} أي تتقون المعاصي لأن الصوم يكسر الشهوة التي هي أصل المعاصي ولذلك قال ﷺ: «الصيام جُنّة».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-183', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-183">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-183">فرض الله الصيام بخطاب عام للمؤمنين. والتشبيه بالأمم السابقة للتأنيس والتسهيل فإذا عُلم أنه حكم عام خفّ على النفوس. والصيام لغة: الإمساك. وشرعًا: إمساك عن المفطرات من طلوع الفجر إلى الغروب بنية. {لَعَلَّكُمْ تَتَّقُونَ} لأن الصوم يُضعف النفس الأمارة بالسوء ويكسر شهواتها فيتحقق بذلك التقوى.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-183', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-183">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-183">يقول تعالى: يا أيها الذين صدّقوا الله ورسوله، فُرض عليكم الصيام كما فُرض على الذين من قبلكم من أهل الكتاب وغيرهم. لعلكم تتقون أي لعلكم تتقون ربكم بترك ما كنتم تأتون من المعاصي، فإن الصوم يُضعف الشهوات ويكسر النفس عن المحرمات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-183', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-184">
+                <div class="ayah-text">أَیَّا<span class="tj-dgm">مࣰا</span> <span class="tj-ghn">مَّ</span>عۡدُودَ<span class="tj-mdd"> ٰ⁠</span>تࣲۚ فَمَ<span class="tj-khf">ن</span> كَانَ مِ<span class="tj-khf">ن</span>كُم <span class="tj-ghn">مَّ</span>رِیضًا أَوۡ عَلَ<span class="tj-mdd">ىٰ</span> سَفَ<span class="tj-khf">رࣲ</span> فَعِدَّ<span class="tj-dgm">ةࣱ</span> <span class="tj-ghn">مِّ</span>نۡ أَیَّامٍ أُخَرَۚ وَعَلَى <span class="tj-slt">ٱلَّ</span>ذِینَ یُطِیقُونَهُۥ فِ<span class="tj-qlq">دۡ</span>یَ<span class="tj-khf">ةࣱ</span> طَعَامُ مِسۡكِی<span class="tj-khf">نࣲ</span>ۖ فَمَ<span class="tj-khf">ن</span> تَطَوَّعَ خَیۡ<span class="tj-khf">رࣰا</span> فَهُوَ خَیۡ<span class="tj-dgm">رࣱ</span> لَّهُۥۚ وَأَ<span class="tj-khf">ن</span> تَصُومُو<span class="tj-slt">ا۟</span> خَیۡ<span class="tj-dgm">رࣱ</span> لَّكُمۡ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">ن</span>تُمۡ تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الصيام أيام معدودات مع رخصة المريض والمسافر بالقضاء، ورخصة الفدية لمن يطيقه بمشقة شديدة، والصوم خير لمن استطاع.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-184">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-184">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-184">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-184">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-184">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-184">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-184">وصف الصيام بأنه أيام معدودات تسهيلًا وتهوينًا على النفوس. ورخّص للمريض والمسافر أن يفطرا ويقضيا عدة أيام أخر. وقوله: {وَعَلَى الَّذِينَ يُطِيقُونَهُ فِدْيَةٌ} قيل هذا في أول الأمر حيث كان الصيام على التخيير ثم نُسخ بالوجوب. وقيل هو في حق الشيخ الكبير والمرأة الحامل والمرضع. {وَأَنْ تَصُومُوا خَيْرٌ لَكُمْ} أي الصوم أفضل من الفدية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-184', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-184">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-184">{أَيَّامًا مَعْدُودَاتٍ} تقليل وتسهيل. والمريض والمسافر يُفطران ويقضيان. وقوله: {وَعَلَى الَّذِينَ يُطِيقُونَهُ فِدْيَةٌ} اختلف فيه: فقيل هو منسوخ بقوله: {فَمَنْ شَهِدَ مِنْكُمُ الشَّهْرَ فَلْيَصُمْهُ}، وقيل يبقى في حق الشيخ الكبير والعاجز عن الصوم. والفدية: طعام مسكين عن كل يوم. {وَأَنْ تَصُومُوا خَيْرٌ لَكُمْ} أفضل من الفدية لمن استطاع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-184', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-184">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-184">{أَيَّامًا مَعْدُودَاتٍ} أي شهر رمضان. رخّص للمريض والمسافر في الفطر والقضاء. {وَعَلَى الَّذِينَ يُطِيقُونَهُ} قال ابن عباس: ليست بمنسوخة هي في حق الشيخ الكبير والمرأة الكبيرة لا يستطيعان الصوم فيُطعمان عن كل يوم مسكينًا. {فَمَنْ تَطَوَّعَ خَيْرًا} زاد على طعام مسكين. {وَأَنْ تَصُومُوا خَيْرٌ لَكُمْ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-184', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-184">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-184">{أَيَّامًا مَعْدُودَاتٍ} تهوين للأمر وتيسير. والمريض يُفطر إذا شقّ عليه الصوم ويقضي. والمسافر يُفطر ويقضي. {وَعَلَى الَّذِينَ يُطِيقُونَهُ} اختلف الفقهاء: فمنهم من قال هي منسوخة، ومنهم من قال تبقى في حق العاجز كالشيخ الفاني. والفدية: إطعام مسكين عن كل يوم. {وَأَنْ تَصُومُوا خَيْرٌ لَكُمْ} ترغيب في الصيام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-184', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-184">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-184">يقول تعالى: الصيام الذي فرضته عليكم أيام معدودات قلائل. فمن كان مريضًا أو على سفر فأفطر فليقضِ عدة ما أفطره من أيام أُخر. وعلى الذين يطيقونه بمشقة عظيمة كالشيخ الكبير فدية طعام مسكين. فمن تبرع بالخير فهو خير له. وأن تصوموا أيها المكلفون خير لكم من الفدية إن كنتم تعلمون ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-184', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-185">
+                <div class="ayah-text">شَهۡرُ رَمَضَانَ <span class="tj-slt">ٱلَّ</span>ذِیۤ أُ<span class="tj-khf">نز</span>ِلَ فِیهِ <span class="tj-slt">ٱ</span>لۡقُرۡءَانُ هُ<span class="tj-dgm">دࣰى</span> لِّل<span class="tj-ghn">نَّ</span>اسِ وَبَیِّ<span class="tj-mdd">نَـٰ</span><span class="tj-dgm">تࣲ</span> <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>لۡهُدَ<span class="tj-mdd">ىٰ</span> وَ<span class="tj-slt">ٱ</span>لۡفُرۡقَانِۚ فَمَ<span class="tj-khf">ن</span> شَهِدَ مِ<span class="tj-khf">نك</span>ُمُ <span class="tj-slt">ٱل</span>شَّهۡرَ فَلۡیَصُمۡهُۖ وَمَ<span class="tj-khf">ن</span> كَانَ مَرِیضًا أَوۡ عَلَ<span class="tj-mdd">ىٰ</span> سَفَ<span class="tj-khf">رࣲ</span> فَعِدَّ<span class="tj-dgm">ةࣱ</span> <span class="tj-ghn">مِّ</span>نۡ أَیَّامٍ أُخَرَۗ یُرِیدُ <span class="tj-slt">ٱل</span>لَّهُ بِكُمُ <span class="tj-slt">ٱ</span>لۡیُسۡرَ وَلَا یُرِیدُ بِكُمُ <span class="tj-slt">ٱ</span>لۡعُسۡرَ وَلِتُكۡمِلُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡعِدَّةَ وَلِتُكَبِّرُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>لَّهَ عَلَ<span class="tj-mdd">ىٰ</span> مَا هَدَ<span class="tj-mdd">ىٰ</span>كُمۡ وَلَعَلَّكُمۡ تَشۡكُرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بيان فضل شهر رمضان الذي أُنزل فيه القرآن هدى للناس، ووجوب صيامه على من شهده، مع بيان أن الله يريد اليسر لا العسر.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-185">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-185">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-185">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-185">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-185">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-185">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-185">بيّن الله فضل شهر رمضان بأنه الشهر الذي أُنزل فيه القرآن هدى للناس وبيّنات من الهدى والفرقان. فمن شهد الشهر أي حضره مقيمًا صحيحًا فليصمه. ومن كان مريضًا أو مسافرًا فليقضِ أيامًا أخر. يريد الله بكم اليسر والتخفيف ولا يريد بكم العسر والمشقة. ولتكملوا عدة الصيام ولتكبروا الله على ما هداكم ولعلكم تشكرون نعمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-185', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-185">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-185">يمدح تعالى شهر رمضان بأنه اختاره لإنزال القرآن فيه. وقد نزل جملة واحدة من اللوح المحفوظ إلى بيت العزة في السماء الدنيا ثم نزل مفرّقًا بحسب الوقائع. {فَمَنْ شَهِدَ مِنْكُمُ الشَّهْرَ فَلْيَصُمْهُ} هذا إيجاب حتم على من شهد استهلال الشهر وهو مقيم صحيح. {يُرِيدُ اللَّهُ بِكُمُ الْيُسْرَ} في الرخصة للمريض والمسافر {وَلَا يُرِيدُ بِكُمُ الْعُسْرَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-185', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-185">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-185">{شَهْرُ رَمَضَانَ الَّذِي أُنْزِلَ فِيهِ الْقُرْآنُ} أُنزل من اللوح المحفوظ إلى السماء الدنيا في ليلة القدر ثم نزل على النبي ﷺ في ثلاث وعشرين سنة. {فَمَنْ شَهِدَ مِنْكُمُ الشَّهْرَ فَلْيَصُمْهُ} أي من كان حاضرًا مقيمًا فليصم. {يُرِيدُ اللَّهُ بِكُمُ الْيُسْرَ} بالرخصة في الفطر للمسافر والمريض. {وَلِتُكَبِّرُوا اللَّهَ} عند إكمال العدة وهو تكبير ليلة العيد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-185', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-185">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-185">خصّ الله رمضان بإنزال القرآن فيه تشريفًا له. والقرآن هدى للناس يخرجهم من الظلمات إلى النور، وبيّنات واضحة من الهدى والفرقان بين الحق والباطل. {فَمَنْ شَهِدَ} أي حضر ولم يكن مسافرًا. {يُرِيدُ اللَّهُ بِكُمُ الْيُسْرَ} هذه قاعدة عظيمة في الشريعة. {وَلِتُكَبِّرُوا اللَّهَ} عند إتمام صوم الشهر بالتكبير ليلة العيد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-185', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-185">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-185">يقول تعالى: شهر رمضان الذي ابتدأ الله فيه إنزال القرآن على محمد ﷺ هدى يهتدي به الناس وبيانًا واضحًا للحق والفرقان بين الحلال والحرام. فمن حضر منكم الشهر فليصمه. ومن كان مريضًا أو مسافرًا فعدة من أيام أخر. يريد الله بكم التيسير لا التعسير. ولتكملوا عدة شهركم ولتعظموا الله بالتكبير على هدايته لكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-185', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-186">
+                <div class="ayah-text">وَإِذَا سَأَلَكَ عِبَادِی عَ<span class="tj-ghn">نِّ</span>ی فَإِ<span class="tj-ghn">نِّ</span>ی قَرِیبٌۖ أُجِیبُ دَعۡوَةَ <span class="tj-slt">ٱل</span>دَّاعِ إِذَا دَعَانِۖ فَلۡیَسۡتَجِیبُو<span class="tj-slt">ا۟</span> لِی وَلۡیُؤۡمِنُو<span class="tj-slt">ا۟</span> بِی لَعَلَّهُمۡ یَرۡشُدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">آية عظيمة في قرب الله من عباده وإجابته للداعي إذا دعاه، مع الأمر بالاستجابة لله والإيمان به لتحقيق الرشد.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-186">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-186">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-186">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-186">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-186">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-186">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-186">هذه الآية الكريمة فيها ترغيب عظيم في الدعاء وبيان قرب الله من عباده. فإذا سألك عبادي عني فأخبرهم أني قريب أسمع دعاءهم وأجيبه. ولم يقل فقل لهم بل قال: {فَإِنِّي قَرِيبٌ} ليدل على شدة القرب. {فَلْيَسْتَجِيبُوا لِي} بالطاعة. {وَلْيُؤْمِنُوا بِي} إيمانًا صادقًا. {لَعَلَّهُمْ يَرْشُدُونَ} يصيبون الحق والصواب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-186', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-186">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-186">سبب النزول أن أعرابيًا قال: يا رسول الله أقريب ربنا فنناجيه أم بعيد فنناديه؟ فنزلت. ولم يقل فقل لهم إني قريب بل أجاب مباشرة مما يدل على عظم القرب. {أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ} وعد بالإجابة. {فَلْيَسْتَجِيبُوا لِي} أي فليطيعوني {وَلْيُؤْمِنُوا بِي لَعَلَّهُمْ يَرْشُدُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-186', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-186">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-186">{وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ} لم يقل فقل لهم بل أجاب مباشرة دلالة على القرب. {أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ} أي أسمع دعاءه وأستجيب له. والإجابة على ثلاثة أوجه: إما أن يُعطيه ما سأل أو يدّخر له خيرًا منه أو يصرف عنه سوءًا. {فَلْيَسْتَجِيبُوا لِي} فليطيعوني. {وَلْيُؤْمِنُوا بِي}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-186', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-186">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-186">جاءت هذه الآية بين آيات الصيام لأن الصائم مجاب الدعوة. ولم يقل فقل لهم مما يدل على أن الله أقرب إلى عباده من كل شيء. {أُجِيبُ دَعْوَةَ الدَّاعِ} والدعاء عبادة عظيمة قال ﷺ: «الدعاء هو العبادة». {فَلْيَسْتَجِيبُوا لِي} فليجيبوني بالطاعة كما أجيبهم بالعطاء. {لَعَلَّهُمْ يَرْشُدُونَ} يهتدون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-186', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-186">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-186">يقول تعالى: وإذا سألك يا محمد عبادي عني فأخبرهم أني منهم قريب أسمع دعاءهم وأجيب من دعاني منهم. فليستجيبوا لي بالطاعة والعبادة وليصدّقوا بي وبوعدي لعلهم يرشدون أي يصيبون طريق الحق ويهتدون إلى ما فيه صلاحهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-186', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-187">
+                <div class="ayah-text">أُحِلَّ لَكُمۡ لَیۡلَةَ <span class="tj-slt">ٱل</span>صِّیَامِ <span class="tj-slt">ٱل</span>رَّفَثُ إِلَ<span class="tj-mdd">ىٰ</span> نِسَ<span class="tj-mdd">اۤ</span>ىِٕكُمۡۚ هُ<span class="tj-ghn">نَّ</span> لِبَا<span class="tj-dgm">سࣱ</span> لَّكُمۡ وَأَ<span class="tj-khf">نت</span>ُمۡ لِبَا<span class="tj-dgm">سࣱ</span> لَّهُ<span class="tj-ghn">نَّ</span>ۗ عَلِمَ <span class="tj-slt">ٱل</span>لَّهُ أَ<span class="tj-ghn">نَّ</span>كُمۡ كُ<span class="tj-khf">نت</span>ُمۡ تَخۡتَانُونَ أَ<span class="tj-khf">نف</span>ُسَكُمۡ فَتَابَ عَلَیۡكُمۡ وَعَفَا عَ<span class="tj-khf">نك</span>ُمۡۖ فَ<span class="tj-slt">ٱ</span>لۡـَٔ<span class="tj-mdd">ـٰ</span>نَ بَ<span class="tj-mdd">ـٰ</span>شِرُوهُ<span class="tj-ghn">نَّ</span> وَ<span class="tj-slt">ٱ</span><span class="tj-qlq">بۡ</span>تَغُو<span class="tj-slt">ا۟</span> مَا كَتَبَ <span class="tj-slt">ٱل</span>لَّهُ لَكُمۡۚ وَكُلُو<span class="tj-slt">ا۟</span> وَ<span class="tj-slt">ٱ</span>شۡرَبُو<span class="tj-slt">ا۟</span> حَتَّ<span class="tj-mdd">ىٰ</span> یَتَبَیَّنَ لَكُمُ <span class="tj-slt">ٱ</span>لۡخَیۡطُ <span class="tj-slt">ٱ</span>لۡأَ<span class="tj-qlq">بۡ</span>یَضُ مِنَ <span class="tj-slt">ٱ</span>لۡخَیۡطِ <span class="tj-slt">ٱ</span>لۡأَسۡوَدِ مِنَ <span class="tj-slt">ٱ</span>لۡفَ<span class="tj-qlq">جۡ</span>رِۖ ثُ<span class="tj-ghn">مَّ</span> أَتِ<span class="tj-ghn">مُّ</span>و<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>صِّیَامَ إِلَى <span class="tj-slt">ٱلَّ</span>یۡلِۚ وَلَا تُبَ<span class="tj-mdd">ـٰ</span>شِرُوهُ<span class="tj-ghn">نَّ</span> وَأَ<span class="tj-khf">نت</span>ُمۡ عَ<span class="tj-mdd">ـٰ</span>كِفُونَ فِی <span class="tj-slt">ٱ</span>لۡمَسَ<span class="tj-mdd">ـٰ</span>جِدِۗ تِلۡكَ حُدُودُ <span class="tj-slt">ٱل</span>لَّهِ فَلَا تَ<span class="tj-qlq">قۡ</span>رَبُوهَاۗ كَذَ<span class="tj-mdd"> ٰ⁠</span>لِكَ یُبَیِّنُ <span class="tj-slt">ٱل</span>لَّهُ ءَایَ<span class="tj-mdd">ـٰ</span>تِهِۦ لِل<span class="tj-ghn">نَّ</span>اسِ لَعَلَّهُمۡ یَتَّقُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أحكام ليالي الصيام: إباحة الأكل والشرب والجماع ليلًا حتى الفجر، ثم إتمام الصيام إلى الليل، وتحريم المباشرة حال الاعتكاف، مع التحذير من تجاوز حدود الله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-187">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-187">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-187">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-187">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-187">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-187">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-187">أباح الله ليلة الصيام الرفث إلى النساء أي الجماع، لأنهن لباس لأزواجهن وهم لباس لهن كناية عن شدة القرب. وأباح الأكل والشرب حتى يتبين الخيط الأبيض من الخيط الأسود من الفجر أي بياض النهار من سواد الليل. ثم يمسك إلى الليل. ونهى عن مباشرة النساء حال الاعتكاف في المساجد. تلك حدود الله فلا تقربوها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-187', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-187">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-187">كان في أول الإسلام إذا أفطر الصائم حلّ له الأكل والشرب والجماع إلى أن ينام، فإذا نام حُرّم عليه ذلك إلى الليلة القابلة. فشقّ ذلك فأنزل الله هذه الآية ترخيصًا. فأباح الجماع والأكل والشرب ليلة الصيام كلها إلى طلوع الفجر. {ثُمَّ أَتِمُّوا الصِّيَامَ إِلَى اللَّيْلِ} أي إلى غروب الشمس. {وَلَا تُبَاشِرُوهُنَّ وَأَنْتُمْ عَاكِفُونَ فِي الْمَسَاجِدِ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-187', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-187">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-187">{أُحِلَّ لَكُمْ لَيْلَةَ الصِّيَامِ الرَّفَثُ إِلَى نِسَائِكُمْ} الرفث: الجماع. وكان محرّمًا بعد النوم فنُسخ. {هُنَّ لِبَاسٌ لَكُمْ} أي كل واحد ستر لصاحبه. {فَالْآنَ بَاشِرُوهُنَّ} إباحة. {وَكُلُوا وَاشْرَبُوا حَتَّى يَتَبَيَّنَ لَكُمُ الْخَيْطُ الْأَبْيَضُ مِنَ الْخَيْطِ الْأَسْوَدِ مِنَ الْفَجْرِ} أي بياض النهار من سواد الليل. {ثُمَّ أَتِمُّوا الصِّيَامَ إِلَى اللَّيْلِ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-187', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-187">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-187">نسخت هذه الآية ما كان في أول الإسلام من تحريم الأكل والشرب والجماع بعد النوم ليلًا. فأباح الله هذه الأمور كلها في ليالي رمضان. والخيط الأبيض والأسود: بياض النهار وسواد الليل. وقوله: {وَلَا تُبَاشِرُوهُنَّ وَأَنْتُمْ عَاكِفُونَ} فيه حرمة الجماع للمعتكف. {تِلْكَ حُدُودُ اللَّهِ فَلَا تَقْرَبُوهَا} أي لا تقاربوها فتقعوا فيها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-187', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-187">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-187">يقول تعالى: أحللت لكم ليلة الصيام مباشرة نسائكم لأنهن لباس لكم وأنتم لباس لهن. علم الله أنكم كنتم تخونون أنفسكم بمباشرتهن بعد النوم فتاب عليكم وعفا عنكم. فالآن باشروهن وكلوا واشربوا حتى يتبين الفجر ثم أتموا الصيام إلى الليل. ولا تباشروهن وأنتم معتكفون في المساجد. تلك حدود الله فلا تقربوها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-187', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-188">
+                <div class="ayah-text">وَلَا تَأۡكُلُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> أَمۡوَ<span class="tj-mdd"> ٰ⁠</span>لَكُم بَیۡنَكُم بِ<span class="tj-slt">ٱ</span>لۡبَ<span class="tj-mdd">ـٰ</span>طِلِ وَتُ<span class="tj-qlq">دۡ</span>لُو<span class="tj-slt">ا۟</span> بِهَ<span class="tj-mdd">اۤ</span> إِلَى <span class="tj-slt">ٱ</span>لۡحُكَّامِ لِتَأۡكُلُو<span class="tj-slt">ا۟</span> فَرِی<span class="tj-dgm">قࣰا</span> <span class="tj-ghn">مِّ</span>نۡ أَمۡوَ<span class="tj-mdd"> ٰ⁠</span>لِ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسِ بِ<span class="tj-slt">ٱ</span>لۡإِثۡمِ وَأَ<span class="tj-khf">نت</span>ُمۡ تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تحريم أكل أموال الناس بالباطل والإدلاء بها إلى الحكام لأكل فريق من أموال الناس بالإثم، وهذا من أعظم المحرمات.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-188">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-188">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-188">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-188">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-188">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-188">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-188">نهى الله عن أكل أموال الناس بالباطل وهو كل طريق لم يأذن به الله كالسرقة والغصب والربا والقمار. وخصّ منها الإدلاء بها إلى الحكام أي دفعها رشوة للقضاة ليحكموا لهم بأكل أموال الناس بالإثم وهم يعلمون أنها ليست لهم. وهذا من أعظم الذنوب لأنه يجمع بين أكل الحرام والرشوة وتضييع الحقوق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-188', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-188">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-188">نهى الله عن أكل المال بالباطل وهو بغير حق شرعي. {وَتُدْلُوا بِهَا إِلَى الْحُكَّامِ} أي تلقوا بها إلى القضاة رشوة ليقضوا لكم بما ليس لكم. {لِتَأْكُلُوا فَرِيقًا مِنْ أَمْوَالِ النَّاسِ بِالْإِثْمِ} أي جزءًا من أموالهم بطريق الحرام. {وَأَنْتُمْ تَعْلَمُونَ} أنكم مبطلون، وهذا أشد في الإثم لأنه عمد مع العلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-188', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-188">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-188">{وَلَا تَأْكُلُوا أَمْوَالَكُمْ بَيْنَكُمْ بِالْبَاطِلِ} أي بالحرام كالسرقة والغصب والقمار وغيرها. {وَتُدْلُوا بِهَا إِلَى الْحُكَّامِ} أي تلقوها إلى الحكام رشوة. {لِتَأْكُلُوا فَرِيقًا مِنْ أَمْوَالِ النَّاسِ بِالْإِثْمِ} بالحرام. {وَأَنْتُمْ تَعْلَمُونَ} أنها ليست لكم وأنكم ظالمون فيها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-188', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-188">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-188">نهى الله عن أكل الأموال بالباطل وهو كل ما لم يبحه الشرع. والباطل يشمل الربا والقمار والغصب والسرقة والخيانة وغيرها. {وَتُدْلُوا بِهَا} الإدلاء: الإلقاء، أي تلقوا الأموال رشوة للحكام. وفي الآية تحريم الرشوة وتحريم الحكم بالباطل. {وَأَنْتُمْ تَعْلَمُونَ} أنكم على باطل وهذا أشد في الذنب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-188', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-188">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-188">يقول تعالى: لا يأكل بعضكم مال بعض بالباطل أي بغير ما أباحه الله لكم. ولا تلقوا بأموالكم إلى الحكام والقضاة رشوة لتأكلوا بها أموال الناس ظلمًا. وأنتم تعلمون أنها ليست لكم وأنكم آثمون في أخذها. وهذا تحريم صريح لأكل المال الحرام بجميع صوره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-188', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-11.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">الصبر والابتلاء وشعائر الله</span>
+            </a>
+            <a href="section-13.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">أحكام الأهلّة والحج والقتال</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١٢: أحكام القصاص والوصية والصيام<br>
+        <small>آيات ١٧٨ – ١٨٨ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

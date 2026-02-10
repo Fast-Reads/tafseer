@@ -1,0 +1,220 @@
+========================================================
+  الدليل ١: هيكل الصفحة والقالب
+  Guide 1: Page Structure & Template
+========================================================
+
+This guide covers the foundation: file organization, the HTML
+template to copy for each section, the per-ayah block structure,
+and accent colors for section banners.
+
+Steps:
+  1. Understand the file structure
+  2. Copy the HTML template for the new section
+  3. Fill in section metadata (title, number, accent color)
+  4. Add ayah blocks (text + badge + empty tafseer skeleton)
+
+
+========================================================
+1. FILE STRUCTURE
+========================================================
+
+Each section is a standalone HTML file:
+  section-01.html  (ayahs 1–5)
+  section-02.html  (ayahs 6–7)
+  section-03.html  (ayahs 8–20)
+  ...
+  section-21.html
+
+All sections share:
+  style.css   — all CSS (themes, tajweed, panels, layout)
+  script.js   — all JS (toggles, panels, shortcuts, bookmarks)
+  index.html  — table of contents linking to all sections
+
+
+========================================================
+2. HTML TEMPLATE (copy for each new section)
+========================================================
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سورة البقرة — [SECTION_TITLE_AR]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع [N_AR] من ٢١</p>
+        </div>
+    </div>
+
+    <!-- TOOLBAR (same on every page) -->
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <!-- SECTION BANNER -->
+        <div class="section-banner" style="--accent-color:[COLOR]">
+            <div class="section-num">[N_AR]</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">[TITLE_AR]</h2>
+                <h3 class="section-title-en">[TITLE_EN]</h3>
+            </div>
+            <div class="section-ayah-range">آيات [RANGE_AR]</div>
+        </div>
+
+        <!-- SECTION DESCRIPTION -->
+        <div class="section-desc">
+            <p>[SHORT_ARABIC_DESCRIPTION]</p>
+        </div>
+
+        <!-- FLOW DIAGRAM (content filled in guide-2) -->
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <!-- flow nodes added in guide-2 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- AYAH LIST -->
+        <div class="ayah-list">
+            <!-- ayah blocks go here (see section 3 below) -->
+        </div>
+
+        <!-- NAVIGATION BAR -->
+        <div class="nav-bar">
+            <a href="section-[PREV].html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">[PREV_TITLE]</span>
+            </a>
+            <a href="section-[NEXT].html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">[NEXT_TITLE]</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع [N_AR]: [TITLE_AR]<br>
+        <small>آيات [RANGE_AR] &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND (same on every page) -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+NOTE: First section has no "prev" link (use <span class="nav-btn disabled"></span>).
+      Last section has no "next" link (same).
+
+
+========================================================
+3. AYAH STRUCTURE (repeat for each ayah)
+========================================================
+
+<!-- Ayah [N] -->
+<div class="ayah" id="ayah-[N]">
+    <div class="ayah-text">[QURAN_TEXT_WITH_TAJWEED_SPANS]</div>
+    <div class="ayah-num-wrap">
+        <span class="ayah-badge">[N_AR]</span>
+    </div>
+    <div class="tafseer-block">
+        <div class="tafseer-summary">[BRIEF_ARABIC_SUMMARY]</div>
+        <div class="tafseer-tab-headers">
+            <button class="tafseer-tab-btn active" data-tab="saadi-[N]">السعدي</button>
+            <button class="tafseer-tab-btn" data-tab="katheer-[N]">ابن كثير</button>
+            <button class="tafseer-tab-btn" data-tab="baghawy-[N]">البغوي</button>
+            <button class="tafseer-tab-btn" data-tab="qortoby-[N]">القرطبي</button>
+            <button class="tafseer-tab-btn" data-tab="tabary-[N]">الطبري</button>
+        </div>
+        <!-- Al-Saadi (default active, collapsed) -->
+        <div class="tafseer-tab-content active" id="saadi-[N]">
+            <div class="tafseer-text collapsed-text" id="t-saadi-[N]">[SAADI_TEXT]</div>
+            <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-[N]', this)">عرض المزيد</button>
+        </div>
+        <!-- Ibn Kathir (collapsed) -->
+        <div class="tafseer-tab-content" id="katheer-[N]">
+            <div class="tafseer-text collapsed-text" id="t-katheer-[N]">[KATHEER_TEXT]</div>
+            <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-[N]', this)">عرض المزيد</button>
+        </div>
+        <!-- Al-Baghawi (collapsed) -->
+        <div class="tafseer-tab-content" id="baghawy-[N]">
+            <div class="tafseer-text collapsed-text" id="t-baghawy-[N]">[BAGHAWY_TEXT]</div>
+            <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-[N]', this)">عرض المزيد</button>
+        </div>
+        <!-- Al-Qurtubi (collapsed) -->
+        <div class="tafseer-tab-content" id="qortoby-[N]">
+            <div class="tafseer-text collapsed-text" id="t-qortoby-[N]">[QORTOBY_TEXT]</div>
+            <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-[N]', this)">عرض المزيد</button>
+        </div>
+        <!-- Al-Tabari (collapsed) -->
+        <div class="tafseer-tab-content" id="tabary-[N]">
+            <div class="tafseer-text collapsed-text" id="t-tabary-[N]">[TABARY_TEXT]</div>
+            <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-[N]', this)">عرض المزيد</button>
+        </div>
+    </div>
+</div>
+
+IMPORTANT:
+- [N] = ayah number (e.g. 6, 7, 8...)
+- [N_AR] = Arabic-Indic numeral (e.g. ٦, ٧, ٨...)
+- Al-Saadi tab is "active" by default but collapsed (like all scholars)
+- All 5 scholars are collapsed with "عرض المزيد" toggle button
+- Tab IDs use the pattern: saadi-N, katheer-N, baghawy-N, qortoby-N, tabary-N
+- Collapsed text IDs use: t-saadi-N, t-katheer-N, t-baghawy-N, t-qortoby-N, t-tabary-N
+
+
+========================================================
+4. ACCENT COLORS (for section banners)
+========================================================
+
+Section 01: #2ecc71 (green)
+Section 02: #e74c3c (red)
+
+Choose distinct colors for each section. Suggestions:
+  #3498db (blue), #9b59b6 (purple), #f39c12 (orange),
+  #1abc9c (teal), #e67e22 (dark orange), #2980b9 (dark blue),
+  #8e44ad (dark purple), #27ae60 (dark green), #c0392b (dark red),
+  #16a085 (dark teal), #d35400 (burnt orange), #2c3e50 (navy),
+  #f1c40f (yellow), #7f8c8d (gray), #e91e63 (pink),
+  #00bcd4 (cyan), #795548 (brown), #607d8b (blue gray),
+  #ff5722 (deep orange)

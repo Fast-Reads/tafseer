@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — صفات المنافقين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ٣ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#e67e22">
+            <div class="section-num">٣</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">صفات المنافقين</h2>
+                <h3 class="section-title-en">Qualities of the Hypocrites</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٨ – ٢٠</div>
+        </div>
+
+        <div class="section-desc">
+            <p>كشف حقيقة المنافقين الذين يُظهرون الإيمان ويُبطنون الكفر، وضرب الأمثال لبيان حالهم وخداعهم</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="8-9">
+                        <div class="flow-node-num">٨–٩</div>
+                        <div class="flow-node-text">ادعاء الإيمان وخداع الله والمؤمنين</div>
+                        <div class="flow-node-key">مَن یَقُولُ ءَامَنَّا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="10">
+                        <div class="flow-node-num">١٠</div>
+                        <div class="flow-node-text">المرض في قلوبهم وزيادته</div>
+                        <div class="flow-node-key">فِی قُلُوبِهِم مَّرَضࣱ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="11-12">
+                        <div class="flow-node-num">١١–١٢</div>
+                        <div class="flow-node-text">ادعاء الإصلاح وحقيقة الإفساد</div>
+                        <div class="flow-node-key">لَا تُفۡسِدُو<span class="tj-slt">ا۟</span> فِی ٱلۡأَرۡضِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="13">
+                        <div class="flow-node-num">١٣</div>
+                        <div class="flow-node-text">رمي المؤمنين بالسفه</div>
+                        <div class="flow-node-key">أَنُؤۡمِنُ كَمَاۤ ءَامَنَ ٱلسُّفَهَاۤءُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="14-15">
+                        <div class="flow-node-num">١٤–١٥</div>
+                        <div class="flow-node-text">التلوّن والاستهزاء بالمؤمنين</div>
+                        <div class="flow-node-key">إِذَا لَقُو<span class="tj-slt">ا۟</span> ٱلَّذِینَ ءَامَنُو<span class="tj-slt">ا۟</span></div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="16">
+                        <div class="flow-node-num">١٦</div>
+                        <div class="flow-node-text">خسارة صفقتهم</div>
+                        <div class="flow-node-key">ٱشۡتَرَوُ<span class="tj-slt">ا۟</span> ٱلضَّلَـٰلَةَ بِٱلۡهُدَىٰ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="17-18">
+                        <div class="flow-node-num">١٧–١٨</div>
+                        <div class="flow-node-text">المثل الأول — مثل المستوقد ناراً</div>
+                        <div class="flow-node-key">كَمَثَلِ ٱلَّذِی ٱسۡتَوۡقَدَ نَارࣰا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="19-20">
+                        <div class="flow-node-num">١٩–٢٠</div>
+                        <div class="flow-node-text">المثل الثاني — مثل الصيّب من السماء</div>
+                        <div class="flow-node-key">أَوۡ كَصَیِّبࣲ مِّنَ ٱلسَّمَاۤءِ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <!-- Ayah 8 -->
+            <div class="ayah" id="ayah-8">
+                <div class="ayah-text">وَمِنَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسِ مَ<span class="tj-dgm">ن</span> یَقُولُ ءَامَ<span class="tj-ghn">نَّ</span>ا بِ<span class="tj-slt">ٱ</span>للَّهِ وَبِ<span class="tj-slt">ٱ</span>لۡیَوۡمِ <span class="tj-slt">ٱ</span>لۡـَٔاخِرِ وَمَا هُم بِمُؤۡمِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بعد ذكر المؤمنين والكافرين، يذكر الله صنفاً ثالثاً وهم المنافقون الذين يدّعون الإيمان بألسنتهم وقلوبهم خالية منه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-8">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-8">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-8">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-8">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-8">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-8">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-8">لما ذكر تعالى صفات المؤمنين حقاً وصفات الكافرين المُظهرين لكفرهم، ذكر صفات القسم الثالث وهم المنافقون الذين يُظهرون الإيمان ويُبطنون الكفر. ولمّا كان أمرهم يشتبه على كثير من الناس، أطال في ذكرهم وبيان صفاتهم. فقال: {وَمِنَ النَّاسِ مَنْ يَقُولُ آمَنَّا بِاللَّهِ وَبِالْيَوْمِ الْآخِرِ} أي يقول ذلك بلسانه قولاً ليس معه إيمان القلب. فهو كلام بلا حقيقة، وقول بلا عمل صالح يصدّقه، {وَمَا هُمْ بِمُؤْمِنِينَ} لأن الإيمان الحقيقي هو ما تواطأ عليه القلب واللسان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-8', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-8">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-8">لمّا تقدّم وصف المؤمنين في صدر السورة بأربع آيات، ثم عرّف حال الكافرين بآيتين، شرع في بيان حال المنافقين الذين يُظهرون الإيمان ويُبطنون الكفر. ولمّا كان أمرهم يشتبه على كثير من الناس أطنب في ذكرهم بصفات متعددة، كل صفة منها نفاق بنفسها. والنفاق هو إظهار الخير وإسرار الشرّ، وهو أنواع: اعتقادي وهو الذي يخلّد صاحبه في النار، وعملي وهو من أكبر الذنوب. وقوله {وَمَا هُم بِمُؤْمِنِينَ} أي ليسوا كذلك في الباطن وإن كانوا في الظاهر كذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-8', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-8">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-8">نزلت في المنافقين، والنفاق إظهار الإيمان وإبطان الكفر، مأخوذ من النافقاء وهو أحد جحرة اليربوع يدخل من باب ويخرج من آخر. وقوله {مَنْ يَقُولُ} بلسانه {آمَنَّا بِاللَّهِ وَبِالْيَوْمِ الْآخِرِ} أي يقول ذلك نفاقاً لا اعتقاداً. {وَمَا هُمْ بِمُؤْمِنِينَ} في الحقيقة. وخصّ الإيمان بالله واليوم الآخر لأنهما ركنا الإيمان الأساسيان: الإيمان بالمبدأ والمعاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-8', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-8">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-8">هذه الآية في ذكر المنافقين. والمنافقون صنفان: صنف كانوا يعتقدون الكفر كعبد الله بن أبيّ وأصحابه، وصنف كانوا يشكّون ويتردّدون. والنفاق في اللغة من النافقاء، وهو جُحر اليربوع إذا طُلب من واحد خرج من الآخر. خصّ الله الإيمان بالله واليوم الآخر لأنّ مشركي العرب كانوا ينكرون البعث خاصة. وقوله {وَمَا هُمْ بِمُؤْمِنِينَ} نفي ما ادّعوه لأن حقيقة الإيمان التصديق بالقلب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-8', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-8">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-8">يعني بقوله جل ثناؤه {وَمِنَ النَّاسِ مَنْ يَقُولُ آمَنَّا بِاللَّهِ} أي صدّقنا بالله، إقراراً منهم بألسنتهم بالله وباليوم الآخر من غير تصديق لذلك بضمائرهم وعزائمهم. فأكذبهم الله في قيلهم ذلك فقال: {وَمَا هُمْ بِمُؤْمِنِينَ} أي وما هم بمصدّقين. وهؤلاء هم أهل النفاق، وإنما سُمّوا منافقين لإظهارهم بألسنتهم ما ليس في قلوبهم وإبطانهم الكفر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-8', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 9 -->
+            <div class="ayah" id="ayah-9">
+                <div class="ayah-text">یُخَ<span class="tj-mdd">ـٰ</span>دِعُونَ <span class="tj-slt">ٱ</span>للَّهَ وَ<span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> وَمَا یَخۡدَعُونَ إِلَّ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">نف</span>ُسَهُمۡ وَمَا یَشۡعُرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">المنافقون يحاولون خداع الله والمؤمنين بإظهار الإيمان وإبطان الكفر، لكنهم في الحقيقة لا يخدعون إلا أنفسهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-9">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-9">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-9">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-9">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-9">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-9">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-9">وقوله {يُخَادِعُونَ اللَّهَ وَالَّذِينَ آمَنُوا} أي يُظهرون الإيمان ويُبطنون الكفر، فيظنّون أنهم خدعوا الله ورسوله والمؤمنين بذلك. {وَمَا يَخْدَعُونَ إِلَّا أَنْفُسَهُمْ} لأن ضرر خداعهم راجع عليهم، فإنهم يعتقدون أنهم على شيء وليسوا على شيء، ويُعاملون معاملة المسلمين في الدنيا وهم في الآخرة في الدرك الأسفل من النار. {وَمَا يَشْعُرُونَ} بذلك لانطماس بصائرهم وعمى قلوبهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-9', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-9">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-9">قال قتادة: المنافقون قوم لم تعقد قلوبهم على ما أظهرت ألسنتهم، فادّعوا الإيمان بألسنتهم وجحدوه بأعمالهم، وكانوا يسرّون الكفر ويُعلنون الإيمان. وقوله {وَمَا يَخْدَعُونَ إِلَّا أَنْفُسَهُمْ وَمَا يَشْعُرُونَ} أي وما يغرّون بصنيعهم هذا ولا يخدعون إلا أنفسهم وما يشعرون بذلك، يعني أنهم يظنون أن خداعهم نافعهم وإنما هو ضارّهم في الحقيقة. لأن الله يُطلع رسوله على نفاقهم ويكشف سرائرهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-9', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-9">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-9">{يُخَادِعُونَ اللَّهَ} أي يخادعون رسول الله صلى الله عليه وسلم والمؤمنين بإظهار الإيمان وإضمار الكفر. وسمّاه مخادعة لله لأن مخادعة رسوله مخادعة له. وقيل: يخادعون الله عند أنفسهم وظنّهم أن ذلك ينفعهم. {وَمَا يَخْدَعُونَ إِلَّا أَنْفُسَهُمْ} لأن وبال خداعهم يعود عليهم في الدنيا بإجراء أحكام المسلمين عليهم، وفي الآخرة بعذاب النار. {وَمَا يَشْعُرُونَ} أي لا يعلمون أن ضرر ذلك عائد عليهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-9', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-9">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-9">الخداع في اللغة إظهار خلاف ما في الباطن. والمخادعة مفاعلة من الخدع. وإنما نُسب الخداع إلى الله مجازاً لأنهم عاملوا الله بما يعامل به المخادع، وهو إظهار خلاف ما يُبطن. {وَمَا يَخْدَعُونَ إِلَّا أَنْفُسَهُمْ} لأن عاقبة خداعهم تعود عليهم بالضرر. والمنافق لا يخدع إلا نفسه في الحقيقة لأن الله مطّلع على سرائره. {وَمَا يَشْعُرُونَ} أي لا يفطنون أن ضرر ذلك راجع إليهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-9', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-9">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-9">قال أبو جعفر: وتأويل ذلك أنهم بإظهارهم ما أظهروا بألسنتهم من قولهم آمنّا بالله وباليوم الآخر خلافاً لما في ضمائرهم، يخادعون الله والذين آمنوا. وخداعهم الله هو خداعهم رسوله والمؤمنين. والله مجازيهم على ذلك جزاء الخادع المستهزئ. {وَمَا يَخْدَعُونَ إِلَّا أَنْفُسَهُمْ} لأن الله تعالى يُطلع نبيّه على نفاقهم فيُحبط ما يأملون من خداعهم، ويحلّ بهم العذاب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-9', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 10 -->
+            <div class="ayah" id="ayah-10">
+                <div class="ayah-text">فِی قُلُوبِهِم <span class="tj-ghn">مَّ</span>رَ<span class="tj-khf">ضࣱ</span> فَزَادَهُمُ <span class="tj-slt">ٱ</span>للَّهُ مَرَضࣰاۖ وَلَهُمۡ عَذَابٌ أَلِی<span class="tj-qlb">مُۢ بِ</span>مَا كَانُو<span class="tj-slt">ا۟</span> یَكۡذِبُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">في قلوب المنافقين مرض الشكّ والنفاق، فزادهم الله مرضاً بسبب إعراضهم، ولهم عذاب أليم بسبب كذبهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-10">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-10">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-10">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-10">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-10">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-10">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-10">{فِي قُلُوبِهِمْ مَرَضٌ} أي شكّ ونفاق، وهو مرض القلوب. {فَزَادَهُمُ اللَّهُ مَرَضًا} أي بسبب إعراضهم عن الحق وإقبالهم على الباطل، زادهم الله رجساً إلى رجسهم ومرضاً إلى مرضهم. وذلك لأن من عقوبة المعصية المعصية بعدها كما أن من ثواب الحسنة الحسنة بعدها. {وَلَهُمْ عَذَابٌ أَلِيمٌ بِمَا كَانُوا يَكْذِبُونَ} أي عذاب موجع مؤلم بسبب كذبهم على الله وعلى رسوله وعلى المؤمنين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-10', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-10">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-10">قال ابن عباس ومجاهد وقتادة: {فِي قُلُوبِهِمْ مَرَضٌ} أي شكّ. وقال ابن عباس في رواية: نفاق. {فَزَادَهُمُ اللَّهُ مَرَضًا} أي زادهم رجساً إلى رجسهم كما قال تعالى: {وَأَمَّا الَّذِينَ فِي قُلُوبِهِمْ مَرَضٌ فَزَادَتْهُمْ رِجْسًا إِلَىٰ رِجْسِهِمْ}. {وَلَهُمْ عَذَابٌ أَلِيمٌ} أي مؤلم موجع {بِمَا كَانُوا يَكْذِبُونَ} أي بسبب كذبهم في قولهم إنهم مؤمنون وهم ليسوا كذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-10', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-10">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-10">المرض هنا الشك والنفاق. قال عبد الرحمن بن زيد: هذا مرض في الدين وليس مرضاً في الأجساد. {فَزَادَهُمُ اللَّهُ مَرَضًا} أي نفاقاً، وذلك بما أنزل الله من القرآن فكفروا به فازدادوا كفراً على كفرهم. وقيل: زادهم الله ضلالاً جزاء لهم. {وَلَهُمْ عَذَابٌ أَلِيمٌ} مؤلم. {بِمَا كَانُوا يَكْذِبُونَ} قرأ الكوفيون بالتخفيف أي يكذبون في قولهم آمنّا، وقرأ الباقون بالتشديد أي يكذّبون النبي والقرآن.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-10', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-10">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-10">المرض في الآية على وجهين: قيل الشكّ وقيل النفاق. والمعنى متقارب لأن الشاكّ منافق. واستعارة المرض للشك حسنة لأن الشك يُضعف الدين كما يُضعف المرض البدن. {فَزَادَهُمُ اللَّهُ مَرَضًا} قيل معناه بإنزال آيات جديدة كفروا بها، فازدادوا نفاقاً. {وَلَهُمْ عَذَابٌ أَلِيمٌ} أي مؤلم وهو من أبنية المبالغة. {بِمَا كَانُوا يَكْذِبُونَ} من القراءتين: بالتخفيف أي في قولهم آمنّا، وبالتشديد أي يُكذّبون محمداً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-10', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-10">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-10">أجمع أهل التأويل على أن المرض هنا مرض الشك والنفاق لا مرض الأبدان. {فَزَادَهُمُ اللَّهُ مَرَضًا} أي شكّاً ونفاقاً. وإنما زادهم بما أنزل من الفرائض والأحكام فكفروا بها فازداد نفاقهم. وقال بعضهم: إن الزيادة بالقرآن الذي كان ينزل فيكفرون به. {وَلَهُمْ عَذَابٌ أَلِيمٌ} يعني بالأليم الموجع. والعرب تقول: ألم الرجل يألم فهو أليم بمعنى مؤلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-10', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 11 -->
+            <div class="ayah" id="ayah-11">
+                <div class="ayah-text">وَإِذَا قِیلَ لَهُمۡ لَا تُفۡسِدُو<span class="tj-slt">ا۟</span> فِی <span class="tj-slt">ٱ</span>لۡأَرۡضِ قَالُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> إِ<span class="tj-ghn">نَّ</span>مَا نَحۡنُ مُصۡلِحُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إذا نُهي المنافقون عن الإفساد في الأرض بالكفر والمعاصي ادّعوا أنهم مصلحون، وهم في الحقيقة المفسدون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-11">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-11">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-11">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-11">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-11">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-11">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-11">ومن صفاتهم أنهم إذا قيل لهم لا تُفسدوا في الأرض بالكفر والمعاصي والتولّي يوم الزحف وموالاة الكفار، قالوا: إنما نحن مصلحون. فجمعوا بين فعل الفساد والادعاء بأنه إصلاح، وهذا أقبح ما يكون من الفساد: أن يفعل الإنسان الباطل ويزعم أنه حق، وهذا من قلب الحقائق الذي لا يصدر إلا من أفسد الناس.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-11', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-11">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-11">أي إذا نُهوا عن الإفساد في الأرض بالكفر والعمل بالمعصية {قَالُوا إِنَّمَا نَحْنُ مُصْلِحُونَ} أي ليس فعلنا إفساداً بل هو إصلاح. ومعنى الإفساد في الأرض العمل فيها بما نهى الله عنه وتضييع ما أمر الله بحفظه. والمنافقون بموالاتهم الكفار وكيدهم الإسلام مفسدون في الأرض، لكنهم لا يشعرون بذلك ويحسبون أنهم يحسنون صنعاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-11', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-11">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-11">{وَإِذَا قِيلَ لَهُمْ} أي للمنافقين {لَا تُفْسِدُوا فِي الْأَرْضِ} بالكفر وتعويق الناس عن الإيمان. {قَالُوا إِنَّمَا نَحْنُ مُصْلِحُونَ} أي نحن على هدى وصواب. وقال السدي: إفسادهم هو العمل بالمعاصي ومنع الناس من الإيمان. وقيل: إفسادهم بموالاة الكفار وإلقاء أسرار المؤمنين إليهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-11', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-11">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-11">الإفساد في الأرض يشمل كل معصية لله تعالى، فإن معاصي الله تُفسد الأرض وتُذهب بركتها. والمنافقون كانوا يفسدون بإظهار الكفر وتثبيط الناس عن الإيمان وموالاة المشركين. قوله {إِنَّمَا نَحْنُ مُصْلِحُونَ} أي زعموا أنهم ليسوا بمفسدين وأن ما يفعلونه هو عين الإصلاح، وهذا من أشد أنواع الفساد: أن يكون المفسد يرى فساده إصلاحاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-11', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-11">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-11">يعني بالإفساد في الأرض العمل فيها بالمعاصي وتضييع ما أمر الله بحفظه. وذلك أن إفساد المنافقين كان بموالاة أهل الكفر وإلقاء أسرار المؤمنين إليهم وتثبيطهم. فكانوا إذا نُهوا عن ذلك قالوا: ليس فعلنا إفساداً، إنما نحن نصلح بين الفريقين من المؤمنين والكافرين. وقال مجاهد: يعملون بالمعاصي ثم يقولون: ما أردنا إلا إحساناً وتوفيقاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-11', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 12 -->
+            <div class="ayah" id="ayah-12">
+                <div class="ayah-text">أَلَ<span class="tj-mdd">اۤ</span> إِ<span class="tj-ghn">نَّ</span>هُمۡ هُمُ <span class="tj-slt">ٱ</span>لۡمُفۡسِدُونَ وَلَ<span class="tj-mdd">ـٰ</span>كِ<span class="tj-dgm">ن</span> لَّا یَشۡعُرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يردّ الله عليهم بأنهم هم المفسدون حقيقةً وليسوا مصلحين، لكنهم لا يشعرون بفسادهم لانطماس بصائرهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-12">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-12">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-12">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-12">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-12">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-12">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-12">فردّ الله عليهم بقوله: {أَلَا إِنَّهُمْ هُمُ الْمُفْسِدُونَ} وأكّد ذلك بعدة مؤكّدات: (ألا) التي هي للتنبيه، و(إنّ) المفيدة للتأكيد، وتعريف الخبر بالألف واللام، وضمير الفصل (هم). فهم المفسدون على الحقيقة لأنهم جمعوا بين الكفر الذي هو أصل الفساد، والتلبيس على الناس بادّعاء الإصلاح. {وَلَكِنْ لَا يَشْعُرُونَ} بفسادهم لأن من زُيّن له سوء عمله فرآه حسناً لا يمكن أن يرجع عنه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-12', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-12">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-12">قال الله ردّاً عليهم {أَلَا إِنَّهُمْ هُمُ الْمُفْسِدُونَ} فحصر الفساد فيهم على سبيل التأكيد، {وَلَكِنْ لَا يَشْعُرُونَ} أي بأنهم مفسدون. وذلك لأنّ من زُيّن له سوء عمله فرآه حسناً فهو بعيد عن الرجوع عنه. وهذا هو الضلال المبين: أن يكون الإنسان ضالاً وهو يحسب أنه مهتدٍ.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-12', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-12">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-12">{أَلَا} كلمة تنبيه. {إِنَّهُمْ هُمُ الْمُفْسِدُونَ} لا غيرهم، لأن الإفساد في الحقيقة صادر منهم بنفاقهم وكيدهم للإسلام. {وَلَكِنْ لَا يَشْعُرُونَ} أي لا يعلمون أن ما يفعلونه إفساد. وقيل: لا يشعرون بأن الله يُطلع نبيّه على ما يُضمرون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-12', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-12">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-12">(ألا) حرف استفتاح وتنبيه يدل على تحقيق ما بعده. وفي الآية حصر الإفساد فيهم بضمير الفصل والتعريف، مما يدل على أنهم هم المختصّون بالإفساد دون غيرهم. ونفى عنهم الشعور لأن من لم يرَ فساده فساداً فهو أبعد عن الإصلاح من المفسد الذي يعلم أنه مفسد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-12', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-12">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-12">فأكذبهم الله في ادّعائهم الإصلاح وأخبر أنهم هم المفسدون لا المصلحون. وأكّد ذلك بضمير الفصل والتعريف، أي: هم المختصّون بصفة الإفساد. ثم قال {وَلَكِنْ لَا يَشْعُرُونَ} أي لا يدرون ولا يعلمون أنهم بما يعملون لله عاصون وللمؤمنين مخادعون وبأنفسهم مستهزئون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-12', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 13 -->
+            <div class="ayah" id="ayah-13">
+                <div class="ayah-text">وَإِذَا قِیلَ لَهُمۡ ءَامِنُو<span class="tj-slt">ا۟</span> كَمَ<span class="tj-mdd">اۤ</span> ءَامَنَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسُ قَالُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> أَنُؤۡمِنُ كَمَ<span class="tj-mdd">اۤ</span> ءَامَنَ <span class="tj-slt">ٱل</span>سُّفَهَ<span class="tj-mdd">اۤ</span>ءُۗ أَلَ<span class="tj-mdd">اۤ</span> إِ<span class="tj-ghn">نَّ</span>هُمۡ هُمُ <span class="tj-slt">ٱل</span>سُّفَهَ<span class="tj-mdd">اۤ</span>ءُ وَلَ<span class="tj-mdd">ـٰ</span>كِ<span class="tj-dgm">ن</span> لَّا یَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إذا طُلب من المنافقين الإيمان الحقيقي كإيمان الصحابة وصفوا المؤمنين بالسفه، والله يشهد أنهم هم السفهاء.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-13">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-13">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-13">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-13">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-13">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-13">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-13">وإذا قيل لهؤلاء المنافقين آمنوا كما آمن الناس، أي آمنوا إيماناً حقيقياً صادقاً كإيمان الصحابة رضوان الله عليهم، قالوا بتكبّر واستنكار: أنؤمن كما آمن السفهاء؟ يعنون بذلك الصحابة رضي الله عنهم. فردّ الله عليهم ذلك فقال: {أَلَا إِنَّهُمْ هُمُ السُّفَهَاءُ} أي الجهلاء ناقصو العقول، لأنهم استبدلوا الضلالة بالهدى فأي سفه أعظم من هذا؟ {وَلَكِنْ لَا يَعْلَمُونَ} بحالهم ولو علموا لتابوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-13', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-13">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-13">يقول تعالى: وإذا قيل لهؤلاء المنافقين آمنوا كما آمن الناس، أي كإيمان أصحاب رسول الله صلى الله عليه وسلم، قالوا: أنؤمن كما آمن السفهاء؟ يعنون أصحاب رسول الله صلى الله عليه وسلم. فسمّوهم سفهاء وهم أحكم الناس وأعقلهم. قال الله تعالى ردّاً عليهم: {أَلَا إِنَّهُمْ هُمُ السُّفَهَاءُ} أي هم السفهاء على الحقيقة والتمام لأنهم جهلوا ما ينفعهم من الإيمان واستبدلوا به الكفر. {وَلَكِنْ لَا يَعْلَمُونَ} بحالهم وسوء مآلهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-13', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-13">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-13">{وَإِذَا قِيلَ لَهُمْ آمِنُوا كَمَا آمَنَ النَّاسُ} يعني أصحاب النبي صلى الله عليه وسلم، وقيل: عبد الله بن سلام وأصحابه من مؤمني أهل الكتاب. {قَالُوا أَنُؤْمِنُ كَمَا آمَنَ السُّفَهَاءُ} أي الجهّال خفاف الأحلام. والسفه خفة الحلم. {أَلَا إِنَّهُمْ هُمُ السُّفَهَاءُ} فردّ الله عليهم وحكم بأنهم هم أهل السفه الحقيقي. {وَلَكِنْ لَا يَعْلَمُونَ} أنهم سفهاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-13', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-13">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-13">السفه في اللغة الخفة والطيش وسوء التصرف. والمراد بالناس هنا المؤمنون من الصحابة. فالمنافقون رموا خير الناس بالسفه وهم أحقّ به، فردّ الله عليهم بأسلوب الحصر والتأكيد: {أَلَا إِنَّهُمْ هُمُ السُّفَهَاءُ} فقصر السفه عليهم، لأن من باع الهدى بالضلالة فقد أتى بأسفه عمل. ختم بقوله {وَلَكِنْ لَا يَعْلَمُونَ} ولم يقل لا يشعرون كالآية السابقة لأن مقام السفه يناسب نفي العلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-13', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-13">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-13">يعني بقوله {كَمَا آمَنَ النَّاسُ} أصحاب رسول الله صلى الله عليه وسلم. وقيل: عبد الله بن سلام وأصحابه. فلمّا قيل لهم ذلك قالوا استهزاءً واستكباراً: أنؤمن كما آمن هؤلاء السفهاء الذين لا عقول لهم؟ فأكذبهم الله وأخبر أنهم هم السفهاء في الحقيقة لأنهم اختاروا الكفر على الإيمان والعمى على الهدى، ولكنهم لا يعلمون أنهم هم السفهاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-13', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 14 -->
+            <div class="ayah" id="ayah-14">
+                <div class="ayah-text">وَإِذَا لَقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> قَالُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> ءَامَ<span class="tj-ghn">نَّ</span>ا وَإِذَا خَلَوۡ<span class="tj-slt">ا۟</span> إِلَ<span class="tj-mdd">ىٰ</span> شَیَ<span class="tj-mdd">ـٰ</span>طِینِهِمۡ قَالُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> إِ<span class="tj-ghn">نَّ</span>ا مَعَكُمۡ إِ<span class="tj-ghn">نَّ</span>مَا نَحۡنُ مُسۡتَهۡزِءُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">المنافقون يتلوّنون: يُظهرون الإيمان أمام المؤمنين، وإذا خلوا إلى رؤسائهم من الكفار أعلنوا أنهم معهم وأنهم مستهزئون بالمؤمنين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-14">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-14">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-14">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-14">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-14">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-14">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-14">ومن صفاتهم الذميمة أنهم إذا لقوا المؤمنين أظهروا لهم الإيمان والموالاة والمحبّة نفاقاً ومداهنة وليحفظوا بذلك أموالهم ودماءهم. وإذا خلوا إلى شياطينهم أي كبرائهم ورؤسائهم في الكفر والنفاق، قالوا: إنّا معكم على دينكم، إنما نحن مستهزئون بالمؤمنين بإظهارنا الإيمان لهم. فهذا التلوّن والتذبذب من أعظم صفات المنافقين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-14', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-14">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-14">يقول تعالى: وإذا لقي هؤلاء المنافقون المؤمنين قالوا آمنّا وأظهروا لهم الإيمان والموالاة خديعةً. وإذا انصرفوا إلى شياطينهم وهم رؤساؤهم وكبراؤهم في الكفر، قالوا: إنا معكم على ما أنتم عليه، إنما نحن مستهزئون بالقوم يعنون المؤمنين. قال ابن عباس: شياطينهم كبراؤهم من المنافقين والمشركين. وقال السدي: شياطينهم يعني أصحابهم من المنافقين واليهود.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-14', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-14">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-14">{وَإِذَا لَقُوا الَّذِينَ آمَنُوا قَالُوا آمَنَّا} أي أظهروا لهم الإسلام. {وَإِذَا خَلَوْا إِلَى شَيَاطِينِهِمْ} قال ابن عباس: يعني أصحابهم من المنافقين والمشركين الذين يحرّضونهم على مخالفة الرسول. وسمّاهم شياطين لأنهم فعلوا فعل الشياطين في الإغواء والتضليل. {قَالُوا إِنَّا مَعَكُمْ} أي على دينكم وملّتكم. {إِنَّمَا نَحْنُ مُسْتَهْزِئُونَ} بأصحاب محمد بإظهارنا الإيمان لهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-14', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-14">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-14">الآية تبيّن تلوّن المنافقين وذمّ ذي الوجهين. وشياطينهم هم رؤساؤهم في الكفر كعبد الله بن أبيّ وأمثاله. وقيل: هم اليهود الذين كانوا يأمرونهم بالتكذيب. والاستهزاء السخرية، وقد حكم الله على المستهزئين بالإسلام بالكفر. وفي الآية دليل على أن التلاعب بالدين كفر، لأن الاستهزاء بالإيمان كفر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-14', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-14">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-14">يعني أنهم إذا لقوا أهل الإيمان بالله ورسوله أظهروا لهم الإيمان ليأمنوا منهم على دمائهم وأموالهم. وإذا خلوا إلى رؤسائهم وقادتهم في الشرك والكفر أعلموهم أنهم على ملّتهم وأنهم إنما كانوا يلعبون بالمؤمنين ويسخرون منهم. والشياطين هنا قال فيها المفسرون: هم رؤساء الكفر من المنافقين واليهود. وسُمّوا شياطين لأنهم أشبهوا الشياطين في التمرّد والعصيان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-14', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 15 -->
+            <div class="ayah" id="ayah-15">
+                <div class="ayah-text"><span class="tj-slt">ٱ</span>للَّهُ یَسۡتَهۡزِئُ بِهِمۡ وَیَمُدُّهُمۡ فِی طُغۡیَ<span class="tj-mdd">ـٰ</span>نِهِمۡ یَعۡمَهُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الله يستهزئ بالمنافقين جزاءً لاستهزائهم، ويمهلهم ويزيدهم ضلالاً في طغيانهم وهم يتخبّطون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-15">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-15">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-15">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-15">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-15">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-15">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-15">{اللَّهُ يَسْتَهْزِئُ بِهِمْ} أي يجازيهم جزاء الاستهزاء ويملي لهم ويمهلهم ثم يأخذهم أخذ عزيز مقتدر. فيُعطيهم في الدنيا حكم الإسلام ظاهراً وفي الآخرة يُعذّبهم أشدّ العذاب. {وَيَمُدُّهُمْ فِي طُغْيَانِهِمْ يَعْمَهُونَ} أي يزيدهم ضلالاً إلى ضلالهم وطغياناً إلى طغيانهم عقوبةً لهم. والطغيان: مجاوزة الحدّ في الكفر. والعمه: التردّد والحيرة كحيرة الضالّ عن الطريق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-15', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-15">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-15">{اللَّهُ يَسْتَهْزِئُ بِهِمْ} أي يجازيهم جزاء استهزائهم. وقيل: يُظهر لهم من أحكام الإسلام في الدنيا خلاف ما لهم في الآخرة كما أظهروا خلاف ما أبطنوا. {وَيَمُدُّهُمْ فِي طُغْيَانِهِمْ يَعْمَهُونَ} أي يملي لهم ويستدرجهم كما قال تعالى: {إِنَّمَا نُمْلِي لَهُمْ لِيَزْدَادُوا إِثْمًا}. والعمه هو التردّد في الحيرة، والطغيان هو المبالغة في الكفر والمجاوزة فيه إلى الحدّ الذي لا رجوع بعده.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-15', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-15">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-15">{اللَّهُ يَسْتَهْزِئُ بِهِمْ} أي يجازيهم جزاء استهزائهم. وقال ابن عباس: يسخر بهم للنقمة منهم. وقيل: استهزاؤه بهم إملاؤه لهم وإمهالهم. {وَيَمُدُّهُمْ} أي يزيدهم. {فِي طُغْيَانِهِمْ} والطغيان المجاوزة في الكفر. {يَعْمَهُونَ} يتردّدون متحيّرين. والعمه في القلب كالعمى في العين، فالأعمى لا يبصر والعامه لا يهتدي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-15', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-15">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-15">اختلف العلماء في معنى استهزاء الله بهم: فقيل هو مجازاتهم على استهزائهم فسمّى العقوبة باسم الذنب، وقيل هو إظهار أحكام المسلمين عليهم في الدنيا مع إعداد العذاب لهم في الآخرة. والطغيان: تجاوز الحدّ. والعمه: الحيرة والتردّد، وهو في القلب كالعمى في البصر. واختار الطبري أن المعنى: يستدرجهم بإمهالهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-15', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-15">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-15">وأولى التأويلات بقوله {اللَّهُ يَسْتَهْزِئُ بِهِمْ} أن الله يُخبر أنه مجازيهم جزاء الاستهزاء فيُظهر لهم من أحكامه في الدنيا خلاف الذي أعدّ لهم في الآخرة كما أظهروا بألسنتهم من الإيمان خلاف ما في قلوبهم. {وَيَمُدُّهُمْ} أي يملي لهم ويُطيل لهم المدة في كفرهم. {فِي طُغْيَانِهِمْ يَعْمَهُونَ} في ضلالتهم وكفرهم يتردّدون حيارى لا يجدون إلى المخرج سبيلاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-15', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 16 -->
+            <div class="ayah" id="ayah-16">
+                <div class="ayah-text">أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ <span class="tj-slt">ٱلَّ</span>ذِینَ <span class="tj-slt">ٱ</span>شۡتَرَوُ<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>ضَّلَ<span class="tj-mdd">ـٰ</span>لَةَ بِ<span class="tj-slt">ٱ</span>لۡهُدَ<span class="tj-mdd">ىٰ</span> فَمَا رَبِحَت تِّجَ<span class="tj-mdd">ـٰ</span>رَتُهُمۡ وَمَا كَانُو<span class="tj-slt">ا۟</span> مُهۡتَدِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">المنافقون اشتروا الضلالة بالهدى، فخسرت تجارتهم ولم يكونوا مهتدين إلى طريق الحقّ.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-16">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-16">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-16">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-16">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-16">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-16">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-16">{أُولَئِكَ الَّذِينَ اشْتَرَوُا الضَّلَالَةَ بِالْهُدَى} أي استبدلوا الضلالة بالهدى وآثروا الكفر على الإيمان. فبذلوا الهدى ثمناً وأخذوا الضلالة سلعةً. {فَمَا رَبِحَتْ تِجَارَتُهُمْ} أي فخسرت صفقتهم وضلّت سعيهم، فلم يحصلوا على ما أمّلوا من الأمن في الدنيا ولا على النجاة في الآخرة. {وَمَا كَانُوا مُهْتَدِينَ} إلى طريق الرشاد بل كانوا ضالّين عن الطريق المستقيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-16', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-16">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-16">قال قتادة: {اشْتَرَوُا الضَّلَالَةَ بِالْهُدَى} أي استحبّوا الضلالة على الهدى. وهذا كقوله في ثمود: {فَاسْتَحَبُّوا الْعَمَى عَلَى الْهُدَى}. والمعنى أنهم عَدلوا عن الهدى إلى الضلالة واستبدلوها به. {فَمَا رَبِحَتْ تِجَارَتُهُمْ} لأن التاجر مقصوده الربح وهؤلاء ما ربحوا بل خسروا لأنهم أضاعوا رأس المال. {وَمَا كَانُوا مُهْتَدِينَ} إلى طريق التجارة الرابحة ولا إلى سبيل الرشاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-16', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-16">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-16">{أُولَئِكَ الَّذِينَ اشْتَرَوُا الضَّلَالَةَ بِالْهُدَى} أي استبدلوا الكفر بالإيمان. والاشتراء هنا مجاز عن الاستبدال والاختيار. {فَمَا رَبِحَتْ تِجَارَتُهُمْ} أي لم يكونوا رابحين في صفقتهم لأنهم باعوا ما ينفعهم بما يضرّهم. وإنما ذكر التجارة والربح لأنهم بصنيعهم كالتاجر الذي يطلب الربح فيخسر رأس ماله. {وَمَا كَانُوا مُهْتَدِينَ} إلى الطريق الصحيح.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-16', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-16">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-16">الشراء هنا مستعار للاستبدال، والمعنى أنهم رضوا بالضلالة وآثروها على الهدى. فشبّههم بالتاجر الخاسر الذي لا يربح في تجارته. {فَمَا رَبِحَتْ تِجَارَتُهُمْ} وأسند الربح إلى التجارة وهو في الحقيقة لصاحبها على سبيل المجاز. والمعنى: فما ربحوا في تجارتهم بل خسروا خسراناً مبيناً. {وَمَا كَانُوا مُهْتَدِينَ} نفى عنهم الاهتداء بالكلية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-16', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-16">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-16">يعني بقوله {اشْتَرَوُا الضَّلَالَةَ بِالْهُدَى} أنهم اختاروا الضلالة على الهدى والكفر على الإيمان. فكانوا كالمشتري الذي يبذل الثمن ويأخذ السلعة، بذلوا الإيمان ثمناً وأخذوا الكفر بدلاً. {فَمَا رَبِحَتْ تِجَارَتُهُمْ} يعني ما أفلحوا فيما صنعوا بل وُكسوا وخسروا. {وَمَا كَانُوا مُهْتَدِينَ} أي ما كانوا موفّقين لسبيل الرشاد ولا مصيبين في اختيارهم الضلالة على الهدى.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-16', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 17 -->
+            <div class="ayah" id="ayah-17">
+                <div class="ayah-text">مَثَلُهُمۡ كَمَثَلِ <span class="tj-slt">ٱلَّ</span>ذِی <span class="tj-slt">ٱ</span>سۡتَوۡقَدَ نَا<span class="tj-khf">رࣰا</span> فَلَ<span class="tj-ghn">مَّ</span><span class="tj-mdd">اۤ</span> أَضَ<span class="tj-mdd">اۤ</span>ءَتۡ مَا حَوۡلَهُۥ ذَهَبَ <span class="tj-slt">ٱ</span>للَّهُ بِنُورِهِمۡ وَتَرَكَهُمۡ فِی ظُلُمَ<span class="tj-mdd">ـٰ</span><span class="tj-dgm">تࣲ</span> لَّا یُ<span class="tj-qlq">بۡ</span>صِرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">المثل الأول للمنافقين: كمن أوقد ناراً فلمّا أضاءت ما حوله ذهب الله بنوره وتركه في ظلمات لا يبصر شيئاً.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-17">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-17">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-17">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-17">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-17">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-17">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-17">هذا مثل ضربه الله للمنافقين الذين آمنوا ظاهراً ثم كفروا باطناً. فمثلهم كمثل الذي أوقد ناراً في ظلمة الليل فأضاءت له ما حوله فأبصر ما ينفعه وما يضرّه، فبينما هو كذلك إذ طُفئت ناره وذهب نوره وبقي في ظلمات متراكمة لا يبصر شيئاً. كذلك المنافقون آمنوا فعرفوا الحق من الباطل، ثم كفروا فذهب نور إيمانهم وبقوا في ظلمات النفاق والكفر لا يبصرون هدى ولا يعرفون طريق نجاة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-17', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-17">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-17">ضرب الله مثلاً للمنافقين بمن استوقد ناراً فلمّا أضاءت ما حوله وانتفع بها وأبصر على ضوئها ذهب الله بنوره وأطفأ ناره وتركه في ظلمات لا يبصر ولا يهتدي. كذلك المنافقون استضاءوا بالإسلام ظاهراً فناكحوا المسلمين وقاسموهم الغنائم وحُقنت دماؤهم، فلمّا ماتوا سلب الله عنهم ذلك النور وبقوا في عذاب وظلمات لا يجدون منها مخرجاً. وقال مجاهد: إضاءة النار إقبالهم على المسلمين وإظهارهم الإيمان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-17', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-17">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-17">{مَثَلُهُمْ كَمَثَلِ الَّذِي اسْتَوْقَدَ نَارًا} أي طلب الوقود. فالمنافق أظهر الإيمان فانتفع به كما ينتفع موقد النار بضوئها. {فَلَمَّا أَضَاءَتْ مَا حَوْلَهُ} أي أنارت. {ذَهَبَ اللَّهُ بِنُورِهِمْ} أي أطفأ الله نورهم. ولم يقل بنارهم لأن النار فيها نور وإحراق، فأذهب الله ما فيها من النور وأبقى عليهم ما فيها من الإحراق والحرارة. {وَتَرَكَهُمْ فِي ظُلُمَاتٍ لَا يُبْصِرُونَ} أي في ظلمات الكفر والنفاق والحيرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-17', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-17">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-17">ضرب الله مثلين للمنافقين: الأول ناري والثاني مائي. والمثل الناري أن المنافق لمّا آمن ظاهراً استضاء بنور الإيمان كما يستضيء موقد النار بنورها، فلمّا نافق وكفر في باطنه سلب الله منه نور الإيمان كمن ذهب نور ناره فبقي في ظلمة. وقوله {ذَهَبَ اللَّهُ بِنُورِهِمْ} ولم يقل بنارهم لأن ذهاب النور أبلغ، إذ بقيت حرارة النار عليهم دون نفعها. والجمع في {ظُلُمَاتٍ} للتعظيم والتكثير.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-17', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-17">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-17">ضرب الله هذا مثلاً للمنافقين. فالنار التي استوقدوها هي ما أظهروه بألسنتهم من الإيمان، والإضاءة ما نالوه من الانتفاع بإظهار الإيمان من حقن دمائهم وحفظ أموالهم ومناكحة المسلمين. وذهاب النور هو سلب الله ذلك عنهم عند الموت وبقاؤهم في ظلمات النفاق والعذاب. قال ابن عباس: ضرب الله هذا المثل للمنافقين أنهم كانوا يعتزّون بالإسلام فيناكحهم المسلمون ويقاسمونهم الغنائم، فلما ماتوا سلب الله عزّهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-17', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 18 -->
+            <div class="ayah" id="ayah-18">
+                <div class="ayah-text">صُ<span class="tj-ghn">مُّ</span><span class="tj-qlb">ۢ بُ</span>كۡمٌ عُمۡ<span class="tj-khf">یࣱ</span> فَهُمۡ لَا یَرۡجِعُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وصف المنافقين بأنهم صمّ عن سماع الحقّ، بكم عن النطق به، عمي عن إبصار الهدى، فلا يرجعون إلى الحقّ.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-18">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-18">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-18">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-18">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-18">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-18">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-18">{صُمٌّ} عن سماع الحق سماع قبول وانتفاع وإن كانوا يسمعونه بآذانهم. {بُكْمٌ} عن النطق بالحقّ فلا ينطقون به وإن تكلّموا فكلامهم لا خير فيه. {عُمْيٌ} عن إبصار الحقّ والهدى فلا يرونه وإن كانت أعينهم سليمة. {فَهُمْ لَا يَرْجِعُونَ} أي لا يرجعون إلى الإيمان الذي باعوه واستبدلوا به الكفر، لأن الذي يسير في الطريق ويعرف الحق ثم يُعرض عنه أبعدُ عن الرجوع ممن لم يعرفه أصلاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-18', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-18">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-18">{صُمٌّ بُكْمٌ عُمْيٌ} أي صمّ عن سماع الحق فلا ينتفعون به، بكم عن تكلّم الحق فلا ينطقون به، عمي عن مشاهدة الحق فلا يهتدون إليه. وهذه صفات حسّية استُعملت في المعنى البصيري والقلبي، أي أن آذانهم وإن كانت سليمة فإنهم لا يسمعون سماع انتفاع. {فَهُمْ لَا يَرْجِعُونَ} أي لا يرجعون إلى ما فارقوه من الهدى الذي أبصروه ثم تركوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-18', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-18">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-18">{صُمٌّ} جمع أصمّ وهو الذي لا يسمع. {بُكْمٌ} جمع أبكم وهو الذي لا يتكلّم. {عُمْيٌ} جمع أعمى. وصفهم الله بذلك لأنهم لا يسمعون الحق سماع قبول ولا ينطقون به ولا يبصرون طريق الهدى. وهم في الحقيقة ليسوا صمّاً ولا بكماً ولا عمياً حسّاً، لكنهم كذلك معنى. {فَهُمْ لَا يَرْجِعُونَ} إلى الهدى والإيمان لأن من لا يسمع ولا يبصر ولا ينطق لا يُرجى منه رجوع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-18', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-18">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-18">وصفهم بالصمم والبكم والعمى على جهة الذمّ لهم لأنهم لا ينتفعون بهذه الحواسّ في إدراك الحقّ. فكأن أسماعهم وأبصارهم وألسنتهم معطّلة عن وظائفها. وهذا أبلغ في الذمّ من أن يكونوا صمّاً حقيقة، لأن من كان أصمّ حقيقة فهو معذور، ومن كان سميعاً بصيراً ثم لا ينتفع فهو ملوم مذموم. {فَهُمْ لَا يَرْجِعُونَ} أي لا يعودون إلى الحقّ.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-18', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-18">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-18">يعني بالصمم أنهم صمّوا عن استماع ما يدعوهم إليه كتاب الله من الهدى. وبالبكم أنهم خرسوا عن أن يقولوا الحقّ. وبالعمى أنهم عموا عن إبصار طريق الرشاد. فجعلهم الله كمن فقد هذه الحواسّ لأنه لا فائدة من حواسّهم إذ كانت لا تؤدّي وظيفتها في إدراك الحقّ. {فَهُمْ لَا يَرْجِعُونَ} أي لا يرجعون إلى الإسلام والهدى الذي فارقوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-18', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 19 -->
+            <div class="ayah" id="ayah-19">
+                <div class="ayah-text">أَوۡ كَصَیِّ<span class="tj-dgm">بࣲ</span> <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">اۤ</span>ءِ فِیهِ ظُلُمَ<span class="tj-mdd">ـٰ</span><span class="tj-dgm">تࣱ</span> وَرَعۡ<span class="tj-dgm">دࣱ</span> وَبَرۡ<span class="tj-dgm">قࣱ</span> یَجۡعَلُونَ أَصَ<span class="tj-mdd">ـٰ</span>بِعَهُمۡ فِ<span class="tj-mdd">یۤ</span> ءَاذَانِهِم <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱل</span>صَّوَ<span class="tj-mdd">ٰ</span>عِقِ حَذَرَ <span class="tj-slt">ٱ</span>لۡمَوۡتِۚ وَ<span class="tj-slt">ٱ</span>للَّهُ مُحِی<span class="tj-qlb">طُۢ بِ</span><span class="tj-slt">ٱ</span>لۡكَ<span class="tj-mdd">ـٰ</span>فِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">المثل الثاني: كمطر شديد فيه ظلمات ورعد وبرق، يضعون أصابعهم في آذانهم خوف الموت، والله محيط بالكافرين لا يفلتون منه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-19">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-19">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-19">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-19">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-19">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-19">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-19">هذا المثل الثاني للمنافقين وهو مثل مائي. شبّه ما أنزله الله من القرآن بالصيّب وهو المطر الشديد لما فيه من الحياة والنفع. وفيه ظلمات الشكوك والشبهات، ورعد ما فيه من الوعيد والزجر الذي يزعجهم، وبرق ما فيه من الحجج النيّرة التي تكاد تخطف أبصارهم. فهم يضعون أصابعهم في آذانهم حذر الموت، كراهية لسماع القرآن والإيمان. {وَاللَّهُ مُحِيطٌ بِالْكَافِرِينَ} فلا يفوتونه ولا يعجزونه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-19', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-19">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-19">هذا مثل آخر ضربه الله للمنافقين. والصيّب: المطر الذي ينزل من السماء. شبّه القرآن بالصيّب لأن القرآن فيه حياة القلوب كما أن المطر فيه حياة الأبدان. والظلمات ما يصيب المنافقين من الشكّ والشبهات. والرعد ما يزعجهم من وعيد القرآن. والبرق ما يلمع لهم من الحجج. فهم يسدّون آذانهم عن سماع الحقّ حذر الموت، أي خوف أن يموتوا. {وَاللَّهُ مُحِيطٌ بِالْكَافِرِينَ} أي جامعهم وقادر عليهم لا يفوتونه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-19', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-19">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-19">{أَوْ كَصَيِّبٍ} الصيّب المطر الشديد، من صاب يصوب إذا نزل. وقال ابن عباس: الصيّب المطر. شبّه القرآن بالمطر لأن كلاهما فيه حياة. {فِيهِ ظُلُمَاتٌ} أي في السحاب. {وَرَعْدٌ} صوت الملك الذي يسوق السحاب. {وَبَرْقٌ} لمعان سوط من نور يزجر به الملكُ السحاب. {يَجْعَلُونَ أَصَابِعَهُمْ فِي آذَانِهِمْ مِنَ الصَّوَاعِقِ} جمع صاعقة وهي الصوت الشديد من الرعد. {حَذَرَ الْمَوْتِ} أي خوف الهلاك. {وَاللَّهُ مُحِيطٌ بِالْكَافِرِينَ} فلا يفلتون منه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-19', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-19">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-19">المثل الثاني مثل مائي، بعد أن ضرب المثل الناري. والصيّب هو المطر الغزير من صاب يصوب. شبّه الإسلام بالمطر لأن فيه حياة القلوب كما أن في المطر حياة الأرض. والظلمات شبيهة بما يغشى قلوبهم من الحيرة والشكّ. والرعد شبيه بما يُفزعهم من وعيد القرآن. والبرق شبيه بحجج القرآن الساطعة. وجعل أصابعهم في آذانهم من الصواعق تمثيل لإعراضهم عن سماع آيات الله. {وَاللَّهُ مُحِيطٌ بِالْكَافِرِينَ} لا يفوته منهم أحد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-19', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-19">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-19">وهذا المثل الآخر الذي ضربه الله للمنافقين. فالصيّب هو المطر وقد جعل مثلاً للقرآن. والظلمات مثل ما في القرآن من ذكر الكفر والشرك. والرعد مثل لما فيه من التخويف والوعيد. والبرق مثل لما فيه من الحجج والبراهين. وجعلهم أصابعهم في آذانهم من الصواعق مثل لإعراض المنافقين عن استماع القرآن كراهية له. {وَاللَّهُ مُحِيطٌ بِالْكَافِرِينَ} يعني أنه جامعهم ومهلكهم فلا يعجزه أحد منهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-19', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 20 -->
+            <div class="ayah" id="ayah-20">
+                <div class="ayah-text">یَكَادُ <span class="tj-slt">ٱ</span>لۡبَرۡقُ یَخۡطَفُ أَ<span class="tj-qlq">بۡ</span>صَ<span class="tj-mdd">ـٰ</span>رَهُمۡۖ كُلَّمَ<span class="tj-mdd">اۤ</span> أَضَ<span class="tj-mdd">اۤ</span>ءَ لَهُم <span class="tj-ghn">مَّ</span>شَوۡ<span class="tj-slt">ا۟</span> فِیهِ وَإِذَ<span class="tj-mdd">اۤ</span> أَظۡلَمَ عَلَیۡهِمۡ قَامُو<span class="tj-slt">ا۟</span>ۚ وَلَوۡ شَ<span class="tj-mdd">اۤ</span>ءَ <span class="tj-slt">ٱ</span>للَّهُ لَذَهَبَ بِسَمۡعِهِمۡ وَأَ<span class="tj-qlq">بۡ</span>صَ<span class="tj-mdd">ـٰ</span>رِهِمۡۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ عَلَ<span class="tj-mdd">ىٰ</span> كُلِّ شَیۡ<span class="tj-khf">ءࣲ</span> قَدِیرࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يكاد البرق يخطف أبصارهم من شدّته، كلّما أضاء لهم مشوا وإذا أظلم وقفوا حائرين، ولو شاء الله لأذهب سمعهم وأبصارهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-20">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-20">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-20">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-20">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-20">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-20">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-20">{يَكَادُ الْبَرْقُ يَخْطَفُ أَبْصَارَهُمْ} أي من شدّته وقوته وضعف بصائرهم، وهو مثل لحجج القرآن الساطعة التي تكاد تبهرهم. {كُلَّمَا أَضَاءَ لَهُمْ مَشَوْا فِيهِ} أي كلّما حصل لهم شيء من الخير والإيمان استأنسوا به واتّبعوه. {وَإِذَا أَظْلَمَ عَلَيْهِمْ قَامُوا} أي وقفوا متحيّرين لا يدرون أين يذهبون. وهذا حال المنافقين: تردّد بين الإيمان والكفر. {وَلَوْ شَاءَ اللَّهُ لَذَهَبَ بِسَمْعِهِمْ وَأَبْصَارِهِمْ} الحسّية كما ذهب بسمعهم وأبصارهم المعنوية. {إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ} فيقدر على كل شيء ولا يعجزه شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-20', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-20">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-20">{يَكَادُ الْبَرْقُ يَخْطَفُ أَبْصَارَهُمْ} أي لشدّته وقوّته وضعف بصائرهم وعدم ثباتها. والبرق مثل للحجج والآيات البيّنات. {كُلَّمَا أَضَاءَ لَهُمْ مَشَوْا فِيهِ} أي كلّما ظهر لهم الإيمان اطمأنّوا وتابعوا المسلمين. {وَإِذَا أَظْلَمَ عَلَيْهِمْ قَامُوا} أي وقفوا حيارى. قال ابن عباس: كلّما ظهر لهم شيء من الإسلام رضوا به واطمأنّوا، وإذا أصابتهم فتنة رجعوا إلى الكفر. {وَلَوْ شَاءَ اللَّهُ لَذَهَبَ بِسَمْعِهِمْ وَأَبْصَارِهِمْ} أي لذهب بسمعهم وأبصارهم الظاهرة كما ذهب بقلوبهم. {إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ} فهو قادر على ذلك وعلى كل شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-20', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-20">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-20">{يَكَادُ الْبَرْقُ يَخْطَفُ أَبْصَارَهُمْ} أي يختلسها ويستلبها من شدّة ضوئه. {كُلَّمَا أَضَاءَ لَهُمْ مَشَوْا فِيهِ} قال ابن عباس: أي كلّما أصابهم من الإسلام عافية وسلامة اطمأنّوا. {وَإِذَا أَظْلَمَ عَلَيْهِمْ قَامُوا} أي وإذا أصابتهم بلية أو شدة وقفوا متحيّرين. والمعنى أنهم متذبذبون في دينهم لا ثبات لهم. {وَلَوْ شَاءَ اللَّهُ لَذَهَبَ بِسَمْعِهِمْ وَأَبْصَارِهِمْ} أي لأصمّهم وأعماهم حقيقة. {إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ} تهديد لهم وبيان لقدرته سبحانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-20', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-20">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-20">الخطف الأخذ بسرعة. والمعنى أن حجج القرآن لشدّة نورها تكاد تبهر أبصارهم الضعيفة. {كُلَّمَا أَضَاءَ لَهُمْ مَشَوْا فِيهِ} قيل المعنى: كلّما رأوا في الإسلام خيراً استأنسوا وتبعوا. {وَإِذَا أَظْلَمَ عَلَيْهِمْ قَامُوا} أي وقفوا وثبتوا في مكانهم. وهذا بيان لتذبذبهم وتردّدهم. ثم هدّدهم فقال: {وَلَوْ شَاءَ اللَّهُ لَذَهَبَ بِسَمْعِهِمْ وَأَبْصَارِهِمْ} أي الحسّية لأنهم لم ينتفعوا بها. {إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ} لا يعجزه شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-20', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-20">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-20">يعني أن البرق لشدّة ضوئه ولمعانه يكاد يخطف أبصارهم. والبرق مَثَل لما في القرآن من حجج ساطعة. {كُلَّمَا أَضَاءَ لَهُمْ مَشَوْا فِيهِ} كلّما أصابوا منفعة في الإسلام وأمناً وظفراً استقاموا عليه ورضوا به. {وَإِذَا أَظْلَمَ عَلَيْهِمْ قَامُوا} وإذا أصابتهم فتنة أو بلاء أو ابتلوا بجهاد تردّدوا ووقفوا. {وَلَوْ شَاءَ اللَّهُ لَذَهَبَ بِسَمْعِهِمْ وَأَبْصَارِهِمْ} يقول: لو شاء لأذهب أسماعهم بالصواعق وأبصارهم بوميض البرق. {إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ} لا يمتنع عليه شيء أراده.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-20', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-02.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">صفات الكافرين</span>
+            </a>
+            <a href="section-04.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">دعوة الناس لعبادة الله وتوحيده</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ٣: صفات المنافقين<br>
+        <small>آيات ٨ – ٢٠ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — دعوة الناس لعبادة الله وتوحيده</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ٤ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#3498db">
+            <div class="section-num">٤</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">دعوة الناس لعبادة الله وتوحيده</h2>
+                <h3 class="section-title-en">Call to Worship Allah Alone</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٢١ – ٢٩</div>
+        </div>
+
+        <div class="section-desc">
+            <p>أمر الناس بعبادة الله الذي خلقهم، وتحدّيهم بالإتيان بسورة من مثل القرآن، وبيان نعم الله في خلق السماوات والأرض</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="21">
+                        <div class="flow-node-num">٢١</div>
+                        <div class="flow-node-text">الأمر بالعبادة والتوحيد</div>
+                        <div class="flow-node-key">ٱعۡبُدُو<span class="tj-slt">ا۟</span> رَبَّكُمُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="22">
+                        <div class="flow-node-num">٢٢</div>
+                        <div class="flow-node-text">نعم الله في الخلق والرزق</div>
+                        <div class="flow-node-key">جَعَلَ لَكُمُ ٱلۡأَرۡضَ فِرَٰشࣰا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="23">
+                        <div class="flow-node-num">٢٣</div>
+                        <div class="flow-node-text">التحدي بالإتيان بسورة</div>
+                        <div class="flow-node-key">فَأۡتُو<span class="tj-slt">ا۟</span> بِسُورَةࣲ مِّن مِّثۡلِهِۦ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="24">
+                        <div class="flow-node-num">٢٤</div>
+                        <div class="flow-node-text">الوعيد بالنار للكافرين</div>
+                        <div class="flow-node-key">فَٱتَّقُو<span class="tj-slt">ا۟</span> ٱلنَّارَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="25">
+                        <div class="flow-node-num">٢٥</div>
+                        <div class="flow-node-text">البشارة بالجنة للمؤمنين</div>
+                        <div class="flow-node-key">جَنَّـٰتࣲ تَجۡرِی مِن تَحۡتِهَا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="26">
+                        <div class="flow-node-num">٢٦</div>
+                        <div class="flow-node-text">ضرب الأمثال في القرآن</div>
+                        <div class="flow-node-key">أَن یَضۡرِبَ مَثَلࣰا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="27">
+                        <div class="flow-node-num">٢٧</div>
+                        <div class="flow-node-text">صفات الفاسقين</div>
+                        <div class="flow-node-key">یَنقُضُونَ عَهۡدَ ٱللَّهِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="28">
+                        <div class="flow-node-num">٢٨</div>
+                        <div class="flow-node-text">دلائل القدرة على البعث</div>
+                        <div class="flow-node-key">كُنتُمۡ أَمۡوَٰتࣰا فَأَحۡیَـٰكُمۡ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="29">
+                        <div class="flow-node-num">٢٩</div>
+                        <div class="flow-node-text">خلق الأرض والسماوات</div>
+                        <div class="flow-node-key">خَلَقَ لَكُم مَّا فِی ٱلۡأَرۡضِ جَمِیعࣰا</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ayah-list">
+            <!-- Ayah 21 -->
+            <div class="ayah" id="ayah-21">
+                <div class="ayah-text"><span class="tj-mdd">یَـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسُ <span class="tj-slt">ٱ</span>عۡبُدُو<span class="tj-slt">ا۟</span> رَبَّكُمُ <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span> خَلَقَكُمۡ وَ<span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ مِ<span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله الناس جميعاً بعبادته وتوحيده، فهو الذي خلقهم وخلق من قبلهم، لعلهم يتقون سخطه وعذابه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-21">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-21">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-21">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-21">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-21">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-21">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-21">هذا أمر عام لكل الناس, بأمر عام, وهو العبادة الجامعة, لامتثال أوامر الله, واجتناب نواهيه, وتصديق خبره, فأمرهم تعالى بما خلقهم له، قال تعالى: { وَمَا خَلَقْتُ الْجِنَّ وَالْإِنْسَ إِلَّا لِيَعْبُدُونِ } ثم استدل على وجوب عبادته وحده, بأنه ربكم الذي رباكم بأصناف النعم, فخلقكم بعد العدم, وخلق الذين من قبلكم, وأنعم عليكم بالنعم الظاهرة والباطنة. وكلمة { لَعَلَّكُمْ تَتَّقُونَ } أي: لكي تحذروا سخطه وعذابه, وتصيروا من المتقين الذين رضي عنهم ربهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-21', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-21">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-21">شرع تبارك وتعالى في بيان وحدانية ألوهيته، بأنه تعالى هو المنعم على عبيده، بإخراجهم من العدم إلى الوجود وإسباغه عليهم النعم الظاهرة والباطنة، بأن جعل لهم الأرض فراشاً أي مهداً كالفراش مقررة موطأة مثبتة بالرواسي الشامخات. فالذي خلقهم وخلق من قبلهم وسخر لهم ما في السماوات والأرض أولى بأن يعبد ويوحد ولا يشرك به شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-21', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-21">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-21">قوله تعالى: {يا أيها الناس} قال ابن عباس رضي الله عنهما: يا أيها الناس خطاب أهل مكة، ويا أيها الذين آمنوا خطاب أهل المدينة وهو هاهنا عام إلا من حيث أنه لا يدخله الصغار والمجانين. {اعبدوا} وحدوا. قال ابن عباس رضي الله عنهما: كل ما ورد في القرآن من العبادة فمعناها التوحيد. {ربكم الذي خلقكم} الخلق: اختراع الشيء على غير مثال سبق. {والذين من قبلكم} أي وخلق الذين من قبلكم. {لعلكم تتقون} لكي تنجوا من العذاب، وقيل: معناه كونوا على رجاء التقوى بأن تصيروا في ستر ووقاية من عذاب الله. قال سيبويه: لعل وعسى حرفا ترج وهما من الله واجب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-21', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-21">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-21">كل آية تبدأ بصيغة {يا أيها الناس} نزلت في سياق عام للناس جميعاً. أما {اعبدوا} فهو أمر بتوحيد الله والالتزام بشرائع دينه. وشرح أن {الذي خلقكم} مخصوص لأن العرب كانوا مقرين بخلق الله تعالى، فجاء ذكره كحجة عليهم. ذكر تعالى من قبلهم ليعلموا أن الذي أماتهم سيميتهم أيضاً. أما {لعلكم تتقون} فاستعرض فيها ثلاث تأويلات: الترجي والتوقع، أو أن لعل بمعنى اللام التعليلية، أو بمعنى التعرض للشيء. المقصود أن يتخذوا التقوى وقاية بينهم وبين النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-21', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-21">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-21">قال أبو جعفر: أمر الله الفريقين - الكافرين والمنافقين - بالاستكانة والخضوع له بالطاعة، وإفراد الربوبية والعبادة له دون الأوثان والأصنام. لأنه جل ذكره هو خالقهم وخالق من قبلهم من آبائهم وأجدادهم. فالذي خلقكم وخلق آباءكم وسائر الخلق، وهو يقدر على ضركم ونفعكم، أولى بالطاعة ممن لا يقدر لكم على نفع ولا ضر. كان ابن عباس يقول: {اعبدوا ربكم} معناه وحدوا ربكم، أي أفردوا الطاعة والعبادة لربكم دون سائر خلقه. أما قوله {لعلكم تتقون}: فتأويله أنكم بعبادتكم ربكم وطاعتكم إياه تتقون سخطه وغضبه، وتكونون من المتقين الذين رضي عنهم ربهم. وكلمة لعل هنا ليست للشك، بل بمعنى اللام التي تفيد التعليل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-21', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 22 -->
+            <div class="ayah" id="ayah-22">
+                <div class="ayah-text"><span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span> جَعَلَ لَكُمُ <span class="tj-slt">ٱ</span>لۡأَرۡضَ فِرَ<span class="tj-mdd">ٰ</span><span class="tj-dgm">شࣰا</span> وَ<span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">اۤ</span>ءَ بِنَ<span class="tj-mdd">اۤ</span><span class="tj-dgm">ءࣰ</span> وَأَ<span class="tj-khf">نز</span>َلَ مِنَ <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">اۤ</span>ءِ مَ<span class="tj-mdd">اۤ</span><span class="tj-khf">ءࣰ</span> فَأَخۡرَجَ بِهِۦ مِنَ <span class="tj-slt">ٱل</span>ثَّمَرَ<span class="tj-mdd">ٰ</span>تِ رِزۡ<span class="tj-dgm">قࣰا</span> لَّكُمۡۖ فَلَا تَجۡعَلُو<span class="tj-slt">ا۟</span> لِلَّهِ أَ<span class="tj-khf">ندَ</span><span class="tj-dgm">ادࣰا</span> وَأَ<span class="tj-khf">نت</span>ُمۡ تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ذكر نعم الله على عباده بجعل الأرض فراشاً والسماء بناءً وإنزال المطر وإخراج الثمرات رزقاً لهم، ونهاهم عن اتخاذ الأنداد مع الله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-22">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-22">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-22">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-22">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-22">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-22">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-22">ثم استدل على وجوب عبادته وحده, بأنه ربكم الذي رباكم بأصناف النعم, فخلقكم بعد العدم, وخلق الذين من قبلكم, وأنعم عليكم بالنعم الظاهرة والباطنة, فجعل لكم الأرض فراشا تستقرون عليها, وتنتفعون بالأبنية, والزراعة, والحراثة, والسلوك من محل إلى محل, وغير ذلك من أنواع الانتفاع بها، وجعل السماء بناء لمسكنكم, وأودع فيها من المنافع ما هو من ضروراتكم وحاجاتكم, كالشمس, والقمر, والنجوم. فأنزل منه تعالى ماء، فأخرج به من الثمرات كالحبوب, والثمار, من نخيل, وفواكه, وزروع وغيرها رزقا لكم به ترتزقون, وتقوتون وتعيشون وتفكهون. أي: لا تجعلوا لله نظراء وأشباها من المخلوقين, فتعبدونهم كما تعبدون الله, وتحبونهم كما تحبون الله, وهم مثلكم, مخلوقون, مرزوقون مدبرون, لا يملكون مثقال ذرة في السماء ولا في الأرض، وأنتم تعلمون أن الله ليس له شريك, ولا نظير, لا في الخلق, والرزق, والتدبير, ولا في العبادة فكيف تعبدون معه آلهة أخرى مع علمكم بذلك؟</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-22', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-22">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-22">بأن جعل لهم الأرض فراشا، أي: مهدا كالفراش مقررة موطأة مثبتة بالرواسي الشامخات، والسماء بناء وهو السقف. وأنزل لهم من السماء ماء في وقته عند احتياجهم إليه، فأخرج لهم به من أنواع الزروع والثمار ما هو مشاهد؛ رزقا لهم ولأنعامهم. ومضمونه: أنه الخالق الرازق مالك الدار وساكنيها ورازقهم، فبهذا يستحق أن يعبد وحده ولا يشرك به غيره. الأنداد هو الشرك الخفي كأن يقول الرجل: والله وحياتك يا فلان، أو يقول: ما شاء الله وشئت، أو لولا الله وفلان. هذا كله فيه شرك. والآية دالة على توحيده تعالى بالعبادة وحده لا شريك له، وقد استدل بها كثير من المفسرين على وجود الصانع، فإن من تأمل الموجودات السفلية والعلوية واختلاف أشكالها وألوانها علم قدرة خالقها وحكمته وعظيم سلطانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-22', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-22">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-22">{الذي جعل لكم الأرض فراشاً} أي بساطاً، وقيل: مناماً، وقيل: وطاء أي ذللها ولم يجعلها حزنة لا يمكن القرار عليها. {والسماء بناء} وسقفاً مرفوعاً. {وأنزل من السماء} أي من السحاب. {ماء} وهو المطر. {فأخرج به من الثمرات} من ألوان الثمرات وأنواع النبات. {رزقاً لكم} طعاماً لكم وعلفاً لدوابكم. {فلا تجعلوا لله أنداداً} أي أمثالاً تعبدونهم كعبادة الله. قال أبو عبيدة: الند الضد وهو من الأضداد والله تعالى بريء من المثل والضد. {وأنتم تعلمون} أنه واحد خالق هذه الأشياء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-22', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-22">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-22">قوله تعالى {الذي جعل لكم الأرض فراشا والسماء بناء}: جَعَل بمعنى صيّر، وتأتي بمعنى خلق وسمّى. فراشا أي وطاء يفترشونها ويستقرون عليها. السماء للأرض كالسقف للبيت. كل ما علا وأظلّ يُسمى سماء. {وأنزل من السماء ماء فأخرج به من الثمرات رزقا}: الثمرات جمع ثمرة. المعنى أخرجنا لكم ألواناً من الثمرات وأنواعاً من النبات رزقاً طعاماً لكم وعلفاً لدوابكم. {فلا تجعلوا لله أندادا}: الأنداد معناها أكفاء وأمثال ونظراء. واحدها ند. الخطاب للكافرين والمنافقين عن ابن عباس. {وأنتم تعلمون}: يقصد العلم الخاص بأن الله تعالى خلق الخلق وأنزل الماء وأنبت الرزق، فيعلمون أنه المنعم دون الأنداد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-22', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-22">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-22">القول في تأويل قوله: {الذي جعل لكم الأرض فراشًا} هذا الوصف مردود على الله تعالى، حيث جعل الأرض مهادًا موطأً وقرارًا يستقر عليها. يذكر الله عباده بنعمه ليذكروا أياديه فينيبوا إلى طاعته. والسماء بناءً سُميت بهذا الاسم لعلوها على الأرض. البناء هنا يشبه القبة والسقف على الأرض. ذكر الله السماء والأرض لأن منهما أقواتهم وأرزاقهم ومعايشهم. {وأنزل من السماء ماءً فأخرج به من الثمرات}: أنزل الله مطرًا فأخرج بذلك المطر ثمرات رزقًا لهم، غذاءً وأقواتًا ليذكرهم بقدرته وسلطانه. {فلا تجعلوا لله أندادًا}: الأنداد جمع ند والند العدل والمثل. يشمل ذلك الآلهة التي جعلوها معه أو أكفاء من الرجال تطيعونهم في معصية الله. {وأنتم تعلمون}: يخاطب الله كل مكلف عالم بوحدانية الله وأنه لا شريك له في خلقه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-22', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 23 -->
+            <div class="ayah" id="ayah-23">
+                <div class="ayah-text">وَإِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">نت</span>ُمۡ فِ<span class="tj-mdd">ی</span> رَیۡ<span class="tj-dgm">بࣲ</span> <span class="tj-ghn">مِّ</span><span class="tj-ghn">مَّ</span>ا نَزَّلۡنَا عَلَ<span class="tj-mdd">ىٰ</span> عَ<span class="tj-qlq">بۡ</span>دِنَا فَأۡتُو<span class="tj-slt">ا۟</span> بِسُورَ<span class="tj-dgm">ةࣲ</span> <span class="tj-ghn">مِّ</span><span class="tj-dgm">ن</span> <span class="tj-ghn">مِّ</span>ثۡلِهِۦ وَ<span class="tj-slt">ٱ</span>دۡعُو<span class="tj-slt">ا۟</span> شُهَدَ<span class="tj-mdd">اۤ</span>ءَكُم <span class="tj-ghn">مِّ</span><span class="tj-khf">ن</span> دُونِ <span class="tj-slt">ٱ</span>للَّهِ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">نت</span>ُمۡ صَ<span class="tj-mdd">ـٰ</span>دِقِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تحدّى الله المشككين في القرآن أن يأتوا بسورة من مثله، وأن يستعينوا بمن شاءوا من دون الله إن كانوا صادقين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-23">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-23">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-23">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-23">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-23">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-23">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-23">وهذا دليل عقلي على صدق رسول الله صلى الله عليه وسلم, وصحة ما جاء به، فقال: وإن كنتم معشر المعاندين للرسول, الرادين دعوته, الزاعمين كذبه في شك واشتباه, مما نزلنا على عبدنا, هل هو حق أو غيره؟ فهاهنا أمر نصف، فيه الفيصلة بينكم وبينه، وهو أنه بشر مثلكم, ليس بأفصحكم ولا بأعلمكم وأنتم تعرفونه منذ نشأ بينكم, لا يكتب ولا يقرأ، فأتاكم بكتاب زعم أنه من عند الله, وقلتم أنتم أنه تقوَّله وافتراه، فإن كان الأمر كما تقولون, فأتوا بسورة من مثله, واستعينوا بمن تقدرون عليه من أعوانكم وشهدائكم, فإن هذا أمر يسير عليكم، خصوصا وأنتم أهل الفصاحة والخطابة والعداوة العظيمة للرسول، فإن جئتم بسورة من مثله, فهو كما زعمتم, وإن لم تأتوا بسورة من مثله وعجزتم غاية العجز, ولن تأتوا بسورة من مثله، فهذا آية كبرى ودليل واضح على صدقه وصدق ما جاء به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-23', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-23">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-23">ثم شرع تعالى في تقرير النبوة بعد أن قرر أنه لا إله إلا هو، فقال مخاطبا للكافرين: {وإن كنتم في ريب مما نزلنا على عبدنا} يعني محمدا صلى الله عليه وسلم {فأتوا بسورة} من مثل ما جاء به إن زعمتم أنه من عند غير الله، فعارضوه بمثل ما جاء به، واستعينوا على ذلك بمن شئتم من دون الله، فإنكم لا تستطيعون ذلك. قال ابن عباس: {شهداءكم} أعوانكم أي: قوما آخرين يساعدونكم على ذلك. وقال السدي، عن أبي مالك: شركاؤكم أي استعينوا بآلهتكم في ذلك يمدونكم وينصرونكم. وقد تحداهم الله تعالى بهذا في غير موضع من القرآن، مع شدة عداوتهم له وبغضهم لدينه، ومع هذا عجزوا عن ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-23', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-23">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-23">{وإن كنتم في ريب} أي وإن كنتم في شك، لأن الله تعالى علم أنهم شاكون. {مما نزلنا} يعني القرآن. {على عبدنا} محمد. {فأتوا} أمر تعجيز. {بسورة} والسورة قطعة من القرآن معلومة الأول والآخر من أسأرت أي أفضلت، وقيل: السورة اسم للمنزلة الرفيعة سميت سورة لأن القارئ ينال بقراءتها منزلة رفيعة. {من مثله} أي مثل القرآن. وقيل: الهاء في مثله راجعة لمحمد صلى الله عليه وسلم يعني: من مثل محمد أمي لا يحسن الخط والكتابة. {وادعوا شهداءكم} أي واستعينوا بآلهتكم التي تعبدونها. {إن كنتم صادقين} أن محمداً يقوله من تلقاء نفسه فلما تحداهم عجزوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-23', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-23">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-23">المقصود بـ {في ريب} أي في شك من القرآن. الآية موجهة للمشركين الذين كانوا ينكرون القرآن الكريم. اتصال الآية بسابقتها يكمن في أن الله تعالى ذكر أولاً دلائل على وحدانيته وقدرته، ثم أتبعها بدلائل على نبوة نبيه وأن ما جاء به ليس مفترى من عنده. بـ {عبدنا} يقصد محمداً صلى الله عليه وسلم. تسميته بالعبد تعكس أشرف الخصال، حيث تدل على التذلل والتعبد لله تعالى. الأمر بـ {فأتوا بسورة من مثله} معناه التعجيز - فالله علم عجزهم عن الإتيان بمثل القرآن. {شهداءكم} يعني أعوانكم ونصراءكم، المقصود استعينوا بعلمائكم ليشاهدوا ما تأتون به لتكون الحجة أوكد عليهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-23', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-23">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-23">هذا احتجاج من الله عز وجل لنبيه محمد صلى الله عليه وسلم على المشركين والكفار والمنافقين. يخاطبهم قائلاً: إن كنتم في شك مما نزّلناه على عبدنا من القرآن الكريم، فأتوا بسورة من مثله إن استطعتم. معنى {من مثله}: اختلف المفسرون في هذا التعبير. قال مجاهد وقتادة: المقصود سورة من مثل هذا القرآن في البيان والفصاحة. معنى {وادعوا شهداءكم}: استنصروا بأعوانكم وشهدائكم من دون الله، أي استعينوا بمن تستطيعون على تأليف سورة من مثله، إن كنتم صادقين في ادعاءاتكم. والطبري يؤكد أن هذا التحدي دليل على أن محمداً لم يختلق القرآن، لأنه بشر مثلهم، فلو كان من تأليف بشري لاستطاع غيره الإتيان بمثله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-23', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 24 -->
+            <div class="ayah" id="ayah-24">
+                <div class="ayah-text">فَإِ<span class="tj-dgm">ن</span> لَّمۡ تَفۡعَلُو<span class="tj-slt">ا۟</span> وَلَ<span class="tj-khf">ن</span> تَفۡعَلُو<span class="tj-slt">ا۟</span> فَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>ارَ <span class="tj-slt">ٱ</span>لَّتِ<span class="tj-mdd">ی</span> وَقُودُهَا <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسُ وَ<span class="tj-slt">ٱ</span>لۡحِجَارَةُۖ أُعِدَّتۡ لِلۡكَ<span class="tj-mdd">ـٰ</span>فِرِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أخبر الله أنهم لن يستطيعوا الإتيان بمثل القرآن أبداً، وأمرهم باتقاء النار التي وقودها الناس والحجارة المعدة للكافرين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-24">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-24">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-24">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-24">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-24">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-24">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-24">فيتعين عليكم اتباعه واتقاء النار التي بلغت في الحرارة العظيمة والشدة أن كانت وقودها الناس والحجارة, ليست كنار الدنيا التي إنما تتقد بالحطب, وهذه النار الموصوفة معدة ومهيأة للكافرين بالله ورسله. فاحذروا الكفر برسوله, بعد ما تبين لكم أنه رسول الله. وهذه الآية ونحوها يسمونها آيات التحدي, وهو تعجيز الخلق أن يأتوا بمثل هذا القرآن، قال تعالى: { قُلْ لَئِنِ اجْتَمَعَتِ الْإِنْسُ وَالْجِنُّ عَلَى أَنْ يَأْتُوا بِمِثْلِ هَذَا الْقُرْآنِ لَا يَأْتُونَ بِمِثْلِهِ وَلَوْ كَانَ بَعْضُهُمْ لِبَعْضٍ ظَهِيرًا } وفي قوله: { أُعِدَّتْ لِلْكَافِرِينَ } دليل لمذهب أهل السنة والجماعة أن الجنة والنار مخلوقتان، وأن الموحدين وإن ارتكبوا بعض الكبائر لا يخلدون في النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-24', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-24">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-24">ولهذا قال تعالى: {فإن لم تفعلوا ولن تفعلوا} حيث أخبر أن القرآن لا يُعارض بمثله أبداً. هذه معجزة أخرى للقرآن الكريم، فلم يُعارض من زمن نزوله إلى وقتنا هذا ولن يتأتى لأحد معارضته، لأن القرآن كلام الله خالق كل شيء، وكيف يشبه كلام الخالق كلام المخلوقين؟ من تدبّر القرآن وجد فيه إعجازاً في اللفظ والمعنى. أخباره صادقة وأحكامه عادلة. أما الوقود فهو ما يُلقى في النار لإضرامها. والحجارة المقصودة هي حجارة من كبريت عظيمة سوداء صلبة، أشد الأحجار حراً إذا احتميت. قول الله تعالى: {أعدت للكافرين} يعني أرصدت وهيئت للكافرين بالله ورسوله. واستدل كثير من أئمة السنة بهذه الآية على أن النار موجودة الآن.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-24', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-24">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-24">{فإن لم تفعلوا} فلم تأتوا بسورة من مثله وقد بان لكم عجزكم {ولن تفعلوا} ذلك أبداً. وإنما قال ذلك لبيان الإعجاز وأن القرآن كان معجزة للنبي صلى الله عليه وسلم حيث عجزوا عن الإتيان بمثله. {فاتقوا النار} أي فآمنوا واتقوا بالإيمان النار. {التي وقودها الناس والحجارة} قال ابن عباس وأكثر المفسرين: يعني حجارة الكبريت لأنها أكثر التهاباً، وقيل: جميع الحجارة وهو دليل على عظمة تلك النار، وقيل: أراد بها الأصنام لأن أكثر أصنامهم كانت منحوتة من الحجارة كما قال: {إنكم وما تعبدون من دون الله حصب جهنم}. {أعدت} هُيِّئَت {للكافرين}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-24', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-24">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-24">يشرح القرطبي أن الآية تعني: إن لم تأتوا بسورة من مثل القرآن في الماضي، ولن تستطيعوا ذلك في المستقبل. والوقود بفتح الواو يعني الحطب. الناس هنا عموم لكن المقصود من سبق عليه القضاء أنه يكون حطباً للنار. أما الحجارة فهي حجارة الكبريت الأسود، وخُصّت بالعذاب لأنها تزيد على سائر الأحجار بخمسة أنواع من العذاب: سرعة الاتقاد، نتن الرائحة، كثرة الدخان، شدة الالتصاق بالأبدان، وقوة حرها. يوضح أن قوله {وقودها الناس والحجارة} لا يعني حصراً أنه لا يوجد غيرهما فيها، بدليل وجود الجن والشياطين فيها أيضاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-24', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-24">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-24">يقصد الطبري أن المعنى: إن لم تأتوا بسورة من مثل القرآن، فقد أظهرتم عجزكم وعجز جميع الخلق عنه، وبان لكم أنه من عند الله، مع استمراركم على التكذيب به. {فاتقوا النار التي وقودها الناس والحجارة}: المعنى احذروا صليّ النار بتكذيبكم الرسول بعد تبين لكم أنه من عند الله. الوقود هو الحطب. والحجارة المقصودة هي حجارة من كبريت كما جاء في الآثار المنقولة عن ابن مسعود وغيره. {أعدت للكافرين}: الكافرون هم الجاحدون لآلاء الله الساترون نعمه، المشركون به في العبادة، والمعاندون بعد تبين الحق لهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-24', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 25 -->
+            <div class="ayah" id="ayah-25">
+                <div class="ayah-text">وَبَشِّرِ <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ ءَامَنُو<span class="tj-slt">ا۟</span> وَعَمِلُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>صَّ<span class="tj-mdd">ـٰ</span>لِحَ<span class="tj-mdd">ـٰ</span>تِ أَ<span class="tj-ghn">نَّ</span> لَهُمۡ جَ<span class="tj-ghn">نَّ</span><span class="tj-mdd">ـٰ</span><span class="tj-khf">تࣲ</span> تَجۡرِ<span class="tj-mdd">ی</span> مِ<span class="tj-khf">ن</span> تَحۡتِهَا <span class="tj-slt">ٱ</span>لۡأَنۡهَ<span class="tj-mdd">ـٰ</span>رُۖ كُلَّمَا رُزِقُو<span class="tj-slt">ا۟</span> مِنۡهَا مِ<span class="tj-khf">ن</span> ثَمَرَ<span class="tj-dgm">ةࣲ</span> رِّزۡ<span class="tj-khf">قࣰا</span> قَالُو<span class="tj-slt">ا۟</span> هَ<span class="tj-mdd">ـٰ</span>ذَا <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span> رُزِ<span class="tj-qlq">قۡ</span>نَا مِ<span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لُۖ وَأُتُو<span class="tj-slt">ا۟</span> بِهِۦ مُتَشَ<span class="tj-mdd">ـٰ</span><span class="tj-dgm">بِهࣰا</span>ۖ وَلَهُمۡ فِ<span class="tj-mdd">ی</span>هَ<span class="tj-mdd">اۤ</span> أَزۡوَ<span class="tj-mdd">ٰ</span><span class="tj-dgm">جࣱ</span> <span class="tj-ghn">مُّ</span>طَهَّرَ<span class="tj-dgm">ةࣱ</span>ۖ وَهُمۡ فِ<span class="tj-mdd">ی</span>هَا خَ<span class="tj-mdd">ـٰ</span>لِدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بشّر الله المؤمنين العاملين الصالحات بجنات تجري من تحتها الأنهار، فيها ثمر متشابه وأزواج مطهرة وهم فيها خالدون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-25">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-25">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-25">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-25">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-25">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-25">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-25">لما ذكر جزاء الكافرين، ذكر جزاء المؤمنين أهل الأعمال الصالحات. قال تعالى: {وبشر الذين آمنوا وعملوا الصالحات} أي بشرهم يا أيها الرسول ومن قام مقامه أن لهم جنات أي بساتين جامعة من الأشجار العجيبة والثمار الأنيقة. تجري من تحتها الأنهار أي أنهار الماء واللبن والعسل والخمر. كلما رزقوا منها من ثمرة قالوا هذا الذي رزقنا من قبل أي من جنسه وعلى وصفه متشابهة في الحسن واللذة، ليس فيها ثمرة خاصة وليس لهم وقت خال من اللذة فهم دائما متلذذون بأكلها. ولهم فيها أزواج مطهرة فوصفهن بأكمل وصف وأوجزه، فهن مطهرات الأخلاق والخلق واللسان والأبصار، قاصرات طرفهن على أزواجهن وقاصرات ألسنتهن عن كل كلام قبيح. وهم فيها خالدون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-25', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-25">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-25">لما ذكر تعالى ما أعده لأعدائه من الأشقياء الكافرين به وبرسله من العذاب والنكال، عطف بذكر حال أوليائه من السعداء المؤمنين به وبرسله، الذين صدقوا إيمانهم بأعمالهم الصالحة. فوصفها بأنها تجري من تحت أشجارها وغرفها. جاء في الحديث أن أنهارها تجري من غير أخدود، وطينها المسك الأذفر، وحصباؤها اللؤلؤ والجوهر. أما قوله: {كلما رزقوا منها من ثمرة رزقا قالوا هذا الذي رزقنا من قبل} فقد قال المفسرون إنهم أتوا بالثمرة في الجنة فلما نظروا إليها قالوا: هذا الذي رزقنا من قبل في الدنيا. {وأتوا به متشابها} يعني متشابهاً في اللون والمظهر، لكن يختلف في الطعم. {ولهم فيها أزواج مطهرة} أي مطهرة من القذر والأذى. {وهم فيها خالدون} هذا تمام السعادة، فهم في نعيم سرمدي أبدي على الدوام بلا انقضاء ولا موت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-25', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-25">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-25">{وبشر الذين آمنوا} أي أخبر والبشارة كل خبر صدق تتغير به بشرة الوجه ويستعمل في الخير والشر وفي الخير أغلب. {وعملوا الصالحات} أي الفعلات الصالحات يعني المؤمنين الذين هم من أهل الطاعات. قال عثمان بن عفان رضي الله عنه: أخلصوا الأعمال. قال معاذ: العمل الصالح الذي فيه أربعة أشياء: العلم والنية والصبر والإخلاص. {أن لهم جنات} جمع الجنة والجنة البستان الذي فيه أشجار مثمرة سميت بها لاجتنانها وتسترها بالأشجار. {تجري من تحتها} أي من تحت أشجارها ومساكنها {الأنهار} أي المياه في الأنهار. وفي الحديث: أنهار الجنة تجري في غير أخدود.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-25', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-25">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-25">بعد ذكر جزاء الكافرين، ذكر الله جزاء المؤمنين. التبشير هو الإخبار بما يظهر أثره على البشرة. يُستعمل في السرور مرتبطاً بالخير المبشَّر به. قوله {وعملوا الصالحات} يرد على من يقول إن الإيمان وحده يكفي. الجنة تُنال بالإيمان والعمل الصالح معاً، والدرجات تُستحق بالأعمال الصالحة. الجنات هي البساتين، سُميت جنات لأنها تستر من فيها بشجرها. الأنهار تجري على سطح الجنة منضبطة بالقدرة. الأزواج المطهرة معناها طاهرات من الحيض والأقذار. والخلود في الآية حقيقي وأبدي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-25', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-25">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-25">يبين الطبري أن البشّر معناه الإخبار بما يسر المخبّر. وهو أمر من الله لنبيه محمد صلى الله عليه وسلم بتبليغ بشارته للذين صدقوا برسالته وحققوا إيمانهم بأعمالهم الصالحة. فلهم جنات تجري الأنهار من تحت أشجارها وغروسها. {كلما رزقوا منها من ثمرة رزقا قالوا هذا الذي رزقنا من قبل}: الرأي الأرجح عند الطبري أن ثمار الجنة تشابه ثمار الدنيا في اللون والمنظر لكنها تختلف في الطعم والذوق. {وأتوا به متشابها}: التشابه في اللون والمرآة مع اختلاف الطعم. {ولهم فيها أزواج مطهرة}: الأزواج هنا تعني النساء المطهرات من كل أذى وقذر. {وهم فيها خالدون}: دوام بقاء المؤمنين في الجنة على ما أعطاهم الله من النعيم المقيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-25', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 26 -->
+            <div class="ayah" id="ayah-26">
+                <div class="ayah-text">۞ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ لَا یَسۡتَحۡ<span class="tj-mdd">یِۦۤ</span> أَ<span class="tj-dgm">ن</span> یَضۡرِبَ مَثَ<span class="tj-dgm">لࣰا</span> <span class="tj-ghn">مَّ</span>ا بَعُوضَ<span class="tj-khf">ةࣰ</span> فَمَا فَوۡقَهَاۚ فَأَ<span class="tj-ghn">مَّ</span>ا <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ ءَامَنُو<span class="tj-slt">ا۟</span> فَیَعۡلَمُونَ أَ<span class="tj-ghn">نَّ</span>هُ <span class="tj-slt">ٱ</span>لۡحَقُّ مِ<span class="tj-dgm">ن</span> رَّبِّهِمۡۖ وَأَ<span class="tj-ghn">مَّ</span>ا <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ كَفَرُو<span class="tj-slt">ا۟</span> فَیَقُولُونَ مَاذَ<span class="tj-mdd">اۤ</span> أَرَادَ <span class="tj-slt">ٱ</span>للَّهُ بِهَ<span class="tj-mdd">ـٰ</span>ذَا مَثَ<span class="tj-dgm">لࣰا</span>ۘ یُضِلُّ بِهِۦ كَثِ<span class="tj-mdd">ی</span><span class="tj-dgm">رࣰا</span> وَیَهۡدِ<span class="tj-mdd">ی</span> بِهِۦ كَثِ<span class="tj-mdd">ی</span><span class="tj-dgm">رࣰا</span>ۚ وَمَا یُضِلُّ بِهِۦۤ إِلَّا <span class="tj-slt">ٱ</span>لۡفَ<span class="tj-mdd">ـٰ</span>سِقِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بيّن الله أنه لا يستحيي أن يضرب مثلاً بأي شيء كان، فالمؤمنون يعلمون أنه الحق، والكافرون يعترضون، والله يضل به الفاسقين ويهدي المؤمنين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-26">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-26">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-26">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-26">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-26">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-26">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-26">يقول تعالى إن الله لا يستحيي من ضرب أي مثل كان، حتى لو كان بأشياء حقيرة كالبعوضة، لأن الأمثال تشتمل على الحكمة وإيضاح الحق. من آمن يعلم أن هذه الأمثال حق من ربهم، فيتفهمونها ويتفكرون فيها، مما يزيد علمهم وإيمانهم. أما الكافرون فيعترضون ويتحيرون قائلين: ماذا أراد الله بهذا المثل، فيزدادون كفراً. الآية تبين أن القرآن يهدي به كثيراً ويضل به كثيراً. المؤمنون يزدادون إيمانا على إيمانهم، بينما الكافرون يزدادون شراً. والله لا يضل بهذه الآيات إلا الفاسقين - أي الخارجين عن طاعة الله والمعاندين لرسله. اقتضت حكمة الله إضلال من لا صلاح لهم للهدى، وهداية من اتصف بالإيمان والأعمال الصالحة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-26', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-26">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-26">قال السدي في تفسيره: لما ضرب الله المثلين للمنافقين، قالوا: الله أعلى وأجل من أن يضرب هذه الأمثال، فأنزل الله هذه الآية. وقال قتادة: لما ذكر الله العنكبوت والذباب، قال المشركون: ما بال العنكبوت والذباب يذكران؟ فأنزل الله هذه الآية. معنى الآية: أن الله لا يستنكف أو لا يخشى أن يضرب أي مثل كان بأي شيء، صغيراً أو كبيراً. البعوضة تمثل أحقر الأشياء، و{ما فوقها} يعني ما هو أكبر منها. أما المؤمنون فيعلمون أن الأمثال حق من عند الله، بينما الكافرون يقولون: {ماذا أراد الله بهذا مثلاً}. والإضلال بالمثل يختص بالفاسقين والمنافقين الذين يكفرون به، بينما يهدي الله به المؤمنين فيزيدهم إيماناً وهدى.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-26', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-26">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-26">سبب نزول هذه الآية أن الله تعالى لما ضرب المثل بالذباب والعنكبوت، قالت اليهود: ما أراد الله بذكر هذه الأشياء الخسيسة؟ وقيل قال المشركون: إنا لا نعبد إلهاً يذكر مثل هذه الأشياء، فأنزل الله تعالى: {إن الله لا يستحيي} أي لا يترك ولا يمنعه الحياء أن يضرب مثلاً. {ما بعوضة} أي مثلاً بالبعوضة، والبعوض صغار البق. {فما فوقها} يعني الذباب والعنكبوت. {فأما الذين آمنوا فيعلمون أنه الحق من ربهم} أي يعلمون أن المثل هو الصدق من ربهم. {وأما الذين كفروا فيقولون ماذا أراد الله بهذا مثلاً} ثم أجابهم بقوله: {يضل به كثيراً} من الكفار لأنهم يكذبونه فيزدادون ضلالاً. {ويهدي به كثيراً} من المؤمنين فيصدقونه. {وما يضل به إلا الفاسقين} الكافرين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-26', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-26">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-26">ذكر ابن عباس أن المشركين واليهود أنكروا على الله ضرب الأمثال بالذباب والعنكبوت، فأنزل الله هذه الآية رداً عليهم. معنى {يستحيي} هو لا يخشى ولا يمتنع. أصل الاستحياء الانقباض عن الشيء خوفاً من القبيح، وهذا محال على الله تعالى. {يضرب مثلا} معناه يبين ويوضح. {بعوضة} سميت بذلك لصغرها. {فما فوقها} اختلف المفسرون: منهم من قال معناها ما دونها أي أصغر منها، ومنهم من قال المعنى في الكبر أي ما أكبر منها. {الذين آمنوا فيعلمون أنه الحق}: المؤمنون يعلمون أن المثل حق من ربهم. {يضل به كثيرا ويهدي به كثيرا}: الله تعالى يخذل به من يشاء ويهدي من يشاء. {وما يضل به إلا الفاسقين}: الضلالة لا تصيب إلا الفاسقين الخارجين عن طاعة الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-26', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-26">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-26">اختلف أهل التأويل في سبب نزول هذه الآية. قال البعض أنها نزلت رداً على منافقي قومٍ أنكروا الأمثال التي ضربها الله لهم في الآيات السابقة، خاصة مثل موقد النار والصيب من السماء. فقالوا: الله أعلى من أن يضرب مثلاً بهذه الأمور الحقيرة. الرأي الأقرب للصواب عند الطبري: أن الآية جواب على إنكار المنافقين للأمثال التي ضربها الله لهم في السورة ذاتها. معنى الاستحياء هنا: عدم خشية الله من ضرب الأمثال. {فأما الذين آمنوا فيعلمون أنه الحق من ربهم}: المؤمنون يعرفون أن المثل حق وكلام من عند الله. {يضل به كثيرا ويهدي به كثيرا}: الله يُضِل بالمثل الكافرين والمنافقين فيزدادون ضلالاً، ويهدي به المؤمنين فيزدادون هدى. الفسق لغة: الخروج عن الشيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-26', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 27 -->
+            <div class="ayah" id="ayah-27">
+                <div class="ayah-text"><span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ یَ<span class="tj-khf">نق</span>ُضُونَ عَهۡدَ <span class="tj-slt">ٱ</span>للَّهِ مِ<span class="tj-qlb">نۢ ب</span>َعۡدِ مِ<span class="tj-mdd">ی</span>ثَ<span class="tj-mdd">ـٰ</span>قِهِۦ وَیَ<span class="tj-qlq">قۡ</span>طَعُونَ مَ<span class="tj-mdd">اۤ</span> أَمَرَ <span class="tj-slt">ٱ</span>للَّهُ بِهِۦۤ أَ<span class="tj-dgm">ن</span> یُوصَلَ وَیُفۡسِدُونَ فِ<span class="tj-mdd">ی</span> <span class="tj-slt">ٱ</span>لۡأَرۡضِۚ أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ هُمُ <span class="tj-slt">ٱ</span>لۡخَ<span class="tj-mdd">ـٰ</span>سِرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وصف الفاسقين بأنهم ينقضون عهد الله ويقطعون ما أمر الله به أن يوصل ويفسدون في الأرض، وأولئك هم الخاسرون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-27">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-27">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-27">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-27">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-27">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-27">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-27">ثم وصف الفاسقين فقال: {الذين ينقضون عهد الله من بعد ميثاقه} وهذا يعم العهد الذي بينهم وبينه والذي بينهم وبين عباده الذي أكده عليهم بالمواثيق الثقيلة والإلزامات، فلا يبالون بتلك المواثيق بل ينقضونها ويتركون أوامره ويرتكبون نواهيه وينقضون العهود التي بينهم وبين الخلق. {ويقطعون ما أمر الله به أن يوصل} وهذا يدخل فيه أشياء كثيرة، فإن الله أمرنا أن نصل ما بيننا وبينه بالإيمان به والقيام بعبوديته، وما بيننا وبين رسوله بالإيمان به ومحبته، وما بيننا وبين الوالدين والأقارب والأصحاب وسائر الخلق بالقيام بتلك الحقوق. فأما المؤمنون فوصلوا ما أمر الله به أن يوصل، وأما الفاسقون فقطعوها ونبذوها وراء ظهورهم معتاضين عنها بالفسق والقطيعة والعمل بالمعاصي وهو الإفساد في الأرض. {أولئك هم الخاسرون} في الدنيا والآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-27', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-27">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-27">وقد اختلف أهل التفسير في معنى العهد الذي وصف هؤلاء الفاسقين بنقضه، فقال بعضهم: هو وصية الله إلى خلقه وأمره إياهم بما أمرهم به من طاعته، ونهيه إياهم عما نهاهم عنه من معصيته في كتبه، وعلى لسان رسله، ونقضهم ذلك هو تركهم العمل به. وقال آخرون: بل هي في كفار أهل الكتاب والمنافقين منهم، وعهد الله الذي نقضوه هو ما أخذه الله عليهم في التوراة من العمل بما فيها واتباع محمد صلى الله عليه وسلم إذا بعث. وهذه الصفات صفات الكفار المباينة لصفات المؤمنين. {ويقطعون ما أمر الله به أن يوصل} قيل: المراد به صلة الأرحام والقرابات. وقيل: المراد أعم من ذلك فكل ما أمر الله بوصله وفعله قطعوه وتركوه. {أولئك هم الخاسرون} قال مقاتل بن حيان: في الآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-27', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-27">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-27">{الذين ينقضون} يخالفون ويتركون، وأصل النقض الكسر. {عهد الله} أمر الله الذي عهد إليهم يوم الميثاق بقوله: {ألست بربكم قالوا بلى}. وقيل: أراد به العهد الذي أخذه على النبيين وسائر الأمم أن يؤمنوا بمحمد صلى الله عليه وسلم. وقيل: أراد به العهد الذي عهد إليهم في التوراة أن يؤمنوا بمحمد ويبينوا نعته. {من بعد ميثاقه} توكيده. والميثاق: العهد المؤكد. {ويقطعون ما أمر الله به أن يوصل} يعنى الإيمان بمحمد وبجميع الرسل عليهم السلام لأنهم قالوا: نؤمن ببعض ونكفر ببعض. وقيل: أراد به الأرحام. {ويفسدون في الأرض} بالمعاصي وتعويق الناس عن الإيمان. {أولئك هم الخاسرون} المغبونون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-27', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-27">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-27">{الذين} في موضع نصب كنعت للفاسقين. النقض يعني إفساد ما أبرمته من بناء أو حبل أو عهد، واختلف العلماء في تحديد العهد المقصود بين عدة تفسيرات. بخصوص {ما أمر الله به أن يوصل}، يذكر أنها قد تشير إلى صلة الأرحام، أو وصل القول بالعمل، أو التصديق بجميع الأنبياء. ويرجح الجمهور أنها عامة في كل ما أمر الله تعالى به أن يوصل. أما {ويفسدون في الأرض} فيقصد به يعبدون غير الله تعالى ويجورون في الأفعال بحسب شهواتهم. الخاسر هو الذي نقص نفسه حظها من الفلاح والفوز.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-27', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-27">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-27">قال أبو جعفر الطبري: الآية تصف الفاسقين الذين ينقضون عهد الله من بعد ميثاقه. اختلف العلماء في معنى هذا العهد: فقال بعضهم هو أوامر الله ونواهيه في كتبه وعلى لسان رسوله، ونقضهم له تركهم العمل به. وقال آخرون أنها نزلت في كفار أحبار اليهود والمنافقين، والعهد هو ما أخذه الله عليهم في التوراة من العمل بها واتباع محمد صلى الله عليه وسلم. وقال بعضهم العهد هو الذي أخذه الله عليهم حين أخرجهم من صلب آدم. {ويقطعون ما أمر الله به أن يوصل}: الآية تذم قطع الرحم، وهو ظلم في ترك أداء حقوقها التي أوجبها الله. الإفساد في الأرض هو معصيتهم لربهم وكفرهم به. {أولئك هم الخاسرون}: الناقصون أنفسهم حظوظها بمعصيتهم الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-27', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 28 -->
+            <div class="ayah" id="ayah-28">
+                <div class="ayah-text">كَیۡفَ تَكۡفُرُونَ بِ<span class="tj-slt">ٱ</span>للَّهِ وَكُ<span class="tj-khf">نت</span>ُمۡ أَمۡوَ<span class="tj-mdd">ٰ</span><span class="tj-khf">تࣰا</span> فَأَحۡیَ<span class="tj-mdd">ـٰ</span>كُمۡۖ ثُ<span class="tj-ghn">مَّ</span> یُمِ<span class="tj-mdd">ی</span>تُكُمۡ ثُ<span class="tj-ghn">مَّ</span> یُحۡیِ<span class="tj-mdd">ی</span>كُمۡ ثُ<span class="tj-ghn">مَّ</span> إِلَیۡهِ تُرۡجَعُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">عجّب الله من كفر الناس به وهو الذي أحياهم بعد أن كانوا أمواتاً، ثم يميتهم ثم يحييهم يوم القيامة، ثم إليه يرجعون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-28">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-28">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-28">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-28">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-28">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-28">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-28">هذا استفهام بمعنى التعجب والتوبيخ والإنكار، أي: كيف يحصل منكم الكفر بالله الذي خلقكم من العدم وأنعم عليكم بأصناف النعم، ثم يميتكم عند استكمال آجالكم ويجازيكم في القبور، ثم يحييكم بعد البعث والنشور، ثم إليه ترجعون فيجازيكم الجزاء الأوفى. فإذا كنتم في تصرفه وتدبيره وبره وتحت أوامره الدينية، ومن بعد ذلك تحت دينه الجزائي، أفيليق بكم أن تكفروا به؟ وهل هذا إلا جهل عظيم وسفه وحماقة؟ بل الذي يليق بكم أن تؤمنوا به وتتقوه وتشكروه وتخافوا عذابه وترجوا ثوابه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-28', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-28">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-28">يقول تعالى محتجا على وجوده وقدرته، وأنه الخالق المتصرف في عباده: {كيف تكفرون بالله} أي كيف تجحدون وجوده أو تعبدون معه غيره! {وكنتم أمواتا فأحياكم} أي قد كنتم عدما فأخرجكم إلى الوجود. قال ابن عباس: أمواتا في أصلاب آبائكم، لم تكونوا شيئا حتى خلقكم، ثم يميتكم موتة الحق، ثم يحييكم حين يبعثكم. وقال الضحاك عن ابن عباس: كنتم ترابا قبل أن يخلقكم فهذه ميتة، ثم أحياكم فخلقكم فهذه حياة، ثم يميتكم فترجعون إلى القبور فهذه ميتة أخرى، ثم يبعثكم يوم القيامة فهذه حياة أخرى. والمعنى أنه تعالى عبّر عن الحال قبل الوجود بالموت لاشتراكهما في عدم الإحساس.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-28', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-28">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-28">{كيف تكفرون بالله} بعد نصب الدلائل ووضوح البراهين ثم ذكر الدلائل فقال: {وكنتم أمواتاً} نطفاً في أصلاب آبائكم. {فأحياكم} في الأرحام والدنيا. {ثم يميتكم} عند انقضاء آجالكم. {ثم يحييكم} للبعث. {ثم إليه ترجعون} أي تردون في الآخرة فيجزيكم بأعمالكم. قرأ يعقوب {ترجعون} في كل القرآن بفتح الياء والتاء على تسمية الفاعل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-28', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-28">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-28">الآية تتضمن استفهام بمعنى التعجب من كفر الناس بالله رغم أنه أحياهم بعد أن كانوا أمواتا معدومين. المقصود بالموت الأول: العدم قبل الخلق. فأحياهم أي خلقهم. ثم يميتهم عند انقضاء آجالهم في الدنيا. ثم يحييهم يوم القيامة في الحشر والنشور. اختلف العلماء في تفسير عدد الموتات والإحياءات: فقيل إنها ثلاث موتات وثلاث إحياءات، وقيل أربع، وقيل خمس. وذكر أن العصاة من أمة محمد قد يموتون موتة سادسة عند دخولهم النار، ثم يحيون بعد ذلك. قوله {ثم إليه ترجعون} معناه: إلى حكمه ومحاسبته يكون رجوعكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-28', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-28">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-28">الطبري يعرض عدة أقوال في تأويل الآية: القول الأول: الموت هنا يعني عدم الوجود. كان الناس نطفا في أصلاب آبائهم فخلقهم الله، ثم يميتهم، ثم يحييهم يوم القيامة. القول الثاني: كانوا أمواتا في أصلاب آبائهم (نطفا بلا أرواح)، فأحياهم بنفخ الأرواح، ثم يميتهم بقبض الأرواح، ثم يحييهم يوم القيامة. الترجيح: يرى الطبري أن التفسير الأقوى هو أن الموت يقصد به الخمول والعدم النسبي، أي كانوا غير معروفين ولا مذكورين في أصلاب آبائهم، فأحياهم بجعلهم بشرا حيا يُعرف ويُذكر. الآية فيها توبيخ لمن يكفر مع هذه الدلائل الواضحة على قدرة الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-28', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 29 -->
+            <div class="ayah" id="ayah-29">
+                <div class="ayah-text">هُوَ <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span> خَلَقَ لَكُم <span class="tj-ghn">مَّ</span>ا فِ<span class="tj-mdd">ی</span> <span class="tj-slt">ٱ</span>لۡأَرۡضِ جَمِ<span class="tj-mdd">ی</span><span class="tj-khf">عࣰا</span> ثُ<span class="tj-ghn">مَّ</span> <span class="tj-slt">ٱ</span>سۡتَوَ<span class="tj-mdd">ىٰۤ</span> إِلَى <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">اۤ</span>ءِ فَسَوَّ<span class="tj-mdd">ىٰ</span>هُ<span class="tj-ghn">نَّ</span> سَ<span class="tj-qlq">بۡ</span>عَ سَمَ<span class="tj-mdd">ـٰ</span>وَ<span class="tj-mdd">ٰ</span><span class="tj-dgm">تࣲ</span>ۚ وَهُوَ بِكُلِّ شَیۡءٍ عَلِ<span class="tj-mdd">ی</span>مࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ذكر أن الله خلق ما في الأرض جميعاً للناس، ثم استوى إلى السماء فسواهن سبع سماوات، وهو بكل شيء عليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-29">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-29">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-29">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-29">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-29">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-29">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-29">{ هُوَ الَّذِي خَلَقَ لَكُمْ مَا فِي الْأَرْضِ جَمِيعًا } أي خلق لكم براً بكم ورحمة، جميع ما على الأرض، للانتفاع والاستمتاع والاعتبار. وتدل الآية على أن الأصل في الأشياء هو الإباحة والطهارة، لأنها سيقت في سياق الامتنان. { ثُمَّ اسْتَوَىٰ إِلَى السَّمَاءِ فَسَوَّاهُنَّ سَبْعَ سَمَاوَاتٍ } يشرح أن كلمة استوى ترد بمعاني متعددة، منها قصد واتجه نحو، وهنا معناها أن الله قصد إلى خلق السماوات وأحكمها وأتقنها. { وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ } فالخلق أعظم دليل على علمه وحكمته وقدرته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-29', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-29">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-29">لما ذكر تعالى دلالة من خلقهم وما يشاهدونه من أنفسهم، ذكر دليلا آخر مما يشاهدونه من خلق السماوات والأرض، فقال: {هو الذي خلق لكم ما في الأرض جميعا ثم استوى إلى السماء} أي قصد إلى السماء، والاستواء هاهنا تضمن معنى القصد والإقبال لأنه عدي بإلى. {فسواهن} أي فخلق السماء سبعا، والسماء هاهنا اسم جنس فلهذا قال {فسواهن}. {وهو بكل شيء عليم} أي وعلمه محيط بجميع ما خلق. وفي هذا دلالة على أن الله تعالى ابتدأ بخلق الأرض أولا ثم خلق السماوات سبعا، وهذا شأن البناء أن يبدأ بعمارة أسافله ثم أعاليه بعد ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-29', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-29">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-29">قوله تعالى: {هو الذي خلق لكم ما في الأرض جميعاً} لكي تعتبروا وتستدلوا وقيل: لكي تنتفعوا. {ثم استوى إلى السماء} قال ابن عباس وأكثر مفسري السلف: أي ارتفع إلى السماء. وقال ابن كيسان والفراء وجماعة من النحويين: أي أقبل على خلق السماء. وقيل: قصد لأنه خلق الأرض أولا ثم عمد إلى خلق السماء. {فسواهن سبع سماوات} خلقهن مستويات لا فطور فيها ولا صدع. {وهو بكل شيء عليم} أي عالم بجميع ما خلق وما يخلق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-29', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-29">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-29">يشرح القرطبي أن {خلق} معناه اختراع وإيجاد بعد العدم. ويذكر أن {خلق لكم} قد يعني من أجلكم أو أن جميع ما في الأرض منعم به عليكم. والصحيح أن المقصود الاعتبار والدلالة على التوحيد. يناقش القرطبي مسائل فقهية حول إباحة الأشياء، ويشرح أن الله خلق الأرض وما فيها للاعتبار بقدرته وعظمته. بخصوص {استوى إلى السماء}، يقول القرطبي إن {ثم} للترتيب في الإخبار لا في الواقع. والاستواء في اللغة يعني الارتفاع والعلو، ويشير إلى الإقبال على خلق السماء. يوضح أن السماوات سبع كما ذكر القرآن، والأرضين أيضاً سبع بناءً على الأحاديث النبوية الصحيحة. {وهو بكل شيء عليم} أي أنه تعالى عالم بكل مخلوقاته لأنه خالقها، وعلمه قديم أزلي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-29', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-29">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-29">يشرح الطبري أن الله سخّر جميع ما في الأرض للإنسان كنعمة منه. بخصوص قوله {ثم استوى إلى السماء}، يناقش الطبري عدة تفسيرات: قد يعني أقبل عليها، أو علا وارتفع. يرجح الطبري أن المعنى الأصح هو العلو والارتفاع بمعنى دبرها بقدرته وخلقها سبع سموات. أما {فسوّاهن} فمعناه هيأهن وخلقهن وقوّمهن. كانت السماوات في البداية دخاناً فتمّ تسويتها سبعاً. يؤكد الطبري أن السماوات كانت سبعاً قبل التسوية، والتسوية تعني إحكام خلقهن وتقويمهن. الختام بـ {وهو بكل شيء عليم} يؤكد علم الله الشامل بكل المخلوقات والأعمال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-29', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-03.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">صفات المنافقين</span>
+            </a>
+            <a href="section-05.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">قصة خلق آدم عليه السلام</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ٤: دعوة الناس لعبادة الله وتوحيده<br>
+        <small>آيات ٢١ – ٢٩ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

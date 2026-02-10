@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — بنو إسرائيل — نقض العهود</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ٧ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#c0392b">
+            <div class="section-num">٧</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">بنو إسرائيل — نقض العهود</h2>
+                <h3 class="section-title-en">Children of Israel — Breaking Covenants</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٨٧ – ١٠٣</div>
+        </div>
+
+        <div class="section-desc">
+            <p>بيان نقض بني إسرائيل للعهود والمواثيق، واتباعهم للسحر، وتكذيبهم الرسل، ونبذهم كتاب الله وراء ظهورهم</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="87">
+                        <div class="flow-node-num">٨٧</div>
+                        <div class="flow-node-text">إيتاء موسى الكتاب وتأييد عيسى وتكذيب الرسل</div>
+                        <div class="flow-node-key">أَفَكُلَّمَا جَاۤءَكُمۡ رَسُولٌ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="88-89">
+                        <div class="flow-node-num">٨٨–٨٩</div>
+                        <div class="flow-node-text">ادعاء غلف القلوب والكفر بالقرآن</div>
+                        <div class="flow-node-key">قُلُوبُنَا غُلۡفٌ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="90-91">
+                        <div class="flow-node-num">٩٠–٩١</div>
+                        <div class="flow-node-text">الكفر بغياً وقتل الأنبياء</div>
+                        <div class="flow-node-key">بِئۡسَمَا ٱشۡتَرَوۡ<span class="tj-slt">ا۟</span> بِهِۦ أَنفُسَهُمۡ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="92-93">
+                        <div class="flow-node-num">٩٢–٩٣</div>
+                        <div class="flow-node-text">اتخاذ العجل ونقض الميثاق</div>
+                        <div class="flow-node-key">ٱتَّخَذۡتُمُ ٱلۡعِجۡلَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="94-96">
+                        <div class="flow-node-num">٩٤–٩٦</div>
+                        <div class="flow-node-text">تحدّي تمنّي الموت وحرصهم على الحياة</div>
+                        <div class="flow-node-key">فَتَمَنَّوُ<span class="tj-slt">ا۟</span> ٱلۡمَوۡتَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="97-98">
+                        <div class="flow-node-num">٩٧–٩٨</div>
+                        <div class="flow-node-text">عداوة جبريل والملائكة</div>
+                        <div class="flow-node-key">مَن كَانَ عَدُوࣰّا لِّجِبۡرِیلَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="99-101">
+                        <div class="flow-node-num">٩٩–١٠١</div>
+                        <div class="flow-node-text">إنزال الآيات ونبذ كتاب الله</div>
+                        <div class="flow-node-key">نَبَذَ فَرِیقࣱ مِّنَ ٱلَّذِینَ أُوتُو<span class="tj-slt">ا۟</span> ٱلۡكِتَـٰبَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="102">
+                        <div class="flow-node-num">١٠٢</div>
+                        <div class="flow-node-text">اتباع السحر وقصة هاروت وماروت</div>
+                        <div class="flow-node-key">وَٱتَّبَعُو<span class="tj-slt">ا۟</span> مَا تَتۡلُو<span class="tj-slt">ا۟</span> ٱلشَّیَـٰطِینُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="103">
+                        <div class="flow-node-num">١٠٣</div>
+                        <div class="flow-node-text">لو آمنوا واتقوا لكان خيراً</div>
+                        <div class="flow-node-key">وَلَوۡ أَنَّهُمۡ ءَامَنُو<span class="tj-slt">ا۟</span> وَٱتَّقَوۡ<span class="tj-slt">ا۟</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-87">
+                <div class="ayah-text">وَلَقَ<span class="tj-qlq">دۡ</span> ءَاتَیۡنَا مُوسَى <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بَ وَقَفَّیۡنَا مِ<span class="tj-qlb">نۢ بَ</span>عۡدِهِۦ بِ<span class="tj-slt">ٱلرُّ</span>سُلِۖ وَءَاتَیۡنَا عِیسَى <span class="tj-slt">ٱ</span><span class="tj-qlq">بۡ</span>نَ مَرۡیَمَ <span class="tj-slt">ٱ</span>لۡبَیِّنَ<span class="tj-mdd">ـٰ</span>تِ وَأَیَّ<span class="tj-qlq">دۡ</span>نَ<span class="tj-mdd">ـٰ</span>هُ بِرُوحِ <span class="tj-slt">ٱ</span>لۡقُدُسِۗ أَفَكُلَّمَا جَ<span class="tj-mdd">اۤ</span>ءَكُمۡ رَسُولُ<span class="tj-qlb">ۢ بِ</span>مَا لَا تَهۡوَ<span class="tj-mdd">ىٰۤ</span> أَ<span class="tj-khf">نف</span>ُسُكُمُ <span class="tj-slt">ٱ</span>سۡتَكۡبَرۡتُمۡ فَفَرِی<span class="tj-khf">قࣰا</span> كَذَّ<span class="tj-qlq">بۡ</span>تُمۡ وَفَرِی<span class="tj-khf">قࣰا</span> تَ<span class="tj-qlq">قۡ</span>تُلُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٨٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يذكّر الله بني إسرائيل بإيتاء موسى الكتاب وإرسال الرسل من بعده وتأييد عيسى بروح القدس، ويوبّخهم على استكبارهم كلما جاءهم رسول بما لا تهوى أنفسهم فكذّبوا فريقا وقتلوا فريقا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-87">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-87">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-87">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-87">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-87">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-87">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-87">يخبر تعالى عن قبائح بني إسرائيل وعتوّهم وعنادهم لأنبيائهم، فقال: {وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ} وهو التوراة، {وَقَفَّيْنَا مِنْ بَعْدِهِ بِالرُّسُلِ} أي: أرسلنا رسلاً على أثره يتبع بعضهم بعضاً. {وَآتَيْنَا عِيسَى ابْنَ مَرْيَمَ الْبَيِّنَاتِ} أي: المعجزات الواضحة كإحياء الموتى وإبراء الأكمه والأبرص. {وَأَيَّدْنَاهُ بِرُوحِ الْقُدُسِ} وهو جبريل عليه السلام. ثم وبّخهم بقوله: {أَفَكُلَّمَا جَاءَكُمْ رَسُولٌ بِمَا لَا تَهْوَى أَنْفُسُكُمُ اسْتَكْبَرْتُمْ} أي: بما لا يوافق أهواءكم وشهواتكم تعظّمتم عن الانقياد له. {فَفَرِيقًا كَذَّبْتُمْ وَفَرِيقًا تَقْتُلُونَ} وهذا أعظم الجرائم أنهم جمعوا بين التكذيب والقتل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-87', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-87">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-87">يعدّد الله تعالى على بني إسرائيل ما أنعم به عليهم من إرسال الرسل وإنزال الكتب، فقال: {وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ} يعني التوراة {وَقَفَّيْنَا مِنْ بَعْدِهِ بِالرُّسُلِ} أي أتبعنا على أثره برسل بني إسرائيل واحداً بعد واحد. {وَآتَيْنَا عِيسَى ابْنَ مَرْيَمَ الْبَيِّنَاتِ} أي الحجج والمعجزات الباهرة كإبراء الأكمه والأبرص وإحياء الموتى بإذن الله. {وَأَيَّدْنَاهُ بِرُوحِ الْقُدُسِ} وهو جبريل عليه السلام على الصحيح. ثم وبّخهم: {أَفَكُلَّمَا جَاءَكُمْ رَسُولٌ بِمَا لَا تَهْوَى أَنْفُسُكُمُ اسْتَكْبَرْتُمْ} أي كلما جاءكم رسول بالحق الذي لا يوافق أهواءكم رددتموه. {فَفَرِيقًا كَذَّبْتُمْ} كعيسى ومحمد عليهما السلام {وَفَرِيقًا تَقْتُلُونَ} كزكريا ويحيى. وقال «تقتلون» بصيغة المضارع مع أنه قد مضى لاستحضار الصورة وللدلالة على أنهم يريدون قتل محمد صلى الله عليه وسلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-87', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-87">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-87">{وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ} يعني التوراة. {وَقَفَّيْنَا مِنْ بَعْدِهِ بِالرُّسُلِ} أي أتبعنا، يقال: قفّيته أي أتبعته، والمعنى أرسلنا بعده رسلاً يتلو بعضهم بعضاً. {وَآتَيْنَا عِيسَى ابْنَ مَرْيَمَ الْبَيِّنَاتِ} أي الدلالات الواضحات وهي ما ذُكر في آل عمران والمائدة من إبراء الأكمه والأبرص وإحياء الموتى وغيرها. {وَأَيَّدْنَاهُ} أي قوّيناه {بِرُوحِ الْقُدُسِ} يعني جبريل عليه السلام، قال ابن عباس: القدس هو الله تعالى وروحه جبريل. {أَفَكُلَّمَا جَاءَكُمْ رَسُولٌ بِمَا لَا تَهْوَى أَنْفُسُكُمْ} أي بما لا تحبّه أنفسكم {اسْتَكْبَرْتُمْ} تعظّمتم عن الإيمان به {فَفَرِيقًا كَذَّبْتُمْ} كعيسى ومحمد {وَفَرِيقًا تَقْتُلُونَ} كزكريا ويحيى عليهما السلام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-87', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-87">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-87">قوله تعالى: {وَلَقَدْ آتَيْنَا مُوسَى الْكِتَابَ} يعني التوراة. {وَقَفَّيْنَا مِنْ بَعْدِهِ بِالرُّسُلِ} أي أرسلنا على أثره الرسل رسولاً بعد رسول. وأصل القفو الاتباع، ومنه قيل: قفا الأثر يقفوه. {وَآتَيْنَا عِيسَى ابْنَ مَرْيَمَ الْبَيِّنَاتِ} المعجزات الدالة على نبوته كإحياء الموتى وإبراء الأكمه والأبرص والإخبار بالمغيّبات. {وَأَيَّدْنَاهُ بِرُوحِ الْقُدُسِ} أي قوّيناه بجبريل، وهو قول ابن عباس والحسن وجمهور العلماء. {أَفَكُلَّمَا جَاءَكُمْ رَسُولٌ بِمَا لَا تَهْوَى أَنْفُسُكُمُ اسْتَكْبَرْتُمْ} هذا توبيخ عظيم لهم على تكبّرهم عن قبول الحق. والهوى ميل النفس إلى ما تستلذّه. {فَفَرِيقًا كَذَّبْتُمْ وَفَرِيقًا تَقْتُلُونَ} قال «تقتلون» ولم يقل «قتلتم» لأنه أراد الحال والاستقبال، أي أنتم تريدون قتل محمد صلى الله عليه وسلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-87', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-87">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-87">يقول تعالى ذكره: ولقد آتينا موسى الكتاب وهو التوراة التي أنزلها الله على موسى هدى لبني إسرائيل. {وَقَفَّيْنَا مِنْ بَعْدِهِ بِالرُّسُلِ} يقول: وأتبعنا من بعد موسى بالرسل رسولاً في إثر رسول. {وَآتَيْنَا عِيسَى ابْنَ مَرْيَمَ الْبَيِّنَاتِ} يعني الآيات الواضحات والعلامات والحجج من إبراء الأكمه والأبرص وإحياء الموتى بإذن الله وإخباره بما يأكلون وما يدّخرون في بيوتهم. {وَأَيَّدْنَاهُ بِرُوحِ الْقُدُسِ} قوّيناه بجبريل، والقدس الطهر. وإنما وبّخهم الله بقوله: {أَفَكُلَّمَا جَاءَكُمْ رَسُولٌ بِمَا لَا تَهْوَى أَنْفُسُكُمُ اسْتَكْبَرْتُمْ} لأنهم كانوا كلما جاءهم رسول بخلاف ما يريدون ويشتهون من أمور الدنيا تكبّروا عليه فكذّبوا بعضهم وقتلوا بعضهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-87', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-88">
+                <div class="ayah-text">وَقَالُو<span class="tj-slt">ا۟</span> قُلُوبُنَا غُلۡفُ<span class="tj-qlb">ۢۚ بَ</span>ل لَّعَنَهُمُ <span class="tj-slt">ٱ</span>للَّهُ بِكُفۡرِهِمۡ فَقَلِی<span class="tj-dgm">لࣰا</span> <span class="tj-ghn">مَّ</span>ا یُؤۡمِنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٨٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">زعم اليهود أن قلوبهم مغلّفة لا تفقه شيئا، فكذّبهم الله بأنه لعنهم بسبب كفرهم فقليلا ما يؤمنون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-88">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-88">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-88">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-88">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-88">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-88">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-88">{وَقَالُوا قُلُوبُنَا غُلْفٌ} أي: مغلّفة مغطّاة لا يصل إليها ما تقول ولا تفقه ما تدعونا إليه، وهذا اعتذار منهم بالباطل. فردّ الله عليهم بقوله: {بَلْ لَعَنَهُمُ اللَّهُ بِكُفْرِهِمْ} أي: ليس الأمر كما زعموا بل قلوبهم صالحة للعلم لكنّ الله أبعدهم عن رحمته بسبب كفرهم المتواصل. {فَقَلِيلًا مَا يُؤْمِنُونَ} أي: فإيمانهم قليل جداً لا ينفعهم، لأنهم يؤمنون ببعض الكتاب ويكفرون ببعض.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-88', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-88">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-88">{وَقَالُوا قُلُوبُنَا غُلْفٌ} قال ابن عباس: أي مغشّاة، وقال مجاهد: عليها غلاف أي غطاء. وهذا اعتذار منهم بالباطل عن عدم قبول الحق. {بَلْ لَعَنَهُمُ اللَّهُ بِكُفْرِهِمْ} أي: بل طردهم الله وأبعدهم عن الحق بسبب كفرهم وعنادهم، فليس قلوبهم غلفاً بل هي قلوب ملعونة مطبوع عليها. {فَقَلِيلًا مَا يُؤْمِنُونَ} أي: لا يحصل منهم إلا إيمان قليل لا يعبأ الله به لأنهم آمنوا ببعض الأنبياء وكفروا ببعض، وهذا ليس إيماناً حقيقياً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-88', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-88">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-88">{وَقَالُوا قُلُوبُنَا غُلْفٌ} جمع أغلف، أي: هي في غلاف وغطاء فلا تفقه ما تقول، وهذا اعتذار باطل عن عدم الإيمان. وقال ابن عباس: «غلف» أي أوعية للعلم، يعني أن قلوبنا مملوءة علماً لا تحتاج إلى علم محمد. {بَلْ لَعَنَهُمُ اللَّهُ بِكُفْرِهِمْ} أي أبعدهم الله عن رحمته وعن كل خير بسبب كفرهم. {فَقَلِيلًا مَا يُؤْمِنُونَ} أي لا يؤمنون إلا بالقليل من الحق، فهم يؤمنون ببعض الأنبياء ويكفرون ببعض ويؤمنون ببعض الكتاب ويكفرون ببعض.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-88', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-88">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-88">قوله تعالى: {وَقَالُوا قُلُوبُنَا غُلْفٌ} فيه قولان: الأول أنها جمع أغلف، أي في أكنّة وأغطية فلا يصل إليها ما تقول، كقوله تعالى: {قُلُوبُنَا فِي أَكِنَّةٍ مِمَّا تَدْعُونَا إِلَيْهِ}. والثاني أنها جمع غلاف، أي أوعية للعلم، فنحن علماء لا نحتاج إلى علمك. {بَلْ لَعَنَهُمُ اللَّهُ بِكُفْرِهِمْ} أي: أبعدهم وطردهم من رحمته بسبب كفرهم. واللعن في اللغة الإبعاد والطرد. {فَقَلِيلًا مَا يُؤْمِنُونَ} أي لا يؤمنون إلا قليلاً، وذلك أنهم يؤمنون بالتوراة وموسى ويكفرون بعيسى والإنجيل ومحمد والقرآن.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-88', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-88">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-88">يخبر الله تعالى عن قول اليهود: {وَقَالُوا قُلُوبُنَا غُلْفٌ} اختلف أهل التأويل في ذلك: فقال بعضهم هي في أغطية وأكنّة فلا نفقه ما تقول يا محمد، وقال آخرون: معناه أن قلوبنا أوعية للعلم قد امتلأت علماً فلا حاجة بنا إلى علمك. فردّ الله عليهم: {بَلْ لَعَنَهُمُ اللَّهُ بِكُفْرِهِمْ} أي: بل أقصاهم الله وأبعدهم من رحمته بكفرهم بالله وبما جاءهم من عنده. {فَقَلِيلًا مَا يُؤْمِنُونَ} أي فقليل إيمانهم لأنهم آمنوا ببعض وكفروا ببعض، فما آمنوا به من التوراة وغيرها فقليل بالقياس إلى ما كفروا به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-88', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-89">
+                <div class="ayah-text">وَلَ<span class="tj-ghn">مَّ</span>ا جَ<span class="tj-mdd">اۤ</span>ءَهُمۡ كِتَ<span class="tj-mdd">ـٰ</span>بࣱ <span class="tj-ghn">مِّ</span>نۡ عِ<span class="tj-khf">ند</span>ِ <span class="tj-slt">ٱ</span>للَّهِ مُصَدِّ<span class="tj-dgm">قࣱ لِّ</span>مَا مَعَهُمۡ وَكَانُو<span class="tj-slt">ا۟</span> مِ<span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لُ یَسۡتَفۡتِحُونَ عَلَى <span class="tj-slt">ٱلَّ</span>ذِینَ كَفَرُو<span class="tj-slt">ا۟</span> فَلَ<span class="tj-ghn">مَّ</span>ا جَ<span class="tj-mdd">اۤ</span>ءَهُم <span class="tj-ghn">مَّ</span>ا عَرَفُو<span class="tj-slt">ا۟</span> كَفَرُو<span class="tj-slt">ا۟</span> بِهِۦۚ فَلَعۡنَةُ <span class="tj-slt">ٱ</span>للَّهِ عَلَى <span class="tj-slt">ٱ</span>لۡكَ<span class="tj-mdd">ـٰ</span>فِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٨٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">كان اليهود يستفتحون على المشركين بالنبي محمد قبل مبعثه ويستنصرون به، فلما جاءهم ما عرفوا من الحق كفروا به بغيا وحسدا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-89">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-89">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-89">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-89">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-89">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-89">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-89">{وَلَمَّا جَاءَهُمْ كِتَابٌ مِنْ عِنْدِ اللَّهِ} وهو القرآن {مُصَدِّقٌ لِمَا مَعَهُمْ} أي: موافق لما في التوراة في الأصول والأخبار. {وَكَانُوا مِنْ قَبْلُ يَسْتَفْتِحُونَ عَلَى الَّذِينَ كَفَرُوا} أي: كانوا يستنصرون على المشركين ويقولون: إن نبياً سيُبعث نتّبعه ونقاتلكم معه. {فَلَمَّا جَاءَهُمْ مَا عَرَفُوا} أي: فلما جاءهم محمد الذي عرفوا صدقه ونبوته {كَفَرُوا بِهِ} بغياً وحسداً أن يكون من غيرهم. {فَلَعْنَةُ اللَّهِ عَلَى الْكَافِرِينَ} دعاء عليهم بالطرد من رحمة الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-89', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-89">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-89">{وَلَمَّا جَاءَهُمْ كِتَابٌ مِنْ عِنْدِ اللَّهِ مُصَدِّقٌ لِمَا مَعَهُمْ} أي القرآن الذي أنزله الله على محمد موافقاً لما بين أيديهم من التوراة. {وَكَانُوا مِنْ قَبْلُ يَسْتَفْتِحُونَ عَلَى الَّذِينَ كَفَرُوا} كانت اليهود إذا قاتلت المشركين من العرب تدعو على أعدائها وتقول: اللهم انصرنا بالنبي المبعوث الذي نجد صفته في التوراة. وكانوا يقولون لأعدائهم من المشركين: قد أظلّ زمان نبي يخرج فنقتلكم معه قتل عاد وإرم. {فَلَمَّا جَاءَهُمْ مَا عَرَفُوا كَفَرُوا بِهِ} أي: فلما بُعث محمد وهم يعرفونه كما يعرفون أبناءهم كفروا به حسداً وبغياً لأنه من العرب لا منهم. {فَلَعْنَةُ اللَّهِ عَلَى الْكَافِرِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-89', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-89">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-89">{وَلَمَّا جَاءَهُمْ كِتَابٌ مِنْ عِنْدِ اللَّهِ} يعني القرآن {مُصَدِّقٌ لِمَا مَعَهُمْ} أي موافق لما في التوراة من التوحيد والنبوات. {وَكَانُوا مِنْ قَبْلُ يَسْتَفْتِحُونَ عَلَى الَّذِينَ كَفَرُوا} أي يستنصرون، كانوا يقولون: اللهم افتح علينا وانصرنا بالنبي الأميّ. وكانت يهود خيبر تقاتل غطفان فلما غُلبت قالت: اللهم إنا نسألك بحق النبي الذي وعدتنا أن تبعثه أن تنصرنا، فكانوا يُنصرون. {فَلَمَّا جَاءَهُمْ مَا عَرَفُوا} يعني محمداً الذي عرفوا نعته وصفته في كتابهم {كَفَرُوا بِهِ} حسداً وبغياً. {فَلَعْنَةُ اللَّهِ عَلَى الْكَافِرِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-89', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-89">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-89">قوله تعالى: {وَلَمَّا جَاءَهُمْ كِتَابٌ مِنْ عِنْدِ اللَّهِ} يعني القرآن. {مُصَدِّقٌ لِمَا مَعَهُمْ} أي موافق لما في التوراة من صفة النبي محمد صلى الله عليه وسلم والتوحيد. {وَكَانُوا مِنْ قَبْلُ يَسْتَفْتِحُونَ عَلَى الَّذِينَ كَفَرُوا} أي يستنصرون بمحمد على مشركي العرب قبل مبعثه. قال ابن عباس: كانت يهود المدينة قبل مبعث النبي إذا قاتلهم المشركون من العرب يدعون الله ويقولون: اللهم انصرنا بالنبي المبعوث في آخر الزمان الذي نجد صفته في التوراة. {فَلَمَّا جَاءَهُمْ مَا عَرَفُوا} من الحق وهو محمد {كَفَرُوا بِهِ} لما كان من العرب لا منهم. {فَلَعْنَةُ اللَّهِ عَلَى الْكَافِرِينَ} أي الجاحدين للحق بعد معرفته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-89', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-89">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-89">يقول جلّ ثناؤه: ولما جاء هؤلاء اليهود من بني إسرائيل كتاب من عند الله وهو القرآن مصدّق لما معهم من التوراة. {وَكَانُوا مِنْ قَبْلُ يَسْتَفْتِحُونَ عَلَى الَّذِينَ كَفَرُوا} أي يستنصرون بمحمد على أعدائهم من مشركي العرب، كانوا يقولون: قد أطلّ زمان نبي يُبعث الآن نتّبعه ونقتلكم معه قتل عاد وإرم. {فَلَمَّا جَاءَهُمْ مَا عَرَفُوا} أي فلما بُعث محمد الذي كانوا يستفتحون به وعرفوا أنه النبي الذي بُشّروا به في التوراة {كَفَرُوا بِهِ} جحوداً وحسداً لأنه بُعث من العرب لا من بني إسرائيل. {فَلَعْنَةُ اللَّهِ عَلَى الْكَافِرِينَ} أي إبعاد الله من رحمته على الجاحدين بالحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-89', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-90">
+                <div class="ayah-text">بِئۡسَمَا <span class="tj-slt">ٱ</span>شۡتَرَوۡ<span class="tj-slt">ا۟</span> بِهِۦۤ أَ<span class="tj-khf">نف</span>ُسَهُمۡ أَ<span class="tj-dgm">ن</span> یَكۡفُرُو<span class="tj-slt">ا۟</span> بِمَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">نز</span>َلَ <span class="tj-slt">ٱ</span>للَّهُ بَغۡیًا أَ<span class="tj-dgm">ن</span> یُنَزِّلَ <span class="tj-slt">ٱ</span>للَّهُ مِ<span class="tj-khf">ن</span> فَضۡلِهِۦ عَلَ<span class="tj-mdd">ىٰ</span> مَ<span class="tj-dgm">ن</span> یَشَ<span class="tj-mdd">اۤ</span>ءُ مِنۡ عِبَادِهِۦۖ فَبَ<span class="tj-mdd">اۤ</span>ءُو بِغَضَبٍ عَلَ<span class="tj-mdd">ىٰ</span> غَضَبࣲۚ وَلِلۡكَ<span class="tj-mdd">ـٰ</span>فِرِینَ عَذَا<span class="tj-dgm">بࣱ</span> <span class="tj-ghn">مُّ</span>هِینࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يذم الله بني إسرائيل لشرائهم الكفر بأنفسهم بغيا أن ينزل الله فضله على من يشاء، فباءوا بغضب على غضب ولهم عذاب مهين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-90">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-90">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-90">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-90">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-90">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-90">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-90">{بِئْسَمَا اشْتَرَوْا بِهِ أَنْفُسَهُمْ} أي: بئس الشراء الذي اشتروا به، حيث باعوا أنفسهم بالكفر والضلال، واشتروا بذلك سخط الله وعقوبته. {أَنْ يَكْفُرُوا بِمَا أَنْزَلَ اللَّهُ} أي: القرآن {بَغْيًا} أي: حسداً وظلماً {أَنْ يُنَزِّلَ اللَّهُ مِنْ فَضْلِهِ عَلَى مَنْ يَشَاءُ مِنْ عِبَادِهِ} أي: حسدوا محمداً أن ينزّل الله عليه الوحي لأنه ليس من بني إسرائيل. {فَبَاءُوا بِغَضَبٍ عَلَى غَضَبٍ} أي: رجعوا بغضب متراكم: غضب بكفرهم بمحمد وغضب بكفرهم السابق بالأنبياء. {وَلِلْكَافِرِينَ عَذَابٌ مُهِينٌ} أي: يُهينهم ويُذلّهم جزاء استكبارهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-90', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-90">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-90">{بِئْسَمَا اشْتَرَوْا بِهِ أَنْفُسَهُمْ} يذمّ تعالى اليهود على ما اختاروه لأنفسهم من الكفر بما أنزل الله. {أَنْ يَكْفُرُوا بِمَا أَنْزَلَ اللَّهُ بَغْيًا} أي: ما حملهم على الكفر إلا البغي والحسد. {أَنْ يُنَزِّلَ اللَّهُ مِنْ فَضْلِهِ عَلَى مَنْ يَشَاءُ مِنْ عِبَادِهِ} أي: حسدوا العرب على أن يكون منهم نبيّ. {فَبَاءُوا بِغَضَبٍ عَلَى غَضَبٍ} قال ابن عباس: الغضب الأول بما ضيّعوا من التوراة وكفرهم بالأنبياء، والغضب الثاني بكفرهم بمحمد صلى الله عليه وسلم. وقال أبو العالية: غضب بكفرهم بالإنجيل وعيسى، وغضب بكفرهم بالقرآن ومحمد. {وَلِلْكَافِرِينَ عَذَابٌ مُهِينٌ} أي يهينهم ويخزيهم يوم القيامة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-90', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-90">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-90">{بِئْسَمَا اشْتَرَوْا بِهِ أَنْفُسَهُمْ} أي بئس ما باعوا به حظّ أنفسهم من الثواب. {أَنْ يَكْفُرُوا بِمَا أَنْزَلَ اللَّهُ} يعني القرآن. {بَغْيًا} أي: حسداً. {أَنْ يُنَزِّلَ اللَّهُ مِنْ فَضْلِهِ عَلَى مَنْ يَشَاءُ مِنْ عِبَادِهِ} يعني النبوة والكتاب على محمد. {فَبَاءُوا بِغَضَبٍ عَلَى غَضَبٍ} قال ابن عباس: غضب بتضييع التوراة وتبديلها، وغضب بكفرهم بمحمد صلى الله عليه وسلم. وقال عكرمة: غضب بكفرهم بعيسى والإنجيل، وغضب بكفرهم بمحمد والقرآن. {وَلِلْكَافِرِينَ عَذَابٌ مُهِينٌ} أي ذو إهانة لأنهم استكبروا فأُذلّوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-90', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-90">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-90">قوله تعالى: {بِئْسَمَا اشْتَرَوْا بِهِ أَنْفُسَهُمْ} ذمّ لهم وتوبيخ. و«بئسما» للذم كما أن «نعمّا» للمدح. والمعنى: بئس الشيء الذي اختاروه لأنفسهم وهو الكفر بالقرآن. {بَغْيًا} أي حسداً. والبغي هو الحسد وتجاوز الحد. {أَنْ يُنَزِّلَ اللَّهُ مِنْ فَضْلِهِ عَلَى مَنْ يَشَاءُ مِنْ عِبَادِهِ} أي أن الله اختار محمداً بالنبوة والكتاب فحسدوه. {فَبَاءُوا بِغَضَبٍ عَلَى غَضَبٍ} أي استوجبوا غضباً مضاعفاً، الأول لتضييعهم التوراة وعبادة العجل وكفرهم بعيسى، والثاني لكفرهم بمحمد. {وَلِلْكَافِرِينَ عَذَابٌ مُهِينٌ} أي ذو إهانة يُهينهم ويُخزيهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-90', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-90">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-90">يقول تعالى: {بِئْسَمَا اشْتَرَوْا بِهِ أَنْفُسَهُمْ} أي بئس البديل الذي ارتضوه لأنفسهم وهو الكفر بما أنزل الله. {بَغْيًا} يعني حسداً وعدواناً. {أَنْ يُنَزِّلَ اللَّهُ مِنْ فَضْلِهِ عَلَى مَنْ يَشَاءُ مِنْ عِبَادِهِ} يعني محمداً اختاره الله واصطفاه بالرسالة فحسدوه لكونه من العرب. {فَبَاءُوا بِغَضَبٍ عَلَى غَضَبٍ} يقول: فرجعوا متحمّلين غضباً من الله على غضب سابق. قال ابن عباس: فالغضب الأول حين غضب عليهم بكفرهم بالتوراة وتبديلها، والثاني حين غضب عليهم بكفرهم بمحمد صلى الله عليه وسلم. {وَلِلْكَافِرِينَ عَذَابٌ مُهِينٌ} يقول: وللجاحدين نبوة محمد من اليهود عذاب يُهينهم ويُذلّهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-90', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-91">
+                <div class="ayah-text">وَإِذَا قِیلَ لَهُمۡ ءَامِنُو<span class="tj-slt">ا۟</span> بِمَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">نز</span>َلَ <span class="tj-slt">ٱ</span>للَّهُ قَالُو<span class="tj-slt">ا۟</span> نُؤۡمِنُ بِمَ<span class="tj-mdd">اۤ</span> أُ<span class="tj-khf">نز</span>ِلَ عَلَیۡنَا وَیَكۡفُرُونَ بِمَا وَرَ<span class="tj-mdd">اۤ</span>ءَهُۥ وَهُوَ <span class="tj-slt">ٱ</span>لۡحَقُّ مُصَدِّ<span class="tj-dgm">قࣰا لِّ</span>مَا مَعَهُمۡۗ قُلۡ فَلِمَ تَ<span class="tj-qlq">قۡ</span>تُلُونَ أَ<span class="tj-qlb">نۢبِ</span>یَ<span class="tj-mdd">اۤ</span>ءَ <span class="tj-slt">ٱ</span>للَّهِ مِ<span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لُ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">نت</span>ُم <span class="tj-ghn">مُّ</span>ؤۡمِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يبيّن الله تناقض اليهود إذ يدّعون الإيمان بما أنزل عليهم ويكفرون بالقرآن المصدّق لما معهم، ويلزمهم الحجة بأنهم لو صدقوا لما قتلوا الأنبياء.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-91">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-91">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-91">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-91">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-91">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-91">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-91">{وَإِذَا قِيلَ لَهُمْ آمِنُوا بِمَا أَنْزَلَ اللَّهُ} أي: بالقرآن وما فيه {قَالُوا نُؤْمِنُ بِمَا أُنْزِلَ عَلَيْنَا} أي: نكتفي بالتوراة {وَيَكْفُرُونَ بِمَا وَرَاءَهُ} أي: بما سوى ذلك كالقرآن والإنجيل {وَهُوَ الْحَقُّ مُصَدِّقًا لِمَا مَعَهُمْ} أي: والقرآن هو الحق الذي يوافق ما عندهم ولا يخالفه في أصوله. {قُلْ فَلِمَ تَقْتُلُونَ أَنْبِيَاءَ اللَّهِ مِنْ قَبْلُ إِنْ كُنْتُمْ مُؤْمِنِينَ} أي: إن كنتم صادقين في إيمانكم بما أنزل عليكم فلِمَ قتلتم الأنبياء الذين أمرتكم التوراة باتباعهم؟ فهذا يدل على كذبهم في دعوى الإيمان بالتوراة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-91', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-91">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-91">{وَإِذَا قِيلَ لَهُمْ آمِنُوا بِمَا أَنْزَلَ اللَّهُ} يعني القرآن وغيره مما أنزل الله {قَالُوا نُؤْمِنُ بِمَا أُنْزِلَ عَلَيْنَا} يعني التوراة فقط. {وَيَكْفُرُونَ بِمَا وَرَاءَهُ} أي بما بعده من الكتب المنزلة. {وَهُوَ الْحَقُّ مُصَدِّقًا لِمَا مَعَهُمْ} والحال أن هذا القرآن هو الحق الموافق لما معهم من التوراة. ثم ألزمهم الحجة بقوله: {قُلْ فَلِمَ تَقْتُلُونَ أَنْبِيَاءَ اللَّهِ مِنْ قَبْلُ إِنْ كُنْتُمْ مُؤْمِنِينَ} يعني: إن كنتم صادقين في إيمانكم بما أنزل عليكم فلمَ قتلتم الأنبياء الذين جاءوكم بتصديق التوراة والعمل بأحكامها؟ فقتلكم إياهم دليل على عدم إيمانكم حتى بما تزعمون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-91', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-91">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-91">{وَإِذَا قِيلَ لَهُمْ آمِنُوا بِمَا أَنْزَلَ اللَّهُ} يعني القرآن {قَالُوا نُؤْمِنُ بِمَا أُنْزِلَ عَلَيْنَا} يعني التوراة. {وَيَكْفُرُونَ بِمَا وَرَاءَهُ} أي بما سواه من الكتب. {وَهُوَ الْحَقُّ} يعني القرآن هو الحق {مُصَدِّقًا لِمَا مَعَهُمْ} أي موافقاً لما في التوراة من التوحيد وصفة النبي. ثم ألزمهم الله الحجة فقال: {قُلْ فَلِمَ تَقْتُلُونَ أَنْبِيَاءَ اللَّهِ مِنْ قَبْلُ إِنْ كُنْتُمْ مُؤْمِنِينَ} أي: لو كنتم مؤمنين بالتوراة حقاً ما قتلتم الأنبياء، لأن التوراة تأمركم باتباعهم لا بقتلهم. فكيف تدّعون الإيمان بالتوراة وأنتم تقتلون من أمرتكم التوراة بطاعته؟</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-91', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-91">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-91">قوله تعالى: {وَإِذَا قِيلَ لَهُمْ آمِنُوا بِمَا أَنْزَلَ اللَّهُ} عام في القرآن وغيره. {قَالُوا نُؤْمِنُ بِمَا أُنْزِلَ عَلَيْنَا} أي التوراة خاصة. {وَيَكْفُرُونَ بِمَا وَرَاءَهُ} أي بما سواه من الكتب. {وَهُوَ الْحَقُّ مُصَدِّقًا لِمَا مَعَهُمْ} جملة حالية تبيّن أن ما كفروا به هو الحق الموافق لكتابهم. {قُلْ فَلِمَ تَقْتُلُونَ أَنْبِيَاءَ اللَّهِ مِنْ قَبْلُ إِنْ كُنْتُمْ مُؤْمِنِينَ} إلزام لهم وقطع لحجتهم، أي: إن كنتم تؤمنون بالتوراة فالتوراة لا تأمر بقتل الأنبياء، فلِمَ قتلتموهم؟ فهذا يدل على كذبهم في دعوى الإيمان بالتوراة أيضاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-91', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-91">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-91">يقول تعالى: وإذا قيل لهؤلاء اليهود آمنوا بما أنزل الله من القرآن وغيره قالوا: نحن نؤمن بما أنزل علينا يعنون التوراة، ويكفرون بما وراءه أي بما سوى التوراة. قال الله: {وَهُوَ الْحَقُّ مُصَدِّقًا لِمَا مَعَهُمْ} يعني أن القرآن الحق مصدقاً لما في أيديهم من التوراة. ثم احتج عليهم بقوله: {قُلْ فَلِمَ تَقْتُلُونَ أَنْبِيَاءَ اللَّهِ مِنْ قَبْلُ إِنْ كُنْتُمْ مُؤْمِنِينَ} يعني: فإن كنتم صادقين في دعواكم الإيمان بالتوراة فلأي شيء قتلتم أنبياء الله الذين أمرتكم التوراة باتباعهم وتصديقهم؟ وهذا إلزام لا محيد لهم عنه يكشف كذب دعواهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-91', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-92">
+                <div class="ayah-text">۞ وَلَقَ<span class="tj-qlq">دۡ</span> جَ<span class="tj-mdd">اۤ</span>ءَكُم <span class="tj-ghn">مُّ</span>وسَ<span class="tj-mdd">ىٰ</span> بِ<span class="tj-slt">ٱ</span>لۡبَیِّنَ<span class="tj-mdd">ـٰ</span>تِ ثُ<span class="tj-ghn">مَّ</span> <span class="tj-slt">ٱ</span>تَّخَذۡتُمُ <span class="tj-slt">ٱ</span>لۡعِ<span class="tj-qlq">جۡ</span>لَ مِ<span class="tj-qlb">نۢ بَ</span>عۡدِهِۦ وَأَ<span class="tj-khf">نت</span>ُمۡ ظَ<span class="tj-mdd">ـٰ</span>لِمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يذكّر الله بني إسرائيل بأن موسى جاءهم بالآيات البينات والمعجزات الواضحة، ثم اتخذوا العجل معبودا من بعده وهم ظالمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-92">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-92">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-92">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-92">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-92">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-92">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-92">{وَلَقَدْ جَاءَكُمْ مُوسَى بِالْبَيِّنَاتِ} أي: بالمعجزات الواضحة والآيات الباهرة كالعصا واليد البيضاء وفلق البحر وغيرها. {ثُمَّ اتَّخَذْتُمُ الْعِجْلَ مِنْ بَعْدِهِ} أي: من بعد ذهابه لميقات ربه عبدتم العجل. {وَأَنْتُمْ ظَالِمُونَ} أي: ظالمون لأنفسكم بالشرك بعد أن رأيتم الآيات الواضحة التي لا تدع مجالاً للشك. وهذا تذكير لهم بعظيم جرمهم حين عبدوا العجل بعد كل ما رأوه من آيات الله الباهرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-92', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-92">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-92">{وَلَقَدْ جَاءَكُمْ مُوسَى بِالْبَيِّنَاتِ} أي بالآيات الواضحات والمعجزات الباهرات كالطوفان والجراد والقمّل والضفادع والدم واليد والعصا وفلق البحر وتظليل الغمام وغير ذلك. {ثُمَّ اتَّخَذْتُمُ الْعِجْلَ مِنْ بَعْدِهِ} أي: من بعد ذهاب موسى لميقات ربه عبدتم العجل الذي صاغه لكم السامري. {وَأَنْتُمْ ظَالِمُونَ} أي: وأنتم بذلك ظالمون لأنفسكم بعبادة غير الله بعد أن شاهدتم ما شاهدتم من الآيات الدالة على وحدانية الله تعالى.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-92', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-92">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-92">{وَلَقَدْ جَاءَكُمْ مُوسَى بِالْبَيِّنَاتِ} قال ابن عباس: بالآيات البيّنات يعني العصا واليد وفلق البحر والحجر والجراد والقمّل والضفادع والدم والطوفان. {ثُمَّ اتَّخَذْتُمُ الْعِجْلَ} أي عبدتم العجل الذي صنعه السامري من حليّهم {مِنْ بَعْدِهِ} أي من بعد ذهاب موسى إلى الطور لمناجاة ربه. {وَأَنْتُمْ ظَالِمُونَ} أي واضعون العبادة في غير موضعها، وذلك أعظم الظلم وهو الشرك بالله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-92', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-92">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-92">قوله تعالى: {وَلَقَدْ جَاءَكُمْ مُوسَى بِالْبَيِّنَاتِ} أي بالمعجزات الواضحات التسع وهي: الطوفان والجراد والقمّل والضفادع والدم والعصا واليد وفلق البحر وإظلال الجبل. {ثُمَّ اتَّخَذْتُمُ الْعِجْلَ مِنْ بَعْدِهِ} أي اتخذتموه إلهاً تعبدونه من بعد ذهاب موسى إلى ميقات ربه. {وَأَنْتُمْ ظَالِمُونَ} جملة حالية، أي: وأنتم في حال ظلم عظيم وشرك بالله، لأن الشرك ظلم عظيم كما قال تعالى: {إِنَّ الشِّرْكَ لَظُلْمٌ عَظِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-92', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-92">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-92">يقول تعالى: ولقد جاءكم يا معشر اليهود موسى بالآيات البيّنات والحجج الواضحات من العصا واليد والطوفان وفلق البحر وغيرها. {ثُمَّ اتَّخَذْتُمُ الْعِجْلَ} يعني عبدتم العجل الذي صنعه السامري {مِنْ بَعْدِهِ} أي من بعد ذهاب موسى إلى ميقات ربه. {وَأَنْتُمْ ظَالِمُونَ} أي: وأنتم بفعلكم ذلك واضعون للعبادة في غير موضعها، فعبدتم عجلاً من ذهب لا يضرّ ولا ينفع بعد أن رأيتم من آيات الله ما فيه أوضح دلالة على ألوهيته وحده.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-92', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-93">
+                <div class="ayah-text">وَإِذۡ أَخَذۡنَا مِیثَ<span class="tj-mdd">ـٰ</span>قَكُمۡ وَرَفَعۡنَا فَوۡقَكُمُ <span class="tj-slt">ٱلطُّ</span>ورَ خُذُو<span class="tj-slt">ا۟</span> مَ<span class="tj-mdd">اۤ</span> ءَاتَیۡنَ<span class="tj-mdd">ـٰ</span>كُم بِقُوَّ<span class="tj-dgm">ةࣲ وَ</span><span class="tj-slt">ٱ</span>سۡمَعُو<span class="tj-slt">ا۟</span>ۖ قَالُو<span class="tj-slt">ا۟</span> سَمِعۡنَا وَعَصَیۡنَا وَأُشۡرِبُو<span class="tj-slt">ا۟</span> فِی قُلُوبِهِمُ <span class="tj-slt">ٱ</span>لۡعِ<span class="tj-qlq">جۡ</span>لَ بِكُفۡرِهِمۡۚ قُلۡ بِئۡسَمَا یَأۡمُرُكُم بِهِۦۤ إِیمَ<span class="tj-mdd">ـٰ</span>نُكُمۡ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">نت</span>ُم <span class="tj-ghn">مُّ</span>ؤۡمِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تذكير بني إسرائيل بنقضهم الميثاق بعد رفع الطور فوقهم، حيث قالوا سمعنا وعصينا، وأُشربت قلوبهم حب العجل بسبب كفرهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-93">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-93">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-93">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-93">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-93">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-93">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-93">{وَإِذْ أَخَذْنَا مِيثَاقَكُمْ وَرَفَعْنَا فَوْقَكُمُ الطُّورَ} أي: واذكروا حين أخذ الله ميثاقكم بالعمل بما في التوراة ورفع الجبل فوقكم تخويفاً لكم. {خُذُوا مَا آتَيْنَاكُمْ بِقُوَّةٍ} أي: بجدّ واجتهاد ومبادرة {وَاسْمَعُوا} أي: سماع طاعة وانقياد. {قَالُوا سَمِعْنَا وَعَصَيْنَا} أي: سمعنا قولك لكن عصينا أمرك، وهذا غاية التمرد والعناد. {وَأُشْرِبُوا فِي قُلُوبِهِمُ الْعِجْلَ بِكُفْرِهِمْ} أي: تشرّبت قلوبهم حب العجل حتى تمكّن من قلوبهم كما يتمكّن الشراب من الجسد. {قُلْ بِئْسَمَا يَأْمُرُكُمْ بِهِ إِيمَانُكُمْ إِنْ كُنْتُمْ مُؤْمِنِينَ} أي: بئس هذا الإيمان الذي يأمركم بعبادة العجل ونقض المواثيق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-93', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-93">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-93">{وَإِذْ أَخَذْنَا مِيثَاقَكُمْ وَرَفَعْنَا فَوْقَكُمُ الطُّورَ} يذكّرهم بالميثاق الذي أخذه عليهم ورفع الطور فوقهم حين أبَوا قبول التوراة فخوّفهم بإسقاطه عليهم. {خُذُوا مَا آتَيْنَاكُمْ بِقُوَّةٍ} أي: بجدّ واجتهاد {وَاسْمَعُوا} أي: اسمعوا سماع قبول وطاعة. {قَالُوا سَمِعْنَا وَعَصَيْنَا} أي: سمعنا ما قلت ولكننا لا نطيع، وهذا منتهى العناد. {وَأُشْرِبُوا فِي قُلُوبِهِمُ الْعِجْلَ بِكُفْرِهِمْ} أي: تشرّبت قلوبهم حب عبادة العجل فتمكّن منها. قال ابن عباس ومجاهد والربيع بن أنس: أي تشرّبوا حبّ العجل في قلوبهم كما يتشرّب الإسفنج الماء. {قُلْ بِئْسَمَا يَأْمُرُكُمْ بِهِ إِيمَانُكُمْ إِنْ كُنْتُمْ مُؤْمِنِينَ} أي: بئس إيمان يأمركم بهذا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-93', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-93">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-93">{وَإِذْ أَخَذْنَا مِيثَاقَكُمْ} بالعمل بما في التوراة {وَرَفَعْنَا فَوْقَكُمُ الطُّورَ} وذلك أنهم أبَوا قبول أحكام التوراة فرفع الله الجبل فوقهم كالظلّة حتى قبلوا. {خُذُوا مَا آتَيْنَاكُمْ بِقُوَّةٍ} بجدّ واجتهاد {وَاسْمَعُوا} سماع طاعة وقبول. {قَالُوا سَمِعْنَا وَعَصَيْنَا} قال قتادة: سمعوا قول الله وعصوا أمره. {وَأُشْرِبُوا فِي قُلُوبِهِمُ الْعِجْلَ} أي: حبّ العجل، أي خالط حبّه قلوبهم كما يخالط الشراب البدن. والإشراب أبلغ من السقي لأنه يدل على التشبّع والتمكّن. {بِكُفْرِهِمْ} أي بسبب كفرهم. {قُلْ بِئْسَمَا يَأْمُرُكُمْ بِهِ إِيمَانُكُمْ} هذا ردّ على قولهم {نُؤْمِنُ بِمَا أُنْزِلَ عَلَيْنَا}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-93', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-93">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-93">قوله تعالى: {وَإِذْ أَخَذْنَا مِيثَاقَكُمْ وَرَفَعْنَا فَوْقَكُمُ الطُّورَ} وذلك أن موسى لما جاءهم بالتوراة وفيها تكاليف شاقّة أبَوا قبولها، فرفع الله فوقهم الجبل كالظلّة وقيل لهم: خذوا ما آتيناكم بقوّة وإلا أرسلناه عليكم. {خُذُوا مَا آتَيْنَاكُمْ بِقُوَّةٍ} أي بجدّ واجتهاد. {وَاسْمَعُوا} أي: اسمعوا سماع قبول وطاعة. {قَالُوا سَمِعْنَا وَعَصَيْنَا} أي: سمعنا قولك وعصينا أمرك. {وَأُشْرِبُوا فِي قُلُوبِهِمُ الْعِجْلَ} أي حبّ العجل فحُذف المضاف وأُقيم المضاف إليه مقامه. والإشراب التداخل والتمكّن. {قُلْ بِئْسَمَا يَأْمُرُكُمْ بِهِ إِيمَانُكُمْ} تكذيب لادّعائهم الإيمان بالتوراة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-93', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-93">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-93">يقول تعالى: واذكروا إذ أخذنا عليكم العهد بالعمل بما في التوراة ورفعنا فوقكم الجبل. {خُذُوا مَا آتَيْنَاكُمْ بِقُوَّةٍ} أي خذوا التوراة بجدّ ونشاط {وَاسْمَعُوا} أي اسمعوا ما تُؤمرون به سماع طاعة وقبول. {قَالُوا سَمِعْنَا وَعَصَيْنَا} فأظهروا بألسنتهم القبول وأبطنوا الرفض والعصيان. {وَأُشْرِبُوا فِي قُلُوبِهِمُ الْعِجْلَ بِكُفْرِهِمْ} يعني أُشربوا في قلوبهم حبّ العجل حتى تمكّن من قلوبهم وخالطها كما يخالط الشراب البدن، وذلك بسبب كفرهم بالله. {قُلْ بِئْسَمَا يَأْمُرُكُمْ بِهِ إِيمَانُكُمْ} أي بئس الإيمان إيمان يأمر صاحبه بعبادة العجل ونقض المواثيق وقتل الأنبياء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-93', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-94">
+                <div class="ayah-text">قُلۡ إِ<span class="tj-khf">ن</span> كَانَتۡ لَكُمُ <span class="tj-slt">ٱلدَّ</span>ارُ <span class="tj-slt">ٱ</span>لۡـَٔاخِرَةُ عِ<span class="tj-khf">ند</span>َ <span class="tj-slt">ٱ</span>للَّهِ خَالِصَ<span class="tj-dgm">ةࣰ</span> <span class="tj-ghn">مِّ</span>ن دُونِ <span class="tj-slt">ٱلنَّ</span>اسِ فَتَمَ<span class="tj-ghn">نَّ</span>وُ<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡمَوۡتَ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">نت</span>ُمۡ صَ<span class="tj-mdd">ـٰ</span>دِقِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تحدّي اليهود بأن يتمنوا الموت إن كانوا صادقين في دعواهم أن الجنة خالصة لهم من دون الناس، فامتنعوا لعلمهم بما قدمت أيديهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-94">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-94">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-94">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-94">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-94">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-94">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-94">{قُلْ إِنْ كَانَتْ لَكُمُ الدَّارُ الْآخِرَةُ عِنْدَ اللَّهِ خَالِصَةً مِنْ دُونِ النَّاسِ} أي: زعمتم أن الجنة لكم خاصة دون غيركم من الناس. {فَتَمَنَّوُا الْمَوْتَ إِنْ كُنْتُمْ صَادِقِينَ} أي: فإذا كنتم على يقين أن الآخرة لكم فتمنّوا الموت، لأن من أيقن أنه من أهل الجنة أحبّ الانتقال إليها. وهذا تحدٍّ لهم بأمر يسير وهو مجرد التمني بالقلب، فلو تمنّوه لماتوا كما جاء في الحديث، لكنهم لم يتمنّوه لعلمهم بكذبهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-94', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-94">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-94">{قُلْ إِنْ كَانَتْ لَكُمُ الدَّارُ الْآخِرَةُ عِنْدَ اللَّهِ خَالِصَةً مِنْ دُونِ النَّاسِ} أي: إن زعمتم أن الجنة لكم دون الناس كما في قولهم: {لَنْ يَدْخُلَ الْجَنَّةَ إِلَّا مَنْ كَانَ هُودًا أَوْ نَصَارَى}. {فَتَمَنَّوُا الْمَوْتَ إِنْ كُنْتُمْ صَادِقِينَ} فمن تيقّن أنه من أهل الجنة تمنّى الموت ليصل إليها. وهذا من أعظم الأدلة على كذبهم في دعواهم، فإنهم لو تمنّوا الموت لماتوا كما قال النبي صلى الله عليه وسلم: «والذي نفسي بيده لو تمنّوه ما بقي على الأرض يهودي إلا مات». فهذا إعجاز نبوي وقرآني حيث تحدّاهم بأمر وعلم أنهم لن يفعلوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-94', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-94">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-94">{قُلْ إِنْ كَانَتْ لَكُمُ الدَّارُ الْآخِرَةُ عِنْدَ اللَّهِ خَالِصَةً مِنْ دُونِ النَّاسِ} يعني الجنة، وذلك أنهم قالوا: {لَنْ يَدْخُلَ الْجَنَّةَ إِلَّا مَنْ كَانَ هُودًا أَوْ نَصَارَى} فادّعوا أن الجنة لهم خاصة. {فَتَمَنَّوُا الْمَوْتَ إِنْ كُنْتُمْ صَادِقِينَ} يعني: إن كنتم على يقين أن الآخرة لكم فأحبّوا الموت وتمنّوه لتنتقلوا إلى ما أعدّ لكم. قال النبي صلى الله عليه وسلم: «لو تمنّوا الموت لغصّ كلّ إنسان بريقه فمات مكانه». فامتنعوا عن التمني لعلمهم بكذب دعواهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-94', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-94">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-94">قوله تعالى: {قُلْ إِنْ كَانَتْ لَكُمُ الدَّارُ الْآخِرَةُ} أي الجنة {عِنْدَ اللَّهِ خَالِصَةً مِنْ دُونِ النَّاسِ} كما زعمتم أنكم أبناء الله وأحبّاؤه وأنكم أولى بالجنة. {فَتَمَنَّوُا الْمَوْتَ} يعني فاطلبوا الموت وأحبّوه وارغبوا فيه، فإن من تيقّن أنه صائر إلى نعيم مقيم فالموت أحبّ إليه من الحياة. {إِنْ كُنْتُمْ صَادِقِينَ} في دعواكم. وهذا تحدٍّ عظيم لهم، فإن الله تعالى علم أنهم لن يتمنّوه أبداً فتحدّاهم به إظهاراً لكذبهم، وفي هذا معجزة للنبي صلى الله عليه وسلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-94', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-94">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-94">يقول تعالى لنبيه: {قُلْ} يا محمد لهؤلاء اليهود {إِنْ كَانَتْ لَكُمُ الدَّارُ الْآخِرَةُ عِنْدَ اللَّهِ خَالِصَةً مِنْ دُونِ النَّاسِ} أي: إن كانت الجنة لكم خاصة دون سائر الناس كما تزعمون. {فَتَمَنَّوُا الْمَوْتَ إِنْ كُنْتُمْ صَادِقِينَ} يعني: فإذا كنتم تعلمون أنكم أهل الجنة فتمنّوا لقاء الله والانتقال إليه. وإنما أمرهم بتمني الموت لأن من علم أنه من أهل الجنة كان الموت أحبّ إليه من الحياة. وهذا دليل قاطع على كذبهم لأنهم لم يتمنّوه قط.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-94', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-95">
+                <div class="ayah-text">وَلَ<span class="tj-dgm">ن</span> یَتَمَ<span class="tj-ghn">نَّ</span>وۡهُ أَبَدَ<span class="tj-qlb">ۢا بِ</span>مَا قَدَّمَتۡ أَیۡدِیهِمۡۚ وَ<span class="tj-slt">ٱ</span>للَّهُ عَلِیمُ<span class="tj-qlb">ۢ بِ</span><span class="tj-slt">ٱلظَّ</span><span class="tj-mdd">ـٰ</span>لِمِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يخبر الله أن اليهود لن يتمنوا الموت أبدا بسبب ما قدمت أيديهم من الكفر والمعاصي، والله عليم بالظالمين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-95">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-95">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-95">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-95">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-95">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-95">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-95">{وَلَنْ يَتَمَنَّوْهُ أَبَدًا بِمَا قَدَّمَتْ أَيْدِيهِمْ} أي: لن يتمنّوا الموت أبداً لعلمهم بما ارتكبوا من الكفر والمعاصي وأنهم يستحقون العقوبة لا الثواب. وفي هذا إعجاز قرآني حيث أخبر الله أنهم لن يتمنّوه فلم يتمنّه أحد منهم قط. {وَاللَّهُ عَلِيمٌ بِالظَّالِمِينَ} أي: عليم بأحوالهم وأعمالهم لا يخفى عليه شيء من ظلمهم، وفيه وعيد وتهديد لهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-95', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-95">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-95">{وَلَنْ يَتَمَنَّوْهُ أَبَدًا بِمَا قَدَّمَتْ أَيْدِيهِمْ} يخبر تعالى أنهم لن يتمنّوا الموت أبداً بسبب ما قدّمت أيديهم من الكفر والظلم وتحريف الكتاب وقتل الأنبياء وغير ذلك من الذنوب. فعلمهم بسوء ما قدّموا يمنعهم من تمنّي الموت لأنهم يعلمون أنهم يصيرون إلى العذاب. وقد صدق الله تعالى فيما أخبر فلم يتمنّه أحد منهم قط، وفي ذلك آية ومعجزة ظاهرة. {وَاللَّهُ عَلِيمٌ بِالظَّالِمِينَ} أي: محيط بأعمالهم ومجازيهم عليها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-95', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-95">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-95">{وَلَنْ يَتَمَنَّوْهُ أَبَدًا} أي لن يتمنّوا الموت أبداً، وهذا إخبار من الله بالغيب أنهم لن يفعلوا ذلك. {بِمَا قَدَّمَتْ أَيْدِيهِمْ} أي بسبب ما اقترفوه من الذنوب والمعاصي وتكذيب الأنبياء وتحريف التوراة، فهم يعلمون أنهم كاذبون في دعواهم وأنهم ليسوا من أهل الجنة. {وَاللَّهُ عَلِيمٌ بِالظَّالِمِينَ} أي: بأحوالهم وأعمالهم لا يخفى عليه شيء، وهذا وعيد لهم بالجزاء على ظلمهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-95', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-95">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-95">قوله تعالى: {وَلَنْ يَتَمَنَّوْهُ أَبَدًا} «لن» لنفي المستقبل، و«أبداً» تأكيد لذلك النفي، فأخبر الله أنهم لن يتمنّوا الموت في المستقبل أبداً. وهذا من الإعجاز القرآني لأنه إخبار بالمستقبل وقد وقع كما أخبر. {بِمَا قَدَّمَتْ أَيْدِيهِمْ} أي بسبب ما اقترفوه من المعاصي والكفر بالأنبياء وتبديل التوراة وعبادة العجل. وإسناد التقديم لليد مع أن الذنوب قد تكون بالقلب واللسان وغيرهما لأن أكثر الأعمال باليد فعبّر بها عن جميع الأعمال. {وَاللَّهُ عَلِيمٌ بِالظَّالِمِينَ} وعيد لهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-95', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-95">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-95">يقول تعالى: {وَلَنْ يَتَمَنَّوْهُ أَبَدًا} أي: لن يتمنّى اليهود الموت أبداً ما بقوا. {بِمَا قَدَّمَتْ أَيْدِيهِمْ} يعني: بما سلف منهم من الكفر بالله وتكذيب رسله وتحريف كتابه وقتل أنبيائه. فلعلمهم بما اجترحوا من السيّئات وأنهم يصيرون إلى عذاب الله لا يجرؤون على تمنّي الموت. وهذا خبر من الله عن أمر مستقبل وقع كما أخبر. {وَاللَّهُ عَلِيمٌ بِالظَّالِمِينَ} أي: والله ذو علم بالمعتدين على حدوده الجاحدين لنعمه وسيجازيهم بما يستحقون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-95', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-96">
+                <div class="ayah-text">وَلَتَجِدَ<span class="tj-ghn">نَّ</span>هُمۡ أَحۡرَصَ <span class="tj-slt">ٱلنَّ</span>اسِ عَلَ<span class="tj-mdd">ىٰ</span> حَیَ<span class="tj-mdd">وٰ</span><span class="tj-dgm">ةࣲ وَ</span>مِنَ <span class="tj-slt">ٱلَّ</span>ذِینَ أَشۡرَكُو<span class="tj-slt">ا۟</span>ۚ یَوَدُّ أَحَدُهُمۡ لَوۡ یُعَ<span class="tj-ghn">مَّ</span>رُ أَلۡفَ سَنَ<span class="tj-dgm">ةࣲ وَ</span>مَا هُوَ بِمُزَحۡزِحِهِۦ مِنَ <span class="tj-slt">ٱ</span>لۡعَذَابِ أَ<span class="tj-dgm">ن</span> یُعَ<span class="tj-ghn">مَّ</span>رَۗ وَ<span class="tj-slt">ٱ</span>للَّهُ بَصِیرُ<span class="tj-qlb">ۢ بِ</span>مَا یَعۡمَلُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">اليهود أحرص الناس على الحياة حتى من المشركين، يودّ أحدهم لو يُعمَّر ألف سنة، ولن ينجيه ذلك من العذاب، والله بصير بما يعملون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-96">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-96">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-96">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-96">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-96">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-96">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-96">{وَلَتَجِدَنَّهُمْ أَحْرَصَ النَّاسِ عَلَى حَيَاةٍ} أي: وستجدهم يا محمد أشدّ الناس حرصاً على البقاء في الدنيا. {وَمِنَ الَّذِينَ أَشْرَكُوا} أي: وأحرص حتى من المشركين الذين لا يؤمنون بآخرة أصلاً، وهذا يدلّ على أن اليهود أسوأ حالاً من المشركين لأنهم يعلمون ما ينتظرهم. {يَوَدُّ أَحَدُهُمْ لَوْ يُعَمَّرُ أَلْفَ سَنَةٍ} أي: يتمنّى أن يعيش ألف سنة وهذا كناية عن شدّة حرصهم على الحياة. {وَمَا هُوَ بِمُزَحْزِحِهِ مِنَ الْعَذَابِ أَنْ يُعَمَّرَ} أي: وليس التعمير بمُبعده عن العذاب شيئاً. {وَاللَّهُ بَصِيرٌ بِمَا يَعْمَلُونَ} وعيد لهم بالمجازاة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-96', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-96">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-96">{وَلَتَجِدَنَّهُمْ أَحْرَصَ النَّاسِ عَلَى حَيَاةٍ} أي: أحرص الناس على البقاء في الدنيا. والتنكير في «حياة» للدلالة على أنهم يرضون بأي حياة مهما كانت ذليلة. {وَمِنَ الَّذِينَ أَشْرَكُوا} أي: وأحرص من المشركين على الحياة، لأن المشركين لا يعلمون ماذا بعد الموت، أما اليهود فيعلمون ما ينتظرهم من العذاب بكفرهم فهم أحرص. {يَوَدُّ أَحَدُهُمْ لَوْ يُعَمَّرُ أَلْفَ سَنَةٍ} قال ابن أبي حاتم: هو قول المجوس: «زه هزار سال» يعني: عِش ألف سنة. {وَمَا هُوَ بِمُزَحْزِحِهِ مِنَ الْعَذَابِ أَنْ يُعَمَّرَ} أي: حتى لو عُمّر ما أنقذه ذلك من العذاب. {وَاللَّهُ بَصِيرٌ بِمَا يَعْمَلُونَ} تهديد لهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-96', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-96">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-96">{وَلَتَجِدَنَّهُمْ أَحْرَصَ النَّاسِ عَلَى حَيَاةٍ} أي: أشدّ الناس رغبة في البقاء في الدنيا. ونكّر «حياة» ليدلّ على أنهم يحرصون على أي حياة كانت. {وَمِنَ الَّذِينَ أَشْرَكُوا} أي: وأحرص من المشركين الذين لا يؤمنون ببعث ولا حساب، فاليهود أحرص منهم لأنهم يعلمون ما أعدّ لهم. {يَوَدُّ أَحَدُهُمْ لَوْ يُعَمَّرُ أَلْفَ سَنَةٍ} قيل: هو قولهم «هزار سال» يعني عش ألف عام. {وَمَا هُوَ بِمُزَحْزِحِهِ مِنَ الْعَذَابِ أَنْ يُعَمَّرَ} أي: لو عمّره الله ألف سنة لم ينجه ذلك من العذاب. {وَاللَّهُ بَصِيرٌ بِمَا يَعْمَلُونَ} وعيد وتهديد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-96', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-96">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-96">قوله تعالى: {وَلَتَجِدَنَّهُمْ أَحْرَصَ النَّاسِ عَلَى حَيَاةٍ} اللام للقسم والنون للتأكيد. وإنما نكّر «حياة» لأنهم يحرصون على أيّ حياة ولو كانت ذليلة ممتهنة. {وَمِنَ الَّذِينَ أَشْرَكُوا} أي: أحرص من المشركين. وقيل: المعنى ومن الذين أشركوا قوم يودّ أحدهم لو يُعمَّر ألف سنة، وهم المجوس الذين كانوا يقولون: عش ألف عام. {يَوَدُّ أَحَدُهُمْ لَوْ يُعَمَّرُ أَلْفَ سَنَةٍ} ألف هنا ليس للحصر بل للتكثير. {وَمَا هُوَ بِمُزَحْزِحِهِ مِنَ الْعَذَابِ أَنْ يُعَمَّرَ} الزحزحة: الإبعاد والتنحية. أي: لو عُمّر لم يُنْجِه ذلك. {وَاللَّهُ بَصِيرٌ بِمَا يَعْمَلُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-96', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-96">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-96">يقول تعالى: {وَلَتَجِدَنَّهُمْ} يا محمد {أَحْرَصَ النَّاسِ عَلَى حَيَاةٍ} أي: أحرص من كل أحد على البقاء في الدنيا والتمتع بها. {وَمِنَ الَّذِينَ أَشْرَكُوا} أي: وأحرص من المشركين على الحياة. وإنما كانوا كذلك لأنهم قد علموا ما لهم في الآخرة من العذاب بسبب جحدهم بنبوة محمد وهم يعرفونه. {يَوَدُّ أَحَدُهُمْ لَوْ يُعَمَّرُ أَلْفَ سَنَةٍ} أي: يتمنى الواحد منهم لو بقي في الدنيا ألف سنة. {وَمَا هُوَ بِمُزَحْزِحِهِ مِنَ الْعَذَابِ أَنْ يُعَمَّرَ} أي: وليس التعمير بمبعده عن عذاب الله شيئاً. {وَاللَّهُ بَصِيرٌ بِمَا يَعْمَلُونَ} تهديد ووعيد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-96', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-97">
+                <div class="ayah-text">قُلۡ مَ<span class="tj-khf">ن</span> كَانَ عَدُ<span class="tj-dgm">وࣰّا لِّ</span>جِ<span class="tj-qlq">بۡ</span>رِیلَ فَإِ<span class="tj-ghn">نَّ</span>هُۥ نَزَّلَهُۥ عَلَ<span class="tj-mdd">ىٰ</span> قَلۡبِكَ بِإِذۡنِ <span class="tj-slt">ٱ</span>للَّهِ مُصَدِّ<span class="tj-dgm">قࣰا لِّ</span>مَا بَیۡنَ یَدَیۡهِ وَهُ<span class="tj-dgm">دࣰى</span> وَبُشۡرَ<span class="tj-mdd">ىٰ</span> لِلۡمُؤۡمِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ردّ على اليهود الذين عادوا جبريل، فأخبرهم الله أنه نزّل القرآن على قلب النبي بإذن الله مصدقا لما بين يديه وهدى وبشرى للمؤمنين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-97">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-97">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-97">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-97">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-97">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-97">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-97">{قُلْ مَنْ كَانَ عَدُوًّا لِجِبْرِيلَ} وذلك أن اليهود زعموا أنهم إنما يعادون محمداً لأن الذي ينزل عليه هو جبريل وهو عدوّهم، ولو كان ميكائيل لآمنوا. فردّ الله عليهم: {فَإِنَّهُ نَزَّلَهُ عَلَى قَلْبِكَ بِإِذْنِ اللَّهِ} أي: فإن جبريل إنما نزّل القرآن بإذن الله وأمره، فعداوتهم لجبريل عداوة لله الذي أمره بالتنزيل. {مُصَدِّقًا لِمَا بَيْنَ يَدَيْهِ} أي: موافقاً للكتب السابقة. {وَهُدًى وَبُشْرَى لِلْمُؤْمِنِينَ} أي: هدى يُهتدى به في الظلمات وبشرى بالجنة للمؤمنين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-97', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-97">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-97">{قُلْ مَنْ كَانَ عَدُوًّا لِجِبْرِيلَ} نزلت في اليهود حين قالوا: إن جبريل عدوّنا من الملائكة وميكائيل وليّنا، وذلك أن جبريل ينزل بالعذاب والحرب وميكائيل ينزل بالرحمة والخصب. روى الإمام أحمد عن ابن عباس أن اليهود قالت: يا أبا القاسم نسألك عن أشياء، فقالوا: أيّ الملَكين ينزل عليك؟ قال: جبريل. قالوا: ذاك عدوّنا. فأنزل الله هذه الآية. {فَإِنَّهُ نَزَّلَهُ عَلَى قَلْبِكَ بِإِذْنِ اللَّهِ} أي: فجبريل نزّل القرآن على قلبك بأمر الله لا من عنده. {مُصَدِّقًا لِمَا بَيْنَ يَدَيْهِ} موافقاً للكتب السابقة. {وَهُدًى وَبُشْرَى لِلْمُؤْمِنِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-97', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-97">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-97">{قُلْ مَنْ كَانَ عَدُوًّا لِجِبْرِيلَ} سبب نزولها أن عمر بن الخطاب رضي الله عنه مرّ بمجلس يهود فقال: أيّ الملائكة عندكم؟ قالوا: جبريل وهو عدوّنا، وميكائيل وليّنا. فنزلت الآية. وقيل: إن اليهود قالوا لمحمد: لو كان الذي يأتيك ميكائيل لآمنّا بك لأنه ينزل بالرحمة والغيث، لكن جبريل ينزل بالعذاب والقتال فهو عدوّنا. {فَإِنَّهُ نَزَّلَهُ} أي القرآن {عَلَى قَلْبِكَ بِإِذْنِ اللَّهِ} بأمر الله. {مُصَدِّقًا لِمَا بَيْنَ يَدَيْهِ} موافقاً لما قبله من الكتب. {وَهُدًى} من الضلالة {وَبُشْرَى لِلْمُؤْمِنِينَ} بالجنة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-97', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-97">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-97">قوله تعالى: {قُلْ مَنْ كَانَ عَدُوًّا لِجِبْرِيلَ} سبب نزولها أن اليهود قالوا: جبريل عدوّنا لأنه ينزل بالخسف والعذاب والقتال، وميكائيل ينزل بالخصب والرحمة، ولو كان وليّك ميكائيل لاتبعناك. فبيّن الله أن من عادى جبريل فقد عادى الله لأنه رسوله. {فَإِنَّهُ نَزَّلَهُ عَلَى قَلْبِكَ بِإِذْنِ اللَّهِ} خُصّ القلب بالذكر لأنه موضع العقل والعلم. {مُصَدِّقًا لِمَا بَيْنَ يَدَيْهِ} أي لما تقدّمه من الكتب السماوية. {وَهُدًى} أي رشاداً {وَبُشْرَى لِلْمُؤْمِنِينَ} أي تبشيراً لهم بالجنة والرضوان. وجبريل بمعنى عبد الله بالسريانية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-97', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-97">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-97">يقول تعالى ذكره: قل يا محمد لهؤلاء اليهود الذين زعموا أن جبريل عدوّهم: {مَنْ كَانَ عَدُوًّا لِجِبْرِيلَ فَإِنَّهُ نَزَّلَهُ عَلَى قَلْبِكَ بِإِذْنِ اللَّهِ} أي: فإن جبريل إنما نزّل القرآن على قلبك بأمر الله ووحيه لا من تلقاء نفسه، فمن عاداه فقد عادى الله لأنه لم يفعل إلا ما أمره الله به. {مُصَدِّقًا لِمَا بَيْنَ يَدَيْهِ} يعني موافقاً لما نزل قبله من التوراة والإنجيل والزبور وسائر كتب الله. {وَهُدًى} أي بياناً ودلالة على طريق الحق {وَبُشْرَى لِلْمُؤْمِنِينَ} أي بشارة بالجنة لمن آمن به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-97', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-98">
+                <div class="ayah-text">مَ<span class="tj-khf">ن</span> كَانَ عَدُ<span class="tj-dgm">وࣰّا لِّ</span>لَّهِ وَمَلَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَتِهِۦ وَرُسُلِهِۦ وَجِ<span class="tj-qlq">بۡ</span>رِیلَ وَمِیكَ<span class="tj-mdd">ىٰ</span>لَ فَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ عَدُ<span class="tj-dgm">وࣱّ لِّ</span>لۡكَ<span class="tj-mdd">ـٰ</span>فِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">من عادى الله وملائكته ورسله وجبريل وميكائيل فإن الله عدوّ للكافرين، فعداوة واحد من أولياء الله تستلزم عداوة الله لهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-98">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-98">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-98">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-98">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-98">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-98">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-98">{مَنْ كَانَ عَدُوًّا لِلَّهِ وَمَلَائِكَتِهِ وَرُسُلِهِ وَجِبْرِيلَ وَمِيكَالَ} خصّ جبريل وميكائيل بالذكر بعد العموم تشريفاً لهما ولأنهما سبب الخلاف. {فَإِنَّ اللَّهَ عَدُوٌّ لِلْكَافِرِينَ} أي: فمن عادى واحداً من ملائكة الله ورسله فقد عادى الله جلّ وعلا، ومن عاداه الله فقد خسر خسراناً مبيناً. وفي الآية دليل على أن عداوة بعض الملائكة كعداوة جميعهم، وأن التفريق بين جبريل وميكائيل في الولاية والعداوة باطل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-98', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-98">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-98">{مَنْ كَانَ عَدُوًّا لِلَّهِ وَمَلَائِكَتِهِ وَرُسُلِهِ وَجِبْرِيلَ وَمِيكَالَ} يخبر تعالى أن من عادى شيئاً مما ذكر فقد عادى الجميع، لأن الله يحب ملائكته ورسله، فمن عادى أولياء الله فقد عاداه. وخصّ جبريل وميكائيل بالذكر بعد دخولهما في عموم الملائكة والرسل لشرفهما ولأنهما محلّ الخلاف مع اليهود. {فَإِنَّ اللَّهَ عَدُوٌّ لِلْكَافِرِينَ} أي: فمن عادى أولياء الله فالله عدوّه، ومن كان الله عدوّه فقد خاب وخسر الدنيا والآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-98', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-98">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-98">{مَنْ كَانَ عَدُوًّا لِلَّهِ وَمَلَائِكَتِهِ وَرُسُلِهِ وَجِبْرِيلَ وَمِيكَالَ} أفرد جبريل وميكائيل بالذكر بعد العموم تخصيصاً لشرفهما ولأنهما سبب الخلاف، فاليهود ادّعت أن جبريل عدوّهم وميكائيل وليّهم. فبيّن الله أن من عادى واحداً منهم فقد عادى الجميع. ومعنى ميكائيل: عبيد الله، كما أن جبريل عبد الله، و«إيل» بمعنى الله بالسريانية. {فَإِنَّ اللَّهَ عَدُوٌّ لِلْكَافِرِينَ} أي: من عادى أولياء الله عاداه الله، ومن عاداه الله أهلكه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-98', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-98">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-98">قوله تعالى: {مَنْ كَانَ عَدُوًّا لِلَّهِ} أي لأوليائه فنسب العداوة إلى نفسه تعظيماً لأوليائه. {وَمَلَائِكَتِهِ وَرُسُلِهِ} عطف عام. {وَجِبْرِيلَ وَمِيكَالَ} عطف خاص بعد عام تشريفاً لهما ولكونهما محلّ النزاع. وفي جبريل عشر لغات ذكرها العلماء. وميكائيل ملك الرزق والنبات والمطر. {فَإِنَّ اللَّهَ عَدُوٌّ لِلْكَافِرِينَ} عدل عن الضمير «لهم» إلى الظاهر «للكافرين» ليدلّ على أن عداوة الملائكة كفر، ومن كان الله عدوّه فلا ناصر له ولا معين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-98', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-98">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-98">يقول تعالى: {مَنْ كَانَ عَدُوًّا لِلَّهِ وَمَلَائِكَتِهِ وَرُسُلِهِ وَجِبْرِيلَ وَمِيكَالَ} يبيّن تعالى أن الملائكة كلهم رسل الله فمن عادى واحداً منهم فقد عادى الله ورسله جميعاً. وإنما أُفرد جبريل وميكائيل بالذكر بعد دخولهما في عموم الملائكة لأن اليهود ادّعت أنها توالي ميكائيل وتعادي جبريل. فأعلمهم الله أن من عادى واحداً منهم فقد عادى الجميع. {فَإِنَّ اللَّهَ عَدُوٌّ لِلْكَافِرِينَ} أي: فإن الله معاد لمن كفر به وبرسله وملائكته، ومن عاداه الله لم ينفعه شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-98', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-99">
+                <div class="ayah-text">وَلَقَ<span class="tj-qlq">دۡ</span> أَ<span class="tj-khf">نز</span>َلۡنَ<span class="tj-mdd">اۤ</span> إِلَیۡكَ ءَایَ<span class="tj-mdd">ـٰ</span>تِ<span class="tj-qlb">ۭ بَ</span>یِّنَ<span class="tj-mdd">ـٰ</span>تࣲۖ وَمَا یَكۡفُرُ بِهَ<span class="tj-mdd">اۤ</span> إِلَّا <span class="tj-slt">ٱ</span>لۡفَ<span class="tj-mdd">ـٰ</span>سِقُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٩٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أنزل الله على نبيه آيات بينات واضحات تدل على صدق نبوته، ولا يكفر بها إلا الفاسقون الخارجون عن طاعة الله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-99">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-99">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-99">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-99">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-99">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-99">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-99">{وَلَقَدْ أَنْزَلْنَا إِلَيْكَ آيَاتٍ بَيِّنَاتٍ} أي: واضحات ظاهرات الدلالة على صدق نبوتك وصحة رسالتك، لا يبقى معها لأحد شبهة ولا إشكال. {وَمَا يَكْفُرُ بِهَا إِلَّا الْفَاسِقُونَ} أي: لا يكفر بهذه الآيات البيّنات إلا من خرج عن طاعة الله وفسق عن أمره، لأنها آيات واضحة لا يردّها إلا معاند مستكبر قد فسق عن أمر ربه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-99', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-99">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-99">{وَلَقَدْ أَنْزَلْنَا إِلَيْكَ آيَاتٍ بَيِّنَاتٍ} قال ابن عباس: نزلت في ابن صوريا حين قال: ما جئتنا بشيء، فأنزل الله هذه الآية. والمعنى: لقد أنزلنا إليك يا محمد آيات واضحات الدلالة ظاهرة الحجة. {وَمَا يَكْفُرُ بِهَا إِلَّا الْفَاسِقُونَ} أي: وما يجحد هذه الآيات بعد وضوحها إلا من خرج عن طاعة الله وانسلخ من الإيمان، إذ لا يتصوّر أن يكفر بآيات بيّنات إلا فاسق متمرّد قد تجاوز حدود الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-99', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-99">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-99">{وَلَقَدْ أَنْزَلْنَا إِلَيْكَ آيَاتٍ بَيِّنَاتٍ} أي: دلالات واضحات تدلّ على صدقك ونبوتك. قال ابن عباس: قال ابن صوريا للنبي صلى الله عليه وسلم: يا محمد ما جئتنا بشيء نعرفه، وما أنزل عليك من آية فنتّبعك بها. فأنزل الله هذه الآية. {وَمَا يَكْفُرُ بِهَا إِلَّا الْفَاسِقُونَ} أي: الخارجون عن طاعة الله المتمرّدون على أوامره. والفسق في اللغة: الخروج، يقال: فسقت الرطبة إذا خرجت من قشرها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-99', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-99">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-99">قوله تعالى: {وَلَقَدْ أَنْزَلْنَا إِلَيْكَ آيَاتٍ بَيِّنَاتٍ} أي: علامات واضحات تدلّ على نبوتك. قيل: هي القرآن نفسه، وقيل: هي ما في القرآن من إخبار بمكنونات علومهم وأسرار كتبهم وأحوالهم التي لا يعلمها إلا أحبارهم. {وَمَا يَكْفُرُ بِهَا إِلَّا الْفَاسِقُونَ} أي الخارجون عن أمر الله. وأصل الفسق الخروج عن الشيء، من قولهم: فسقت الرطبة عن قشرها. وفي الآية دليل على أن الكفر بالآيات البيّنات لا يصدر إلا عن فاسق خارج عن حدود الله معاند للحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-99', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-99">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-99">يقول تعالى: {وَلَقَدْ أَنْزَلْنَا إِلَيْكَ} يا محمد {آيَاتٍ بَيِّنَاتٍ} أي أنزلنا إليك في كتابك علامات وحججاً واضحات تدلّ على صدقك ونبوتك. {وَمَا يَكْفُرُ بِهَا إِلَّا الْفَاسِقُونَ} أي: وما يجحد بهذه الآيات البيّنات بعد وضوحها وقيام الحجة بها إلا كل فاسق خارج عن طاعة الله ناقض لعهده. وهذا تعريض باليهود الذين أنكروا نبوة محمد رغم وضوح الأدلة وبيان الحجج.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-99', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-100">
+                <div class="ayah-text">أَوَكُلَّمَا عَ<span class="tj-mdd">ـٰ</span>هَدُو<span class="tj-slt">ا۟</span> عَهۡ<span class="tj-dgm">دࣰا</span> <span class="tj-ghn">نَّ</span>بَذَهُۥ فَرِی<span class="tj-dgm">قࣱ</span> <span class="tj-ghn">مِّ</span>نۡهُمۚ بَلۡ أَكۡثَرُهُمۡ لَا یُؤۡمِنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٠٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ينكر الله على اليهود نقضهم للعهود مرة بعد مرة، فكلما عاهدوا عهدا نبذه فريق منهم، وأكثرهم لا يؤمنون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-100">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-100">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-100">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-100">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-100">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-100">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-100">{أَوَكُلَّمَا عَاهَدُوا عَهْدًا نَبَذَهُ فَرِيقٌ مِنْهُمْ} استفهام إنكاري توبيخي، أي: أهكذا حالهم كلما عاهدوا الله عهداً والتزموا ميثاقاً نبذه فريق منهم ونقضوه؟ وهذا يدلّ على أن نقض العهد كان عادة مستمرة فيهم لا يكادون يفون بعهد. {بَلْ أَكْثَرُهُمْ لَا يُؤْمِنُونَ} أي: بل الحقيقة أن أكثرهم لا إيمان عندهم أصلاً حتى يحملهم على الوفاء بالعهد، فنقض العهد ناتج عن عدم الإيمان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-100', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-100">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-100">{أَوَكُلَّمَا عَاهَدُوا عَهْدًا نَبَذَهُ فَرِيقٌ مِنْهُمْ} ينكر تعالى على اليهود في عدم وفائهم بالعهود، فكلما عاهدوا عهداً نقضه طائفة منهم. والنبذ هو الطرح والإلقاء، كأنهم يطرحون العهد وراء ظهورهم. قال الحسن البصري: المراد عهدهم مع الله في التوراة أن يؤمنوا بمحمد إذا بُعث فنقضوه. وقال ابن إسحاق: يعني المواثيق التي أعطوها للنبي ثم نقضوها كما فعلت بنو قينقاع وبنو النضير وبنو قريظة. {بَلْ أَكْثَرُهُمْ لَا يُؤْمِنُونَ} أي: بل أكثر اليهود كفار لا إيمان لهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-100', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-100">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-100">{أَوَكُلَّمَا عَاهَدُوا عَهْدًا} الاستفهام للتوبيخ والتعجّب من حالهم. والعهد هنا يشمل ما عاهدوا الله عليه في التوراة من الإيمان بمحمد وما عاهدوا النبي عليه من المواثيق. {نَبَذَهُ فَرِيقٌ مِنْهُمْ} أي نقضه وطرحه طائفة منهم وراء ظهورهم. {بَلْ أَكْثَرُهُمْ لَا يُؤْمِنُونَ} أي: ليس الأمر أن بعضهم ينقض والباقي يفي، بل الحقيقة أن أكثرهم لا إيمان لهم، وإنما هم كفار ولذلك ينقضون العهود.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-100', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-100">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-100">قوله تعالى: {أَوَكُلَّمَا عَاهَدُوا عَهْدًا نَبَذَهُ فَرِيقٌ مِنْهُمْ} الهمزة للاستفهام الإنكاري والتوبيخي. والنبذ: الطرح، ومنه نبذ العهد أي طرحه وألقاه وراء ظهره. والعهد المقصود: ما أخذ الله عليهم في التوراة من الإيمان بمحمد صلى الله عليه وسلم وما واثقهم عليه النبي من المعاهدات. {بَلْ أَكْثَرُهُمْ لَا يُؤْمِنُونَ} إضراب عما قبله، والمعنى: بل الأمر أشدّ مما ذُكر، فأكثرهم لا إيمان لهم حقيقي حتى يَفُوا بالعهد، لأن الإيمان يمنع من نقض العهد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-100', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-100">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-100">يقول تعالى منكراً على اليهود: {أَوَكُلَّمَا عَاهَدُوا عَهْدًا نَبَذَهُ فَرِيقٌ مِنْهُمْ} أي: أوكلّما أعطى هؤلاء اليهود ربّهم عهداً وميثاقاً نقضه جماعة منهم وطرحوه وراء ظهورهم؟ والمراد بالعهد ما أخذه الله عليهم في التوراة من الإيمان بمحمد واتباعه إذا بُعث، فلما بُعث نقضوه وكفروا به. {بَلْ أَكْثَرُهُمْ لَا يُؤْمِنُونَ} يقول: بل أكثر هؤلاء اليهود لا يصدّقون بالله ولا برسوله ولا بما جاء به، فهم منكرون جاحدون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-100', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-101">
+                <div class="ayah-text">وَلَ<span class="tj-ghn">مَّ</span>ا جَ<span class="tj-mdd">اۤ</span>ءَهُمۡ رَسُو<span class="tj-dgm">لࣱ</span> <span class="tj-ghn">مِّ</span>نۡ عِ<span class="tj-khf">ند</span>ِ <span class="tj-slt">ٱ</span>للَّهِ مُصَدِّ<span class="tj-dgm">قࣱ لِّ</span>مَا مَعَهُمۡ نَبَذَ فَرِی<span class="tj-dgm">قࣱ</span> <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱلَّ</span>ذِینَ أُوتُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بَ كِتَ<span class="tj-mdd">ـٰ</span>بَ <span class="tj-slt">ٱ</span>للَّهِ وَرَ<span class="tj-mdd">اۤ</span>ءَ ظُهُورِهِمۡ كَأَ<span class="tj-ghn">نَّ</span>هُمۡ لَا یَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٠١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لما جاءهم محمد مصدقا لما معهم نبذ فريق من أهل الكتاب كتاب الله وراء ظهورهم إعراضا وجحودا كأنهم لا يعلمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-101">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-101">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-101">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-101">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-101">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-101">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-101">{وَلَمَّا جَاءَهُمْ رَسُولٌ مِنْ عِنْدِ اللَّهِ مُصَدِّقٌ لِمَا مَعَهُمْ} أي: ولما جاءهم محمد صلى الله عليه وسلم وهو مصدّق لما في أيديهم من التوراة لا مخالف لها. {نَبَذَ فَرِيقٌ مِنَ الَّذِينَ أُوتُوا الْكِتَابَ كِتَابَ اللَّهِ وَرَاءَ ظُهُورِهِمْ} أي: طرح فريق من اليهود كتاب الله وراء ظهورهم، فلم يعملوا به ولم ينتفعوا بما فيه من البشارة بمحمد. {كَأَنَّهُمْ لَا يَعْلَمُونَ} أي: تعاملوا مع الحق كأنهم جهّال لا علم عندهم، مع أنهم يعلمون علم اليقين أن محمداً رسول الله، فكتموا الحق وهم يعلمون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-101', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-101">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-101">{وَلَمَّا جَاءَهُمْ رَسُولٌ مِنْ عِنْدِ اللَّهِ مُصَدِّقٌ لِمَا مَعَهُمْ} يعني محمداً صلى الله عليه وسلم. {نَبَذَ فَرِيقٌ مِنَ الَّذِينَ أُوتُوا الْكِتَابَ كِتَابَ اللَّهِ وَرَاءَ ظُهُورِهِمْ} قال ابن عباس ومجاهد والسدي: نبذوا التوراة التي فيها صفة محمد وجعلوها وراء ظهورهم، يعني أعرضوا عنها وتركوا العمل بها. وقيل: نبذوا القرآن. والأول أرجح لأنهم تركوا ما في التوراة من البشارة بمحمد ليبرّروا كفرهم به. {كَأَنَّهُمْ لَا يَعْلَمُونَ} أي: تصرّفوا تصرّف الجاهل مع أنهم علماء يعرفون الحق، وهذا أشدّ ذمّاً لأن الإعراض عن الحق مع العلم به أقبح من الإعراض عنه مع الجهل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-101', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-101">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-101">{وَلَمَّا جَاءَهُمْ رَسُولٌ مِنْ عِنْدِ اللَّهِ} يعني محمداً صلى الله عليه وسلم {مُصَدِّقٌ لِمَا مَعَهُمْ} أي موافق لما في التوراة من التوحيد والنبوات. {نَبَذَ فَرِيقٌ مِنَ الَّذِينَ أُوتُوا الْكِتَابَ} يعني اليهود {كِتَابَ اللَّهِ} يعني التوراة التي فيها صفة محمد صلى الله عليه وسلم والأمر باتباعه {وَرَاءَ ظُهُورِهِمْ} أي تركوها ورمَوها خلف ظهورهم إعراضاً عنها. {كَأَنَّهُمْ لَا يَعْلَمُونَ} أي: كأنهم لا يعلمون ما فيها من نعت محمد والأمر باتباعه، وهم يعلمون ذلك يقيناً لكنهم تجاهلوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-101', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-101">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-101">قوله تعالى: {وَلَمَّا جَاءَهُمْ رَسُولٌ مِنْ عِنْدِ اللَّهِ} يعني محمداً صلى الله عليه وسلم {مُصَدِّقٌ لِمَا مَعَهُمْ} أي موافق لما في التوراة من التوحيد وصفة النبي. {نَبَذَ فَرِيقٌ مِنَ الَّذِينَ أُوتُوا الْكِتَابَ كِتَابَ اللَّهِ وَرَاءَ ظُهُورِهِمْ} النبذ: الطرح والإلقاء. ووراء الظهور كناية عن الإعراض التامّ والترك، لأن ما يُلقى وراء الظهر لا يُلتفت إليه. والمراد بكتاب الله: التوراة، لأن فيها صفة محمد والأمر باتباعه فتركوها. {كَأَنَّهُمْ لَا يَعْلَمُونَ} التشبيه هنا للتوبيخ، أي: كأنهم جهّال مع أنهم علماء، وهذا أشدّ في الذم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-101', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-101">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-101">يقول تعالى: ولما جاء هؤلاء اليهود محمد رسول الله من عند الله مصدّقاً لما في أيديهم من التوراة. {نَبَذَ فَرِيقٌ مِنَ الَّذِينَ أُوتُوا الْكِتَابَ كِتَابَ اللَّهِ وَرَاءَ ظُهُورِهِمْ} طرح جماعة من علماء اليهود كتاب الله الذي فيه صفة محمد والعهد باتباعه خلف ظهورهم فلم ينظروا فيه ولم يعملوا بما فيه. {كَأَنَّهُمْ لَا يَعْلَمُونَ} أي: كأنهم لا علم لهم بما في كتابهم من نعت محمد وصفته وأنه رسول الله حقاً. وليسوا كذلك بل هم عالمون بصدقه ولكنهم يتجاهلون ويكتمون الحق وهم يعلمون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-101', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-102">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱ</span>تَّبَعُو<span class="tj-slt">ا۟</span> مَا تَتۡلُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱلشَّ</span>یَ<span class="tj-mdd">ـٰ</span>طِینُ عَلَ<span class="tj-mdd">ىٰ</span> مُلۡكِ سُلَیۡمَ<span class="tj-mdd">ـٰ</span>نَۖ وَمَا كَفَرَ سُلَیۡمَ<span class="tj-mdd">ـٰ</span>نُ وَلَ<span class="tj-mdd">ـٰ</span>كِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلشَّ</span>یَ<span class="tj-mdd">ـٰ</span>طِینَ كَفَرُو<span class="tj-slt">ا۟</span> یُعَلِّمُونَ <span class="tj-slt">ٱلنَّ</span>اسَ <span class="tj-slt">ٱلسِّ</span>حۡرَ وَمَ<span class="tj-mdd">اۤ</span> أُ<span class="tj-khf">نز</span>ِلَ عَلَى <span class="tj-slt">ٱ</span>لۡمَلَكَیۡنِ بِبَابِلَ هَ<span class="tj-mdd">ـٰ</span>رُوتَ وَمَ<span class="tj-mdd">ـٰ</span>رُوتَۚ وَمَا یُعَلِّمَانِ مِنۡ أَحَدٍ حَتَّ<span class="tj-mdd">ىٰ</span> یَقُولَ<span class="tj-mdd">اۤ</span> إِ<span class="tj-ghn">نَّ</span>مَا نَحۡنُ فِتۡ<span class="tj-khf">نَةࣱ</span> فَلَا تَكۡفُرۡۖ فَیَتَعَلَّمُونَ مِنۡهُمَا مَا یُفَرِّقُونَ بِهِۦ بَیۡنَ <span class="tj-slt">ٱ</span>لۡمَرۡءِ وَزَوۡجِهِۦۚ وَمَا هُم بِضَ<span class="tj-mdd">اۤ</span>رِّینَ بِهِۦ مِنۡ أَحَدٍ إِلَّا بِإِذۡنِ <span class="tj-slt">ٱ</span>للَّهِۚ وَیَتَعَلَّمُونَ مَا یَضُرُّهُمۡ وَلَا یَ<span class="tj-khf">نف</span>َعُهُمۡۚ وَلَقَ<span class="tj-qlq">دۡ</span> عَلِمُو<span class="tj-slt">ا۟</span> لَمَنِ <span class="tj-slt">ٱ</span>شۡتَرَ<span class="tj-mdd">ىٰ</span>هُ مَا لَهُۥ فِی <span class="tj-slt">ٱ</span>لۡـَٔاخِرَةِ مِنۡ خَلَ<span class="tj-mdd">ـٰ</span>قࣲۚ وَلَبِئۡسَ مَا شَرَوۡ<span class="tj-slt">ا۟</span> بِهِۦۤ أَ<span class="tj-khf">نف</span>ُسَهُمۡۚ لَوۡ كَانُو<span class="tj-slt">ا۟</span> یَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٠٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">اتبع اليهود السحر الذي افترته الشياطين على ملك سليمان، وبرّأ الله سليمان من الكفر، وذكر قصة الملكين هاروت وماروت ببابل وأن السحر مضرة محضة لا نصيب لصاحبه في الآخرة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-102">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-102">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-102">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-102">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-102">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-102">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-102">{وَاتَّبَعُوا مَا تَتْلُو الشَّيَاطِينُ عَلَى مُلْكِ سُلَيْمَانَ} أي: اتبع اليهود ما تتلوه الشياطين وتقرؤه من السحر في عهد سليمان. {وَمَا كَفَرَ سُلَيْمَانُ} تبرئة لسليمان مما نسبته إليه الشياطين {وَلَكِنَّ الشَّيَاطِينَ كَفَرُوا يُعَلِّمُونَ النَّاسَ السِّحْرَ} فالشياطين هم الذين كفروا بتعليم السحر. {وَمَا أُنْزِلَ عَلَى الْمَلَكَيْنِ بِبَابِلَ هَارُوتَ وَمَارُوتَ} ملكان أُنزلا ابتلاءً وامتحاناً للناس. {وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّى يَقُولَا إِنَّمَا نَحْنُ فِتْنَةٌ فَلَا تَكْفُرْ} أي: يحذّران المتعلم قبل أن يعلّماه. {فَيَتَعَلَّمُونَ مِنْهُمَا مَا يُفَرِّقُونَ بِهِ بَيْنَ الْمَرْءِ وَزَوْجِهِ} وهذا من أعظم ضرر السحر. {وَمَا هُمْ بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ} فالسحر لا يؤثر إلا بمشيئة الله. {وَيَتَعَلَّمُونَ مَا يَضُرُّهُمْ وَلَا يَنْفَعُهُمْ} فالسحر مضرة محضة. {وَلَقَدْ عَلِمُوا لَمَنِ اشْتَرَاهُ مَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ} أي نصيب. {وَلَبِئْسَ مَا شَرَوْا بِهِ أَنْفُسَهُمْ لَوْ كَانُوا يَعْلَمُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-102', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-102">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-102">{وَاتَّبَعُوا مَا تَتْلُو الشَّيَاطِينُ عَلَى مُلْكِ سُلَيْمَانَ} لما مات سليمان وضعت الشياطين كتباً فيها السحر ونسبتها إلى سليمان، فاتبعها اليهود. {وَمَا كَفَرَ سُلَيْمَانُ} برّأه الله من السحر والكفر {وَلَكِنَّ الشَّيَاطِينَ كَفَرُوا يُعَلِّمُونَ النَّاسَ السِّحْرَ}. {وَمَا أُنْزِلَ عَلَى الْمَلَكَيْنِ بِبَابِلَ هَارُوتَ وَمَارُوتَ} اختلف في الملكين: فالأرجح أنهما ملكان من السماء أُنزلا ابتلاءً وامتحاناً للناس. {وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّى يَقُولَا إِنَّمَا نَحْنُ فِتْنَةٌ فَلَا تَكْفُرْ} كانا يحذّران كل من جاءهما. {فَيَتَعَلَّمُونَ مِنْهُمَا مَا يُفَرِّقُونَ بِهِ بَيْنَ الْمَرْءِ وَزَوْجِهِ} وهذا أعظم ضرر السحر. {وَمَا هُمْ بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ} أي بقضائه وقدره. {وَلَقَدْ عَلِمُوا لَمَنِ اشْتَرَاهُ مَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ} أي نصيب. {وَلَبِئْسَ مَا شَرَوْا بِهِ أَنْفُسَهُمْ لَوْ كَانُوا يَعْلَمُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-102', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-102">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-102">{وَاتَّبَعُوا مَا تَتْلُو الشَّيَاطِينُ عَلَى مُلْكِ سُلَيْمَانَ} أي: ما كانت تقرؤه وترويه في زمان ملك سليمان. وذلك أن الشياطين كتبت كتباً فيها أنواع السحر وزعمت أنها مما كان سليمان يستعمله. {وَمَا كَفَرَ سُلَيْمَانُ} نزّه الله سليمان مما نسبوه إليه {وَلَكِنَّ الشَّيَاطِينَ كَفَرُوا يُعَلِّمُونَ النَّاسَ السِّحْرَ}. {وَمَا أُنْزِلَ عَلَى الْمَلَكَيْنِ} قيل: هما ملكان من السماء أُنزلا بالسحر اختباراً من الله. {بِبَابِلَ} بلاد العراق. {وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّى يَقُولَا إِنَّمَا نَحْنُ فِتْنَةٌ فَلَا تَكْفُرْ} أي اختبار وابتلاء فلا تتعلّم السحر فتكفر. {فَيَتَعَلَّمُونَ مِنْهُمَا مَا يُفَرِّقُونَ بِهِ بَيْنَ الْمَرْءِ وَزَوْجِهِ} {وَمَا هُمْ بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ} أي بمشيئته وقدره. {وَلَقَدْ عَلِمُوا لَمَنِ اشْتَرَاهُ مَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ} أي: من نصيب في الجنة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-102', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-102">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-102">قوله تعالى: {وَاتَّبَعُوا مَا تَتْلُو الشَّيَاطِينُ عَلَى مُلْكِ سُلَيْمَانَ} أي: ما كانت تتلوه الشياطين من كتب السحر في عهد سليمان ونسبته إليه. وفي هذه الآية أربع وعشرون مسألة ذكرها القرطبي. {وَمَا كَفَرَ سُلَيْمَانُ} نفي للكفر عنه وتبرئة له من السحر. {وَلَكِنَّ الشَّيَاطِينَ كَفَرُوا يُعَلِّمُونَ النَّاسَ السِّحْرَ}. والسحر في اللغة: كل ما لطُف مأخذه ودقّ. {وَمَا أُنْزِلَ عَلَى الْمَلَكَيْنِ} قرأ الجمهور «الملَكين» بفتح اللام أي ملكين من السماء أُنزلا ابتلاءً، وقرأ بعضهم «المَلِكين» بكسرها أي رجلين ملِكين. {بِبَابِلَ} بلاد العراق. {هَارُوتَ وَمَارُوتَ} بدل من الملكين. {وَمَا هُمْ بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ} فيه ردّ على من أنكر تأثير السحر وفيه أن تأثيره بقضاء الله وقدره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-102', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-102">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-102">يقول تعالى: {وَاتَّبَعُوا} أي اتبع اليهود {مَا تَتْلُو الشَّيَاطِينُ عَلَى مُلْكِ سُلَيْمَانَ} ما كانت الشياطين تقرؤه في زمان ملك سليمان من السحر وتنسبه إليه. {وَمَا كَفَرَ سُلَيْمَانُ} نزّهه الله من السحر والكفر {وَلَكِنَّ الشَّيَاطِينَ كَفَرُوا يُعَلِّمُونَ النَّاسَ السِّحْرَ}. {وَمَا أُنْزِلَ عَلَى الْمَلَكَيْنِ بِبَابِلَ هَارُوتَ وَمَارُوتَ} اختلف أهل التأويل في الملكين: فقال أكثرهم هما ملكان من ملائكة السماء أُنزلا ابتلاءً واختباراً للناس. {وَمَا يُعَلِّمَانِ مِنْ أَحَدٍ حَتَّى يَقُولَا إِنَّمَا نَحْنُ فِتْنَةٌ فَلَا تَكْفُرْ} كانا يقولان لمن يأتيهما: إنما نحن اختبار فلا تكفر بتعلّم السحر. فمنهم من يرجع ومنهم من يمضي. {وَمَا هُمْ بِضَارِّينَ بِهِ مِنْ أَحَدٍ إِلَّا بِإِذْنِ اللَّهِ} بقضائه وقدره. {وَلَقَدْ عَلِمُوا لَمَنِ اشْتَرَاهُ مَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ} أي حظّ ونصيب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-102', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-103">
+                <div class="ayah-text">وَلَوۡ أَ<span class="tj-ghn">نَّ</span>هُمۡ ءَامَنُو<span class="tj-slt">ا۟</span> وَ<span class="tj-slt">ٱ</span>تَّقَوۡ<span class="tj-slt">ا۟</span> لَمَثُوبَ<span class="tj-dgm">ةࣱ</span> <span class="tj-ghn">مِّ</span>نۡ عِ<span class="tj-khf">ند</span>ِ <span class="tj-slt">ٱ</span>للَّهِ خَیۡ<span class="tj-dgm">رࣱۚ لَّ</span>وۡ كَانُو<span class="tj-slt">ا۟</span> یَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٠٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لو أن اليهود آمنوا بالله ورسوله واتقوا المحارم والسحر لكان ثواب الله لهم خيرا مما اختاروه لأنفسهم، لو كانوا يعلمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-103">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-103">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-103">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-103">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-103">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-103">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-103">{وَلَوْ أَنَّهُمْ آمَنُوا وَاتَّقَوْا} أي: لو أن هؤلاء اليهود آمنوا بالله ورسوله واتقوا محارم الله من السحر والكفر والحسد. {لَمَثُوبَةٌ مِنْ عِنْدِ اللَّهِ خَيْرٌ} أي: لكان ثواب الله لهم على إيمانهم وتقواهم خيراً لهم مما اختاروه من الكفر والسحر واتباع الشياطين. والمثوبة: الثواب والجزاء الحسن. {لَوْ كَانُوا يَعْلَمُونَ} أي: لو كانوا يعلمون ما أعدّ الله للمؤمنين من الثواب لاختاروا الإيمان على الكفر، ولكنّ جهلهم وعنادهم حال بينهم وبين ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-103', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-103">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-103">{وَلَوْ أَنَّهُمْ آمَنُوا وَاتَّقَوْا} أي: لو أن هؤلاء اليهود الذين اتبعوا السحر ونبذوا كتاب الله آمنوا بالله ورسوله وتركوا الكفر والسحر والحسد. {لَمَثُوبَةٌ مِنْ عِنْدِ اللَّهِ خَيْرٌ} لكان ثواب الله لهم خيراً مما اختاروه لأنفسهم، فإن ما عند الله خير وأبقى. {لَوْ كَانُوا يَعْلَمُونَ} أي: لو كان عندهم علم حقيقي ينفعهم لعلموا أن ما عند الله من الثواب خير مما هم فيه من الضلالة والكفر. وفي هذا حسرة عليهم حيث فوّتوا على أنفسهم خيراً عظيماً واستبدلوه بشرّ محض.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-103', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-103">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-103">{وَلَوْ أَنَّهُمْ آمَنُوا} بمحمد والقرآن {وَاتَّقَوْا} الكفر والسحر والمعاصي. {لَمَثُوبَةٌ مِنْ عِنْدِ اللَّهِ خَيْرٌ} المثوبة مصدر بمعنى الثواب، أي: لكان ثواب الله على الإيمان والتقوى خيراً لهم مما هم فيه من الكفر واتباع السحر. واللام في «لمثوبة» لام القسم أي والله لمثوبة من عند الله خير. {لَوْ كَانُوا يَعْلَمُونَ} أي: لو كانوا يعلمون أن ثواب الله خير لاختاروه على ما اختاروا. وهذا تحسّر عليهم وبيان لعظم خسارتهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-103', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-103">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-103">قوله تعالى: {وَلَوْ أَنَّهُمْ آمَنُوا وَاتَّقَوْا} أي آمنوا بمحمد صلى الله عليه وسلم وبما جاء به واتقوا المعاصي والكفر والسحر. {لَمَثُوبَةٌ مِنْ عِنْدِ اللَّهِ خَيْرٌ} المثوبة: الثواب. و«لمثوبة» خبر مبتدأ محذوف تقديره: لكان ثوابهم مثوبة من عند الله. أي: لكان ما يثيبهم الله عليه من الجزاء الحسن خيراً مما هم فيه. {لَوْ كَانُوا يَعْلَمُونَ} أي: لو كانوا يعلمون ذلك ما آثروا ما هم عليه من الكفر والسحر واتباع الشياطين على الإيمان والتقوى وثواب الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-103', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-103">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-103">يقول تعالى: {وَلَوْ أَنَّهُمْ} يعني هؤلاء اليهود الذين نبذوا كتاب الله واتبعوا السحر {آمَنُوا} بالله ورسوله محمد وما جاء به {وَاتَّقَوْا} الله فأطاعوه واجتنبوا معاصيه من الكفر والسحر. {لَمَثُوبَةٌ مِنْ عِنْدِ اللَّهِ خَيْرٌ} أي: لكان ثواب الله إياهم على إيمانهم وطاعتهم خيراً لهم مما اختاروا من الكفر والضلال. {لَوْ كَانُوا يَعْلَمُونَ} أي: لو كانوا يعلمون أن ثواب الله خير لهم مما اكتسبوا من السحر والكفر لآثروه على ما هم فيه، ولكنهم جهلوا ذلك فخسروا الدنيا والآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-103', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-06.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">خطاب بني إسرائيل — التذكير بالنعم</span>
+            </a>
+            <a href="section-08.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">بنو إسرائيل — مواقفهم من المسلمين</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ٧: بنو إسرائيل — نقض العهود<br>
+        <small>آيات ٨٧ – ١٠٣ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

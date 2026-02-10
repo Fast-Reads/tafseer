@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — مقدمة السورة وصفات المتقين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#2ecc71">
+            <div class="section-num">١</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">مقدمة السورة وصفات المتقين</h2>
+                <h3 class="section-title-en">Introduction & Qualities of the Righteous</h3>
+            </div>
+            <div class="section-ayah-range">آيات ١ – ٥</div>
+        </div>
+
+        <div class="section-desc">
+            <p>افتتاح السورة بالحروف المقطعة، وبيان أن هذا الكتاب لا ريب فيه، وذكر صفات المتقين الذين يؤمنون بالغيب ويقيمون الصلاة وينفقون مما رزقهم الله</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="1">
+                        <div class="flow-node-num">١</div>
+                        <div class="flow-node-text">الحروف المقطعة</div>
+                        <div class="flow-node-key">الۤمۤ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="2">
+                        <div class="flow-node-num">٢</div>
+                        <div class="flow-node-text">الكتاب لا ريب فيه</div>
+                        <div class="flow-node-key">هُدًى لِّلۡمُتَّقِینَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="3">
+                        <div class="flow-node-num">٣</div>
+                        <div class="flow-node-text">الغيب والصلاة والإنفاق</div>
+                        <div class="flow-node-key">یُؤۡمِنُونَ بِٱلۡغَیۡبِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="4">
+                        <div class="flow-node-num">٤</div>
+                        <div class="flow-node-text">الإيمان بالكتب واليقين بالآخرة</div>
+                        <div class="flow-node-key">وَبِٱلۡـَٔاخِرَةِ هُمۡ یُوقِنُونَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="5">
+                        <div class="flow-node-num">٥</div>
+                        <div class="flow-node-text">الهدى والفلاح</div>
+                        <div class="flow-node-key">أُو۟لَـٰۤىِٕكَ هُمُ ٱلۡمُفۡلِحُونَ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ayah-list">
+            <!-- Ayah 1 -->
+            <div class="ayah" id="ayah-1">
+                <div class="ayah-text">بِسۡمِ <span class="tj-slt">ٱ</span>للَّهِ <span class="tj-slt">ٱل</span>رَّحۡ<span class="tj-mdd">مَـٰ</span>نِ <span class="tj-slt">ٱل</span>رَّحِ<span class="tj-mdd">ی</span>مِ ا<span class="tj-mdd">لۤ</span><span class="tj-mdd">مۤ</span></div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">حروف مقطعة افتُتحت بها السورة، اختلف المفسرون في معناها والأسلم ردّ علمها إلى الله، وقيل هي إشارة لإعجاز القرآن المؤلف من هذه الحروف.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-1">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-1">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-1">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-1">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-1">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-1">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-1">الحروف المقطعة في أوائل السور, الأسلم فيها, السكوت عن التعرض لمعناها، مع الجزم بأن الله تعالى لم ينزلها عبثا بل لحكمة لا نعلمها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-1', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-1">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-1">اختلف المفسرون في الحروف المقطعة على أقوال: فمنهم من قال هي مما استأثر الله بعلمه فردّوا علمها إلى الله ولم يفسروها. ومنهم من فسّرها وقال إنها أسماء للسور أو اسم من أسماء القرآن. ومنهم من قال هي من أسماء الله تعالى، فالألف إشارة إلى اسم الله واللام إشارة إلى اسمه اللطيف والميم إشارة إلى اسمه المجيد. والأقرب أن الحكمة من ذكر هذه الحروف هي إثبات إعجاز القرآن، فالقرآن مؤلف من هذه الحروف العادية التي يتخاطب بها الناس، ومع ذلك لم يستطيعوا أن يأتوا بمثله، مما يدل على أنه من عند الله. وقد وردت أحاديث في فضل سورة البقرة، منها أنها سنام القرآن وذروته، وأن البيت الذي تُقرأ فيه لا يدخله الشيطان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-1', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-1">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-1">قال الشعبي وجماعة: هذه الحروف من المتشابه الذي استأثر الله بعلمه. وقال بعض العلماء: كل حرف يشير إلى صفة من صفات الله، فالألف إشارة إلى الله واللام إشارة إلى اللطيف والميم إشارة إلى المجيد. وقال ابن عباس: معناها أنا الله أعلم. وقيل هي أسماء للقرآن أو علامات مميزة للسور. والراجح عند أكثر المفسرين قبولها بالإيمان دون الجزم بمعنى محدد لها، فهي تحتوي على أسرار إلهية أراد الله إخفاءها عن البشر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-1', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-1">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-1">سورة البقرة مدنية، نزلت في مُدد شتى. وقيل: هي أول سورة نزلت بالمدينة، إلا قوله تعالى: {واتقوا يوما ترجعون فيه إلى الله} فإنه آخر آية نزلت من السماء، ونزلت يوم النحر في حجة الوداع بمنى؛ وآيات الربا أيضا من أواخر ما نزل من القرآن. وأما الحروف المقطعة فقد اختلف فيها على أقوال كثيرة، والقول بأنها سرّ القرآن أشهرها، وقيل هي أسماء للسور وقيل أقسام أقسم الله بها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-1', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-1">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-1">ذكر الطبري عدة أقوال في الحروف المقطعة: فقيل هي اسم من أسماء القرآن، وقيل فواتح يفتتح الله بها القرآن، وقيل أسماء للسور، وقيل هي اسم الله الأعظم، وقيل حروف مقتطعة من أسماء الله وصفاته، فالألف من الله واللام من اللطيف والميم من المجيد. ورجّح الطبري أن هذه الحروف تحتمل معاني متعددة في آن واحد، فهي فواتح للسور وإشارات إلى أسماء الله وصفاته، ولا يُقصر تفسيرها على معنى واحد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-1', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 2 -->
+            <div class="ayah" id="ayah-2">
+                <div class="ayah-text">ذَ<span class="tj-mdd">ٰ</span>لِكَ <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بُ لَا رَیۡبَۛ فِ<span class="tj-mdd">ی</span>هِۛ هُ<span class="tj-dgm">دࣰى</span> لِّلۡمُتَّقِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">هذا القرآن هو الكتاب الكامل الذي لا شك فيه، وهو هداية وبيان لمن اتقى الله باجتناب نواهيه وأداء فرائضه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-2">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-2">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-2">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-2">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-2">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-2">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-2">وقوله { ذَلِكَ الْكِتَابُ } أي هذا الكتاب العظيم الذي هو الكتاب على الحقيقة, المشتمل على ما لم تشتمل عليه كتب المتقدمين والمتأخرين من العلم العظيم, والحق المبين. فـ { لَا رَيْبَ فِيهِ } ولا شك بوجه من الوجوه، ونفي الريب عنه, يستلزم ضده, إذ ضد الريب والشك اليقين، فهذا الكتاب مشتمل على علم اليقين المزيل للشك والريب. وهذه قاعدة مفيدة, أن النفي المقصود به المدح, لا بد أن يكون متضمنا لضدة, وهو الكمال, لأن النفي عدم, والعدم المحض, لا مدح فيه. فلما اشتمل على اليقين وكانت الهداية لا تحصل إلا باليقين قال: { هُدًى لِلْمُتَّقِينَ } والهدى: ما تحصل به الهداية من الضلالة والشبه، وما به الهداية إلى سلوك الطرق النافعة. وقال { هُدًى } وحذف المعمول, فلم يقل هدى للمصلحة الفلانية, ولا للشيء الفلاني, لإرادة العموم, وأنه هدى لجميع مصالح الدارين، فهو مرشد للعباد في المسائل الأصولية والفروعية, ومبين للحق من الباطل, والصحيح من الضعيف, ومبين لهم كيف يسلكون الطرق النافعة لهم, في دنياهم وأخراهم. وقال في موضع آخر: { هُدًى لِلنَّاسِ } فعمم. وفي هذا الموضع وغيره { هُدًى لِلْمُتَّقِينَ } لأنه في نفسه هدى لجميع الخلق. فالأشقياء لم يرفعوا به رأسا. ولم يقبلوا هدى الله, فقامت عليهم به الحجة, ولم ينتفعوا به لشقائهم، وأما المتقون الذين أتوا بالسبب الأكبر, لحصول الهداية, وهو التقوى التي حقيقتها: اتخاذ ما يقي سخط الله وعذابه, بامتثال أوامره, واجتناب النواهي, فاهتدوا به, وانتفعوا غاية الانتفاع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-2', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-2">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-2">أكد عدة علماء منهم ابن عباس ومجاهد أن المقصود بـ {ذلك الكتاب} هو القرآن نفسه، وأن العربية تجيز استخدام «ذلك» بمعنى «هذا». وأما {لا ريب فيه} فالريب هو الشك، وأكد كثير من الصحابة والعلماء أن القرآن لا شك في كونه من عند الله. وأما {هدى للمتقين} فيشرح ابن كثير أن هداية القرآن تنفع خصوصا من يتقون الله، ويستشهد بآيات تبين أن المؤمنين ينتفعون بينما غيرهم لا ينتفع. ويقدم التفسير مناقشة مستفيضة لمعنى التقوى، متضمنا رواية عن عمر حين سأل أُبَيّ بن كعب عن التقوى فشرحها بتشبيه المشي بحذر في طريق شائك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-2', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-2">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-2">قال البغوي: {ذلك الكتاب} يقصد بها القرآن الكريم، و«هذا» للتقريب و«ذلك» للتبعيد. وبخصوص {لا ريب فيه} شرح أنها تعني عدم الشك في أنه من عند الله وأنه الحق والصدق. وحول {هدى للمتقين} بين أن الهدى يعني الرشد والبيان لأهل التقوى. نقل عن ابن عباس: المتقي من يتقي الشرك والكبائر والفواحش. وأوضح أن التقوى مشتقة من الاتقاء وأصلها الحجز بين الشيئين. ونقل عن عمر بن الخطاب وكعب الأحبار حوارهما حول التقوى بتشبيهها بالطريق ذي الشوك. وذكر أيضا تعريفات متعددة للتقوى منها قول عمر بن عبد العزيز وشهر بن حوشب وابن عمر رضي الله عنهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-2', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-2">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-2">{ذلك الكتاب} قيل: المعنى هذا الكتاب، و«ذلك» قد تستعمل في الإشارة إلى حاضر وإن كان موضوعا للإشارة إلى غائب. وفي {لا ريب فيه} ذكر القرطبي ثلاثة معان للريب: الشك والتهمة والحاجة. وفي {هدى للمتقين} بحث في ست مسائل تتعلق بالهدى، وحلّل لفظ «المتقين» لغويا، وبيّن أن التقوى أصلها الوقاية، وهي اتخاذ ما يقي من عذاب الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-2', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-2">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-2">يشرح الطبري أن معظم المفسرين يرون أن «ذلك» هنا بمعنى «هذا»، حيث قال: تأويل قول الله تعالى {ذلك الكتاب}: هذا الكتاب. ويردّ على من قد يستغرب هذا بأن ما تقضّى وانقضاؤه قريب يصير كالحاضر عند المخاطب. وأما {لا ريب فيه} فتأويله: لا شك فيه، ويدعم هذا بروايات عن ابن عباس ومجاهد والسُّدي وغيرهم. وأما {هدى} فيشرح أنه مصدر من الفعل «هديت» بمعنى أرشدت وبيّنت الطريق، ويوضح أن القرآن هدى خاص بالمتقين. ويعرّف المتقين بأنهم الذين اتقوا الله في ركوب ما نهاهم عن ركوبه فتجنبوا معاصيه، واتقوه فيما أمرهم به من فرائضه فأطاعوه بأدائها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-2', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 3 -->
+            <div class="ayah" id="ayah-3">
+                <div class="ayah-text"><span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ یُؤۡمِنُونَ بِ<span class="tj-slt">ٱ</span>لۡغَیۡبِ وَیُقِ<span class="tj-mdd">ی</span>مُونَ <span class="tj-slt">ٱل</span>صَّلَ<span class="tj-mdd">وٰ</span>ةَ وَمِ<span class="tj-ghn">مَّ</span>ا رَزَ<span class="tj-qlq">قۡ</span>نَ<span class="tj-mdd">ـٰ</span>هُمۡ یُ<span class="tj-khf">نف</span>ِقُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">صفات المتقين: يؤمنون بما غاب عنهم من أمور الآخرة والملائكة والكتب، ويحافظون على الصلاة بأركانها، وينفقون من أموالهم في سبيل الله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-3">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-3">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-3">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-3">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-3">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-3">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-3">ثم وصف المتقين بالعقائد والأعمال الباطنة, والأعمال الظاهرة, لتضمن التقوى لذلك فقال: { الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ } حقيقة الإيمان: هو التصديق التام بما أخبرت به الرسل, المتضمن لانقياد الجوارح، وليس الشأن في الإيمان بالأشياء المشاهدة بالحس, فإنه لا يتميز بها المسلم من الكافر. إنما الشأن في الإيمان بالغيب, الذي لم نره ولم نشاهده, وإنما نؤمن به, لخبر الله وخبر رسوله. فهذا الإيمان الذي يميز به المسلم من الكافر, لأنه تصديق مجرد لله ورسله. فالمؤمن يؤمن بكل ما أخبر الله به, أو أخبر به رسوله, سواء شاهده, أو لم يشاهده وسواء فهمه وعقله, أو لم يهتد إليه عقله وفهمه. ثم قال: { وَيُقِيمُونَ الصَّلَاةَ } لم يقل: يفعلون الصلاة, أو يأتون بالصلاة, لأنه لا يكفي فيها مجرد الإتيان بصورتها الظاهرة. فإقامة الصلاة, إقامتها ظاهرا, بإتمام أركانها, وواجباتها, وشروطها. وإقامتها باطنا بإقامة روحها, وهو حضور القلب فيها, وتدبر ما يقوله ويفعله منها. ثم قال: { وَمِمَّا رَزَقْنَاهُمْ يُنْفِقُونَ } يدخل فيه النفقات الواجبة كالزكاة, والنفقة على الزوجات والأقارب, والمماليك ونحو ذلك. والنفقات المستحبة بجميع طرق الخير. وأتى بـ «من» الدالة على التبعيض, لينبههم أنه لم يرد منهم إلا جزءا يسيرا من أموالهم, غير ضار لهم ولا مثقل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-3', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-3">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-3">يشرح ابن كثير أن الإيمان يشمل التصديق والعمل معا، وليس مجرد تصديق القول فقط، كما أنه «قول وعمل يزيد وينقص». والغيب يتضمن الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر والبعث والحياة بعد الموت وكل ما غاب عن العباد من أمور الجنة والنار. وإقامة الصلاة تشمل المحافظة على مواقيتها والطهور وتمام الركوع والسجود والخشوع والإقبال عليها. والإنفاق يشمل الزكاة والنفقات الواجبة على الأهل والمماليك وعموم الإحسان للمخلوقين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-3', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-3">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-3">يوضح البغوي أن الإيمان في الأصل هو التصديق بالقلب، ويفرّق بين الإسلام (الانقياد والطاعة) والإيمان (التصديق)، فكل إيمان إسلام وليس كل إسلام إيمانا بدون تصديق. ويستشهد بحديث جبريل حين سأل النبي عن الإسلام والإيمان والإحسان. والغيب عند ابن عباس يشمل كل ما أُمر بالإيمان به مما غاب عن البصر كالملائكة والبعث والجنة والنار والصراط والميزان. وإقامة الصلاة تعني المحافظة عليها في أوقاتها بحدودها وأركانها وهيئاتها، والمقصود الصلوات الخمس. والإنفاق يعني إخراج الصدقة في طاعة الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-3', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-3">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-3">قوله تعالى: {الذين يؤمنون بالغيب ويقيمون الصلاة ومما رزقناهم ينفقون}، فيها ست وعشرون مسألة. {الذين} في موضع خفض نعت للمتقين. و{يؤمنون} يصدقون، والإيمان في اللغة التصديق. بحث القرطبي في مسائل عديدة تتعلق بمعنى الإيمان وزيادته ونقصانه، ومعنى الغيب وهو ما غاب عن الحواس، وإقامة الصلاة وهي أداؤها بحقوقها من ركوع وسجود وتلاوة وخشوع، والإنفاق وهو الزكاة والصدقة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-3', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-3">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-3">يوضح الطبري أن الإيمان في اللغة العربية معناه التصديق، سواء بالقول أم بالعمل، وهو كلمة جامعة للإقرار بالله ورسله وكتبه. والغيب يعني ما غاب عن العباد من أمور الجنة والنار والبعث والقيامة وسائر ما ذكره القرآن الكريم مما لم يكن لدى العرب علم به من قبل. وإقامة الصلاة تعني أداءها بحدودها وفروضها على الوجه المفروض، متضمنة الركوع والسجود والتلاوة والخشوع. والإنفاق يشمل الزكاة والنفقات على الأهل والعيال، أي جميع ما يجب من حقوق مالية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-3', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 4 -->
+            <div class="ayah" id="ayah-4">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ یُؤۡمِنُونَ بِمَ<span class="tj-mdd">اۤ</span> أُ<span class="tj-khf">نز</span>ِلَ إِلَیۡكَ وَمَ<span class="tj-mdd">اۤ</span> أُ<span class="tj-khf">نز</span>ِلَ مِ<span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لِكَ وَبِ<span class="tj-slt">ٱ</span>لۡـَٔاخِرَةِ هُمۡ یُوقِنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يؤمنون بالقرآن وبالكتب السابقة كالتوراة والإنجيل دون تفريق، ويوقنون بالبعث والحساب والجزاء في الآخرة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-4">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-4">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-4">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-4">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-4">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-4">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-4">ثم قال: { وَالَّذِينَ يُؤْمِنُونَ بِمَا أُنزِلَ إِلَيْكَ } وهو القرآن والسنة، قال تعالى: { وَأَنْزَلَ اللَّهُ عَلَيْكَ الْكِتَابَ وَالْحِكْمَةَ } فالمتقون يؤمنون بجميع ما جاء به الرسول, ولا يفرقون بين بعض ما أنزل إليه, فيؤمنون ببعضه, ولا يؤمنون ببعضه, إما بجحده أو تأويله, على غير مراد الله ورسوله, كما يفعل ذلك من يفعله من المبتدعة, الذين يؤولون النصوص الدالة على خلاف قولهم, بما حاصله عدم التصديق بمعناها, وإن صدقوا بلفظها, فلم يؤمنوا بها إيمانا حقيقيا. وقوله: { وَمَا أُنْزِلَ مِنْ قَبْلِكَ } يشمل الإيمان بالكتب السابقة، ويتضمن الإيمان بالكتب الإيمان بالرسل وبما اشتملت عليه, خصوصا التوراة والإنجيل والزبور. ثم قال: { وَبِالْآخِرَةِ هُمْ يُوقِنُونَ } و«الآخرة» اسم لما يكون بعد الموت، وخصه بالذكر بعد العموم لأن الإيمان باليوم الآخر أحد أركان الإيمان؛ ولأنه أعظم باعث على الرغبة والرهبة والعمل، و«اليقين» هو العلم التام الذي ليس فيه أدنى شك, الموجب للعمل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-4', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-4">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-4">قال ابن عباس: يصدقون بما جئت به من الله وما جاء به من قبلك من المرسلين لا يفرقون بينهم. والآخرة تعني البعث والقيامة والجنة والنار والحساب والميزان. وناقش ابن كثير ثلاثة أقوال في المقصودين بالآية: الأول أن الموصوفين هم كل مؤمن من العرب وأهل الكتاب وغيرهم وهو رأي مجاهد وقتادة، والثاني أنهم مؤمنو أهل الكتاب خاصة، والثالث أن الآية الأولى في مؤمني العرب والثانية في مؤمني أهل الكتاب. ورجّح ابن كثير قول مجاهد بأن هذه الآيات تصف عامة المؤمنين وأن كل صفة مستلزمة للأخرى.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-4', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-4">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-4">قوله تعالى: {والذين يؤمنون بما أنزل إليك} يعني القرآن. {وما أنزل من قبلك} من التوراة والإنجيل وسائر الكتب المنزلة على الأنبياء عليهم الصلاة والسلام. {وبالآخرة} أي بالدار الآخرة، سميت الدنيا دنيا لدنوها من الآخرة وسميت الآخرة آخرة لتأخرها وكونها بعد الدنيا. {هم يوقنون} أي يستيقنون أنها كائنة، من الإيقان وهو العلم. وقيل: الإيقان واليقين علم عن استدلال، ولذلك لا يُسمى الله موقنا ولا علمه يقينا إذ ليس علمه عن استدلال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-4', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-4">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-4">قيل: المراد مؤمنو أهل الكتاب كعبد الله بن سلام وفيه نزلت، ونزلت الأولى في مؤمني العرب. وقيل: الآيتان جميعا في المؤمنين. {بما أنزل إليك} يعني القرآن، {وما أنزل من قبلك} يعني الكتب السالفة. ويقال: لما نزلت آية {الذين يؤمنون بالغيب} قالت اليهود والنصارى: نحن آمنا بالغيب، فلما قال: {ويقيمون الصلاة} قالوا: نحن نقيم الصلاة، فلما قال: {والذين يؤمنون بما أنزل إليك وما أنزل من قبلك} نفروا من ذلك. {وبالآخرة هم يوقنون} أي بالبعث والنشر هم عالمون. واليقين: العلم دون الشك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-4', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-4">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-4">ينقل الطبري عن ابن عباس أن المؤمنين يصدّقون بما جاء به النبي من عند الله وما جاء به من قبله من المرسلين لا يفرقون بينهم. والآخرة تعني البعث والقيامة والجنة والنار والحساب والميزان، وهي الأمور التي أنكرها المشركون. ويؤكد التفسير أن هذه الآية تميّز المؤمنين الحقيقيين الذين يقبلون محمدا والرسل السابقين عن أولئك الذين ادّعوا الإيمان بالأنبياء السابقين لكنهم رفضوا محمدا، مما يدل على أنهم لم يكونوا صادقين في إيمانهم بالرسل الأولين أيضا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-4', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 5 -->
+            <div class="ayah" id="ayah-5">
+                <div class="ayah-text">أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ عَلَ<span class="tj-mdd">ىٰ</span> هُ<span class="tj-dgm">دࣰى</span> <span class="tj-ghn">مِّ</span><span class="tj-dgm">ن</span> رَّبِّهِمۡۖ وَأُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ هُمُ <span class="tj-slt">ٱ</span>لۡمُفۡلِحُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أصحاب هذه الصفات على نور وبصيرة من ربهم، وهم الفائزون في الدنيا والآخرة بالجنة والنجاة من النار.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-5">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-5">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-5">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-5">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-5">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-5">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-5">{ أُولَئِكَ } أي: الموصوفون بتلك الصفات الحميدة { عَلَى هُدًى مِنْ رَبِّهِمْ } أي: على هدى عظيم, لأن التنكير للتعظيم، وأي هداية أعظم من تلك الصفات المذكورة المتضمنة للعقيدة الصحيحة والأعمال المستقيمة، وهل الهداية الحقيقية إلا هدايتهم، وما سواها مما خالفها، فهو ضلالة. وأتى بـ «على» في هذا الموضع, الدالة على الاستعلاء, وفي الضلالة يأتي بـ «في» كما في قوله: { وَإِنَّا أَوْ إِيَّاكُمْ لَعَلَى هُدًى أَوْ فِي ضَلَالٍ مُبِينٍ } لأن صاحب الهدى مستعل بالهدى, مرتفع به, وصاحب الضلال منغمس فيه محتقر. ثم قال: { وَأُولَئِكَ هُمُ الْمُفْلِحُونَ } والفلاح هو الفوز بالمطلوب والنجاة من المرهوب، حصر الفلاح فيهم؛ لأنه لا سبيل إلى الفلاح إلا بسلوك سبيلهم, وما عدا تلك السبيل, فهي سبل الشقاء والهلاك والخسار التي تفضي بسالكها إلى الهلاك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-5', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-5">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-5">{أولئك} يشير للمتصفين بالإيمان بالغيب وإقام الصلاة والإنفاق مما رزقهم الله والإيمان برسالة محمد والرسل السابقين والإيقان بالآخرة. {على هدى} أي نور وبيان وبصيرة من الله. {المفلحون} أي الفائزون في الدنيا والآخرة. قال ابن عباس: الهدى يعني النور والاستقامة، والمفلحون هم الذين حققوا مطلبهم ونجوا من الشر. وقال ابن جرير: الآية تشير إلى أولئك الذين على نور وبرهان من الله بتسديده وتوفيقه، وهم المنجحون الذين أدركوا الفوز بثواب الله والخلود في الجنات والنجاة من عذابه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-5', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-5">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-5">{أولئك} إشارة إلى أصحاب الصفات المذكورة. {على هدى من ربهم} أي على نور وبيان وبصيرة من الله. {المفلحون} هم الفائزون بالجنة والناجون من النار، والفلاح هو البقاء في النعيم الدائم. وأصل «الفلاح» في اللغة الشق والقطع، كما يُسمى المزارعون فلاحين لأنهم يشقون الأرض. فهؤلاء المؤمنون مميزون بالخير في الدنيا والآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-5', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-5">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-5">قال علماؤنا: إن في قوله تعالى {من ربهم} ردا على القدرية في قولهم يخلقون إيمانهم وهداهم، تعالى الله عن قولهم، ولو كان كما قالوا لقال «من أنفسهم». {وأولئك هم المفلحون}: «هم» يجوز أن يكون مبتدأ ثانيا وخبره المفلحون، ويجوز أن تكون «هم» فاصلة و«المفلحون» خبر «أولئك». والفلح أصله في اللغة الشق والقطع، ومنه سُمي المزارع فلاحا لأنه يشق الأرض.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-5', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-5">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-5">يشرح الطبري أن العلماء اختلفوا فيمن أراد الله بقوله {أولئك}، فقيل هم المؤمنون بالغيب من العرب والمؤمنون بما أُنزل على محمد، وقيل هم جميع المتقين. وفسّر ابن عباس {على هدى} بأنهم على نور من ربهم واستقامة فيما جاءهم. وعرّف الطبري الفلاح بأنه إدراك ما طلبوا من الله بأعمالهم وإيمانهم بالله وكتبه ورسله: الفوز بالثواب والخلود في الجنات والنجاة من العقاب. ويؤكد أن كلا الفريقين من المؤمنين يستحقون الثناء لاشتراكهم في الصفات المحمودة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-5', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <span class="nav-btn disabled"></span>
+            <a href="section-02.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">صفات الكافرين</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١: مقدمة السورة وصفات المتقين<br>
+        <small>آيات ١ – ٥ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

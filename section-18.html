@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — دلائل قدرة الله والحثّ على الإنفاق</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١٨ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#795548">
+            <div class="section-num">١٨</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">دلائل قدرة الله والحثّ على الإنفاق</h2>
+                <h3 class="section-title-en">Proofs of Allah's Power & Encouragement to Give</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٢٥٨ – ٢٧٤</div>
+        </div>
+
+        <div class="section-desc">
+            <p>محاجّة إبراهيم للملك، وقصة الذي مرّ على قرية خاوية، وسؤال إبراهيم عن إحياء الموتى، ثم الحث على الإنفاق في سبيل الله وآدابه</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="258">
+                        <div class="flow-node-num">٢٥٨</div>
+                        <div class="flow-node-text">محاجة إبراهيم للنمرود في الربوبية</div>
+                        <div class="flow-node-key">حَاۤجَّ إِبۡرَ ٰ⁠هِـۧمَ فِی رَبِّهِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="259">
+                        <div class="flow-node-num">٢٥٩</div>
+                        <div class="flow-node-text">الذي مرّ على قرية خاوية فأماته الله مئة عام</div>
+                        <div class="flow-node-key">أَنَّىٰ یُحۡیِۦ هَـٰذِهِ ٱللَّهُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="260">
+                        <div class="flow-node-num">٢٦٠</div>
+                        <div class="flow-node-text">سؤال إبراهيم عن كيفية إحياء الموتى</div>
+                        <div class="flow-node-key">رَبِّ أَرِنِی كَیۡفَ تُحۡیِ ٱلۡمَوۡتَىٰ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="261-262">
+                        <div class="flow-node-num">٢٦١–٢٦٢</div>
+                        <div class="flow-node-text">مثل الإنفاق كحبة أنبتت سبع سنابل</div>
+                        <div class="flow-node-key">كَمَثَلِ حَبَّةٍ أَنۢبَتَتۡ سَبۡعَ سَنَابِلَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="263-266">
+                        <div class="flow-node-num">٢٦٣–٢٦٦</div>
+                        <div class="flow-node-text">آداب الإنفاق: لا منّ ولا أذى ولا رياء</div>
+                        <div class="flow-node-key">لَا تُبۡطِلُو<span class="tj-slt">ا۟</span> صَدَقَـٰتِكُم بِٱلۡمَنِّ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="267-269">
+                        <div class="flow-node-num">٢٦٧–٢٦٩</div>
+                        <div class="flow-node-text">الإنفاق من الطيب والحكمة في ذلك</div>
+                        <div class="flow-node-key">أَنفِقُو<span class="tj-slt">ا۟</span> مِن طَیِّبَـٰتِ مَا كَسَبۡتُمۡ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="270-274">
+                        <div class="flow-node-num">٢٧٠–٢٧٤</div>
+                        <div class="flow-node-text">فضل الصدقة سراً وعلانية ليلاً ونهاراً</div>
+                        <div class="flow-node-key">بِٱلَّیۡلِ وَٱلنَّهَارِ سِرࣰّا وَعَلَانِیَةࣰ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-258">
+                <div class="ayah-text">أَلَمۡ تَرَ إِلَى <span class="tj-slt">ٱلَّ</span>ذِی حَ<span class="tj-mdd">اۤ</span>جَّ إِبۡرَ ٰ⁠هِـۧمَ فِی رَبِّهِۦۤ أَ<span class="tj-khf">نۡ</span> ءَاتَ<span class="tj-mdd">ىٰ</span>هُ <span class="tj-slt">ٱ</span>للَّهُ <span class="tj-slt">ٱ</span>لۡمُلۡكَ إِذۡ قَالَ إِبۡرَ ٰ⁠هِـۧمُ رَبِّیَ <span class="tj-slt">ٱلَّ</span>ذِی یُحۡیِۦ وَیُمِیتُ قَالَ أَنَا۠ أُحۡیِۦ وَأُمِیتُۖ قَالَ إِبۡرَ ٰ⁠هِـۧمُ فَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ یَأۡتِی بِ<span class="tj-slt">ٱل</span>شَّمۡسِ مِنَ <span class="tj-slt">ٱ</span>لۡمَشۡرِقِ فَأۡتِ بِهَا مِنَ <span class="tj-slt">ٱ</span>لۡمَغۡرِبِ فَبُهِتَ <span class="tj-slt">ٱلَّ</span>ذِی كَفَرَۗ وَ<span class="tj-slt">ٱ</span>للَّهُ لَا یَهۡدِی <span class="tj-slt">ٱ</span>لۡقَوۡمَ <span class="tj-slt">ٱل</span>ظَّ<span class="tj-mdd">ـٰ</span>لِمِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">محاجة النمرود لإبراهيم في الربوبية، فلما قال إبراهيم ربي الذي يحيي ويميت ادّعى النمرود ذلك، فانتقل إبراهيم لحجة أقوى فبُهت الكافر.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-258">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-258">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-258">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-258">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-258">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-258">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-258">هذا الذي حاج إبراهيم هو النمرود بن كنعان، وسبب طغيانه أن الله آتاه الملك فبغى وتكبر. قال إبراهيم: ربي الذي يحيي ويميت، فادّعى النمرود أنه يحيي ويميت بأن يقتل من شاء ويعفو عمن شاء. فانتقل إبراهيم لحجة أوضح لا مجال للمغالطة فيها: الله يأتي بالشمس من المشرق فأتِ بها من المغرب. فبُهت الكافر وانقطعت حجته. والله لا يهدي القوم الظالمين المعاندين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-258', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-258">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-258">هذا النمرود أول من تجبر في الأرض وادّعى الربوبية. لما قال إبراهيم ربي الذي يحيي ويميت قال النمرود أنا أحيي وأميت فأطلق سجيناً وقتل آخر. فلم يكن هذا جواباً صحيحاً لأن المراد الإحياء بعد الإعدام من الحياة والموت بسلب الحياة. فانتقل إبراهيم لحجة قاطعة: إن الله يأتي بالشمس من المشرق فإن كنت رباً فأت بها من المغرب. فبُهت أي تحير وانقطعت حجته ولم يبقَ له ما يقول.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-258', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-258">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-258">الذي حاج إبراهيم هو النمرود بن كنعان ملك بابل. لما قال إبراهيم ربي الذي يحيي ويميت أتى النمرود برجلين فقتل أحدهما وعفا عن الآخر وقال هذا الإحياء والإماتة. فلم يناقشه إبراهيم في ذلك بل انتقل لحجة أعظم: إن الله يأتي بالشمس من المشرق فأت بها من المغرب. فبُهت الكافر أي تحير وسكت مدهوشاً. والله لا يوفق للهداية من ظلم واستكبر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-258', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-258">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-258">المحاجّ هو النمرود وكان أول من ملك الأرض كلها. وإنما حاج إبراهيم لأن الله آتاه الملك فطغى. وحجة إبراهيم كانت على مرتبتين: الأولى أن الله يحيي ويميت فعارض بمغالطة، فانتقل إبراهيم للحجة الثانية وهي حركة الشمس التي لا يمكن لأحد المغالطة فيها. وبُهت أي انقطعت حجته وتحير. وفي الآية دليل على جواز الانتقال من حجة إلى أقوى منها في المناظرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-258', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-258">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-258">يقول تعالى: ألم تنظر يا محمد إلى الذي خاصم إبراهيم في ربه وهو النمرود بن كنعان. لما قال إبراهيم ربي الذي يحيي ويميت قال النمرود أنا أحيي وأميت يعني أقتل من أشاء وأعفو عمن أشاء. فقال إبراهيم فإن الله يطلع الشمس من المشرق فأطلعها أنت من المغرب فانقطع الكافر ولم يقدر على الجواب. والله لا يهدي من ظلم وجحد واستكبر عن الحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-258', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-259">
+                <div class="ayah-text">أَوۡ كَ<span class="tj-slt">ٱلَّ</span>ذِی مَرَّ عَلَ<span class="tj-mdd">ىٰ</span> قَرۡیَةࣲ وَهِیَ خَاوِیَةٌ عَلَ<span class="tj-mdd">ىٰ</span> عُرُوشِهَا قَالَ أَ<span class="tj-ghn">نَّ</span><span class="tj-mdd">ىٰ</span> یُحۡیِۦ هَ<span class="tj-mdd">ـٰ</span>ذِهِ <span class="tj-slt">ٱ</span>للَّهُ بَعۡدَ مَوۡتِهَاۖ فَأَمَاتَهُ <span class="tj-slt">ٱ</span>للَّهُ مِ<span class="tj-slt">ا۟</span>ئَةَ عَا<span class="tj-khf">مࣲ</span> ثُ<span class="tj-ghn">مَّ</span> بَعَثَهُۥۖ قَالَ كَمۡ لَبِثۡتَۖ قَالَ لَبِثۡتُ یَوۡمًا أَوۡ بَعۡضَ یَوۡ<span class="tj-khf">مࣲ</span>ۖ قَالَ بَل لَّبِثۡتَ مِ<span class="tj-slt">ا۟</span>ئَةَ عَا<span class="tj-khf">مࣲ</span> فَ<span class="tj-slt">ٱ</span>نظُرۡ إِلَ<span class="tj-mdd">ىٰ</span> طَعَامِكَ وَشَرَابِكَ لَمۡ یَتَسَنَّهۡۖ وَ<span class="tj-slt">ٱ</span>نظُرۡ إِلَ<span class="tj-mdd">ىٰ</span> حِمَارِكَ وَلِنَجۡعَلَكَ ءَایَ<span class="tj-dgm">ةࣰ</span> لِّ<span class="tj-ghn">نَّ</span>اسِۖ وَ<span class="tj-slt">ٱ</span>نظُرۡ إِلَى <span class="tj-slt">ٱ</span>لۡعِظَامِ كَیۡفَ نُنشِزُهَا ثُ<span class="tj-ghn">مَّ</span> نَكۡسُوهَا لَحۡمࣰاۚ فَلَ<span class="tj-ghn">مَّ</span>ا تَبَیَّنَ لَهُۥ قَالَ أَعۡلَمُ أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ عَلَ<span class="tj-mdd">ىٰ</span> كُلِّ شَیۡءࣲ قَدِیرࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">قصة الذي مرّ على قرية خربة فتعجب كيف يحييها الله، فأماته الله مئة عام ثم بعثه وأراه آياته في طعامه وحماره حتى أيقن أن الله على كل شيء قدير.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-259">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-259">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-259">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-259">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-259">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-259">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-259">مرّ هذا الرجل على قرية قد تهدمت وتساقطت سقوفها على جدرانها فاستبعد أن يحييها الله بعد هذا الخراب. فأماته الله مئة عام ثم أحياه. وأراه آيتين: طعامه وشرابه بقيا مئة عام لم يتغيرا، وحماره تفتت عظامه ثم أحياه أمامه. فلما رأى ذلك بعينه أيقن يقيناً كاملاً وقال أعلم أن الله على كل شيء قدير. والله جعله آية للناس ليعتبروا بقدرة الله على البعث والإحياء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-259', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-259">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-259">اختلف المفسرون في هذا الرجل فقيل هو عزير وقيل غيره. والقرية قيل هي بيت المقدس. لما رأى خرابها استبعد أن تعود إلى ما كانت عليه. فأماته الله مئة عام ثم بعثه. وأراه ثلاث آيات: طعامه لم يتغير رغم مرور مئة سنة وهذا خرق للعادة، وحماره مات وتفتت عظامه، ثم ركّب الله عظامه أمامه وكساها لحماً وأعاد فيه الروح. فعلم يقيناً أن الله على كل شيء قدير لا يعجزه شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-259', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-259">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-259">قيل هو عزير بن شرحيا وقيل أرميا. مرّ على بيت المقدس بعد تخريب بختنصر لها فقال متعجباً: كيف يحيي الله هذه بعد موتها. فأماته الله مئة عام ثم أحياه. فسُئل كم لبثت فقال يوماً أو بعض يوم لأنه مات أول النهار وبُعث آخره. فقيل له بل لبثت مئة عام وانظر دلائل ذلك: طعامك لم يفسد وحمارك قد بلي. ثم أحيا الله حماره أمامه فآمن بقدرة الله الكاملة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-259', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-259">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-259">هذه الآية دليل عظيم على البعث. والقرية هي بيت المقدس على الراجح. والرجل قيل عزير وقيل غيره. واستبعاده لإحياء القرية لم يكن شكاً في القدرة بل تعجباً. فأراه الله آيتين متقابلتين: حفظ الطعام والشراب مئة سنة دون فساد وهو أمر خارق، وإبلاء الحمار ثم إعادة تركيبه وإحيائه. وفي هذا الجمع بين الحفظ من الفساد والإحياء بعد البلى أبلغ الدلائل على كمال القدرة الإلهية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-259', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-259">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-259">يقول تعالى: أو كالذي مرّ على قرية ساقطة سقوفها على حيطانها خاوية خالية فقال: كيف يعيد الله الحياة إلى هذه بعد خرابها. فأماته الله مئة عام ثم أحياه وسأله: كم لبثت؟ قال: يوماً أو بعض يوم. فقال: بل مئة عام. فانظر إلى طعامك وشرابك لم يتغير رغم طول المدة. وانظر إلى حمارك كيف بلي. وانظر كيف ننشز العظام ونركبها ونكسوها لحماً. فلما تبين له ذلك علم أن الله على كل شيء قدير.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-259', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-260">
+                <div class="ayah-text">وَإِذۡ قَالَ إِبۡرَ ٰ⁠هِـۧمُ رَبِّ أَرِنِی كَیۡفَ تُحۡیِ <span class="tj-slt">ٱ</span>لۡمَوۡتَ<span class="tj-mdd">ىٰ</span>ۖ قَالَ أَوَلَمۡ تُؤۡمِنۖ قَالَ بَلَ<span class="tj-mdd">ىٰ</span> وَلَ<span class="tj-mdd">ـٰ</span>كِ<span class="tj-dgm">ن</span> لِّیَطۡمَىِٕ<span class="tj-ghn">نَّ</span> قَلۡبِیۖ قَالَ فَخُذۡ أَرۡبَعَ<span class="tj-dgm">ةࣰ</span> <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱل</span>طَّیۡرِ فَصُرۡهُ<span class="tj-ghn">نَّ</span> إِلَیۡكَ ثُ<span class="tj-ghn">مَّ</span> <span class="tj-slt">ٱ</span>جۡعَلۡ عَلَ<span class="tj-mdd">ىٰ</span> كُلِّ جَبَ<span class="tj-dgm">لࣲ</span> <span class="tj-ghn">مِّ</span>نۡهُ<span class="tj-ghn">نَّ</span> جُزۡءࣰا ثُ<span class="tj-ghn">مَّ</span> <span class="tj-slt">ٱ</span>دۡعُهُ<span class="tj-ghn">نَّ</span> یَأۡتِی<span class="tj-khf">نك</span>َ سَعۡیࣰاۚ وَ<span class="tj-slt">ٱ</span>عۡلَمۡ أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ عَزِیزٌ حَكِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">سؤال إبراهيم ربه أن يريه كيف يحيي الموتى ليطمئن قلبه بالمعاينة، فأمره أن يذبح أربعة من الطير ويفرقها على الجبال ثم يدعوها فتأتيه ساعية.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-260">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-260">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-260">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-260">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-260">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-260">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-260">سأل إبراهيم ربه أن يريه كيفية إحياء الموتى لا شكاً في القدرة بل طلباً لطمأنينة القلب بالمشاهدة، فإن علم اليقين وإن كان جازماً إلا أن عين اليقين أقوى منه. فأمره الله أن يأخذ أربعة من الطير فيذبحها ويقطعها ويخلط لحومها ثم يجعل على كل جبل جزءاً منها ثم يناديها فتأتيه مسرعة بإذن الله. وفي هذا برهان قاطع على قدرة الله على إحياء الموتى، وأنه عزيز لا يعجزه شيء حكيم في أفعاله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-260', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-260">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-260">سأل إبراهيم خليل الرحمن ربه أن يريه كيف يحيي الموتى ليرتقي من علم اليقين إلى عين اليقين. فقال الله: أولم تؤمن؟ قال: بلى ولكن ليطمئن قلبي. فأمره أن يأخذ أربعة طيور وأن يضمها إليه ويتعرف عليها ثم يذبحها ويخلطها ويفرقها على الجبال ثم يدعوها فتأتيه ساعية أي مشياً سريعاً. وقد فعل إبراهيم ذلك فكان كل جزء من كل طائر يطير إلى جزئه الآخر حتى اكتملت الطيور وجاءته حية بإذن الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-260', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-260">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-260">قال إبراهيم: رب أرني كيف تحيي الموتى ليس شكاً منه بل أراد أن يرى ذلك عياناً ليزداد طمأنينة ويقيناً. فأمره الله أن يأخذ أربعة طيور قيل هي الديك والطاووس والغراب والحمام، فيذبحها ويخلط لحومها وريشها ثم يضع على كل جبل جزءاً. ثم يدعوها فتأتيه ساعية أي مسرعة. ففعل ذلك فتطايرت الأجزاء والتحمت كل واحدة بصاحبتها حتى عادت كما كانت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-260', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-260">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-260">سؤال إبراهيم لم يكن عن شك بل عن رغبة في الترقي من الاستدلال إلى العيان ومن علم اليقين إلى عين اليقين. وفي قوله ليطمئن قلبي دليل على أن الإيمان يتفاوت ويزيد. والطيور الأربعة ذبحها وقطعها وخلطها ثم فرقها على جبال مختلفة ثم دعاها فتطايرت أجزاؤها والتأمت وعادت إليه حية. وختم الآية بالعزيز الحكيم لأن الإحياء يحتاج إلى قدرة عزيزة وحكمة بالغة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-260', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-260">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-260">يقول تعالى: واذكر إذ قال إبراهيم رب أرني كيف تحيي الموتى. قال: أولم تصدق بقدرتي؟ قال: بلى آمنت ولكن أريد أن أرى ذلك بعيني ليسكن قلبي. فقال: خذ أربعة من الطير فاضممهن إليك واعرفهن ثم اذبحهن واخلط أجزاءهن ثم اجعل على كل جبل منهن جزءاً ثم نادهن يأتينك سعياً. واعلم أن الله عزيز في قدرته لا يعجزه شيء حكيم في تدبيره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-260', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-261">
+                <div class="ayah-text"><span class="tj-ghn">مَّ</span>ثَلُ <span class="tj-slt">ٱلَّ</span>ذِینَ یُ<span class="tj-khf">نف</span>ِقُونَ أَمۡوَ ٰ⁠لَهُمۡ فِی سَبِیلِ <span class="tj-slt">ٱ</span>للَّهِ كَمَثَلِ حَبَّةٍ أَ<span class="tj-qlb">نۢب</span>َتَتۡ سَبۡعَ سَنَابِلَ فِی كُلِّ سُ<span class="tj-qlb">نۢب</span>ُلَةࣲ مِّ<span class="tj-slt">ا۟</span>ئَةُ حَبَّةࣲۗ وَ<span class="tj-slt">ٱ</span>للَّهُ یُضَ<span class="tj-mdd">ـٰ</span>عِفُ لِمَ<span class="tj-dgm">ن</span> یَشَ<span class="tj-mdd">اۤ</span>ءُۚ وَ<span class="tj-slt">ٱ</span>للَّهُ وَ ٰ⁠سِعٌ عَلِیمٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">مثل الإنفاق في سبيل الله كحبة أنبتت سبع سنابل في كل سنبلة مئة حبة، أي سبعمائة ضعف. والله يضاعف لمن يشاء فوق ذلك، وهو واسع عليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-261">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-261">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-261">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-261">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-261">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-261">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-261">هذا مثل ضربه الله للإنفاق في سبيله وأن الحسنة فيه تضاعف إلى سبعمائة ضعف. فالحبة الواحدة تنبت سبع سنابل في كل سنبلة مئة حبة. والله يضاعف لمن يشاء فوق ذلك بحسب حال المنفق وإخلاصه ونفع نفقته. وسبيل الله يشمل كل طاعة وقربة. والله واسع الفضل لا ينقصه العطاء، عليم بمن يستحق المضاعفة ومن لا يستحقها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-261', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-261">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-261">ضرب الله هذا المثل ترغيباً في الإنفاق في سبيله وبياناً لعظم الجزاء. فالنفقة الواحدة تتضاعف إلى سبعمائة ضعف كالحبة التي تنبت سبع سنابل في كل سنبلة مئة حبة. وقوله والله يضاعف لمن يشاء يعني أن المضاعفة قد تزيد على سبعمائة ضعف لمن أخلص وأحسن الإنفاق. وقد جاء في الحديث أن الله يضاعف إلى سبعمائة ضعف إلى أضعاف كثيرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-261', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-261">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-261">ضرب الله مثلاً للنفقة في سبيله بالحبة التي تنبت سبع سنابل في كل سنبلة مئة حبة فيكون المجموع سبعمائة. وهذا أقل المضاعفة وقد يزيد الله فوق ذلك لمن يشاء بحسب الإخلاص وطيب المال وشدة الحاجة. والله واسع لا ينقص خزائنه شيء عليم بنيات المنفقين وأحوالهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-261', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-261">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-261">هذا المثل من أبلغ ما ضُرب في الترغيب في الإنفاق. والسبعمائة ضعف هي أقل المضاعفة في النفقة في سبيل الله وقد تزيد على ذلك. وسبيل الله يشمل الجهاد وكل وجوه الخير. والمضاعفة تختلف بحسب الإخلاص والنفع وحال المنفق والمنفق عليه. والله واسع الفضل لا تنفد خزائنه عليم بمن يستحق التضعيف ومن لا يستحقه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-261', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-261">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-261">يقول تعالى: صفة إنفاق المنفقين في طاعة الله كصفة حبة زُرعت في أرض طيبة فأنبتت سبع سنابل في كل سنبلة مئة حبة. فكذلك النفقة في سبيل الله تضاعف إلى سبعمائة ضعف. والله يضاعف لمن يشاء فوق ذلك. والله واسع يعني أن فضله واسع لا ضيق فيه، عليم بمن ينفق في سبيله فيجازيه أحسن الجزاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-261', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-262">
+                <div class="ayah-text"><span class="tj-slt">ٱلَّ</span>ذِینَ یُ<span class="tj-khf">نف</span>ِقُونَ أَمۡوَ ٰ⁠لَهُمۡ فِی سَبِیلِ <span class="tj-slt">ٱ</span>للَّهِ ثُ<span class="tj-ghn">مَّ</span> لَا یُتۡبِعُونَ مَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">نف</span>َقُو<span class="tj-slt">ا۟</span> مَ<span class="tj-ghn">نࣰّ</span>ا وَلَاۤ أَ<span class="tj-dgm">ذࣰى</span> لَّهُمۡ أَجۡرُهُمۡ عِ<span class="tj-khf">ند</span>َ رَبِّهِمۡ وَلَا خَوۡفٌ عَلَیۡهِمۡ وَلَا هُمۡ یَحۡزَنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الذين ينفقون في سبيل الله ولا يتبعون إنفاقهم منّاً ولا أذى لهم أجرهم عند ربهم ولا خوف عليهم ولا هم يحزنون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-262">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-262">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-262">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-262">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-262">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-262">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-262">مدح الله الذين ينفقون أموالهم في سبيله ثم لا يتبعون نفقتهم منّاً بأن يذكروا إنفاقهم ويفتخروا به على من أنفقوا عليه، ولا أذى بالتعيير والتوبيخ. هؤلاء لهم أجرهم المضاعف عند ربهم محفوظاً مضموناً. ولا خوف عليهم فيما يستقبلون من أمور الآخرة ولا هم يحزنون على ما فاتهم من الدنيا. وهذه أعظم بشارة للمنفقين المخلصين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-262', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-262">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-262">أثنى الله على المنفقين الذين يبذلون أموالهم في طاعته ثم لا يُتبعون نفقاتهم منّاً على من أنفقوا عليه ولا أذى. والمنّ هو أن يعدّ نعمته على المنفق عليه ويذكره بها، والأذى أن يؤذيه بالقول أو يفضحه بين الناس. فمن سلم من هذين فله أجره العظيم عند الله ولا يخاف مما يستقبل ولا يحزن على ما مضى، وهذا هو السعادة الكاملة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-262', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-262">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-262">الذين ينفقون في سبيل الله ثم لا يمنّون على من أعطوه ولا يؤذونه بالتعيير والذكر لهم أجرهم كاملاً عند ربهم. والمنّ يبطل الصدقة لأنه ينقض الإحسان ويكسر قلب المحتاج. والأذى كذلك يحبط العمل. فمن أنفق لله خالصاً دون منّ ولا أذى فلا خوف عليه من عذاب الآخرة ولا حزن على فوات الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-262', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-262">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-262">في هذه الآية بيان لشرط قبول النفقة وهو خلوها من المنّ والأذى. والمنّ من كبائر الذنوب لقوله صلى الله عليه وسلم: ثلاثة لا يكلمهم الله ومنهم المنّان بعطائه. والأذى يشمل كل ما يكسر قلب من أُعطي من ذكر النفقة أمام الناس أو التعالي عليه. وجزاء من سلم من ذلك أجر كامل عند الله وأمان من الخوف والحزن في الآخرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-262', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-262">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-262">يقول تعالى: الذين ينفقون أموالهم في طاعة الله ثم لا يتبعون ما أنفقوا منّاً على من أنفقوا عليه بأن يعدّوا عليهم نعمهم، ولا أذى بأن يؤذوهم بالقول أو الفعل، لهم ثوابهم عند ربهم الذي لا يضيع أجر من أحسن عملاً. ولا خوف عليهم يوم القيامة ولا هم يحزنون على ما خلفوه في الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-262', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-263">
+                <div class="ayah-text">۞ قَوۡلࣱ <span class="tj-ghn">مَّ</span>عۡرُوفࣱ وَمَغۡفِرَةٌ خَیۡ<span class="tj-dgm">رࣱ</span> <span class="tj-ghn">مِّ</span>ن صَدَقَةࣲ یَتۡبَعُهَ<span class="tj-mdd">اۤ</span> أَذࣰىۗ وَ<span class="tj-slt">ٱ</span>للَّهُ غَنِیٌّ حَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">قول معروف وعفو ومسامحة خير من صدقة يعقبها أذى للمتصدَّق عليه، والله غني عن صدقات العباد حليم لا يعاجلهم بالعقوبة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-263">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-263">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-263">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-263">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-263">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-263">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-263">القول المعروف هو الكلام الطيب والدعاء للسائل والعذر الجميل. والمغفرة هي التجاوز عن الأخطاء والمسامحة. وهذان خير من صدقة يتبعها أذى لأن الأذى يمحق ثواب الصدقة ويكسر قلب الفقير. والله غني عن صدقات عباده لا يحتاج إليها وإنما شرعها لمصلحتهم، حليم لا يعاجل بالعقوبة من مَنَّ وآذى بل يمهله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-263', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-263">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-263">أخبر تعالى أن الكلمة الطيبة والدعاء الحسن والعفو عن الناس أفضل عنده من صدقة يعقبها إيذاء للمعطى. لأن القول المعروف حسنة والصدقة التي يتبعها أذى حسنة مقرونة بسيئة قد تمحقها. والله غني عن خلقه لا يحتاج إلى صدقاتهم، حليم يحلم على من يسيء ولا يعاجله بالعقوبة بل يمهله لعله يتوب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-263', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-263">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-263">القول المعروف هو الرد الجميل على السائل كأن يقول: بارك الله فيك أو يسر الله أمرك. والمغفرة هي الصفح والتجاوز. وهما خير من صدقة مالية يتبعها أذى للمتصدق عليه بالتعيير والمنّ. والله غني لا يحتاج إلى صدقة أحد حليم لا يعجل بعقوبة المسيء بل يمهله ويستر عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-263', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-263">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-263">فضّل الله القول المعروف والمغفرة على الصدقة المصحوبة بالأذى. والقول المعروف يشمل الدعاء والكلام الطيب وردّ السائل بلطف. والمغفرة التغاضي عن جفوة السائل إذا ألحّ. وختم بأن الله غني حليم: غني فلا يحتاج لصدقاتكم وإنما هي لأنفسكم، حليم يمهل العاصي ولا يعاجله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-263', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-263">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-263">يقول تعالى: ردّ جميل ودعاء حسن للسائل مع عفو وتجاوز خير وأعظم أجراً من صدقة يعقبها من المتصدق أذى لمن تصدق عليه. والله غني عن صدقات خلقه لا تزيد في ملكه وإنما هي لمصلحة المنفقين أنفسهم. وهو حليم لا يعاجل بالعقوبة من أساء الإنفاق بالمنّ والأذى.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-263', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-264">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> لَا تُ<span class="tj-qlq">بۡ</span>طِلُو<span class="tj-slt">ا۟</span> صَدَقَ<span class="tj-mdd">ـٰ</span>تِكُم بِ<span class="tj-slt">ٱ</span>لۡمَ<span class="tj-ghn">نِّ</span> وَ<span class="tj-slt">ٱ</span>لۡأَذَ<span class="tj-mdd">ىٰ</span> كَ<span class="tj-slt">ٱلَّ</span>ذِی یُ<span class="tj-khf">نف</span>ِقُ مَالَهُۥ رِئَ<span class="tj-mdd">اۤ</span>ءَ <span class="tj-slt">ٱل</span>نَّاسِ وَلَا یُؤۡمِنُ بِ<span class="tj-slt">ٱ</span>للَّهِ وَ<span class="tj-slt">ٱ</span>لۡیَوۡمِ ٱلۡـَٔاخِرِۖ فَمَثَلُهُۥ كَمَثَلِ صَفۡوَانٍ عَلَیۡهِ تُرَا<span class="tj-khf">بࣱ</span> فَأَصَابَهُۥ وَابِ<span class="tj-khf">لࣱ</span> فَتَرَكَهُۥ صَلۡ<span class="tj-dgm">دࣰا</span>ۖ لَّا یَقۡدِرُونَ عَلَ<span class="tj-mdd">ىٰ</span> شَیۡءࣲ <span class="tj-ghn">مِّ</span><span class="tj-ghn">مَّ</span>ا كَسَبُو<span class="tj-slt">ا۟</span>ۗ وَ<span class="tj-slt">ٱ</span>للَّهُ لَا یَهۡدِی <span class="tj-slt">ٱ</span>لۡقَوۡمَ <span class="tj-slt">ٱ</span>لۡ<span class="tj-mdd">كَـٰ</span>فِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">النهي عن إبطال الصدقات بالمنّ والأذى، ومثل المنافق المرائي كصفوان عليه تراب فأصابه مطر غزير فتركه أملس صلداً لا شيء عليه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-264">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-264">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-264">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-264">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-264">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-264">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-264">نهى الله المؤمنين عن إبطال صدقاتهم بالمنّ والأذى وشبّه حال من يفعل ذلك بحال المنافق الذي ينفق رياءً ولا يؤمن بالله واليوم الآخر. ومثله كحجر أملس عليه غبار فيظن الناظر أنه أرض خصبة، فإذا جاء المطر أزال الغبار وكشف الحجر الأصلد الذي لا ينبت شيئاً. كذلك المنّ والرياء يكشفان حقيقة العمل ويمحقان ثوابه فلا يبقى منه شيء يوم القيامة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-264', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-264">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-264">نهى الله المؤمنين أن يبطلوا ثواب صدقاتهم بالمنّ والأذى كما يبطل الرياء عمل المنافق. فمثل المرائي كصفوان وهو الحجر الأملس عليه تراب يسير فظنه الناس أرضاً صالحة، فلما جاءه مطر شديد أزال التراب كله وبقي الحجر صلداً لا شيء عليه. كذلك المرائي لا يجد يوم القيامة ثواباً لأن أعماله كانت لغير الله. والله لا يوفق الكافرين المرائين لعمل ينفعهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-264', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-264">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-264">نهى الله المؤمنين عن إحباط صدقاتهم بالمنّ والأذى وشبّه ذلك بالمنافق الذي ينفق للسمعة والرياء. ومثله كحجر أملس عليه تراب فإذا أصابه المطر الغزير ذهب التراب وبقي الحجر صلداً أملس لا تراب عليه ولا نبات. كذلك الرياء والمنّ يذهبان بثواب العمل كما يذهب المطر بالتراب عن الحجر. ولا يقدرون يوم القيامة على شيء من ثواب ما أنفقوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-264', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-264">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-264">هذه الآية تؤكد أن المنّ والأذى يبطلان الصدقة كما يبطل الرياء العمل. والصفوان الحجر الأملس الكبير. والوابل المطر الغزير. والصلد الأملس الذي لا ينبت شيئاً. فكما أن التراب على الحجر لا يثبت أمام المطر كذلك العمل المشوب بالمنّ والأذى أو الرياء لا يثبت أمام الامتحان الإلهي يوم القيامة بل يذهب هباءً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-264', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-264">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-264">يقول تعالى: لا تحبطوا يا أيها المؤمنون أجور صدقاتكم بأن تمنّوا بها وتؤذوا من تتصدقون عليه فتكونوا كالمنافق الذي ينفق رياءً لا إيماناً. ومثل ذلك كمثل حجر أملس عليه تراب فجاءه مطر غزير فأزال ما عليه وتركه حجراً أصلد لا شيء فيه. كذلك هؤلاء لا يجدون ثواب أعمالهم يوم القيامة لأن المنّ والرياء أحبطاها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-264', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-265">
+                <div class="ayah-text">وَمَثَلُ <span class="tj-slt">ٱلَّ</span>ذِینَ یُ<span class="tj-khf">نف</span>ِقُونَ أَمۡوَ ٰ⁠لَهُمُ <span class="tj-slt">ٱ</span><span class="tj-qlq">بۡ</span>تِغَ<span class="tj-mdd">اۤ</span>ءَ مَرۡضَاتِ <span class="tj-slt">ٱ</span>للَّهِ وَتَثۡبِی<span class="tj-dgm">تࣰا</span> <span class="tj-ghn">مِّ</span>نۡ أَ<span class="tj-khf">نف</span>ُسِهِمۡ كَمَثَلِ جَ<span class="tj-ghn">نَّ</span>ةِۭ بِرَ<span class="tj-qlq">بۡ</span>وَةٍ أَصَابَهَا وَابِ<span class="tj-khf">لࣱ</span> فَـَٔاتَتۡ أُكُلَهَا ضِعۡفَیۡنِ فَإِ<span class="tj-dgm">ن</span> لَّمۡ یُصِبۡهَا وَابِ<span class="tj-khf">لࣱ</span> فَطَلࣱّۗ وَ<span class="tj-slt">ٱ</span>للَّهُ بِمَا تَعۡمَلُونَ بَصِیرٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">مثل المنفقين ابتغاء مرضات الله كجنة على ربوة مرتفعة إذا أصابها مطر غزير ضاعف ثمرها وإن لم يصبها فيكفيها الرذاذ الخفيف.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-265">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-265">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-265">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-265">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-265">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-265">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-265">ضرب الله مثلاً للمؤمن المخلص المنفق ابتغاء مرضات الله وتثبيتاً من نفسه أي يقيناً وتصديقاً. مثله كجنة بستان في مكان مرتفع طيب الهواء والتربة، إن أصابها مطر غزير أثمرت ضعفين، وإن لم يصبها مطر شديد فالرذاذ الخفيف يكفيها لطيب تربتها. كذلك المؤمن المخلص عمله ينمو في كل حال سواء أنفق كثيراً أو قليلاً لأن الإخلاص يبارك العمل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-265', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-265">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-265">هذا مثل المؤمن المنفق ابتغاء رضوان الله لا رياءً ولا سمعة. وتثبيتاً من أنفسهم أي يقيناً وتصديقاً أن الله سيجزيهم. مثلهم كبستان على مكان مرتفع تصل إليه الشمس والهواء فهو أحسن الأماكن للزراعة. إن جاءه مطر كثير أثمر ضعفين وإن لم يأته إلا طلّ وندى خفيف أثمر أيضاً لطيب أرضه. كذلك عمل المخلص مثمر على كل حال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-265', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-265">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-265">مثل المنفقين المخلصين كجنة في ربوة عالية طيبة التربة إن أصابها وابل أي مطر غزير آتت ثمرها مضاعفاً وإن لم يصبها وابل فطلّ وهو المطر الخفيف يكفيها. والربوة المكان المرتفع وهو أجود للزراعة. والمعنى أن المؤمن المخلص ينتفع بعمله قليلاً كان أو كثيراً لأن الإخلاص يزكّي العمل ويبارك فيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-265', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-265">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-265">هذا المثل في مقابل المثل السابق. فكما أن المرائي كصفوان لا ينبت، فالمخلص كجنة على ربوة مثمرة في كل حال. والربوة المكان العالي وهو أجود للزراعة لبعده عن الرطوبة الزائدة وحسن تعرضه للشمس والهواء. إن جاءها مطر كثير أعطت الضعف وإن جاءها قليل كفاها. والمعنى أن نفقة المخلص مباركة كثُرت أو قلّت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-265', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-265">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-265">يقول تعالى: ومثل المنفقين طلباً لرضا الله ويقيناً منهم بثوابه كمثل بستان على مكان مرتفع من الأرض طيب التربة. إن أصابه مطر كثير أخرج ثمره مضاعفاً، وإن لم يأته إلا ندى يسير أثمر أيضاً لجودة تربته. كذلك المؤمن المخلص عمله مقبول ومبارك سواء كثر أو قل. والله بصير بأعمال عباده يعلم المخلص من المرائي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-265', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-266">
+                <div class="ayah-text">أَیَوَدُّ أَحَدُكُمۡ أَ<span class="tj-khf">ن</span> تَكُونَ لَهُۥ جَ<span class="tj-ghn">نَّ</span><span class="tj-dgm">ةࣱ</span> <span class="tj-ghn">مِّ</span><span class="tj-dgm">ن</span> <span class="tj-ghn">نَّ</span>خِی<span class="tj-dgm">لࣲ</span> وَأَعۡنَا<span class="tj-khf">بࣲ</span> تَ<span class="tj-qlq">جۡ</span>رِی مِ<span class="tj-khf">ن</span> تَحۡتِهَا <span class="tj-slt">ٱ</span>لۡأَنۡهَ<span class="tj-mdd">ـٰ</span>رُ لَهُۥ فِیهَا مِ<span class="tj-khf">ن</span> كُلِّ <span class="tj-slt">ٱل</span>ثَّمَرَ ٰ⁠تِ وَأَصَابَهُ <span class="tj-slt">ٱ</span>لۡكِبَرُ وَلَهُۥ ذُرِّیَّ<span class="tj-khf">ةࣱ</span> ضُعَفَ<span class="tj-mdd">اۤ</span>ءُ فَأَصَابَهَ<span class="tj-mdd">اۤ</span> إِعۡصَا<span class="tj-khf">رࣱ</span> فِیهِ نَا<span class="tj-khf">رࣱ</span> فَ<span class="tj-slt">ٱ</span>حۡتَرَقَتۡۗ كَذَ ٰ⁠لِكَ یُبَیِّنُ <span class="tj-slt">ٱ</span>للَّهُ لَكُمُ <span class="tj-slt">ٱ</span>لۡـَٔایَ<span class="tj-mdd">ـٰ</span>تِ لَعَلَّكُمۡ تَتَفَكَّرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">مثل من يعمل العمل الصالح ثم يفسده كمن له بستان جميل من نخيل وأعناب فيصيبه إعصار فيه نار فيحترق وهو في أشد حاجة إليه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-266">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-266">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-266">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-266">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-266">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-266">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-266">هذا مثل عظيم يحذر من إبطال الأعمال. كمن له بستان فيه نخيل وأعناب تجري من تحتها الأنهار فيه من كل الثمرات، وقد كبر صاحبه وضعف ذريته فهم في أشد الحاجة إلى هذا البستان، فيأتيه إعصار فيه نار فيحرقه بالكامل في وقت الحاجة الشديدة. كذلك من يعمل الأعمال الصالحة ثم يحبطها بالمعاصي والكبائر فيأتي يوم القيامة في أشد الحاجة إليها فلا يجد شيئاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-266', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-266">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-266">هذا مثل ضربه الله لمن يعمل عملاً صالحاً ثم يتبعه بما يحبطه. قال ابن عباس: هذا مثل ضربه الله للمرائي. فكأن له جنة عظيمة فيها نخيل وأعناب وأنهار وثمار وقد بلغ الكبر وله أولاد صغار ضعاف، ثم أصاب تلك الجنة إعصار ناري فأحرقها بالكلية. فخسر الجنة في أحوج ما يكون إليها. كذلك المبطل لعمله يفقده يوم القيامة في أحوج ما يكون إليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-266', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-266">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-266">ضرب الله مثلاً لمن يحبط عمله بالرياء والمنّ. كمن له جنة كاملة فيها النخيل والأعناب والأنهار والثمرات ثم يصيبها إعصار فيه نار فتحترق وصاحبها قد كبر وله ذرية ضعاف لا يقدرون على كسب. فيجد نفسه بلا شيء في أشد أوقات الحاجة. كذلك من أحبط عمله يأتي يوم القيامة صفر اليدين في أحوج ما يكون إلى ثواب عمله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-266', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-266">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-266">هذا من أبلغ الأمثال تحذيراً من إحباط الأعمال. والإعصار ريح شديدة تلتف كالعمود. والمثل يصور أشد حالات الخسارة: رجل كبير له ذرية ضعاف وعنده بستان هو كل ما يملك فيحترق أمامه. كذلك الذي يبطل عمله بالرياء أو المنّ أو المعاصي يجد نفسه يوم القيامة بلا رصيد في أحوج الأوقات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-266', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-266">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-266">يقول تعالى: أيحب أحدكم أن يكون له بستان عظيم فيه النخيل والأعناب والأنهار والثمرات ثم يبلغ الشيخوخة ويكون له أولاد صغار ضعاف في أمسّ الحاجة إلى ذلك البستان فيأتيه ريح عاصفة فيها نار فتحرقه. هذا مثل من عمل لغير الله أو أبطل عمله يأتي يوم القيامة لا يجد ثواباً في أحوج ما يكون إليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-266', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-267">
+                <div class="ayah-text"><span class="tj-mdd">یَـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-khf">نف</span>ِقُو<span class="tj-slt">ا۟</span> مِ<span class="tj-khf">ن</span> طَیِّبَ<span class="tj-mdd">ـٰ</span>تِ مَا كَسَ<span class="tj-qlq">بۡ</span>تُمۡ وَمِ<span class="tj-ghn">مَّ</span><span class="tj-mdd">اۤ</span> أَخۡرَ<span class="tj-qlq">جۡ</span>نَا لَكُم <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>لۡأَرۡضِۖ وَلَا تَیَ<span class="tj-ghn">مَّ</span>مُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡخَبِیثَ مِنۡهُ تُ<span class="tj-khf">نف</span>ِقُونَ وَلَسۡتُم بِـَٔاخِذِیهِ إِلَّ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">ن</span> تُغۡمِضُو<span class="tj-slt">ا۟</span> فِیهِۚ وَ<span class="tj-slt">ٱ</span>عۡلَمُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ غَنِیٌّ حَمِیدٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الأمر بالإنفاق من الطيب الحلال والنهي عن التصدق بالردي الخبيث الذي لا يقبل المرء أن يأخذه إلا بتساهل وتغاضٍ.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-267">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-267">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-267">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-267">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-267">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-267">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-267">أمر الله بالإنفاق من الطيب الجيد مما كسبه العبد ومما أخرج الله من الأرض من الحبوب والثمار. ونهى عن تعمد الخبيث الرديء في النفقة وهو ما لا يرضاه المرء لنفسه فكيف يتقرب به إلى الله. ولستم بآخذيه إلا أن تغمضوا أي لو أُعطي لكم ما قبلتموه إلا مع إغماض وتساهل. والله غني عن نفقاتكم حميد يستحق الحمد على ما أسبغ من النعم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-267', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-267">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-267">أمر الله عباده بالإنفاق من طيبات ما كسبوا أي من الحلال الجيد، ومما أخرج لهم من الأرض من الزروع والثمار. ونهاهم عن التصدق بالرديء من أموالهم الذي لا يقبلونه لأنفسهم لرداءته إلا بتساهل وإغماض. وكان بعض الناس يتعمد التصدق بأردأ تمره وأسوأ ماله فنهاهم الله عن ذلك. والله غني لا يحتاج لصدقاتهم حميد محمود في كل حال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-267', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-267">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-267">نزلت هذه الآية في قوم كانوا يتصدقون بشرار التمر ورديئه. فأمر الله بالإنفاق من الطيب الجيد ونهى عن الخبيث الرديء. ولستم بآخذيه أي لو كان لكم حق عند أحد فأعطاكم من هذا الرديء ما أخذتموه إلا أن تتساهلوا فيه. فكيف تعطون الله ما لا تقبلونه لأنفسكم. والله غني عنكم وعن صدقاتكم حميد في أفعاله وصفاته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-267', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-267">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-267">أمر بالإنفاق من الطيبات والنهي عن إخراج الخبيث في الصدقة. والطيب هنا الجيد من المال لا المقصود به الحلال فقط بل أجود ما عند المتصدق. والإغماض هو التساهل والتسامح أي أنكم لو أُعطيتم هذا الرديء لما قبلتموه إلا متساهلين. والله غني لا يحتاج للصدقة وإنما شرعها لمنفعة العبد والمتصدق عليه. وهو حميد يستحق الحمد والثناء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-267', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-267">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-267">يقول تعالى: أنفقوا أيها المؤمنون من جيد ما كسبتم بأيديكم ومن جيد ما أخرجنا لكم من الأرض ولا تقصدوا الرديء منه تتصدقون به. وأنتم لو أُعطيتم ذلك الرديء ما أخذتموه إلا بإغماض وتغاضٍ. فلا ترضوا لله ما لا ترضونه لأنفسكم. واعلموا أن الله غني عنكم وعن صدقاتكم حميد يستوجب الحمد منكم على نعمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-267', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-268">
+                <div class="ayah-text"><span class="tj-slt">ٱل</span>شَّیۡطَ<span class="tj-mdd">ـٰ</span>نُ یَعِدُكُمُ <span class="tj-slt">ٱ</span>لۡفَ<span class="tj-qlq">قۡ</span>رَ وَیَأۡمُرُكُم بِ<span class="tj-slt">ٱ</span>لۡفَحۡشَ<span class="tj-mdd">اۤ</span>ءِۖ وَ<span class="tj-slt">ٱ</span>للَّهُ یَعِدُكُم <span class="tj-ghn">مَّ</span>غۡفِ<span class="tj-dgm">رَةࣰ</span> <span class="tj-ghn">مِّ</span>نۡهُ وَفَضۡ<span class="tj-dgm">لࣰاۗ</span> وَ<span class="tj-slt">ٱ</span>للَّهُ وَ ٰ⁠سِعٌ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الشيطان يخوّف من الفقر ويأمر بالبخل والفحشاء، والله يعد المنفقين مغفرة وفضلاً وزيادة، والله واسع عليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-268">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-268">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-268">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-268">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-268">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-268">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-268">الشيطان يعدكم الفقر أي يخوفكم من الإنفاق ويوهمكم أنكم إن أنفقتم افتقرتم، ويأمركم بالفحشاء وهي البخل والمعاصي. والله يعدكم في مقابل ذلك مغفرة لذنوبكم وفضلاً وهو الرزق والبركة والخلف. فالله واسع الفضل عليم بأحوال عباده ونياتهم. فمن أطاع ربه أفلح ومن أطاع الشيطان خسر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-268', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-268">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-268">الشيطان يعد بالفقر أي يخوف الإنسان إن أنفق ذهب ماله وافتقر، ويأمر بالفحشاء وهي البخل ومنع الحقوق. وأما الله فيعد المنفقين مغفرة تكفر بها سيئاتهم وفضلاً يخلف به عليهم ما أنفقوا ويزيدهم من فضله. وقد صح أن ملكين ينزلان كل يوم فيقول أحدهما: اللهم أعطِ منفقاً خلفاً، ويقول الآخر: اللهم أعطِ ممسكاً تلفاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-268', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-268">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-268">الشيطان يعدكم الفقر يخوفكم من الحاجة إذا أنفقتم ويأمركم بالفحشاء وهي البخل والشح ومنع الواجبات. والله يعدكم من عنده مغفرة لذنوبكم وفضلاً وهو الرزق والبركة في المال. والله واسع الفضل والعطاء عليم بمن يستحق التوفيق للإنفاق. فلا تطيعوا الشيطان وأطيعوا الرحمن.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-268', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-268">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-268">في الآية مقابلة بين وعد الشيطان ووعد الرحمن. فالشيطان يعد بالفقر ويأمر بالفحشاء وهي كل ما يستفحش من البخل والمعاصي. والله يعد بالمغفرة والفضل وهو الزيادة في الرزق والبركة. وعلى العاقل أن يتأمل في الواعدَيْن: أيهما أصدق وأوفى بالوعد فيطيعه. والله واسع لا تنفد خزائنه عليم بمن يطيعه ومن يعصيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-268', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-268">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-268">يقول تعالى: الشيطان يخوفكم الفقر والحاجة إن أنفقتم أموالكم في طاعة الله ويأمركم بالبخل والمعاصي. والله يعدكم إن أنفقتم في سبيله مغفرة لذنوبكم وفضلاً يخلف عليكم ما أنفقتم ويزيدكم فوقه. والله واسع لا ضيق في فضله عليم بنيات خلقه وأعمالهم فيجازي كلاً بما يستحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-268', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-269">
+                <div class="ayah-text">یُؤۡتِی <span class="tj-slt">ٱ</span>لۡحِكۡمَةَ مَ<span class="tj-dgm">ن</span> یَشَ<span class="tj-mdd">اۤ</span>ءُۚ وَمَ<span class="tj-dgm">ن</span> یُؤۡتَ <span class="tj-slt">ٱ</span>لۡحِكۡمَةَ فَقَ<span class="tj-qlq">دۡ</span> أُوتِیَ خَیۡ<span class="tj-khf">رࣰا</span> كَثِیرࣰاۗ وَمَا یَذَّكَّرُ إِلَّ<span class="tj-mdd">اۤ</span> أُ<span class="tj-slt">و۟</span>لُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡأَلۡبَ<span class="tj-mdd">ـٰ</span>بِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٦٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الله يؤتي الحكمة من يشاء من عباده، ومن أوتي الحكمة فقد نال خيراً عظيماً كثيراً، ولا يتعظ ويتذكر إلا أصحاب العقول السليمة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-269">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-269">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-269">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-269">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-269">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-269">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-269">الحكمة هي العلم النافع والعمل الصالح والفقه في الدين ومعرفة وضع الأمور في مواضعها. ومن أوتي هذه الحكمة فقد أوتي خيراً كثيراً لا يُحصى لأنها تهديه إلى سعادة الدنيا والآخرة. وما يتذكر ويتعظ بآيات الله إلا أولو الألباب وهم أصحاب العقول النيرة التي تميز بين الحق والباطل والنافع والضار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-269', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-269">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-269">الحكمة قيل هي النبوة وقيل القرآن وقيل الفقه في الدين وقيل الإصابة في القول والعمل. والأرجح أنها شاملة لهذا كله. ومن أعطاه الله الحكمة فقد أعطاه خيراً كثيراً عظيماً لأن الحكمة أشرف ما يُعطاه العبد بعد الإيمان. وما يتعظ ويعتبر بهذه الأمثال إلا ذوو العقول الراجحة والأفهام المستقيمة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-269', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-269">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-269">يؤتي الحكمة من يشاء: قال ابن عباس يعني المعرفة بالقرآن ناسخه ومنسوخه ومحكمه ومتشابهه. وقيل الحكمة الإصابة في الأمور والفقه في الدين. ومن أوتي الحكمة فقد نال خيراً كثيراً لا يوازيه شيء من متاع الدنيا. وما يتذكر ويعتبر إلا أصحاب العقول السليمة الذين يتدبرون آيات الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-269', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-269">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-269">اختلف في الحكمة فقيل القرآن وقيل السنة وقيل الفقه في الدين وقيل العلم بالأحكام وقيل الخشية وقيل النبوة. والأظهر أنها تشمل كل ذلك وأنها وضع الشيء في موضعه. ومن أوتيها فقد أوتي خيراً كثيراً يشمل خير الدنيا والآخرة. وأولو الألباب هم أصحاب العقول التي تنتفع بالعلم وتعمل بالحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-269', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-269">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-269">يقول تعالى: يعطي الله الفقه في الدين والإصابة في القول والعمل من يشاء من عباده. ومن أعطاه الله ذلك فقد أعطاه خيراً كثيراً عظيماً. وما يتعظ بآيات الله وأمثاله إلا أهل العقول الرشيدة والأفهام السليمة. وفي هذا حث على طلب الحكمة والتفكر في القرآن والاعتبار بأمثاله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-269', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-270">
+                <div class="ayah-text">وَمَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">نف</span>َ<span class="tj-qlq">قۡ</span>تُم <span class="tj-ghn">مِّ</span><span class="tj-dgm">ن</span> <span class="tj-ghn">نَّ</span>فَقَةٍ أَوۡ نَذَرۡتُم <span class="tj-ghn">مِّ</span><span class="tj-dgm">ن</span> <span class="tj-ghn">نَّ</span>ذۡ<span class="tj-khf">رࣲ</span> فَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ یَعۡلَمُهُۥۗ وَمَا لِلظَّ<span class="tj-mdd">ـٰ</span>لِمِینَ مِنۡ أَ<span class="tj-khf">نص</span>َارٍ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">كل نفقة أو نذر فإن الله يعلمه ويحصيه ويجازي عليه، وما للظالمين الذين يمنعون الحقوق أو ينفقون رياءً من أنصار يوم القيامة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-270">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-270">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-270">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-270">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-270">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-270">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-270">يخبر تعالى أنه عالم بكل ما ينفقه العبد من نفقة قلّت أو كثرت وبكل ما ينذره من نذر، فلا يضيع شيء من ذلك عنده. وهذا وعد ووعيد: وعد للمنفقين المخلصين بأن الله يعلم إنفاقهم ويجازيهم عليه أحسن الجزاء، ووعيد للظالمين بأنه لا ناصر لهم يوم القيامة يدفع عنهم عذاب الله. والظالمون هنا يشملون من يمنع الإنفاق أو ينفق رياءً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-270', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-270">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-270">يخبر تعالى بعلمه التام بجميع ما ينفقه المنفقون وما ينذره الناذرون فلا يخفى عليه شيء من ذلك. وفي هذا ترغيب في الإنفاق لأن الله يعلمه ويجازي عليه. وما للظالمين الذين يبخلون بما فرض الله عليهم أو يضعون النفقة في غير موضعها من أنصار ينصرونهم يوم القيامة من عذاب الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-270', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-270">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-270">ما أنفقتم من نفقة في خير أو شر أو نذرتم نذراً لله أو لغيره فإن الله يعلمه ويحصيه ويجازيكم عليه. وما للظالمين الذين يمنعون حق الله في أموالهم أو ينفقون في معصية الله من أنصار ينصرونهم يوم القيامة ويدفعون عنهم عقاب الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-270', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-270">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-270">فيه الإعلام بأن الله محيط بجميع النفقات والنذور فلا تضيع عنده. والنذر هو ما يلزم الإنسان به نفسه من طاعة لله. وما للظالمين من أنصار نفي عام لكل ناصر يوم القيامة. والظلم هنا يشمل منع الزكاة والإنفاق في المعاصي والرياء في الصدقات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-270', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-270">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-270">يقول تعالى: مهما أنفقتم من مال في طاعة الله أو نذرتم من نذر فإن الله يعلم ذلك كله ولا يخفى عليه منه شيء فيحصيه ويجازيكم عليه. وليس للظالمين الذين يمنعون حقوق الله من ناصر ينصرهم يوم القيامة من عذاب الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-270', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-271">
+                <div class="ayah-text">إِ<span class="tj-khf">ن</span> تُ<span class="tj-qlq">بۡ</span>دُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>صَّدَقَ<span class="tj-mdd">ـٰ</span>تِ فَنِعِ<span class="tj-ghn">مَّ</span>ا هِیَۖ وَإِ<span class="tj-khf">ن</span> تُخۡفُوهَا وَتُؤۡتُوهَا <span class="tj-slt">ٱ</span>لۡفُقَرَ<span class="tj-mdd">اۤ</span>ءَ فَهُوَ خَیۡ<span class="tj-dgm">رࣱ</span> لَّكُمۡۚ وَیُكَفِّرُ عَ<span class="tj-khf">نك</span>ُم <span class="tj-ghn">مِّ</span><span class="tj-khf">ن</span> سَیِّـَٔاتِكُمۡۗ وَ<span class="tj-slt">ٱ</span>للَّهُ بِمَا تَعۡمَلُونَ خَبِیرࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إظهار الصدقات حسن ولكن إخفاؤها وإيتاؤها الفقراء سراً أفضل وأعظم أجراً، وهي تكفر السيئات، والله خبير بأعمال العباد.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-271">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-271">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-271">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-271">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-271">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-271">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-271">إن تبدوا الصدقات أي تُظهروها فنعمّا هي أي فنِعم الشيء هي. وإن تخفوها وتعطوها الفقراء سراً فهو خير لكم لأن الإخفاء أبعد عن الرياء وأحفظ لكرامة الفقير وأدل على الإخلاص. وهذه الصدقات سواء أُظهرت أو أُخفيت تكفر عنكم سيئاتكم. والله بما تعملون خبير يعلم السر والعلانية فيجازي كلاً بعمله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-271', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-271">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-271">أثنى الله على الصدقة في الحالين: العلانية والسر، إلا أنه فضّل صدقة السر لأنها أبعد عن الرياء. وقيل صدقة العلانية في الزكاة المفروضة أفضل لأن فيها قدوة، وصدقة السر في التطوع أفضل. وكلتاهما تكفران السيئات. والله خبير بأعمال عباده يعلم المخلص من المرائي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-271', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-271">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-271">إن تظهروا الصدقات فجيد ونعم الفعل فعلكم. وإن تخفوها عن أعين الناس وتعطوها الفقراء في السر فهو أفضل وأعظم أجراً لأن السر أبعد عن الرياء وأصون لماء وجه الفقير. والصدقة تكفر السيئات الصغائر. والله خبير بنياتكم لا تخفى عليه صدقة سر ولا علانية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-271', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-271">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-271">الآية تدل على أن إخفاء الصدقة أفضل من إظهارها في صدقة التطوع لأنه أقرب للإخلاص وأبعد عن الرياء. أما الزكاة المفروضة فقيل إظهارها أفضل لنفي التهمة والقدوة. وقوله ويكفر عنكم من سيئاتكم دليل على أن الصدقة من أعظم المكفرات للذنوب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-271', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-271">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-271">يقول تعالى: إن تعلنوا صدقاتكم فتتصدقوا بها جهراً فنِعم الشيء هي. وإن تسرّوا بها وتعطوها المحتاجين خفية فذلك خير لكم وأفضل. وبالصدقة يكفر الله عنكم سيئاتكم. والله بما تفعلون من خير أو شر خبير محيط بعلمه لا يخفى عليه شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-271', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-272">
+                <div class="ayah-text">۞ لَّیۡسَ عَلَیۡكَ هُدَ<span class="tj-mdd">ىٰ</span>هُمۡ وَلَ<span class="tj-mdd">ـٰ</span>كِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ یَهۡدِی مَ<span class="tj-dgm">ن</span> یَشَ<span class="tj-mdd">اۤ</span>ءُۗ وَمَا تُ<span class="tj-khf">نف</span>ِقُو<span class="tj-slt">ا۟</span> مِنۡ خَیۡ<span class="tj-khf">رࣲ</span> فَلِأَ<span class="tj-khf">نف</span>ُسِكُمۡۚ وَمَا تُ<span class="tj-khf">نف</span>ِقُونَ إِلَّا <span class="tj-slt">ٱ</span><span class="tj-qlq">بۡ</span>تِغَ<span class="tj-mdd">اۤ</span>ءَ وَ<span class="tj-qlq">جۡ</span>هِ <span class="tj-slt">ٱ</span>للَّهِۚ وَمَا تُ<span class="tj-khf">نف</span>ِقُو<span class="tj-slt">ا۟</span> مِنۡ خَیۡ<span class="tj-dgm">رࣲ</span> یُوَفَّ إِلَیۡكُمۡ وَأَ<span class="tj-khf">نت</span>ُمۡ لَا تُظۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ليس على النبي هداية الناس بل الله يهدي من يشاء. وما تنفقوا من خير فلأنفسكم، وإنما تنفقون ابتغاء وجه الله، وما تنفقوا يوفَّ إليكم كاملاً.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-272">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-272">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-272">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-272">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-272">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-272">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-272">ليس عليك يا محمد هداية القلوب بل عليك البلاغ والله يهدي من يشاء. وما تنفقوا من خير فنفعه عائد إليكم لأن الله غني عنه. ولا ينبغي أن تنفقوا إلا ابتغاء وجه الله وطلب مرضاته. وما تنفقوا من مال يوفَّ إليكم أجره كاملاً غير منقوص وأنتم لا تُظلمون شيئاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-272', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-272">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-272">نزلت في النبي صلى الله عليه وسلم حين تحرج بعض الصحابة من التصدق على غير المسلمين فبيّن الله أن ليس عليه هدايتهم. وأجاز التصدق على غير المسلمين إذ ما تنفقوا من خير فلأنفسكم أي ثوابه يعود عليكم. والشرط أن يكون ابتغاء وجه الله لا لغرض دنيوي. وما تنفقوا يوفَّ إليكم ثوابه كاملاً دون نقص.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-272', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-272">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-272">ليس عليك يا محمد هداية الكفار والمشركين إنما عليك البلاغ والهداية بيد الله. وما تنفقوا من مال فثوابه لكم. ولا تنفقون إلا ابتغاء وجه الله أي ينبغي ألا يكون إنفاقكم إلا خالصاً لله. وما تنفقوا يوفَّ إليكم أجره تاماً يوم القيامة ولا تُنقصون منه شيئاً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-272', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-272">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-272">في الآية جواز الصدقة على غير المسلمين لأنها نزلت في ذلك. وليس عليك هدايتهم بل عليك التبليغ. وما تنفقوا من خير فنفعه لكم لأن الله غني. والإنفاق يجب أن يكون لوجه الله خالصاً. ومن أنفق ابتغاء وجه الله فثوابه مضمون يوفَّ إليه كاملاً دون ظلم ولا نقصان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-272', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-272">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-272">يقول تعالى لنبيه: ليس عليك هداية من كفر فإنما عليك البيان والله يهدي من يشاء. وما أنفقتم أيها المؤمنون من مال في طاعة الله فعائد نفعه عليكم. وما تنفقون إلا طلباً لوجه الله ومرضاته. وما أنفقتم فالله يوفيكم ثوابه كاملاً غير منقوص وأنتم لا تُظلمون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-272', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-273">
+                <div class="ayah-text">لِلۡفُقَرَ<span class="tj-mdd">اۤ</span>ءِ <span class="tj-slt">ٱلَّ</span>ذِینَ أُحۡصِرُو<span class="tj-slt">ا۟</span> فِی سَبِیلِ <span class="tj-slt">ٱ</span>للَّهِ لَا یَسۡتَطِیعُونَ ضَرۡ<span class="tj-khf">بࣰا</span> فِی <span class="tj-slt">ٱ</span>لۡأَرۡضِ یَحۡسَبُهُمُ <span class="tj-slt">ٱ</span>لۡجَاهِلُ أَغۡنِیَ<span class="tj-mdd">اۤ</span>ءَ مِنَ <span class="tj-slt">ٱل</span>تَّعَفُّفِ تَعۡرِفُهُم بِسِیمَ<span class="tj-mdd">ـٰ</span>هُمۡ لَا یَسۡـَٔلُونَ <span class="tj-slt">ٱل</span>نَّاسَ إِلۡحَافࣰاۗ وَمَا تُ<span class="tj-khf">نف</span>ِقُو<span class="tj-slt">ا۟</span> مِنۡ خَیۡ<span class="tj-khf">رࣲ</span> فَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ بِهِۦ عَلِیمٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وصف الفقراء المستحقين: الذين أُحصروا في سبيل الله لا يستطيعون السعي والكسب، يحسبهم الجاهل أغنياء من شدة تعففهم، لا يسألون الناس إلحاحاً.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-273">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-273">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-273">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-273">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-273">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-273">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-273">هؤلاء هم أولى الناس بالصدقة: فقراء المهاجرين الذين تفرغوا للجهاد والعبادة فلا يستطيعون السفر للتجارة والكسب. ومن شدة تعففهم يظنهم من لا يعرف حالهم أغنياء. تعرفهم بسيماهم أي بعلامات الحاجة في وجوههم من التواضع والخشوع. لا يسألون الناس إلحاحاً أي لا يلحّون في السؤال بل لا يسألون أصلاً. وما تنفقوا عليهم من خير فالله به عليم ويجازيكم عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-273', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-273">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-273">نزلت في أهل الصُّفة وهم نحو أربعمائة من فقراء المهاجرين الذين لم تكن لهم مساكن ولا عشائر تفرغوا للعلم والجهاد. أُحصروا في سبيل الله أي حُبسوا عن الكسب بسبب انشغالهم بالجهاد. يظنهم من لا يعرفهم أغنياء لتعففهم وقناعتهم. تعرفهم بسيماهم أي بعلامات الفقر في وجوههم مع الخشوع والتواضع. ولا يسألون الناس شيئاً فضلاً عن الإلحاح.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-273', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-273">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-273">هم أصحاب الصُّفة من فقراء المهاجرين الذين تفرغوا لله ورسوله ولم يكن لهم شغل بتجارة ولا كسب. يحسبهم الجاهل بحالهم أغنياء من شدة تعففهم وصبرهم على الفقر. تعرفهم بسيماهم من أثر الجوع والحاجة في وجوههم مع الصبر والتحمل. لا يسألون الناس إلحاحاً أي لا يسألون أصلاً عند بعض المفسرين وقيل لا يلحّون في السؤال. وما أنفقتم عليهم فالله يعلمه ويثيبكم عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-273', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-273">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-273">وصف الله أحق الناس بالصدقة بأوصاف أربعة: أنهم محبوسون عن الكسب بسبب الجهاد، ومتعففون حتى يُظنوا أغنياء، وتظهر عليهم سيماء الحاجة لمن تأمل، ولا يسألون الناس سؤالاً. وفي هذا تنبيه على أن أحق الناس بالصدقة من يتعفف عن السؤال لا من يلحّ فيه. والتعفف عن المسألة من أشرف صفات المؤمن.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-273', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-273">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-273">يقول تعالى: هذه الصدقات للفقراء الذين منعهم الجهاد في سبيل الله من السفر والتكسب لا يستطيعون ضرباً في الأرض أي سفراً للتجارة. يظنهم من لا يعرف حالهم أغنياء لتعففهم وحسن سمتهم. تعرفهم بعلامات الفقر والحاجة. لا يسألون الناس سؤالاً ملحّاً. وما أنفقتم عليهم من خير فإن الله عالم به محصٍ له مجازيكم عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-273', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-274">
+                <div class="ayah-text"><span class="tj-slt">ٱلَّ</span>ذِینَ یُ<span class="tj-khf">نف</span>ِقُونَ أَمۡوَ ٰ⁠لَهُم بِ<span class="tj-slt">ٱلَّ</span>یۡلِ وَ<span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>هَارِ سِ<span class="tj-dgm">رࣰّا</span> وَعَلَانِیَ<span class="tj-khf">ةࣰ</span> فَلَهُمۡ أَجۡرُهُمۡ عِ<span class="tj-khf">ند</span>َ رَبِّهِمۡ وَلَا خَوۡفٌ عَلَیۡهِمۡ وَلَا هُمۡ یَحۡزَنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الثناء على الذين ينفقون أموالهم في جميع الأوقات ليلاً ونهاراً وفي جميع الأحوال سراً وعلانية، لهم أجرهم عند ربهم ولا خوف عليهم ولا هم يحزنون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-274">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-274">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-274">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-274">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-274">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-274">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-274">هؤلاء هم الكاملون في الإنفاق الذين لا يتقيدون بوقت دون وقت ولا حال دون حال، ينفقون بالليل والنهار سراً وعلانية. فلا يمنعهم من الإنفاق ظلام الليل ولا ضوء النهار ولا يتركون السر ولا العلانية. فلهم أجرهم الكامل عند ربهم محفوظاً مضموناً، ولا خوف عليهم في المستقبل ولا حزن على ما مضى. وهذه هي السعادة الحقيقية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-274', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-274">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-274">أثنى الله على المنفقين الدائمين في إنفاقهم في جميع الأوقات والأحوال: بالليل والنهار والسر والعلانية. وقد قيل إنها نزلت في علي بن أبي طالب رضي الله عنه حين تصدق بأربعة دراهم: درهم ليلاً ودرهم نهاراً ودرهم سراً ودرهم علانية. وقيل نزلت في أبي بكر رضي الله عنه. وعلى كل حال فهي عامة في كل من اتصف بهذه الصفة. فلهم أجرهم عند ربهم ولا خوف عليهم ولا هم يحزنون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-274', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-274">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-274">الذين ينفقون في كل وقت: ليلاً ونهاراً، وفي كل حال: سراً وعلانية. قيل نزلت في علي رضي الله عنه وقيل في أبي بكر رضي الله عنه. والآية عامة في كل من داوم على الإنفاق في جميع الأوقات والأحوال. فلهؤلاء أجرهم الكامل عند ربهم ولا يخافون من أهوال القيامة ولا يحزنون على ما فاتهم في الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-274', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-274">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-274">ذكر الله أربعة أحوال للإنفاق وأثنى على أصحابها: الليل والنهار والسر والعلانية. وهذا يدل على فضيلة المداومة على الإنفاق وعدم تقييده بوقت أو حال. وقيل نزلت في أصحاب الخيل المرابطين في سبيل الله ينفقون عليها ليلاً ونهاراً. والصحيح أنها عامة. وجزاؤهم الأجر الكامل والأمان من الخوف والحزن يوم القيامة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-274', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-274">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-274">يقول تعالى: الذين ينفقون أموالهم في طاعة الله لا يتقيدون بوقت فينفقون ليلاً ونهاراً، ولا بحال فينفقون سراً وعلانية. هؤلاء لهم ثوابهم الكامل عند الله الذي لا يضيع عنده أجر المحسنين. ولا خوف عليهم يوم القيامة من العذاب ولا هم يحزنون على ما خلفوا من الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-274', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-17.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">آية الكرسي — عظمة الله وقدرته</span>
+            </a>
+            <a href="section-19.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">تحريم الربا</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١٨: دلائل قدرة الله والحثّ على الإنفاق<br>
+        <small>آيات ٢٥٨ – ٢٧٤ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — الصبر والابتلاء وشعائر الله</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١١ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#3498db">
+            <div class="section-num">١١</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">الصبر والابتلاء وشعائر الله</h2>
+                <h3 class="section-title-en">Patience, Trials & Signs of Allah</h3>
+            </div>
+            <div class="section-ayah-range">آيات ١٥٣ – ١٧٧</div>
+        </div>
+
+        <div class="section-desc">
+            <p>الأمر بالاستعانة بالصبر والصلاة، وبيان أن الله يبتلي عباده، وذكر الصفا والمروة، وتحريم كتمان ما أنزل الله، وبيان أن الإله إله واحد</p>
+        </div>
+
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="153-154">
+                        <div class="flow-node-num">١٥٣–١٥٤</div>
+                        <div class="flow-node-text">الاستعانة بالصبر والصلاة والشهادة</div>
+                        <div class="flow-node-key">ٱسۡتَعِینُو<span class="tj-slt">ا۟</span> بِٱلصَّبۡرِ وَٱلصَّلَوٰةِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="155-157">
+                        <div class="flow-node-num">١٥٥–١٥٧</div>
+                        <div class="flow-node-text">الابتلاء وجزاء الصابرين</div>
+                        <div class="flow-node-key">وَلَنَبۡلُوَنَّكُم بِشَیۡءࣲ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="158">
+                        <div class="flow-node-num">١٥٨</div>
+                        <div class="flow-node-text">الصفا والمروة من شعائر الله</div>
+                        <div class="flow-node-key">إِنَّ ٱلصَّفَا وَٱلۡمَرۡوَةَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="159-162">
+                        <div class="flow-node-num">١٥٩–١٦٢</div>
+                        <div class="flow-node-text">كتمان العلم وعاقبة الكفر</div>
+                        <div class="flow-node-key">إِنَّ ٱلَّذِینَ یَكۡتُمُونَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="163-164">
+                        <div class="flow-node-num">١٦٣–١٦٤</div>
+                        <div class="flow-node-text">التوحيد ودلائل قدرة الله</div>
+                        <div class="flow-node-key">وَإِلَـٰهُكُمۡ إِلَـٰهࣱ وَ ٰ⁠حِدࣱ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="165-167">
+                        <div class="flow-node-num">١٦٥–١٦٧</div>
+                        <div class="flow-node-text">اتخاذ الأنداد والتبرؤ منهم</div>
+                        <div class="flow-node-key">وَمِنَ ٱلنَّاسِ مَن یَتَّخِذُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="168-173">
+                        <div class="flow-node-num">١٦٨–١٧٣</div>
+                        <div class="flow-node-text">الحلال والحرام واتباع الشيطان</div>
+                        <div class="flow-node-key">یَـٰۤأَیُّهَا ٱلنَّاسُ كُلُو<span class="tj-slt">ا۟</span></div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="174-177">
+                        <div class="flow-node-num">١٧٤–١٧٧</div>
+                        <div class="flow-node-text">كتمان الكتاب وحقيقة البر</div>
+                        <div class="flow-node-key">إِنَّ ٱلَّذِینَ یَكۡتُمُونَ مَاۤ أَنزَلَ ٱللَّهُ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-153">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>سۡتَعِینُو<span class="tj-slt">ا۟</span> بِ<span class="tj-slt">ٱل</span>صَّ<span class="tj-qlq">بۡ</span>رِ وَ<span class="tj-slt">ٱل</span>صَّلَ<span class="tj-mdd">وٰ</span>ةِۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ مَعَ <span class="tj-slt">ٱل</span>صَّ<span class="tj-mdd">ـٰ</span>بِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله المؤمنين بالاستعانة بالصبر على طاعة الله وعن معصيته وعلى أقداره، والاستعانة بالصلاة التي هي عماد الدين، وأن الله مع الصابرين بالعون والتأييد.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-153">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-153">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-153">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-153">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-153">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-153">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-153">يأمر تعالى المؤمنين بالاستعانة بالصبر والصلاة على كل أمورهم الدينية والدنيوية. والصبر ثلاثة أقسام: صبر على طاعة الله، وصبر عن معصية الله، وصبر على أقدار الله المؤلمة. وخصّ الصلاة بالذكر لأنها أعظم العبادات وأفضلها. {إِنَّ اللَّهَ مَعَ الصَّابِرِينَ} بالعون والنصر والتأييد والتوفيق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-153', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-153">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-153">أمر الله تعالى عباده المؤمنين بالاستعانة بالصبر والصلاة. والصبر قيل: إنه الصيام، وقيل: هو الصبر على المشاق. وقد كان رسول الله ﷺ إذا حزبه أمر صلّى. وقوله: {إِنَّ اللَّهَ مَعَ الصَّابِرِينَ} هذه معية خاصة تقتضي النصر والتأييد والحفظ، وكفى بها فضلًا للصابرين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-153', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-153">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-153">قوله تعالى: {يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ} أي استعينوا على أموركم بالصبر وهو حبس النفس على ما تكره، والصلاة لأنها تنهى عن الفحشاء والمنكر. {إِنَّ اللَّهَ مَعَ الصَّابِرِينَ} أي بالعون والنصرة، وهذه معية خاصة بالصابرين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-153', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-153">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-153">أمر الله المؤمنين بالاستعانة بالصبر والصلاة على طلب الآخرة. والصبر في اللغة: الحبس، وهو حبس النفس عن الجزع. وخُصّت الصلاة بالذكر من بين سائر العبادات لعظم شأنها. وقوله: {إِنَّ اللَّهَ مَعَ الصَّابِرِينَ} أي بالمعونة والنصرة. وفي الآية دليل على أن الصبر من أعظم أسباب الظفر والنجاح.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-153', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-153">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-153">يعني تعالى ذكره: يا أيها الذين صدّقوا الله ورسوله، استعينوا على ما ينزل بكم من البلاء بالصبر عليه والصلاة. وإنما خصّ الصلاة لأنها صلة بين العبد وربه. {إِنَّ اللَّهَ مَعَ الصَّابِرِينَ} يعني أن الله وليّ الصابرين وناصرهم ومعينهم على ما هم عليه من الصبر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-153', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-154">
+                <div class="ayah-text">وَلَا تَقُولُو<span class="tj-slt">ا۟</span> لِمَن یُ<span class="tj-qlq">قۡ</span>تَلُ فِی سَبِیلِ <span class="tj-slt">ٱل</span>لَّهِ أَمۡوَ<span class="tj-mdd"> ٰ⁠</span>تُۢۚ بَلۡ أَحۡیَ<span class="tj-mdd">اۤ</span><span class="tj-dgm">ءࣱ</span> وَلَ<span class="tj-mdd">ـٰ</span>كِ<span class="tj-dgm">ن</span> لَّا تَشۡعُرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">نهى الله عن القول بأن الشهداء أموات، بل هم أحياء عند ربهم يُرزقون، لكن البشر لا يدركون كيفية حياتهم البرزخية.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-154">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-154">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-154">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-154">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-154">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-154">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-154">ينهى تعالى عن مقالة سيئة وهي قول الناس عن الشهداء إنهم أموات، بل هم أحياء حياة برزخية عند ربهم يُرزقون ويتنعمون. قال: {وَلَكِنْ لَا تَشْعُرُونَ} أي لا تعلمون بحالهم وما هم فيه من النعيم، وفي هذا تسلية للمؤمنين وترغيب في الجهاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-154', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-154">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-154">يخبر تعالى أن الشهداء أحياء عند ربهم يُرزقون في حياة برزخية لا يعلم كنهها إلا الله. وقد ثبت في الحديث أن أرواح الشهداء في حواصل طير خضر تسرح في الجنة حيث شاءت. ونهى عن أن يُقال لهم أموات، بل هم في حياة أعظم من حياة الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-154', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-154">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-154">نزلت في شهداء بدر وكانوا أربعة عشر رجلًا. نهى الله أن يُقال لمن قُتل في سبيل الله إنهم أموات، بل هم أحياء حياة حقيقية في البرزخ. {وَلَكِنْ لَا تَشْعُرُونَ} أي لا تدركون حياتهم لأنها من أمور الغيب التي لا تُدرك بالحواس.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-154', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-154">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-154">نهى الله تعالى عن أن يُقال للشهداء إنهم أموات. والشهداء أحياء عند الله حقيقة وليس مجازًا. وقد وردت الأحاديث في أن أرواحهم في أجواف طير خضر في الجنة. والحياة المنفية هي حياة الدنيا، أما حياة البرزخ فثابتة لهم. {وَلَكِنْ لَا تَشْعُرُونَ} أي لا تعلمون كنه حياتهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-154', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-154">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-154">يقول تعالى: لا تقولوا لمن يُقتل في سبيل الله من المؤمنين هم أموات، بل هم أحياء ولكن لا تشعرون بحياتهم. وذلك أنهم أحياء عند ربهم يُرزقون كما أخبر الله في آية أخرى. والمراد حياة برزخية غيبية لا يُدركها أهل الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-154', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-155">
+                <div class="ayah-text">وَلَنَ<span class="tj-qlq">بۡ</span>لُوَ<span class="tj-ghn">نَّ</span>كُم بِشَیۡ<span class="tj-dgm">ءࣲ</span> <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>لۡخَوۡفِ وَ<span class="tj-slt">ٱ</span>لۡجُوعِ وَنَ<span class="tj-qlq">قۡ</span><span class="tj-dgm">صࣲ</span> <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>لۡأَمۡوَ<span class="tj-mdd"> ٰ⁠</span>لِ وَ<span class="tj-slt">ٱ</span>لۡأَ<span class="tj-khf">ن</span>فُسِ وَ<span class="tj-slt">ٱل</span>ثَّمَرَ<span class="tj-mdd"> ٰ⁠</span>تِۗ وَبَشِّرِ <span class="tj-slt">ٱل</span>صَّ<span class="tj-mdd">ـٰ</span>بِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أخبر الله أنه سيبتلي عباده بأنواع من الخوف والجوع ونقص الأموال والأنفس والثمرات، وبشّر الصابرين على ذلك بالأجر العظيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-155">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-155">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-155">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-155">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-155">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-155">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-155">أخبر تعالى أنه لا بد أن يبتلي عباده بشيء من الخوف من الأعداء، والجوع أي الفاقة وقلة الطعام، ونقص من الأموال بالخسارات، والأنفس بالموت والأمراض، والثمرات بالجوائح. وقال: {بِشَيْءٍ} بالتنكير ليدل على التقليل، فهو ابتلاء يسير لحكمة بالغة. {وَبَشِّرِ الصَّابِرِينَ} على هذه المصائب بأجر عظيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-155', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-155">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-155">أخبر تعالى أنه يبتلي عباده بالمحن ليمتحنهم ويختبر صبرهم. فالخوف من العدو، والجوع بفقد الطعام، ونقص الأموال بالخسائر، والأنفس بالموت والمرض، والثمرات بالجوائح. وقوله: {بِشَيْءٍ} فيه تقليل لأنه لو ابتلاهم بالكل لهلكوا. {وَبَشِّرِ الصَّابِرِينَ} أي أخبرهم بثواب عظيم ينتظرهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-155', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-155">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-155">أعلم الله المؤمنين أنه يبتليهم ليثيبهم. فالخوف من العدو، والجوع المجاعة، ونقص الأموال بالهلاك والخسران، والأنفس بالقتل والموت والمرض، والثمرات بالجوائح والآفات. وقال: {بِشَيْءٍ} تقليلًا لأن بلاء الدنيا قليل بالنسبة لثواب الآخرة. {وَبَشِّرِ الصَّابِرِينَ} بالجنة والأجر العظيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-155', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-155">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-155">أخبر تعالى عباده بما يكون من البلاء ليتأهبوا للصبر. فالخوف يشمل خوف الأعداء، والجوع فقد القوت، ونقص الأموال ذهابها، والأنفس بالموت والمرض، والثمرات بالجوائح. ونكّر {بِشَيْءٍ} للتقليل رحمة بهم. ثم بشّر الصابرين وهم الذين يحتسبون عند المصيبة ولا يجزعون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-155', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-155">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-155">يقول تعالى: ولنختبرنكم أيها المؤمنون بشيء من الخوف من عدوكم، والجوع وقلة الأقوات، ونقص الأموال بالخسران، والأنفس بالموت والقتل، والثمرات بقلة النبات. وقوله: {وَبَشِّرِ الصَّابِرِينَ} أي بشر يا محمد الصابرين على البلاء بحسن الثواب من الله يوم القيامة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-155', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-156">
+                <div class="ayah-text"><span class="tj-slt">ٱلَّ</span>ذِینَ إِذَ<span class="tj-mdd">اۤ</span> أَصَ<span class="tj-mdd">ـٰ</span>بَتۡهُم <span class="tj-ghn">مُّ</span>صِیبَ<span class="tj-khf">ةࣱ</span> قَالُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> إِ<span class="tj-ghn">نَّ</span>ا لِلَّهِ وَإِ<span class="tj-ghn">نَّ</span><span class="tj-mdd">اۤ</span> إِلَیۡهِ رَ<span class="tj-mdd"> ٰ⁠</span>جِعُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وصف الصابرين بأنهم إذا أصابتهم مصيبة قالوا: إنا لله وإنا إليه راجعون، وهذا الاسترجاع من أعظم علاجات المصائب وأنفعها للقلب.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-156">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-156">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-156">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-156">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-156">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-156">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-156">وصف الصابرين بأنهم إذا أصابتهم مصيبة صغيرة أو كبيرة قالوا: {إِنَّا لِلَّهِ} أي نحن ملك لله يتصرف فينا كما يشاء، {وَإِنَّا إِلَيْهِ رَاجِعُونَ} فسيجازينا على صبرنا أحسن الجزاء. وهذا الاسترجاع من أنفع علاجات المصائب لأنه يتضمن أصلين عظيمين: الإقرار بعبودية الله والإيمان بالبعث.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-156', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-156">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-156">وصفهم بأنهم إذا أصابتهم مصيبة استرجعوا وقالوا: {إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ} واسترجعوا عند الله ثوابهم. وقد ثبت في الحديث: «ما من مسلم تصيبه مصيبة فيقول ما أمره الله: إنا لله وإنا إليه راجعون، اللهم أجرني في مصيبتي واخلف لي خيرًا منها، إلا أخلف الله له خيرًا منها».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-156', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-156">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-156">أي الذين إذا نزلت بهم مصيبة صبروا وقالوا: {إِنَّا لِلَّهِ} أي عبيده وملكه يفعل بنا ما يشاء، {وَإِنَّا إِلَيْهِ رَاجِعُونَ} في الآخرة فيجازينا. وقد جاء في الحديث أن الاسترجاع عند المصيبة من أعظم أسباب تكفير الخطايا والثواب العظيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-156', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-156">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-156">وصف الله الصابرين بأنهم يسترجعون عند المصائب. وقولهم: {إِنَّا لِلَّهِ} إقرار بالعبودية وأنهم ملك لله، {وَإِنَّا إِلَيْهِ رَاجِعُونَ} إقرار بالبعث والحساب. وهذه الكلمة من أعظم ما يُتسلّى به عند المصائب لأن فيها التسليم لله والرضا بقضائه والإيمان بالجزاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-156', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-156">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-156">يصف تعالى الصابرين المبشّرين بأنهم إذا أصابتهم مصيبة في أنفسهم وأهليهم وأموالهم قالوا: {إِنَّا لِلَّهِ} أي نحن عبيد الله وملكه، {وَإِنَّا إِلَيْهِ رَاجِعُونَ} أي صائرون إليه بعد الموت فيجزينا بصبرنا. فسلّموا لله أمرهم ورضوا بقضائه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-156', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-157">
+                <div class="ayah-text">أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ عَلَیۡهِمۡ صَلَوَ<span class="tj-mdd"> ٰ⁠</span><span class="tj-dgm">تࣱ</span> <span class="tj-ghn">مِّ</span><span class="tj-dgm">ن</span> رَّبِّهِمۡ وَرَحۡمَ<span class="tj-dgm">ةࣱۖ</span> وَأُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ هُمُ <span class="tj-slt">ٱ</span>لۡمُهۡتَدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">جزاء الصابرين المسترجعين عند المصائب: صلوات من ربهم ورحمة، وأولئك هم المهتدون إلى الحق والصواب.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-157">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-157">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-157">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-157">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-157">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-157">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-157">هؤلاء الصابرون المسترجعون لهم ثلاث فضائل: {صَلَوَاتٌ مِنْ رَبِّهِمْ} أي ثناء من الله عليهم، {وَرَحْمَةٌ} أي رحمة عظيمة تشملهم، {وَأُولَئِكَ هُمُ الْمُهْتَدُونَ} إلى الطريق المستقيم. فجمع لهم بين الصلوات والرحمة والهداية، وكفى بذلك فضلًا وشرفًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-157', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-157">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-157">قال سعيد بن جبير: أي ثناء من الله عليهم. {وَرَحْمَةٌ} أي ورحمة من الله تشملهم. {وَأُولَئِكَ هُمُ الْمُهْتَدُونَ} قال أمير المؤمنين عمر بن الخطاب رضي الله عنه: نعم العِدلان ونعمت العلاوة. فالعِدلان: الصلوات والرحمة، والعلاوة: الاهتداء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-157', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-157">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-157">{أُولَئِكَ عَلَيْهِمْ صَلَوَاتٌ مِنْ رَبِّهِمْ} أي مغفرة وثناء. {وَرَحْمَةٌ} نعمة ورأفة. {وَأُولَئِكَ هُمُ الْمُهْتَدُونَ} إلى طريق الحق والصواب. قال عمر بن الخطاب: نِعم العِدلان ونعمت العلاوة: الصلوات والرحمة هما العدلان، والاهتداء هو العلاوة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-157', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-157">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-157">الصلوات من الله: المغفرة والثناء والرحمة. وجُمعت الصلوات لتعدد أنواعها وتكررها. {وَرَحْمَةٌ} زيادة على الصلوات. {وَأُولَئِكَ هُمُ الْمُهْتَدُونَ} إلى طريق الحق في قولهم وفعلهم حين استرجعوا ورضوا بقضاء الله. وهذا يدل على عظم منزلة الصبر عند الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-157', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-157">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-157">يقول تعالى: أولئك الصابرون المسترجعون عند المصائب عليهم صلوات من ربهم أي ثناء وتزكية من الله، ورحمة يخصهم بها. وأولئك هم المهتدون الذين أصابوا طريق الحق في صبرهم واسترجاعهم، فاهتدوا لما ضلّ عنه غيرهم من الجزع والسخط.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-157', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-158">
+                <div class="ayah-text">۞ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>صَّفَا وَ<span class="tj-slt">ٱ</span>لۡمَرۡوَةَ مِ<span class="tj-khf">ن</span> شَعَ<span class="tj-mdd">اۤ</span>ىِٕرِ <span class="tj-slt">ٱل</span>لَّهِۖ فَمَنۡ حَجَّ <span class="tj-slt">ٱ</span>لۡبَیۡتَ أَوِ <span class="tj-slt">ٱ</span>عۡتَمَرَ فَلَا جُنَاحَ عَلَیۡهِ أَن یَطَّوَّفَ بِهِمَاۚ وَمَ<span class="tj-khf">ن</span> تَطَوَّعَ خَیۡرࣰا فَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ شَاكِرٌ عَلِیمٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بيّن الله أن الصفا والمروة من شعائر الله، فلا حرج في السعي بينهما عند الحج أو العمرة، ومن تطوع خيرًا فإن الله شاكر عليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-158">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-158">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-158">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-158">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-158">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-158">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-158">أخبر تعالى أن الصفا والمروة من شعائر الله أي أعلام دينه الظاهرة التي تعبّد الله بها عباده. والسعي بينهما من أركان الحج والعمرة. وقوله: {فَلَا جُنَاحَ عَلَيْهِ أَنْ يَطَّوَّفَ بِهِمَا} نزلت لرفع الحرج عمن تحرّج من السعي. {وَمَنْ تَطَوَّعَ خَيْرًا فَإِنَّ اللَّهَ شَاكِرٌ عَلِيمٌ} يشكر القليل ويعطي الجزيل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-158', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-158">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-158">كان على الصفا والمروة صنمان في الجاهلية فتحرّج بعض المسلمين من السعي بينهما، فأنزل الله هذه الآية. والصفا والمروة من شعائر الله أي من معالم دينه. وقد ثبت في الصحيح عن عائشة رضي الله عنها قالت: ما أتمّ الله حج امرئ ولا عمرته لم يطف بين الصفا والمروة. {وَمَنْ تَطَوَّعَ خَيْرًا} أي فعل خيرًا زائدًا على الفرض.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-158', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-158">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-158">الصفا والمروة جبلان بمكة. وسبب النزول أن الأنصار كانوا يُهلّون لمناة في الجاهلية ويتحرجون من الطواف بينهما، فأنزل الله: {إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ} أي من معالم دينه. {فَلَا جُنَاحَ عَلَيْهِ أَنْ يَطَّوَّفَ بِهِمَا} أي يسعى بينهما. {وَمَنْ تَطَوَّعَ خَيْرًا فَإِنَّ اللَّهَ شَاكِرٌ عَلِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-158', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-158">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-158">الصفا والمروة جبلان معروفان بمكة. وشعائر الله: معالم دينه وأعلام طاعته. والسعي بينهما واجب عند مالك والشافعي وأحمد، وسنة عند أبي حنيفة. وسبب رفع الجناح أن بعض الصحابة تحرجوا من ذلك لما كان عليهما من أصنام الجاهلية. {وَمَنْ تَطَوَّعَ خَيْرًا} بالحج والعمرة أو بالطواف تطوعًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-158', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-158">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-158">يقول تعالى: إن الصفا والمروة من معالم الله التي جعلها لعباده وأعلام طاعته. فمن حجّ البيت أو اعتمر فلا إثم عليه أن يسعى بينهما. وإنما نفى الجناح لأن قومًا تحرجوا من الطواف بهما لما كان عليهما من أوثان الجاهلية. {وَمَنْ تَطَوَّعَ خَيْرًا فَإِنَّ اللَّهَ شَاكِرٌ} لعمله {عَلِيمٌ} به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-158', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-159">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِینَ یَكۡتُمُونَ مَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">ن</span>زَلۡنَا مِنَ <span class="tj-slt">ٱ</span>لۡبَیِّنَ<span class="tj-mdd">ـٰ</span>تِ وَ<span class="tj-slt">ٱ</span>لۡهُدَ<span class="tj-mdd">ىٰ</span> مِ<span class="tj-qlb">نۢ</span> بَعۡدِ مَا بَیَّ<span class="tj-ghn">نَّ</span><span class="tj-mdd">ـٰ</span>هُ لِل<span class="tj-ghn">نَّ</span>اسِ فِی <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بِ أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ یَلۡعَنُهُمُ <span class="tj-slt">ٱل</span>لَّهُ وَیَلۡعَنُهُمُ <span class="tj-slt">ٱل</span>لَّ<span class="tj-mdd">ـٰ</span>عِنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">توعّد الله الذين يكتمون ما أنزل من البيّنات والهدى بعد بيانه للناس في الكتاب بأن يلعنهم الله ويلعنهم اللاعنون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-159">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-159">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-159">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-159">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-159">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-159">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-159">هذا وعيد شديد لمن كتم ما أنزل الله من الحق الواضح الذي بيّنه الله لعباده في كتبه. فمن كتم ذلك فعليه لعنة الله ولعنة اللاعنين من الملائكة والناس أجمعين. وهذا يشمل أهل الكتاب الذين كتموا صفة النبي ﷺ، ويشمل كل من كتم علمًا واجبًا إظهاره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-159', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-159">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-159">نزلت في أهل الكتاب الذين كتموا صفة محمد ﷺ ونعته الموجود في كتبهم. وهي عامة في كل من كتم الحق وأخفى ما أمر الله بإظهاره. {يَلْعَنُهُمُ اللَّهُ} أي يطردهم من رحمته. {وَيَلْعَنُهُمُ اللَّاعِنُونَ} أي الملائكة والمؤمنون وكل شيء يستحق اللعنة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-159', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-159">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-159">نزلت في علماء أهل الكتاب الذين كتموا أمر محمد ﷺ ونعته. {مِنَ الْبَيِّنَاتِ وَالْهُدَى} أي الدلائل الواضحة على نبوة محمد والهدى الذي أنزل الله. {مِنْ بَعْدِ مَا بَيَّنَّاهُ لِلنَّاسِ فِي الْكِتَابِ} أي التوراة والإنجيل. {يَلْعَنُهُمُ اللَّهُ وَيَلْعَنُهُمُ اللَّاعِنُونَ} الملائكة والمؤمنون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-159', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-159">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-159">الآية نزلت في أحبار اليهود الذين كتموا صفة النبي ﷺ، لكنها عامة في كل من كتم علمًا من علوم الدين مما يحتاج إلى بيانه. {يَلْعَنُهُمُ اللَّهُ} يبعدهم من رحمته. {وَيَلْعَنُهُمُ اللَّاعِنُونَ} قيل: الملائكة والمؤمنون، وقيل: كل شيء إلا الثقلين. وفي الآية دليل على وجوب نشر العلم وتحريم كتمانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-159', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-159">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-159">يقول تعالى: إن الذين يكتمون ما أنزلنا من الدلائل الواضحة على نبوة محمد والهدى الذي بيّناه في التوراة والإنجيل، أولئك يلعنهم الله فيبعدهم من رحمته، ويلعنهم اللاعنون من ملائكته وأنبيائه والمؤمنين من عباده. وهذا تحذير شديد من كتمان العلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-159', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-160">
+                <div class="ayah-text">إِلَّا <span class="tj-slt">ٱلَّ</span>ذِینَ تَابُو<span class="tj-slt">ا۟</span> وَأَصۡلَحُو<span class="tj-slt">ا۟</span> وَبَیَّنُو<span class="tj-slt">ا۟</span> فَأُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ أَتُوبُ عَلَیۡهِمۡ وَأَنَا <span class="tj-slt">ٱل</span>تَّوَّابُ <span class="tj-slt">ٱل</span>رَّحِیمُ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">استثنى الله من الوعيد السابق من تاب وأصلح عمله وبيّن ما كتمه، فإن الله يتوب عليهم لأنه التواب الرحيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-160">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-160">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-160">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-160">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-160">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-160">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-160">استثنى الله من الوعيد من تاب عن كتمان الحق وأصلح عمله وبيّن للناس ما كان يكتمه، فهؤلاء يتوب الله عليهم لأنه التواب الرحيم الذي يقبل التوبة عن عباده ويرحمهم. وفي هذا دلالة على أن التوبة تشترط الإقلاع عن الذنب والإصلاح وبيان ما كُتم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-160', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-160">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-160">هذا استثناء لمن تاب من الكاتمين فرجع عن كتمانه وأصلح عمله وبيّن للناس ما كان يكتمه. {فَأُولَئِكَ أَتُوبُ عَلَيْهِمْ} أقبل توبتهم. {وَأَنَا التَّوَّابُ الرَّحِيمُ} كثير القبول لتوبة عبادي، رحيم بهم. وفي هذا فتح لباب الرجاء وحث على التوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-160', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-160">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-160">{إِلَّا الَّذِينَ تَابُوا} عن الكتمان والكفر {وَأَصْلَحُوا} أعمالهم {وَبَيَّنُوا} ما كتموا من صفة محمد ﷺ وأظهروه للناس. {فَأُولَئِكَ أَتُوبُ عَلَيْهِمْ} أقبل توبتهم. {وَأَنَا التَّوَّابُ} كثير القبول للتوبة {الرَّحِيمُ} بعبادي التائبين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-160', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-160">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-160">استثنى من الوعيد من تاب وأصلح وبيّن. والتوبة: الرجوع عن الذنب. والإصلاح: إصلاح العمل فيما بينه وبين الله. والبيان: إظهار ما كتموه. وشرط ثلاثة أشياء للتوبة: التوبة والإصلاح والبيان. {وَأَنَا التَّوَّابُ الرَّحِيمُ} ختم بهذين الاسمين ترغيبًا في التوبة وحثًا عليها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-160', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-160">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-160">يقول تعالى: إلا الذين رجعوا عن كتمانهم وأصلحوا أعمالهم وبيّنوا للناس ما كانوا يكتمونه من أمر محمد ﷺ، فأولئك أتوب عليهم وأتجاوز عن ذنوبهم. وأنا التواب على من تاب من عبادي الرحيم بهم أن أعاقبهم بعد التوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-160', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-161">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِینَ كَفَرُو<span class="tj-slt">ا۟</span> وَمَاتُو<span class="tj-slt">ا۟</span> وَهُمۡ كُفَّارٌ أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ عَلَیۡهِمۡ لَعۡنَةُ <span class="tj-slt">ٱل</span>لَّهِ وَ<span class="tj-slt">ٱ</span>لۡمَلَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَةِ وَ<span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسِ أَ<span class="tj-qlq">جۡ</span>مَعِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الذين كفروا وماتوا على كفرهم عليهم لعنة الله والملائكة والناس أجمعين، فلا ينفعهم ندم ولا توبة بعد الموت.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-161">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-161">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-161">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-161">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-161">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-161">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-161">أما الذين كفروا واستمروا على كفرهم حتى ماتوا عليه فهؤلاء عليهم لعنة الله والملائكة والناس أجمعين. فلعنهم الله وطردهم من رحمته، ولعنهم خلقه، وهذا أعظم الخزي والعار أن يُلعن العبد من جميع الخلائق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-161', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-161">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-161">أخبر تعالى أن الذين كفروا واستمروا على ذلك حتى ماتوا وهم كفار فعليهم لعنة الله والملائكة والناس أجمعين. والمراد أنهم مطرودون من رحمة الله يوم القيامة على رؤوس الأشهاد. وقيد الموت على الكفر لأن من تاب قبل الموت قُبلت توبته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-161', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-161">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-161">{إِنَّ الَّذِينَ كَفَرُوا وَمَاتُوا وَهُمْ كُفَّارٌ} أي لم يتوبوا حتى ماتوا على الكفر. {أُولَئِكَ عَلَيْهِمْ لَعْنَةُ اللَّهِ وَالْمَلَائِكَةِ وَالنَّاسِ أَجْمَعِينَ} أي يلعنهم كل شيء. وقيد بالموت على الكفر لأن التوبة مقبولة ما لم يحضر الموت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-161', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-161">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-161">هذا حكم من مات على الكفر ولم يتب قبل موته. فعليهم لعنة الله أي إبعاده إياهم من رحمته، ولعنة الملائكة بالدعاء عليهم، ولعنة الناس أجمعين يوم القيامة حين يلعن بعضهم بعضًا. وفي التقييد بالموت على الكفر دليل على أن باب التوبة مفتوح ما دام العبد حيًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-161', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-161">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-161">يقول تعالى: إن الذين جحدوا وحدانية الله أو نبوة رسوله ثم ماتوا على جحودهم ولم يتوبوا، أولئك عليهم لعنة الله بإبعادهم من رحمته، ولعنة ملائكته والناس جميعًا. وذكر الموت على الكفر ليعلم أن التوبة تنفع صاحبها ما دام حيًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-161', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-162">
+                <div class="ayah-text">خَ<span class="tj-mdd">ـٰ</span>لِدِینَ فِیهَا لَا یُخَفَّفُ عَنۡهُمُ <span class="tj-slt">ٱ</span>لۡعَذَابُ وَلَا هُمۡ یُ<span class="tj-khf">ن</span>ظَرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">عقوبة من مات على الكفر الخلود في اللعنة والعذاب، لا يُخفف عنهم العذاب ولا يُمهلون ولا يُنظرون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-162">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-162">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-162">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-162">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-162">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-162">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-162">أي خالدين في اللعنة والعذاب أبدًا لا يُخفف عنهم العذاب ولا يُنظرون أي لا يُمهلون ساعة واحدة. فهم في عذاب دائم لا يفتر عنهم ولا ينقطع، نعوذ بالله من ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-162', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-162">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-162">{خَالِدِينَ فِيهَا} أي في اللعنة أو في النار. {لَا يُخَفَّفُ عَنْهُمُ الْعَذَابُ} أي مستمر بهم في جميع الأوقات لا يُفتّر عنهم ساعة ولا لحظة. {وَلَا هُمْ يُنْظَرُونَ} أي لا يُمهلون ولا يؤخّرون ولا يُعتذر إليهم ولا يُستعتبون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-162', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-162">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-162">{خَالِدِينَ فِيهَا} أي في اللعنة والنار ماكثين أبدًا. {لَا يُخَفَّفُ عَنْهُمُ الْعَذَابُ} لا ينقص ولا يهون عليهم. {وَلَا هُمْ يُنْظَرُونَ} لا يُمهلون للتوبة والمعذرة لأن وقت التوبة قد فات بالموت على الكفر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-162', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-162">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-162">{خَالِدِينَ فِيهَا} أي في النار واللعنة. والخلود هنا بمعنى التأبيد لأنه في حق الكفار. {لَا يُخَفَّفُ عَنْهُمُ الْعَذَابُ} أي لا يُهوّن ولا ينقص. {وَلَا هُمْ يُنْظَرُونَ} أي لا يُؤخّرون ولا يُمهلون للتوبة أو المعذرة، لأن الآخرة ليست دار عمل بل دار جزاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-162', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-162">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-162">يقول تعالى: ماكثين في لعنة الله والعذاب أبدًا لا يخرجون منها. لا يُخفف عنهم العذاب فلا ينقص ولا يهون. ولا هم يُنظرون أي لا يُمهلون ليتوبوا أو يعتذروا لأنهم فرّطوا في الدنيا وأضاعوا فرصة التوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-162', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-163">
+                <div class="ayah-text">وَإِلَ<span class="tj-mdd">ـٰ</span>هُكُمۡ إِلَ<span class="tj-mdd">ـٰ</span><span class="tj-dgm">هࣱ</span> وَ<span class="tj-mdd"> ٰ⁠</span>حِ<span class="tj-dgm">دࣱۖ</span> لَّ<span class="tj-mdd">اۤ</span> إِلَ<span class="tj-mdd">ـٰ</span>هَ إِلَّا هُوَ <span class="tj-slt">ٱل</span>رَّحۡمَ<span class="tj-mdd">ـٰ</span>نُ <span class="tj-slt">ٱل</span>رَّحِیمُ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تقرير التوحيد: إلهكم إله واحد لا إله إلا هو الرحمن الرحيم، فلا معبود بحق سواه سبحانه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-163">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-163">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-163">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-163">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-163">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-163">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-163">يخبر تعالى أن إلهكم الذي يستحق العبادة وحده إله واحد لا شريك له. {لَا إِلَهَ إِلَّا هُوَ} نفي لجميع ما يُعبد من دون الله وإثبات للعبادة لله وحده. {الرَّحْمَنُ الرَّحِيمُ} ذو الرحمة الواسعة التي وسعت كل شيء، فجمع بين التوحيد وإثبات الرحمة ترغيبًا في عبادته وحده.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-163', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-163">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-163">يخبر تعالى بأنه إله واحد لا إله غيره ولا رب سواه. {الرَّحْمَنُ الرَّحِيمُ} ذكر بعد التوحيد اسمين يدلان على سعة رحمته ليعلم العباد أن معبودهم الحق واحد وهو ذو الرحمة الواسعة. ولما نزلت هذه الآية قال المشركون: كيف يسع الناس إله واحد؟ فأنزل الله الآية التي بعدها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-163', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-163">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-163">{وَإِلَهُكُمْ إِلَهٌ وَاحِدٌ} أي معبودكم الذي يستحق العبادة واحد وهو الله. {لَا إِلَهَ إِلَّا هُوَ} لا معبود بحق سواه. {الرَّحْمَنُ الرَّحِيمُ} ذو الرحمة الواسعة والنعم المتتابعة. ولما سمع المشركون هذا استبعدوه فأنزل الله الآية التالية في دلائل وحدانيته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-163', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-163">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-163">{وَإِلَهُكُمْ} خطاب لجميع الناس. {إِلَهٌ وَاحِدٌ} لا شريك له في ذاته ولا في صفاته ولا في أفعاله. {لَا إِلَهَ إِلَّا هُوَ} تأكيد للوحدانية. {الرَّحْمَنُ الرَّحِيمُ} ختم بهذين الاسمين ليبيّن أن المعبود بحق هو الذي منه النعم والرحمة لا الأصنام التي لا تنفع ولا تضر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-163', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-163">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-163">يقول تعالى: ومعبودكم أيها الناس الذي لا تنبغي العبادة إلا له معبود واحد لا ثاني له. لا إله إلا هو أي لا معبود تصلح عبادته إلا الله الواحد. الرحمن الرحيم بعباده ذو الرحمة التي وسعت كل شيء. فاعبدوه وحده ولا تشركوا به شيئًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-163', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-164">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> فِی خَلۡقِ <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">ـٰ</span>وَ<span class="tj-mdd"> ٰ⁠</span>تِ وَ<span class="tj-slt">ٱ</span>لۡأَرۡضِ وَ<span class="tj-slt">ٱ</span>خۡتِلَ<span class="tj-mdd">ـٰ</span>فِ <span class="tj-slt">ٱلَّ</span>یۡلِ وَ<span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>هَارِ وَ<span class="tj-slt">ٱ</span>لۡفُلۡكِ <span class="tj-slt">ٱلَّ</span>تِی تَ<span class="tj-qlq">جۡ</span>رِی فِی <span class="tj-slt">ٱ</span>لۡبَحۡرِ بِمَا یَ<span class="tj-khf">ن</span>فَعُ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسَ وَمَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">ن</span>زَلَ <span class="tj-slt">ٱل</span>لَّهُ مِنَ <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">اۤ</span>ءِ مِ<span class="tj-dgm">ن</span> <span class="tj-ghn">مَّ</span><span class="tj-mdd">اۤ</span><span class="tj-khf">ءࣲ</span> فَأَحۡیَا بِهِ <span class="tj-slt">ٱ</span>لۡأَرۡضَ بَعۡدَ مَوۡتِهَا وَبَثَّ فِیهَا مِ<span class="tj-khf">ن</span> كُلِّ دَ<span class="tj-mdd">اۤ</span>بَّ<span class="tj-dgm">ةࣲ</span> وَتَصۡرِیفِ <span class="tj-slt">ٱل</span>رِّیَ<span class="tj-mdd">ـٰ</span>حِ وَ<span class="tj-slt">ٱل</span>سَّحَابِ <span class="tj-slt">ٱ</span>لۡمُسَخَّرِ بَیۡنَ <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">اۤ</span>ءِ وَ<span class="tj-slt">ٱ</span>لۡأَرۡضِ لَـَٔایَ<span class="tj-mdd">ـٰ</span><span class="tj-dgm">تࣲ</span> لِّقَوۡمࣲ یَعۡقِلُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ذكر الله أدلة التوحيد في خلق السماوات والأرض واختلاف الليل والنهار والفلك والمطر والدواب والرياح والسحاب، وأنها آيات لقوم يعقلون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-164">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-164">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-164">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-164">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-164">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-164">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-164">لما ذكر تعالى أنه الإله الواحد ذكر الأدلة على ذلك: خلق السماوات بارتفاعها واتساعها، والأرض بجبالها وأنهارها، واختلاف الليل والنهار وتعاقبهما، والفلك التي تجري في البحر بما ينفع الناس من التجارات، وإنزال المطر وإحياء الأرض به، وبثّ الدواب، وتصريف الرياح، والسحاب المسخّر بين السماء والأرض. كل هذه آيات لقوم يعقلون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-164', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-164">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-164">ذكر تعالى الأدلة على وجوده ووحدانيته: خلق السماوات في ارتفاعها وعظمتها، والأرض في كثافتها، واختلاف الليل والنهار في تعاقبهما، والفلك الجارية في البحر لمصالح الناس، وإنزال الماء من السماء فأحيا به الأرض الميتة، وبثّ فيها من كل دابة، وتصريف الرياح صَبًا ودَبورًا وشمالًا وجنوبًا، والسحاب المسخّر. وهذه لآيات واضحة لمن يتعقّل ويتدبّر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-164', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-164">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-164">لما قال المشركون: كيف يكون الإله واحدًا، ذكر الله دلائل وحدانيته: في خلق السماوات والأرض دليل على القدرة والحكمة، واختلاف الليل والنهار في الطول والقصر، والفلك الجارية لمنافع الناس، وإنزال المطر وإحياء الأرض بعد موتها، وبثّ الدواب، وتصريف الرياح، والسحاب المسخّر. هذه آيات لقوم يعقلون فيستدلون بها على وحدانية الخالق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-164', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-164">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-164">هذه الآية من أعظم آيات القرآن في إثبات التوحيد. ذكر فيها ثمانية أدلة: خلق السماوات والأرض، واختلاف الليل والنهار، والفلك الجارية، وإنزال الماء، وإحياء الأرض، وبثّ الدواب، وتصريف الرياح، والسحاب المسخّر. وخصّ العقلاء بالانتفاع لأنهم أهل التدبر والتأمل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-164', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-164">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-164">يقول تعالى: إن في خلق السماوات السبع والأرض وما فيهما، واختلاف الليل والنهار وتعاقبهما، والسفن التي تجري في البحر بما ينفع الناس، وما أنزل الله من المطر فأحيا به الأرض بعد يبسها، وبثّ فيها من كل دابة، وتصريف الرياح، والسحاب المسخّر، لدلالات بيّنة لقوم يعقلون عن الله حججه وآياته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-164', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-165">
+                <div class="ayah-text">وَمِنَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسِ مَن یَتَّخِذُ مِ<span class="tj-khf">ن</span> دُونِ <span class="tj-slt">ٱل</span>لَّهِ أَ<span class="tj-khf">ن</span>دَادࣰا یُحِبُّونَهُمۡ كَحُبِّ <span class="tj-slt">ٱل</span>لَّهِۖ وَ<span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> أَشَدُّ حُبࣰّا لِّلَّهِۗ وَلَوۡ یَرَى <span class="tj-slt">ٱلَّ</span>ذِینَ ظَلَمُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> إِذۡ یَرَوۡنَ <span class="tj-slt">ٱ</span>لۡعَذَابَ أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>لۡقُوَّةَ لِلَّهِ جَمِیعࣰا وَأَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ شَدِیدُ <span class="tj-slt">ٱ</span>لۡعَذَابِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ذمّ من اتخذ من دون الله أندادًا يحبهم كحب الله، وبيّن أن المؤمنين أشد حبًا لله، ولو يرى الظالمون العذاب لعلموا أن القوة لله جميعًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-165">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-165">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-165">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-165">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-165">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-165">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-165">ذكر تعالى حال المشركين الذين اتخذوا من دون الله أندادًا أي شركاء يحبونهم كحب الله. والذين آمنوا أشد حبًا لله لأن حبهم خالص لله وحده. ولو يرى الذين ظلموا إذ يرون العذاب يوم القيامة لعلموا أن القوة لله جميعًا وأنه شديد العذاب لمن أشرك به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-165', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-165">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-165">يذم تعالى المشركين الذين عبدوا مع الله غيره وجعلوا له أندادًا يساوونهم برب العالمين في المحبة. {وَالَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِلَّهِ} لأنهم أخلصوا حبهم لله وحده. {وَلَوْ يَرَى الَّذِينَ ظَلَمُوا إِذْ يَرَوْنَ الْعَذَابَ} أي لو رأوا ما ينتظرهم لعلموا أن القوة لله وحده وأن عذابه شديد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-165', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-165">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-165">{وَمِنَ النَّاسِ مَنْ يَتَّخِذُ مِنْ دُونِ اللَّهِ أَنْدَادًا} أي أمثالًا وشركاء. {يُحِبُّونَهُمْ كَحُبِّ اللَّهِ} أي يعظمونهم ويطيعونهم كتعظيم الله وطاعته. {وَالَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِلَّهِ} لإخلاصهم ولأنهم لا يعدلون بالله شيئًا. {وَلَوْ يَرَى الَّذِينَ ظَلَمُوا} بالشرك {إِذْ يَرَوْنَ الْعَذَابَ} لعلموا أن العزة والقوة لله جميعًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-165', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-165">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-165">الأنداد: الأمثال، واحدها نِدّ. والمراد الأصنام والطواغيت التي عُبدت من دون الله. {يُحِبُّونَهُمْ كَحُبِّ اللَّهِ} أي يعبدونهم كعبادة الله. {وَالَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِلَّهِ} لأن حبهم أثبت وأدوم، فلا يتحولون عنه بخلاف الكفار الذين يتبرأ بعضهم من بعض يوم القيامة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-165', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-165">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-165">يقول تعالى: ومن الناس من يتخذ من دون الله أندادًا أي أمثالًا من الآلهة يحبونها ويعبدونها كعبادة الله. والذين آمنوا أشد حبًا لله لإخلاصهم له. ولو يعاين المشركون العذاب يوم القيامة لأيقنوا أن القوة لله جميعًا لا لأندادهم، وأن الله شديد العذاب لمن أشرك به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-165', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-166">
+                <div class="ayah-text">إِذۡ تَبَرَّأَ <span class="tj-slt">ٱلَّ</span>ذِینَ <span class="tj-slt">ٱ</span>تُّبِعُو<span class="tj-slt">ا۟</span> مِنَ <span class="tj-slt">ٱلَّ</span>ذِینَ <span class="tj-slt">ٱ</span>تَّبَعُو<span class="tj-slt">ا۟</span> وَرَأَوُ<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡعَذَابَ وَتَقَطَّعَتۡ بِهِمُ <span class="tj-slt">ٱ</span>لۡأَسۡبَابُ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يوم القيامة يتبرأ المتبوعون من أتباعهم حين يرون العذاب، وتتقطع بينهم جميع الأسباب والصلات التي كانت تجمعهم في الدنيا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-166">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-166">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-166">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-166">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-166">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-166">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-166">يوم القيامة يتبرأ الرؤساء والقادة من أتباعهم ويتنصلون منهم حين يعاينون العذاب. وتتقطع بهم الأسباب أي الوسائل والصلات التي كانت بينهم في الدنيا من محبة وصداقة ونسب، فلا ينفع أحد أحدًا ولا يغني عنه شيئًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-166', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-166">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-166">{إِذْ تَبَرَّأَ الَّذِينَ اتُّبِعُوا} وهم الرؤساء والكبراء {مِنَ الَّذِينَ اتَّبَعُوا} وهم الأتباع والضعفاء. {وَرَأَوُا الْعَذَابَ} أي عاينوه. {وَتَقَطَّعَتْ بِهِمُ الْأَسْبَابُ} أي الوصلات التي كانت بينهم في الدنيا من الولاية والصداقة والقرابة انقطعت كلها يوم القيامة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-166', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-166">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-166">{إِذْ تَبَرَّأَ الَّذِينَ اتُّبِعُوا} أي تنصل القادة والرؤساء من أتباعهم. {مِنَ الَّذِينَ اتَّبَعُوا} من السفلة الذين كانوا يطيعونهم. {وَرَأَوُا الْعَذَابَ} أي حين عاينوه جميعًا. {وَتَقَطَّعَتْ بِهِمُ الْأَسْبَابُ} أي الوصلات والمودات التي كانت بينهم في الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-166', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-166">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-166">تبرأ المتبوعون من الأتباع لما رأوا العذاب، فلم تنفعهم رياستهم ولا كثرة أتباعهم. والأسباب: هي الوصلات والعلائق كالأنساب والأحلاف والصداقات، تنقطع كلها يوم القيامة بين المشركين. وفي هذا عبرة لمن يتبع غير الحق ويقلد الرؤساء في الباطل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-166', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-166">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-166">يقول تعالى: حين تبرأ الذين كانوا يُتّبعون في الدنيا من الرؤساء والقادة من الذين كانوا يتبعونهم من الأتباع والسفلة. وذلك حين رأوا عذاب الله وعاينوه. وتقطعت بهم الأسباب أي الوصلات والعلاقات التي كانت بينهم في الدنيا فلم تنفعهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-166', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-167">
+                <div class="ayah-text">وَقَالَ <span class="tj-slt">ٱلَّ</span>ذِینَ <span class="tj-slt">ٱ</span>تَّبَعُو<span class="tj-slt">ا۟</span> لَوۡ أَ<span class="tj-ghn">نَّ</span> لَنَا كَرَّ<span class="tj-khf">ةࣰ</span> فَنَتَبَرَّأَ مِنۡهُمۡ كَمَا تَبَرَّءُو<span class="tj-slt">ا۟</span> مِ<span class="tj-ghn">نَّ</span>اۗ كَذَ<span class="tj-mdd"> ٰ⁠</span>لِكَ یُرِیهِمُ <span class="tj-slt">ٱل</span>لَّهُ أَعۡمَ<span class="tj-mdd">ـٰ</span>لَهُمۡ حَسَرَ<span class="tj-mdd"> ٰ⁠</span>تٍ عَلَیۡهِمۡۖ وَمَا هُم بِخَ<span class="tj-mdd">ـٰ</span>رِجِینَ مِنَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>ارِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يتمنى الأتباع أن لو كانت لهم رجعة إلى الدنيا ليتبرأوا من رؤسائهم، لكن الله يريهم أعمالهم حسرات عليهم وهم خالدون في النار.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-167">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-167">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-167">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-167">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-167">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-167">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-167">يتمنى الأتباع حين يرون العذاب لو أن لهم رجعة إلى الدنيا فيتبرأوا من رؤسائهم كما تبرأ منهم رؤساؤهم. {كَذَلِكَ يُرِيهِمُ اللَّهُ أَعْمَالَهُمْ حَسَرَاتٍ عَلَيْهِمْ} أي يريهم أعمالهم الباطلة التي لم تنفعهم فتكون حسرة وندامة عليهم. وهم مع ذلك لا يخرجون من النار أبدًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-167', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-167">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-167">لما تبرأ الرؤساء من أتباعهم تمنى الأتباع أن لو رُدّوا إلى الدنيا ليتبرأوا منهم كما تبرأوا. {كَذَلِكَ يُرِيهِمُ اللَّهُ أَعْمَالَهُمْ حَسَرَاتٍ عَلَيْهِمْ} أعمالهم التي عملوها في الدنيا من الكفر والمعاصي تتحول إلى حسرات وندامات. {وَمَا هُمْ بِخَارِجِينَ مِنَ النَّارِ} خالدون فيها أبدًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-167', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-167">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-167">قال الأتباع: لو أن لنا رجعة إلى الدنيا لتبرأنا منهم كما تبرأوا منا اليوم. {كَذَلِكَ يُرِيهِمُ اللَّهُ أَعْمَالَهُمْ حَسَرَاتٍ} أي ندامات، وذلك أنهم يرون ثواب المؤمنين في الجنة ويرون ما فاتهم فيتحسرون. {وَمَا هُمْ بِخَارِجِينَ مِنَ النَّارِ} أي مخلّدون فيها لا يخرجون أبدًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-167', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-167">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-167">تمنى الأتباع الكرّة أي الرجعة إلى الدنيا ليتبرأوا من الرؤساء. وهذا تمنٍّ لا يُجاب. {كَذَلِكَ يُرِيهِمُ اللَّهُ أَعْمَالَهُمْ حَسَرَاتٍ} الحسرات: شدة الندم والتلهف على ما فات. وأعمالهم التي ظنوها خيرًا تنقلب حسرات لأنها كانت كفرًا وشركًا. {وَمَا هُمْ بِخَارِجِينَ مِنَ النَّارِ} تأبيد للعذاب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-167', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-167">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-167">يقول الأتباع الذين كانوا يتبعون الرؤساء: لو أن لنا رجعة إلى الدنيا لتبرأنا منهم كما تبرأوا منا. كذلك يريهم الله أعمالهم التي عملوها في الدنيا حسرات وندامات عليهم لا تنفعهم. وما هم بخارجين من النار أبدًا بل هم فيها مخلّدون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-167', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-168">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسُ كُلُو<span class="tj-slt">ا۟</span> مِ<span class="tj-ghn">مَّ</span>ا فِی <span class="tj-slt">ٱ</span>لۡأَرۡضِ حَلَ<span class="tj-mdd">ـٰ</span>لࣰا طَیِّبࣰا وَلَا تَتَّبِعُو<span class="tj-slt">ا۟</span> خُطُوَ<span class="tj-mdd"> ٰ⁠</span>تِ <span class="tj-slt">ٱل</span>شَّیۡطَ<span class="tj-mdd">ـٰ</span>نِۚ إِ<span class="tj-ghn">نَّ</span>هُۥ لَكُمۡ عَدُ<span class="tj-dgm">وࣱّ</span> <span class="tj-ghn">مُّ</span>بِینٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">خطاب عام لجميع الناس بالأكل مما في الأرض حلالًا طيبًا، والنهي عن اتباع خطوات الشيطان الذي هو عدو مبين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-168">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-168">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-168">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-168">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-168">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-168">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-168">خاطب الله الناس جميعًا بأن يأكلوا مما في الأرض حلالًا طيبًا، فجمع بين وصفي الحلال والطيب، فلا يكفي أن يكون حلالًا بل لا بد أن يكون طيبًا. ونهاهم عن اتباع خطوات الشيطان وطرقه التي يزيّنها لهم، فإنه عدو ظاهر العداوة لبني آدم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-168', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-168">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-168">أباح الله تعالى لعباده أكل ما في الأرض في حال كونه حلالًا من الله طيبًا أي مستطابًا في نفسه غير ضار. ونهى عن اتباع خطوات الشيطان وهي طرقه ومسالكه فيما أضلّ به أتباعه من تحريم البحائر والسوائب ونحوها. {إِنَّهُ لَكُمْ عَدُوٌّ مُبِينٌ} أي بيّن العداوة ظاهرها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-168', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-168">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-168">{يَا أَيُّهَا النَّاسُ} خطاب عام لجميع الناس. {كُلُوا مِمَّا فِي الْأَرْضِ حَلَالًا طَيِّبًا} أي حلالًا هو ما أحله الله، وطيبًا أي طاهرًا مستلذًا. {وَلَا تَتَّبِعُوا خُطُوَاتِ الشَّيْطَانِ} أي طرقه وآثاره فيما حرّم وزيّن من المعاصي. {إِنَّهُ لَكُمْ عَدُوٌّ مُبِينٌ} ظاهر العداوة لبني آدم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-168', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-168">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-168">أمر الله الناس جميعًا بالأكل من الحلال الطيب. والحلال ما لم يرد فيه نهي، والطيب ما تستطيبه النفس ولا ضرر فيه. ونهى عن اتباع خطوات الشيطان وهي طرقه في الإغواء والإضلال. وعداوة الشيطان لآدم وذريته قديمة ظاهرة منذ أن أبى السجود لآدم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-168', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-168">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-168">يقول تعالى: يا أيها الناس كلوا مما أحللت لكم في الأرض مما هو حلال طيب، ولا تتبعوا آثار الشيطان وطرقه فيما يأمركم به من تحريم ما أحلّ الله وتحليل ما حرّم. إنه لكم عدو ظاهر العداوة فلا تطيعوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-168', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-169">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span>مَا یَأۡمُرُكُم بِ<span class="tj-slt">ٱل</span>سُّ<span class="tj-mdd">وۤ</span>ءِ وَ<span class="tj-slt">ٱ</span>لۡفَحۡشَ<span class="tj-mdd">اۤ</span>ءِ وَأَ<span class="tj-khf">ن</span> تَقُولُو<span class="tj-slt">ا۟</span> عَلَى <span class="tj-slt">ٱل</span>لَّهِ مَا لَا تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بيان أن الشيطان إنما يأمر بالسوء والفحشاء وأن يُقال على الله ما لا يُعلم من الكذب والافتراء.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-169">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-169">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-169">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-169">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-169">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-169">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-169">بيّن الله ما يأمر به الشيطان ليحذره العباد: يأمرهم بالسوء وهو كل ما يسوء صاحبه من المعاصي، والفحشاء وهي كل ما استفحش من الذنوب الكبيرة، وأن يقولوا على الله ما لا يعلمون من تحليل الحرام وتحريم الحلال والقول على الله بلا علم وهو أصل كل شرّ.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-169', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-169">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-169">يخبر تعالى أن الشيطان يأمر أولياءه بالسوء والفحشاء، والسوء: كل ما ساء صاحبه من المعاصي. والفحشاء: ما عَظُم من الذنوب. {وَأَنْ تَقُولُوا عَلَى اللَّهِ مَا لَا تَعْلَمُونَ} وهو أعظم المحرمات: القول على الله بغير علم في ذاته وصفاته وأحكامه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-169', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-169">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-169">{إِنَّمَا يَأْمُرُكُمْ بِالسُّوءِ} أي بالمعاصي والإثم. {وَالْفَحْشَاءِ} أي ما تجاوز الحد من الكبائر. {وَأَنْ تَقُولُوا عَلَى اللَّهِ مَا لَا تَعْلَمُونَ} من تحريم ما أحل الله وتحليل ما حرّم والكذب عليه. فالقول على الله بلا علم من أعظم المحرمات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-169', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-169">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-169">حصر الله ما يأمر به الشيطان في ثلاثة: السوء وهو كل ما يسوء الإنسان في دينه ودنياه، والفحشاء وهي الفاحشة الكبيرة العظيمة، والقول على الله بلا علم وهو أشدها لأنه يتضمن الكذب على الله في صفاته وأحكامه وهو أصل الشرك والبدعة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-169', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-169">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-169">يقول تعالى: إنما يأمركم الشيطان بالقبيح من الأعمال والأقوال وهو السوء، والفحشاء وهو ما فحُش وعَظُم من المعاصي، وأن تفتروا على الله الكذب فتقولوا عليه ما لا تعلمون من تحريم وتحليل بلا دليل ولا برهان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-169', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-170">
+                <div class="ayah-text">وَإِذَا قِیلَ لَهُمُ <span class="tj-slt">ٱ</span>تَّبِعُو<span class="tj-slt">ا۟</span> مَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">ن</span>زَلَ <span class="tj-slt">ٱل</span>لَّهُ قَالُو<span class="tj-slt">ا۟</span> بَلۡ نَتَّبِعُ مَ<span class="tj-mdd">اۤ</span> أَلۡفَیۡنَا عَلَیۡهِ ءَابَ<span class="tj-mdd">اۤ</span>ءَنَ<span class="tj-mdd">اۤۚ</span> أَوَلَوۡ كَانَ ءَابَ<span class="tj-mdd">اۤ</span>ؤُهُمۡ لَا یَعۡقِلُونَ شَیۡـࣰٔا وَلَا یَهۡتَدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ذمّ التقليد الأعمى: إذا قيل لهم اتبعوا ما أنزل الله رفضوا وتمسكوا بما وجدوا عليه آباءهم، حتى لو كان آباؤهم لا يعقلون ولا يهتدون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-170">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-170">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-170">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-170">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-170">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-170">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-170">هذا ذمّ للمقلدين لآبائهم في الباطل المعرضين عن الحق. إذا قيل لهم اتبعوا ما أنزل الله من الهدى أعرضوا وقالوا: بل نتبع ما ألفينا عليه آباءنا. فردّ الله عليهم: أيتبعون آباءهم ولو كانوا لا يعقلون شيئًا من الحق ولا يهتدون إلى الصواب؟ فكيف يُقلَّد من هذا حاله!</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-170', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-170">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-170">ذمّ الله الكفار الذين إذا دُعوا إلى اتباع الحق الذي أنزله الله أبوا وتعلّلوا بتقليد الآباء. فردّ الله عليهم بأن آباءهم كانوا جهالًا لا يعقلون ولا يهتدون، فكيف يصلح تقليدهم؟ وفي هذا ذمّ للتقليد الأعمى بلا حجة ولا برهان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-170', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-170">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-170">نزلت في كفار قريش حين دُعوا إلى الإسلام فقالوا: نتبع ما وجدنا عليه آباءنا من عبادة الأصنام. فقال الله: {أَوَلَوْ كَانَ آبَاؤُهُمْ لَا يَعْقِلُونَ شَيْئًا} أي لا يفهمون الحق ولا يهتدون إليه. والاستفهام للإنكار والتوبيخ على تقليد الجاهلين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-170', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-170">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-170">في الآية ذمّ التقليد الأعمى بلا حجة. وإذا قيل للكفار اتبعوا ما أنزل الله قالوا: بل نتبع ما ألفينا عليه آباءنا أي ما وجدناهم عليه. فأنكر الله عليهم تقليد آباء لا يعقلون ولا يهتدون. وفي الآية دليل على بطلان التقليد في أصول الدين وأنه لا يجوز إلا اتباع الدليل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-170', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-170">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-170">يقول تعالى: وإذا قيل لهؤلاء الكفار اتبعوا ما أنزل الله على رسوله قالوا: لا نتبع ذلك بل نتبع ما وجدنا عليه آباءنا من الدين. فقال الله منكرًا عليهم: أيتبعون آباءهم ولو كان آباؤهم لا يعقلون من الحق شيئًا ولا يهتدون لسبيل الرشاد؟</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-170', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-171">
+                <div class="ayah-text">وَمَثَلُ <span class="tj-slt">ٱلَّ</span>ذِینَ كَفَرُو<span class="tj-slt">ا۟</span> كَمَثَلِ <span class="tj-slt">ٱلَّ</span>ذِی یَنۡعِقُ بِمَا لَا یَسۡمَعُ إِلَّا دُعَ<span class="tj-mdd">اۤ</span><span class="tj-dgm">ءࣰ</span> وَنِدَ<span class="tj-mdd">اۤ</span><span class="tj-khf">ءࣰۚ</span> صُ<span class="tj-ghn">مُّۢ</span> بُكۡمٌ عُمۡ<span class="tj-khf">یࣱ</span> فَهُمۡ لَا یَعۡقِلُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">مثل الكفار كمثل من ينعق بما لا يسمع إلا دعاءً ونداءً، فهم صمّ بكم عمي لا يعقلون شيئًا من الحق.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-171">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-171">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-171">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-171">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-171">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-171">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-171">ضرب الله مثلًا للكفار بالبهائم التي لا تفهم ما يقول الراعي إذا نعق بها، فهي تسمع الصوت ولا تفهم المعنى. كذلك الكفار يسمعون القرآن والموعظة ولا يفقهون معناها. ثم وصفهم بأنهم صمّ عن سماع الحق، بكم عن النطق به، عمي عن رؤيته، فهم لا يعقلون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-171', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-171">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-171">شبّه الله الكفار في عدم انتفاعهم بما يُدعون إليه بالبهائم التي يصيح بها راعيها فلا تفهم إلا مجرد الصوت. كذلك هؤلاء لا ينتفعون بالمواعظ ولا يتدبرون القرآن. {صُمٌّ} لا يسمعون الحق {بُكْمٌ} لا ينطقون بالصواب {عُمْيٌ} لا يبصرون الهدى {فَهُمْ لَا يَعْقِلُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-171', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-171">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-171">{وَمَثَلُ الَّذِينَ كَفَرُوا} في دعاء النبي ﷺ إياهم {كَمَثَلِ الَّذِي يَنْعِقُ} أي يصيح {بِمَا لَا يَسْمَعُ إِلَّا دُعَاءً وَنِدَاءً} أي مجرد صوت بلا فهم كالغنم والبهائم. {صُمٌّ بُكْمٌ عُمْيٌ} عن الحق {فَهُمْ لَا يَعْقِلُونَ} ما يُقال لهم فلا ينتفعون به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-171', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-171">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-171">شبّه الكفار في عدم فهمهم بالبهائم التي ينعق بها الراعي فتسمع الصوت ولا تفهم المعنى. والنعيق: صوت الراعي بغنمه. {صُمٌّ} عن سماع الحق {بُكْمٌ} عن النطق بالصواب {عُمْيٌ} عن إبصار الحق {فَهُمْ لَا يَعْقِلُونَ} لا يتدبرون ولا يفكرون في العواقب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-171', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-171">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-171">يقول تعالى: مثل من يدعو هؤلاء الكفار إلى الإيمان كمثل الراعي الذي ينعق بالغنم فلا تفهم ما يقول إلا أنها تسمع صوتًا. كذلك هؤلاء يسمعون كلام النبي ولا يفقهونه. صمّ عن الحق بكم عن الخير عمي عن الهدى فهم لا يعقلون شيئًا من أمر الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-171', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-172">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> كُلُو<span class="tj-slt">ا۟</span> مِ<span class="tj-khf">ن</span> طَیِّبَ<span class="tj-mdd">ـٰ</span>تِ مَا رَزَ<span class="tj-qlq">قۡ</span>نَ<span class="tj-mdd">ـٰ</span>كُمۡ وَ<span class="tj-slt">ٱ</span>شۡكُرُو<span class="tj-slt">ا۟</span> لِلَّهِ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">ن</span>تُمۡ إِیَّاهُ تَعۡبُدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله المؤمنين بالأكل من طيبات ما رزقهم وشكره على نعمه، إن كانوا إياه يعبدون حقًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-172">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-172">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-172">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-172">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-172">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-172">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-172">بعد أن خاطب الناس عمومًا خصّ المؤمنين بالأمر بالأكل من الطيبات، والطيبات هي المباحات المستلذة التي أحلها الله. وأمرهم بالشكر لله على نعمه، والشكر يكون بالاعتراف بالنعم والحمد لله عليها واستعمالها في طاعته. {إِنْ كُنْتُمْ إِيَّاهُ تَعْبُدُونَ} أي إن كنتم مخلصين في عبادتكم فاشكروه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-172', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-172">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-172">أمر الله المؤمنين بالأكل من الطيبات التي رزقهم وشكره عليها. قال ﷺ: «إن الله طيب لا يقبل إلا طيبًا». والطيبات: الحلال الطاهر المستلذ. {وَاشْكُرُوا لِلَّهِ} اعترفوا بنعمته واحمدوه عليها. {إِنْ كُنْتُمْ إِيَّاهُ تَعْبُدُونَ} حث على إخلاص العبادة لله والشكر له.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-172', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-172">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-172">{يَا أَيُّهَا الَّذِينَ آمَنُوا كُلُوا مِنْ طَيِّبَاتِ مَا رَزَقْنَاكُمْ} أي من حلالاته ومستلذاته. {وَاشْكُرُوا لِلَّهِ} على ما رزقكم من الطيبات. {إِنْ كُنْتُمْ إِيَّاهُ تَعْبُدُونَ} فإن العبادة الحقة تستلزم شكر المنعم والاعتراف بفضله والتزام أوامره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-172', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-172">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-172">أمر المؤمنين خاصة بعد أمر الناس عامة بأكل الطيبات. والطيب هنا: الحلال. والأكل من الحلال سبب لقبول العمل والدعاء. {وَاشْكُرُوا لِلَّهِ} بقلوبكم وألسنتكم وجوارحكم. {إِنْ كُنْتُمْ إِيَّاهُ تَعْبُدُونَ} شرط ومعناه التحريض على الشكر، أي إن كنتم عبيده حقًا فاشكروه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-172', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-172">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-172">يقول تعالى: يا أيها الذين صدّقوا الله ورسوله كلوا من حلال ما رزقكم الله وطيّبه لكم. واشكروا الله على ما أنعم عليكم بالحلال الطيب. إن كنتم تعبدونه حقًا فلا تأكلوا إلا ما أحلّ لكم واشكروه على ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-172', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-173">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span>مَا حَرَّمَ عَلَیۡكُمُ <span class="tj-slt">ٱ</span>لۡمَیۡتَةَ وَ<span class="tj-slt">ٱل</span>دَّمَ وَلَحۡمَ <span class="tj-slt">ٱ</span>لۡخِ<span class="tj-khf">ن</span>زِیرِ وَمَ<span class="tj-mdd">اۤ</span> أُهِلَّ بِهِۦ لِغَیۡرِ <span class="tj-slt">ٱل</span>لَّهِۖ فَمَنِ <span class="tj-slt">ٱ</span>ضۡطُرَّ غَیۡرَ بَا<span class="tj-dgm">غࣲ</span> وَلَا عَا<span class="tj-khf">دࣲ</span> فَلَ<span class="tj-mdd">اۤ</span> إِثۡمَ عَلَیۡهِۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ غَفُو<span class="tj-dgm">رࣱ</span> رَّحِیمٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بيان المحرّمات الأربع: الميتة والدم ولحم الخنزير وما أُهلّ به لغير الله، مع رخصة المضطر غير الباغي والعادي فلا إثم عليه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-173">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-173">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-173">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-173">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-173">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-173">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-173">ذكر الله ما حرّمه من المطعومات وهي: الميتة وهي ما مات بدون ذكاة شرعية، والدم المسفوح، ولحم الخنزير لنجاسته، وما أُهلّ به لغير الله أي ذُبح لغير الله. ثم رخّص للمضطر بشرط ألا يكون باغيًا أي متجاوزًا للحدّ، ولا عاديًا أي معتديًا على الحق، فلا إثم عليه. إن الله غفور رحيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-173', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-173">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-173">لما أحل الله الطيبات بيّن ما حرّم: الميتة وهي ما مات حتف أنفه من غير ذكاة، والدم أي المسفوح، ولحم الخنزير فإنه رجس ونجس، وما أُهلّ به لغير الله أي ذُكر عليه اسم غير الله. {فَمَنِ اضْطُرَّ} أي ألجأته الضرورة {غَيْرَ بَاغٍ وَلَا عَادٍ} فلا إثم عليه إن أكل بقدر ما يسدّ رمقه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-173', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-173">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-173">{إِنَّمَا حَرَّمَ عَلَيْكُمُ الْمَيْتَةَ} ما مات من غير ذكاة. {وَالدَّمَ} أي المسفوح السائل. {وَلَحْمَ الْخِنْزِيرِ} لنجاسته. {وَمَا أُهِلَّ بِهِ لِغَيْرِ اللَّهِ} ما ذُبح على اسم الأصنام. {فَمَنِ اضْطُرَّ غَيْرَ بَاغٍ} على مضطر آخر {وَلَا عَادٍ} متجاوز قدر الحاجة فلا إثم عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-173', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-173">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-173">حصر المحرمات من الأطعمة في أربعة أصناف: الميتة والدم ولحم الخنزير وما أُهلّ به لغير الله. والإهلال: رفع الصوت فالمراد ما ذُبح باسم غير الله. والمضطر يباح له الأكل من هذه المحرمات بقدر ما يحفظ نفسه من الهلاك بشرطين: ألا يكون باغيًا ولا عاديًا. {إِنَّ اللَّهَ غَفُورٌ رَحِيمٌ} ختم بهما ترخيصًا للمضطر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-173', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-173">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-173">يقول تعالى: إنما حرّم عليكم الميتة وهي ما مات من الأنعام من غير تذكية، والدم المسفوح، ولحم الخنزير كله، وما ذُبح لغير الله فذُكر عليه اسم غير الله. فمن اضطر إلى شيء من ذلك غير باغٍ أي غير طالب له متلذذًا ولا عادٍ أي متجاوز ما يسدّ الرمق فلا إثم عليه. إن الله غفور لمن أكل مضطرًا رحيم به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-173', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-174">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِینَ یَكۡتُمُونَ مَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">ن</span>زَلَ <span class="tj-slt">ٱل</span>لَّهُ مِنَ <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بِ وَیَشۡتَرُونَ بِهِۦ ثَمَنࣰا قَلِیلًا أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ مَا یَأۡكُلُونَ فِی بُطُونِهِمۡ إِلَّا <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>ارَ وَلَا یُكَلِّمُهُمُ <span class="tj-slt">ٱل</span>لَّهُ یَوۡمَ <span class="tj-slt">ٱ</span>لۡقِیَ<span class="tj-mdd">ـٰ</span>مَةِ وَلَا یُزَكِّیهِمۡ وَلَهُمۡ عَذَابٌ أَلِیمٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وعيد شديد للذين يكتمون ما أنزل الله من الكتاب ويشترون به ثمنًا قليلًا: ما يأكلون في بطونهم إلا النار، ولا يكلمهم الله ولا يزكيهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-174">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-174">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-174">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-174">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-174">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-174">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-174">هذا وعيد شديد للذين يكتمون ما أنزل الله من الكتاب كالتوراة والإنجيل ويبيعون دينهم بعرض من الدنيا قليل. عقوبتهم أنهم ما يأكلون في بطونهم إلا النار أي ما يأكلونه من أثمان الكتمان سيكون نارًا في بطونهم، ولا يكلمهم الله يوم القيامة بما يسرّهم، ولا يزكيهم أي لا يطهرهم من ذنوبهم، ولهم عذاب أليم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-174', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-174">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-174">نزلت في أحبار اليهود الذين كتموا صفة محمد ﷺ وأخذوا على ذلك رشوة من سفلتهم وعوامهم. {مَا يَأْكُلُونَ فِي بُطُونِهِمْ إِلَّا النَّارَ} أي ما يأكلونه من أثمان ذلك سيتحول نارًا في بطونهم يوم القيامة. {وَلَا يُكَلِّمُهُمُ اللَّهُ يَوْمَ الْقِيَامَةِ} إعراضًا عنهم وغضبًا. {وَلَا يُزَكِّيهِمْ} لا يطهرهم. {وَلَهُمْ عَذَابٌ أَلِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-174', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-174">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-174">نزلت في رؤساء اليهود وأحبارهم الذين كتموا نعت محمد ﷺ وأكلوا الرشا على ذلك. {مَا يَأْكُلُونَ فِي بُطُونِهِمْ إِلَّا النَّارَ} أي ما حصلوا عليه من أثمان الكتمان يتحول نارًا. {وَلَا يُكَلِّمُهُمُ اللَّهُ} بالرحمة والرضا {وَلَا يُزَكِّيهِمْ} لا يثني عليهم. {وَلَهُمْ عَذَابٌ أَلِيمٌ} مؤلم شديد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-174', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-174">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-174">الآية في أحبار اليهود الذين كتموا أمر محمد ﷺ وأخذوا على ذلك رشوة. والثمن القليل: ما أخذوه من الدنيا مقابل كتمان الحق. {مَا يَأْكُلُونَ فِي بُطُونِهِمْ إِلَّا النَّارَ} لأن ما يأكلونه حرام يؤول بهم إلى النار. {وَلَا يُكَلِّمُهُمُ اللَّهُ} أي لا يكلمهم بما يسرّهم. {وَلَا يُزَكِّيهِمْ} لا يُثني عليهم بخير.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-174', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-174">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-174">يقول تعالى: إن الذين يخفون ما أنزل الله من صفة محمد ﷺ في كتبهم ويأخذون على كتمانهم ثمنًا يسيرًا من حطام الدنيا، ما يملأون بطونهم إلا من النار لأن ثمن كتمانهم حرام يصير نارًا. ولا يكلمهم الله كلام رضا ولا يطهرهم من ذنوبهم ولهم عذاب مؤلم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-174', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-175">
+                <div class="ayah-text">أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ <span class="tj-slt">ٱلَّ</span>ذِینَ <span class="tj-slt">ٱ</span>شۡتَرَوُ<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>ضَّلَ<span class="tj-mdd">ـٰ</span>لَةَ بِ<span class="tj-slt">ٱ</span>لۡهُدَ<span class="tj-mdd">ىٰ</span> وَ<span class="tj-slt">ٱ</span>لۡعَذَابَ بِ<span class="tj-slt">ٱ</span>لۡمَغۡفِرَةِۚ فَمَ<span class="tj-mdd">اۤ</span> أَصۡبَرَهُمۡ عَلَى <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>ارِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أولئك الذين اشتروا الضلالة بالهدى والعذاب بالمغفرة، فما أجرأهم على النار وما أصبرهم عليها!</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-175">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-175">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-175">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-175">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-175">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-175">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-175">أولئك الكاتمون هم الذين استبدلوا الضلالة بالهدى فاختاروا الكفر على الإيمان، واستبدلوا العذاب بالمغفرة فآثروا ما يوجب العذاب على ما يوجب المغفرة. {فَمَا أَصْبَرَهُمْ عَلَى النَّارِ} تعجب من حالهم كيف يصنعون أعمال أهل النار ولا يبالون بها، كأنهم صابرون عليها!</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-175', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-175">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-175">{أُولَئِكَ الَّذِينَ اشْتَرَوُا الضَّلَالَةَ بِالْهُدَى} أي استبدلوا الكفر بالإيمان. {وَالْعَذَابَ بِالْمَغْفِرَةِ} أي اختاروا ما يوجب لهم العذاب وتركوا ما يوجب المغفرة. {فَمَا أَصْبَرَهُمْ عَلَى النَّارِ} قال قتادة: والله ما لهم على النار من صبر ولكن ما أجرأهم على عمل أهل النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-175', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-175">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-175">{أُولَئِكَ الَّذِينَ اشْتَرَوُا الضَّلَالَةَ بِالْهُدَى} اختاروا الكفر على الإيمان. {وَالْعَذَابَ بِالْمَغْفِرَةِ} آثروا ما يوجب العذاب على ما يوجب المغفرة. {فَمَا أَصْبَرَهُمْ عَلَى النَّارِ} قيل: ما أجرأهم على النار، وقيل: تعجب من صنيعهم كأنهم يتحملون النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-175', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-175">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-175">الشراء هنا مجاز عن الاستبدال: استبدلوا الضلالة بالهدى والعذاب بالمغفرة، فخسروا الصفقتين. {فَمَا أَصْبَرَهُمْ عَلَى النَّارِ} اختلف في معناها: قيل تعجب من جرأتهم على أعمال النار، وقيل: ما الذي صبّرهم على النار أي أي شيء جعلهم يعملون أعمال أهلها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-175', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-175">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-175">يقول تعالى: أولئك الذين باعوا الهدى واشتروا الضلالة، وباعوا المغفرة واشتروا العذاب. فما أصبرهم على النار أي ما أجرأهم على أعمال أهل النار كأنهم يصبرون عليها. وليس المراد أن لهم صبرًا عليها ولكن التعجب من إقدامهم على ما يوجبها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-175', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-176">
+                <div class="ayah-text">ذَ<span class="tj-mdd"> ٰ⁠</span>لِكَ بِأَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ نَزَّلَ <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بَ بِ<span class="tj-slt">ٱ</span>لۡحَقِّۗ وَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِینَ <span class="tj-slt">ٱ</span>خۡتَلَفُو<span class="tj-slt">ا۟</span> فِی <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بِ لَفِی شِقَا<span class="tj-qlb">قِۭ</span> بَعِیدࣲ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">سبب عذابهم أن الله نزّل الكتاب بالحق فكذّبوا به واختلفوا فيه، فهم في شقاق وخلاف بعيد عن الحق.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-176">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-176">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-176">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-176">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-176">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-176">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-176">ذلك العذاب الذي حلّ بهم سببه أن الله نزّل الكتاب بالحق الواضح فأعرضوا عنه وكذّبوا به. وإن الذين اختلفوا في الكتاب فآمنوا ببعض وكفروا ببعض لفي شقاق بعيد أي في خلاف ومنازعة بعيدة عن الحق والصواب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-176', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-176">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-176">{ذَلِكَ بِأَنَّ اللَّهَ نَزَّلَ الْكِتَابَ بِالْحَقِّ} أي استحقوا هذا العذاب لأن الله أنزل كتابه بالحق فكذّبوا به وخالفوه. {وَإِنَّ الَّذِينَ اخْتَلَفُوا فِي الْكِتَابِ} بأن آمنوا ببعضه وكفروا ببعضه أو حرّفوه {لَفِي شِقَاقٍ بَعِيدٍ} أي في خلاف ومعاندة بعيدة عن الحق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-176', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-176">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-176">{ذَلِكَ بِأَنَّ اللَّهَ نَزَّلَ الْكِتَابَ بِالْحَقِّ} أي ذلك العذاب بسبب أن الله أنزل الكتاب بالحق فكذّبوا به. {وَإِنَّ الَّذِينَ اخْتَلَفُوا فِي الْكِتَابِ} آمنوا ببعض وكفروا ببعض. {لَفِي شِقَاقٍ بَعِيدٍ} في خلاف ومفارقة للحق بعيدة عن الهدى والصواب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-176', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-176">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-176">ذلك إشارة إلى ما ذُكر من العذاب. وسببه أن الله نزّل الكتاب بالحق فكذّبوا به وعاندوه. {وَإِنَّ الَّذِينَ اخْتَلَفُوا فِي الْكِتَابِ} هم اليهود والنصارى اختلفوا فيما بينهم فكل فريق يكفّر الآخر. {لَفِي شِقَاقٍ بَعِيدٍ} أي في ضلال بعيد عن الحق لا يُرجى رجوعهم منه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-176', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-176">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-176">يقول تعالى: ذلك العذاب الذي أعدّه لهم بسبب أن الله نزّل الكتاب بالحق فكفروا به وكتموه وحرّفوه. وإن الذين اختلفوا في الكتاب فقالوا فيه أقوالًا متناقضة لفي شقاق بعيد أي في مخالفة للحق بعيدة عن الصواب والرشد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-176', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-177">
+                <div class="ayah-text">۞ لَّیۡسَ <span class="tj-slt">ٱ</span>لۡبِرَّ أَ<span class="tj-khf">ن</span> تُوَلُّو<span class="tj-slt">ا۟</span> وُجُوهَكُمۡ قِبَلَ <span class="tj-slt">ٱ</span>لۡمَشۡرِقِ وَ<span class="tj-slt">ٱ</span>لۡمَغۡرِبِ وَلَ<span class="tj-mdd">ـٰ</span>كِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>لۡبِرَّ مَنۡ ءَامَنَ بِ<span class="tj-slt">ٱل</span>لَّهِ وَ<span class="tj-slt">ٱ</span>لۡیَوۡمِ <span class="tj-slt">ٱ</span>لۡـَٔاخِرِ وَ<span class="tj-slt">ٱ</span>لۡمَلَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَةِ وَ<span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بِ وَ<span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>بِیِّـۧنَ وَءَاتَى <span class="tj-slt">ٱ</span>لۡمَالَ عَلَ<span class="tj-mdd">ىٰ</span> حُبِّهِۦ ذَوِی <span class="tj-slt">ٱ</span>لۡقُرۡبَ<span class="tj-mdd">ىٰ</span> وَ<span class="tj-slt">ٱ</span>لۡیَتَ<span class="tj-mdd">ـٰ</span>مَ<span class="tj-mdd">ىٰ</span> وَ<span class="tj-slt">ٱ</span>لۡمَسَ<span class="tj-mdd">ـٰ</span>كِینَ وَ<span class="tj-slt">ٱ</span><span class="tj-qlq">بۡ</span>نَ <span class="tj-slt">ٱل</span>سَّبِیلِ وَ<span class="tj-slt">ٱل</span>سَّ<span class="tj-mdd">اۤ</span>ىِٕلِینَ وَفِی <span class="tj-slt">ٱل</span>رِّقَابِ وَأَقَامَ <span class="tj-slt">ٱل</span>صَّلَ<span class="tj-mdd">وٰ</span>ةَ وَءَاتَى <span class="tj-slt">ٱل</span>زَّكَ<span class="tj-mdd">وٰ</span>ةَ وَ<span class="tj-slt">ٱ</span>لۡمُوفُونَ بِعَهۡدِهِمۡ إِذَا عَ<span class="tj-mdd">ـٰ</span>هَدُو<span class="tj-slt">ا۟ۖ</span> وَ<span class="tj-slt">ٱل</span>صَّ<span class="tj-mdd">ـٰ</span>بِرِینَ فِی <span class="tj-slt">ٱ</span>لۡبَأۡسَ<span class="tj-mdd">اۤ</span>ءِ وَ<span class="tj-slt">ٱل</span>ضَّرَّ<span class="tj-mdd">اۤ</span>ءِ وَحِینَ <span class="tj-slt">ٱ</span>لۡبَأۡسِۗ أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ <span class="tj-slt">ٱلَّ</span>ذِینَ صَدَقُو<span class="tj-slt">ا۟ۖ</span> وَأُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ىِٕكَ هُمُ <span class="tj-slt">ٱ</span>لۡمُتَّقُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">آية البرّ الجامعة: ليس البرّ في مجرد التوجه شرقًا أو غربًا، بل البرّ الحقيقي يشمل الإيمان والإنفاق وإقامة الصلاة والزكاة والوفاء بالعهد والصبر.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-177">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-177">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-177">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-177">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-177">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-177">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-177">هذه الآية العظيمة جمعت أصول الدين وفروعه. ليس البرّ مجرد التوجه للمشرق أو المغرب بل البرّ الحقيقي: الإيمان بالله واليوم الآخر والملائكة والكتاب والنبيين، وإيتاء المال على حبه لذوي القربى واليتامى والمساكين وابن السبيل والسائلين وفي الرقاب، وإقام الصلاة وإيتاء الزكاة، والوفاء بالعهود، والصبر في البأساء والضراء وحين البأس. أولئك الذين صدقوا وأولئك هم المتقون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-177', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-177">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-177">هذه الآية من أجمع آيات القرآن للخير. ليس البرّ في مجرد الصلاة إلى المشرق أو المغرب بل في الإيمان والعمل الصالح. فذكر أركان الإيمان الخمسة، ثم الإنفاق في سبيل الله على المحتاجين رغم حب المال، وإقام الصلاة وإيتاء الزكاة والوفاء بالعهد والصبر في الشدائد. {أُولَئِكَ الَّذِينَ صَدَقُوا} في إيمانهم {وَأُولَئِكَ هُمُ الْمُتَّقُونَ} الذين اتقوا عذاب الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-177', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-177">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-177">جمعت هذه الآية أنواع البرّ كلها: الإيمان بالله واليوم الآخر والملائكة والكتب والأنبياء، وبذل المال مع حبه لأصناف المحتاجين، والصلاة والزكاة والوفاء بالعهد والصبر على أنواع البلاء. {الْبَأْسَاءِ} الفقر {وَالضَّرَّاءِ} المرض {وَحِينَ الْبَأْسِ} وقت القتال. {أُولَئِكَ الَّذِينَ صَدَقُوا} في دينهم {وَأُولَئِكَ هُمُ الْمُتَّقُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-177', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-177">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-177">هذه آية عظيمة من أمهات الأحكام تضمنت ستة عشر نوعًا من أنواع البرّ. ليس البرّ في التوجه شرقًا أو غربًا فقط بل في: الإيمان بأركانه الخمسة، وإنفاق المال المحبوب على ثمانية أصناف، وإقام الصلاة وإيتاء الزكاة، والوفاء بالعهد، والصبر في ثلاثة مواطن: البأساء (الفقر) والضراء (المرض) وحين البأس (الحرب). فمن جمع هذه الخصال فقد صدق في إيمانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-177', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-177">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-177">يقول تعالى: ليس البرّ أن تولوا وجوهكم في صلاتكم قبل المشرق والمغرب وليس في ذلك وحده عظيم طاعة، ولكن البرّ الحقيقي من آمن بالله واليوم الآخر والملائكة والكتاب والنبيين، وأنفق ماله على حبه لذوي الحاجات، وأقام الصلاة وآتى الزكاة ووفى بعهده وصبر على الفقر والمرض والقتال. أولئك أهل الصدق في إيمانهم وأولئك هم المتقون حقًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-177', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-10.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">تحويل القبلة</span>
+            </a>
+            <a href="section-12.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">أحكام القصاص والوصية والصيام</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١١: الصبر والابتلاء وشعائر الله<br>
+        <small>آيات ١٥٣ – ١٧٧ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

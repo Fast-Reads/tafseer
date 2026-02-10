@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — قصص الأمم السابقة والقتال في سبيل الله</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١٦ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#f1c40f">
+            <div class="section-num">١٦</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">قصص الأمم السابقة والقتال في سبيل الله</h2>
+                <h3 class="section-title-en">Stories of Past Nations & Fighting for Allah's Cause</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٢٤٣ – ٢٥٣</div>
+        </div>
+
+        <div class="section-desc">
+            <p>قصة الذين خرجوا من ديارهم وهم ألوف حذر الموت، وقصة طالوت وجالوت وداود، وبيان تفضيل بعض الرسل على بعض</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="243">
+                        <div class="flow-node-num">٢٤٣</div>
+                        <div class="flow-node-text">الخروج من الديار حذر الموت</div>
+                        <div class="flow-node-key">خَرَجُو<span class="tj-slt">ا۟</span> مِن دِیَـٰرِهِمۡ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="244">
+                        <div class="flow-node-num">٢٤٤</div>
+                        <div class="flow-node-text">الأمر بالقتال في سبيل الله</div>
+                        <div class="flow-node-key">وَقَـٰتِلُو<span class="tj-slt">ا۟</span> فِی سَبِیلِ ٱللَّهِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="245">
+                        <div class="flow-node-num">٢٤٥</div>
+                        <div class="flow-node-text">الحث على القرض الحسن</div>
+                        <div class="flow-node-key">مَّن ذَا ٱلَّذِی یُقۡرِضُ ٱللَّهَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="246">
+                        <div class="flow-node-num">٢٤٦</div>
+                        <div class="flow-node-text">بنو إسرائيل يطلبون ملكاً للقتال</div>
+                        <div class="flow-node-key">ٱبۡعَثۡ لَنَا مَلِكࣰا نُّقَـٰتِلۡ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="247">
+                        <div class="flow-node-num">٢٤٧</div>
+                        <div class="flow-node-text">تعيين طالوت ملكاً واعتراضهم</div>
+                        <div class="flow-node-key">بَعَثَ لَكُمۡ طَالُوتَ مَلِكࣰا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="248">
+                        <div class="flow-node-num">٢٤٨</div>
+                        <div class="flow-node-text">آية ملكه: التابوت والسكينة</div>
+                        <div class="flow-node-key">یَأۡتِیَكُمُ ٱلتَّابُوتُ فِیهِ سَكِینَةࣱ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="249">
+                        <div class="flow-node-num">٢٤٩</div>
+                        <div class="flow-node-text">ابتلاء طالوت بالنهر وثبات المؤمنين</div>
+                        <div class="flow-node-key">مُبۡتَلِیكُم بِنَهَرࣲ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="250">
+                        <div class="flow-node-num">٢٥٠</div>
+                        <div class="flow-node-text">دعاء المؤمنين عند لقاء العدو</div>
+                        <div class="flow-node-key">أَفۡرِغۡ عَلَیۡنَا صَبۡرࣰا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="251">
+                        <div class="flow-node-num">٢٥١</div>
+                        <div class="flow-node-text">هزيمة جالوت وقتل داود له</div>
+                        <div class="flow-node-key">وَقَتَلَ دَاوُۥدُ جَالُوتَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="252">
+                        <div class="flow-node-num">٢٥٢</div>
+                        <div class="flow-node-text">تأكيد صدق الرسالة</div>
+                        <div class="flow-node-key">وَإِنَّكَ لَمِنَ ٱلۡمُرۡسَلِینَ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="253">
+                        <div class="flow-node-num">٢٥٣</div>
+                        <div class="flow-node-text">تفضيل الرسل بعضهم على بعض</div>
+                        <div class="flow-node-key">فَضَّلۡنَا بَعۡضَهُمۡ عَلَىٰ بَعۡضࣲ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-243">
+                <div class="ayah-text">۞ أَلَمۡ تَرَ إِلَى <span class="tj-slt">ٱلَّ</span>ذِینَ خَرَجُو<span class="tj-slt">ا۟</span> مِ<span class="tj-khf">ن</span> دِیَـٰرِهِمۡ وَهُمۡ أُلُوفٌ حَذَرَ <span class="tj-slt">ٱ</span>لۡمَوۡتِ فَقَالَ لَهُمُ <span class="tj-slt">ٱ</span>للَّهُ مُوتُو<span class="tj-slt">ا۟</span> ثُ<span class="tj-ghn">مَّ</span> أَحۡیَـٰهُمۡۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ لَذُو فَضۡلٍ عَلَى <span class="tj-slt">ٱل</span>نَّاسِ وَلَـٰكِ<span class="tj-ghn">نَّ</span> أَكۡثَرَ <span class="tj-slt">ٱل</span>نَّاسِ لَا یَشۡكُرُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">قصة قوم من بني إسرائيل خرجوا فراراً من الطاعون والموت وهم ألوف، فأماتهم الله ثم أحياهم ليعلموا أنه لا مفر من قدر الله، وأن الموت والحياة بيد الله وحده.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-243">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-243">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-243">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-243">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-243">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-243">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-243">يخبر تعالى عن أمة من الأمم السابقة خرجوا من ديارهم فراراً من الموت وهم ألوف كثيرة، فلم يغنِ عنهم فرارهم شيئاً، فقال لهم الله موتوا فماتوا جميعاً، ثم أحياهم الله تعالى ليعتبروا ويعلموا أن الأمر كله لله، وأن الفرار من الأسباب لا ينجي من قدر الله. وفي هذا دليل على عظيم فضل الله على الناس بالإحياء والإماتة والبعث، ولكن أكثر الناس لا يشكرون نعمة الله عليهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-243', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-243">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-243">ذكر كثير من المفسرين أن هؤلاء القوم كانوا أهل قرية يقال لها داوردان، وقع بهم طاعون فخرج أكثرهم وهربوا من الوباء، فأماتهم الله عقوبة لهم على فرارهم مما قدره الله. ثم أحياهم الله بدعوة نبيهم حزقيل عليه السلام، فعاشوا بعد ذلك حيناً. والمقصود أن الفرار من قدر الله لا يغني شيئاً، وأن الحذر لا يمنع القدر، وإن الله لذو فضل على الناس في إحيائهم وإماتتهم وبعثهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-243', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-243">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-243">قال المفسرون: هم قوم من بني إسرائيل فروا من الطاعون فخرجوا من قريتهم وهم ألوف مؤلفة، قيل أربعة آلاف وقيل ثمانية آلاف، فأماتهم الله جميعاً ثم أحياهم بعد ثمانية أيام، وقيل بعد مدة أطول، بدعوة نبيهم. والآية حجة على أن الفرار من الوباء لا ينجي من القدر، وأن الله يفعل ما يشاء في عباده من إماتة وإحياء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-243', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-243">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-243">هذه الآية حجة في أن الفرار من الطاعون والأوبئة لا ينفع إذا قدر الله الموت. واختلف المفسرون في عددهم فقيل أربعة آلاف وقيل ثمانية آلاف وقيل عشرة آلاف. وقال لهم الله موتوا أي أماتهم الله دفعة واحدة ثم أحياهم بعد ذلك. وفي الآية دليل على إثبات البعث والنشور بعد الموت، وأن فضل الله عظيم على العباد لكنهم يقصرون في شكره سبحانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-243', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-243">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-243">يعني تعالى ذكره: ألم ينته إلى علمك يا محمد خبر الذين خرجوا من ديارهم هاربين من الموت وهم جماعات كثيرة، فقال لهم الله موتوا فأماتهم الله جميعاً، ثم أحياهم بعد ذلك. وإنما ذكر الله هذه القصة تحريضاً للمؤمنين على الجهاد وبياناً أن الموت لا مفر منه، فمن فر من الموت لاقاه. وقوله إن الله لذو فضل على الناس يعني بإحيائهم بعد إماتتهم ليعتبروا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-243', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-244">
+                <div class="ayah-text">وَقَـٰتِلُو<span class="tj-slt">ا۟</span> فِی سَبِیلِ <span class="tj-slt">ٱ</span>للَّهِ وَ<span class="tj-slt">ٱ</span>عۡلَمُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ سَمِیعٌ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الأمر بالقتال في سبيل الله مع العلم بأن الله سميع لأقوال العباد عليم بنياتهم وأحوالهم، فلا يخفى عليه شيء.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-244">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-244">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-244">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-244">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-244">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-244">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-244">يأمر تعالى عباده المؤمنين بالقتال في سبيله لإعلاء كلمته ونصرة دينه، ويخبرهم أنه سميع لأقوالهم عليم بأحوالهم ونياتهم. وفي ذكر هذين الاسمين الكريمين حث على إخلاص النية في القتال وتحذير من التخلف والنكول عنه، فإن الله يعلم السر وأخفى ويسمع كل ما يقال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-244', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-244">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-244">لما بيّن تعالى أن الفرار من الموت لا ينفع أمرهم بالقتال في سبيله، وأنه لا ينبغي أن يكون الخوف من الموت مانعاً لهم من الجهاد، فإن الآجال مقدرة لا تتأخر ولا تتقدم. والأمر بالقتال هنا للمؤمنين جميعاً، وختم الآية بقوله واعلموا أن الله سميع عليم تحذير من مخالفة أمره وحث على الإخلاص في الجهاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-244', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-244">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-244">أمر الله المؤمنين بالقتال في سبيله بعد أن ذكر لهم قصة الذين فروا من الموت فلم يغنِ عنهم الفرار، ليعلموا أن الموت لا مفر منه فلا يتركوا الجهاد خوفاً من القتل. واعلموا أن الله سميع لما تقولون عليم بما تضمرون، فليكن جهادكم خالصاً لوجه الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-244', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-244">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-244">هذا أمر من الله تعالى بالجهاد في سبيله بعد ذكر القصة السابقة لبيان أنه لا ينبغي ترك الجهاد خوفاً من الموت. وقوله واعلموا أن الله سميع عليم فيه وعد ووعيد: وعد لمن أطاع وجاهد بصدق وإخلاص، ووعيد لمن نكل وتخلف وعصى. والسميع يسمع ما تقولونه والعليم يعلم ما تنوونه وتبطنونه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-244', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-244">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-244">يقول تعالى ذكره: قاتلوا أيها المؤمنون في سبيل الله أعداء الله وأعداءكم، واعلموا أن الله سميع لما تقولون عليم بما تنوون. وإنما أمرهم بالقتال بعد ذكر القصة ليعلمهم أن الحذر لا يدفع القدر، وأن الفرار من الموت لا ينجي منه، فالأولى أن يقاتلوا في سبيل الله لا أن يفروا خوفاً مما كتبه الله عليهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-244', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-245">
+                <div class="ayah-text">مَّن ذَا <span class="tj-slt">ٱلَّ</span>ذِی یُقۡرِضُ <span class="tj-slt">ٱ</span>للَّهَ قَرۡضًا حَسَ<span class="tj-khf">نࣰا</span> فَیُ<span class="tj-mdd">ضَـٰ</span>عِفَهُۥ لَهُۥۤ أَضۡعَا<span class="tj-khf">فࣰا</span> كَثِیرَةࣰۚ وَ<span class="tj-slt">ٱ</span>للَّهُ یَ<span class="tj-qlq">قۡ</span>بِضُ وَیَبۡصُۜطُ وَإِلَیۡهِ تُرۡجَعُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الحث على الإنفاق في سبيل الله بتشبيهه بالقرض الحسن الذي يضاعفه الله أضعافاً كثيرة، مع التذكير بأن الله هو الذي يقبض ويبسط الأرزاق وإليه المرجع.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-245">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-245">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-245">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-245">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-245">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-245">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-245">هذا حث من الله تعالى على الإنفاق في سبيله بأن سماه قرضاً لله، وهو تلطف عظيم بالعباد أن جعل إنفاقهم في سبيله قرضاً يتضاعف لهم أضعافاً كثيرة لا يعلم قدرها إلا الله. والقرض الحسن هو ما كان من مال طيب حلال بنية خالصة لله. والله يقبض ويبسط أي يضيق على من يشاء ويوسع على من يشاء بحكمته، وإليه مرجع الجميع فيجازي كل عامل بعمله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-245', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-245">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-245">يحث تعالى عباده على الإنفاق في سبيله، وقد سمى ذلك قرضاً لله تعالى ترغيباً وتحبيباً في الإنفاق. والقرض الحسن هو الإنفاق في وجوه الخير بنية صادقة من مال حلال. والمضاعفة تكون من عشر أمثالها إلى سبعمائة ضعف إلى أضعاف كثيرة حسب حال المنفق وإخلاصه وحاجة من أنفق عليه. وقوله والله يقبض ويبسط أي هو المتصرف في أرزاق العباد فلا يمنعكم ذلك من الإنفاق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-245', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-245">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-245">من ذا الذي يقرض الله قرضاً حسناً: حث الله عباده على الصدقة والإنفاق في سبيله بأن سماه قرضاً، والقرض الحسن هو ما كان من حلال بطيب نفس من غير منّ ولا أذى. فيضاعفه له أضعافاً كثيرة من عشر إلى سبعمائة إلى ما شاء الله. والله يقبض أي يمسك الرزق عمن يشاء ويبسط أي يوسع على من يشاء، وإليه ترجعون فيجازيكم على أعمالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-245', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-245">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-245">لما أمر الله بالجهاد في الآية السابقة أتبعه بالحث على الإنفاق في سبيله لأن الجهاد يحتاج إلى النفقة. وسمى الصدقة قرضاً تلطفاً بالعباد وترغيباً لهم. والقرض الحسن قيل هو الصدقة الواجبة وقيل يشمل كل إنفاق في الخير. والمضاعفة تختلف بحسب الإخلاص والنية والحاجة. وقوله يقبض ويبسط أي يضيق على بعض عباده ويوسع على آخرين بحكمته وعلمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-245', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-245">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-245">يقول تعالى: من هذا الذي ينفق ماله في سبيل الله فيكون كمن أقرض الله، فيضاعف الله له ذلك القرض أضعافاً كثيرة يوم القيامة. والقرض الحسن: الإنفاق في طاعة الله من مال حلال بنية خالصة. وقوله والله يقبض ويبسط يعني يقتر على من يشاء ويوسع على من يشاء ابتلاء واختباراً. وإليه ترجعون يعني وإلى الله مصيركم فيجازيكم بأعمالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-245', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-246">
+                <div class="ayah-text">أَلَمۡ تَرَ إِلَى <span class="tj-slt">ٱ</span>لۡمَلَإِ مِ<span class="tj-qlb">نۢ</span> بَنِیۤ إِسۡرَ ٰ⁠ۤءِیلَ مِنۢ بَعۡدِ مُوسَ<span class="tj-mdd">ىٰۤ</span> إِذۡ قَالُو<span class="tj-slt">ا۟</span> لِنَبِیࣲّ لَّهُمُ <span class="tj-slt">ٱ</span>بۡعَثۡ لَنَا مَلِكࣰا <span class="tj-ghn">نُّ</span>قَـٰتِلۡ فِی سَبِیلِ <span class="tj-slt">ٱ</span>للَّهِۖ قَالَ هَلۡ عَسَیۡتُمۡ إِ<span class="tj-khf">ن</span> كُتِبَ عَلَیۡكُمُ <span class="tj-slt">ٱ</span>لۡقِتَالُ أَلَّا تُقَـٰتِلُو<span class="tj-slt">ا۟</span>ۖ قَالُو<span class="tj-slt">ا۟</span> وَمَا لَنَاۤ أَلَّا نُقَـٰتِلَ فِی سَبِیلِ <span class="tj-slt">ٱ</span>للَّهِ وَقَ<span class="tj-qlq">دۡ</span> أُخۡرِجۡنَا مِ<span class="tj-khf">ن</span> دِیَـٰرِنَا وَأَبۡنَاۤىِٕنَاۖ فَلَ<span class="tj-ghn">مَّ</span>ا كُتِبَ عَلَیۡهِمُ <span class="tj-slt">ٱ</span>لۡقِتَالُ تَوَلَّوۡ<span class="tj-slt">ا۟</span> إِلَّا قَلِیلࣰا <span class="tj-ghn">مِّ</span>نۡهُمۡۚ وَ<span class="tj-slt">ٱ</span>للَّهُ عَلِیمُۢ بِ<span class="tj-slt">ٱل</span>ظَّـٰلِمِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">قصة الملأ من بني إسرائيل بعد موسى حين طلبوا من نبيهم أن يبعث لهم ملكاً ليقاتلوا في سبيل الله، فلما كُتب عليهم القتال تولّى أكثرهم إلا قليلاً منهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-246">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-246">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-246">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-246">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-246">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-246">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-246">يخبر تعالى عن الملأ وهم الأشراف والرؤساء من بني إسرائيل من بعد موسى أنهم قالوا لنبي لهم هو شمويل: ابعث لنا ملكاً نقاتل في سبيل الله، فقال لهم نبيهم محذراً: هل عسيتم إن فُرض عليكم القتال ألا تقاتلوا؟ فأجابوا: وما لنا ألا نقاتل وقد أُخرجنا من ديارنا وأبنائنا. لكنهم لما كُتب عليهم القتال فعلاً تولى أكثرهم وانصرفوا عن القتال إلا قليلاً ثبتوا على العهد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-246', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-246">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-246">هذه قصة من قصص بني إسرائيل بعد موسى عليه السلام، إذ سلط عليهم أعداؤهم فقتلوهم وأسروا أبناءهم وسبوا نساءهم وأخذوا التابوت، فطلبوا من نبيهم شمويل أن يعيّن لهم ملكاً يجمعهم للقتال. فحذرهم نبيهم من التراجع وقال: هل عسيتم إن كُتب عليكم القتال ألا تقاتلوا. فأقسموا أنهم سيقاتلون لأنهم أُخرجوا من ديارهم وفُرقوا عن أبنائهم. فلما جاء وقت القتال حقيقة نكص أكثرهم وتخلفوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-246', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-246">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-246">الملأ هم أشراف القوم وسادتهم من بني إسرائيل، والنبي هو شمويل بن بالي. طلبوا منه أن يجعل لهم ملكاً يجتمعون عليه للقتال في سبيل الله. فقال لهم: هل تخشون أن تتراجعوا إن فُرض عليكم القتال؟ فقالوا: كيف لا نقاتل وقد طُردنا من بلادنا وسُبي أبناؤنا. فلما جاء الأمر الجدي بالقتال تولى أكثرهم إلا قليلاً ثبتوا مع طالوت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-246', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-246">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-246">هذه القصة بعد وفاة موسى عليه السلام بزمن طويل حين ضعف أمر بني إسرائيل وتسلط عليهم أعداؤهم العمالقة. والملأ هم الوجوه والأعيان. والنبي هو شمويل عليه السلام. طلبوا ملكاً يجتمعون عليه لقتال عدوهم، فحذرهم النبي من النكول فأكدوا عزمهم بأنهم أُخرجوا من ديارهم وأبنائهم. لكن العزم الأول لم يصمد أمام حقيقة القتال فتولى أكثرهم. والله عليم بالظالمين الذين نكثوا عهدهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-246', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-246">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-246">يقول تعالى: ألم تنظر يا محمد إلى أشراف بني إسرائيل من بعد وفاة موسى إذ قالوا لنبي لهم: اجعل لنا ملكاً نقاتل تحت رايته في سبيل الله. فقال لهم نبيهم: لعلكم إن أُمرتم بالقتال تعرضون عنه ولا تقاتلون. فردوا عليه: كيف لا نقاتل وقد أُخرجنا من بلادنا وأبعدنا عن أولادنا. فلما فُرض عليهم القتال أعرضوا عنه وتولى أكثرهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-246', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-247">
+                <div class="ayah-text">وَقَالَ لَهُمۡ نَبِیُّهُمۡ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ قَ<span class="tj-qlq">دۡ</span> بَعَثَ لَكُمۡ طَالُوتَ مَلِكࣰاۚ قَالُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-ghn">نَّ</span><span class="tj-mdd">ىٰ</span> یَكُونُ لَهُ <span class="tj-slt">ٱ</span>لۡمُلۡكُ عَلَیۡنَا وَنَحۡنُ أَحَقُّ بِ<span class="tj-slt">ٱ</span>لۡمُلۡكِ مِنۡهُ وَلَمۡ یُؤۡتَ سَعَةࣰ <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>لۡمَالِۚ قَالَ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ <span class="tj-slt">ٱ</span>صۡطَفَ<span class="tj-mdd">ىٰ</span>هُ عَلَیۡكُمۡ وَزَادَهُۥ بَسۡطَ<span class="tj-khf">ةࣰ</span> فِی <span class="tj-slt">ٱ</span>لۡعِلۡمِ وَ<span class="tj-slt">ٱ</span>لۡجِسۡمِۖ وَ<span class="tj-slt">ٱ</span>للَّهُ یُؤۡتِی مُلۡكَهُۥ مَ<span class="tj-dgm">ن</span> یَشَ<span class="tj-mdd">اۤ</span>ءُۚ وَ<span class="tj-slt">ٱ</span>للَّهُ وَ ٰ⁠سِعٌ عَلِیمࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أخبرهم نبيهم أن الله اصطفى طالوت ملكاً عليهم، فاعترضوا لأنه ليس من بيت الملك ولا الغنى، فبيّن لهم أن الله اختاره لعلمه وقوته، والله يؤتي ملكه من يشاء.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-247">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-247">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-247">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-247">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-247">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-247">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-247">لما طلبوا ملكاً أخبرهم نبيهم أن الله بعث لهم طالوت ملكاً، فاعترضوا بأنه ليس من بيت المُلك ولا من أهل الثروة. فأجابهم نبيهم بأن الله اصطفاه عليهم وزاده بسطة في العلم الذي يُدبر به أمور الملك، والجسم الذي يتمكن به من مقاومة الأعداء. والعبرة أن المُلك الحقيقي يقوم على العلم والقوة لا على المال والنسب، والله واسع يؤتي ملكه من يشاء بحكمته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-247', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-247">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-247">أخبرهم نبيهم أن الله قد عيّن لهم طالوت ملكاً، وكان طالوت من سبط بنيامين الذي لم يكن فيه نبوة ولا ملك. فاعترض القوم بأنه ليس من سبط المُلك ولا من سبط النبوة وأنه فقير لا مال له. فبيّن لهم نبيهم أن الله اختاره لما أودع فيه من العلم النافع والقوة الجسمانية التي يحتاجها الملك المقاتل. وختم بأن الله واسع الفضل يؤتي ملكه من يشاء لا اعتراض على حكمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-247', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-247">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-247">قال لهم نبيهم شمويل: إن الله قد عيّن لكم طالوت ملكاً. وكان طالوت رجلاً دباغاً أو سقاءً من سبط بنيامين. فقالوا: كيف يكون له الملك علينا ونحن أحق بالملك منه ولم يؤت سعة من المال. فأجابهم بأن الله اصطفاه وزاده بسطة في العلم والجسم، فكان أعلمهم وأقواهم بدناً وأطولهم قامة. والله يؤتي ملكه من يشاء من خلقه لا معقب لحكمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-247', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-247">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-247">في هذه الآية دليل على أن المُلك والرياسة لا تشترط فيهما الغنى والنسب بل تقوم على العلم والقوة. فطالوت لم يكن من بيت المُلك ولا كان غنياً لكن الله فضله بالعلم والقوة البدنية. واعتراض القوم كان بسبب قياسهم الفاسد على المعايير الدنيوية. وقوله والله واسع عليم يعني أن فضل الله واسع لا يتقيد بمعايير البشر وهو أعلم بمن يستحق المُلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-247', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-247">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-247">يقول تعالى: وقال لهم نبيهم إن الله قد بعث لكم طالوت ملكاً تجتمعون عليه لقتال عدوكم. فأنكروا ذلك وقالوا: كيف يملكنا وليس من أهل بيت المُلك فينا ولا هو ذو مال. فأجابهم نبيهم بأن الله اصطفاه واختاره عليكم وزاده بسطة في العلم الذي يسوس به الملك وفي الجسم الذي يبطش به في الحرب. والله يعطي ملكه من يشاء من عباده لا لأحد الاعتراض على قضائه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-247', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-248">
+                <div class="ayah-text">وَقَالَ لَهُمۡ نَبِیُّهُمۡ إِ<span class="tj-ghn">نَّ</span> ءَایَةَ مُلۡكِهِۦۤ أَ<span class="tj-dgm">ن</span> یَأۡتِیَكُمُ <span class="tj-slt">ٱل</span>تَّابُوتُ فِیهِ سَكِینَ<span class="tj-dgm">ةࣱ</span> <span class="tj-ghn">مِّ</span>ن رَّبِّكُمۡ وَبَقِیَّ<span class="tj-dgm">ةࣱ</span> <span class="tj-ghn">مِّ</span><span class="tj-ghn">مَّ</span>ا تَرَكَ ءَالُ مُوسَ<span class="tj-mdd">ىٰ</span> وَءَالُ <span class="tj-mdd">هَـٰ</span>رُونَ تَحۡمِلُهُ <span class="tj-slt">ٱ</span>لۡمَلَـٰۤىِٕكَةُۚ إِ<span class="tj-ghn">نَّ</span> فِی ذَ ٰ⁠لِكَ لَـَٔایَةࣰ لَّكُمۡ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">نت</span>ُم <span class="tj-ghn">مُّ</span>ؤۡمِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">آية ملك طالوت أن يأتيهم التابوت فيه سكينة من ربهم وبقية مما ترك آل موسى وآل هارون تحمله الملائكة، وفي ذلك آية عظيمة للمؤمنين.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-248">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-248">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-248">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-248">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-248">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-248">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-248">لما اعترضوا على ملك طالوت جعل الله لهم آية على صدق اختياره وهي رجوع التابوت إليهم الذي كان قد أُخذ منهم، فيه سكينة من ربهم أي طمأنينة وراحة لقلوبهم، وبقية مما ترك آل موسى وآل هارون من آثار النبوة كعصا موسى ورضاض الألواح. وتحمله الملائكة تكريماً وتعظيماً، إن في ذلك لآية عظيمة على صدق ملك طالوت لمن كان مؤمناً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-248', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-248">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-248">كان التابوت عند بني إسرائيل فيه بقايا آثار موسى وهارون عليهما السلام يستنصرون به في حروبهم، فأخذه منهم أعداؤهم. فجعل الله علامة ملك طالوت أن يعود إليهم التابوت تحمله الملائكة. والسكينة قيل هي شيء له رأس كرأس الهرة إذا صاح انتصروا، وقيل هي الطمأنينة والسكون في قلوبهم. والبقية هي عصا موسى ونعلاه ورضاض الألواح وبعض التوراة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-248', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-248">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-248">أخبرهم نبيهم بأن علامة ملك طالوت أن يأتيهم التابوت الذي أخذه العمالقة منهم. والتابوت صندوق كانوا يضعون فيه آثار الأنبياء ويتبركون به ويقدمونه في حروبهم. فيه سكينة أي طمأنينة وسكون لنفوسهم، وبقية مما ترك موسى وهارون من عصا موسى ورضاض الألواح وثيابهم. تحمله الملائكة بين السماء والأرض حتى وضعته عندهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-248', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-248">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-248">التابوت هو الصندوق الذي كان فيه آثار النبوة عند بني إسرائيل وكانوا يستنصرون به ويقدمونه في الحروب فتسكن قلوبهم. وقد أُخذ منهم فجعله الله آية على صحة ملك طالوت بأن يعود إليهم تحمله الملائكة. والسكينة: الطمأنينة والسكون. والبقية: رضاض الألواح وعصا موسى والتوراة. وفي هذا دليل على أن ملك طالوت كان باختيار الله لا باختيار الناس.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-248', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-248">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-248">يقول تعالى: وقال لهم نبيهم إن علامة أن الله قد ملّك طالوت عليكم أن يرد الله إليكم التابوت فيه سكينة من ربكم وهي الطمأنينة والوقار. وبقية مما ترك آل موسى وآل هارون من آثار الأنبياء كالعصا والألواح. تحمله الملائكة ليكون ذلك آية وحجة لكم على صدق ملكه إن كنتم مؤمنين بالله حقاً فاقبلوا ملكه ولا تعترضوا على اختيار الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-248', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-249">
+                <div class="ayah-text">فَلَ<span class="tj-ghn">مَّ</span>ا فَصَلَ طَالُوتُ بِ<span class="tj-slt">ٱ</span>لۡجُنُودِ قَالَ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ مُ<span class="tj-qlq">بۡ</span>تَلِیكُم بِنَهَرࣲ فَمَ<span class="tj-khf">ن</span> شَرِبَ مِنۡهُ فَلَیۡسَ مِ<span class="tj-ghn">نِّ</span>ی وَمَ<span class="tj-dgm">ن</span> لَّمۡ یَطۡعَمۡهُ فَإِ<span class="tj-ghn">نَّ</span>هُۥ مِ<span class="tj-ghn">نِّ</span>یۤ إِلَّا مَنِ <span class="tj-slt">ٱ</span>غۡتَرَفَ غُرۡفَ<span class="tj-qlb">ةَۢ</span> بِیَدِهِۦۚ فَشَرِبُو<span class="tj-slt">ا۟</span> مِنۡهُ إِلَّا قَلِیلࣰا <span class="tj-ghn">مِّ</span>نۡهُمۡۚ فَلَ<span class="tj-ghn">مَّ</span>ا جَاوَزَهُۥ هُوَ وَ<span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> مَعَهُۥ قَالُو<span class="tj-slt">ا۟</span> لَا طَاقَةَ لَنَا <span class="tj-slt">ٱ</span>لۡیَوۡمَ بِجَالُوتَ وَجُنُودِهِۦۚ قَالَ <span class="tj-slt">ٱلَّ</span>ذِینَ یَظُ<span class="tj-ghn">نُّ</span>ونَ أَ<span class="tj-ghn">نَّ</span>هُم <span class="tj-ghn">مُّ</span>لَـٰقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهِ كَم <span class="tj-ghn">مِّ</span>ن فِئَ<span class="tj-khf">ةࣲ</span> قَلِیلَةٍ غَلَبَتۡ فِئَ<span class="tj-khf">ةࣰ</span> كَثِیرَةَۢ بِإِذۡنِ <span class="tj-slt">ٱ</span>للَّهِۗ وَ<span class="tj-slt">ٱ</span>للَّهُ مَعَ <span class="tj-slt">ٱل</span>صَّـٰبِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ابتلاء طالوت لجنوده بنهر: من شرب منه فليس من جيشه ومن لم يطعمه فهو منه إلا من اغترف غرفة بيده. فشرب أكثرهم وثبت المؤمنون الذين آمنوا بلقاء الله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-249">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-249">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-249">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-249">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-249">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-249">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-249">لما سار طالوت بالجنود اختبرهم الله بنهر ليميز الصادق من الكاذب والمطيع من العاصي، فمن شرب منه فليس من أهل الجهاد ومن لم يشرب فهو من الثابتين إلا من اغترف غرفة واحدة بيده. فشرب أكثرهم وتخلفوا وبقي معه قلة صابرة. ولما واجهوا جالوت قال الضعفاء: لا طاقة لنا بهم. لكن المؤمنين الموقنين بلقاء الله قالوا: كم من فئة قليلة غلبت فئة كثيرة بإذن الله، والله مع الصابرين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-249', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-249">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-249">لما فصل طالوت بجنوده ابتلاهم الله بنهر قيل هو نهر الأردن ليتبين الثابت من المتزعزع. من شرب ملء بطنه فقد خالف وليس من الجيش، ومن اكتفى بغرفة يده فقد نجح في الاختبار. فشرب أكثرهم شرباً كثيراً وتخلفوا، ولم يبقَ مع طالوت إلا ثلاثمائة وبضعة عشر رجلاً كعدة أهل بدر. فلما جاوز النهر مع المؤمنين ورأوا كثرة عدو جالوت قال بعضهم: لا طاقة لنا. فرد عليهم أهل اليقين بأن النصر من الله لا بكثرة العدد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-249', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-249">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-249">فصل طالوت بجنوده وكانوا ثمانين ألفاً، فابتلاهم الله بنهر بين فلسطين والأردن في يوم شديد الحر. فمن شرب منه أكثر من غرفة فهو ليس من جنده، ومن لم يطعمه أو اكتفى بغرفة فهو منه. فشرب أكثرهم وتخلفوا ولم يبقَ معه إلا قليل. فلما جاوزوا النهر ورأوا جموع جالوت استضعف بعضهم أنفسهم، فثبّتهم المؤمنون بأن الله ينصر القلة المؤمنة على الكثرة الكافرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-249', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-249">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-249">الابتلاء بالنهر كان امتحاناً من الله لتمييز أهل الصدق والصبر من غيرهم، وهو نهر بين فلسطين والأردن. والحكمة في الاختبار بالماء أنهم كانوا في يوم حار شديد العطش فمن صبر عن الشرب دلّ على قوة عزيمته. ولم يثبت إلا قليل قيل ثلاثمائة وثلاثة عشر كعدة أهل بدر. وقول المؤمنين كم من فئة قليلة غلبت فئة كثيرة يدل على أن النصر بالإيمان والصبر لا بالعدد والعدة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-249', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-249">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-249">يقول تعالى: فلما خرج طالوت بالجنود قال لهم إن الله ممتحنكم بنهر فمن شرب منه فليس مني ومن لم يذقه فهو مني إلا من أخذ غرفة بكفه. فشرب أكثرهم منه شرباً كثيراً وعصوا فسقطوا عن القتال. ولما جاوز طالوت مع من أطاعه قال الذين ضعفت قلوبهم: لا قدرة لنا على جالوت وجنوده اليوم. فقال الذين يوقنون بالبعث والجزاء: كثيراً ما نصر الله فئة قليلة على فئة عظيمة العدد، والله مع من صبر واحتسب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-249', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-250">
+                <div class="ayah-text">وَلَ<span class="tj-ghn">مَّ</span>ا بَرَزُو<span class="tj-slt">ا۟</span> لِجَالُوتَ وَجُنُودِهِۦ قَالُو<span class="tj-slt">ا۟</span> رَبَّنَاۤ أَفۡرِغۡ عَلَیۡنَا صَبۡ<span class="tj-dgm">رࣰا</span> وَثَبِّتۡ أَ<span class="tj-qlq">قۡ</span>دَامَنَا وَ<span class="tj-slt">ٱ</span>نصُرۡنَا عَلَى <span class="tj-slt">ٱ</span>لۡقَوۡمِ <span class="tj-slt">ٱ</span>لۡ<span class="tj-mdd">كَـٰ</span>فِرِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">دعاء المؤمنين عند مواجهة جالوت وجنوده: ربنا أفرغ علينا صبراً وثبت أقدامنا وانصرنا على القوم الكافرين، فلجأوا إلى الله بالدعاء والتضرع.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-250">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-250">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-250">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-250">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-250">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-250">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-250">لما برزوا لجالوت وجنوده وواجهوا ذلك الجيش الكبير لجأوا إلى الله بالدعاء وطلبوا منه ثلاثة أشياء: إفراغ الصبر عليهم أي صبه عليهم صباً كاملاً حتى تمتلئ قلوبهم بالصبر والثبات، وتثبيت أقدامهم في ميدان المعركة فلا يفرون ولا يتزلزلون، والنصر على عدوهم الكافر. وهذا هو شأن المؤمنين الصادقين: يأخذون بالأسباب ويتوكلون على الله ويلجأون إليه بالدعاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-250', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-250">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-250">هذا دعاء المؤمنين الذين ثبتوا مع طالوت عندما واجهوا عدوهم جالوت وجيشه العظيم. فسألوا الله ثلاثة أمور تتناسب مع حالهم: أولاً إفراغ الصبر أي صبه عليهم كما يُفرغ الماء من الإناء، وثانياً تثبيت الأقدام فلا يفروا من المعركة، وثالثاً النصر على القوم الكافرين. وقد استجاب الله دعاءهم فنصرهم كما في الآية التالية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-250', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-250">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-250">ولما خرجوا لمواجهة جالوت وجنوده ورأوا كثرتهم دعوا الله قائلين: ربنا أفرغ علينا صبراً أي اصبب علينا صبراً واسعاً يغمرنا كما يُفرغ الإناء. وثبت أقدامنا في المعركة فلا ننهزم أمام عدونا. وانصرنا على القوم الكافرين. فجمعوا بين السلاح والدعاء وبين الأخذ بالأسباب والتوكل على رب الأسباب، فنصرهم الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-250', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-250">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-250">في هذه الآية فقه عظيم وهو أن المؤمن يجمع بين الأخذ بالأسباب والدعاء. فهم خرجوا للقتال مع أخذ السلاح ثم دعوا الله بالصبر والثبات والنصر. والإفراغ هو الصب الكامل فكأنهم طلبوا أن يُملأوا بالصبر ملئاً. وتثبيت الأقدام كناية عن الثبات في المعركة. وفي دعائهم ترتيب بديع: الصبر أولاً ثم الثبات ثم النصر، لأن الصبر أساس الثبات والثبات سبب النصر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-250', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-250">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-250">يقول تعالى: ولما خرج طالوت ومن معه من المؤمنين لملاقاة جالوت وجنوده قالوا: ربنا أفرغ علينا صبراً أي صُبَّ علينا الصبر صباً يعمّنا. وثبت أقدامنا فلا نولي الأدبار. وانصرنا على أعدائنا الكفار. فتوجهوا إلى الله بالدعاء مع الأخذ بأسباب القتال لعلمهم أن النصر من عند الله وحده لا بكثرة العدد والعتاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-250', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-251">
+                <div class="ayah-text">فَهَزَمُوهُم بِإِذۡنِ <span class="tj-slt">ٱ</span>للَّهِ وَقَتَلَ دَاوُۥدُ جَالُوتَ وَءَاتَ<span class="tj-mdd">ىٰ</span>هُ <span class="tj-slt">ٱ</span>للَّهُ <span class="tj-slt">ٱ</span>لۡمُلۡكَ وَ<span class="tj-slt">ٱ</span>لۡحِكۡمَةَ وَعَلَّمَهُۥ مِ<span class="tj-ghn">مَّ</span>ا یَشَ<span class="tj-mdd">اۤ</span>ءُۗ وَلَوۡلَا دَفۡعُ <span class="tj-slt">ٱ</span>للَّهِ <span class="tj-slt">ٱل</span>نَّاسَ بَعۡضَهُم بِبَعۡ<span class="tj-dgm">ضࣲ</span> لَّفَسَدَتِ <span class="tj-slt">ٱ</span>لۡأَرۡضُ وَلَـٰكِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ ذُو فَضۡلٍ عَلَى <span class="tj-slt">ٱ</span>لۡعَـٰلَمِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">نصر الله المؤمنين فهزموا جالوت وقتل داود جالوت، وآتاه الله الملك والحكمة وعلّمه مما يشاء، ولولا دفع الله الناس بعضهم ببعض لفسدت الأرض.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-251">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-251">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-251">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-251">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-251">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-251">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-251">استجاب الله دعاءهم فهزموا جالوت وجنوده بإذن الله، وبرز داود وهو شاب صغير فقتل جالوت الجبار. فآتاه الله الملك بعد طالوت والحكمة وهي النبوة، وعلّمه مما يشاء كصنعة الدروع وتسبيح الجبال. ثم بيّن تعالى حكمته في الجهاد: لولا أن الله يدفع بالمؤمنين المجاهدين شر الكافرين المفسدين لفسدت الأرض وعمّ الشر، ولكن الله ذو فضل على العالمين بأن شرع الجهاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-251', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-251">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-251">فهزمهم المؤمنون بإذن الله وقتل داود عليه السلام جالوت. وكان داود شاباً صغيراً من جنود طالوت، رماه بحجر من مقلاعه فأصاب رأسه فقتله. فآتاه الله الملك بعد ذلك وجمع له بين الملك والنبوة وهو فضل عظيم. وقوله ولولا دفع الله الناس بعضهم ببعض أي لولا أن الله يقيّض أقواماً يدافعون أهل الشر والفساد لفسدت الأرض وهُدمت المعابد والمساجد والكنائس. ولكن الله ذو فضل على العالمين بحفظ الأرض من الفساد العام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-251', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-251">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-251">هزم الله جالوت وجنوده على يد طالوت ومن معه من المؤمنين، وقتل داود جالوت بحجر من مقلاعه فشجّ رأسه وقتله. وكان داود فتى صغيراً فآتاه الله المُلك على بني إسرائيل بعد طالوت والحكمة وهي النبوة والزبور. وعلّمه صنعة لبوس الدروع وكلام الطير ومنطقها. ولولا دفع الله الناس بعضهم ببعض بالجهاد لغلب أهل الباطل وفسدت الأرض، لكن الله يدفع بالمؤمنين عن الكافرين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-251', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-251">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-251">في هذه الآية بيان لعاقبة الصبر والثبات: النصر المبين. وقتل داود جالوت مع صغر سنه وضعف جسمه أمام ذلك الجبار دليل على أن النصر بيد الله لا بقوة العبد. والحكمة المذكورة هي النبوة والفقه في الدين. وقوله لولا دفع الله الناس بعضهم ببعض قاعدة عظيمة في الشريعة: أن الله جعل الجهاد سبباً لصلاح الأرض ومنع الفساد فيها. فلولا الجهاد لعلا أهل الباطل وأذلوا أهل الحق وخربت الديار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-251', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-251">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-251">يقول تعالى: فهزم المؤمنون جالوت وجنوده بإذن الله ونصره لا بقوتهم. وقتل داود بن يسّى جالوت فأعطاه الله الملك على بني إسرائيل والحكمة وهي النبوة. وعلّمه من العلوم والصنائع ما شاء. ولولا أن الله يدفع بقوم مؤمنين مجاهدين شر الكفار والطغاة لفسدت الأرض كلها بغلبة أهل الباطل. ولكن الله ذو فضل على خلقه أجمعين بأن جعل من يدافع الفساد ويقوم بأمره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-251', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-252">
+                <div class="ayah-text">تِلۡكَ ءَا<span class="tj-mdd">یَـٰ</span>تُ <span class="tj-slt">ٱ</span>للَّهِ نَتۡلُوهَا عَلَیۡكَ بِ<span class="tj-slt">ٱ</span>لۡحَقِّۚ وَإِ<span class="tj-ghn">نَّ</span>كَ لَمِنَ <span class="tj-slt">ٱ</span>لۡمُرۡسَلِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تأكيد أن هذه آيات الله يتلوها على نبيه محمد بالحق، وأنه لمن المرسلين حقاً، فهذه القصص شاهدة على صدق رسالته.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-252">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-252">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-252">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-252">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-252">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-252">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-252">هذه آيات الله الدالة على عظمته وحكمته يتلوها على نبيه محمد صلى الله عليه وسلم بالحق الذي لا يأتيه الباطل من بين يديه ولا من خلفه. وإنك يا محمد لمن المرسلين حقاً وصدقاً، والدليل على ذلك إخبارك بهذه القصص التفصيلية التي لم تكن تعلمها من قبل ولا قومك، فعلمك بها من أعظم أدلة نبوتك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-252', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-252">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-252">يقول تعالى لنبيه محمد صلى الله عليه وسلم: تلك آيات الله العظيمة نتلوها عليك بالحق والصدق كما وقعت لا زيادة فيها ولا نقصان. وإنك لمن المرسلين الذين أرسلهم الله إلى خلقه. وإخباره بهذه القصص التي لم يكن يعلمها من أقوى الأدلة على نبوته صلى الله عليه وسلم، إذ كيف يعلم أمياً لا يقرأ ولا يكتب بتفاصيل هذه الأحداث إلا بوحي من الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-252', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-252">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-252">تلك آيات الله أي هذه الآيات والقصص العجيبة هي آيات الله نتلوها عليك يا محمد بالحق والصدق. وإنك لمن المرسلين الذين اختارهم الله لتبليغ رسالته. وفي ذكر هذه القصص تسلية للنبي صلى الله عليه وسلم ولأمته وتثبيت لهم بأن العاقبة للمؤمنين الصابرين كما نصر الله أصحاب طالوت على جالوت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-252', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-252">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-252">تلك إشارة إلى ما سبق ذكره من القصص والأحكام. وآيات الله حججه ودلائله. ونتلوها عليك أي نقرؤها عليك بالوحي بالحق والصدق. وإنك لمن المرسلين تأكيد لرسالة محمد صلى الله عليه وسلم وأن إخباره بقصص الأنبياء السابقين بتفاصيلها الدقيقة من غير تعلم ولا مطالعة برهان قاطع على صدق نبوته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-252', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-252">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-252">يقول تعالى ذكره: هذه الآيات التي أخبرناك بها يا محمد من أنباء الأمم السابقة نخبرك بها بالحق والصدق كما كانت. وإنك لمن رسل الله الذين أرسلهم إلى خلقه. وفي إخبار النبي الأمي بهذه القصص المفصلة من أخبار بني إسرائيل أعظم دليل على أنه يتلقى الوحي من الله عز وجل، إذ لا سبيل له إلى معرفتها إلا بالوحي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-252', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-253">
+                <div class="ayah-text">۞ تِلۡكَ <span class="tj-slt">ٱل</span>رُّسُلُ فَضَّلۡنَا بَعۡضَهُمۡ عَلَىٰ بَعۡضࣲۘ <span class="tj-ghn">مِّ</span>نۡهُم <span class="tj-ghn">مَّ</span>ن كَلَّمَ <span class="tj-slt">ٱ</span>للَّهُۖ وَرَفَعَ بَعۡضَهُمۡ دَرَ<span class="tj-mdd">جَـٰ</span>تࣲۚ وَءَاتَیۡنَا عِیسَى <span class="tj-slt">ٱ</span>بۡنَ مَرۡیَمَ <span class="tj-slt">ٱ</span>لۡبَیِّنَـٰتِ وَأَیَّدۡ<span class="tj-mdd">نَـٰ</span>هُ بِرُوحِ <span class="tj-slt">ٱ</span>لۡقُدُسِۗ وَلَوۡ شَ<span class="tj-mdd">اۤ</span>ءَ <span class="tj-slt">ٱ</span>للَّهُ مَا <span class="tj-slt">ٱ</span>قۡتَتَلَ <span class="tj-slt">ٱلَّ</span>ذِینَ مِ<span class="tj-qlb">نۢ</span> بَعۡدِهِم <span class="tj-ghn">مِّ</span>نۢ بَعۡدِ مَا جَ<span class="tj-mdd">اۤ</span>ءَتۡهُمُ <span class="tj-slt">ٱ</span>لۡبَیِّنَـٰتُ وَلَـٰكِنِ <span class="tj-slt">ٱ</span>خۡتَلَفُو<span class="tj-slt">ا۟</span> فَمِنۡهُم <span class="tj-ghn">مَّ</span>نۡ ءَامَنَ وَمِنۡهُم <span class="tj-ghn">مَّ</span>ن كَفَرَۚ وَلَوۡ شَ<span class="tj-mdd">اۤ</span>ءَ <span class="tj-slt">ٱ</span>للَّهُ مَا <span class="tj-slt">ٱ</span>قۡتَتَلُو<span class="tj-slt">ا۟</span> وَلَـٰكِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ یَفۡعَلُ مَا یُرِیدُ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تفضيل الله بعض الرسل على بعض: منهم من كلّم الله ورفع بعضهم درجات، وآتى عيسى البينات وأيده بروح القدس. ولو شاء الله ما اقتتل الناس بعدهم لكن اختلفوا فمنهم من آمن ومنهم من كفر.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-253">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-253">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-253">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-253">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-253">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-253">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-253">يخبر تعالى أنه فضّل بعض الرسل على بعض مع كونهم جميعاً على مقام الرسالة الرفيع. فمنهم من كلّم الله كموسى عليه السلام، ورفع بعضهم درجات كمحمد صلى الله عليه وسلم بعموم رسالته وختمها. وخص عيسى بالذكر لأنه آخر أنبياء بني إسرائيل وأيده بجبريل. ولو شاء الله ما اختلف الناس بعد الرسل ولا اقتتلوا لكنهم اختلفوا بحكمة الله فمنهم مؤمن ومنهم كافر. والله يفعل ما يريد بحكمته وعلمه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-253', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-253">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-253">يخبر تعالى أنه فضّل بعض الرسل على بعض كما قال تعالى: ولقد فضلنا بعض النبيين على بعض. فمنهم من كلمه الله بلا واسطة كموسى، ورفع بعضهم درجات عالية وهو محمد صلى الله عليه وسلم بخصائصه الكثيرة. وآتى عيسى الآيات الباهرة كإحياء الموتى وإبراء الأكمه والأبرص وأيده بجبريل. ولو شاء الله ما اقتتل أتباع الرسل من بعدهم لكنه أراد الاختلاف بحكمته ليبتلي العباد فآمن من آمن وكفر من كفر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-253', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-253">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-253">فضّل الله بعض الرسل على بعض بخصائص ومزايا: فكلّم موسى تكليماً بلا واسطة، ورفع محمداً صلى الله عليه وسلم فوق الجميع بعموم الرسالة وخاتميتها والإسراء والمعراج. وخص عيسى بالبينات وهي المعجزات كإحياء الموتى وإبراء المرضى، وأيده بروح القدس وهو جبريل. ثم ذكر أن الاختلاف والاقتتال بين الأمم بعد الرسل كان بمشيئة الله وحكمته، فمنهم من هداه الله ومنهم من حقت عليه الضلالة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-253', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-253">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-253">في هذه الآية بيان أن الرسل ليسوا في درجة واحدة بل بعضهم أفضل من بعض مع كونهم كلهم على شرف عظيم. وذكر من خصائص التفضيل: تكليم الله لموسى بلا واسطة، ورفع الدرجات وهو لمحمد صلى الله عليه وسلم أو لإبراهيم أو للجميع بتفاوت، وتأييد عيسى بالمعجزات وجبريل. واختلاف الأمم بعد رسلهم واقتتالهم كان بمشيئة الله الكونية وإن كان مخالفاً لمشيئته الشرعية، فالله يفعل ما يريد بحكمة بالغة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-253', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-253">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-253">يقول تعالى: هؤلاء الرسل الذين ذكرنا قصصهم فضّلنا بعضهم على بعض في المنزلة والكرامة. فمنهم من خصه الله بالتكليم كموسى، ورفع بعضهم درجات فوق غيرهم. وآتينا عيسى ابن مريم الآيات الواضحة وأيدناه بجبريل. ولو شاء الله ما اقتتل الذين جاؤوا بعد الرسل بعد أن جاءتهم الحجج الواضحة، ولكنهم اختلفوا فمنهم من ثبت على إيمانه ومنهم من كفر. ولو شاء الله ما اقتتلوا ولكن الله يفعل ما يريد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-253', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-15.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">أحكام اجتماعية — الإنفاق والزواج والطلاق</span>
+            </a>
+            <a href="section-17.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">آية الكرسي — عظمة الله وقدرته</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١٦: قصص الأمم السابقة والقتال في سبيل الله<br>
+        <small>آيات ٢٤٣ – ٢٥٣ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

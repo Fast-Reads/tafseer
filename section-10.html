@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — تحويل القبلة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١٠ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#2980b9">
+            <div class="section-num">١٠</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">تحويل القبلة</h2>
+                <h3 class="section-title-en">Changing the Direction of Prayer (Qiblah)</h3>
+            </div>
+            <div class="section-ayah-range">آيات ١٤٢ – ١٥٢</div>
+        </div>
+
+        <div class="section-desc">
+            <p>تحويل القبلة من بيت المقدس إلى المسجد الحرام، والرد على اعتراضات السفهاء، وبيان أن لكل أمة وجهة هو مولّيها</p>
+        </div>
+
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="142">
+                        <div class="flow-node-num">١٤٢</div>
+                        <div class="flow-node-text">اعتراض السفهاء على تحويل القبلة</div>
+                        <div class="flow-node-key">سَیَقُولُ ٱلسُّفَهَاۤءُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="143">
+                        <div class="flow-node-num">١٤٣</div>
+                        <div class="flow-node-text">الأمة الوسط والشهادة على الناس</div>
+                        <div class="flow-node-key">جَعَلۡنَـٰكُمۡ أُمَّةࣰ وَسَطࣰا</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="144-145">
+                        <div class="flow-node-num">١٤٤–١٤٥</div>
+                        <div class="flow-node-text">الأمر بالتوجّه شطر المسجد الحرام</div>
+                        <div class="flow-node-key">فَوَلِّ وَجۡهَكَ شَطۡرَ ٱلۡمَسۡجِدِ ٱلۡحَرَامِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="146-147">
+                        <div class="flow-node-num">١٤٦–١٤٧</div>
+                        <div class="flow-node-text">أهل الكتاب يعرفون الحق ويكتمونه</div>
+                        <div class="flow-node-key">یَعۡرِفُونَهُۥ كَمَا یَعۡرِفُونَ أَبۡنَاۤءَهُمۡ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="148">
+                        <div class="flow-node-num">١٤٨</div>
+                        <div class="flow-node-text">لكلّ وجهة والأمر بالاستباق للخيرات</div>
+                        <div class="flow-node-key">فَٱسۡتَبِقُو<span class="tj-slt">ا۟</span> ٱلۡخَیۡرَ ٰ⁠تِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="149-150">
+                        <div class="flow-node-num">١٤٩–١٥٠</div>
+                        <div class="flow-node-text">تأكيد القبلة وقطع حجة المعترضين</div>
+                        <div class="flow-node-key">لِئَلَّا یَكُونَ لِلنَّاسِ عَلَیۡكُمۡ حُجَّةٌ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="151-152">
+                        <div class="flow-node-num">١٥١–١٥٢</div>
+                        <div class="flow-node-text">نعمة إرسال الرسول والأمر بالذكر والشكر</div>
+                        <div class="flow-node-key">فَٱذۡكُرُونِیۤ أَذۡكُرۡكُمۡ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <!-- Ayah 142 -->
+            <div class="ayah" id="ayah-142">
+                <div class="ayah-text">۞ سَیَقُولُ <span class="tj-slt">ٱل</span>سُّفَهَ<span class="tj-mdd">اۤ</span>ءُ مِنَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسِ مَا وَلَّ<span class="tj-mdd">ىٰ</span>هُمۡ عَ<span class="tj-khf">ن</span> قِ<span class="tj-qlq">بۡ</span>لَتِهِمُ <span class="tj-slt">ٱلَّ</span>تِ<span class="tj-mdd">ی</span> كَانُو<span class="tj-slt">ا۟</span> عَلَیۡهَاۚ قُل لِّلَّهِ <span class="tj-slt">ٱ</span>لۡمَشۡرِقُ وَ<span class="tj-slt">ٱ</span>لۡمَغۡرِبُۚ یَهۡدِ<span class="tj-mdd">ی</span> مَ<span class="tj-dgm">ن</span> یَشَ<span class="tj-mdd">اۤ</span>ءُ إِلَ<span class="tj-mdd">ىٰ</span> صِرَ<span class="tj-mdd"> ٰ⁠</span><span class="tj-dgm">طࣲ</span> <span class="tj-ghn">مُّ</span>سۡتَقِ<span class="tj-mdd">ی</span>مࣲ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إخبار بأن السفهاء سيعترضون على تحويل القبلة، والردّ بأن لله المشرق والمغرب يهدي من يشاء إلى صراط مستقيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-142">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-142">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-142">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-142">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-142">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-142">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-142">أخبر الله نبيّه قبل وقوع الحادثة أن السفهاء من الناس وهم اليهود والمنافقون وغيرهم من ضعاف العقول سيقولون: {مَا وَلَّاهُمْ عَنْ قِبْلَتِهِمُ الَّتِي كَانُوا عَلَيْهَا} أي: ما صرفهم عن بيت المقدس الذي كانوا يصلّون إليه. {قُلْ لِلَّهِ الْمَشْرِقُ وَالْمَغْرِبُ} فله الجهات كلّها والأمكنة جميعها فيأمر بالتوجّه إلى أيّها شاء. {يَهْدِي مَنْ يَشَاءُ إِلَى صِرَاطٍ مُسْتَقِيمٍ} وقد هداكم إلى استقبال الكعبة وهو الصراط المستقيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-142', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-142">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-142">{سَيَقُولُ السُّفَهَاءُ مِنَ النَّاسِ} أخبر الله قبل وقوع التحويل أن السفهاء سيعترضون. والسفهاء: ناقصو العقول. قيل هم اليهود وقيل المنافقون وقيل المشركون. {مَا وَلَّاهُمْ عَنْ قِبْلَتِهِمُ الَّتِي كَانُوا عَلَيْهَا} يعني بيت المقدس. {قُلْ لِلَّهِ الْمَشْرِقُ وَالْمَغْرِبُ} فهو المالك المتصرّف يأمر بالتوجّه حيث يشاء. {يَهْدِي مَنْ يَشَاءُ إِلَى صِرَاطٍ مُسْتَقِيمٍ} فتحويل القبلة هداية من الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-142', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-142">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-142">{سَيَقُولُ السُّفَهَاءُ مِنَ النَّاسِ} يعني اليهود والمنافقين {مَا وَلَّاهُمْ عَنْ قِبْلَتِهِمُ الَّتِي كَانُوا عَلَيْهَا} يعني بيت المقدس. وكان النبي يصلّي إلى بيت المقدس ستة عشر شهراً أو سبعة عشر شهراً بعد الهجرة ثم حُوّلت إلى الكعبة. {قُلْ لِلَّهِ الْمَشْرِقُ وَالْمَغْرِبُ} يأمر بالتوجّه حيث شاء. {يَهْدِي مَنْ يَشَاءُ إِلَى صِرَاطٍ مُسْتَقِيمٍ} وهو استقبال الكعبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-142', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-142">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-142">قوله تعالى: {سَيَقُولُ السُّفَهَاءُ مِنَ النَّاسِ} السفه: خفّة العقل. والسفهاء هنا: اليهود والمنافقون ومشركو العرب. أخبر الله بذلك قبل وقوعه ليتهيّأ المسلمون للردّ. {مَا وَلَّاهُمْ عَنْ قِبْلَتِهِمُ} أي: أيّ شيء صرفهم عن بيت المقدس. {قُلْ لِلَّهِ الْمَشْرِقُ وَالْمَغْرِبُ} فهو المالك المتصرّف في الجهات كلّها. {يَهْدِي مَنْ يَشَاءُ إِلَى صِرَاطٍ مُسْتَقِيمٍ} وهو دين الإسلام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-142', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-142">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-142">يقول تعالى: سيقول السفهاء أي: الجهّال خفاف الأحلام من اليهود والمنافقين: ما ولّاهم أي: ما صرف محمداً وأصحابه عن قبلتهم التي كانوا عليها يعني بيت المقدس. {قُلْ لِلَّهِ الْمَشْرِقُ وَالْمَغْرِبُ} أي: له الأرض كلّها يوجّه عباده إلى أيّ جهة شاء منها. {يَهْدِي مَنْ يَشَاءُ إِلَى صِرَاطٍ مُسْتَقِيمٍ} أي: يوفّق من يشاء إلى طريق الحق المستقيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-142', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 143 -->
+            <div class="ayah" id="ayah-143">
+                <div class="ayah-text">وَكَذَ<span class="tj-mdd"> ٰ⁠</span>لِكَ جَعَلۡ<span class="tj-mdd">نَـٰ</span>كُمۡ أُ<span class="tj-ghn">مَّ</span><span class="tj-dgm">ةࣰ</span> وَسَ<span class="tj-dgm">طࣰا</span> لِّتَكُونُو<span class="tj-slt">ا۟</span> شُهَدَ<span class="tj-mdd">اۤ</span>ءَ عَلَى <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسِ وَیَكُونَ <span class="tj-slt">ٱل</span>رَّسُولُ عَلَیۡكُمۡ شَهِ<span class="tj-mdd">ی</span>دࣰاۗ وَمَا جَعَلۡنَا <span class="tj-slt">ٱ</span>لۡقِ<span class="tj-qlq">بۡ</span>لَةَ <span class="tj-slt">ٱلَّ</span>تِ<span class="tj-mdd">ی</span> كُ<span class="tj-khf">نتَ</span> عَلَیۡهَ<span class="tj-mdd">اۤ</span> إِلَّا لِنَعۡلَمَ مَ<span class="tj-dgm">ن</span> یَتَّبِعُ <span class="tj-slt">ٱل</span>رَّسُولَ مِ<span class="tj-ghn">مَّ</span><span class="tj-dgm">ن</span> یَ<span class="tj-khf">نقَ</span>لِبُ عَلَ<span class="tj-mdd">ىٰ</span> عَقِبَیۡهِۚ وَإِ<span class="tj-khf">ن</span> كَانَتۡ لَكَبِ<span class="tj-mdd">ی</span>رَةً إِلَّا عَلَى <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ هَدَى <span class="tj-slt">ٱل</span>لَّهُۗ وَمَا كَانَ <span class="tj-slt">ٱل</span>لَّهُ لِیُضِ<span class="tj-mdd">ی</span>عَ إِ<span class="tj-mdd">ی</span><span class="tj-mdd">مَـٰ</span>نَكُمۡۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ بِ<span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسِ لَرَءُو<span class="tj-dgm">فࣱ</span> رَّحِ<span class="tj-mdd">ی</span>مࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">جعل الله هذه الأمة أمة وسطاً عدولاً خياراً لتكون شاهدة على الناس ويكون الرسول شهيداً عليها، وبيان حكمة القبلة السابقة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-143">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-143">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-143">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-143">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-143">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-143">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-143">{وَكَذَلِكَ جَعَلْنَاكُمْ أُمَّةً وَسَطًا} أي: عدولاً خياراً أفضل الأمم. والوسط: العدل والخيار. {لِتَكُونُوا شُهَدَاءَ عَلَى النَّاسِ} تشهدون على الأمم يوم القيامة أن رسلهم بلّغتهم. {وَيَكُونَ الرَّسُولُ عَلَيْكُمْ شَهِيدًا} يشهد على هذه الأمة بأعمالها. {وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنْتَ عَلَيْهَا إِلَّا لِنَعْلَمَ} علم ظهور وامتحان {مَنْ يَتَّبِعُ الرَّسُولَ مِمَّنْ يَنْقَلِبُ عَلَى عَقِبَيْهِ}. {وَمَا كَانَ اللَّهُ لِيُضِيعَ إِيمَانَكُمْ} أي: صلاتكم إلى بيت المقدس لا تضيع. {إِنَّ اللَّهَ بِالنَّاسِ لَرَءُوفٌ رَحِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-143', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-143">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-143">{وَكَذَلِكَ جَعَلْنَاكُمْ أُمَّةً وَسَطًا} أي: خياراً عدولاً. والوسط: الأفضل والأعدل. {لِتَكُونُوا شُهَدَاءَ عَلَى النَّاسِ} يوم القيامة تشهدون أن الرسل بلّغوا أممهم. {وَيَكُونَ الرَّسُولُ عَلَيْكُمْ شَهِيدًا}. {وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنْتَ عَلَيْهَا} أي: بيت المقدس {إِلَّا لِنَعْلَمَ مَنْ يَتَّبِعُ الرَّسُولَ مِمَّنْ يَنْقَلِبُ عَلَى عَقِبَيْهِ} فكان اختباراً. {وَمَا كَانَ اللَّهُ لِيُضِيعَ إِيمَانَكُمْ} أي: صلاتكم السابقة محفوظة الأجر. {إِنَّ اللَّهَ بِالنَّاسِ لَرَءُوفٌ رَحِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-143', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-143">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-143">{وَكَذَلِكَ جَعَلْنَاكُمْ أُمَّةً وَسَطًا} أي: عدولاً خياراً. والوسط في اللغة: الخيار والعدل. {لِتَكُونُوا شُهَدَاءَ عَلَى النَّاسِ} يوم القيامة. {وَيَكُونَ الرَّسُولُ عَلَيْكُمْ شَهِيدًا}. {وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنْتَ عَلَيْهَا} بيت المقدس {إِلَّا لِنَعْلَمَ} أي: ليظهر ويتميّز {مَنْ يَتَّبِعُ الرَّسُولَ مِمَّنْ يَنْقَلِبُ عَلَى عَقِبَيْهِ} يرتدّ. {وَمَا كَانَ اللَّهُ لِيُضِيعَ إِيمَانَكُمْ} صلاتكم. سمّى الصلاة إيماناً لأنها من الإيمان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-143', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-143">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-143">قوله تعالى: {وَكَذَلِكَ جَعَلْنَاكُمْ أُمَّةً وَسَطًا} الوسط: العدل والخيار. هذه الأمة خير الأمم وأعدلها. {لِتَكُونُوا شُهَدَاءَ عَلَى النَّاسِ} تشهدون يوم القيامة على الأمم السابقة بتبليغ رسلها. {وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنْتَ عَلَيْهَا إِلَّا لِنَعْلَمَ} علم ظهور واختبار. {وَمَا كَانَ اللَّهُ لِيُضِيعَ إِيمَانَكُمْ} نزلت حين سأل الناس عن صلاتهم السابقة إلى بيت المقدس فأخبرهم الله أنها محفوظة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-143', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-143">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-143">يقول تعالى: وكما هديناكم إلى الصراط المستقيم جعلناكم أمة وسطاً أي: عدولاً خياراً. لتكونوا شهداء على الناس يوم القيامة أن الرسل قد بلّغتهم. ويكون الرسول عليكم شهيداً. {وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنْتَ عَلَيْهَا} يعني بيت المقدس {إِلَّا لِنَعْلَمَ مَنْ يَتَّبِعُ الرَّسُولَ مِمَّنْ يَنْقَلِبُ عَلَى عَقِبَيْهِ} فيرتدّ. {وَمَا كَانَ اللَّهُ لِيُضِيعَ إِيمَانَكُمْ} أي: صلاتكم التي صلّيتموها. {إِنَّ اللَّهَ بِالنَّاسِ لَرَءُوفٌ رَحِيمٌ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-143', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 144 -->
+            <div class="ayah" id="ayah-144">
+                <div class="ayah-text">قَدۡ نَرَ<span class="tj-mdd">ىٰ</span> تَقَلُّبَ وَجۡهِكَ فِ<span class="tj-mdd">ی</span> <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">اۤ</span>ءِۖ فَلَنُوَلِّیَ<span class="tj-ghn">نَّ</span>كَ قِ<span class="tj-qlq">بۡ</span>لَ<span class="tj-khf">ةࣰ</span> تَرۡضَ<span class="tj-mdd">ىٰ</span>هَاۚ فَوَلِّ وَجۡهَكَ شَطۡرَ <span class="tj-slt">ٱ</span>لۡمَسۡجِدِ <span class="tj-slt">ٱ</span>لۡحَرَامِۚ وَحَیۡثُ مَا كُ<span class="tj-khf">نتُ</span>مۡ فَوَلُّو<span class="tj-slt">ا۟</span> وُجُوهَكُمۡ شَطۡرَهُۥۗ وَإِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ أُوتُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بَ لَیَعۡلَمُونَ أَ<span class="tj-ghn">نَّ</span>هُ <span class="tj-slt">ٱ</span>لۡحَقُّ مِ<span class="tj-dgm">ن</span> رَّبِّهِمۡۗ وَمَا <span class="tj-slt">ٱل</span>لَّهُ بِغَ<span class="tj-mdd">ـٰ</span>فِلٍ عَ<span class="tj-ghn">مَّ</span>ا یَعۡمَلُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">استجابة الله لرغبة النبي بالتوجّه نحو الكعبة، والأمر بتولية الوجه شطر المسجد الحرام، وأهل الكتاب يعلمون أنه الحق.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-144">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-144">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-144">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-144">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-144">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-144">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-144">{قَدْ نَرَى تَقَلُّبَ وَجْهِكَ فِي السَّمَاءِ} أي: تقليب نظرك إلى السماء تنتظر أن يأتيك الوحي بالتحويل إلى الكعبة. {فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا} وهي الكعبة المشرّفة. {فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ} أي: جهته وناحيته. {وَحَيْثُ مَا كُنْتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ} أمر عام لكل المسلمين في كل مكان. {وَإِنَّ الَّذِينَ أُوتُوا الْكِتَابَ لَيَعْلَمُونَ أَنَّهُ الْحَقُّ مِنْ رَبِّهِمْ} فهم يعلمون صحة هذا التحويل. {وَمَا اللَّهُ بِغَافِلٍ عَمَّا يَعْمَلُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-144', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-144">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-144">{قَدْ نَرَى تَقَلُّبَ وَجْهِكَ فِي السَّمَاءِ} كان النبي يقلّب وجهه نحو السماء يرجو أن يحوّله الله إلى الكعبة لأنها قبلة أبيه إبراهيم. {فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا} فاستجاب الله لرغبته. {فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ} أمر بالتوجّه إلى الكعبة. {وَإِنَّ الَّذِينَ أُوتُوا الْكِتَابَ لَيَعْلَمُونَ أَنَّهُ الْحَقُّ مِنْ رَبِّهِمْ} يعلمون من كتبهم صحة ذلك لكنهم يجحدون. {وَمَا اللَّهُ بِغَافِلٍ عَمَّا يَعْمَلُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-144', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-144">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-144">{قَدْ نَرَى تَقَلُّبَ وَجْهِكَ فِي السَّمَاءِ} كان النبي يحبّ أن تكون قبلته الكعبة فكان يرفع رأسه إلى السماء ينتظر الأمر. {فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا} هي الكعبة. {فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ} تلقاءه وجهته. {وَحَيْثُ مَا كُنْتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ} في أيّ مكان كنتم فاستقبلوه. {وَإِنَّ الَّذِينَ أُوتُوا الْكِتَابَ لَيَعْلَمُونَ أَنَّهُ الْحَقُّ} من كتبهم. {وَمَا اللَّهُ بِغَافِلٍ عَمَّا يَعْمَلُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-144', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-144">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-144">قوله تعالى: {قَدْ نَرَى تَقَلُّبَ وَجْهِكَ فِي السَّمَاءِ} فيه أن النبي كان يتطلّع إلى تحويل القبلة من بيت المقدس إلى الكعبة. {فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا} اللام لام القسم أي: نقسم لنولّينّك. {فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ} الشطر: الجهة والناحية. واستقبال الكعبة فرض في الصلاة. {وَإِنَّ الَّذِينَ أُوتُوا الْكِتَابَ لَيَعْلَمُونَ أَنَّهُ الْحَقُّ مِنْ رَبِّهِمْ} يعلمون ذلك من كتبهم ويجحدونه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-144', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-144">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-144">يقول تعالى لنبيّه: قد نرى يا محمد تردّد نظرك في السماء تنتظر أمرنا بالتحويل إلى الكعبة. {فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا} فحوّله الله إلى الكعبة. {فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ} أي: اتّجه نحوه في صلاتك. {وَحَيْثُ مَا كُنْتُمْ فَوَلُّوا وُجُوهَكُمْ شَطْرَهُ} أمر لجميع المسلمين في كل مكان. {وَإِنَّ الَّذِينَ أُوتُوا الْكِتَابَ لَيَعْلَمُونَ أَنَّهُ الْحَقُّ مِنْ رَبِّهِمْ وَمَا اللَّهُ بِغَافِلٍ عَمَّا يَعْمَلُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-144', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 145 -->
+            <div class="ayah" id="ayah-145">
+                <div class="ayah-text">وَلَىِٕنۡ أَتَیۡتَ <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ أُوتُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡكِتَ<span class="tj-mdd">ـٰ</span>بَ بِكُلِّ ءَایَ<span class="tj-dgm">ةࣲ</span> <span class="tj-ghn">مَّ</span>ا تَبِعُو<span class="tj-slt">ا۟</span> قِ<span class="tj-qlq">بۡ</span>لَتَكَۚ وَمَ<span class="tj-mdd">اۤ</span> أَ<span class="tj-khf">نتَ</span> بِتَابِعࣲ قِ<span class="tj-qlq">بۡ</span>لَتَهُمۡۚ وَمَا بَعۡضُهُم بِتَابِعࣲ قِ<span class="tj-qlq">بۡ</span>لَةَ بَعۡضࣲۚ وَلَىِٕنِ <span class="tj-slt">ٱ</span>تَّبَعۡتَ أَهۡوَ<span class="tj-mdd">اۤ</span>ءَهُم <span class="tj-ghn">مِّ</span><span class="tj-qlb">نۢ </span>بَعۡدِ مَا جَ<span class="tj-mdd">اۤ</span>ءَكَ مِنَ <span class="tj-slt">ٱ</span>لۡعِلۡمِ إِ<span class="tj-ghn">نَّ</span>كَ إِذࣰا لَّمِنَ <span class="tj-slt">ٱل</span>ظَّ<span class="tj-mdd">ـٰ</span>لِمِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أهل الكتاب لن يتّبعوا قبلة المسلمين مهما أُتوا من آيات، ولا بعضهم يتّبع بعضاً، والتحذير من اتباع أهوائهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-145">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-145">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-145">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-145">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-145">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-145">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-145">{وَلَئِنْ أَتَيْتَ الَّذِينَ أُوتُوا الْكِتَابَ بِكُلِّ آيَةٍ مَا تَبِعُوا قِبْلَتَكَ} فعنادهم ليس بسبب قلّة الأدلة بل بسبب الحسد والعناد. {وَمَا أَنْتَ بِتَابِعٍ قِبْلَتَهُمْ} تيئيس لهم من أن يتّبع النبي قبلتهم. {وَمَا بَعْضُهُمْ بِتَابِعٍ قِبْلَةَ بَعْضٍ} فاليهود لا يتّبعون قبلة النصارى والعكس. {وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُمْ مِنْ بَعْدِ مَا جَاءَكَ مِنَ الْعِلْمِ إِنَّكَ إِذًا لَمِنَ الظَّالِمِينَ} تحذير شديد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-145', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-145">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-145">{وَلَئِنْ أَتَيْتَ الَّذِينَ أُوتُوا الْكِتَابَ بِكُلِّ آيَةٍ مَا تَبِعُوا قِبْلَتَكَ} إخبار بأنهم لن يتّبعوا قبلة المسلمين لأن خلافهم ليس عن جهل بل عن عناد. {وَمَا أَنْتَ بِتَابِعٍ قِبْلَتَهُمْ} قطع لطمعهم. {وَمَا بَعْضُهُمْ بِتَابِعٍ قِبْلَةَ بَعْضٍ} فاليهود يستقبلون بيت المقدس والنصارى المشرق. {وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُمْ} سمّاها أهواء لا حججاً. {إِنَّكَ إِذًا لَمِنَ الظَّالِمِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-145', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-145">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-145">{وَلَئِنْ أَتَيْتَ الَّذِينَ أُوتُوا الْكِتَابَ بِكُلِّ آيَةٍ مَا تَبِعُوا قِبْلَتَكَ} لأن إعراضهم عن عناد لا عن جهل. {وَمَا أَنْتَ بِتَابِعٍ قِبْلَتَهُمْ} إياس لهم. {وَمَا بَعْضُهُمْ بِتَابِعٍ قِبْلَةَ بَعْضٍ} اليهود يتوجّهون إلى بيت المقدس والنصارى إلى المشرق. {وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُمْ مِنْ بَعْدِ مَا جَاءَكَ مِنَ الْعِلْمِ إِنَّكَ إِذًا لَمِنَ الظَّالِمِينَ} الخطاب للنبي والمراد أمته تحذيراً لها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-145', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-145">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-145">قوله تعالى: {وَلَئِنْ أَتَيْتَ الَّذِينَ أُوتُوا الْكِتَابَ بِكُلِّ آيَةٍ مَا تَبِعُوا قِبْلَتَكَ} بيان أن عنادهم لا يزول بالحجج والأدلّة. {وَمَا أَنْتَ بِتَابِعٍ قِبْلَتَهُمْ} قطع رجائهم. {وَمَا بَعْضُهُمْ بِتَابِعٍ قِبْلَةَ بَعْضٍ} فهم مختلفون فيما بينهم. {وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُمْ} سمّاها أهواء لا حججاً لبطلانها. {إِنَّكَ إِذًا لَمِنَ الظَّالِمِينَ} وعيد بالغ.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-145', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-145">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-145">يقول تعالى: ولئن جئت يا محمد الذين أوتوا الكتاب بكل حجّة وبرهان ما اتّبعوا قبلتك لأنهم لا يتركون ما هم عليه من العناد. {وَمَا أَنْتَ بِتَابِعٍ قِبْلَتَهُمْ} قطع لأطماعهم. {وَمَا بَعْضُهُمْ بِتَابِعٍ قِبْلَةَ بَعْضٍ} فاليهود يستقبلون الصخرة والنصارى المشرق. {وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُمْ مِنْ بَعْدِ مَا جَاءَكَ مِنَ الْعِلْمِ إِنَّكَ إِذًا لَمِنَ الظَّالِمِينَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-145', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 146 -->
+            <div class="ayah" id="ayah-146">
+                <div class="ayah-text"><span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ ءَاتَیۡ<span class="tj-mdd">نَـٰ</span>هُمُ <span class="tj-slt">ٱ</span>لۡكِ<span class="tj-mdd">تَـٰ</span>بَ یَعۡرِفُونَهُۥ كَمَا یَعۡرِفُونَ أَ<span class="tj-qlq">بۡ</span>نَ<span class="tj-mdd">اۤ</span>ءَهُمۡۖ وَإِ<span class="tj-ghn">نَّ</span> فَرِ<span class="tj-mdd">ی</span><span class="tj-dgm">قࣰا</span> <span class="tj-ghn">مِّ</span>نۡهُمۡ لَیَكۡتُمُونَ <span class="tj-slt">ٱ</span>لۡحَقَّ وَهُمۡ یَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أهل الكتاب يعرفون النبي ورسالته كما يعرفون أبناءهم معرفة يقينية، لكنّ فريقاً منهم يكتمون الحق وهم يعلمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-146">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-146">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-146">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-146">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-146">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-146">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-146">{الَّذِينَ آتَيْنَاهُمُ الْكِتَابَ يَعْرِفُونَهُ كَمَا يَعْرِفُونَ أَبْنَاءَهُمْ} أي: يعرفون النبي محمداً بصفته المذكورة في كتبهم معرفة لا لبس فيها كمعرفتهم لأبنائهم. {وَإِنَّ فَرِيقًا مِنْهُمْ لَيَكْتُمُونَ الْحَقَّ وَهُمْ يَعْلَمُونَ} فيكتمون ما يعلمونه من صفته ونبوّته ووجوب اتباعه حسداً وعناداً. وقال «فريقاً» ولم يعمّم لأن منهم من آمن كعبد الله بن سلام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-146', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-146">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-146">{الَّذِينَ آتَيْنَاهُمُ الْكِتَابَ يَعْرِفُونَهُ} أي: يعرفون محمداً بنعته وصفته في كتبهم {كَمَا يَعْرِفُونَ أَبْنَاءَهُمْ} قال عبد الله بن سلام: أنا أعرفه أكثر من معرفتي بابني. فقال عمر: كيف ذلك؟ قال: لأني لا أشكّ في محمد أنه نبيّ وأما ابني فلعلّ أمه خانتني. {وَإِنَّ فَرِيقًا مِنْهُمْ لَيَكْتُمُونَ الْحَقَّ وَهُمْ يَعْلَمُونَ} يكتمون صفة محمد عمداً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-146', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-146">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-146">{الَّذِينَ آتَيْنَاهُمُ الْكِتَابَ يَعْرِفُونَهُ} الضمير يعود إلى محمد صلى الله عليه وسلم أي: يعرفونه بنعته وصفته المذكورة في التوراة والإنجيل. {كَمَا يَعْرِفُونَ أَبْنَاءَهُمْ} تشبيه للمبالغة في المعرفة. {وَإِنَّ فَرِيقًا مِنْهُمْ} جماعة من علمائهم {لَيَكْتُمُونَ الْحَقَّ} أي: صفة محمد وقبلته {وَهُمْ يَعْلَمُونَ} أنهم كاتمون للحق عامدون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-146', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-146">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-146">قوله تعالى: {الَّذِينَ آتَيْنَاهُمُ الْكِتَابَ يَعْرِفُونَهُ كَمَا يَعْرِفُونَ أَبْنَاءَهُمْ} الضمير في «يعرفونه» قيل يعود على محمد وقيل على تحويل القبلة. والأصح أنه محمد. وضرب المثل بمعرفة الأبناء لأنها أوثق المعارف. {وَإِنَّ فَرِيقًا مِنْهُمْ لَيَكْتُمُونَ الْحَقَّ وَهُمْ يَعْلَمُونَ} كتمان الحق مع العلم به من أعظم الذنوب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-146', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-146">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-146">يقول تعالى: الذين أعطيناهم الكتاب من اليهود والنصارى يعرفون محمداً بصفته التي في كتبهم كما يعرف أحدهم ابنه فلا يشكّ فيه. {وَإِنَّ فَرِيقًا مِنْهُمْ} جماعة من علمائهم {لَيَكْتُمُونَ الْحَقَّ} وهو نبوّة محمد وصفته وقبلته {وَهُمْ يَعْلَمُونَ} أنه الحق ولكنهم يكتمونه حسداً وطمعاً في الرياسة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-146', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 147 -->
+            <div class="ayah" id="ayah-147">
+                <div class="ayah-text"><span class="tj-slt">ٱ</span>لۡحَقُّ مِ<span class="tj-dgm">ن</span> رَّبِّكَ فَلَا تَكُونَ<span class="tj-ghn">نَّ</span> مِنَ <span class="tj-slt">ٱ</span>لۡمُمۡتَرِ<span class="tj-mdd">ی</span>نَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تأكيد أن تحويل القبلة هو الحق من الله، ونهي النبي عن الشكّ والتردّد في ذلك.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-147">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-147">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-147">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-147">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-147">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-147">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-147">{الْحَقُّ مِنْ رَبِّكَ} أي: ما جاءك من تحويل القبلة هو الحق الثابت من ربك لا مرية فيه. {فَلَا تَكُونَنَّ مِنَ الْمُمْتَرِينَ} أي: الشاكّين المترددين. والنبي لم يشكّ ولكن هذا من باب التثبيت وتقوية اليقين، وهو خطاب للأمة من خلاله. أي: لا يدخلنّكم شكّ بسبب اعتراض المعترضين فإن ما جاءكم هو الحق من ربكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-147', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-147">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-147">{الْحَقُّ مِنْ رَبِّكَ} أي: هذا الذي أخبرناك به من أمر القبلة هو الحق من الله لا شكّ فيه. {فَلَا تَكُونَنَّ مِنَ الْمُمْتَرِينَ} والنبي معصوم من الشكّ، والخطاب له والمراد أمته أو هو من باب التثبيت والتأكيد. والامتراء: الشكّ والتردّد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-147', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-147">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-147">{الْحَقُّ مِنْ رَبِّكَ} أي: تحويل القبلة هو الحق الثابت من ربك. {فَلَا تَكُونَنَّ مِنَ الْمُمْتَرِينَ} أي: الشاكّين فيه. والنبي لا يشكّ ولكنه تثبيت وتأكيد له ولأمته. والمعنى: لا تلتفت إلى أقوال المشكّكين من اليهود وغيرهم فإن الحق ما جاءك من ربك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-147', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-147">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-147">قوله تعالى: {الْحَقُّ مِنْ رَبِّكَ} مبتدأ وخبر أي: الحق كائن من ربك. والحقّ هنا: تحويل القبلة إلى الكعبة. {فَلَا تَكُونَنَّ مِنَ الْمُمْتَرِينَ} الامتراء: الشكّ. والنهي هنا للتثبيت لا لأن النبي كان يشكّ فهو معصوم من ذلك. وقيل الخطاب له والمعنى لأمته أي: فلا يكن أحد منكم من الشاكّين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-147', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-147">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-147">يقول تعالى: الحق من ربك يا محمد فيما أمرناك به من استقبال الكعبة هو الحق الذي لا شكّ فيه. {فَلَا تَكُونَنَّ مِنَ الْمُمْتَرِينَ} أي: فلا تكن من الشاكّين في ذلك. والنبي لم يشكّ وإنما هو تثبيت له وتأكيد لأمته ألا تلتفت إلى تشكيك اليهود والمنافقين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-147', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 148 -->
+            <div class="ayah" id="ayah-148">
+                <div class="ayah-text">وَلِكُ<span class="tj-dgm">لࣲّ</span> وِ<span class="tj-qlq">جۡ</span>هَةٌ هُوَ مُوَلِّ<span class="tj-mdd">ی</span>هَاۖ فَ<span class="tj-slt">ٱ</span>سۡتَبِقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡخَیۡ<span class="tj-mdd">رَ ٰ⁠</span>تِۚ أَیۡنَ مَا تَكُونُو<span class="tj-slt">ا۟</span> یَأۡتِ بِكُمُ <span class="tj-slt">ٱل</span>لَّهُ جَمِ<span class="tj-mdd">ی</span>عًاۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱل</span>لَّهَ عَلَ<span class="tj-mdd">ىٰ</span> كُلِّ شَیۡ<span class="tj-khf">ءࣲ</span> قَدِ<span class="tj-mdd">ی</span>رࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تبيّن الآية أن لكل أمة قبلة يتوجهون إليها، فالمهم هو التسابق في الخيرات والطاعات، وأن الله قادر على جمع الناس يوم القيامة أينما كانوا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-148">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-148">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-148">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-148">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-148">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-148">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-148">يخبر تعالى أن لكل صاحب ملة وجهة يتوجه إليها في صلاته، فلا تنازعوهم ولا تبالوا بشأنهم، ولكن اهتموا بالتسابق إلى الخيرات والمبادرة إلى الطاعات، فأينما تكونوا يأت بكم الله جميعًا يوم القيامة فيجازي كلّ عامل بعمله، إن الله على كل شيء قدير لا يعجزه شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-148', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-148">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-148">قيل المراد: ولكل صاحب ملة قبلة يرضاها الله لهم أو يرتضونها لأنفسهم. وقوله: {فَاسْتَبِقُوا الْخَيْرَاتِ} أي بادروا إلى الأعمال الصالحة، وقوله: {أَيْنَ مَا تَكُونُوا يَأْتِ بِكُمُ اللَّهُ جَمِيعًا} أي يوم القيامة يجمعكم من أقطار الأرض ويحشركم من سائر بقاعها، {إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ} أي لا يعجزه شيء ولا يمتنع عليه أمر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-148', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-148">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-148">قوله تعالى: {وَلِكُلٍّ وِجْهَةٌ هُوَ مُوَلِّيهَا} أي لكل صاحب ملة قبلة هو مستقبلها، وقيل: لكل واحد منكم أيها المؤمنون وجهة يستقبلها حيثما توجّه، {فَاسْتَبِقُوا الْخَيْرَاتِ} أي فبادروا إلى الأعمال الصالحة ولا تضيعوا أوقاتكم في الجدال، {أَيْنَ مَا تَكُونُوا يَأْتِ بِكُمُ اللَّهُ جَمِيعًا} يوم القيامة فيجزيكم بأعمالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-148', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-148">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-148">قوله تعالى: {وَلِكُلٍّ وِجْهَةٌ} قيل: لكل أهل ملة قبلة، وقيل: لكل واحد منكم وجهة أي ناحية من القبلة يصلي إليها. قوله: {فَاسْتَبِقُوا الْخَيْرَاتِ} أمر بالمسارعة إلى الطاعات وأن لا يُشغلهم الجدل في أمر القبلة عنها. وقوله: {أَيْنَ مَا تَكُونُوا يَأْتِ بِكُمُ اللَّهُ جَمِيعًا} وعد ووعيد بالحشر والبعث، فيجمعكم من كل مكان للحساب والجزاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-148', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-148">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-148">يعني جل ثناؤه بقوله: {وَلِكُلٍّ وِجْهَةٌ} ولكل أهل ملة قبلة يتوجهون إليها، {هُوَ مُوَلِّيهَا} أي الله موليها إياهم أو هو متوجه إليها. {فَاسْتَبِقُوا الْخَيْرَاتِ} فبادروا أيها المؤمنون إلى العمل بما أمركم الله به. {أَيْنَ مَا تَكُونُوا يَأْتِ بِكُمُ اللَّهُ جَمِيعًا} في أي بقعة كنتم من بقاع الأرض يجمعكم الله للحشر يوم القيامة، إنه على كل شيء قدير.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-148', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 149 -->
+            <div class="ayah" id="ayah-149">
+                <div class="ayah-text">وَمِنۡ حَیۡثُ خَرَ<span class="tj-qlq">جۡ</span>تَ فَوَلِّ وَ<span class="tj-qlq">جۡ</span>هَكَ شَ<span class="tj-qlq">طۡ</span>رَ <span class="tj-slt">ٱ</span>لۡمَسۡجِدِ <span class="tj-slt">ٱ</span>لۡحَرَامِۖ وَإِ<span class="tj-ghn">نَّ</span>هُۥ لَلۡحَقُّ مِ<span class="tj-dgm">ن</span> رَّبِّكَۗ وَمَا <span class="tj-slt">ٱل</span>لَّهُ بِ<span class="tj-mdd">غَـٰ</span>فِلٍ عَ<span class="tj-ghn">مَّ</span>ا تَعۡمَلُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله نبيه ﷺ أينما خرج أن يولي وجهه شطر المسجد الحرام، وأكد أن ذلك هو الحق من ربه، وأن الله ليس بغافل عما يعمل الناس.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-149">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-149">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-149">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-149">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-149">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-149">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-149">أي ومن أي مكان خرجت فولّ وجهك شطر المسجد الحرام، فهذا تأكيد لاستقبال الكعبة من أي جهة كان، وإنه للحق من ربك فلا تشك فيه ولا تتردد، وما الله بغافل عما تعملون من التوجه إليه وامتثال أوامره، بل هو محصٍ لذلك مجازٍ عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-149', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-149">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-149">هذا أمر ثانٍ من الله تعالى باستقبال الكعبة من سائر الأقطار والأمصار، وقوله: {وَإِنَّهُ لَلْحَقُّ مِنْ رَبِّكَ} أي هذا التوجه إلى الكعبة لهو الحق الذي لا مرية فيه ولا شك، {وَمَا اللَّهُ بِغَافِلٍ عَمَّا تَعْمَلُونَ} فيه تهديد ووعيد لمن خالف أوامره واتبع غير ما شرع له.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-149', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-149">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-149">قوله تعالى: {وَمِنْ حَيْثُ خَرَجْتَ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ} كرّر هذا الأمر تأكيدًا لشأن القبلة وإزالة لكل شبهة. {وَإِنَّهُ لَلْحَقُّ مِنْ رَبِّكَ} أي التحويل إلى الكعبة هو الحق من عند الله. {وَمَا اللَّهُ بِغَافِلٍ عَمَّا تَعْمَلُونَ} أي هو مطلع على أعمالكم وسيجزيكم بها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-149', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-149">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-149">كرّر الله تعالى الأمر بالتوجه نحو المسجد الحرام تأكيدًا لأمر القبلة ودفعًا لاعتراضات المعترضين. وقوله: {وَإِنَّهُ لَلْحَقُّ مِنْ رَبِّكَ} تثبيت للنبي ﷺ على أن هذا التحويل من عند الله لا اجتهاد فيه. {وَمَا اللَّهُ بِغَافِلٍ عَمَّا تَعْمَلُونَ} تحذير من التهاون في هذا الأمر ووعد للعاملين بالجزاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-149', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-149">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-149">يقول تعالى ذكره لنبيه ﷺ: ومن أي أرض خرجت يا محمد فحوّل وجهك تلقاء المسجد الحرام فصلّ نحوه. وإن توجهك إليه للحق من ربك فلا تمترِ فيه. وما الله بغافل عما يعمل جميع خلقه من طاعة ومعصية، بل هو حافظ ذلك عليهم ليجزيهم به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-149', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 150 -->
+            <div class="ayah" id="ayah-150">
+                <div class="ayah-text">وَمِنۡ حَیۡثُ خَرَ<span class="tj-qlq">جۡ</span>تَ فَوَلِّ وَ<span class="tj-qlq">جۡ</span>هَكَ شَ<span class="tj-qlq">طۡ</span>رَ <span class="tj-slt">ٱ</span>لۡمَسۡجِدِ <span class="tj-slt">ٱ</span>لۡحَرَامِۚ وَحَیۡثُ مَا كُ<span class="tj-khf">نت</span>ُمۡ فَوَلُّو<span class="tj-slt">ا۟</span> وُجُوهَكُمۡ شَ<span class="tj-qlq">طۡ</span>رَهُۥ لِئَلَّا یَكُونَ لِل<span class="tj-ghn">نَّ</span>اسِ عَلَیۡكُمۡ حُجَّةٌ إِلَّا <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ ظَلَمُو<span class="tj-slt">ا۟</span> مِنۡهُمۡ فَلَا تَخۡشَوۡهُمۡ وَ<span class="tj-slt">ٱ</span>خۡشَوۡنِ<span class="tj-mdd">ی</span> وَلِأُتِ<span class="tj-ghn">مَّ</span> نِعۡمَتِ<span class="tj-mdd">ی</span> عَلَیۡكُمۡ وَلَعَلَّكُمۡ تَهۡتَدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">تأكيد ثالث بالتوجه للمسجد الحرام أينما كانوا، لقطع حجة المعترضين، مع الأمر بخشية الله وحده، ووعد بإتمام النعمة والهداية.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-150">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-150">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-150">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-150">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-150">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-150">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-150">هذا تأكيد ثالث من الله تعالى بالتوجه إلى المسجد الحرام، والحكمة في ذلك لئلا يكون للناس عليكم حجة يحتجون بها، إلا الذين ظلموا فإنهم يحتجون بالباطل فلا تخشوهم واخشوني. وقوله: {وَلِأُتِمَّ نِعْمَتِي عَلَيْكُمْ} بهذه القبلة وبالهداية إلى الصراط المستقيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-150', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-150">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-150">هذا أمر ثالث باستقبال المسجد الحرام من سائر أقطار الأرض. وقوله: {لِئَلَّا يَكُونَ لِلنَّاسِ عَلَيْكُمْ حُجَّةٌ} أي حتى لا يحتج عليكم أحد من أهل الكتاب بأنكم لم تتبعوا قبلة إبراهيم. {إِلَّا الَّذِينَ ظَلَمُوا مِنْهُمْ} وهم المعاندون الذين يحتجون بالباطل. {فَلَا تَخْشَوْهُمْ وَاخْشَوْنِي} أي لا تخافوا من طعنهم واخشوا الله وحده. {وَلِأُتِمَّ نِعْمَتِي عَلَيْكُمْ} بالهداية إلى قبلة إبراهيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-150', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-150">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-150">كرّر الأمر بالتوجه إلى القبلة للتأكيد والاهتمام. {لِئَلَّا يَكُونَ لِلنَّاسِ عَلَيْكُمْ حُجَّةٌ} قيل: الناس هم اليهود كانوا يقولون: يخالفنا ويتبع قبلتنا، فلما حُوّل إلى الكعبة انقطعت حجتهم. {إِلَّا الَّذِينَ ظَلَمُوا} وهم مشركو قريش الذين قالوا: رجع إلى قبلتنا وسيرجع إلى ديننا. {فَلَا تَخْشَوْهُمْ وَاخْشَوْنِي وَلِأُتِمَّ نِعْمَتِي عَلَيْكُمْ وَلَعَلَّكُمْ تَهْتَدُونَ}.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-150', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-150">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-150">كرّر الأمر ثلاث مرات تأكيدًا لأمر القبلة ولحكم مختلفة: الأولى للإيجاب، والثانية للتأكيد، والثالثة لقطع الحجة. وقوله: {لِئَلَّا يَكُونَ لِلنَّاسِ عَلَيْكُمْ حُجَّةٌ} أي لئلا يحتجوا عليكم بأنكم تاركون ما في كتبهم من التوجه إلى الكعبة. {إِلَّا الَّذِينَ ظَلَمُوا} استثناء للمعاندين. {فَلَا تَخْشَوْهُمْ} أي لا تخافوا من قولهم وأذاهم. {وَلِأُتِمَّ نِعْمَتِي عَلَيْكُمْ} بالقبلة التي هي قبلة إبراهيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-150', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-150">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-150">يقول تعالى: ومن أي مكان خرجت فصلِّ تلقاء الكعبة، وحيثما كنتم فولوا وجوهكم شطره. وذلك لئلا يكون لأهل الكتاب عليكم حجة في ترك استقبال الكعبة التي في كتبهم أنها قبلتكم. {إِلَّا الَّذِينَ ظَلَمُوا مِنْهُمْ} وهم الذين يحتجون بالباطل بعد وضوح الحق. فلا تخشوا أيها المؤمنون أحدًا واخشوا ربكم، ولأتم نعمتي عليكم بهدايتكم لقبلة إبراهيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-150', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 151 -->
+            <div class="ayah" id="ayah-151">
+                <div class="ayah-text">كَمَ<span class="tj-mdd">اۤ</span> أَرۡسَلۡنَا فِ<span class="tj-mdd">ی</span>كُمۡ رَسُو<span class="tj-dgm">لࣰا</span> <span class="tj-ghn">مِّ</span><span class="tj-khf">نك</span>ُمۡ یَتۡلُو<span class="tj-slt">ا۟</span> عَلَیۡكُمۡ ءَا<span class="tj-mdd">یَـٰ</span>تِنَا وَیُزَكِّ<span class="tj-mdd">ی</span>كُمۡ وَیُعَلِّمُكُمُ <span class="tj-slt">ٱ</span>لۡكِ<span class="tj-mdd">تَـٰ</span>بَ وَ<span class="tj-slt">ٱ</span>لۡحِكۡمَةَ وَیُعَلِّمُكُم <span class="tj-ghn">مَّ</span>ا لَمۡ تَكُونُو<span class="tj-slt">ا۟</span> تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">من نعم الله العظيمة إرسال رسول من أنفسهم يتلو عليهم آيات الله ويزكيهم ويعلمهم الكتاب والحكمة ويعلمهم ما لم يكونوا يعلمون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-151">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-151">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-151">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-151">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-151">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-151">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-151">يمتنّ الله تعالى على المؤمنين بإرسال هذا الرسول الكريم ﷺ الذي يتلو عليهم آيات الله ليتدبروها، ويزكيهم أي يطهر أخلاقهم ونفوسهم، ويعلمهم الكتاب والحكمة وهي السنة، ويعلمهم ما لم يكونوا يعلمون، فنقلهم من الجهالة إلى العلم ومن الضلالة إلى الهدى.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-151', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-151">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-151">يمتنّ تعالى على المؤمنين بما بعث فيهم رسولًا منهم يعرفون نسبه ومنشأه، يتلو عليهم آيات الله المنزّلة عليه، ويزكيهم أي يطهرهم من الرذائل والأخلاق الدنيئة، ويعلمهم الكتاب وهو القرآن والحكمة وهي السنة، ويعلمهم ما لم يكونوا يعلمون، فكانوا في الجاهلية الجهلاء يُعدّون من أمم الأرض أقلها علمًا، فمنّ الله عليهم بأفضل رسله وأشرف كتبه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-151', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-151">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-151">قوله: {كَمَا أَرْسَلْنَا فِيكُمْ رَسُولًا مِنْكُمْ} أي كما أنعمت عليكم بالهداية للقبلة كذلك أنعمت عليكم بإرسال الرسول. {يَتْلُو عَلَيْكُمْ آيَاتِنَا} يقرأ عليكم القرآن. {وَيُزَكِّيكُمْ} يطهركم من الشرك والذنوب. {وَيُعَلِّمُكُمُ الْكِتَابَ} القرآن {وَالْحِكْمَةَ} السنة. {وَيُعَلِّمُكُمْ مَا لَمْ تَكُونُوا تَعْلَمُونَ} من أحكام الدين وأخبار الأمم الماضية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-151', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-151">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-151">الكاف في {كَمَا} للتشبيه، أي كما أنعمت عليكم بالقبلة أنعمت عليكم بالرسول. وقوله {مِنْكُمْ} أي من جنسكم عربيًا قرشيًا تعرفون نسبه. {يَتْلُو عَلَيْكُمْ آيَاتِنَا} أي يقرأ عليكم القرآن. {وَيُزَكِّيكُمْ} أي يطهركم من أوساخ الجاهلية. {وَيُعَلِّمُكُمُ الْكِتَابَ وَالْحِكْمَةَ} الكتاب القرآن والحكمة السنة. {وَيُعَلِّمُكُمْ مَا لَمْ تَكُونُوا تَعْلَمُونَ} من العلوم والأحكام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-151', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-151">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-151">يقول تعالى: كما أتممت نعمتي عليكم بتوجيهكم إلى قبلة إبراهيم، كذلك أرسلنا فيكم رسولًا منكم تعرفون حسبه ونسبه، يتلو عليكم آياتنا المنزّلة، ويطهركم من دنس الشرك والجاهلية، ويعلمكم القرآن وأحكام الدين والسنة، ويعلمكم ما لم تكونوا تعلمونه من أمر دينكم ودنياكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-151', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ayah 152 -->
+            <div class="ayah" id="ayah-152">
+                <div class="ayah-text">فَ<span class="tj-slt">ٱ</span>ذۡكُرُونِ<span class="tj-mdd">یۤ</span> أَذۡكُرۡكُمۡ وَ<span class="tj-slt">ٱ</span>شۡكُرُو<span class="tj-slt">ا۟</span> لِ<span class="tj-mdd">ی</span> وَلَا تَكۡفُرُونِ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله عباده بذكره ليذكرهم بالثواب والرحمة، وأمرهم بالشكر ونهاهم عن الكفران، فالذكر والشكر أعظم أسباب دوام النعم وزيادتها.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-152">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-152">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-152">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-152">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-152">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-152">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-152">أمر الله تعالى بذكره ووعد عليه أفضل جزاء وهو أن يذكر من ذكره، وذكر الله تعالى يكون بالتسبيح والتحميد والتهليل والتكبير وبكل قول وعمل يقرّب إلى الله. وقوله: {وَاشْكُرُوا لِي} أي اشكروني بقلوبكم وألسنتكم وجوارحكم على نعمي الكثيرة. {وَلَا تَكْفُرُونِ} أي لا تجحدوا نعمي فتكفروها ولا تستعملوها في معصيتي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-152', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-152">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-152">يقول تعالى: اذكروني بالتوحيد والطاعة أذكركم بالثواب والمغفرة. وقال سعيد بن جبير: اذكروني بطاعتي أذكركم بمغفرتي. وقوله: {وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ} أمر الله تعالى بشكره ووعد على ذلك بالمزيد، والشكر يكون بالقلب واللسان والجوارح. ونهى عن الكفران وهو جحود النعم وعدم الاعتراف بها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-152', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-152">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-152">قوله تعالى: {فَاذْكُرُونِي أَذْكُرْكُمْ} قال سعيد بن جبير: اذكروني بالطاعة أذكركم بالمغفرة. وقيل: اذكروني بالدعاء أذكركم بالإجابة. {وَاشْكُرُوا لِي} على نعمي التي أنعمتها عليكم وأعظمها نعمة الإسلام والهداية. {وَلَا تَكْفُرُونِ} أي لا تجحدوا نعمتي ولا تكفروا بي، والشكر قيد النعم الموجودة وصيد النعم المفقودة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-152', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-152">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-152">قوله تعالى: {فَاذْكُرُونِي أَذْكُرْكُمْ} الذكر يكون باللسان وبالقلب وبالجوارح: فذكر اللسان التسبيح والتحميد، وذكر القلب التفكر في الأدلة والأحكام، وذكر الجوارح يكون بالطاعة. وقوله: {أَذْكُرْكُمْ} أي أذكركم بالثواب والرحمة. {وَاشْكُرُوا لِي} أي على ما أنعمت عليكم من الهداية والرسول والكتاب. {وَلَا تَكْفُرُونِ} أي لا تجحدوا نعمي ولا تكفروها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-152', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-152">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-152">يقول تعالى ذكره: فاذكروني أيها المؤمنون بالطاعة والعبادة أذكركم بالثواب والمغفرة والرحمة. واشكروا لي على ما أنعمت به عليكم من الهداية للإسلام وإرسال الرسول وتعليم الكتاب والحكمة. ولا تكفروني أي لا تجحدوا نعمتي عليكم ولا تستعملوها في معاصيّ، فإن شكر النعم يوجب دوامها وزيادتها، وكفرها يوجب زوالها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-152', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-09.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">إبراهيم وإسماعيل وبناء الكعبة</span>
+            </a>
+            <a href="section-11.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">الصبر والابتلاء وشعائر الله</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١٠: تحويل القبلة<br>
+        <small>آيات ١٤٢ – ١٥٢ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

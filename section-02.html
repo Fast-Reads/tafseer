@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — صفات الكافرين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ٢ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#e74c3c">
+            <div class="section-num">٢</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">صفات الكافرين</h2>
+                <h3 class="section-title-en">Qualities of the Disbelievers</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٦ – ٧</div>
+        </div>
+
+        <div class="section-desc">
+            <p>وصف الذين كفروا وأن الإنذار لا ينفعهم، وأن الله ختم على قلوبهم وعلى سمعهم وعلى أبصارهم غشاوة</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="6">
+                        <div class="flow-node-num">٦</div>
+                        <div class="flow-node-text">الكفر والإنذار لا ينفعهم</div>
+                        <div class="flow-node-key">سَوَاۤءٌ عَلَیۡهِمۡ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="7">
+                        <div class="flow-node-num">٧</div>
+                        <div class="flow-node-text">الختم على القلوب والسمع والأبصار</div>
+                        <div class="flow-node-key">خَتَمَ ٱللَّهُ عَلَىٰ قُلُوبِهِمۡ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ayah-list">
+            <!-- Ayah 6 -->
+            <div class="ayah" id="ayah-6">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِ<span class="tj-mdd">ی</span>نَ كَفَرُو<span class="tj-slt">ا۟</span> سَوَ<span class="tj-mdd">اۤ</span>ءٌ عَلَیۡهِمۡ ءَأَ<span class="tj-khf">نذَ</span>رۡتَهُمۡ أَمۡ لَمۡ تُ<span class="tj-khf">نذِ</span>رۡهُمۡ لَا یُؤۡمِنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أخبر الله أن الذين كفروا واتصفوا بالكفر سواء عليهم الإنذار وعدمه، فهم مستمرون على كفرهم ولا يؤمنون لسبق الشقاوة عليهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-6">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-6">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-6">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-6">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-6">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-6">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-6">فلهذا لما ذكر صفات المؤمنين حقا, ذكر صفات الكفار المظهرين لكفرهم، المعاندين للرسول يخبر تعالى أن الذين كفروا, أي: اتصفوا بالكفر, وانصبغوا به, وصار وصفا لهم لازما, لا يردعهم عنه رادع, ولا ينجع فيهم وعظ، إنهم مستمرون على كفرهم, فسواء عليهم أأنذرتهم, أم لم تنذرهم لا يؤمنون، وحقيقة الكفر: هو الجحود لما جاء به الرسول, أو جحد بعضه، فهؤلاء الكفار لا تفيدهم الدعوة إلا إقامة الحجة, وكأن في هذا قطعا لطمع الرسول صلى الله عليه وسلم في إيمانهم, وأنك لا تأس عليهم, ولا تذهب نفسك عليهم حسرات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-6', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-6">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-6">يشرح ابن كثير أن الآية تتناول حالة الكافرين الذين غطوا الحق وستروه. الله تعالى أخبر النبي أن إنذاره وعدمه سواء عليهم، فإنهم لا يؤمنون بما جاءهم به. ومن كتب الله عليه الشقاوة فلا مُسعِد له، وهذا يعني أن الإيمان مرتبط بسبق القضاء والقدر من الله. وواجب الرسول البلاغ فقط، فلا ينبغي للنبي أن يحزن على من تولى، فالمسؤولية على الله تعالى وليس على الرسول. وقال ابن عباس: إن الله أخبر الرسول أنه لا يؤمن إلا من سبق له من الله السعادة في الذكر الأول.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-6', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-6">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-6">قوله {إن الذين كفروا} يعني مشركي العرب. قال الكلبي: يعني اليهود. والكفر هو الجحود وأصله من الكفر وهو الستر، ومنه سمي الليل كافرا لأنه يستر الأشياء بظلمته، وسمي الزراع كافرا لأنه يستر الحب بالتراب، والكافر يستر الحق بجحوده. والكفر على أربعة أنحاء: كفر إنكار وكفر جحود وكفر عناد وكفر نفاق. فكفر الإنكار أن لا يعرف الله أصلا ولا يعترف به، وكفر الجحود هو أن يعرف الله بقلبه ولا يقر بلسانه ككفر إبليس وكفر اليهود، وكفر العناد هو أن يعرف الله بقلبه ويعترف بلسانه ولا يدين به ككفر أبي طالب، وأما كفر النفاق فهو أن يقر باللسان ولا يعتقد بالقلب. وجميع هذه الأنواع سواء في أن من لقي الله بواحد منها لا يُغفر له. قوله {سواء عليهم} أي متساوٍ لديهم {أأنذرتهم} خوفتهم وحذرتهم، والإنذار إعلام مع تخويف وتحذير.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-6', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-6">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-6">قوله تعالى: {إن الذين كفروا سواء عليهم أأنذرتهم أم لم تنذرهم لا يؤمنون} لما ذكر المؤمنين وأحوالهم ذكر الكافرين ومآلهم. والكفر ضد الإيمان وهو المراد في الآية. وقد يكون بمعنى جحود النعمة والإحسان، ومنه قوله عليه السلام في النساء في حديث الكسوف: «ورأيت النار فلم أر منظرا كاليوم قط أفظع ورأيت أكثر أهلها النساء» قيل: بم يا رسول الله؟ قال: بكفرهن، قيل أيكفرن بالله؟ قال: يكفرن العشير ويكفرن الإحسان، لو أحسنت إلى إحداهن الدهر كله ثم رأت منك شيئا قالت ما رأيت منك خيرا قط. أخرجه البخاري وغيره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-6', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-6">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-6">نقل الطبري عن ابن عباس أن الآية نزلت في أحبار اليهود بالمدينة، الذين كانوا يعلمون نبوة محمد صلى الله عليه وسلم لكنهم كتموها وجحدوها. والكفر بمعنى الجحود والستر، فأولئك الأحبار غطوا أمر النبي وكتموه عن الناس رغم معرفتهم به. ومعنى {سواء عليهم} الاعتدال والتساوي، أي أن الإنذار وعدمه متساو عندهم فهم لن يؤمنوا على أي حال. وشرح الطبري أن الله ختم على قلوبهم وسمعهم، فحتى لو أنذرهم النبي فإنهم بسبب جحودهم السابق لن يستجيبوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-6', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayah 7 -->
+            <div class="ayah" id="ayah-7">
+                <div class="ayah-text">خَتَمَ <span class="tj-slt">ٱ</span>للَّهُ عَلَ<span class="tj-mdd">ىٰ</span> قُلُ<span class="tj-mdd">و</span>بِهِمۡ وَعَلَ<span class="tj-mdd">ىٰ</span> سَمۡعِهِمۡۖ وَعَلَ<span class="tj-mdd">ىٰۤ</span> أَ<span class="tj-qlq">بۡ</span>صَ<span class="tj-mdd">ـٰ</span>رِهِمۡ غِشَ<span class="tj-mdd">ـٰ</span>وَةࣱۖ وَلَهُمۡ عَذَابٌ عَظِ<span class="tj-mdd">ی</span>مࣱ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">بيّن الله المانع لهؤلاء من الإيمان: أنه ختم على قلوبهم فلا تعي الخير، وعلى سمعهم فلا يسمعون الحق، وعلى أبصارهم غشاوة فلا يبصرون الهدى، ولهم عذاب عظيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-7">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-7">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-7">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-7">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-7">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-7">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-7">ثم ذكر الموانع المانعة لهم من الإيمان فقال: { خَتَمَ اللَّهُ عَلَى قُلُوبِهِمْ وَعَلَى سَمْعِهِمْ } أي: طبع عليها بطابع لا يدخلها الإيمان, ولا ينفذ فيها، فلا يعون ما ينفعهم, ولا يسمعون ما يفيدهم. { وَعَلَى أَبْصَارِهِمْ غِشَاوَةٌ } أي: غشاء وغطاء وأكنة تمنعها عن النظر الذي ينفعهم, وهذه طرق العلم والخير, قد سدت عليهم, فلا مطمع فيهم, ولا خير يرجى عندهم، وإنما منعوا ذلك, وسدت عنهم أبواب الإيمان بسبب كفرهم وجحودهم ومعاندتهم بعد ما تبين لهم الحق, كما قال تعالى: { وَنُقَلِّبُ أَفْئِدَتَهُمْ وَأَبْصَارَهُمْ كَمَا لَمْ يُؤْمِنُوا بِهِ أَوَّلَ مَرَّةٍ } وهذا عقاب عاجل. ثم ذكر العقاب الآجل، فقال: { وَلَهُمْ عَذَابٌ عَظِيمٌ } وهو عذاب النار, وسخط الجبار المستمر الدائم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-7', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-7">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-7">قال السدي: {ختم الله} أي طبع الله. وقال قتادة في هذه الآية: استحوذ عليهم الشيطان إذ أطاعوه فختم الله على قلوبهم وعلى سمعهم وعلى أبصارهم غشاوة، فهم لا يبصرون هدى ولا يسمعون ولا يفقهون ولا يعقلون. وقال ابن جريج عن مجاهد: {ختم الله على قلوبهم} قال: نُبِّئت أن الذنوب على القلب تحف به من كل نواحيه حتى تلتقي عليه، فالتقاؤها عليه الطبع، والطبع: الختم. أي أن الختم على القلوب ووضع الغشاوة على الأبصار يأتي نتيجة الكفر ورفض الحق، كما أكدته تفسيرات العلماء المختلفة والأحاديث النبوية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-7', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-7">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-7">{ختم الله}: طبع الله. {على قلوبهم} فلا تعي خيرا ولا تفهمه. وحقيقة الختم الاستيثاق من الشيء كيلا يدخله ما خرج منه ولا يخرج عنه ما فيه، ومنه الختم على الباب. قال أهل السنة: أي حَكَمَ على قلوبهم بالكفر لِمَا سبق من علمه الأزلي فيهم. وقال المعتزلة: جعل على قلوبهم علامة تعرفهم الملائكة بها. {وعلى سمعهم}: أي على موضع سمعهم فلا يسمعون الحق ولا ينتفعون به. وأراد {على أسماعهم} كما قال {على قلوبهم} وإنما وحّده لأنه مصدر، والمصدر لا يثنى ولا يجمع. {وعلى أبصارهم غشاوة}: هذا ابتداء كلام. غشاوة أي غطاء، فلا يرون الحق. {ولهم عذاب عظيم}: أي في الآخرة، وقيل: القتل والأسر في الدنيا والعذاب الدائم في العقبى. والعذاب كل ما يعيي الإنسان ويشق عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-7', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-7">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-7">قوله تعالى: {ختم الله على قلوبهم وعلى سمعهم وعلى أبصارهم غشاوة ولهم عذاب عظيم} فيها عشر مسائل: الأولى: قوله تعالى {ختم الله} بيّن سبحانه في هذه الآية المانع لهم من الإيمان بقوله: ختم الله. والختم مصدر ختمت الشيء ختما فهو مختوم ومختّم، شُدِّد للمبالغة، ومعناه التغطية على الشيء والاستيثاق منه حتى لا يدخله شيء، ومنه ختم الكتاب والباب وما يشبه ذلك، حتى لا يوصل إلى ما فيه ولا يوضع فيه غير ما فيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-7', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-7">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-7">يشرح الطبري أن الختم في اللغة يعني الطبع، والقلوب هي أوعية للعلوم والمعارف، فالختم على القلوب والسمع مشابه لختم الأوعية الأخرى. وذكر آراء متعددة: مجاهد يشبّه القلب بالكف تنضم أصابعه مع كل ذنب حتى يُختم عليه. واستدل بحديث عن أبي هريرة يصور الذنوب كنكتة سوداء تتراكم على القلب حتى تغلقه وتُختم عليه فيفقد استجابته للإيمان. ووضّح أن الغشاوة (الغطاء) تختلف عن الختم وتُطبق على الأعين دون القلب والسمع. وأن العذاب العظيم جزاء على تكذيبهم للحق مع معرفتهم به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-7', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-01.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">مقدمة السورة وصفات المتقين</span>
+            </a>
+            <a href="section-03.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">صفات المنافقين</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ٢: صفات الكافرين<br>
+        <small>آيات ٦ – ٧ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

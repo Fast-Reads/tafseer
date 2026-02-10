@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — تحريم الربا</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١٩ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#ff5722">
+            <div class="section-num">١٩</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">تحريم الربا</h2>
+                <h3 class="section-title-en">Prohibition of Usury (Riba)</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٢٧٥ – ٢٨١</div>
+        </div>
+
+        <div class="section-desc">
+            <p>تحريم الربا والتحذير الشديد منه، وإعلان الحرب من الله ورسوله على المرابين، والأمر بالتوبة وترك ما بقي من الربا</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="275">
+                        <div class="flow-node-num">٢٧٥</div>
+                        <div class="flow-node-text">حال آكلي الربا يوم القيامة والفرق بين البيع والربا</div>
+                        <div class="flow-node-key">لَا یَقُومُونَ إِلَّا كَمَا یَقُومُ ٱلَّذِی یَتَخَبَّطُهُ ٱلشَّیۡطَـٰنُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="276-277">
+                        <div class="flow-node-num">٢٧٦–٢٧٧</div>
+                        <div class="flow-node-text">يمحق الله الربا ويربي الصدقات</div>
+                        <div class="flow-node-key">یَمۡحَقُ ٱللَّهُ ٱلرِّبَوٰ<span class="tj-slt">ا۟</span> وَیُرۡبِی ٱلصَّدَقَـٰتِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="278-279">
+                        <div class="flow-node-num">٢٧٨–٢٧٩</div>
+                        <div class="flow-node-text">الأمر بترك الربا وإعلان الحرب على المرابين</div>
+                        <div class="flow-node-key">ذَرُو<span class="tj-slt">ا۟</span> مَا بَقِیَ مِنَ ٱلرِّبَوٰ<span class="tj-slt">ا۟</span></div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="280">
+                        <div class="flow-node-num">٢٨٠</div>
+                        <div class="flow-node-text">إنظار المعسر والتصدق عليه</div>
+                        <div class="flow-node-key">فَنَظِرَةٌ إِلَىٰ مَیۡسَرَةࣲ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="281">
+                        <div class="flow-node-num">٢٨١</div>
+                        <div class="flow-node-text">التذكير بيوم الرجوع إلى الله</div>
+                        <div class="flow-node-key">وَٱتَّقُو<span class="tj-slt">ا۟</span> یَوۡمࣰا تُرۡجَعُونَ فِیهِ إِلَى ٱللَّهِ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-275">
+                <div class="ayah-text"><span class="tj-slt">ٱلَّ</span>ذِینَ یَأۡكُلُونَ <span class="tj-slt">ٱل</span>رِّبَوٰ<span class="tj-slt">ا۟</span> لَا یَقُومُونَ إِلَّا كَمَا یَقُومُ <span class="tj-slt">ٱلَّ</span>ذِی یَتَخَبَّطُهُ <span class="tj-slt">ٱل</span>شَّیۡطَـٰنُ مِنَ <span class="tj-slt">ٱ</span>لۡمَسِّۚ ذَ ٰ⁠لِكَ بِأَ<span class="tj-ghn">نَّ</span>هُمۡ قَالُوۤ<span class="tj-slt">ا۟</span> إِ<span class="tj-ghn">نَّ</span>مَا <span class="tj-slt">ٱ</span>لۡبَیۡعُ مِثۡلُ <span class="tj-slt">ٱل</span>رِّبَوٰ<span class="tj-slt">ا۟</span>ۗ وَأَحَلَّ <span class="tj-slt">ٱ</span>للَّهُ <span class="tj-slt">ٱ</span>لۡبَیۡعَ وَحَرَّمَ <span class="tj-slt">ٱل</span>رِّبَوٰ<span class="tj-slt">ا۟</span>ۚ فَمَ<span class="tj-khf">ن</span> جَ<span class="tj-mdd">اۤ</span>ءَهُۥ مَوۡعِظَ<span class="tj-dgm">ةࣱ</span> <span class="tj-ghn">مِّ</span>ن رَّبِّهِۦ فَ<span class="tj-slt">ٱ</span><span class="tj-khf">نت</span>َهَ<span class="tj-mdd">ىٰ</span> فَلَهُۥ مَا سَلَفَ وَأَمۡرُهُۥۤ إِلَ<span class="tj-mdd">ىٰ</span> <span class="tj-slt">ٱ</span>للَّهِۖ وَمَنۡ عَادَ فَأُ<span class="tj-slt">و۟</span>لَـٰۤىِٕكَ أَصۡحَ<span class="tj-mdd">ـٰ</span>بُ <span class="tj-slt">ٱل</span>نَّارِۖ هُمۡ فِیهَا خَ<span class="tj-mdd">ـٰ</span>لِدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">آكلو الربا يقومون يوم القيامة كالمصروع الذي يتخبطه الشيطان، لأنهم زعموا أن البيع مثل الربا. والله أحل البيع وحرم الربا، فمن انتهى فله ما سلف ومن عاد فهو من أهل النار.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-275">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-275">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-275">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-275">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-275">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-275">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-275">يخبر تعالى عن عقوبة آكلي الربا أنهم يقومون من قبورهم يوم القيامة كقيام المصروع الذي يتخبطه الشيطان من المس فلا يستطيع القيام والمشي السوي. وسبب ذلك أنهم سوّوا بين البيع والربا فقالوا إنما البيع مثل الربا كلاهما زيادة. فردّ الله عليهم بأنه أحل البيع لما فيه من المنفعة المتبادلة وحرّم الربا لما فيه من الظلم والاستغلال. فمن جاءه التحريم فانتهى وتاب فله ما سبق أن أخذه ولا يُطالب برده. ومن عاد للربا بعد العلم بتحريمه فهو من أصحاب النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-275', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-275">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-275">يخبر الله عن حال آكل الربا يوم القيامة أنه يبعث كالمجنون الذي يتخبطه الشيطان فلا يستطيع القيام إلا كقيام المصروع عقوبة له وعلامة يُعرف بها يوم الحشر. وقد ادّعى المرابون أن البيع كالربا كلاهما ربح وزيادة فردّ الله عليهم بأن البيع مشروع نافع والربا ظلم محرم. ثم فتح باب التوبة فمن انتهى فله ما سلف أي ما أخذه قبل التحريم معفو عنه. ومن عاد بعد العلم فأصحاب النار هم فيها خالدون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-275', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-275">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-275">آكلو الربا يقومون من قبورهم يوم القيامة كقيام المجنون الذي يصرعه الشيطان فيتخبط ولا يستوي في قيامه. وذلك عقوبة لهم بسبب قولهم إنما البيع مثل الربا أي هما سواء. فأبطل الله حجتهم وبيّن أنه أحل البيع لما فيه من تبادل المنافع وحرّم الربا لما فيه من أكل أموال الناس بالباطل. فمن بلغه النهي فانتهى فله ما مضى. ومن رجع إلى الربا بعد ذلك فجزاؤه النار خالداً فيها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-275', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-275">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-275">هذه الآية من أشد الآيات تغليظاً في تحريم الربا. والقيام كقيام المصروع يكون يوم القيامة عند البعث من القبور فيُعرف المرابي بسوء قيامه. وقياسهم البيع بالربا قياس فاسد لأن البيع مبادلة عوض بعوض فيه منفعة للطرفين والربا زيادة بلا مقابل. وفي قوله فله ما سلف عفو عما أُخذ قبل التحريم. والعود إلى الربا بعد العلم كبيرة يستوجب بها صاحبها النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-275', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-275">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-275">يقول تعالى: الذين يأكلون الربا ويتعاملون به لا يقومون من قبورهم يوم البعث إلا كما يقوم الذي يصرعه الشيطان فيتخبط ويضطرب. وسبب ذلك أنهم زعموا أن البيع مثل الربا لا فرق بينهما. فأخبر الله أنه أحل البيع وحرّم الربا. فمن بلغه هذا التحريم فانتهى فله ما سبق أن أخذه من الربا ولا يؤاخذ به. وأمره إلى الله فيما بقي. ومن عاد إلى التعامل بالربا فهو من أهل النار المخلدين فيها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-275', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-276">
+                <div class="ayah-text">یَمۡحَقُ <span class="tj-slt">ٱ</span>للَّهُ <span class="tj-slt">ٱل</span>رِّبَوٰ<span class="tj-slt">ا۟</span> وَیُرۡبِی <span class="tj-slt">ٱل</span>صَّدَقَ<span class="tj-mdd">ـٰ</span>تِۗ وَ<span class="tj-slt">ٱ</span>للَّهُ لَا یُحِبُّ كُلَّ كَفَّارٍ أَثِیمٍ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الله يمحق الربا ويذهب بركته ويُربي الصدقات ويبارك فيها ويضاعفها، والله لا يحب كل كفّار بنعمه أثيم كثير الذنوب.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-276">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-276">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-276">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-276">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-276">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-276">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-276">يمحق الله الربا أي يذهب بركته ويُزيل نفعه وإن كثر ظاهراً فهو ممحوق حقيقة. ويربي الصدقات أي ينمّيها ويبارك فيها ويضاعف أجرها وإن قلّت فإنها مباركة نامية. والله لا يحب كل كفار بنعم الله أثيم كثير الإثم، والمرابي جمع بين كفران النعمة والإثم لأنه استعمل مال الله في معصيته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-276', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-276">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-276">يخبر تعالى أنه يمحق الربا أي يُذهبه إما بأن يسلبه من صاحبه أو يحرمه بركة ماله فلا ينتفع به. ويربي الصدقات أي يثمّرها ويبارك فيها في الدنيا ويضاعف ثوابها في الآخرة حتى تصير التمرة الواحدة كجبل أحد. ثم أخبر أنه لا يحب كل كفار بنعم الله أثيم في أفعاله وهو المرابي الذي يكفر النعمة باستعمالها في الحرام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-276', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-276">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-276">يمحق الله الربا أي ينقصه ويُزيل بركته ويُهلك المال الذي يدخل فيه الربا. ويربي الصدقات أي يزيدها وينمّيها ويبارك فيها حتى يصير القليل كثيراً. كما في الحديث أن الله يتقبل الصدقة ويربيها كما يربي أحدكم فلوّه حتى تكون مثل الجبل. والله لا يحب كل كفّار بنعمته أثيم في معاملاته بالربا والحرام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-276', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-276">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-276">المحق: الإذهاب والإنقاص. والربا وإن كثر ظاهراً فهو ممحوق البركة حقيقة. والصدقة وإن نقصت المال ظاهراً فهي مباركة ينمّيها الله ويزيدها. وهذه سنة إلهية في المال: الربا يمحقه والصدقة تنمّيه. والكفّار كثير الجحود لنعم الله والأثيم كثير الآثام. ووصف المرابي بهاتين الصفتين لأنه جحد نعمة الله بالتعامل الحرام وارتكب إثماً عظيماً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-276', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-276">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-276">يقول تعالى: يُنقص الله الربا ويُذهب بركته فلا يبارك لصاحبه فيه. وينمّي الصدقات ويزيدها ويبارك فيها فيعود نفعها على صاحبها أضعافاً مضاعفة. والله لا يحب كل جاحد بنعمه عليه كثير الإثم والمعصية بالتعامل بالربا وأكل الحرام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-276', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-277">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> وَعَمِلُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>صَّـٰلِحَ<span class="tj-mdd">ـٰ</span>تِ وَأَقَامُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>صَّلَوٰةَ وَءَاتَوُ<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱل</span>زَّكَوٰةَ لَهُمۡ أَجۡرُهُمۡ عِ<span class="tj-khf">ند</span>َ رَبِّهِمۡ وَلَا خَوۡفٌ عَلَیۡهِمۡ وَلَا هُمۡ یَحۡزَنُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">المؤمنون الذين يعملون الصالحات ويقيمون الصلاة ويؤتون الزكاة لهم أجرهم الكامل عند ربهم ولا خوف عليهم ولا هم يحزنون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-277">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-277">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-277">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-277">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-277">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-277">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-277">لما ذكر حال المرابين ذكر في المقابل حال المؤمنين المصلحين: الذين آمنوا بقلوبهم وعملوا الصالحات بجوارحهم وأقاموا الصلاة بأركانها وواجباتها وشروطها وآتوا الزكاة المفروضة. هؤلاء لهم أجرهم العظيم عند ربهم لا ينقصهم منه شيئاً. ولا خوف عليهم في المستقبل من أهوال القيامة ولا هم يحزنون على ما فاتهم من الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-277', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-277">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-277">مدح الله المؤمنين الذين يعملون الصالحات ويقيمون الصلاة ويؤتون الزكاة في مقابل ذمّ المرابين. فهؤلاء جمعوا بين الإيمان والعمل الصالح وأداء حق الله في الصلاة وحق العباد في الزكاة. فجزاؤهم الأجر الكامل عند الله والأمان من الخوف والحزن يوم القيامة. وهذا في مقابل حال المرابي الذي يقوم كالمصروع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-277', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-277">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-277">إن الذين صدقوا الله ورسوله وعملوا الأعمال الصالحة وحافظوا على الصلاة وأدوا زكاة أموالهم لهم ثوابهم الكامل عند ربهم يوم القيامة. ولا يخافون مما أمامهم من أهوال ولا يحزنون على ما تركوا خلفهم. وذكر الصلاة والزكاة خصوصاً بعد العموم لعظم شأنهما.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-277', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-277">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-277">ذكر الله جزاء المؤمنين في مقابل وعيد المرابين. والإيمان والعمل الصالح هما الأساس ثم خص الصلاة والزكاة بالذكر لعظم شأنهما. والصلاة حق الله والزكاة حق العباد فمن أداهما مع الإيمان والعمل الصالح نال الأجر الكامل والأمان يوم القيامة. وهذا ترغيب في البديل الحلال عن الربا وهو الصدقة والزكاة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-277', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-277">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-277">يقول تعالى: إن الذين صدقوا بالله وبرسوله وعملوا ما أمرهم الله به وأقاموا الصلاة المفروضة على وجهها وأدوا زكاة أموالهم فلهم ثوابهم الذي وعدهم الله عند ربهم محفوظاً. ولا خوف عليهم فيما يستقبلون من أمور الآخرة ولا هم يحزنون على ما خلفوا من الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-277', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-278">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ وَذَرُو<span class="tj-slt">ا۟</span> مَا بَقِیَ مِنَ <span class="tj-slt">ٱل</span>رِّبَوٰۤ<span class="tj-slt">ا۟</span> إِن كُ<span class="tj-khf">نت</span>ُم <span class="tj-ghn">مُّ</span>ؤۡمِنِینَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">نداء المؤمنين بتقوى الله وترك ما بقي من الربا المستحق لهم عند الناس إن كانوا مؤمنين حقاً، فالإيمان يقتضي ترك الحرام.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-278">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-278">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-278">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-278">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-278">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-278">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-278">نادى الله المؤمنين بوصف الإيمان ليحثهم على الامتثال: اتقوا الله بفعل أوامره وترك نواهيه، واتركوا ما بقي لكم من الربا عند الناس ولا تطالبوهم به. وعلّق ذلك بالإيمان: إن كنتم مؤمنين حقاً فاتركوا الربا، فإن الإيمان الصادق يقتضي ترك ما حرم الله وإن كان في النفس شيء من الرغبة فيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-278', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-278">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-278">أمر الله المؤمنين بتقواه وترك ما بقي لهم من أرباح الربا عند الناس. نزلت في ثقيف أو في العباس بن عبد المطلب وعثمان بن عفان حين كان لهم رباً على الناس. فأمرهم الله بترك ما لم يقبضوه من الربا والاكتفاء برؤوس أموالهم. وقوله إن كنتم مؤمنين شرط يقتضي أن ترك الربا من لوازم الإيمان الصادق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-278', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-278">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-278">يا أيها المؤمنون خافوا الله واتركوا ما بقي لكم من الزيادة على رؤوس أموالكم من الربا. نزلت في بني عمرو بن عوف من ثقيف كان لهم ربا على بني المغيرة. فأمرهم الله بترك ما لم يُقبض من الربا. وإن كنتم مؤمنين حقاً فامتثلوا أمر الله واتركوا الربا، فالإيمان يوجب الطاعة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-278', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-278">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-278">هذا أمر جازم بترك الربا بعد بيان تحريمه وعقوبة آكله. وقوله ذروا ما بقي من الربا أي اتركوا ما لم تقبضوه من الزيادة الربوية واقتصروا على رؤوس أموالكم. وتعليقه بالإيمان يدل على أن التعامل بالربا ينافي كمال الإيمان بل هو من أعظم الذنوب. وفي الآية تغليظ شديد في تحريم الربا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-278', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-278">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-278">يقول تعالى: يا أيها الذين صدقوا الله ورسوله خافوا الله فاعملوا بطاعته واجتنبوا معصيته واتركوا ما بقي لكم عند الناس من فضل الربا على رؤوس أموالكم إن كنتم مصدقين بالله وبما جاء من عنده من تحريم الربا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-278', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-279">
+                <div class="ayah-text">فَإِ<span class="tj-dgm">ن</span> لَّمۡ تَفۡعَلُو<span class="tj-slt">ا۟</span> فَأۡذَنُو<span class="tj-slt">ا۟</span> بِحَرۡ<span class="tj-dgm">بࣲ</span> <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>للَّهِ وَرَسُولِهِۦۖ وَإِ<span class="tj-khf">ن</span> تُ<span class="tj-qlq">بۡ</span>تُمۡ فَلَكُمۡ رُءُوسُ أَمۡوَ ٰ⁠لِكُمۡ لَا تَظۡلِمُونَ وَلَا تُظۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٧٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن لم تتركوا الربا فاعلموا بحرب من الله ورسوله، وإن تبتم فلكم رؤوس أموالكم فقط لا تظلمون غيركم بأخذ الزيادة ولا تُظلمون بنقص رأس مالكم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-279">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-279">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-279">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-279">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-279">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-279">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-279">هذا أشد وعيد في القرآن: إن لم تنتهوا عن الربا فاعلموا أنكم محاربون لله ورسوله. وكفى بهذا تحذيراً فإن من حاربه الله لا يقوم له شيء. وإن تبتم وتركتم الربا فلكم رؤوس أموالكم التي أقرضتموها أصلاً لا زيادة عليها. لا تظلمون المدين بأخذ زيادة ربوية ولا تُظلمون بنقص رأس مالكم. وهذا هو العدل المطلق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-279', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-279">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-279">هذا تهديد شديد ووعيد أكيد لمن استمر في التعامل بالربا بعد الإنذار بأنه محارب لله ورسوله. ولم يرد في ذنب من الذنوب مثل هذا الوعيد. وإن تاب فله رأس ماله لا يُنقص منه شيء ولا يأخذ زيادة ربوية. لا تظلمون بأخذ أكثر من رأس المال ولا تُظلمون بأخذ أقل منه. وهذا من كمال عدل الشريعة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-279', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-279">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-279">فإن لم تفعلوا ما أُمرتم به من ترك الربا فاعلموا أنكم قد آذنتم الله ورسوله بالحرب أي استعدوا لحرب من الله ورسوله. وهذا أعظم وعيد جاء في القرآن لذنب من الذنوب. وإن تبتم ورجعتم عن الربا فلكم رؤوس أموالكم لا تظلمون غيركم بأخذ الزيادة ولا يظلمكم أحد بنقصان رأس مالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-279', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-279">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-279">الإيذان بالحرب من الله ورسوله أشد ما جاء في القرآن من الوعيد على معصية. والحرب من الله تعني سخطه وغضبه والعذاب في الدنيا والآخرة، ومن رسوله تعني القتال إن كان في دار الإسلام. وإن تبتم فلكم رؤوس أموالكم عدلاً من الله لا ظلم من أي طرف. وفيه دليل على وجوب رد رأس المال كاملاً للتائب من الربا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-279', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-279">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-279">يقول تعالى: فإن لم تتركوا ما نهيتكم عنه من الربا فكونوا على علم بأنكم قد حاربتم الله ورسوله. وإن رجعتم عن الربا وتبتم منه فلكم أصول أموالكم التي أقرضتموها دون الزيادة الربوية. لا تظلمون المدين بأخذ زيادة على ما أقرضتم ولا يظلمكم بمنع رأس مالكم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-279', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-280">
+                <div class="ayah-text">وَإِ<span class="tj-khf">ن</span> كَانَ ذُو عُسۡرَ<span class="tj-khf">ةࣲ</span> فَنَظِرَةٌ إِلَ<span class="tj-mdd">ىٰ</span> مَیۡسَرَةࣲۚ وَأَ<span class="tj-khf">ن</span> تَصَدَّقُو<span class="tj-slt">ا۟</span> خَیۡ<span class="tj-dgm">رࣱ</span> لَّكُمۡ إِ<span class="tj-khf">ن</span> كُ<span class="tj-khf">نت</span>ُمۡ تَعۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٨٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن كان المدين معسراً لا يستطيع السداد فالواجب إمهاله حتى يتيسر حاله، والتصدق عليه بإسقاط الدين أو بعضه خير وأعظم أجراً.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-280">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-280">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-280">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-280">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-280">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-280">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-280">إن كان المدين معسراً لا يجد ما يسدد به دينه فالواجب إمهاله وإنظاره حتى يتيسر حاله ويقدر على السداد. ثم ندب إلى ما هو أفضل من الإنظار وهو التصدق بإسقاط الدين كله أو بعضه عن المعسر. وذلك خير لكم عند الله وأعظم أجراً إن كنتم تعلمون فضل ذلك وثوابه. وفي هذا رحمة عظيمة بالمدينين المعسرين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-280', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-280">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-280">أمر الله الدائنين بإنظار المعسرين إلى وقت اليسر وعدم مطالبتهم في حال العسر. وهذا واجب لا مستحب. ثم ندب إلى التصدق عليهم بإسقاط الدين عنهم كله أو بعضه وأخبر أن ذلك خير لهم وأعظم أجراً. وقد جاء في الحديث أن من أنظر معسراً أو وضع عنه أظله الله في ظله يوم لا ظل إلا ظله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-280', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-280">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-280">إن كان الذي عليه الدين معسراً لا يجد ما يقضي به فعلى الدائن أن يمهله حتى يجد. والتصدق عليه بإسقاط الدين خير من الإنظار لأنه أنفع للمعسر وأعظم أجراً عند الله للدائن. إن كنتم تعلمون فضل ذلك عند الله فافعلوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-280', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-280">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-280">إنظار المعسر واجب بنص القرآن ولا يجوز مطالبته ولا حبسه ولا التضييق عليه. والتصدق عليه بإسقاط الدين مستحب وهو أفضل من الإنظار. وفي الآية بيان لأخلاق المعاملات المالية في الإسلام: العدل في عدم أخذ الزيادة الربوية، والرحمة في إنظار المعسر، والإحسان في التصدق عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-280', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-280">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-280">يقول تعالى: وإن كان الذي عليه الحق في ضيق وعسر فأمهلوه إلى أن يوسع الله عليه ويقدر على السداد. وأن تتركوا له ما عليه صدقة منكم عليه خير لكم وأفضل عند الله من الإنظار إن كنتم تعلمون قدر ذلك عند الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-280', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-281">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> یَوۡ<span class="tj-khf">مࣰا</span> تُرۡجَعُونَ فِیهِ إِلَ<span class="tj-mdd">ىٰ</span> <span class="tj-slt">ٱ</span>للَّهِۖ ثُ<span class="tj-ghn">مَّ</span> تُوَفَّ<span class="tj-mdd">ىٰ</span> كُلُّ نَفۡ<span class="tj-dgm">سࣲ</span> <span class="tj-ghn">مَّ</span>ا كَسَبَتۡ وَهُمۡ لَا یُظۡلَمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٨١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ختام بالتذكير بيوم الرجوع إلى الله حيث توفّى كل نفس ما كسبت من خير أو شر ولا يُظلم أحد شيئاً. قيل هي آخر آية نزلت من القرآن.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-281">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-281">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-281">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-281">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-281">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-281">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-281">ختم الله آيات الربا بالتذكير بيوم القيامة: اتقوا يوماً ترجعون فيه إلى الله فيجازيكم على أعمالكم. ثم توفّى كل نفس ما كسبت أي تُعطى جزاء عملها كاملاً إن خيراً فخير وإن شراً فشر. وهم لا يُظلمون أي لا يُنقص أحد من ثوابه ولا يُزاد في عقابه. وهذا أبلغ وعظ لترك الربا والعمل الصالح لأن الحساب قادم لا محالة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-281', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-281">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-281">قيل إن هذه آخر آية نزلت من القرآن الكريم. وفيها تذكير بيوم المعاد الذي يرجع فيه الناس إلى ربهم فيحاسبهم على أعمالهم. ثم توفّى كل نفس ما كسبت من خير أو شر بلا نقص ولا زيادة. وهذا تحذير شديد من الربا وتذكير بأن يوم الحساب قريب فليتق العبد ربه وليترك ما حرم الله عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-281', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-281">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-281">قال ابن عباس: هذه آخر آية نزلت على رسول الله صلى الله عليه وسلم. واتقوا يوماً ترجعون فيه إلى الله أي خافوا ذلك اليوم واعملوا له. ثم توفّى كل نفس جزاء ما عملت إن خيراً فخير وإن شراً فشر. ولا يُظلم أحد بنقص ثوابه أو زيادة عقابه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-281', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-281">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-281">قيل إنها آخر ما نزل من القرآن وعاش النبي صلى الله عليه وسلم بعدها تسع ليالٍ. وفيها أبلغ التحذير والتذكير بيوم الحساب. واتقوا يوماً أي احذروا يوم القيامة واستعدوا له بترك الربا والعمل الصالح. ثم توفّى كل نفس ما كسبت بالعدل التام لا ظلم فيه. وختم آيات الربا بهذا التذكير لأن استحضار يوم القيامة أعظم رادع عن المعاصي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-281', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-281">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-281">يقول تعالى: واحذروا يوماً تُردون فيه إلى الله فيجازيكم بأعمالكم. ثم تُعطى كل نفس ثواب عملها أو عقابه كاملاً لا ينقص منه شيء. وهم لا يُظلمون فلا يُنقص المحسن من ثوابه ولا يُزاد المسيء على عقابه. وفي ختم آيات الربا بهذه الآية تذكير بأن الأمر جد وأن الحساب حق فليستعد المرء بترك الحرام والتوبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-281', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-18.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">دلائل قدرة الله والحثّ على الإنفاق</span>
+            </a>
+            <a href="section-20.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">آية الدَّيْن — توثيق المعاملات المالية</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١٩: تحريم الربا<br>
+        <small>آيات ٢٧٥ – ٢٨١ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

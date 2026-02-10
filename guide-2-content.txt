@@ -1,0 +1,174 @@
+========================================================
+  الدليل ٢: المحتوى — التفسير والتجويد والمخطط
+  Guide 2: Content — Tafseer, Tajweed & Flow Diagram
+========================================================
+
+This guide covers filling the section with actual content:
+fetching tafseer from KSU, applying tajweed color markup
+to ayah text, and building the thematic flow diagram.
+
+Steps:
+  1. Fetch tafseer text for every ayah from 5 scholars (KSU)
+  2. Apply tajweed <span> markup to each ayah's Quran text
+  3. Build the flow diagram nodes
+  4. Run through the checklist
+
+
+========================================================
+1. TAFSEER SOURCES (URLs for fetching)
+========================================================
+
+KSU Tafseer website: https://quran.ksu.edu.sa/tafseer/
+
+Scholar          | URL slug          | Tab ID prefix
+-----------------+-------------------+--------------
+السعدي (Al-Saadi)   | saadi             | saadi-
+ابن كثير (Ibn Kathir)| katheer           | katheer-
+البغوي (Al-Baghawi) | baghawy           | baghawy-
+القرطبي (Al-Qurtubi)| qortoby-qortobi   | qortoby-
+الطبري (Al-Tabari)  | tabary            | tabary-
+
+URL pattern:
+  https://quran.ksu.edu.sa/tafseer/[slug]/sura2-aya[N].html
+
+Example for ayah 10, Al-Qurtubi:
+  https://quran.ksu.edu.sa/tafseer/qortoby-qortobi/sura2-aya10.html
+
+For each ayah, fetch the Arabic commentary text from all 5 URLs
+and paste it into the corresponding tafseer tab content div.
+Also write a 1–2 sentence tafseer-summary for each ayah.
+
+
+========================================================
+2. TAJWEED COLOR CODING — HOW TO MARK UP AYAHS
+========================================================
+
+The tajweed spans are INSIDE the <div class="ayah-text"> element.
+Only specific letters get wrapped. Unaffected text stays unwrapped.
+
+--- 7 RULES AND THEIR CSS CLASSES ---
+
+Rule        | Arabic   | Class     | When to apply
+------------+----------+-----------+----------------------------------------
+Ghunnah     | غنة      | tj-ghn    | نّ or مّ (noon/meem with shaddah)
+Ikhfa       | إخفاء    | tj-khf    | Noon sakinah/tanween before:
+            |          |           | ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك
+Idgham      | إدغام    | tj-dgm    | Noon sakinah/tanween before: ي ر م ل و ن
+Iqlab       | إقلاب    | tj-qlb    | Noon sakinah/tanween before: ب
+Qalqalah    | قلقلة    | tj-qlq    | Letters ق ط ب ج د when sakin (sukoon)
+Madd        | مد       | tj-mdd    | Dagger alif (ـٰ), madd lazim (لۤمۤ),
+            |          |           | madd muttasil/munfasil (اۤ before hamza),
+            |          |           | yaa/waw madd in key words
+Silent      | صامت     | tj-slt    | Alif wasl (ٱ), lam shamsiyyah before
+            |          |           | sun letters, silent waw (و۟), silent alif (ا۟)
+
+--- HOW TO WRAP ---
+
+Wrap ONLY the affected letters in a <span class="tj-XXX">...</span>.
+
+Examples from the existing sections:
+
+  GHUNNAH (نّ / مّ with shaddah):
+    وَمِ<span class="tj-ghn">مَّ</span>ا           ← مّ in مِمَّا (ayah 3)
+    إِ<span class="tj-ghn">نَّ</span>              ← نّ in إِنَّ (ayah 6)
+    <span class="tj-ghn">مِّ</span>               ← مّ in مِّن (ayah 5, result of idgham)
+
+  IKHFA (noon sakinah before ikhfa letter):
+    یُ<span class="tj-khf">نف</span>ِقُونَ        ← نْ before ف (ayah 3)
+    أُ<span class="tj-khf">نز</span>ِلَ            ← نْ before ز (ayah 4)
+    مِ<span class="tj-khf">ن</span> قَبۡلِكَ        ← نْ before ق (ayah 4)
+    ءَأَ<span class="tj-khf">نذَ</span>رۡتَهُمۡ     ← نْ before ذ (ayah 6)
+
+  IDGHAM (tanween/noon sakinah merging into يرملون):
+    هُ<span class="tj-dgm">دࣰى</span> لِّ          ← tanween before ل (ayah 2)
+    هُ<span class="tj-dgm">دࣰى</span> مِّ          ← tanween before م (ayah 5)
+    <span class="tj-dgm">ن</span> رَّ              ← noon sakinah before ر (ayah 5)
+
+  IQLAB (tanween/noon sakinah before ب):
+    Not present in ayahs 1–7. Example pattern:
+    مِ<span class="tj-qlb">نۢ ب</span>َعۡدِ        ← نْ before ب → pronounced as م
+
+  QALQALAH (ق ط ب ج د with sukoon):
+    رَزَ<span class="tj-qlq">قۡ</span>نَـٰهُمۡ      ← قْ sakin (ayah 3)
+    قَ<span class="tj-qlq">بۡ</span>لِكَ            ← بْ sakin (ayah 4)
+    أَ<span class="tj-qlq">بۡ</span>صَـٰرِهِمۡ       ← بْ sakin (ayah 7)
+
+  MADD (elongation):
+    رَّحۡ<span class="tj-mdd">مَـٰ</span>نِ         ← dagger alif (ayah 1)
+    رَّحِ<span class="tj-mdd">ی</span>مِ            ← yaa madd (ayah 1)
+    ا<span class="tj-mdd">لۤ</span><span class="tj-mdd">مۤ</span>  ← madd lazim (ayah 1)
+    بِمَ<span class="tj-mdd">اۤ</span> أُنزِلَ       ← madd munfasil (ayah 4)
+    عَلَ<span class="tj-mdd">ىٰ</span>              ← alif maqsurah + superscript alif (ayah 7)
+    سَوَ<span class="tj-mdd">اۤ</span>ءٌ            ← madd muttasil (ayah 6)
+
+  SILENT (unpronounced letters):
+    <span class="tj-slt">ٱ</span>للَّهِ            ← alif wasl (ayah 1)
+    <span class="tj-slt">ٱل</span>رَّحۡمَـٰنِ       ← alif wasl + lam shamsiyyah (ayah 1)
+    <span class="tj-slt">ٱل</span>صَّلَوٰةَ         ← lam shamsiyyah before ص (ayah 3)
+    كَفَرُو<span class="tj-slt">ا۟</span>           ← silent alif (ayah 6)
+    أُ<span class="tj-slt">و۟</span>لَـٰۤىِٕكَ       ← silent waw (ayah 5)
+
+--- SUN LETTERS (lam shamsiyyah = mark ٱل as silent) ---
+  ت ث د ذ ر ز س ش ص ض ط ظ ل ن
+  If ال comes before one of these, the ل is silent.
+  Example: ٱلصَّلَوٰةَ → <span class="tj-slt">ٱل</span>صَّلَوٰةَ
+
+--- MOON LETTERS (lam qamariyyah = ل is pronounced, only mark ٱ) ---
+  ا ب ج ح خ ع غ ف ق ك م و ه ي
+  Example: ٱلۡكِتَـٰبُ → <span class="tj-slt">ٱ</span>لۡكِتَـٰبُ
+
+--- TIPS ---
+- When ikhfa spans a word boundary (مِن قَبۡلِكَ), wrap each part separately:
+    مِ<span class="tj-khf">ن</span> قَبۡلِكَ
+- When idgham results in ghunnah (tanween + م), mark BOTH:
+    هُ<span class="tj-dgm">دࣰى</span> <span class="tj-ghn">مِّ</span>ن
+- Spans do NOT break Arabic letter connections in modern browsers.
+- When tajweed is OFF, all spans inherit parent color (invisible).
+
+
+========================================================
+3. FLOW DIAGRAM
+========================================================
+
+Vertical diagram showing the thematic flow of ayahs in the section.
+- Collapsible (state saved in localStorage: bq-flow-collapsed)
+- Each node links to its ayah (click to scroll)
+- Structure: flow-node → flow-arrow → flow-node → ...
+- data-ayahs attribute: single number "6" or range "8-10"
+
+Template for each node:
+
+    <div class="flow-node" data-ayahs="[AYAH_NUM]">
+        <div class="flow-node-num">[AYAH_NUM_AR]</div>
+        <div class="flow-node-text">[SHORT_TOPIC]</div>
+        <div class="flow-node-key">[KEY_PHRASE_FROM_AYAH]</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+
+Place all nodes inside <div class="flow-track"> ... </div>.
+No arrow after the last node.
+
+
+========================================================
+4. CHECKLIST FOR EACH NEW SECTION
+========================================================
+
+[ ] Copy template from guide-1 (section 2)
+[ ] Update: title, subtitle, section number, accent color
+[ ] Update: section description
+[ ] Build flow diagram nodes for each ayah
+[ ] For each ayah:
+    [ ] Add Uthmani Quran text in ayah-text div
+    [ ] Add tajweed <span> markup (see rules in section 2 above)
+    [ ] Add ayah badge with Arabic-Indic number
+    [ ] Add tafseer summary (1-2 sentences)
+    [ ] Add 5 tafseer tabs (saadi active, others collapsed)
+    [ ] Fetch tafseer text from KSU website
+[ ] Update navigation bar (prev/next links)
+[ ] Update footer text
+[ ] Verify: tajweed toggle works (J key)
+[ ] Verify: memorize mode works (M key)
+[ ] Verify: bookmarks work (double-click)
+[ ] Verify: theme cycling works (T key)
+[ ] Verify: hints panel works (H key)
+[ ] Verify: bookmarks panel works (B key)

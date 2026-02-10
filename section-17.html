@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — آية الكرسي — عظمة الله وقدرته</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">الموضوع ١٧ من ٢١</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#8e44ad">
+            <div class="section-num">١٧</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">آية الكرسي — عظمة الله وقدرته</h2>
+                <h3 class="section-title-en">Ayat Al-Kursi — The Greatness & Power of Allah</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٢٥٤ – ٢٥٧</div>
+        </div>
+
+        <div class="section-desc">
+            <p>الأمر بالإنفاق قبل يوم لا بيع فيه، ثم آية الكرسي أعظم آية في كتاب الله، وبيان أنه لا إكراه في الدين، والله ولي الذين آمنوا</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="254">
+                        <div class="flow-node-num">٢٥٤</div>
+                        <div class="flow-node-text">الأمر بالإنفاق قبل يوم القيامة</div>
+                        <div class="flow-node-key">أَنفِقُو<span class="tj-slt">ا۟</span> مِمَّا رَزَقۡنَـٰكُم</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="255">
+                        <div class="flow-node-num">٢٥٥</div>
+                        <div class="flow-node-text">آية الكرسي — أعظم آية في القرآن</div>
+                        <div class="flow-node-key">ٱللَّهُ لَاۤ إِلَـٰهَ إِلَّا هُوَ ٱلۡحَیُّ ٱلۡقَیُّومُ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="256">
+                        <div class="flow-node-num">٢٥٦</div>
+                        <div class="flow-node-text">لا إكراه في الدين</div>
+                        <div class="flow-node-key">لَاۤ إِكۡرَاهَ فِی ٱلدِّینِ</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node" data-ayahs="257">
+                        <div class="flow-node-num">٢٥٧</div>
+                        <div class="flow-node-text">الله ولي المؤمنين يخرجهم من الظلمات إلى النور</div>
+                        <div class="flow-node-key">ٱللَّهُ وَلِیُّ ٱلَّذِینَ ءَامَنُو<span class="tj-slt">ا۟</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-254">
+                <div class="ayah-text"><span class="tj-mdd">یَـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُوۤ<span class="tj-slt">ا۟</span> أَ<span class="tj-khf">نف</span>ِقُو<span class="tj-slt">ا۟</span> مِ<span class="tj-ghn">مَّ</span>ا رَزَ<span class="tj-qlq">قۡ</span>نَ<span class="tj-mdd">ـٰ</span>كُم <span class="tj-ghn">مِّ</span><span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لِ أَ<span class="tj-dgm">ن</span> یَأۡتِیَ یَوۡ<span class="tj-dgm">مࣱ</span> لَّا بَیۡ<span class="tj-khf">عࣱ</span> فِیهِ وَلَا خُلَّ<span class="tj-dgm">ةࣱ</span> وَلَا شَفَ<span class="tj-mdd">ـٰ</span>عَةࣱۗ وَ<span class="tj-slt">ٱ</span>لۡكَ<span class="tj-mdd">ـٰ</span>فِرُونَ هُمُ <span class="tj-slt">ٱل</span>ظَّ<span class="tj-mdd">ـٰ</span>لِمُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله المؤمنين بالإنفاق في سبيله قبل يوم القيامة الذي لا ينفع فيه بيع ولا صداقة ولا شفاعة بدون إذنه، والكافرون هم الظالمون لأنفسهم بترك الإيمان والطاعة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-254">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-254">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-254">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-254">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-254">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-254">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-254">يأمر تعالى عباده المؤمنين بالإنفاق مما رزقهم من الأموال في وجوه الخير والطاعات، ويحثهم على المبادرة بذلك قبل أن يأتي يوم القيامة الذي لا ينفع فيه مال ولا ولد، يوم لا بيع فيه أي لا يستطيع الإنسان أن يفتدي نفسه بشيء، ولا خلة أي لا تنفع الصداقات، ولا شفاعة إلا بإذن الله. ثم بيّن أن الكافرين هم الظالمون الكاملون في الظلم لأنهم ظلموا أنفسهم بالكفر وترك الإنفاق في طاعة الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-254', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-254">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-254">يأمر تعالى عباده بالإنفاق في سبيله وتقديم الخير لأنفسهم قبل أن يأتي يوم لا مجال فيه للعمل ولا للاكتساب. يوم لا بيع فيه أي لا يستطيع أحد أن يفتدي نفسه بفدية، ولا خلة تنفع فلا صاحب يتحمل عنك شيئاً، ولا شفاعة تقبل إلا بإذن الله لمن ارتضى. والكافرون هم الظالمون حقاً لأنهم وضعوا العبادة في غير موضعها وأشركوا مع الله غيره وتركوا الإنفاق في سبيله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-254', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-254">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-254">أمر الله المؤمنين أن ينفقوا مما رزقهم من الأموال في الزكاة والصدقات والجهاد قبل مجيء يوم القيامة. ونفى عن ذلك اليوم ثلاثة أشياء يتعلق بها الناس في الدنيا: البيع وهو الفداء، والخلة وهي الصداقة، والشفاعة. وكل هذه لا تنفع يوم القيامة إلا ما أذن الله فيه من الشفاعة للمؤمنين. والكافرون هم الظالمون لأنفسهم بكفرهم بالله وتفريطهم في حقوقه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-254', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-254">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-254">هذا أمر بالإنفاق في سبيل الله وتحذير من التفريط فيه. قيل المراد الزكاة المفروضة وقيل يشمل كل إنفاق في الخير. ونفي البيع والخلة والشفاعة يوم القيامة يعني أنها لا تنفع أصحابها بدون إذن الله. والمعنى: بادروا بالأعمال الصالحة قبل فوات الأوان. وقوله والكافرون هم الظالمون فيه حصر الظلم الكامل في الكفر لأنه أعظم ظلم يقع من العبد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-254', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-254">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-254">يقول تعالى: يا أيها الذين صدقوا الله ورسوله أنفقوا مما أعطاكم الله من الرزق في طاعته من قبل أن يجيء يوم لا يقدر فيه أحد على شراء نفسه من عذاب الله بثمن، ولا تنفع فيه مودة خليل، ولا شفاعة شافع إلا بإذن الله. والذين كفروا بالله هم الذين ظلموا أنفسهم بوضع العبادة في غير موضعها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-254', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-255">
+                <div class="ayah-text"><span class="tj-slt">ٱ</span>للَّهُ لَ<span class="tj-mdd">اۤ</span> إِلَ<span class="tj-mdd">ـٰ</span>هَ إِلَّا هُوَ <span class="tj-slt">ٱ</span>لۡحَیُّ <span class="tj-slt">ٱ</span>لۡقَیُّومُۚ لَا تَأۡخُذُهُۥ سِنَ<span class="tj-dgm">ةࣱ</span> وَلَا نَوۡ<span class="tj-dgm">مࣱۚ</span> لَّهُۥ مَا فِی <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">ـٰ</span>وَ ٰ⁠تِ وَمَا فِی <span class="tj-slt">ٱ</span>لۡأَرۡضِۗ مَ<span class="tj-khf">ن</span> ذَا <span class="tj-slt">ٱلَّ</span>ذِی یَشۡفَعُ عِ<span class="tj-khf">ند</span>َهُۥۤ إِلَّا بِإِذۡنِهِۦۚ یَعۡلَمُ مَا بَیۡنَ أَیۡدِیهِمۡ وَمَا خَلۡفَهُمۡۖ وَلَا یُحِیطُونَ بِشَیۡ<span class="tj-dgm">ءࣲ</span> <span class="tj-ghn">مِّ</span>نۡ عِلۡمِهِۦۤ إِلَّا بِمَا شَ<span class="tj-mdd">اۤ</span>ءَۚ وَسِعَ كُرۡسِیُّهُ <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">ـٰ</span>وَ ٰ⁠تِ وَ<span class="tj-slt">ٱ</span>لۡأَرۡضَۖ وَلَا یَـُٔودُهُۥ حِفۡظُهُمَاۚ وَهُوَ <span class="tj-slt">ٱ</span>لۡعَلِیُّ <span class="tj-slt">ٱ</span>لۡعَظِیمُ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">آية الكرسي أعظم آية في القرآن: تضمنت توحيد الله بأسمائه الحسنى، وأنه الحي القيوم الذي لا تأخذه سنة ولا نوم، له ملك السماوات والأرض، ولا يحيط أحد بشيء من علمه إلا بما شاء، وسع كرسيه السماوات والأرض ولا يثقله حفظهما وهو العلي العظيم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-255">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-255">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-255">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-255">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-255">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-255">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-255">هذه أعظم آية في كتاب الله لاشتمالها على أعظم المعاني. الله لا إله إلا هو: توحيد الألوهية. الحي القيوم: اسمان عظيمان يتضمنان جميع الأسماء الحسنى، فالحي الذي له الحياة الكاملة المستلزمة لجميع صفات الذات، والقيوم القائم بنفسه المقيم لغيره. لا تأخذه سنة ولا نوم: لكمال حياته وقيوميته. له ما في السماوات وما في الأرض: ملكاً وخلقاً وعبيداً. لا يشفع أحد عنده إلا بإذنه. يعلم ما بين أيديهم وما خلفهم: علمه محيط بجميع الأزمنة والأحوال. وسع كرسيه السماوات والأرض: والكرسي موضع القدمين وهو بين يدي العرش كالمقدمة له. ولا يؤوده حفظهما: لا يثقله ولا يكلفه. وهو العلي بذاته وصفاته فوق جميع المخلوقات، العظيم الذي لا أعظم منه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-255', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-255">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-255">هذه آية الكرسي وهي أعظم آية في القرآن كما صح في الحديث. اشتملت على عشر جمل مستقلة كل منها تدل على عظمة الله: الأولى توحيده بالألوهية، والثانية والثالثة اسماه الحي القيوم وهما الاسم الأعظم، والرابعة نفي السنة والنوم عنه لكمال قيوميته، والخامسة ملكه لما في السماوات والأرض، والسادسة لا يشفع أحد عنده إلا بإذنه لعظمته وكبريائه، والسابعة إحاطة علمه بالماضي والمستقبل، والثامنة أنهم لا يحيطون بشيء من علمه إلا بما شاء، والتاسعة سعة كرسيه السماوات والأرض وقد جاء أن السماوات السبع في الكرسي كحلقة في فلاة، والعاشرة أنه لا يثقله حفظهما وهو العلي العظيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-255', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-255">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-255">آية الكرسي سيدة آي القرآن وأعظمها. فيها إثبات وحدانية الله في الألوهية وأنه الحي الذي لا يموت القيوم القائم على كل شيء بالتدبير والحفظ. لا تأخذه سنة وهي النعاس ولا نوم. له ملك جميع ما في السماوات والأرض. ولا يتجاسر أحد على الشفاعة عنده إلا من أذن له. يعلم أحوال الخلق ماضيها ومستقبلها. ولا يعلم أحد شيئاً من علمه إلا ما علّمه الله. وسع كرسيه السماوات والأرض ولا يثقله حفظ المخلوقات. وهو العلي فوق كل شيء العظيم الذي لا يدرك كنه عظمته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-255', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-255">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-255">آية الكرسي أفضل آية في كتاب الله وأعظمها لما اشتملت عليه من أصول التوحيد وصفات الكمال لله تعالى. الحي القيوم: قيل هو اسم الله الأعظم. والسنة: النعاس الذي يسبق النوم. والكرسي: اختلف فيه فقيل هو العرش وقيل دون العرش وقيل هو العلم وقيل هو الملك. والراجح أنه جسم عظيم بين يدي العرش. وفي الآية إثبات صفات الكمال لله ونفي صفات النقص عنه. والعلي في ذاته فوق عرشه وعلي في صفاته لا يعتريه نقص، العظيم في ذاته وأسمائه وصفاته وأفعاله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-255', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-255">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-255">يخبر تعالى عن نفسه أنه لا معبود بحق إلا هو سبحانه، الحي الذي لا يموت، القيوم القائم بتدبير خلقه وحفظهم. لا تأخذه سنة وهو الوسن وبداية النعاس ولا ينام لكمال حياته. له كل ما في السماوات والأرض ملكاً وعبيداً لا يخرج شيء عن ملكه. لا يشفع أحد عنده يوم القيامة إلا بعد إذنه. يعلم ما مضى من أعمالهم وما هو آتٍ. ولا يطلع أحد على شيء من معلوماته إلا ما أطلعه الله عليه. وسع كرسيه أي عظم كرسيه حتى وسع السماوات والأرض. ولا يثقله حفظهما وتدبيرهما. وهو العلي فوق خلقه بذاته العظيم في سلطانه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-255', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-256">
+                <div class="ayah-text">لَ<span class="tj-mdd">اۤ</span> إِكۡرَاهَ فِی <span class="tj-slt">ٱل</span>دِّینِۖ قَد تَّبَیَّنَ <span class="tj-slt">ٱل</span>رُّشۡدُ مِنَ <span class="tj-slt">ٱ</span>لۡغَیِّۚ فَمَ<span class="tj-dgm">ن</span> یَكۡفُرۡ بِ<span class="tj-slt">ٱل</span>طَّ<span class="tj-mdd">ـٰ</span>غُوتِ وَیُؤۡمِ<span class="tj-qlb">نۢ بِ</span><span class="tj-slt">ٱ</span>للَّهِ فَقَدِ <span class="tj-slt">ٱ</span>سۡتَمۡسَكَ بِ<span class="tj-slt">ٱ</span>لۡعُرۡوَةِ <span class="tj-slt">ٱ</span>لۡوُثۡقَ<span class="tj-mdd">ىٰ</span> لَا <span class="tj-slt">ٱ</span>نفِصَامَ لَهَاۗ وَ<span class="tj-slt">ٱ</span>للَّهُ سَمِیعٌ عَلِیمٌ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لا إكراه في الدين لأن الحق قد تبين من الباطل بالحجج والبراهين. فمن كفر بالطاغوت وآمن بالله فقد تمسك بأوثق عروة لا انقطاع لها، والله سميع عليم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-256">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-256">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-256">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-256">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-256">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-256">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-256">أي لا يُكره أحد على الدخول في الإسلام لأن الإسلام بيّن واضح بحججه وبراهينه لا يحتاج إلى إكراه. فالرشد الذي هو الإيمان قد تميز عن الغي الذي هو الكفر تميزاً واضحاً. فمن يكفر بالطاغوت وهو كل ما عُبد من دون الله أو أُطيع في معصيته، ويؤمن بالله إيماناً صادقاً فقد استمسك بالعروة الوثقى التي لا تنقطع أبداً وهي الإسلام والإيمان. والله سميع لأقوال العباد عليم بأحوالهم ونياتهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-256', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-256">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-256">نزلت هذه الآية في أناس من الأنصار كانوا يريدون إكراه أولادهم على الإسلام بعد أن تهودوا أو تنصروا. فنهاهم الله عن ذلك وبيّن أن الإيمان لا يكون إلا عن اختيار وقناعة لأن الأدلة والبراهين واضحة كافية. والطاغوت هو الشيطان وكل ما يعبد من دون الله. والعروة الوثقى هي لا إله إلا الله أو الإسلام عموماً. ومن تمسك بها فلن تنفصم عنه ولن يُخذل أبداً. والله سميع عليم يعلم من يستحق الهداية ومن يستحق الضلالة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-256', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-256">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-256">نزلت في رجل من الأنصار كان له ابنان تنصرا فأراد أن يكرههما على الإسلام فنزلت الآية. والمعنى أن دين الإسلام واضح بأدلته فلا حاجة للإكراه. والطاغوت: الشيطان وكل ما يُعبد من دون الله. والعروة الوثقى: الإيمان والإسلام والشهادة. لا انفصام لها أي لا انقطاع لها فهي باقية متصلة بنعيم الآخرة. والله سميع لمن يؤمن ومن يكفر عليم بحال كل عبد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-256', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-256">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-256">اختلف المفسرون في هذه الآية فقيل هي منسوخة بآية السيف وقيل هي محكمة في أهل الكتاب الذين يدفعون الجزية وقيل هي عامة. والراجح أنها في أهل الكتاب أنهم لا يُكرهون على الإسلام إذا دفعوا الجزية. وقد تبين الرشد من الغي أي اتضح الحق من الباطل بالأدلة والمعجزات. والطاغوت مشتق من الطغيان وهو مجاوزة الحد. والعروة الوثقى: عقد الإيمان الذي لا ينحل ولا ينقطع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-256', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-256">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-256">يقول تعالى: لا يُكره أحد على الدخول في الإسلام لأن الحجج والبراهين قد وضحت. وقد تبين الرشد وهو طريق الحق من الغي وهو طريق الباطل. فمن يكفر بالطاغوت وهو كل ما تجاوز العبد به حده من معبود أو متبوع أو مطاع في غير طاعة الله ويؤمن بالله وحده فقد تمسك بأوثق العرى لا تنقطع أبداً لأنها من الله. والله سميع لأقوال خلقه عليم بأفعالهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-256', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-257">
+                <div class="ayah-text"><span class="tj-slt">ٱ</span>للَّهُ وَلِیُّ <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> یُخۡرِجُهُم <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱل</span>ظُّلُمَ<span class="tj-mdd">ـٰ</span>تِ إِلَى <span class="tj-slt">ٱل</span>نُّورِۖ وَ<span class="tj-slt">ٱلَّ</span>ذِینَ كَفَرُوۤ<span class="tj-slt">ا۟</span> أَوۡلِیَ<span class="tj-mdd">اۤ</span>ؤُهُمُ <span class="tj-slt">ٱل</span>طَّ<span class="tj-mdd">ـٰ</span>غُوتُ یُخۡرِجُونَهُم <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱل</span>نُّورِ إِلَى <span class="tj-slt">ٱل</span>ظُّلُمَ<span class="tj-mdd">ـٰ</span>تِۗ أُ<span class="tj-slt">و۟</span>لَـٰۤىِٕكَ أَصۡحَ<span class="tj-mdd">ـٰ</span>بُ <span class="tj-slt">ٱل</span>نَّارِۖ هُمۡ فِیهَا خَ<span class="tj-mdd">ـٰ</span>لِدُونَ</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٥٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">الله ولي المؤمنين يخرجهم من ظلمات الكفر والجهل إلى نور الإيمان والهداية. والذين كفروا أولياؤهم الطاغوت يخرجونهم من النور إلى الظلمات، أولئك أصحاب النار خالدون فيها.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-257">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-257">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-257">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-257">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-257">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-257">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-257">أخبر تعالى أنه ولي المؤمنين أي ناصرهم ومتولي أمورهم وهاديهم، يخرجهم من ظلمات الكفر والشك والجهل إلى نور الإيمان والعلم واليقين. وأما الكفار فأولياؤهم الطاغوت من الشياطين وأعوانهم يخرجونهم من نور الفطرة والحق إلى ظلمات الكفر والشرك والضلال. وأفرد النور لأن الحق واحد وجمع الظلمات لأن طرق الضلال متعددة. وعاقبة هؤلاء الكفار النار خالدين فيها أبداً لأنهم اختاروا الظلمات على النور.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-257', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-257">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-257">يخبر تعالى أنه يهدي من آمن به إلى طريق الرشاد ويخرجهم من ظلمات الكفر إلى نور الإيمان. وأن الذين كفروا تتولاهم الشياطين فتزين لهم الباطل وتصدهم عن الحق فتخرجهم من النور إلى الظلمات. وإنما وحّد النور لأن الحق واحد لا تعدد فيه، وجمع الظلمات لأن الكفر أنواع كثيرة وطرق الضلال متشعبة. وعاقبة من تولى الطاغوت وأعرض عن ولاية الله أن يكون من أصحاب النار مخلداً فيها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-257', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-257">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-257">الله ولي الذين آمنوا أي ناصرهم وحافظهم ومتولي أمرهم يخرجهم من ظلمات الكفر والمعصية إلى نور الإيمان والطاعة. والذين كفروا أولياؤهم الطاغوت وهم الشياطين ورؤوس الضلال يزينون لهم الكفر ويصدونهم عن الإيمان فيخرجونهم من النور إلى الظلمات. وأفرد النور لاتحاد طريق الحق وجمع الظلمات لتعدد سبل الضلالة. أولئك أصحاب النار هم فيها خالدون لا يخرجون منها أبداً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-257', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-257">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-257">ولاية الله للمؤمنين تشمل النصر والتأييد والهداية والتوفيق. والإخراج من الظلمات إلى النور يشمل الهداية من الكفر إلى الإيمان ومن الجهل إلى العلم ومن المعصية إلى الطاعة. وأفرد النور لأن الحق لا يتعدد وجمع الظلمات لأن الباطل ألوان وأشكال. والطاغوت هنا يشمل الشيطان وكل داعٍ إلى الضلال. وخلود الكفار في النار دليل على عظم جرم الكفر وأنه أعظم الذنوب عند الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-257', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-257">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-257">يقول تعالى: الله ناصر الذين آمنوا به ومتولي أمرهم يهديهم ويخرجهم من ظلمات الكفر والشرك والضلال إلى نور الإيمان والتوحيد والهداية. والذين جحدوا وكفروا أولياؤهم الشياطين والأصنام يضلونهم ويخرجونهم مما كانوا عليه من نور الفطرة إلى ظلمات الشرك والضلالة. أولئك هم أهل النار الملازمون لها لا يفارقونها أبد الآبدين جزاء بما كانوا يكفرون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-257', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-16.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">قصص الأمم السابقة والقتال في سبيل الله</span>
+            </a>
+            <a href="section-18.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">دلائل قدرة الله والحثّ على الإنفاق</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة البقرة — الموضوع ١٧: آية الكرسي — عظمة الله وقدرته<br>
+        <small>آيات ٢٥٤ – ٢٥٧ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

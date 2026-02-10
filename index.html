@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة البقرة — فهرس الموضوعات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <style>
+        .section-link {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s;
+            animation: fadeIn 0.4s ease both;
+        }
+        .section-link:hover {
+            border-color: var(--gold);
+            box-shadow: 0 6px 28px var(--shadow);
+            transform: translateY(-3px);
+        }
+        .section-link-num {
+            background: var(--accent-color, var(--gold));
+            color: #fff;
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .section-link-body {
+            flex: 1;
+            padding: 18px 22px;
+        }
+        .section-link-title {
+            font-family: var(--font-ui);
+            font-size: 1.18rem;
+            font-weight: 700;
+            line-height: 1.6;
+            margin-bottom: 2px;
+        }
+        .section-link-en {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            direction: ltr;
+            text-align: right;
+            margin-bottom: 8px;
+        }
+        .section-link-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 2;
+        }
+        .section-link-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 16px 20px;
+            border-right: 1px solid var(--border);
+            min-width: 90px;
+            flex-shrink: 0;
+        }
+        .section-link-range {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            background: var(--highlight-bg);
+            padding: 4px 14px;
+            border-radius: 15px;
+            white-space: nowrap;
+        }
+        .section-link-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+        .sections-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        @media (max-width: 768px) {
+            .section-link { flex-wrap: wrap; }
+            .section-link-num { min-width: 100%; padding: 12px; min-height: auto; }
+            .section-link-meta {
+                flex-direction: row;
+                border-right: none;
+                border-top: 1px solid var(--border);
+                width: 100%;
+                padding: 10px 18px;
+            }
+            .section-link-desc { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة البقرة</h1>
+            <p class="surah-subtitle">Surat Al-Baqarah &mdash; The Cow</p>
+            <div class="header-badges">
+                <span class="header-badge">مدنية</span>
+                <span class="header-badge">٢٨٦ آية</span>
+                <span class="header-badge">٢١ موضوعاً</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <button onclick="cycleTheme()">المظهر</button>
+    </div>
+
+    <div class="container">
+        <div class="sections-list">
+        <a href="section-01.html" class="section-link" style="--accent-color:#2ecc71;animation-delay:0.0s">
+            <div class="section-link-num">١</div>
+            <div class="section-link-body">
+                <div class="section-link-title">مقدمة السورة وصفات المتقين</div>
+                <div class="section-link-en">Introduction & Qualities of the Righteous</div>
+                <div class="section-link-desc">افتتاح السورة بالحروف المقطعة، وبيان أن هذا الكتاب لا ريب فيه، وذكر صفات المتقين الذين يؤمنون بالغيب ويقيمون الصلاة وينفقون مما رزقهم الله</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ١ – ٥</span>
+                <span class="section-link-count">٥ آية</span>
+            </div>
+        </a>
+        <a href="section-02.html" class="section-link" style="--accent-color:#e74c3c;animation-delay:0.04s">
+            <div class="section-link-num">٢</div>
+            <div class="section-link-body">
+                <div class="section-link-title">صفات الكافرين</div>
+                <div class="section-link-en">Qualities of the Disbelievers</div>
+                <div class="section-link-desc">وصف الذين كفروا وأن الإنذار لا ينفعهم، وأن الله ختم على قلوبهم وعلى سمعهم وعلى أبصارهم غشاوة</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٦ – ٧</span>
+                <span class="section-link-count">٢ آية</span>
+            </div>
+        </a>
+        <a href="section-03.html" class="section-link" style="--accent-color:#e67e22;animation-delay:0.08s">
+            <div class="section-link-num">٣</div>
+            <div class="section-link-body">
+                <div class="section-link-title">صفات المنافقين</div>
+                <div class="section-link-en">Qualities of the Hypocrites</div>
+                <div class="section-link-desc">كشف حقيقة المنافقين الذين يُظهرون الإيمان ويُبطنون الكفر، وضرب الأمثال لبيان حالهم وخداعهم</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٨ – ٢٠</span>
+                <span class="section-link-count">١٣ آية</span>
+            </div>
+        </a>
+        <a href="section-04.html" class="section-link" style="--accent-color:#3498db;animation-delay:0.12s">
+            <div class="section-link-num">٤</div>
+            <div class="section-link-body">
+                <div class="section-link-title">دعوة الناس لعبادة الله وتوحيده</div>
+                <div class="section-link-en">Call to Worship Allah Alone</div>
+                <div class="section-link-desc">أمر الناس بعبادة الله الذي خلقهم، وتحدّيهم بالإتيان بسورة من مثل القرآن، وبيان نعم الله في خلق السماوات والأرض</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢١ – ٢٩</span>
+                <span class="section-link-count">٩ آية</span>
+            </div>
+        </a>
+        <a href="section-05.html" class="section-link" style="--accent-color:#9b59b6;animation-delay:0.16s">
+            <div class="section-link-num">٥</div>
+            <div class="section-link-body">
+                <div class="section-link-title">قصة خلق آدم عليه السلام</div>
+                <div class="section-link-en">The Story of Adam's Creation</div>
+                <div class="section-link-desc">قصة جعل آدم خليفة في الأرض، وتعليمه الأسماء، وسجود الملائكة له، وإباء إبليس واستكباره، ثم هبوط آدم إلى الأرض</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٣٠ – ٣٩</span>
+                <span class="section-link-count">١٠ آية</span>
+            </div>
+        </a>
+        <a href="section-06.html" class="section-link" style="--accent-color:#1abc9c;animation-delay:0.2s">
+            <div class="section-link-num">٦</div>
+            <div class="section-link-body">
+                <div class="section-link-title">خطاب بني إسرائيل — التذكير بالنعم</div>
+                <div class="section-link-en">Address to Children of Israel — Reminder of Blessings</div>
+                <div class="section-link-desc">تذكير بني إسرائيل بنعم الله عليهم: إنجاؤهم من فرعون، وإنزال المنّ والسلوى، وقصة البقرة، وتحريفهم للكلام، وقسوة قلوبهم</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٤٠ – ٨٦</span>
+                <span class="section-link-count">٤٧ آية</span>
+            </div>
+        </a>
+        <a href="section-07.html" class="section-link" style="--accent-color:#e74c3c;animation-delay:0.24s">
+            <div class="section-link-num">٧</div>
+            <div class="section-link-body">
+                <div class="section-link-title">بنو إسرائيل — نقض العهود</div>
+                <div class="section-link-en">Children of Israel — Breaking Covenants</div>
+                <div class="section-link-desc">بيان نقض بني إسرائيل للعهود والمواثيق، واتباعهم للسحر، وتكذيبهم الرسل، ونبذهم كتاب الله وراء ظهورهم</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٨٧ – ١٠٣</span>
+                <span class="section-link-count">١٧ آية</span>
+            </div>
+        </a>
+        <a href="section-08.html" class="section-link" style="--accent-color:#e67e22;animation-delay:0.28s">
+            <div class="section-link-num">٨</div>
+            <div class="section-link-body">
+                <div class="section-link-title">بنو إسرائيل — مواقفهم من المسلمين</div>
+                <div class="section-link-en">Children of Israel — Their Stance Toward Muslims</div>
+                <div class="section-link-desc">تحذير المؤمنين من مكائد أهل الكتاب، وبيان حسدهم وود كثير منهم لو يردون المسلمين كفاراً</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ١٠٤ – ١٢٣</span>
+                <span class="section-link-count">٢٠ آية</span>
+            </div>
+        </a>
+        <a href="section-09.html" class="section-link" style="--accent-color:#f39c12;animation-delay:0.32s">
+            <div class="section-link-num">٩</div>
+            <div class="section-link-body">
+                <div class="section-link-title">إبراهيم وإسماعيل وبناء الكعبة</div>
+                <div class="section-link-en">Ibrahim, Ismail & Building the Kaaba</div>
+                <div class="section-link-desc">ذكر ابتلاء الله لإبراهيم، ورفعه مع إسماعيل القواعد من البيت، ودعاؤهما، وملة إبراهيم الحنيفية، والرد على من ادعى أن إبراهيم كان يهودياً أو نصرانياً</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ١٢٤ – ١٤١</span>
+                <span class="section-link-count">١٨ آية</span>
+            </div>
+        </a>
+        <a href="section-10.html" class="section-link" style="--accent-color:#2ecc71;animation-delay:0.36s">
+            <div class="section-link-num">١٠</div>
+            <div class="section-link-body">
+                <div class="section-link-title">تحويل القبلة</div>
+                <div class="section-link-en">Changing the Direction of Prayer (Qiblah)</div>
+                <div class="section-link-desc">تحويل القبلة من بيت المقدس إلى المسجد الحرام، والرد على اعتراضات السفهاء، وبيان أن لكل أمة وجهة هو مولّيها</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ١٤٢ – ١٥٢</span>
+                <span class="section-link-count">١١ آية</span>
+            </div>
+        </a>
+        <a href="section-11.html" class="section-link" style="--accent-color:#3498db;animation-delay:0.4s">
+            <div class="section-link-num">١١</div>
+            <div class="section-link-body">
+                <div class="section-link-title">الصبر والابتلاء وشعائر الله</div>
+                <div class="section-link-en">Patience, Trials & Signs of Allah</div>
+                <div class="section-link-desc">الأمر بالاستعانة بالصبر والصلاة، وبيان أن الله يبتلي عباده، وذكر الصفا والمروة، وتحريم كتمان ما أنزل الله، وبيان أن الإله إله واحد</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ١٥٣ – ١٧٧</span>
+                <span class="section-link-count">٢٥ آية</span>
+            </div>
+        </a>
+        <a href="section-12.html" class="section-link" style="--accent-color:#9b59b6;animation-delay:0.44s">
+            <div class="section-link-num">١٢</div>
+            <div class="section-link-body">
+                <div class="section-link-title">أحكام القصاص والوصية والصيام</div>
+                <div class="section-link-en">Rulings: Retribution, Wills & Fasting</div>
+                <div class="section-link-desc">أحكام القصاص في القتلى، والوصية عند الموت، وفريضة صيام شهر رمضان وأحكامه، وتحريم أكل أموال الناس بالباطل</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ١٧٨ – ١٨٨</span>
+                <span class="section-link-count">١١ آية</span>
+            </div>
+        </a>
+        <a href="section-13.html" class="section-link" style="--accent-color:#1abc9c;animation-delay:0.48s">
+            <div class="section-link-num">١٣</div>
+            <div class="section-link-body">
+                <div class="section-link-title">أحكام الأهلّة والحج والقتال</div>
+                <div class="section-link-en">Rulings: New Moons, Hajj & Fighting</div>
+                <div class="section-link-desc">السؤال عن الأهلة وبيان أنها مواقيت للناس والحج، وأحكام القتال في سبيل الله والقتال في الأشهر الحرم، وأحكام الحج والعمرة</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ١٨٩ – ٢٠٣</span>
+                <span class="section-link-count">١٥ آية</span>
+            </div>
+        </a>
+        <a href="section-14.html" class="section-link" style="--accent-color:#e74c3c;animation-delay:0.52s">
+            <div class="section-link-num">١٤</div>
+            <div class="section-link-body">
+                <div class="section-link-title">أصناف الناس والابتلاء</div>
+                <div class="section-link-en">Types of People & Tests of Faith</div>
+                <div class="section-link-desc">ذكر من يُعجب قوله في الحياة الدنيا لكنه ألدّ الخصام، ومن يشري نفسه ابتغاء مرضاة الله، والأمر بالدخول في السلم كافة</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢٠٤ – ٢١٤</span>
+                <span class="section-link-count">١١ آية</span>
+            </div>
+        </a>
+        <a href="section-15.html" class="section-link" style="--accent-color:#f39c12;animation-delay:0.56s">
+            <div class="section-link-num">١٥</div>
+            <div class="section-link-body">
+                <div class="section-link-title">أحكام اجتماعية — الإنفاق والزواج والطلاق</div>
+                <div class="section-link-en">Social Rulings — Charity, Marriage & Divorce</div>
+                <div class="section-link-desc">أحكام الإنفاق والنفقة، والقتال، والخمر والميسر، واليتامى، والزواج من المشركات، والمحيض، وأحكام الطلاق والعدة والرضاعة</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢١٥ – ٢٤٢</span>
+                <span class="section-link-count">٢٨ آية</span>
+            </div>
+        </a>
+        <a href="section-16.html" class="section-link" style="--accent-color:#2ecc71;animation-delay:0.6s">
+            <div class="section-link-num">١٦</div>
+            <div class="section-link-body">
+                <div class="section-link-title">قصص الأمم السابقة والقتال في سبيل الله</div>
+                <div class="section-link-en">Stories of Past Nations & Fighting for Allah's Cause</div>
+                <div class="section-link-desc">قصة الذين خرجوا من ديارهم وهم ألوف حذر الموت، وقصة طالوت وجالوت وداود، وبيان تفضيل بعض الرسل على بعض</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢٤٣ – ٢٥٣</span>
+                <span class="section-link-count">١١ آية</span>
+            </div>
+        </a>
+        <a href="section-17.html" class="section-link" style="--accent-color:#8e44ad;animation-delay:0.64s">
+            <div class="section-link-num">١٧</div>
+            <div class="section-link-body">
+                <div class="section-link-title">آية الكرسي — عظمة الله وقدرته</div>
+                <div class="section-link-en">Ayat Al-Kursi — The Greatness & Power of Allah</div>
+                <div class="section-link-desc">الأمر بالإنفاق قبل يوم لا بيع فيه، ثم آية الكرسي أعظم آية في كتاب الله، وبيان أنه لا إكراه في الدين، والله ولي الذين آمنوا</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢٥٤ – ٢٥٧</span>
+                <span class="section-link-count">٤ آية</span>
+            </div>
+        </a>
+        <a href="section-18.html" class="section-link" style="--accent-color:#3498db;animation-delay:0.68s">
+            <div class="section-link-num">١٨</div>
+            <div class="section-link-body">
+                <div class="section-link-title">دلائل قدرة الله والحثّ على الإنفاق</div>
+                <div class="section-link-en">Proofs of Allah's Power & Encouragement to Give</div>
+                <div class="section-link-desc">محاجّة إبراهيم للملك، وقصة الذي مرّ على قرية خاوية، وسؤال إبراهيم عن إحياء الموتى، ثم الحث على الإنفاق في سبيل الله وآدابه</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢٥٨ – ٢٧٤</span>
+                <span class="section-link-count">١٧ آية</span>
+            </div>
+        </a>
+        <a href="section-19.html" class="section-link" style="--accent-color:#e74c3c;animation-delay:0.72s">
+            <div class="section-link-num">١٩</div>
+            <div class="section-link-body">
+                <div class="section-link-title">تحريم الربا</div>
+                <div class="section-link-en">Prohibition of Usury (Riba)</div>
+                <div class="section-link-desc">تحريم الربا والتحذير الشديد منه، وإعلان الحرب من الله ورسوله على المرابين، والأمر بالتوبة وترك ما بقي من الربا</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢٧٥ – ٢٨١</span>
+                <span class="section-link-count">٧ آية</span>
+            </div>
+        </a>
+        <a href="section-20.html" class="section-link" style="--accent-color:#f39c12;animation-delay:0.76s">
+            <div class="section-link-num">٢٠</div>
+            <div class="section-link-body">
+                <div class="section-link-title">آية الدَّيْن — توثيق المعاملات المالية</div>
+                <div class="section-link-en">The Verse of Debt — Documenting Financial Transactions</div>
+                <div class="section-link-desc">أطول آية في القرآن الكريم، تُبيّن أحكام كتابة الديون والإشهاد عليها والرهن، حفظاً للحقوق ومنعاً للنزاع</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢٨٢ – ٢٨٣</span>
+                <span class="section-link-count">٢ آية</span>
+            </div>
+        </a>
+        <a href="section-21.html" class="section-link" style="--accent-color:#2ecc71;animation-delay:0.8s">
+            <div class="section-link-num">٢١</div>
+            <div class="section-link-body">
+                <div class="section-link-title">خاتمة السورة</div>
+                <div class="section-link-en">Conclusion of the Surah</div>
+                <div class="section-link-desc">بيان أن لله ما في السماوات والأرض، وإيمان الرسول والمؤمنين، ودعاء عظيم بعدم المؤاخذة على النسيان والخطأ، وطلب العفو والمغفرة والنصر</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">آيات ٢٨٤ – ٢٨٦</span>
+                <span class="section-link-count">٣ آية</span>
+            </div>
+        </a>
+        </div>
+
+        <!-- Mutashabihat Link -->
+        <div style="margin-top: 24px;">
+        <a href="mutashabihat.html" class="section-link" style="--accent-color:#c9a84c; border: 2px dashed var(--gold); animation-delay:0.88s">
+            <div class="section-link-num" style="background: linear-gradient(135deg, #c9a84c, #e6c870);">&#9733;</div>
+            <div class="section-link-body">
+                <div class="section-link-title">المتشابهات — أسرار الحفظ</div>
+                <div class="section-link-en">Similar Verse Endings — Memorization Secrets</div>
+                <div class="section-link-desc">دليل حفظ الخواتم المتشابهة في سورة البقرة: لماذا بَصِیر هنا وخَبِیر هناك؟ اكتشف السر وراء اختيار كل اسم من أسماء الله الحسنى في ختام كل آية</div>
+            </div>
+            <div class="section-link-meta">
+                <span class="section-link-range">١٠ مجموعات</span>
+                <span class="section-link-count">٤٠+ آية</span>
+            </div>
+        </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        سورة البقرة &mdash; القرآن الكريم<br>
+        <small>مصدر النص: quran.ksu.edu.sa</small>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>
