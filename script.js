@@ -309,7 +309,15 @@ function toggleTajweed() {
     const on = document.body.classList.contains('tajweed-on');
     if (btn) btn.classList.toggle('active', on);
     localStorage.setItem('bq-tajweed', on);
+    // على الهاتف تعود البطاقة مطوية في كل مرة تُفعَّل
+    if (!on) document.querySelector('.tajweed-legend')?.classList.remove('legend-open');
 }
+
+// طيّ/فتح بطاقة أحكام التجويد (تعمل على الهاتف فقط عبر الـ CSS)
+document.addEventListener('click', e => {
+    const header = e.target.closest('.tajweed-legend .legend-header');
+    if (header) header.closest('.tajweed-legend').classList.toggle('legend-open');
+});
 
 // === TAFSEER TOGGLE (shared) ===
 function toggleTafseerText(id, btn) {

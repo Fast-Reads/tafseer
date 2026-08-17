@@ -648,7 +648,36 @@ body {
 .sw-slt { background: var(--tj-slt); }
 
 @media (max-width: 768px) {
-    .tajweed-legend { bottom: 80px; left: 16px; padding: 10px 14px; }
+    /* على الهاتف: تظهر البطاقة مطوية كزر صغير، وتُفتح عند الضغط عليها */
+    .tajweed-legend {
+        bottom: 80px;
+        left: 12px;
+        padding: 8px 12px;
+        min-width: 0;
+        max-width: 62vw;
+    }
+    .legend-header {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        cursor: pointer;
+        gap: 10px;
+        user-select: none;
+    }
+    .legend-header::after {
+        content: '▾';
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        transition: transform 0.2s;
+    }
+    .tajweed-legend .legend-item { display: none; }
+    .tajweed-legend.legend-open .legend-item { display: flex; }
+    .tajweed-legend.legend-open .legend-header {
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--border);
+    }
+    .tajweed-legend.legend-open .legend-header::after { transform: rotate(180deg); }
     .legend-title { font-size: 0.75rem; }
     .legend-item { font-size: 0.72rem; }
 }
