@@ -1156,3 +1156,23 @@ body {
     user-select: none;
     line-height: 1;
 }
+/* المناسبة بين آية وأخرى — تُكتب على السهم */
+.flow-arrow.has-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+    padding: 7px 8px;
+    line-height: inherit;
+}
+.flow-arrow-mark { flex-shrink: 0; }
+.flow-link {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    line-height: 1.75;
+    border-right: 2px solid var(--gold);
+    padding-right: 11px;
+    user-select: text;
+}
