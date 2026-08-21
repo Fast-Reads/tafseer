@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tafseer-baqarah-v13';
+const CACHE_NAME = 'tafseer-baqarah-v14';
 const ASSETS = [
   './',
   './index.html',
@@ -27,7 +27,8 @@ const ASSETS = [
   './section-18.html',
   './section-19.html',
   './section-20.html',
-  './section-21.html'
+  './section-21.html',
+  './mutashabihat.html'
 ];
 
 // Install: cache all assets
@@ -48,26 +49,46 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch: serve from cache, fall back to network
+// Fetch: الشبكة أولاً للصفحات والأنماط والسكربتات حتى تصل التحديثات فوراً،
+// والكاش أولاً لبقية الملفات (الأيقونات والخطوط) لأنها لا تتغيّر.
+function isLive(url) {
+  return url.origin === self.location.origin &&
+         /\.(html|css|js)$|\/$/.test(url.pathname);
+}
+
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(cached => {
-        if (cached) return cached;
-        return fetch(event.request).then(response => {
-          // Cache new requests (like Google Fonts)
-          if (response.ok && event.request.method === 'GET') {
+  if (event.request.method !== 'GET') return;
+  const url = new URL(event.request.url);
+
+  if (isLive(url)) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          if (response && response.ok) {
             const clone = response.clone();
             caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
           }
           return response;
-        });
-      })
-      .catch(() => {
-        // Offline fallback for navigation requests
-        if (event.request.mode === 'navigate') {
-          return caches.match('./index.html');
+        })
+        .catch(() => caches.match(event.request)
+          .then(cached => cached ||
+            (event.request.mode === 'navigate' ? caches.match('./index.html') : undefined)))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(event.request).then(cached => {
+      if (cached) return cached;
+      return fetch(event.request).then(response => {
+        if (response && response.ok) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
         }
-      })
+        return response;
+      });
+    }).catch(() => {
+      if (event.request.mode === 'navigate') return caches.match('./index.html');
+    })
   );
 });
