@@ -37,7 +37,7 @@
 .white-mode {
     --bg-primary: #ffffff; --bg-secondary: #f6f6f6; --bg-card: #ffffff;
     --bg-section-header: #fbfbfb; --text-primary: #1a1a1a; --text-ayah: #000000;
-    --text-muted: #575757; --border: rgba(0,0,0,0.13); --shadow: rgba(0,0,0,0.07);
+    --text-muted: #3d3d3d; --border: rgba(0,0,0,0.15); --shadow: rgba(0,0,0,0.07);
     --highlight-bg: rgba(201,168,76,0.11);
     --tj-ghn: #2e7d32; --tj-khf: #00838f; --tj-dgm: #6a1b9a;
     --tj-qlb: #ad1457; --tj-qlq: #e65100; --tj-mdd: #c62828; --tj-slt: #9e9e9e;
