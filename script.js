@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fs = localStorage.getItem('bq-fontscale');
     if (fs) { fontScale = parseInt(fs); updateFont(); }
     applyBookmarks();
+    applyThemeLabel();
     // Flow diagram restore
     const diagram = document.getElementById('flowDiagram');
     if (diagram && localStorage.getItem('bq-flow-collapsed') === 'true') {
@@ -38,24 +39,30 @@ function updateFont() {
     if (label) label.textContent = toArabicNum(fontScale) + '%';
 }
 
+const THEMES = [
+    { cls: '',           name: 'كريمي' },
+    { cls: 'white-mode', name: 'أبيض'  },
+    { cls: 'dark-mode',  name: 'داكن'  },
+    { cls: 'sepia-mode', name: 'بنّي'  }
+];
+
+function currentThemeIndex() {
+    const i = THEMES.findIndex(t => t.cls && document.body.classList.contains(t.cls));
+    return i === -1 ? 0 : i;
+}
+
+function applyThemeLabel() {
+    const btn = document.querySelector('[onclick="cycleTheme()"]');
+    if (btn) btn.textContent = 'المظهر: ' + THEMES[currentThemeIndex()].name;
+}
+
 function cycleTheme() {
     const b = document.body;
-    const wasLevel = memorizeLevel;
-    // Preserve memorize + tajweed classes
-    const keepClasses = [];
-    if (b.classList.contains('memorize-mode')) keepClasses.push('memorize-mode');
-    if (b.classList.contains('memorize-level-1')) keepClasses.push('memorize-level-1');
-    if (b.classList.contains('memorize-level-2')) keepClasses.push('memorize-level-2');
-    if (b.classList.contains('memorize-level-3')) keepClasses.push('memorize-level-3');
-    if (b.classList.contains('tajweed-on')) keepClasses.push('tajweed-on');
-
-    if (b.classList.contains('dark-mode')) b.className = 'sepia-mode';
-    else if (b.classList.contains('sepia-mode')) b.className = '';
-    else b.className = 'dark-mode';
-
-    // Re-add preserved classes
-    keepClasses.forEach(c => b.classList.add(c));
-    localStorage.setItem('bq-theme', b.className.replace(/memorize-\S+|tajweed-\S+/g, '').trim());
+    const next = THEMES[(currentThemeIndex() + 1) % THEMES.length];
+    THEMES.forEach(t => { if (t.cls) b.classList.remove(t.cls); });   // لا يمسّ الحفظ والتجويد
+    if (next.cls) b.classList.add(next.cls);
+    localStorage.setItem('bq-theme', next.cls);
+    applyThemeLabel();
 }
 
 // === MEMORIZE MODE (Multi-Level) ===
