@@ -1202,3 +1202,65 @@ body {
     padding-right: 11px;
     user-select: text;
 }
+
+/* ===== لمسات بيانية — شرح يظهر عند الضغط على كلمة ===== */
+.lamsa {
+    cursor: pointer;
+    border-bottom: 2px dotted var(--gold);
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+.lamsa:hover, .lamsa.active { background: var(--highlight-bg); }
+.lamsa-pop {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 110%);
+    width: min(560px, 94vw);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -6px 32px var(--shadow);
+    padding: 18px 24px 24px;
+    z-index: 200;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    direction: rtl;
+}
+.lamsa-pop.open { transform: translate(-50%, 0); }
+.lamsa-pop-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--border);
+}
+.lamsa-pop-title {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+}
+.dark-mode .lamsa-pop-title { color: var(--gold-light); }
+.lamsa-pop-word {
+    font-family: var(--font-quran);
+    font-size: 1.5rem;
+    color: var(--text-ayah);
+    margin-bottom: 8px;
+}
+.lamsa-pop-body {
+    font-family: var(--font-ui);
+    font-size: 0.92rem;
+    line-height: 2.05;
+    color: var(--text-muted);
+}
+.lamsa-pop-close {
+    background: none; border: none; cursor: pointer;
+    font-size: 1.5rem; line-height: 1;
+    color: var(--text-muted); padding: 0 4px;
+}
+@media (max-width: 768px) {
+    .lamsa-pop { padding: 15px 18px 22px; }
+    .lamsa-pop-body { font-size: 0.88rem; line-height: 1.95; }
+}

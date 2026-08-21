@@ -339,3 +339,37 @@ document.addEventListener('click', e => {
     const target = block.querySelector('#' + tab.dataset.tab);
     if (target) target.classList.add('active');
 });
+
+// === لمسات بيانية: شرح يظهر عند الضغط على كلمة معلَّمة ===
+function closeLamsa() {
+    const p = document.getElementById('lamsaPop');
+    if (p) p.classList.remove('open');
+    document.querySelectorAll('.lamsa.active').forEach(el => el.classList.remove('active'));
+}
+
+document.addEventListener('click', e => {
+    const el = e.target.closest('.lamsa');
+    if (!el) {
+        if (!e.target.closest('.lamsa-pop')) closeLamsa();
+        return;
+    }
+    e.stopPropagation();          // لئلّا يُفعِّل كشفَ آية وضع الحفظ
+    let pop = document.getElementById('lamsaPop');
+    if (!pop) {
+        pop = document.createElement('div');
+        pop.id = 'lamsaPop';
+        pop.className = 'lamsa-pop';
+        pop.innerHTML = '<div class="lamsa-pop-head">' +
+            '<span class="lamsa-pop-title">لمسة بيانية</span>' +
+            '<button class="lamsa-pop-close" onclick="closeLamsa()">&times;</button></div>' +
+            '<div class="lamsa-pop-word"></div><div class="lamsa-pop-body"></div>';
+        document.body.appendChild(pop);
+    }
+    closeLamsa();
+    el.classList.add('active');
+    pop.querySelector('.lamsa-pop-word').textContent = el.dataset.lamsaWord || el.textContent.trim();
+    pop.querySelector('.lamsa-pop-body').textContent = el.dataset.lamsa || '';
+    requestAnimationFrame(() => pop.classList.add('open'));
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLamsa(); });
