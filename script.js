@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fs) { fontScale = parseInt(fs); updateFont(); }
     applyBookmarks();
     applyThemeLabel();
+    if (localStorage.getItem('bq-mushaf') === 'true') {
+        document.body.classList.add('mushaf-mode');
+        const mb = document.getElementById('mushafBtn');
+        if (mb) mb.classList.add('active');
+    }
     // Flow diagram restore
     const diagram = document.getElementById('flowDiagram');
     if (diagram && localStorage.getItem('bq-flow-collapsed') === 'true') {
@@ -380,3 +385,12 @@ document.addEventListener('click', e => {
 });
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLamsa(); });
+
+// === وضع المصحف: عرض الآيات متّصلة في صفحة واحدة ===
+function toggleMushaf() {
+    document.body.classList.toggle('mushaf-mode');
+    const on = document.body.classList.contains('mushaf-mode');
+    const btn = document.getElementById('mushafBtn');
+    if (btn) btn.classList.toggle('active', on);
+    localStorage.setItem('bq-mushaf', on);
+}

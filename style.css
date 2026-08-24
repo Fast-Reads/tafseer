@@ -1365,3 +1365,70 @@ body {
 @media (max-width: 768px) {
     .ayah-text { padding: 18px 16px; }
 }
+
+/* ===== وضع المصحف: الآيات متّصلة في صفحة واحدة حسب الموضوع ===== */
+.mushaf-mode .flow-diagram,
+.mushaf-mode .tafseer-block,
+.mushaf-mode .section-desc,
+.mushaf-mode .section-context,
+.mushaf-mode .first-word-overlay { display: none; }
+
+.mushaf-mode .ayah-list {
+    display: block;
+    background: #fffdf8;
+    border: 1px solid rgba(0,0,0,0.16);
+    border-radius: 6px;
+    padding: 34px 30px 30px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.09);
+    text-align: justify;
+    text-align-last: center;
+    direction: rtl;
+}
+.mushaf-mode .ayah {
+    display: inline;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    animation: none;
+}
+.mushaf-mode .ayah::after { display: none; }        /* شريط العلامة */
+.mushaf-mode .ayah-text {
+    display: inline;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    color: #000000;
+    line-height: 2.6;
+    word-spacing: 2px;
+}
+.mushaf-mode .ayah-num-wrap { display: inline; margin: 0; }
+.mushaf-mode .ayah-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.7em;
+    height: 1.7em;
+    margin: 0 4px;
+    padding: 0;
+    background: none;
+    color: #8b6914;
+    border: 1.5px solid #c9a84c;
+    border-radius: 50%;
+    font-size: 0.62em;
+    font-family: var(--font-ui);
+    vertical-align: middle;
+}
+/* لوحة عنوان الوحدة تبقى ظاهرة لتفصل المواضيع */
+.mushaf-mode .subsection {
+    display: flex;
+    margin: 0 0 14px;
+}
+.mushaf-mode .subsection + .ayah { margin-right: 0; }
+
+@media (max-width: 768px) {
+    .mushaf-mode .ayah-list { padding: 22px 16px 20px; }
+    .mushaf-mode .ayah-text { line-height: 2.45; }
+}
