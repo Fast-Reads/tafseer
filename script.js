@@ -7,9 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     applyBookmarks();
     applyThemeLabel();
     if (localStorage.getItem('bq-mushaf') === 'true') {
-        document.body.classList.add('mushaf-mode');
-        const mb = document.getElementById('mushafBtn');
-        if (mb) mb.classList.add('active');
+        buildMushafLines().then(ok => {
+            if (!ok) return;
+            document.body.classList.add('mushaf-mode');
+            const mb = document.getElementById('mushafBtn');
+            if (mb) mb.classList.add('active');
+        });
     }
     // Flow diagram restore
     const diagram = document.getElementById('flowDiagram');
@@ -386,10 +389,91 @@ document.addEventListener('click', e => {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLamsa(); });
 
-// === وضع المصحف: عرض الآيات متّصلة في صفحة واحدة ===
-function toggleMushaf() {
-    document.body.classList.toggle('mushaf-mode');
-    const on = document.body.classList.contains('mushaf-mode');
+// === أسطر المصحف: إعادة كسر الأسطر عند مواضعها في المصحف المدني ===
+let mushafBuilt = false;
+
+function normAr(s) {
+    s = s.normalize('NFD').replace(/[̀-ًͯ-ٰٟۖ-ۭ]/g, '');
+    return s.replace(/[ٱأإآ]/g, 'ا').replace(/[ىی]/g, 'ي')
+            .replace(/ة/g, 'ه').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي')
+            .replace(/[^ء-ي]/g, '');
+}
+
+async function buildMushafLines() {
+    if (mushafBuilt) return true;
+    const list = document.querySelector('.ayah-list');
+    if (!list) return false;
+
+    let data;
+    try {
+        data = await fetch('./mushaf-lines.json').then(r => r.json());
+    } catch (e) { return false; }
+
+    // ندرج رقم الآية داخل نصّها ليُحمل مع السطر الذي تنتهي فيه
+    list.querySelectorAll('.ayah').forEach(a => {
+        const txt = a.querySelector('.ayah-text'), badge = a.querySelector('.ayah-badge');
+        if (!txt || !badge || txt.querySelector('.ayah-badge')) return;
+        const inline = badge.cloneNode(true);
+        txt.appendChild(document.createTextNode(' '));
+        txt.appendChild(inline);
+    });
+
+    // خريطة: موضع الحرف بعد التجريد ← (عقدة نصّية، إزاحة)
+    const nodes = [], map = [];
+    list.querySelectorAll('.ayah-text').forEach(el => {
+        const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        let n; while ((n = w.nextNode())) nodes.push(n);
+    });
+    let flat = '';
+    nodes.forEach(node => {
+        const s = node.nodeValue;
+        for (let i = 0; i < s.length; i++) {
+            if (normAr(s[i])) { flat += normAr(s[i]); map.push([node, i]); }
+        }
+    });
+
+    // الآيات المعروضة في هذا القسم
+    const shown = new Set([...list.querySelectorAll('.ayah')]
+        .map(a => parseInt(a.id.replace('ayah-', ''), 10)));
+    const wanted = data.filter(L => {
+        const [f, t] = L.r.split('-').map(x => parseInt(x.split(':')[1], 10));
+        for (let v = f; v <= t; v++) if (shown.has(v)) return true;
+        return false;
+    });
+
+    // مطابقة كل سطر بالتسلسل ثم اقتطاعه بمدى
+    const out = document.createElement('div');
+    out.className = 'mushaf-page';
+    let cursor = 0, made = 0;
+    for (const L of wanted) {
+        const t = normAr(L.t);
+        if (!t) continue;
+        const i = flat.indexOf(t, cursor);
+        if (i < 0) continue;
+        const [sn, so] = map[i], [en, eo] = map[i + t.length - 1];
+        const range = document.createRange();
+        range.setStart(sn, so);
+        range.setEnd(en, eo + 1);
+        const div = document.createElement('div');
+        div.className = 'mushaf-line';
+        div.appendChild(range.cloneContents());
+        out.appendChild(div);
+        cursor = i + t.length;
+        made++;
+    }
+    if (!made) return false;
+    list.appendChild(out);
+    mushafBuilt = true;
+    return true;
+}
+
+async function toggleMushaf() {
+    const on = !document.body.classList.contains('mushaf-mode');
+    if (on) {
+        const ok = await buildMushafLines();
+        if (!ok) { alert('تعذّر تجهيز أسطر المصحف'); return; }
+    }
+    document.body.classList.toggle('mushaf-mode', on);
     const btn = document.getElementById('mushafBtn');
     if (btn) btn.classList.toggle('active', on);
     localStorage.setItem('bq-mushaf', on);

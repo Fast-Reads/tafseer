@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tafseer-baqarah-v20';
+const CACHE_NAME = 'tafseer-baqarah-v21';
 const ASSETS = [
   './',
   './index.html',
@@ -28,7 +28,8 @@ const ASSETS = [
   './section-19.html',
   './section-20.html',
   './section-21.html',
-  './mutashabihat.html'
+  './mutashabihat.html',
+  './mushaf-lines.json'
 ];
 
 // Install: cache all assets
