@@ -1391,12 +1391,11 @@ body {
 /* كل سطرٍ كتلة مستقلّة تُضبط من الطرفين كسطر المصحف */
 .mushaf-line {
     font-family: var(--font-quran);
-    font-size: 1.75rem;
+    font-size: clamp(0.92rem, 4.4vw, 1.85rem);
     color: #000000;
-    line-height: 2.35;
+    line-height: 2.3;
     text-align: justify;
     text-align-last: justify;
-    white-space: nowrap;
     /* ألوان التجويد ألوان الوضع الفاتح لأن الورق فاتح دائماً */
     --tj-ghn: #2e7d32; --tj-khf: #00838f; --tj-dgm: #6a1b9a;
     --tj-qlb: #ad1457; --tj-qlq: #e65100; --tj-mdd: #c62828; --tj-slt: #9e9e9e;
@@ -1413,5 +1412,5 @@ body {
 @media (max-width: 768px) {
     .mushaf-mode .container { padding: 10px 4px 34px; }
     .mushaf-mode .ayah-list { padding: 20px 8px 18px; }
-    .mushaf-line { font-size: 1.35rem; line-height: 2.25; }
+    .mushaf-line { line-height: 2.2; }
 }

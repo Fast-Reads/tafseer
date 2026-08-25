@@ -450,10 +450,17 @@ async function buildMushafLines() {
         if (!t) continue;
         const i = flat.indexOf(t, cursor);
         if (i < 0) continue;
-        const [sn, so] = map[i], [en, eo] = map[i + t.length - 1];
+        const [sn, so] = map[i];
         const range = document.createRange();
         range.setStart(sn, so);
-        range.setEnd(en, eo + 1);
+        // ننهي المدى عند بداية الحرف المطابَق التالي، ليدخل فيه ما بينهما
+        // من أرقام الآي وعلامات الوقف والمسافات
+        const nxt = map[i + t.length];
+        if (nxt) range.setEnd(nxt[0], nxt[1]);
+        else {
+            const [en, eo] = map[map.length - 1];
+            range.setEnd(en, eo + 1);
+        }
         const div = document.createElement('div');
         div.className = 'mushaf-line';
         div.appendChild(range.cloneContents());
