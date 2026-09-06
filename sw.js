@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tafseer-baqarah-v30';
+const CACHE_NAME = 'tafseer-baqarah-v31';
 const ASSETS = [
   './',
   './index.html',
