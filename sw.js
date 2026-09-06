@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tafseer-baqarah-v25';
+const CACHE_NAME = 'tafseer-baqarah-v26';
 const ASSETS = [
   './',
   './index.html',
@@ -28,6 +28,7 @@ const ASSETS = [
   './section-19.html',
   './section-20.html',
   './section-21.html',
+  './section-22.html',
   './mutashabihat.html'
 ];
 
