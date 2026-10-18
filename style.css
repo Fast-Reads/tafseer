@@ -1434,3 +1434,10 @@ body {
     .compare-intro, .compare-note { font-size: 0.85rem; }
     .compare-table { font-size: 0.8rem; }
 }
+
+/* صندوق لمحة داخل كتلة تفسير آية بعينها */
+.tafseer-block .compare-box {
+    margin: 14px 0 16px;
+    background: var(--bg-secondary);
+    padding: 15px 20px 17px;
+}
