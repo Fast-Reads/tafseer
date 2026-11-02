@@ -1,0 +1,25 @@
+{
+  "name": "سورة الأحزاب — تفسير موضوعي",
+  "short_name": "سورة الأحزاب",
+  "description": "تفسير سورة الأحزاب (الآيات ٤٠–٥٥) مقسّماً إلى ٤ موضوعات مع التجويد ووضع الحفظ",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "dir": "rtl",
+  "lang": "ar",
+  "theme_color": "#c9a84c",
+  "background_color": "#faf8f2",
+  "icons": [
+    {
+      "src": "../icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

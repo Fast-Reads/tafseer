@@ -200,7 +200,9 @@ document.addEventListener('click', e => {
 });
 
 // === BOOKMARKS ===
-let bookmarks = JSON.parse(localStorage.getItem('bq-bookmarks') || '[]');
+// لكل سورة علاماتها: صفحات الأحزاب تحدّد مفتاحها في وسم html
+const BOOKMARKS_KEY = document.documentElement.dataset.bookmarksKey || 'bq-bookmarks';
+let bookmarks = JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]');
 function applyBookmarks() {
     bookmarks.forEach(n => {
         const el = document.getElementById('ayah-' + n);
@@ -214,7 +216,7 @@ document.addEventListener('dblclick', e => {
     a.classList.toggle('bookmarked');
     if (bookmarks.includes(n)) bookmarks = bookmarks.filter(x => x !== n);
     else bookmarks.push(n);
-    localStorage.setItem('bq-bookmarks', JSON.stringify(bookmarks));
+    localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(bookmarks));
     updateBookmarksPanel();
 });
 
@@ -248,7 +250,7 @@ function createBookmarksPanel() {
             const el = document.getElementById('ayah-' + n);
             if (el) el.classList.remove('bookmarked');
             bookmarks = bookmarks.filter(x => x !== n);
-            localStorage.setItem('bq-bookmarks', JSON.stringify(bookmarks));
+            localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(bookmarks));
             updateBookmarksPanel();
             return;
         }

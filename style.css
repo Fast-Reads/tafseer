@@ -159,7 +159,7 @@ body {
     border-color: var(--gold);
     background: var(--highlight-bg);
 }
-.toolbar button.active {
+.toolbar button.active, .toolbar a.active {
     background: var(--gold);
     color: #fff;
     border-color: var(--gold);
