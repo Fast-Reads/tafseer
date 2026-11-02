@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bookmarks-key="az-bookmarks">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة الأحزاب — لا تؤذوا الرسول ﷺ، والقول السديد، وعرض الأمانة</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة الأحزاب</h1>
+            <p class="surah-subtitle">الموضوع ١٨ من ١٨</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#00bcd4">
+            <div class="section-num">١٨</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">لا تؤذوا الرسول ﷺ، والقول السديد، وعرض الأمانة</h2>
+                <h3 class="section-title-en">Do Not Hurt the Messenger, the Upright Word &amp; the Trust</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٦٩ – ٧٣</div>
+        </div>
+
+        <div class="section-desc">
+            <p>نهي المؤمنين عن أذية رسولهم كما أوذي موسى، وأمرهم بالتقوى والقول السديد، ثم عرض الأمانة على السماوات والأرض والجبال وحمل الإنسان لها، وبه تُختم السورة</p>
+        </div>
+
+        <div class="section-context">
+            <span class="section-context-label">موقع القسم من السورة</span>
+            <p>بعد مشهد الكافرين يتحسّرون على ترك طاعة الله والرسول، يلتفت الخطاب إلى المؤمنين بخاتمة السورة. وقد ربطها القرطبي بما قبلها: لمّا ذكر المنافقين والكفار الذين آذوا رسول الله ﷺ والمؤمنين حذّر المؤمنين من التشبه ببني إسرائيل في أذيتهم موسى، وجعل الأمر بالأمانة أمرًا بالتزام ما بيّنه الله في هذه السورة من الأحكام. فالخاتمة تجمع خيوط السورة: النهي عن أذى النبي ﷺ الذي تكرر في شأن زيد وزينب وبيوته وأزواجه، والأمر بالقول السديد في مقابل إرجاف المنافقين، والوعد بالفوز لمن أطاع الله ورسوله في مقابل حسرة من عصاهما، ثم الأمانة التي ينقسم الناس بحسب أدائها إلى منافقين ومشركين يعذّبهم الله، ومؤمنين يتوب عليهم، فتنتهي السورة بأن الله كان غفورًا رحيمًا.</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="69">
+                        <div class="flow-node-num">٦٩</div>
+                        <div class="flow-node-text">لا تكونوا كالذين آذوا موسى فبرّأه الله مما قالوا</div>
+                        <div class="flow-node-key">لَا تَكُونُوا۟ كَٱلَّذِینَ ءَاذَوۡا۟ مُوسَىٰ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا نهاهم عن الأذى بالقول، أمرهم بضده: التقوى والقول السديد، ووعدهم عليه صلاح الأعمال ومغفرة الذنوب والفوز العظيم.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="70-71">
+                        <div class="flow-node-num">٧٠ – ٧١</div>
+                        <div class="flow-node-text">التقوى والقول السديد، وثمرتهما صلاح الأعمال والمغفرة والفوز</div>
+                        <div class="flow-node-key">ٱتَّقُوا۟ ٱللَّهَ وَقُولُوا۟ قَوۡلࣰا سَدِیدࣰا</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا كان ما أُمروا به في السورة من الأحكام تكليفًا ثقيلًا، عظّم شأنه: إنه الأمانة التي أشفقت منها السماوات والأرض والجبال وحملها الإنسان.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="72">
+                        <div class="flow-node-num">٧٢</div>
+                        <div class="flow-node-text">عرض الأمانة على السماوات والأرض والجبال وحمل الإنسان لها</div>
+                        <div class="flow-node-key">إِنَّا عَرَضۡنَا ٱلۡأَمَانَةَ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا حملها الإنسان، كانت العاقبة أن ينقسم الناس بها: منافقون ومشركون يعذّبهم الله، ومؤمنون يتوب عليهم.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="73">
+                        <div class="flow-node-num">٧٣</div>
+                        <div class="flow-node-text">عاقبة حمل الأمانة: عذاب المنافقين والمشركين، والتوبة على المؤمنين</div>
+                        <div class="flow-node-key">لِّیُعَذِّبَ ٱللَّهُ ٱلۡمُنَـٰفِقِینَ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-69">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> لَا تَكُونُو<span class="tj-slt">ا۟</span> كَ<span class="tj-slt">ٱلَّ</span>ذِینَ ءَاذَوۡ<span class="tj-slt">ا۟</span> مُوسَ<span class="tj-mdd">ىٰ</span> فَبَرَّأَهُ <span class="tj-slt">ٱ</span>للَّهُ مِ<span class="tj-ghn">مَّ</span>ا قَالُو<span class="tj-slt">ا۟ۚ</span> وَكَانَ عِ<span class="tj-khf">ن</span>دَ <span class="tj-slt">ٱ</span>للَّهِ وَجِیهࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يا أيها المؤمنون لا تؤذوا رسول الله ﷺ بقول أو فعل، ولا تكونوا مثل بني إسرائيل الذين آذوا موسى فرموه بعيب كذبًا، فأظهر الله براءته مما قالوا، وكان عند الله عظيم القدر والمنزلة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-69">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-69">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-69">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-69">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-69">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-69">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-69">حذّر المؤمنين من أذية رسولهم ﷺ ومقابلته بضد ما يجب له من الإكرام، ومن التشبه بالذين آذوا موسى كليم الرحمن فبرّأه الله، أي أظهر لهم براءته، مع أنه وجيه عند الله مقرّب، فلم تزجرهم فضائله عن أذيته. والأذية عنده قول بني إسرائيل لمّا رأوا شدة حيائه وتستّره: «إنه ما يمنعه من ذلك إلا أنه آدر»، فاغتسل يومًا ووضع ثوبه على حجر ففرّ الحجر بثوبه، فمرّ به على مجالسهم فرأوه أحسن خلق الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-69', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-69">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-69">أورد حديث أبي هريرة عند البخاري: «إن موسى كان رجلا حييا ستيرا»، فقالوا: ما يتستّر إلا من عيب بجلده، فعدا الحجر بثوبه حتى رأوه أحسن ما خلق الله، ونبّه أنه من أفراد البخاري دون مسلم. ونقل عن علي أن أذاهم اتهامه بقتل هارون، وحكى تجويز ابن جرير الوجهين، ثم قال: يحتمل أن يكون الكل مرادًا. وذكر قول النبي ﷺ لمّا طُعن في قسمته: «لقد أوذي موسى بأكثر من هذا فصبر». ووجيهًا: ذو جاه، وعن الحسن: كان مستجاب الدعوة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-69', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-69">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-69">فبرّأه الله: طهّره، ووجيهًا: كريمًا ذا جاه وقدر. ونقل عن ابن عباس: كان حظيًّا عند الله لا يسأل شيئًا إلا أعطاه، وعن الحسن: كان مستجاب الدعوة. ثم ذكر الخلاف فيما أوذي به: فأسند حديث أبي هريرة في الحجر والثوب، وقال قوم: ادّعوا عليه قتل هارون لمّا مات في التيه، وقال أبو العالية: إن قارون استأجر مومسة لتقذفه فعصمها الله وبرّأه. وختم بحديث القسمة: «يرحم الله موسى لقد أوذي بأكثر من هذا فصبر».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-69', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-69">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-69">لمّا ذكر الذين آذوا رسول الله ﷺ والمؤمنين حذّر المؤمنين من التشبه ببني إسرائيل. وحكى عن النقاش أن أذيتهم محمدًا ﷺ قولهم: زيد بن محمد، وعن أبي وائل قصة القسمة. وفي أذية موسى: حديث الحجر عن ابن عباس وجماعة، وعن علي اتهامه بقتل هارون، وقيل: رميه بالسحر والجنون، وصحّح الأول وجوّز وقوع الجميع. واستنبط منها جواز الاغتسال عريانًا في الخلوة، وهو مذهب الجمهور. وذكر قراءة ابن مسعود «وكان عبدا لله»، ونقل ردّ أبي بكر الأنباري على من زعم أنها الصواب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-69', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-69">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-69">يقول لأصحاب النبي ﷺ: لا تؤذوا رسول الله بقول يكرهه ولا بفعل لا يحبه، ولا تكونوا كالذين رموا موسى بعيب كذبًا وباطلًا، فبرّأه الله بما أظهر من البرهان، وكان عنده مشفّعًا ذا وجه ومنزلة. ثم ذكر الخلاف في الأذى: قيل رموه بأنه آدر، وأسنده عن ابن عباس وأبي هريرة مرفوعًا، وقيل: بأنه أبرص، وقيل: ادّعاؤهم قتل هارون، عن علي. واختار أنهم آذوه ببعض ما يكره، وجائز أن يكون كل ذلك، «ولا قول في ذلك أولى بالحق مما قال الله».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-69', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-70">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>تَّقُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ وَقُولُو<span class="tj-slt">ا۟</span> قَوۡلࣰا سَدِیدࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٧٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يا أيها المؤمنون اتقوا الله بفعل ما أمر وترك ما نهى، وقولوا في كل شؤونكم قولًا مستقيمًا موافقًا للحق والصواب، خاليًا من الكذب والباطل.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-70">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-70">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-70">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-70">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-70">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-70">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-70">أمر المؤمنين بتقواه في جميع أحوالهم سرًّا وعلانية، وخصّ منها القول السديد، وهو القول الموافق للصواب أو المقارب له عند تعذّر اليقين: من قراءة وذكر وأمر بمعروف ونهي عن منكر وتعلّم علم وتعليمه، والحرص على إصابة الصواب في المسائل العلمية وسلوك كل طريق يوصل إليه. ومن القول السديد عنده لين الكلام ولطفه في مخاطبة الناس، والقول المتضمن للنصح والإشارة بما هو أصلح.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-70', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-70">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-70">أمر عباده المؤمنين بتقواه، وأن يعبدوه عبادة من كأنه يراه، وأن يقولوا قولًا سديدًا، أي مستقيمًا لا اعوجاج فيه ولا انحراف. وجمع عند الآية التالية أقوال السلف في السديد: قال عكرمة: لا إله إلا الله، وقال غيره: الصدق، وقال مجاهد: السداد، وقال غيره: الصواب، ثم قال: «والكل حق».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-70', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-70">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-70">نقل في معنى القول السديد أقوالًا: قال ابن عباس: صوابًا، وقال قتادة: عدلًا، وقال الحسن: صدقًا، وقيل: مستقيمًا، وقال عكرمة: هو قول لا إله إلا الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-70', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-70">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-70">السديد: القصد والحق، وعن ابن عباس: صوابًا. وقال قتادة ومقاتل: قولوا قولًا سديدًا في شأن زينب وزيد، ولا تنسبوا النبي إلى ما لا يحل. وعن عكرمة وابن عباس: لا إله إلا الله، وقيل: ما وافق ظاهره باطنه، وقيل: ما أريد به وجه الله، وقيل: الإصلاح بين المتشاجرين. وأصله من تسديد السهم ليصاب به الغرض، وهو عام في الخيرات كلها، وظاهر الآية أنه إشارة إلى ما يكون خلافًا للأذى الذي قيل في جهة الرسول ﷺ والمؤمنين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-70', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-70">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-70">اتقوا الله أن تعصوه فتستحقوا بذلك عقوبته، وقولوا في رسول الله ﷺ والمؤمنين قولًا قاصدًا، حقًّا غير باطل. وأسند عن مجاهد: سدادًا، وعن الكلبي: صدقًا، وعن قتادة: عدلًا، يعني في منطقه وفي عمله كله، والسديد الصدق، وعن عكرمة: قولوا لا إله إلا الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-70', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-71">
+                <div class="ayah-text">یُصۡلِحۡ لَكُمۡ أَعۡمَ<span class="tj-mdd">ـٰ</span>لَكُمۡ وَیَغۡفِرۡ لَكُمۡ ذُنُوبَكُمۡۗ وَمَن یُطِعِ <span class="tj-slt">ٱ</span>للَّهَ وَرَسُولَهُۥ فَقَ<span class="tj-qlq">دۡ</span> فَازَ فَوۡزًا عَظِیمًا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٧١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">فإن فعلتم ذلك وفّقكم الله للأعمال الصالحة وتقبّلها منكم، وغفر لكم ذنوبكم. ومن يطع الله ورسوله فيما أمر ونهى فقد ظفر بالكرامة العظمى في الدنيا والآخرة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-71">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-71">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-71">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-71">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-71">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-71">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-71">ذكر ما يترتب على التقوى والقول السديد: يصلح لكم أعمالكم، أي يكون ذلك سببًا لصلاحها وطريقًا لقبولها، كما قال: إنما يتقبل الله من المتقين، ويوفّق فيه العبد للعمل الصالح، ويحفظ الأعمال مما يفسدها ويحفظ ثوابها ويضاعفه، كما أن الإخلال بهما سبب لفسادها وعدم قبولها. ويغفر لكم ذنوبكم التي هي السبب في هلاككم، فالتقوى تستقيم بها الأمور ويندفع بها كل محذور، ولذلك قال: ومن يطع الله ورسوله فقد فاز فوزًا عظيمًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-71', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-71">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-71">وعدهم إن فعلوا ذلك أن يصلح أعمالهم، أي يوفقهم للأعمال الصالحة، وأن يغفر الذنوب الماضية، وما يقع منهم في المستقبل يلهمهم التوبة منه. والفوز العظيم: أن يُجار من النار ويصير إلى النعيم المقيم. وأورد عن أبي موسى أن النبي ﷺ قال بعد صلاة الظهر: «إن الله أمرني أن آمركم أن تتقوا الله وتقولوا قولا سديدا»، ثم أتى النساء فأمرهن بمثله. وأورد عن عائشة أنه ﷺ ما قام على المنبر إلا قرأ هذه الآية، وقال: غريب جدًّا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-71', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-71">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-71">يصلح لكم أعمالكم: قال ابن عباس: يتقبل حسناتكم، وقال مقاتل: يزكّ أعمالكم. ويغفر لكم ذنوبكم، ومن يطع الله ورسوله فقد فاز فوزًا عظيمًا، أي ظفر بالخير كله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-71', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-71">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-71">وعد الله بأن يجازي على القول السداد بإصلاح الأعمال وغفران الذنوب، وقال: «وحسبك بذلك درجة ورفعة ومنزلة». ومن يطع الله ورسوله، أي فيما أمر به ونهى عنه، فقد فاز فوزًا عظيمًا. ولم يزد على ذلك في هذه الآية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-71', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-71">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-71">يقول للمؤمنين: اتقوا الله وقولوا السداد من القول يوفقكم لصالح الأعمال فيصلح أعمالكم، ويعفُ لكم عن ذنوبكم فلا يعاقبكم عليها. ومن يطع الله ورسوله فيعمل بما أمره به وينتهي عما نهاه ويقل السديد، فقد ظفر بالكرامة العظمى من الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-71', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-72">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span>ا عَرَضۡنَا <span class="tj-slt">ٱ</span>لۡأَمَانَةَ عَلَى <span class="tj-slt">ٱل</span>سَّمَ<span class="tj-mdd">ـٰ</span>وَ<span class="tj-mdd"> ٰ⁠</span>تِ وَ<span class="tj-slt">ٱ</span>لۡأَرۡضِ وَ<span class="tj-slt">ٱ</span>لۡجِبَالِ فَأَبَیۡنَ أَن یَحۡمِلۡنَهَا وَأَشۡفَ<span class="tj-qlq">قۡ</span>نَ مِنۡهَا وَحَمَلَهَا <span class="tj-slt">ٱ</span>لۡإِ<span class="tj-khf">ن</span>سَ<span class="tj-mdd">ـٰ</span>نُۖ إِ<span class="tj-ghn">نَّ</span>هُۥ كَانَ ظَلُومࣰا جَهُولࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٧٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">عرض الله الأمانة — وهي التكاليف من امتثال الأوامر واجتناب النواهي — على السماوات والأرض والجبال، فأبين حملها خوفًا من التقصير في أدائها، وحملها الإنسان على ضعفه، إنه كان شديد الظلم لنفسه، جهولًا بعاقبة ما تحمّل.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-72">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-72">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-72">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-72">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-72">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-72">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-72">عظّم شأن الأمانة، وهي امتثال الأوامر واجتناب المحارم في السر كالعلانية، وقد عرضها على السماوات والأرض والجبال عرض تخيير لا تحتيم: إن قمتِ بها فلك الثواب وإلا فعليك العقاب. فأبين خوفًا ألا يقمن بها، لا عصيانًا لربهن ولا زهدًا في ثوابه، وحملها الإنسان على ظلمه وجهله. فانقسم الناس بحسب قيامهم بها ثلاثة أقسام: منافقون قاموا بها ظاهرًا لا باطنًا، ومشركون تركوها ظاهرًا وباطنًا، ومؤمنون قائمون بها ظاهرًا وباطنًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-72', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-72">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-72">نقل عن ابن عباس من طرق أن الأمانة الطاعة أو الفرائض، عُرضت على السماوات والأرض والجبال فأشفقن تعظيمًا لدين الله لا معصية، ثم على آدم فقبلها، فما كان إلا قدر ما بين العصر إلى الليل حتى أصاب الخطيئة، وأشار إلى انقطاع رواية الضحاك عنه. وذكر أقوالًا: الفرائض، والطاعة، وائتمان المرأة على فرجها عن أبي بن كعب، والغسل من الجنابة، ثم قال: «وكل هذه الأقوال لا تنافي بينها»، بل ترجع إلى التكليف وقبول الأوامر والنواهي بشرطها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-72', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-72">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-72">الأمانة الطاعة والفرائض، عُرضت على السماوات والأرض والجبال: إن أدّوها أُثيبوا وإن ضيّعوها عُذّبوا، وهو قول ابن عباس. وصحّح أن العرض كان على أعيانها، تخييرًا لا إلزامًا، فأبين خوفًا وتعظيمًا لا معصية. والإنسان: آدم. وعن ابن عباس: ظلومًا لنفسه، جهولًا بأمر الله وما احتمل. وحكى عن أهل المعاني أن حملها قد يكون بمعنى خان فيها، ونقل عن الحسن على هذا التأويل أن الإنسان الكافر والمنافق، ثم قال: وقول السلف ما ذكرنا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-72', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-72">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-72">افتتحها بأنه لمّا بيّن في هذه السورة من الأحكام ما بيّن أمر بالتزام أوامره، وأن الأمانة تعم جميع وظائف الدين على الصحيح وهو قول الجمهور. ومن تفاصيلها: أمانات الأموال كالودائع عن ابن مسعود، وغسل الجنابة عن أبي الدرداء. ونقل عن النحاس في قول ابن عباس بالعرض ثم قبول آدم: «وهذا القول هو الذي عليه أهل التفسير». وذكر أن العرض عرض تخيير لا إلزام، ونقل عن القفال أنه ضرب مثل. والإنسان: آدم عند ابن عباس، أو الكافر والمنافق عند الحسن، أو النوع كله، واستحسن الأخير مع عموم الأمانة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-72', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-72">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-72">حكى اختلاف أهل التأويل: فقيل الأمانة طاعة الله وفرائضه، عُرضت على السماوات والأرض والجبال فأبت شفقًا ألا تقوم بالواجب، وحملها آدم ظلومًا لنفسه جهولًا بالذي فيه الحظ له، وأسنده عن ابن عباس وسعيد بن جبير والضحاك وقتادة. وقيل: أمانات الناس، وأسند فيه حديث ابن مسعود في أن القتل في سبيل الله يكفّر الذنوب إلا الأمانة. وقيل: ائتمان آدم ابنه قابيل على أهله، عن السدي. واختار أنها «جميع معاني الأمانات في الدين وأمانات الناس» لأن الله لم يخصّ بعضها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-72', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-73">
+                <div class="ayah-text">لِّیُعَذِّبَ <span class="tj-slt">ٱ</span>للَّهُ <span class="tj-slt">ٱ</span>لۡمُنَ<span class="tj-mdd">ـٰ</span>فِقِینَ وَ<span class="tj-slt">ٱ</span>لۡمُنَ<span class="tj-mdd">ـٰ</span>فِقَ<span class="tj-mdd">ـٰ</span>تِ وَ<span class="tj-slt">ٱ</span>لۡمُشۡرِكِینَ وَ<span class="tj-slt">ٱ</span>لۡمُشۡرِكَ<span class="tj-mdd">ـٰ</span>تِ وَیَتُوبَ <span class="tj-slt">ٱ</span>للَّهُ عَلَى <span class="tj-slt">ٱ</span>لۡمُؤۡمِنِینَ وَ<span class="tj-slt">ٱ</span>لۡمُؤۡمِنَ<span class="tj-mdd">ـٰ</span>تِۗ وَكَانَ <span class="tj-slt">ٱ</span>للَّهُ غَفُورࣰا رَّحِیمَۢا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٧٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">حمل الإنسان الأمانة لتكون العاقبة أن يعذّب الله المنافقين والمنافقات الذين يُظهرون الإيمان ويُخفون الكفر، والمشركين والمشركات، ويتوب على المؤمنين والمؤمنات فيستر ذنوبهم ولا يعاقبهم عليها، وكان الله غفورًا رحيمًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-73">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-73">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-73">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-73">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-73">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-73">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-73">ذكر الله أعمال الأقسام الثلاثة — المنافقين والمشركين والمؤمنين — وما لهم من الثواب والعقاب. وحمد الله على أن ختم الآية بالاسمين الكريمين الغفور الرحيم، الدالّين على تمام مغفرته وسعة رحمته وعموم جوده، مع أن كثيرًا من المحكوم عليهم لم يستحق المغفرة والرحمة لنفاقه وشركه. وبها ختم تفسير السورة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-73', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-73">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-73">أي إنما حمل ابن آدم الأمانة، وهي التكاليف، ليعذّب الله المنافقين والمنافقات، وهم الذين يظهرون الإيمان خوفًا من أهله ويبطنون الكفر متابعةً لأهله، والمشركين والمشركات الذين ظاهرهم وباطنهم على الشرك بالله ومخالفة رسله، ويتوب الله على المؤمنين، أي ليرحم المؤمنين بالله وملائكته وكتبه ورسله العاملين بطاعته. وبها ختم تفسير سورة الأحزاب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-73', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-73">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-73">نقل عن مقاتل: ليعذبهم بما خانوا الأمانة ونقضوا الميثاق، وفسّر التوبة على المؤمنين بأنه يهديهم ويرحمهم بما أدّوا من الأمانة. ونقل عن ابن قتيبة: عرضنا الأمانة ليظهر نفاق المنافق وشرك المشرك فيعذبهما الله، ويظهر إيمان المؤمن فيتوب الله عليه، أي يعود عليه بالرحمة والمغفرة إن حصل منه تقصير في بعض الطاعات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-73', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-73">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-73">اللام في ليعذب لام التعليل متعلقة بحمل، أي حملها ليعذّب العاصي ويثيب المطيع، لأن العذاب نتيجة حمل الأمانة، وقيل: متعلقة بعرضنا، أي عرضناها ثم قلّدناها الإنسان ليظهر شرك المشرك ونفاق المنافق فيعذبهم الله، وإيمان المؤمن فيثيبه. وذكر أن الحسن قرأ «ويتوبُ» بالرفع على القطع، أي يتوب الله عليهم بكل حال. وأعرب رحيمًا خبرًا بعد خبر لكان، وأجاز كونه نعتًا لغفور أو حالًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-73', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-73">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-73">وحمل الإنسان الأمانة كيما يعذّب الله المنافقين الذين يُظهرون أنهم يؤدّون فرائض الله وهم مستسرّون الكفر بها، والمشركين في عبادتهم الآلهة والأوثان، ويتوب على المؤمنين: يرجع بهم إلى طاعته وأداء الأمانات حتى يؤدوها، غفورًا لذنوبهم بستره عليها، رحيمًا أن يعذّبهم بعد توبتهم. وأسند عن الحسن أن المنافق والمشرك «اللذان خاناها»، وعن قتادة في المؤمنين: «هذان اللذان أدَّياها».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-73', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-17.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">السؤال عن الساعة ومصير الكافرين في السعير</span>
+            </a>
+            <span class="nav-btn disabled"></span>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة الأحزاب — الموضوع ١٨: لا تؤذوا الرسول ﷺ، والقول السديد، وعرض الأمانة<br>
+        <small>آيات ٦٩ – ٧٣ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

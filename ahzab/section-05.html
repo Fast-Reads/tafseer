@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bookmarks-key="az-bookmarks">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة الأحزاب — فضح المنافقين المعوّقين</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة الأحزاب</h1>
+            <p class="surah-subtitle">الموضوع ٥ من ١٨</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#9b59b6">
+            <div class="section-num">٥</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">فضح المنافقين المعوّقين</h2>
+                <h3 class="section-title-en">Exposing the Hypocrites Who Held Others Back</h3>
+            </div>
+            <div class="section-ayah-range">آيات ١٤ – ٢٠</div>
+        </div>
+
+        <div class="section-desc">
+            <p>بيان هشاشة إيمان المنافقين ونقضهم عهدهم مع الله، وأن الفرار لا يدفع الموت ولا عاصم من الله، ثم فضح المعوّقين المخذّلين بشحّهم وجبنهم وحدّة ألسنتهم، وحالهم بعد انصراف الأحزاب</p>
+        </div>
+
+        <div class="section-context">
+            <span class="section-context-label">موقع القسم من السورة</span>
+            <p>لمّا ذكر استئذان فريق من المنافقين بحجة أن بيوتهم عورة وأن مرادهم الفرار، كشف هنا حقيقة إيمانهم: فلو دخل العدو عليهم لارتدّوا مسرعين، مع أنهم كانوا عاهدوا الله ألا يولّوا الأدبار. ثم ردّ على فرارهم بأنه لا يؤخر أجلًا ولا يعصم من الله، وفضح المعوّقين بصفاتهم من الشح والجبن وحدّة اللسان، وختم بخوفهم الدائم من الأحزاب حتى بعد رحيلهم. وبعد هذه الصورة يأتي القسم التالي بالصورة المقابلة: الأسوة الحسنة في رسول الله ﷺ وثبات المؤمنين الصادقين.</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="14-15">
+                        <div class="flow-node-num">١٤ – ١٥</div>
+                        <div class="flow-node-text">هشاشة إيمانهم ونقضهم العهد</div>
+                        <div class="flow-node-key">ثُمَّ سُئِلُوا۟ ٱلۡفِتۡنَةَ لَءَاتَوۡهَا</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا بيّن أن غايتهم الفرار، ردّ عليهم بأن الفرار لا يغني عنهم شيئًا: فالأجل لا يتأخر، ولا أحد يعصمهم من الله إن أراد بهم سوءًا.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="16-17">
+                        <div class="flow-node-num">١٦ – ١٧</div>
+                        <div class="flow-node-text">لا ينفع الفرار ولا عاصم من الله</div>
+                        <div class="flow-node-key">قُل لَّن یَنفَعَكُمُ ٱلۡفِرَارُ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ثم انتقل من خطابهم إلى تهديدهم بعلمه: فهو يعلم المعوّقين منهم الذين يثبّطون غيرهم ويدعونهم إلى ترك القتال.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="18">
+                        <div class="flow-node-num">١٨</div>
+                        <div class="flow-node-text">علم الله بالمعوّقين المخذّلين</div>
+                        <div class="flow-node-key">قَدۡ یَعۡلَمُ ٱللَّهُ ٱلۡمُعَوِّقِینَ مِنكُمۡ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا ذكر تعويقهم، فصّل أخلاقهم التي تحملهم عليه: شحّ بكل خير، وجبن عند الخوف، وألسنة حادة عند الأمن.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="19">
+                        <div class="flow-node-num">١٩</div>
+                        <div class="flow-node-text">شحّهم وجبنهم وحدّة ألسنتهم</div>
+                        <div class="flow-node-key">سَلَقُوكُم بِأَلۡسِنَةٍ حِدَادٍ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ومن تمام جبنهم أن الخوف يلازمهم حتى بعد زوال سببه، فلا يصدّقون أن الأحزاب قد رحلوا، ويتمنون لو كانوا بعيدين في البادية.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="20">
+                        <div class="flow-node-num">٢٠</div>
+                        <div class="flow-node-text">خوفهم من الأحزاب بعد رحيلهم</div>
+                        <div class="flow-node-key">یَحۡسَبُونَ ٱلۡأَحۡزَابَ لَمۡ یَذۡهَبُوا۟</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-14">
+                <div class="ayah-text">وَلَوۡ دُخِلَتۡ عَلَیۡهِم <span class="tj-ghn">مِّ</span>نۡ أَ<span class="tj-qlq">قۡ</span>طَارِهَا ثُ<span class="tj-ghn">مَّ</span> سُئِلُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>لۡفِتۡنَةَ لَءَاتَوۡهَا وَمَا تَلَبَّثُو<span class="tj-slt">ا۟</span> بِهَ<span class="tj-mdd">اۤ</span> إِلَّا یَسِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ولو دخل جيش الأحزاب عليهم المدينة من جوانبها، ثم طُلب منهم الرجوع عن الإسلام إلى الشرك، لأجابوا إلى ذلك مسرعين، وما تأخروا عنه إلا قليلًا، لضعف إيمانهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-14">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-14">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-14">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-14">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-14">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-14">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-14">لو دخل الكفار المدينة من نواحيها واستولوا عليها -ولا كان ذلك- ثم سُئل هؤلاء الفتنة، أي الانقلاب عن دينهم والرجوع إلى دين المستولين المتغلبين، لأعطوها مبادرين. وما تلبثوا بها إلا يسيرًا: أي ليس لهم منعة ولا تصلّب على الدين، بل بمجرد أن تكون الدولة للأعداء يعطونهم ما طلبوا ويوافقونهم على كفرهم، وهذه حالهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-14', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-14">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-14">يخبر تعالى عن هؤلاء الذين قالوا: إن بيوتنا عورة وما هي بعورة، أنهم لو دخل عليهم الأعداء من كل جانب من جوانب المدينة وقُطر من أقطارها، ثم سئلوا الفتنة وهي الدخول في الكفر، لكفروا سريعًا، فهم لا يحافظون على الإيمان ولا يستمسكون به مع أدنى خوف وفزع. وقال: هكذا فسّرها قتادة وعبد الرحمن بن زيد وابن جرير، وهذا ذم لهم في غاية الذم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-14', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-14">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-14">لو دخلت عليهم المدينةَ الجيوشُ التي تريد قتالهم، وهم الأحزاب، من أقطارها أي جوانبها ونواحيها، ثم سُئلوا الفتنة أي الشرك، لأعطوها، وقرأ أهل الحجاز ﴿لأتوها﴾ بالقصر أي لجاؤوها ورجعوا عن الإسلام. وما تلبثوا بها: ما احتبسوا عن الفتنة إلا يسيرًا، ولأسرعوا إلى الشرك طيبةً به أنفسهم، وقال: هذا قول أكثر المفسرين، ونقل عن الحسن والفراء: ما أقاموا بالمدينة بعد إعطاء الكفر إلا قليلًا حتى يهلكوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-14', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-14">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-14">الأقطار نواحي البيوت أو المدينة، واحدها قطر، والقتر لغة فيه. و﴿لأتوها﴾ بالقصر بمعنى لجاؤوها قراءة نافع وابن كثير، وبالمد بمعنى لأعطوها قراءة الباقين واختيار أبي عبيد وأبي حاتم، واستدل للمد بحديث الصحابة الذين عُذّبوا وسُئلوا الشرك، وللقصر بالآية التي بعدها. وفي الفتنة وجهان: القتال في العصبية عن الضحاك، والشرك عن الحسن. وما تلبثوا بها: أي بالمدينة بعد الكفر إلا قليلًا عن السدي والحسن والفراء، وقال أكثر المفسرين: ما احتبسوا عن إجابة الشرك إلا قليلًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-14', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-14">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-14">ولو دخلت المدينة على هؤلاء القائلين إن بيوتنا عورة من جوانبها، واحدها قطر وفيه لغة قُتر، ثم سئلوا الرجوع من الإيمان إلى الشرك، لفعلوا وأشركوا، وما احتبسوا عن إجابتهم إلا يسيرًا. وأسند عن قتادة أن الفتنة الشرك، وعن ابن زيد: سئلوا أن يكفروا لكفروا. وذكر القصر ﴿لأتوها﴾ لعامة قراء المدينة بمعنى جاؤوها، والمد لبعض المكيين وعامة قراء الكوفة والبصرة بمعنى أعطوها، وقال إن المد أعجب القراءتين إليه لأن السؤال يقتضي الإعطاء، والأخرى جائزة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-14', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-15">
+                <div class="ayah-text">وَلَقَ<span class="tj-qlq">دۡ</span> كَانُو<span class="tj-slt">ا۟</span> عَ<span class="tj-mdd">ـٰ</span>هَدُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ مِ<span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لُ لَا یُوَلُّونَ <span class="tj-slt">ٱ</span>لۡأَ<span class="tj-qlq">دۡ</span>بَ<span class="tj-mdd">ـٰ</span>رَۚ وَكَانَ عَهۡدُ <span class="tj-slt">ٱ</span>للَّهِ مَسۡءُولࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وقد كان هؤلاء عاهدوا الله من قبل غزوة الخندق ألا يفرّوا من عدوهم إذا لقوه، ثم نقضوا عهدهم، والله سائلهم عن هذا العهد ومحاسبهم عليه.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-15">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-15">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-15">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-15">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-15">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-15">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-15">جعل السعدي الآية بيانًا لحالهم بعد ما ذُكر من استعدادهم لإعطاء الفتنة: والحال أنهم قد عاهدوا الله من قبل لا يولّون الأدبار، وكان عهد الله مسؤولًا، فسيسألهم عن ذلك العهد فيجدهم قد نقضوه، فما ظنهم إذًا بربهم؟ واقتصر على هذا التعليق الموجز، ولم يعيّن من نزلت فيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-15', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-15">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-15">يذكّرهم الله بما كانوا عاهدوه من قبل هذا الخوف ألا يولّوا الأدبار ولا يفرّوا من الزحف، وكان عهد الله مسؤولًا: أي إن الله سيسألهم عن ذلك العهد، لا بد من ذلك. ولم يذكر ابن كثير هنا من نزلت فيه ولا أقوال السلف في تعيين العهد، واكتفى بهذا البيان الموجز.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-15', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-15">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-15">من قبل: أي من قبل غزوة الخندق، ولا يولّون الأدبار: لا ينهزمون. ونقل عن يزيد بن رومان أنهم بنو حارثة همّوا يوم أحد أن يفشلوا مع بني سلمة ثم عاهدوا ألا يعودوا لمثلها، وعن قتادة أنهم ناس غابوا عن بدر فقالوا: لئن أشهدنا الله قتالًا لنقاتلن، وعن مقاتل والكلبي أنهم السبعون أهل العقبة. وردّ هذا الأخير بأنه ليس بمرضي، لأن أهل العقبة لم يكن فيهم شاك ولا من يقول مثل هذا القول.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-15', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-15">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-15">من قبل: أي من قبل غزوة الخندق وبعد بدر. ونقل عن قتادة أنهم غابوا عن بدر ورأوا كرامة أهلها فقالوا: لئن أشهدنا الله قتالًا لنقاتلن، وعن يزيد بن رومان أنهم بنو حارثة الذين همّوا بالفشل يوم أحد ثم عاهدوا ألا يعودوا لمثلها، وعن مقاتل والكلبي أنهم السبعون الذين بايعوا ليلة العقبة واشترط عليهم النبي ﷺ أن يمنعوه مما يمنعون منه نساءهم وأموالهم وأولادهم. ومسؤولًا: أي مسؤولًا عنه، يسألهم الله عنه يوم القيامة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-15', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-15">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-15">ولقد كان هؤلاء المستأذنون القائلون إن بيوتنا عورة عاهدوا الله من قبل ألا يولّوا عدوهم الأدبار إن لقوه في مشهد مع رسول الله ﷺ، فما أوفوا بعهدهم، وكان عهد الله مسؤولًا: يسأل الله عنه من أعطاه من نفسه. وذُكر أنها نزلت في بني حارثة لما كان منهم في الخندق بعد الذي كان منهم بأحد، وأسنده عن يزيد بن رومان، وأسند عن قتادة أنهم ناس غابوا عن بدر فقالوا: لئن أشهدنا الله قتالًا لنقاتلن.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-15', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-16">
+                <div class="ayah-text">قُل لَّن یَ<span class="tj-khf">ن</span>فَعَكُمُ <span class="tj-slt">ٱ</span>لۡفِرَارُ إِ<span class="tj-khf">ن</span> فَرَرۡتُم <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>لۡمَوۡتِ أَوِ <span class="tj-slt">ٱ</span>لۡقَتۡلِ وَإِذࣰا لَّا تُمَتَّعُونَ إِلَّا قَلِیلࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">قل لهم أيها النبي: لن ينفعكم الفرار من الموت أو القتل، فما كُتب عليكم آتيكم لا محالة، ولو فررتم لما تمتعتم في الدنيا إلا مدة قليلة إلى انقضاء آجالكم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-16">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-16">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-16">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-16">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-16">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-16">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-16">قل لهم لائمًا على فرارهم ومخبرًا أنه لا يفيدهم شيئًا: لو كنتم في بيوتكم لبرز الذين كُتب عليهم القتل إلى مضاجعهم. والأسباب تنفع إذا لم يعارضها القضاء والقدر، فإذا جاء القدر تلاشى كل سبب وبطلت كل وسيلة. وإذا فررتم لتسلموا وتنعموا فلا تمتعون إلا قليلًا، متاعًا لا يساوي فراركم وترككم أمر الله وتفويتكم على أنفسكم التمتع الأبدي في النعيم السرمدي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-16', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-16">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-16">أخبرهم أن فرارهم ذلك لا يؤخر آجالهم ولا يطوّل أعمارهم، بل ربما كان سببًا في تعجيل أخذهم على غِرّة، أي على غفلة منهم، ولهذا قال: وإذًا لا تمتعون إلا قليلًا، أي بعد هربكم وفراركم. واستشهد بقوله تعالى: ﴿قُلْ مَتَاعُ الدُّنْيَا قَلِيلٌ وَالْآخِرَةُ خَيْرٌ لِمَنِ اتَّقَى﴾، ولم يزد على ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-16', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-16">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-16">قل لهم: لن ينفعكم الفرار إن فررتم من الموت أو القتل الذي كُتب عليكم، لأن من حضر أجله مات أو قُتل، وإذًا لا تمتعون بعد الفرار إلا مدة آجالكم، وهي قليل. وتفسيره هنا موجز، لم يورد فيه رواية ولا قولًا لأحد من السلف.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-16', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-16">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-16">من حضر أجله مات أو قُتل فلا ينفع الفرار، ولا تمتعون في الدنيا بعد الفرار إلا إلى أن تنقضي آجالكم، وكل ما هو آت فقريب. وذكر رواية الساجي عن يعقوب الحضرمي ﴿لا يمتعون﴾ بالياء، وأن في بعض الروايات ﴿لا تمتعوا﴾ بالنصب بإذًا. وبيّن من جهة النحو أن «إذًا» إذا سبقتها الواو أو الفاء جاز إلغاؤها فيرتفع الفعل وجاز إعمالها، فإن ابتُدئ بها نصبت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-16', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-16">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-16">يقول لنبيه ﷺ: قل للمستأذنين: لن ينفعكم الفرار، لأن ما كتب الله عليكم من الموت أو القتل واصل إليكم بكل حال، كرهتم أو أحببتم، ولا يزيد فراركم في آجالكم، بل تمتعون إلى الوقت الذي كُتب لكم. وأسند عن قتادة: إنما الدنيا كلها قليل، وعن الربيع بن خيثم: إلى آجالهم. ومن جهة النحو ذكر أن ﴿تمتعون﴾ رُفع ولم يُنصب بإذًا لأجل الواو قبلها، وقد يُنصب بها أحيانًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-16', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-17">
+                <div class="ayah-text">قُلۡ مَ<span class="tj-khf">ن</span> ذَا <span class="tj-slt">ٱلَّ</span>ذِی یَعۡصِمُكُم <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>للَّهِ إِنۡ أَرَادَ بِكُمۡ سُ<span class="tj-mdd">وۤ</span>ءًا أَوۡ أَرَادَ بِكُمۡ رَحۡمَ<span class="tj-dgm">ةࣰۚ</span> وَلَا یَجِدُونَ لَهُم <span class="tj-ghn">مِّ</span><span class="tj-khf">ن</span> دُونِ <span class="tj-slt">ٱ</span>للَّهِ وَلِیࣰّا وَلَا نَصِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">قل لهم: من ذا الذي يمنعكم من الله إن أراد بكم شرًّا، أو يحول بينكم وبين رحمته إن أراد بكم خيرًا؟ لا أحد، ولن يجد هؤلاء من دون الله وليًّا يتولاهم ولا نصيرًا يدفع عنهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-17">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-17">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-17">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-17">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-17">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-17">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-17">بيّن أن الأسباب كلها لا تغني عن العبد شيئًا إذا أراده الله بسوء: من ذا الذي يعصمكم، أي يمنعكم، من الله إن أراد بكم شرًّا أو أراد بكم رحمة، فإنه المعطي المانع الضار النافع، لا يأتي بالخير ولا يدفع السوء إلا هو. ولا يجدون وليًّا يجلب لهم النفع ولا نصيرًا يدفع عنهم المضار، فليمتثلوا طاعة المنفرد بالأمور كلها الذي نفذت مشيئته ومضى قدره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-17', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-17">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-17">من ذا الذي يعصمكم من الله، أي يمنعكم، إن أراد بكم سوءًا أو أراد بكم رحمة، ولا يجدون لهم من دون الله وليًّا ولا نصيرًا: أي ليس لهم ولا لغيرهم من دون الله مجير ولا مغيث. وتفسيره هنا موجز، متصل بما قبله في بيان أن الفرار لا يؤخر الأجل.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-17', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-17">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-17">يعصمكم: يمنعكم من عذابه، إن أراد بكم سوءًا: هزيمة، أو أراد بكم رحمة: نصرة، فجعل السوء والرحمة في سياق القتال. ولا يجدون لهم من دون الله وليًّا: أي قريبًا ينفعهم، ولا نصيرًا: أي ناصرًا يمنعهم. وهو بيان لفظي موجز لم يورد فيه رواية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-17', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-17">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-17">يعصمكم: يمنعكم منه، إن أراد بكم سوءًا: أي هلاكًا، أو أراد بكم رحمة: أي خيرًا ونصرًا وعافية. ولا يجدون لهم من دون الله وليًّا ولا نصيرًا: أي لا قريبًا ينفعهم ولا ناصرًا ينصرهم. واكتفى القرطبي في هذه الآية بهذا البيان الموجز، ولم يعقد فيها مسائل ولم يذكر قراءة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-17', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-17">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-17">قل يا محمد لهؤلاء المستأذنين هربًا من القتل: من ذا الذي يمنعكم من الله إن أراد بكم سوءًا في أنفسكم من قتل أو بلاء، أو أراد بكم عافية وسلامة؟ وهل ما يكون بكم من سوء أو رحمة إلا من قِبَله؟ وأسند عن يزيد بن رومان: أي إنه ليس الأمر إلا ما قضيت. ولا يجد هؤلاء المنافقون وليًّا يليهم بالكفاية، ولا نصيرًا ينصرهم فيدفع عنهم ما أراد الله بهم من سوء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-17', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-18">
+                <div class="ayah-text">۞ قَ<span class="tj-qlq">دۡ</span> یَعۡلَمُ <span class="tj-slt">ٱ</span>للَّهُ <span class="tj-slt">ٱ</span>لۡمُعَوِّقِینَ مِ<span class="tj-khf">ن</span>كُمۡ وَ<span class="tj-slt">ٱ</span>لۡقَ<span class="tj-mdd">اۤ</span>ئِلِینَ لِإِخۡوَ<span class="tj-mdd"> ٰ⁠</span>نِهِمۡ هَلُ<span class="tj-ghn">مَّ</span> إِلَیۡنَاۖ وَلَا یَأۡتُونَ <span class="tj-slt">ٱ</span>لۡبَأۡسَ إِلَّا قَلِیلًا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن الله يعلم الذين يثبّطون غيرهم عن القتال مع النبي ﷺ، والذين يقولون لإخوانهم: تعالوا إلينا واتركوا محمدًا، وهم لا يحضرون القتال إلا قليلًا، رياءً ودفعًا للّوم عن أنفسهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-18">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-18">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-18">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-18">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-18">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-18">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-18">توعّد الله المخذّلين المعوّقين: يعلم المعوّقين عن الخروج من لم يخرج، والقائلين لإخوانهم الذين خرجوا: هلم إلينا، أي ارجعوا، كما تقدم من قولهم: يا أهل يثرب لا مقام لكم فارجعوا. وهم مع تعويقهم وتخذيلهم لا يأتون القتال بأنفسهم إلا قليلًا، فهم أشد الناس حرصًا على التخلف، لعدم الداعي إليه من الإيمان والصبر، ووجود المقتضي للجبن من النفاق.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-18', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-18">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-18">يخبر تعالى عن إحاطة علمه بالمعوّقين لغيرهم عن شهود الحرب، والقائلين لإخوانهم، أي أصحابهم وعشرائهم وخلطائهم: هلم إلينا، أي إلى ما نحن فيه من الإقامة في الظلال والثمار، وهم مع ذلك لا يأتون البأس إلا قليلًا. وتفسيره هنا موجز، ثم وصل به الآية التالية في بيان شحّهم وجبنهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-18', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-18">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-18">المعوّقون: المثبّطون للناس عن رسول الله ﷺ، والقائلون لإخوانهم: ارجعوا إلينا ودعوا محمدًا فإنا نخاف عليكم الهلاك. ونقل عن قتادة أنهم منافقون قالوا: ما محمد وأصحابه إلا أكلة رأس، وعن مقاتل أن اليهود أرسلت إلى المنافقين: هلموا إلينا، فأقبل عبد الله بن أبي وأصحابه يعوّقون المؤمنين، فلم يزدهم ذلك إلا إيمانًا واحتسابًا. ولا يأتون البأس إلا قليلًا: رياء وسمعة، ولو كان ذلك القليل لله لكان كثيرًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-18', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-18">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-18">المعوّقون: المعترضون ليصدّوا الناس عن النبي ﷺ، من عاقه عن كذا أي صرفه، والتشديد للتكثير، وعن مقاتل: هم عبد الله بن أبي وأصحابه. و﴿هلم﴾ للواحد والجمع على لغة أهل الحجاز، وأصلها «ها» التي للتنبيه ضُمّت إليها «لم». وفي القائلين ثلاثة أقوال: المنافقون قالوا للمسلمين، أو يهود قريظة قالوا للمنافقين، أو ما حكاه ابن زيد عن رجل وجد أخاه بين يديه رغيف وشواء ونبيذ فدعاه إليه، فنزل جبريل بالآية. ولا يأتون البأس إلا قليلًا خوفًا من الموت، وقيل: رياء وسمعة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-18', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-18">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-18">يعلم الله الذين يعوّقون الناس عن رسول الله ﷺ وعن شهود الحرب معه نفاقًا وتخذيلًا، والقائلين لإخوانهم: تعالوا ودعوا محمدًا فإنا نخاف عليكم الهلاك بهلاكه، ولا يشهدون الحرب إن شهدوا إلا تعذيرًا، أي إقامةً لعذرهم. وأسند عن قتادة قولهم: ما محمد وأصحابه إلا أكلة رأس، وعن يزيد بن رومان: إلا دفعًا وتعذيرًا، وعن ابن زيد خبر الرجل الذي وجد أخاه عنده شواء ورغيف ونبيذ فدعاه إليه، فذهب ليخبر النبي ﷺ فوجد جبريل قد نزل بالآية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-18', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-19">
+                <div class="ayah-text">أَشِحَّةً عَلَیۡكُمۡۖ فَإِذَا جَ<span class="tj-mdd">اۤ</span>ءَ <span class="tj-slt">ٱ</span>لۡخَوۡفُ رَأَیۡتَهُمۡ یَ<span class="tj-khf">ن</span>ظُرُونَ إِلَیۡكَ تَدُورُ أَعۡیُنُهُمۡ كَ<span class="tj-slt">ٱلَّ</span>ذِی یُغۡشَ<span class="tj-mdd">ىٰ</span> عَلَیۡهِ مِنَ <span class="tj-slt">ٱ</span>لۡمَوۡتِۖ فَإِذَا ذَهَبَ <span class="tj-slt">ٱ</span>لۡخَوۡفُ سَلَقُوكُم بِأَلۡسِنَةٍ حِدَادٍ أَشِحَّةً عَلَى <span class="tj-slt">ٱ</span>لۡخَیۡرِۚ أُ<span class="tj-slt">و۟</span>لَ<span class="tj-mdd">ـٰۤ</span>ئِكَ لَمۡ یُؤۡمِنُو<span class="tj-slt">ا۟</span> فَأَحۡبَطَ <span class="tj-slt">ٱ</span>للَّهُ أَعۡمَ<span class="tj-mdd">ـٰ</span>لَهُمۡۚ وَكَانَ ذَ<span class="tj-mdd"> ٰ⁠</span>لِكَ عَلَى <span class="tj-slt">ٱ</span>للَّهِ یَسِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">١٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">هم بخلاء عليكم بأنفسهم وأموالهم ونصرتهم، فإذا جاء القتال رأيتهم ينظرون إليك وأعينهم تدور من الرعب كعين من يُغشى عليه عند الموت، فإذا زال الخوف آذوكم بألسنة حادة يطلبون الغنيمة ويدّعون البطولة، وهم بخلاء بكل خير. أولئك لم يؤمنوا بقلوبهم، فأبطل الله ثواب أعمالهم، وكان ذلك على الله هيّنًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-19">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-19">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-19">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-19">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-19">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-19">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-19">أشحة عليكم: بأبدانهم عند القتال وبأموالهم عند النفقة فيه. فإذا جاء الخوف نظروا إليك نظر المغشي عليه من شدة الجبن الذي خلع قلوبهم، فإذا ذهب الخوف خاطبوكم بكلام حديد ودعاوى غير صحيحة تظنهم بها أهل الشجاعة. وجعل الشح على الخير شرّ ما في الإنسان: شحًّا بماله وبدنه وجاهه وعلمه ونصيحته، وأما المؤمنون فوقاهم الله شح أنفسهم. وبسبب عدم إيمانهم أحبط الله أعمالهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-19', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-19">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-19">أشحة عليكم: بخلاء بالمودة والشفقة، وقال السدي: في الغنائم. وتدور أعينهم من شدة خوفهم وجزعهم، فإذا كان الأمن تكلموا كلامًا بليغًا عاليًا وادّعوا لأنفسهم المقامات العالية في الشجاعة وهم يكذبون، ونقل عن ابن عباس: سلقوكم أي استقبلوكم، وعن قتادة: عند الغنيمة أشح قوم وأسوؤه مقاسمة، وعند البأس أجبن قوم. فقد جمعوا الجبن والكذب وقلة الخير، وأنشد فيهم بيتًا يصف غلظتهم في السلم وضعفهم في الحرب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-19', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-19">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-19">أشحة عليكم: بخلاء بالنفقة في سبيل الله والنصرة، وعن قتادة: عند الغنيمة، فوصفهم بالبخل والجبن. وتدور أعينهم في الرؤوس كدوران عين من قرب منه الموت فذهب عقله وشخص بصره. وسلقوكم: آذوكم ورموكم في حال الأمن بألسنة ذربة، أي حادة، ونقل عن ابن عباس: عضّوكم وتناولوكم بالنقص والغيبة، وعن قتادة: بسطوا ألسنتهم وقت قسمة الغنيمة. ونقل عن مقاتل في الإحباط: أبطل الله جهادهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-19', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-19">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-19">في الشح أقوال: بالحفر في الخندق والنفقة في سبيل الله عن مجاهد وقتادة، وقيل بالقتال، وقيل بالغنائم عن السدي، ونصبُه على الحال، وبسط وجوه إعرابه. والخوف: من قتال العدو عن السدي، أو من النبي ﷺ إذا غلب عن ابن شجرة، وتدور أعينهم لذهاب عقولهم. وأصل السلق الصوت، وحكى الفراء ﴿صلقوكم﴾ بالصاد، ونقل قول قتادة في الغنيمة واستحسان النحاس له. ولم يؤمنوا بقلوبهم وإن أظهروه، والمنافق كافر على الحقيقة، فلم يُثبهم الله على أعمالهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-19', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-19">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-19">ذكر الخلاف في الشح: في الغنيمة عن قتادة، وبالخير عن مجاهد، وبالنفقة على ضعفاء المؤمنين، ورجّح أن الله لم يخصّ معنى دون معنى، فهم أشحة بالغنيمة والخير والنفقة جميعًا لما في أنفسهم من العداوة والضغن. وفي سلقوكم أقوال: عند الغنيمة عن قتادة، واستقبلوكم عن ابن عباس، وبما تحبون نفاقًا عن يزيد بن رومان، ورجّح أنه لطلب الغنيمة، وهو أذى للمؤمنين. ونقل عن ابن زيد أن الموصوف كان بدريًّا فأحبط الله عمله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-19', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-20">
+                <div class="ayah-text">یَحۡسَبُونَ <span class="tj-slt">ٱ</span>لۡأَحۡزَابَ لَمۡ یَذۡهَبُو<span class="tj-slt">ا۟ۖ</span> وَإِن یَأۡتِ <span class="tj-slt">ٱ</span>لۡأَحۡزَابُ یَوَدُّو<span class="tj-slt">ا۟</span> لَوۡ أَ<span class="tj-ghn">نَّ</span>هُم بَادُونَ فِی <span class="tj-slt">ٱ</span>لۡأَعۡرَابِ یَسۡءَلُونَ عَنۡ أَ<span class="tj-qlb">نۢ</span>بَ<span class="tj-mdd">اۤ</span>ئِكُمۡۖ وَلَوۡ كَانُو<span class="tj-slt">ا۟</span> فِیكُم <span class="tj-ghn">مَّ</span>ا قَ<span class="tj-mdd">ـٰ</span>تَلُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> إِلَّا قَلِیلࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يظن هؤلاء المنافقون من شدة جبنهم أن الأحزاب لم يرحلوا بعد، وإن رجع الأحزاب مرة أخرى تمنّوا أن يكونوا في البادية مع الأعراب بعيدين عن المدينة يسألون الناس عن أخباركم، ولو كانوا معكم ما قاتلوا إلا قليلًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-20">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-20">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-20">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-20">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-20">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-20">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-20">يظنون أن الأحزاب الذين تحزّبوا على حرب رسول الله ﷺ وأصحابه لم يذهبوا حتى يستأصلوهم، فخاب ظنهم وبطل حسبانهم. وإن أتى الأحزاب مرة ثانية ودّ هؤلاء أنهم ليسوا في المدينة ولا قريبًا منها، بل مع الأعراب في البادية يستخبرون عن أخباركم: ماذا حصل عليكم؟ فليسوا ممن يُبالى بحضورهم، ولو كانوا فيكم ما قاتلوا إلا قليلًا، فلا تبالوهم ولا تأسوا عليهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-20', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-20">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-20">وهذا أيضًا من صفاتهم القبيحة في الجبن والخوف والخور: يحسبون الأحزاب لم يذهبوا، بل هم قريب منهم وإن لهم عودة إليهم. وإن جاءت الأحزاب ودّوا ألا يكونوا حاضرين معكم في المدينة بل في البادية، يسألون عن أخباركم وما كان من أمركم مع عدوكم. ولو كانوا بين أظهركم لما قاتلوا معكم إلا قليلًا، لكثرة جبنهم وذلتهم وضعف يقينهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-20', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-20">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-20">الأحزاب: قريش وغطفان واليهود، ولم يذهبوا: لم ينصرفوا عن قتالهم، يظنون ذلك جبنًا وفرقًا وقد انصرفوا. وبادون في الأعراب: يتمنون لو كانوا في بادية الأعراب، من بدا يبدو إذا خرج إلى البادية. وذكر قراءة يعقوب ﴿يسّاءلون﴾ مشددة ممدودة أي يتساءلون. وما قاتلوا إلا قليلًا: تعذيرًا، أي قتالًا قليلًا يقيمون به عذرهم، وعن الكلبي: رميًا بالحجارة، وعن مقاتل: رياء وسمعة من غير احتساب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-20', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-20">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-20">يظنون لجبنهم أن الأحزاب لم ينصرفوا وقد انصرفوا، لكنهم لم يتباعدوا في السير. وتمنّوا أن يكونوا مع الأعراب حذرًا من القتل وتربّصًا للدوائر، وذكر قراءة طلحة بن مصرف «لو أنهم بدى في الأعراب» وأن أصل الكلمة من البدو وهو الظهور، وقراءة رويس عن يعقوب ﴿يتساءلون﴾. وفي سؤالهم أقوال: يتحدثون أما هلك محمد وأصحابه، أو هم أبدًا يسألون لجبنهم، أو هم من لم يحضر الخندق في أطراف المدينة يتمنون هزيمة المسلمين. وما قاتلوا إلا قليلًا: رميًا بالنبل والحجارة رياءً.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-20', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-20">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-20">الأحزاب: قريش وغطفان عن يزيد بن رومان، ولم يذهبوا: لم ينصرفوا وإن كانوا قد انصرفوا، جبنًا وهلعًا منهم، وعن مجاهد: يحسبونهم قريبًا. وذكر أن في قراءة عبد الله: «يحسبون الأحزاب قد ذهبوا فإذا وجدوهم لم يذهبوا ودوا لو أنهم بادون في الأعراب». والبادي من صار في البدو، والأعراب أهل البادية والعرب أهل الأمصار. ويسألون: يستخبرون عن أخباركم هل هلك محمد وأصحابه، واختار قراءة الأمصار على ﴿يسّاءلون﴾ المروية عن عاصم الجحدري. وما قاتلوا إلا قليلًا: إلا تعذيرًا، إذ لا يقاتلون حسبة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-20', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-04.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">نعمة الله يوم الأحزاب وانكشاف المنافقين</span>
+            </a>
+            <a href="section-06.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">الأسوة الحسنة وصدق المؤمنين يوم الأحزاب</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة الأحزاب — الموضوع ٥: فضح المنافقين المعوّقين<br>
+        <small>آيات ١٤ – ٢٠ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

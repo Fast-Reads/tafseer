@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bookmarks-key="az-bookmarks">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة الأحزاب — السؤال عن الساعة ومصير الكافرين في السعير</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة الأحزاب</h1>
+            <p class="surah-subtitle">الموضوع ١٧ من ١٨</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#d35400">
+            <div class="section-num">١٧</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">السؤال عن الساعة ومصير الكافرين في السعير</h2>
+                <h3 class="section-title-en">The Hour &amp; the Fate of the Disbelievers in the Blaze</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٦٣ – ٦٨</div>
+        </div>
+
+        <div class="section-desc">
+            <p>سؤال الناس عن وقت الساعة وردّ علمها إلى الله، ثم لعن الكافرين وخلودهم في السعير، وتحسّرهم على ترك طاعة الله والرسول، وتبرّؤهم من سادتهم الذين أضلّوهم</p>
+        </div>
+
+        <div class="section-context">
+            <span class="section-context-label">موقع القسم من السورة</span>
+            <p>ولمّا توعّد الله المنافقين والذين في قلوبهم مرض والمرجفين بالإغراء بهم والإخراج والقتل، وبيّن أن تلك سنته في الذين خلوا، جاء سؤال الناس عن الساعة، وقد جعل القرطبي السائلين هم المؤذين لرسول الله ﷺ، سألوا عنها استبعادًا وتكذيبًا بعد أن تُوعّدوا. فردّ علمها إلى الله، ثم صرف الحديث إلى ما ينفع: مصير الكافرين فيها، وندمهم على ترك طاعة الله والرسول، وإلقاء اللوم على سادتهم الذين أطاعوهم. ومن هذه الحسرة ينتقل الخطاب بعدها إلى المؤمنين: لا تؤذوا رسولكم، واتقوا الله، ومن يطع الله ورسوله فقد فاز.</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="63">
+                        <div class="flow-node-num">٦٣</div>
+                        <div class="flow-node-text">سؤال الناس عن الساعة، وعلمها عند الله، ولعلها قريب</div>
+                        <div class="flow-node-key">یَسۡءَلُكَ ٱلنَّاسُ عَنِ ٱلسَّاعَةِۖ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا كان قرب الساعة وبعدها لا ثمرة تحته، وإنما الشأن فيمن يستحق العذاب، وصف بعدها حال المكذبين بها: اللعن، والسعير المُعدّ لهم.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="64-65">
+                        <div class="flow-node-num">٦٤ – ٦٥</div>
+                        <div class="flow-node-text">لعن الكافرين وخلودهم في السعير بلا وليّ ولا نصير</div>
+                        <div class="flow-node-key">إِنَّ ٱللَّهَ لَعَنَ ٱلۡكَـٰفِرِینَ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا ذكر خلودهم في النار وأنهم لا يجدون من يُنقذهم، صوّر حالهم فيها: تُقلَّب وجوههم ويتمنّون لو أطاعوا الله والرسول.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="66">
+                        <div class="flow-node-num">٦٦</div>
+                        <div class="flow-node-text">تقليب وجوههم في النار وتمنّيهم طاعة الله والرسول</div>
+                        <div class="flow-node-key">یَوۡمَ تُقَلَّبُ وُجُوهُهُمۡ فِی ٱلنَّارِ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا تحسّروا على ترك طاعة الرسول، اعتذروا بأنهم أطاعوا سادتهم وكبراءهم بدلًا منه، فدعوا عليهم بمضاعفة العذاب واللعن.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="67-68">
+                        <div class="flow-node-num">٦٧ – ٦٨</div>
+                        <div class="flow-node-text">شكواهم من سادتهم وكبرائهم، ودعاؤهم عليهم بضعفين من العذاب</div>
+                        <div class="flow-node-key">إِنَّاۤ أَطَعۡنَا سَادَتَنَا وَكُبَرَاۤءَنَا</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-63">
+                <div class="ayah-text">یَسۡءَلُكَ <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>اسُ عَنِ <span class="tj-slt">ٱل</span>سَّاعَةِۖ قُلۡ إِ<span class="tj-ghn">نَّ</span>مَا عِلۡمُهَا عِ<span class="tj-khf">ن</span>دَ <span class="tj-slt">ٱ</span>للَّهِۚ وَمَا یُ<span class="tj-qlq">دۡ</span>رِیكَ لَعَلَّ <span class="tj-slt">ٱل</span>سَّاعَةَ تَكُونُ قَرِیبًا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يسألك الناس — أيها الرسول — عن وقت قيام الساعة استبعادًا لها وتكذيبًا بها، فقل لهم: علمها عند الله وحده لا يعلمه غيره، وما يُعلمك لعل قيامها قريب.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-63">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-63">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-63">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-63">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-63">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-63">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-63">يستخبرك الناس عن الساعة، بعضهم استعجالًا لها، وبعضهم تكذيبًا لوقوعها وتعجيزًا لمن أخبر بها، فقل: لا يعلمها إلا الله، فليس لي ولا لغيري بها علم، ومع ذلك فلا تستبطئوها. ونبّه إلى أن مجرد قرب الساعة أو بعدها ليس تحته فائدة، وإنما الشأن: هل يستحق العبد العذاب أو الثواب؟ ولذلك وصف بعدها مستحق العذاب ووصف العذاب، لأن الوصف منطبق على هؤلاء المكذبين بالساعة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-63', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-63">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-63">أخبر الله رسوله ﷺ أنه لا علم له بالساعة وإن سأله الناس عنها، وأرشده أن يردّ علمها إلى الله كما قال له في سورة الأعراف، ونبّه إلى أن تلك مكية وهذه مدنية، فاستمر الحال على ردّ علمها إلى الذي يقيمها. لكنه أخبره بقربها بقوله: وما يدريك لعل الساعة تكون قريبًا، واستشهد بنظائرها: اقتربت الساعة وانشق القمر، واقترب للناس حسابهم، وأتى أمر الله فلا تستعجلوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-63', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-63">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-63">فسّر قوله وما يدريك: أي شيء يُعلمك أمر الساعة ومتى يكون قيامها؟ أي أنت لا تعرفه، ثم تلا: لعل الساعة تكون قريبًا، ولم يزد على هذا التفسير الموجز.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-63', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-63">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-63">جعل السائلين هم المؤذين لرسول الله ﷺ، لمّا تُوعّدوا بالعذاب سألوا عن الساعة استبعادًا وتكذيبًا، موهمين أنها لا تكون. ومعنى الجواب: ليس في إخفاء الله وقتها ما يبطل النبوة، إذ ليس من شرط النبي أن يعلم الغيب بغير تعليم من الله. وذكر حديث «بعثت أنا والساعة كهاتين». ومن جهة الإعراب: حُذفت هاء التأنيث من قريبًا ذهابًا بالساعة إلى معنى اليوم. ونقل قولًا: إنما أُخفي وقتها ليكون العبد مستعدًا لها في كل وقت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-63', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-63">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-63">يقول تعالى: يسألك الناس يا محمد عن الساعة متى هي قائمة؟ فقل: علمها عند الله، لا يعلم وقت قيامها غيره. وما يدريك: وما أشعرك يا محمد لعل قيام الساعة يكون منك قريبًا، قد قرب وقت قيامها ودنا حين مجيئها. ولم يورد في هذه الآية خلافًا ولا رواية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-63', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-64">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ لَعَنَ <span class="tj-slt">ٱ</span>لۡكَ<span class="tj-mdd">ـٰ</span>فِرِینَ وَأَعَدَّ لَهُمۡ سَعِیرًا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن الله طرد الكافرين وأبعدهم من رحمته في الدنيا والآخرة، وهيّأ لهم في الآخرة نارًا شديدة الاتّقاد.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-64">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-64">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-64">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-64">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-64">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-64">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-64">الكافرون هم الذين صار الكفر دأبهم وطريقتهم: الكفر بالله وبرسله وبما جاؤوا به من عند الله، فأبعدهم في الدنيا والآخرة من رحمته، وكفى بذلك عقابًا. وأعدّ لهم سعيرًا: أي نارًا موقدة تُسعَّر في أجسامهم، ويبلغ العذاب إلى أفئدتهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-64', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-64">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-64">فسّرها تفسيرًا موجزًا: لعن الكافرين أي أبعدهم عن رحمته، وأعدّ لهم سعيرًا أي في الدار الآخرة، ولم يزد على ذلك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-64', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-64">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-64">أورد الآية بنصها ولم يعلّق عليها بشيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-64', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-64">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-64">لعن الكافرين: طردهم وأبعدهم، واللعن: الطرد والإبعاد عن الرحمة، وأحال على بيانه في سورة البقرة. ثم تلا: وأعد لهم سعيرًا، ولم يزد عليه هنا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-64', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-64">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-64">يقول تعالى: إن الله أبعد الكافرين به من كل خير وأقصاهم عنه، وأعدّ لهم في الآخرة نارًا تتّقد وتتسعّر ليُصليهموها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-64', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-65">
+                <div class="ayah-text">خَ<span class="tj-mdd">ـٰ</span>لِدِینَ فِیهَ<span class="tj-mdd">اۤ</span> أَبَدࣰاۖ لَّا یَجِدُونَ وَلِیࣰّا وَلَا نَصِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ماكثين في تلك النار أبدًا لا يخرجون منها، لا يجدون وليًّا يتولاهم ويدافع عنهم، ولا نصيرًا ينصرهم فيُخرجهم منها.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-65">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-65">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-65">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-65">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-65">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-65">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-65">يخلدون في ذلك العذاب الشديد، فلا يخرجون منه ولا يُفتَّر عنهم ساعة، ولا يجدون وليًّا فيعطيهم ما طلبوه، ولا نصيرًا يدفع عنهم العذاب، بل تخلّى عنهم الولي والنصير، وأحاط بهم عذاب السعير، وبلغ منهم مبلغًا عظيمًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-65', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-65">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-65">خالدين فيها أبدًا: أي ماكثين مستمرين، فلا خروج لهم منها ولا زوال لهم عنها. لا يجدون وليًّا ولا نصيرًا: أي ليس لهم مغيث ولا معين ينقذهم مما هم فيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-65', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-65">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-65">أورد الآية بنصها ولم يعلّق عليها بشيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-65', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-65">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-65">نبّه في قوله خالدين فيها إلى أن الضمير جاء مؤنثًا لأن السعير بمعنى النار، وهي ملاحظة نحوية. ولا يجدون وليًّا ولا نصيرًا: أي من ينجيهم من عذاب الله والخلود فيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-65', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-65">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-65">خالدين فيها أبدًا: ماكثين في السعير أبدًا إلى غير نهاية، لا يجدون وليًّا يتولاهم فيستنقذهم من السعير التي أصلاهموها الله، ولا نصيرًا ينصرهم فينجيهم من عقاب الله إياهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-65', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-66">
+                <div class="ayah-text">یَوۡمَ تُقَلَّبُ وُجُوهُهُمۡ فِی <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>ارِ یَقُولُونَ یَ<span class="tj-mdd">ـٰ</span>لَیۡتَنَ<span class="tj-mdd">اۤ</span> أَطَعۡنَا <span class="tj-slt">ٱ</span>للَّهَ وَأَطَعۡنَا <span class="tj-slt">ٱل</span>رَّسُولَا۠</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">يوم تُقلَّب وجوه الكافرين في النار من حال إلى حال، يقولون نادمين متحسّرين: يا ليتنا أطعنا الله وأطعنا رسوله في الدنيا، فنجونا من هذا العذاب.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-66">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-66">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-66">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-66">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-66">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-66">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-66">تُقلَّب وجوههم في النار فيذوقون حرّها ويشتد عليهم أمرها، ويتحسّرون على ما أسلفوا، فيقولون: يا ليتنا أطعنا الله وأطعنا الرسول، فسلمنا من هذا العذاب واستحققنا كالمطيعين جزيل الثواب. ولكنها أمنية فات وقتها، فلم تفدهم إلا حسرة وندمًا وهمًّا وغمًّا وألمًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-66', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-66">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-66">أي يُسحبون في النار على وجوههم وتُلوى وجوههم على جهنم، ويقولون وهم كذلك متمنّين لو كانوا في الدنيا ممن أطاع الله وأطاع الرسول. وقرنها بما أخبر الله عنهم في حال العرصات: ويوم يعض الظالم على يديه يقول يا ليتني اتخذت مع الرسول سبيلًا، وبقوله: ربما يود الذين كفروا لو كانوا مسلمين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-66', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-66">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-66">تُقلَّب وجوههم في النار ظهرًا لبطن حين يُسحبون عليها، يقولون: يا ليتنا أطعنا الله وأطعنا الرسول، أي في الدنيا. ولم يزد على هذا التفسير الموجز.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-66', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-66">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-66">قراءة العامة تُقلَّب بضم التاء وفتح اللام على البناء للمجهول، وذكر أن عيسى الهمداني وابن إسحاق قرآ نُقلِّب بالنون وكسر اللام ونصب وجوههم، وقرأ عيسى أيضًا تُقلِّب بكسر اللام، أي تقلّب السعير وجوههم. والتقليب: تغيير ألوانهم بلفح النار، فتسودّ مرة وتخضرّ أخرى. وأجاز أن يكون العامل في يوم: يقولون. ونبّه إلى أن الألف في الرسولا والسبيلا ألف فاصلة يوقف عليها ولا يوصل بها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-66', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-66">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-66">وصل الآية بما قبلها: لا يجد هؤلاء الكافرون وليًّا ولا نصيرًا في يوم تُقلَّب وجوههم في النار حالًا بعد حال، يقولون وتلك حالهم: يا ليتنا أطعنا الله في الدنيا، وأطعنا رسوله فيما جاءنا به من أمره ونهيه، فكنا مع أهل الجنة في الجنة، ثم قال: «يا لها حسرة وندامة، ما أعظمها وأجلها».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-66', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-67">
+                <div class="ayah-text">وَقَالُو<span class="tj-slt">ا۟</span> رَبَّنَ<span class="tj-mdd">اۤ</span> إِ<span class="tj-ghn">نَّ</span><span class="tj-mdd">اۤ</span> أَطَعۡنَا سَادَتَنَا وَكُبَرَ<span class="tj-mdd">اۤ</span>ءَنَا فَأَضَلُّونَا <span class="tj-slt">ٱل</span>سَّبِیلَا۠</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وقال الكافرون في النار: ربنا إنا أطعنا أئمتنا وكبراءنا في الضلال والشرك وقلّدناهم، فصرفونا عن طريق الهدى والإيمان.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-67">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-67">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-67">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-67">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-67">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-67">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-67">قالوا: ربنا إنا أطعنا سادتنا وكبراءنا وقلّدناهم على ضلالهم، فأضلّونا السبيل. وقرنها بقوله تعالى: ويوم يعض الظالم على يديه يقول يا ليتني اتخذت مع الرسول سبيلًا، يا ويلتى ليتني لم أتخذ فلانًا خليلًا، لقد أضلني عن الذكر بعد إذ جاءني.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-67', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-67">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-67">نقل عن طاوس فيما رواه ابن أبي حاتم: سادتنا يعني الأشراف، وكبراءنا يعني العلماء. ثم فسّرها: اتّبعنا السادة وهم الأمراء، والكبراء من المشيخة، وخالفنا الرسل، واعتقدنا أن عندهم شيئًا وأنهم على شيء، فإذا هم ليسوا على شيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-67', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-67">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-67">اقتصر على ذكر القراءة: قرأ ابن عامر ويعقوب «ساداتنا» بكسر التاء وألف قبلها على جمع الجمع، وقرأ الآخرون «سادتنا» بفتح التاء بلا ألف قبلها. ولم يعلّق على معنى الآية بشيء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-67', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-67">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-67">ذكر أن الحسن قرأ «ساداتنا» بكسر التاء، وهو جمع الجمع، والسادة جمع سيد على وزن فَعَلة ككتبة وفجرة، والسادة والكبراء بمعنى. وقال: في الآية زجر عن التقليد. ونقل عن قتادة أنهم المطعمون في غزوة بدر، ورأى الأظهر العموم في القادة والرؤساء في الشرك والضلالة. وأضلونا السبيلا: أي عن السبيل وهو التوحيد، فلما حُذف الجار نُصب، لأن الإضلال لا يتعدى إلى مفعولين بغير حرف جر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-67', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-67">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-67">وقال الكافرون يوم القيامة في جهنم: ربنا إنا أطعنا أئمتنا في الضلالة وكبراءنا في الشرك، فأزالونا عن محجة الحق وطريق الهدى والإيمان بك والإقرار بوحدانيتك. وأسند عند الآية التالية عن قتادة: «رءوسنا في الشر والشرك»، وعن ابن زيد: هم رءوس الأمم الذين أضلوهم، و«سادتنا وكبراءنا واحد». وذكر أن الحسن روي عنه «ساداتنا» على الجمع، واختار «سادتنا» لإجماع الحجة من القراء عليه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-67', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-68">
+                <div class="ayah-text">رَبَّنَ<span class="tj-mdd">اۤ</span> ءَاتِهِمۡ ضِعۡفَیۡنِ مِنَ <span class="tj-slt">ٱ</span>لۡعَذَابِ وَ<span class="tj-slt">ٱ</span>لۡعَنۡهُمۡ لَعۡنࣰا كَبِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ويقولون: ربنا عذّب هؤلاء السادة والكبراء مثلَي عذابنا لأنهم ضلّوا وأضلّونا، واطردهم من رحمتك طردًا عظيمًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-68">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-68">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-68">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-68">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-68">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-68">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-68">لمّا علموا أنهم وكبراءهم مستحقون للعقاب، أرادوا أن يشتفوا ممن أضلّوهم فقالوا: ربنا آتهم ضعفين من العذاب والعنهم لعنًا كبيرًا. فيقول الله: لكلٍّ ضعف، فكلكم اشتركتم في الكفر والمعاصي فتشتركون في العقاب، وإن تفاوت عذاب بعضكم على بعض بحسب تفاوت الجرم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-68', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-68">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-68">ضعفين من العذاب: أي بكفرهم وإغوائهم إيانا. وذكر أن بعض القراء قرأ «كبيرا» بالباء وآخرين «كثيرا» بالثاء، وهما قريبا المعنى، كما يُروى في دعاء أبي بكر الذي علّمه النبي ﷺ «ظلما كثيرا» و«كبيرا». ورأى أن الجمع بين اللفظين في الدعاء فيه نظر، والأولى أن يقول هذا تارة وهذا تارة، كما أن القارئ مخيّر بين القراءتين. وأورد عن الطبراني أن الحجاج بن عمرو بن غزية كان يتلو الآيتين عند اللقاء يحرّض الأنصار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-68', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-68">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-68">ضعفين من العذاب: أي ضعفي عذاب غيرهم. وذكر أن عاصمًا قرأ «كبيرا» بالباء، ونقل عن الكلبي في معناها: عذابًا كثيرًا، وقرأ الآخرون بالثاء، واستشهد لها بقوله: أولئك عليهم لعنة الله والملائكة والناس أجمعين، وقال: هذا يشهد للكثرة، أي مرة بعد مرة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-68', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-68">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-68">نقل عن قتادة أن الضعفين: عذاب الدنيا وعذاب الآخرة، وقيل: عذاب الكفر وعذاب الإضلال، أي عذّبهم مثلَي ما تعذّبنا فإنهم ضلّوا وأضلّوا. وذكر أن ابن مسعود وأصحابه ويحيى وعاصمًا قرؤوا «كبيرا» بالباء، والباقين بالثاء، واختاره أبو حاتم وأبو عبيد والنحاس. وقرّر أن قراءة الباء ترجع في المعنى إلى الثاء، لأن ما كبر كان كثيرًا عظيم المقدار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-68', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-68">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-68">آتهم ضعفين من العذاب: عذّبهم مثلَي عذابنا الذي تعذّبنا، والعنهم لعنًا كبيرًا: «واخزهم خزيًا كبيرًا». وذكر أن عامة قراء الأمصار قرؤوا «كثيرا» بالثاء من الكثرة، سوى عاصم فقرأها «كبيرا» من الكِبَر، واختار هو الثاء لإجماع الحجة من القراء عليها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-68', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-16.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">آية الجلابيب ووعيد المنافقين والمرجفين</span>
+            </a>
+            <a href="section-18.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">لا تؤذوا الرسول ﷺ، والقول السديد، وعرض الأمانة</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة الأحزاب — الموضوع ١٧: السؤال عن الساعة ومصير الكافرين في السعير<br>
+        <small>آيات ٦٣ – ٦٨ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

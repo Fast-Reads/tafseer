@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bookmarks-key="az-bookmarks">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة الأحزاب — آية الجلابيب ووعيد المنافقين والمرجفين</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة الأحزاب</h1>
+            <p class="surah-subtitle">الموضوع ١٦ من ١٨</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#8e44ad">
+            <div class="section-num">١٦</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">آية الجلابيب ووعيد المنافقين والمرجفين</h2>
+                <h3 class="section-title-en">The Verse of the Outer Garments &amp; the Warning to the Hypocrites</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٥٩ – ٦٢</div>
+        </div>
+
+        <div class="section-desc">
+            <p>أمر أزواج النبي ﷺ وبناته ونساء المؤمنين بإدناء الجلابيب ليُعرفن فلا يُؤذين، ثم وعيد المنافقين والذين في قلوبهم مرض والمرجفين في المدينة بالتسليط عليهم والنفي واللعن والقتل، وأن ذلك سنة الله الماضية</p>
+        </div>
+
+        <div class="section-context">
+            <span class="section-context-label">موقع القسم من السورة</span>
+            <p>ولمّا حرّم الله أذى المؤمنين والمؤمنات بغير ما اكتسبوا، أغلق باب الأذى عن النساء من جهتين: من جهتهن بأمرهن أن يُدنين عليهن من جلابيبهن فيُعرفن بالستر فلا يطمع فيهن أحد، ومن جهة أهل الشر بتهديد المنافقين ومرضى القلوب والمرجفين بأن يُسلَّط عليهم النبي ﷺ فيُنفوا أو يُقتلوا، وتلك سنة الله فيمن قبلهم. ثم ينتقل الحديث بعد هذا الوعيد الدنيوي إلى سؤال الناس عن الساعة وما أُعدّ للكافرين فيها.</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="59">
+                        <div class="flow-node-num">٥٩</div>
+                        <div class="flow-node-text">أمر نساء النبي ﷺ ونساء المؤمنين بإدناء الجلابيب ليُعرفن فلا يُؤذين</div>
+                        <div class="flow-node-key">یُدۡنِینَ عَلَیۡهِنَّ مِن جَلَـٰبِیبِهِنَّ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا سدّ باب الأذى من جهة النساء بالستر، التفت إلى من يتعرّض لهن ويُرجف بالمؤمنين من أهل النفاق، فتوعّدهم إن لم ينتهوا بالتسليط عليهم والنفي واللعن والقتل.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="60-61">
+                        <div class="flow-node-num">٦٠ – ٦١</div>
+                        <div class="flow-node-text">وعيد المنافقين ومرضى القلوب والمرجفين بالتسليط عليهم والنفي واللعن والقتل</div>
+                        <div class="flow-node-key">لَّئِن لَّمۡ یَنتَهِ ٱلۡمُنَـٰفِقُونَ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا كان هذا الوعيد شديدًا، بيّن أنه ليس أمرًا مستحدثًا، بل هو سنة الله الماضية في أمثالهم ممن مضى، وسنته لا تتبدل.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="62">
+                        <div class="flow-node-num">٦٢</div>
+                        <div class="flow-node-text">سنة الله الماضية في أمثالهم لا تتبدل</div>
+                        <div class="flow-node-key">سُنَّةَ ٱللَّهِ فِی ٱلَّذِینَ خَلَوۡا۟ مِن قَبۡلُ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-59">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>بِیُّ قُل لِّأَزۡوَ<span class="tj-mdd"> ٰ⁠</span>جِكَ وَبَنَاتِكَ وَنِسَ<span class="tj-mdd">اۤ</span>ءِ <span class="tj-slt">ٱ</span>لۡمُؤۡمِنِینَ یُ<span class="tj-qlq">دۡ</span>نِینَ عَلَیۡهِ<span class="tj-ghn">نَّ</span> مِ<span class="tj-khf">ن</span> جَلَ<span class="tj-mdd">ـٰ</span>بِیبِهِ<span class="tj-ghn">نَّۚ</span> ذَ<span class="tj-mdd"> ٰ⁠</span>لِكَ أَ<span class="tj-qlq">دۡ</span>نَ<span class="tj-mdd">ىٰۤ</span> أَن یُعۡرَفۡنَ فَلَا یُؤۡذَیۡنَۗ وَكَانَ <span class="tj-slt">ٱ</span>للَّهُ غَفُورࣰا رَّحِیمࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٥٩</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله نبيه ﷺ أن يأمر أزواجه وبناته ونساء المؤمنين إذا خرجن أن يُرخين عليهن من جلابيبهن — وهي الثياب الواسعة التي تُلبس فوق الثياب — فيسترن بها رؤوسهن ووجوههن، فذلك أقرب أن يُعرفن بالستر والعفة فلا يتعرض لهن أحد بأذى، وكان الله غفورًا لما سلف رحيمًا بعباده.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-59">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-59">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-59">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-59">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-59">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-59">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-59">سمّاها آية الحجاب: أمر الله نبيه أن يأمر النساء عمومًا، ويبدأ بزوجاته وبناته لأنهن آكد من غيرهن، ولأن الآمر ينبغي أن يبدأ بأهله. والجلابيب: ما يكون فوق الثياب من ملحفة وخمار ورداء، يغطين بها وجوههن وصدورهن. وقوله فلا يؤذين دلّ على وجود الأذى إن لم يحتجبن، إذ ربما ظُنّ أنهن غير عفيفات أو أنهن إماء فتعرّض لهن من في قلبه مرض، فالاحتجاب حاسم لمطامع الطامعين. وغفورًا رحيمًا: غفر ما سلف وبيّن الأحكام، وهذا سدّ للباب من جهتهن.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-59', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-59">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-59">أمر رسوله ﷺ أن يأمر المؤمنات، خاصة أزواجه وبناته لشرفهن، أن يدنين عليهن من جلابيبهن ليتميزن عن سمات نساء الجاهلية وسمات الإماء. والجلباب: الرداء فوق الخمار، قاله ابن مسعود والحسن وغيرهما. ونقل عن ابن عباس: يغطين وجوههن من فوق رؤوسهن ويبدين عينًا واحدة، وأن عبيدة السلماني سُئل عنها فغطى وجهه ورأسه وأبرز عينه اليسرى، وعن أم سلمة أن نساء الأنصار خرجن بعدها كأن على رؤوسهن الغربان. وذكر عن السدي أن فساقًا كانوا يتعرضون للنساء ليلًا، فإذا رأوا عليها جلبابًا قالوا: هذه حرة، كفّوا عنها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-59', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-59">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-59">ثم نهى الحرائر أن يتشبهن بالإماء. والجلابيب جمع جلباب، وهو الملاءة التي تشتمل بها المرأة فوق الدرع والخمار. ونقل عن ابن عباس وأبي عبيدة: أُمرت نساء المؤمنين أن يغطين رؤوسهن ووجوههن بالجلابيب إلا عينًا واحدة ليُعلم أنهن حرائر. وذلك أدنى أن يُعرفن أنهن حرائر فلا يُتعرَّض لهن. وروى عن أنس أن جارية متقنعة مرّت بعمر بن الخطاب فعلاها بالدرة وقال: أتتشبهين بالحرائر؟ ألقي القناع.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-59', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-59">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-59">فيه ست مسائل، سرد في أولها أزواج النبي ﷺ وأولاده. وذكر أن عادة العربيات كانت التبذّل وكشف الوجوه كالإماء، وأن المرأة كانت تخرج لحاجتها فيتعرض لها بعض الفجار يظنها أمة، فشكون ذلك فنزلت، قاله الحسن وغيره. والجلباب ثوب أكبر من الخمار، والصحيح عنده أنه الثوب الذي يستر جميع البدن. وفي صفة إدنائه: عن ابن عباس وعبيدة ألّا يظهر إلا عين واحدة، وعن ابن عباس وقتادة أن يُشدّ فوق الجبين ويُعطف على الأنف، وعن الحسن: تغطي نصف وجهها. وأن يُعرفن: أي الحرائر، «وليس المعنى أن تعرف المرأة حتى تعلم من هي».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-59', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-59">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-59">يقول تعالى: قل لهن لا يتشبهن بالإماء في لباسهن إذا خرجن لحاجتهن فكشفن شعورهن ووجوههن، ولكن ليدنين عليهن من جلابيبهن لئلا يعرض لهن فاسق. ثم ذكر اختلاف أهل التأويل في صفة الإدناء: فقال بعضهم: يغطين وجوههن ورؤوسهن فلا يبدين إلا عينًا واحدة، وأسنده عن ابن عباس وعبيدة، وقال آخرون: يشددن جلابيبهن على جباههن، وأسنده عن ابن عباس وقتادة. وأدنى أن يُعرفن: أقرب وأحرى أن يُعلم أنهن لسن بإماء، وغفورًا لما سلف من تركهن إدناء الجلابيب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-59', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-60">
+                <div class="ayah-text">۞ لَّئِ<span class="tj-dgm">ن</span> لَّمۡ یَ<span class="tj-khf">ن</span>تَهِ <span class="tj-slt">ٱ</span>لۡمُنَ<span class="tj-mdd">ـٰ</span>فِقُونَ وَ<span class="tj-slt">ٱلَّ</span>ذِینَ فِی قُلُوبِهِم <span class="tj-ghn">مَّ</span>رَ<span class="tj-dgm">ضࣱ</span> وَ<span class="tj-slt">ٱ</span>لۡمُرۡجِفُونَ فِی <span class="tj-slt">ٱ</span>لۡمَدِینَةِ لَنُغۡرِیَ<span class="tj-ghn">نَّ</span>كَ بِهِمۡ ثُ<span class="tj-ghn">مَّ</span> لَا یُجَاوِرُونَكَ فِیهَ<span class="tj-mdd">اۤ</span> إِلَّا قَلِیلࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٠</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لئن لم يكفّ المنافقون، والذين في قلوبهم مرض الشهوة والريبة، والذين ينشرون الأخبار الكاذبة في المدينة لتخويف المسلمين، لنسلّطنّك عليهم، ثم لا يسكنون معك في المدينة إلا زمنًا قليلًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-60">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-60">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-60">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-60">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-60">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-60">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-60">الذين في قلوبهم مرض: مرض شك أو شهوة، والمرجفون: المخوّفون الذين يحدّثون بكثرة الأعداء وقوتهم وضعف المسلمين. ولم يذكر ما ينتهون عنه ليعمّ كل ما توسوس به أنفسهم من الشر: من التعريض بسب الإسلام وأهله، والإرجاف بالمسلمين، والتعرض للمؤمنات بالسوء. ولنغرينك بهم: نأمرك بعقوبتهم وقتالهم ونسلّطك عليهم، ثم لا يجاورونك في المدينة إلا قليلًا بأن تقتلهم أو تنفيهم. وفيه دليل على نفي أهل الشر الذين يُتضرر بإقامتهم بين المسلمين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-60', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-60">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-60">وعيد للمنافقين الذين يظهرون الإيمان ويبطنون الكفر. والذين في قلوبهم مرض: قال عكرمة وغيره: هم الزناة هاهنا، والمرجفون في المدينة: الذين يقولون جاء الأعداء وجاءت الحروب، وهو كذب وافتراء، لئن لم ينتهوا عن ذلك ويرجعوا إلى الحق. ونقل في لنغرينك بهم عن ابن عباس: لنسلطنك عليهم، وعن قتادة: لنحرشنك بهم، وعن السدي: لنعلمنك بهم. ثم لا يجاورونك فيها: أي في المدينة إلا قليلًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-60', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-60">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-60">لئن لم ينته المنافقون عن نفاقهم، والذين في قلوبهم مرض: فجور، يعني الزناة، والمرجفون في المدينة بالكذب: كان ناس منهم إذا خرجت سرايا رسول الله ﷺ أوقعوا في الناس أنهم قُتلوا وهُزموا، ويقولون: قد أتاكم العدو. وقال الكلبي: كانوا يحبون أن تشيع الفاحشة في الذين آمنوا ويفشون الأخبار. ولنغرينك بهم: لنحرّشنك بهم ولنسلطنك عليهم، ثم لا يساكنونك في المدينة إلا قليلًا حتى يخرجوا منها، وقيل: حتى تقتلهم وتخلي منهم المدينة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-60', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-60">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-60">فيه مسائل: نقل أن أهل التفسير على أن الأوصاف الثلاثة لشيء واحد، كما قال أبو رزين: هم شيء واحد، والواو مقحمة، وقيل: كانوا أصنافًا. وعن عكرمة وشهر بن حوشب: الذين في قلوبهم مرض أي الزنى. والإرجاف: إشاعة الكذب والباطل، وأصله من التحريك والاضطراب، وهو حرام لأن فيه إذاية. ولنغرينك بهم: لنسلطنك عليهم، ونقل استحسان النحاس قول محمد بن يزيد إن الإغراء في الآية التالية: أينما ثقفوا أخذوا، وقيل: انتهوا فلم يُغر بهم. وإلا قليلًا: حال أي أقلّاء، أو وقتًا قليلًا، وجهان للفراء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-60', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-60">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-60">لئن لم ينته أهل النفاق الذين يستسرّون بالكفر ويظهرون الإيمان، والذين في قلوبهم مرض: ريبة من شهوة الزنا وحب الفجور، وأسنده عن عكرمة وقتادة، ونقل عن ابن زيد أنهم صنف من المنافقين مرضهم من أمر النساء. والمرجفون: أهل الإرجاف بالكذب والباطل، قال قتادة: كانوا يقولون أتاكم عدد وعدة، فلما أوعدهم الله بهذه الآية كتموا ذلك. ولنغرينك بهم: لنسلطنك عليهم ولنحرشنك بهم، ثم لننفينهم عن مدينتك فلا يسكنون معك فيها إلا قليلًا من المدة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-60', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-61">
+                <div class="ayah-text"><span class="tj-ghn">مَّ</span>لۡعُونِینَۖ أَیۡنَمَا ثُقِفُ<span class="tj-mdd">وۤ</span><span class="tj-slt">ا۟</span> أُخِذُو<span class="tj-slt">ا۟</span> وَقُتِّلُو<span class="tj-slt">ا۟</span> تَ<span class="tj-qlq">قۡ</span>تِیلࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">مطرودين من رحمة الله، أينما وُجدوا أُخذوا وقُتلوا تقتيلًا ما داموا مقيمين على النفاق والإرجاف.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-61">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-61">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-61">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-61">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-61">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-61">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-61">ملعونين: مبعدين أينما وُجدوا، لا يحصل لهم أمن ولا يقرّ لهم قرار، يخشون أن يُقتلوا أو يُحبسوا أو يعاقبوا. وهو موصول عنده بما قبله: إذا سُلّط عليهم النبي ﷺ فقتلهم أو نفاهم، صاروا ملعونين مطاردين لا يأمنون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-61', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-61">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-61">ملعونين: حال منهم في مدة إقامتهم في المدينة مدةً قريبة، مطرودين مبعدين. أينما ثقفوا: أي وُجدوا، أُخذوا لذلتهم وقلتهم، وقُتّلوا تقتيلًا. وكلامه هنا موجز يتمّم تفسير الآية قبلها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-61', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-61">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-61">ملعونين: مطرودين، نصب على الحال. أينما ثقفوا: وُجدوا وأُدركوا، أُخذوا وقُتّلوا تقتيلًا، أي: الحكم فيهم هذا على جهة الأمر به.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-61', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-61">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-61">ملعونين: قال محمد بن يزيد هذا تمام الكلام وهو منصوب على الحال، وقال ابن الأنباري: الوقف على قليلا ملعونين حسن، وأجاز النحاس أن يكون التمام عند إلا قليلا وينصب ملعونين على الشتم. وحكى عن بعض النحويين أن المعنى: أينما ثقفوا أخذوا ملعونين، وخطّأه لأن ما مع المجازاة لا يعمل فيما قبله. وقيل: إن أصرّوا على النفاق لم يكن لهم مقام بالمدينة إلا مطرودين ملعونين، وقد فُعل بهم ذلك لما نزلت براءة فأُخرجوا من المسجد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-61', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-61">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-61">ملعونين: مطرودين منفيين، أينما ثقفوا: حيثما لُقوا من الأرض أُخذوا وقُتّلوا لكفرهم بالله تقتيلًا، وأسند عن قتادة: ملعونين على كل حال، أينما ثقفوا أخذوا وقتلوا إذا هم أظهروا النفاق. وذكر أن نصب ملعونين على الشتم، وأجاز أن يكون مردودًا على القليل، فيكون المعنى: لا يجاورونك فيها إلا أقلّاء ملعونين يُقتلون حيث أُصيبوا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-61', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-62">
+                <div class="ayah-text">سُ<span class="tj-ghn">نَّ</span>ةَ <span class="tj-slt">ٱ</span>للَّهِ فِی <span class="tj-slt">ٱلَّ</span>ذِینَ خَلَوۡ<span class="tj-slt">ا۟</span> مِ<span class="tj-khf">ن</span> قَ<span class="tj-qlq">بۡ</span>لُۖ وَلَ<span class="tj-khf">ن</span> تَجِدَ لِسُ<span class="tj-ghn">نَّ</span>ةِ <span class="tj-slt">ٱ</span>للَّهِ تَ<span class="tj-qlq">بۡ</span>دِیلࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٦٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">هذه سنة الله وطريقته في المنافقين من الأمم الماضية إذا أظهروا نفاقهم وأصرّوا على الأذى: أن يُؤخذوا ويُقتلوا، ولن تجد لسنة الله تغييرًا ولا تحويلًا.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-62">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-62">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-62">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-62">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-62">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-62">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-62">سنة الله في الذين خلوا من قبل: أن من تمادى في العصيان وتجرأ على الأذى ولم ينته منه فإنه يعاقب عقوبة بليغة. ولن تجد لسنة الله تبديلًا: أي تغييرًا، بل سنته تعالى وعادته جارية مع الأسباب المقتضية لها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-62', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-62">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-62">أي هذه سنته في المنافقين إذا تمردوا على نفاقهم وكفرهم ولم يرجعوا عما هم فيه: أن أهل الإيمان يُسلَّطون عليهم ويقهرونهم. ولن تجد لسنة الله تبديلًا: أي سنة الله في ذلك لا تُبدّل ولا تُغيّر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-62', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-62">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-62">سنة الله: أي كسنة الله في الذين خلوا من قبل من المنافقين والذين فعلوا مثل فعل هؤلاء، ولن تجد لسنة الله تبديلًا. فما يُوعد به هؤلاء جارٍ على سنته فيمن فعل فعلهم قبلهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-62', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-62">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-62">سنة الله: منصوب على المصدر، أي سنّ الله فيمن أرجف بالأنبياء وأظهر نفاقه أن يؤخذ ويقتل. ولن تجد لسنة الله تبديلًا: أي تحويلًا وتغييرًا، حكاه النقاش، وعن السدي: أن من قُتل بحق فلا دية على قاتله. ونقل عن المهدوي أن في الآية دليلًا على جواز ترك إنفاذ الوعيد، بدليل بقاء المنافقين معه ﷺ حتى مات، وأن المعروف من أهل الفضل إتمام وعدهم وتأخير وعيدهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-62', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-62">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-62">سنة الله في الذين خلوا من قبل من ضرباء هؤلاء المنافقين إذا هم أظهروا نفاقهم: أن يقتلهم تقتيلًا ويلعنهم لعنًا كثيرًا، وأسند عن قتادة: هكذا سنة الله فيهم إذا أظهروا النفاق. ولن تجد يا محمد لسنة الله التي سنّها في خلقه تغييرًا، فأيقن أنه غير مغيّر في هؤلاء المنافقين سنته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-62', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-15.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">الصلاة على النبي ﷺ وحرمة أذاه وأذى المؤمنين</span>
+            </a>
+            <a href="section-17.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">السؤال عن الساعة ومصير الكافرين في السعير</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة الأحزاب — الموضوع ١٦: آية الجلابيب ووعيد المنافقين والمرجفين<br>
+        <small>آيات ٥٩ – ٦٢ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

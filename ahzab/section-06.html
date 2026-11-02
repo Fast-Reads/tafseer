@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bookmarks-key="az-bookmarks">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة الأحزاب — الأسوة الحسنة وصدق المؤمنين يوم الأحزاب</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة الأحزاب</h1>
+            <p class="surah-subtitle">الموضوع ٦ من ١٨</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#1abc9c">
+            <div class="section-num">٦</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">الأسوة الحسنة وصدق المؤمنين يوم الأحزاب</h2>
+                <h3 class="section-title-en">The Excellent Example &amp; the Truthfulness of the Believers at the Trench</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٢١ – ٢٤</div>
+        </div>
+
+        <div class="section-desc">
+            <p>عتابُ المتخلّفين بأن لهم في رسول الله ﷺ قدوة حسنة، ثم ثباتُ المؤمنين حين رأوا الأحزاب ووفاءُ رجال بعهدهم مع الله، وحكمةُ الابتلاء في جزاء الصادقين وعذاب المنافقين أو التوبة عليهم</p>
+        </div>
+
+        <div class="section-context">
+            <span class="section-context-label">موقع القسم من السورة</span>
+            <p>ولمّا فضح الله المنافقين في غزوة الخندق باستئذانهم وفرارهم وتعويقهم غيرهم وشحّهم، جاء هذا المقطع بالصورة المقابلة: رسول الله ﷺ قدوة حاضرة بنفسه في الشدة، ومؤمنون ازدادوا عند رؤية الأحزاب إيمانًا وتسليمًا، ورجال وفوا بعهدهم حين نقضه المنافقون. ثم بيّن أن هذا الابتلاء كان ليتميز الصادق من المنافق، تمهيدًا لذكر خاتمة الغزوة: ردّ الأحزاب بغيظهم وإنزال بني قريظة من حصونهم.</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="21">
+                        <div class="flow-node-num">٢١</div>
+                        <div class="flow-node-text">الأسوة الحسنة في رسول الله ﷺ</div>
+                        <div class="flow-node-key">لَّقَدۡ كَانَ لَكُمۡ فِی رَسُولِ ٱللَّهِ أُسۡوَةٌ حَسَنَةࣱ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا ذكر القدوة التي ينبغي أن يتأسى بها من كان يرجو الله واليوم الآخر، ذكر حال المؤمنين الذين تأسّوا به فعلًا حين رأوا جموع الأحزاب.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="22">
+                        <div class="flow-node-num">٢٢</div>
+                        <div class="flow-node-text">قول المؤمنين عند رؤية الأحزاب وزيادة إيمانهم</div>
+                        <div class="flow-node-key">قَالُوا۟ هَـٰذَا مَا وَعَدَنَا ٱللَّهُ وَرَسُولُهُۥ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا وصف ثباتهم العام، خصّ منهم رجالًا وفوا بما عاهدوا الله عليه، في مقابل المنافقين الذين عاهدوا ألّا يولّوا الأدبار ثم نقضوا.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="23">
+                        <div class="flow-node-num">٢٣</div>
+                        <div class="flow-node-text">رجال صدقوا ما عاهدوا الله عليه</div>
+                        <div class="flow-node-key">رِجَالࣱ صَدَقُوا۟ مَا عَـٰهَدُوا۟ ٱللَّهَ عَلَیۡهِۖ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ثم بيّن الحكمة من هذا الابتلاء كله: أن يجزي الله الصادقين بصدقهم، ويعذّب المنافقين إن شاء أو يتوب عليهم.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="24">
+                        <div class="flow-node-num">٢٤</div>
+                        <div class="flow-node-text">حكمة الابتلاء: جزاء الصادقين وعذاب المنافقين أو التوبة عليهم</div>
+                        <div class="flow-node-key">لِّیَجۡزِیَ ٱللَّهُ ٱلصَّـٰدِقِینَ بِصِدۡقِهِمۡ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-21">
+                <div class="ayah-text">لَّقَ<span class="tj-qlq">دۡ</span> كَانَ لَكُمۡ فِی رَسُولِ <span class="tj-slt">ٱ</span>للَّهِ أُسۡوَةٌ حَسَنَ<span class="tj-dgm">ةࣱ</span> لِّمَ<span class="tj-khf">ن</span> كَانَ یَرۡجُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ وَ<span class="tj-slt">ٱ</span>لۡیَوۡمَ <span class="tj-slt">ٱ</span>لۡءَاخِرَ وَذَكَرَ <span class="tj-slt">ٱ</span>للَّهَ كَثِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢١</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">لقد كان لكم أيها المؤمنون في رسول الله ﷺ قدوة حسنة في أقواله وأفعاله وصبره، إذ حضر القتال بنفسه، وإنما يقتدي به من كان يرجو ثواب الله ويخاف اليوم الآخر وأكثر من ذكر الله.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-21">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-21">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-21">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-21">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-21">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-21">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-21">يقول: حضر رسول الله ﷺ الحرب بنفسه الكريمة وباشرها، فكيف تشحّون بأنفسكم عن أمر جاد هو بنفسه فيه؟ فتأسّوا به في هذا وغيره. وذكر أن الأصوليين استدلوا بها على الاحتجاج بأفعاله ﷺ، وأن الأصل أن الأمة أسوته في الأحكام إلا ما دلّ الدليل على اختصاصه به. والأسوة نوعان: حسنة وهي التأسي به، وسيئة كتأسي الكفار بآبائهم، وإنما يوفّق للحسنة من كان يرجو الله واليوم الآخر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-21', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-21">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-21">قال: هذه الآية أصل كبير في التأسي برسول الله ﷺ في أقواله وأفعاله وأحواله، ولهذا أُمر الناس بالتأسي به يوم الأحزاب في صبره ومصابرته ومرابطته ومجاهدته وانتظاره الفرج من ربه. فهي خطاب للذين تقلّقوا وتضجّروا وتزلزلوا واضطربوا في أمرهم يومئذ: هلّا اقتديتم به وتأسّيتم بشمائله؟ ثم قيّدها بمن كان يرجو الله واليوم الآخر وذكر الله كثيرًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-21', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-21">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-21">ذكر أن عاصمًا قرأ «أُسوة» بضم الهمزة حيث وقعت والباقين بكسرها، وهما لغتان بمعنى القدوة. والمعنى: لكم به اقتداء حسن أن تنصروا دين الله ولا تتخلفوا عن الرسول وتصبروا كما صبر إذ كُسرت رباعيته وجُرح وجهه وقُتل عمه. وجعل «لمن كان يرجو الله» بدلًا من «لكم» تخصيصًا بعد تعميم، ونقل عن ابن عباس: يرجو ثواب الله، وعن مقاتل: يخشى الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-21', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-21">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-21">جعلها في مسألتين: الأولى أنها عتاب للمتخلفين عن القتال، فالنبي ﷺ بذل نفسه في الخروج إلى الخندق، وذكر قراءة عاصم بالضم والباقين بالكسر وأنهما لغتان. الثانية أن الأسوة ما يُقتدى به في الأفعال ويُتعزّى به في الأحوال، فقد شُجّ وجهه وقُتل عمه حمزة وجاع بطنه فلم يُلفَ إلا صابرًا شاكرًا. وحكى الخلاف في المخاطَب: المنافقون أو المؤمنون، وفي الأسوة: أواجبة أم مستحبة، واحتمل الإيجاب في أمور الدين والاستحباب في أمور الدنيا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-21', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-21">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-21">ذكر أن عامة قراء الأمصار قرؤوا «إِسوة» بالكسر وعاصمًا بالضم، وهما لغتان: الكسر لأهل الحجاز والضم لقيس. والآية عتاب من الله للمتخلفين عن رسول الله ﷺ وعسكره بالمدينة من المؤمنين: كان لكم أن تتأسّوا به وتكونوا معه حيث كان، فإن من يرجو ثواب الله لا يرغب بنفسه عن نفسه. وأسند نحوه عن يزيد بن رومان، وفسّر «وذكر الله كثيرًا» بالإكثار من ذكره في الخوف والشدة والرخاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-21', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-22">
+                <div class="ayah-text">وَلَ<span class="tj-ghn">مَّ</span>ا رَءَا <span class="tj-slt">ٱ</span>لۡمُؤۡمِنُونَ <span class="tj-slt">ٱ</span>لۡأَحۡزَابَ قَالُو<span class="tj-slt">ا۟</span> هَ<span class="tj-mdd">ـٰ</span>ذَا مَا وَعَدَنَا <span class="tj-slt">ٱ</span>للَّهُ وَرَسُولُهُۥ وَصَدَقَ <span class="tj-slt">ٱ</span>للَّهُ وَرَسُولُهُۥۚ وَمَا زَادَهُمۡ إِلَّ<span class="tj-mdd">اۤ</span> إِیمَ<span class="tj-mdd">ـٰ</span>نࣰا وَتَسۡلِیمࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٢</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ولمّا رأى المؤمنون جموع الأحزاب قالوا: هذا ما وعدنا الله ورسوله من الابتلاء ثم النصر، وصدق الله ورسوله، فما زادهم ذلك إلا إيمانًا بالله وانقيادًا لأمره.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-22">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-22">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-22">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-22">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-22">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-22">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-22">لمّا ذكر حال المنافقين عند الخوف ذكر حال المؤمنين: لمّا رأوا الأحزاب قد نزلوا منازلهم وانتهى الخوف قالوا: هذا ما وعدنا الله ورسوله في قوله في سورة البقرة: ﴿أَمْ حَسِبْتُمْ أَنْ تَدْخُلُوا الْجَنَّةَ﴾ الآية، وصدق الله ورسوله فقد رأينا ما أخبرنا به. وما زادهم ذلك إلا إيمانًا في قلوبهم، وتسليمًا في جوارحهم وانقيادًا لأمر الله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-22', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-22">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-22">نقل عن ابن عباس وقتادة أن المؤمنين يعنون آية البقرة: ﴿أَمْ حَسِبْتُمْ أَنْ تَدْخُلُوا الْجَنَّةَ﴾ الآية، أي هذا ما وعدنا الله ورسوله من الابتلاء والامتحان الذي يعقبه النصر القريب. وجعل قوله «وما زادهم إلا إيمانًا وتسليمًا» دليلًا على زيادة الإيمان وقوته بحسب الناس وأحوالهم، كما قال جمهور الأئمة إنه يزيد وينقص، وفسّر التسليم بالانقياد لأوامره والطاعة لرسوله.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-22', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-22">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-22">يقول: ثم وصف حال المؤمنين عند لقاء الأحزاب، فقالوا تسليمًا لأمر الله وتصديقًا لوعده: هذا ما وعدنا الله ورسوله. والوعد ما ذكره في سورة البقرة: ﴿أَمْ حَسِبْتُمْ أَنْ تَدْخُلُوا الْجَنَّةَ﴾ إلى قوله ﴿أَلَا إِنَّ نَصْرَ اللَّهِ قَرِيبٌ﴾، فالآية تتضمن أن المؤمنين يلحقهم مثل ذلك البلاء، فلمّا رأوا الأحزاب وما أصابهم من الشدة قالوه. وما زادهم إلا تصديقًا لله وتسليمًا لأمره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-22', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-22">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-22">ذكر في الوعد قولين: الأول آية البقرة، قاله قتادة. والثاني ما رواه كثير بن عبد الله المزني عن أبيه عن جده أن النبي ﷺ خطب عام الأحزاب فأخبر أن جبريل أخبره بظهور أمته على قصور الحيرة ومدائن كسرى فأبشروا بالنصر، ذكره الماوردي. ونقل عن الفراء أن المعنى: ما زادهم النظر إلى الأحزاب. ثم ساق خبر ذهاب حذيفة إلى القوم ودعاء النبي ﷺ، وإرسال الريح وتفرّق الأحزاب، وأمر جبريل بالنهوض إلى بني قريظة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-22', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-22">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-22">يقول: لمّا عاين المؤمنون جماعات الكفار قالوا، تسليمًا لأمر الله وإيقانًا بأن ذلك إنجاز وعده في سورة البقرة: هذا ما وعدنا الله ورسوله، فما زادهم اجتماع الأحزاب عليهم إلا إيمانًا بالله وتسليمًا لقضائه، ورزقهم به النصر. وأسند عن ابن عباس أن المؤمنين تأوّلوا آية البقرة لمّا مسّهم البلاء وهم يرابطون الأحزاب في الخندق، وعن يزيد بن رومان: صبرًا على البلاء وتسليمًا للقضاء، وعن قتادة نحوه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-22', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-23">
+                <div class="ayah-text"><span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>لۡمُؤۡمِنِینَ رِجَا<span class="tj-khf">لࣱ</span> صَدَقُو<span class="tj-slt">ا۟</span> مَا عَ<span class="tj-mdd">ـٰ</span>هَدُو<span class="tj-slt">ا۟</span> <span class="tj-slt">ٱ</span>للَّهَ عَلَیۡهِۖ فَمِنۡهُم <span class="tj-ghn">مَّ</span><span class="tj-khf">ن</span> قَضَ<span class="tj-mdd">ىٰ</span> نَحۡبَهُۥ وَمِنۡهُم <span class="tj-ghn">مَّ</span>ن یَ<span class="tj-khf">ن</span>تَظِرُۖ وَمَا بَدَّلُو<span class="tj-slt">ا۟</span> تَ<span class="tj-qlq">بۡ</span>دِیلࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٣</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">من المؤمنين رجال وفوا بما عاهدوا الله عليه من الثبات والصبر في القتال، فمنهم من أدّى ما نذره فاستُشهد أو مات على الوفاء، ومنهم من ينتظر أن يلقى ذلك، وما غيّروا عهدهم كما غيّره المنافقون.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-23">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-23">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-23">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-23">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-23">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-23">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-23">لمّا ذكر أن المنافقين عاهدوا الله ألّا يولّوا الأدبار ثم نقضوا، ذكر وفاء المؤمنين: صدقوا أي وفوا بالعهد وأتمّوه، فبذلوا مهجهم في مرضاته. «فمنهم من قضى نحبه» أي إرادته ومطلوبه وما عليه من الحق، فقُتل في سبيل الله أو مات مؤديًا لحقه. «ومنهم من ينتظر» تكميل ما عليه وهو ساعٍ فيه. وما بدّلوا كما بدّل غيرهم، فهؤلاء الرجال على الحقيقة، ومن عداهم فصورهم صور رجال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-23', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-23">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-23">قال: النحب قيل الأجل، وقال البخاري: العهد، وهو يرجع إلى الأول. وأورد حديث زيد بن ثابت أنه فقد هذه الآية عند نسخ المصاحف فلم يجدها إلا مع خزيمة بن ثابت. وأسند عن أنس أنها نزلت في عمه أنس بن النضر، غاب عن بدر فقال: ليرينّ الله ما أصنع، فقُتل يوم أحد وفيه بضع وثمانون جراحة. وأورد حديث معاوية: «طلحة ممن قضى نحبه»، ونقل عن مجاهد: عهده، وعن الحسن: موته على الصدق والوفاء.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-23', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-23">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-23">قضى نحبه: فرغ من نذره ووفى بعهده فصبر حتى استُشهد، والنحب النذر والموت أيضًا، وقال مقاتل: أجله فقُتل على الوفاء، يعني حمزة وأصحابه، وقيل: بذل جهده، من قول العرب: نحب في سيره إذا مدّ فلم ينزل. ونقل عن ابن إسحاق أن المنتظر من بقي ينتظر الشهادة أو النصر. وأسند قصة أنس بن النضر، وحديث خباب في مصعب بن عمير، وحديث جابر في طلحة: «من أحب أن ينظر إلى رجل يمشي على وجه الأرض وقد قضى نحبه فلينظر إلى هذا».</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-23', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-23">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-23">ذكر إعرابها، وأن النحب النذر والعهد واستشهد له بالشعر، وقيل الموت وروي عن ابن عباس، وقيل الوقت والمدة، والحاجة وليست مرادة. واختار أن المراد النذر: منهم من بذل جهده حتى قُتل كحمزة وسعد بن معاذ وأنس بن النضر. وساق حديث أنس بن النضر وحديث طلحة، ورواية البيهقي في وقوف النبي ﷺ على مصعب بن عمير. ونقل أنه روي عن ابن عباس قراءة «ومنهم من بدّل تبديلًا»، وأن ابن الأنباري ردّها لخلافها الإجماع وطعنها في الممدوحين.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-23', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-23">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-23">يقول: أوفوا بما عاهدوا عليه من الصبر في البأساء والضراء، فمنهم من فرغ من العمل الذي نذره فاستُشهد يوم بدر أو أحد أو غيرهما، ومنهم من ينتظر قضاءه. والنحب في كلام العرب النذر، وله وجوه أخرى كالموت والخطر العظيم. ونقل عن مجاهد: عهده، وعن ابن عباس والحسن: الموت على ما عاهد عليه، وأسند قصة أنس بن النضر وحديث طلحة. وما بدّلوا أي ما غيّروا عهدهم كما غيّره المعوّقون، وعن قتادة: ما شكّوا وما تردّدوا في دينهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-23', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-24">
+                <div class="ayah-text">لِّیَ<span class="tj-qlq">جۡ</span>زِیَ <span class="tj-slt">ٱ</span>للَّهُ <span class="tj-slt">ٱل</span>صَّ<span class="tj-mdd">ـٰ</span>دِقِینَ بِصِ<span class="tj-qlq">دۡ</span>قِهِمۡ وَیُعَذِّبَ <span class="tj-slt">ٱ</span>لۡمُنَ<span class="tj-mdd">ـٰ</span>فِقِینَ إِ<span class="tj-khf">ن</span> شَ<span class="tj-mdd">اۤ</span>ءَ أَوۡ یَتُوبَ عَلَیۡهِمۡۚ إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ كَانَ غَفُورࣰا رَّحِیمࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٢٤</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ابتلاهم الله بذلك ليجزي الصادقين بسبب صدقهم ووفائهم، ويعذّب المنافقين إن شاء بألّا يوفقهم للتوبة، أو يتوب عليهم فيهديهم للإيمان، إن الله كان غفورًا لمن تاب رحيمًا به.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-24">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-24">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-24">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-24">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-24">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-24">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-24">قال: أي قدّرنا هذه الفتن والمحن ليتبين الصادق من الكاذب، فيجزي الصادقين بسبب صدقهم في أقوالهم وأحوالهم واستواء ظاهرهم وباطنهم، ويعذّب المنافقين الذين تغيّرت قلوبهم عند الفتن إن شاء تعذيبهم، بأن لم يشأ هدايتهم لعلمه أنه لا خير فيهم، أو يتوب عليهم بأن يوفقهم للتوبة، وهذا هو الغالب على كرم الكريم، ولهذا ختم الآية باسمين دالّين على المغفرة والإحسان.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-24', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-24">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-24">يقول: إنما يختبر الله عباده بالخوف والزلزال ليميز الخبيث من الطيب فيظهر أمر كلٍّ بالفعل، مع علمه بالشيء قبل كونه، لكنه لا يعذّب الخلق بعلمه فيهم حتى يعملوا بما يعلمه، كقوله: ﴿حَتَّى نَعْلَمَ الْمُجَاهِدِينَ مِنْكُمْ﴾. والصادقون يُجزون بصبرهم على العهد، والمنافقون تحت مشيئته في الدنيا: إن شاء استمر بهم فعذّبهم، وإن شاء أرشدهم من النفاق إلى الإيمان، ولمّا كانت رحمته غالبة لغضبه ختم بالمغفرة والرحمة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-24', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-24">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-24">اقتصر على بيان موجز: ليجزيهم جزاء صدقهم، وصدقهم هو الوفاء بالعهد، ويعذّب المنافقين إن شاء أو يتوب عليهم فيهديهم إلى الإيمان، إن الله كان غفورًا رحيمًا. ولم يزد على ذلك شيئًا من الروايات أو الأقوال.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-24', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-24">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-24">كلامه فيها موجز: المعنى أن الله أمر بالجهاد ليجزي الصادقين في الآخرة بصدقهم، ويعذّب المنافقين في الآخرة إن شاء، أي إن شاء أن يعذّبهم لم يوفقهم للتوبة، وإن لم يشأ أن يعذّبهم تاب عليهم قبل الموت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-24', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-24">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-24">يقول: ليثيب الله أهل الصدق بوفائهم بما عاهدوه عليه، ويعذّب المنافقين بكفرهم ونفاقهم إن شاء، أو يتوب عليهم من نفاقهم فيهديهم للإيمان، وأسند عن قتادة: إن شاء أخرجهم من النفاق إلى الإيمان. وأجاب عن سؤال: كيف عُلّق عذاب المنافق بالمشيئة؟ بأن المعنى: يعذّبهم بألّا يوفقهم للتوبة حتى يموتوا على كفرهم، فالاستثناء من التوفيق لا من العذاب لمن مات على نفاقه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-24', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-05.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">فضح المنافقين المعوّقين</span>
+            </a>
+            <a href="section-07.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">ردّ الأحزاب ونزول بني قريظة من حصونهم</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة الأحزاب — الموضوع ٦: الأسوة الحسنة وصدق المؤمنين يوم الأحزاب<br>
+        <small>آيات ٢١ – ٢٤ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

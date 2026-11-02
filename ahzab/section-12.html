@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bookmarks-key="az-bookmarks">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة الأحزاب — صفات النبي ﷺ ومهمته</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة الأحزاب</h1>
+            <p class="surah-subtitle">الموضوع ١٢ من ١٨</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#3498db">
+            <div class="section-num">١٢</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">صفات النبي ﷺ ومهمته</h2>
+                <h3 class="section-title-en">The Prophet's Attributes &amp; Mission</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٤٥ – ٤٨</div>
+        </div>
+
+        <div class="section-desc">
+            <p>خمس صفات جمع الله فيها مقاصد رسالة النبي ﷺ: شاهدًا ومبشرًا ونذيرًا وداعيًا إليه بإذنه وسراجًا منيرًا، ثم أمره ببشارة المؤمنين وترك طاعة الكافرين والمنافقين والتوكل عليه</p>
+        </div>
+
+        <div class="section-context">
+            <span class="section-context-label">موقع القسم من السورة</span>
+            <p>لمّا أمر الله المؤمنين بذكره وتسبيحه وبيّن صلاته عليهم ليخرجهم من الظلمات إلى النور، التفت الخطاب إلى النبي ﷺ يبيّن الواسطة التي جاء بها هذا النور: فهو السراج المنير. وبعد أن نُفي عنه أن يكون أبا أحد من رجالهم، ذُكرت صفاته الحقيقية من الرسالة، ثم خُتم القسم بالنهي عن طاعة الكافرين والمنافقين وترك أذاهم، كما افتُتحت السورة، تمهيدًا لما يأتي بعده من أحكام النساء والبيوت.</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="45">
+                        <div class="flow-node-num">٤٥</div>
+                        <div class="flow-node-text">الشاهد والمبشر والنذير: أصول الرسالة</div>
+                        <div class="flow-node-key">إِنَّاۤ أَرۡسَلۡنَـٰكَ شَـٰهِدࣰا وَمُبَشِّرࣰا وَنَذِیرࣰا</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا ذُكرت وظيفة البلاغ بالشهادة والبشارة والنذارة، أُتبعت بالغاية التي يدعو إليها: داعيًا إلى الله بإذنه، وبالأثر الذي يتركه في الخلق: سراجًا منيرًا يهتدون به في ظلماتهم.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="46">
+                        <div class="flow-node-num">٤٦</div>
+                        <div class="flow-node-text">الداعي إلى الله والسراج المنير</div>
+                        <div class="flow-node-key">وَدَاعِیًا إِلَى ٱللَّهِ بِإِذۡنِهِۦ وَسِرَاجࣰا مُّنِیرࣰا</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا كان من صفاته أنه مبشّر، فُصّلت البشارة: من المبشَّر؟ المؤمنون. وبمَ؟ بفضلٍ كبيرٍ من الله.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="47">
+                        <div class="flow-node-num">٤٧</div>
+                        <div class="flow-node-text">بشارة المؤمنين بالفضل الكبير</div>
+                        <div class="flow-node-key">وَبَشِّرِ ٱلۡمُؤۡمِنِینَ بِأَنَّ لَهُم مِّنَ ٱللَّهِ فَضۡلࣰا كَبِیرࣰا</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا كان للدعوة صادّون من الكافرين والمنافقين، نُهي عن طاعتهم وأُمر بترك أذاهم والتوكل على الله، فهو الكافي.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="48">
+                        <div class="flow-node-num">٤٨</div>
+                        <div class="flow-node-text">النهي عن طاعة الكافرين والمنافقين والتوكل على الله</div>
+                        <div class="flow-node-key">وَتَوَكَّلۡ عَلَى ٱللَّهِۚ وَكَفَىٰ بِٱللَّهِ وَكِیلࣰا</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-45">
+                <div class="ayah-text">یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>بِیُّ إِ<span class="tj-ghn">نَّ</span><span class="tj-mdd">اۤ</span> أَرۡسَلۡنَ<span class="tj-mdd">ـٰ</span>كَ شَ<span class="tj-mdd">ـٰ</span>هِدࣰا وَمُبَشِّرࣰا وَنَذِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٤٥</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">نداء تكريم للنبي ﷺ: إن الله أرسله شاهدًا على أمته بالبلاغ، ومبشرًا المؤمنين بالجنة، ونذيرًا العصاة والمكذبين من النار.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-45">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-45">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-45">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-45">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-45">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-45">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-45">هذه الصفات هي المقصود من رسالته وزبدتها وأصولها، وهي خمسة. أولها: شاهدًا على أمته بما عملوا من خير وشر، فهو شاهد عدل مقبول، كما قال: ويكون الرسول عليكم شهيدًا. والثاني والثالث: مبشرًا ونذيرًا، وهذا يستلزم ذكر المبشَّر والمنذَر وما يُبشَّر به ويُنذر منه: فالمبشَّرون المؤمنون المتقون لهم البشرى في الدنيا والآخرة، والمنذَرون المجرمون الظالمون لهم العقوبة في الدنيا والعذاب الطويل في الآخرة. وتفصيل ذلك ما جاء به من الكتاب والسنة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-45', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-45">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-45">روى الإمام أحمد والبخاري عن عطاء بن يسار أن عبد الله بن عمرو قال: إنه لموصوف في التوراة ببعض صفته في القرآن: يا أيها النبي إنا أرسلناك شاهدًا ومبشرًا ونذيرًا، وحرزًا للأميين، أنت عبدي ورسولي سميتك المتوكل، لست بفظ ولا غليظ ولا سخّاب في الأسواق، ولا يدفع السيئة بالسيئة ولكن يعفو ويغفر. ونقل عن ابن عباس أنه لما نزلت قال لعلي ومعاذ: انطلقا فبشّرا ولا تنفّرا. وشاهدًا أي لله بالوحدانية وعلى الناس بأعمالهم يوم القيامة، ومبشرًا للمؤمنين بجزيل الثواب، ونذيرًا للكافرين من وبيل العقاب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-45', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-45">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-45">أي: شاهدًا للرسل بالتبليغ، ومبشرًا لمن آمن بالجنة، ونذيرًا لمن كذّب بآيات الله بالنار. فجعل الشهادة هنا شهادةً للرسل أنهم بلّغوا، والبشارة لأهل الإيمان، والنذارة لأهل التكذيب.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-45', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-45">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-45">في الآية تأنيس للنبي ﷺ وللمؤمنين وتكريم لجميعهم، وقد تضمنت من أسمائه ﷺ ستة أسماء. وذكر حديث: لي خمسة أسماء، أنا محمد وأحمد والماحي والحاشر والعاقب، وأن ابن العربي عدّ في أحكامه سبعة وستين اسمًا. وروى عن ابن عباس أنه لما نزلت بعث عليًا ومعاذًا إلى اليمن وقال: بشّرا ولا تنفّرا ويسّرا ولا تعسّرا. وشاهدًا عن قتادة: على أمته بالتبليغ وعلى سائر الأمم بتبليغ أنبيائهم، ومبشرًا برحمة الله والجنة، ونذيرًا من النار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-45', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-45">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-45">يقول تعالى لنبيه: يا محمد إنا أرسلناك شاهدًا على أمتك بإبلاغك إياهم ما أُرسلت به، ومبشرًا لهم بالجنة إن صدّقوك وعملوا بما جئتهم به، ونذيرًا من النار أن يدخلوها إن كذّبوك وخالفوك. وقال: وبالذي قلنا في ذلك قال أهل التأويل، وأسند عن قتادة: شاهدًا على أمتك بالبلاغ، ومبشرًا بالجنة، ونذيرًا بالنار.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-45', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-46">
+                <div class="ayah-text">وَدَاعِیًا إِلَى <span class="tj-slt">ٱ</span>للَّهِ بِإِذۡنِهِۦ وَسِرَاجࣰا <span class="tj-ghn">مُّ</span>نِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٤٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">وأرسله داعيًا الخلق إلى توحيد الله وعبادته بأمره وإذنه، وسراجًا منيرًا يهتدي به الناس من ظلمات الضلال كما يُستضاء بالسراج في الظلمة.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-46">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-46">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-46">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-46">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-46">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-46">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-46">داعيًا إلى الله: يدعو الخلق إلى ربهم ويأمرهم بعبادته التي خُلقوا لها، وهذا يستلزم استقامته على ما يدعو إليه، وتعريفهم بربهم بصفاته، والدعوة إليه بأقرب طريق، وإخلاص الدعوة لله لا إلى نفسه وتعظيمها، وذلك كله بإذن الله وأمره. والخامس: سراجًا منيرًا، وهذا يقتضي أن الخلق كانوا في ظلمة عظيمة لا نور فيها ولا علم، حتى جاء الله بهذا النبي فأضاء به الظلمات وهدى به الضُّلّال إلى الصراط المستقيم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-46', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-46">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-46">داعيًا إلى الله بإذنه: أي داعيًا للخلق إلى عبادة ربهم عن أمره لك بذلك. وسراجًا منيرًا: أي وأمرك ظاهر فيما جئت به من الحق كالشمس في إشراقها وإضاءتها، لا يجحدها إلا معاند. وأورد في الآية السابقة رواية الطبراني عن ابن عباس: وداعيًا إلى شهادة أن لا إله إلا الله بإذنه، وسراجًا منيرًا بالقرآن.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-46', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-46">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-46">داعيًا إلى الله: إلى توحيده وطاعته. بإذنه: بأمره. وسراجًا منيرًا: سمّاه سراجًا لأنه يُهتدى به كالسراج يُستضاء به في الظلمة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-46', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-46">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-46">الدعاء إلى الله تبليغ التوحيد والأخذ به ومكافحة الكفرة، وبإذنه: بأمره وتقديره ذلك في وقته. وسراجًا منيرًا استعارة للنور الذي يتضمنه شرعه، وقيل: هاديًا من ظُلَم الضلالة كالمصباح المضيء. ووُصف بالإنارة لأن من السُّرُج ما لا يضيء إذا قلّ زيته ودقّت فتيلته. وروى عن ابن عباس: داعيًا إلى شهادة أن لا إله إلا الله، وسراجًا منيرًا بالقرآن. وقال الزجاج: أي ذا سراج منير، يعني كتابًا نيّرًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-46', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-46">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-46">وداعيًا إلى الله: إلى توحيده وإفراد الألوهية له وإخلاص الطاعة لوجهه دون الآلهة والأوثان، وعن قتادة: إلى شهادة أن لا إله إلا الله. بإذنه: بأمره إياك بذلك. وسراجًا منيرًا: ضياءً لخلقه يستضيئون بالنور الذي أتيتهم به من عند الله، ينير لمن استضاء بضوئه وعمل بما أمره، والمعنى أنه يهدي به من اتّبعه من أمته.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-46', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-47">
+                <div class="ayah-text">وَبَشِّرِ <span class="tj-slt">ٱ</span>لۡمُؤۡمِنِینَ بِأَ<span class="tj-ghn">نَّ</span> لَهُم <span class="tj-ghn">مِّ</span>نَ <span class="tj-slt">ٱ</span>للَّهِ فَضۡلࣰا كَبِیرࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٤٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">أمر الله نبيه ﷺ أن يبشّر أهل الإيمان بأن لهم من الله فضلًا كبيرًا وثوابًا عظيمًا، وهو روضات الجنات.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-47">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-47">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-47">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-47">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-47">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-47">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-47">ذكر في هذه الجملة المبشَّر وهم المؤمنون، وإذا ذُكر الإيمان مفردًا دخلت فيه الأعمال الصالحة. والمبشَّر به الفضل الكبير الذي لا يُقدر قدره: النصر في الدنيا، وهداية القلوب، وغفران الذنوب، وكشف الكروب، وكثرة الأرزاق، والفوز برضا الله وثوابه. وذِكر الثواب مما ينشّط العاملين على سلوك الصراط المستقيم، كما يُذكر العقاب في مقام الترهيب ليكون عونًا على الكف عن المحرمات.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-47', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-47">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-47">لم يُفرد ابن كثير هذه الآية بكلام مستقل، وإنما فسّر الآيات ٤٥–٤٨ في سياق واحد. وأقرب ما يتصل بها قوله في تفسير «ومبشرًا»: أي بشيرًا للمؤمنين بجزيل الثواب. وأورد رواية ابن عباس أنه ﷺ لما نزلت هذه الآيات قال لعلي ومعاذ: انطلقا فبشّرا ولا تنفّرا، ويسّرا ولا تعسّرا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-47', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-47">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-47">اكتفى البغوي بإيراد نص الآية: وبشّر المؤمنين بأن لهم من الله فضلًا كبيرًا، ولم يزد عليه تفسيرًا، إذ قد بيّن معنى البشارة في الآية قبلها: مبشرًا لمن آمن بالجنة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-47', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-47">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-47">الواو عاطفة جملة على جملة، والمعنى منقطع عمّا قبله: أمره أن يبشّر المؤمنين بالفضل الكبير، وعلى قول الزجاج يكون معطوفًا على الكاف في أرسلناك. ونقل عن ابن عطية عن أبيه: هذه من أرجى آية عندي في كتاب الله، لأن الله أمر نبيه أن يبشّر المؤمنين بأن لهم عنده فضلًا كبيرًا، وقد بيّن الفضل الكبير في سورة الشورى: والذين آمنوا وعملوا الصالحات في روضات الجنات لهم ما يشاءون عند ربهم ذلك هو الفضل الكبير، فآية الأحزاب خبر وآية الشورى تفسير لها.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-47', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-47">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-47">يقول تعالى: وبشّر يا محمد أهل الإيمان بالله بأن لهم من الله فضلًا كبيرًا، أي بأن لهم من ثواب الله على طاعتهم إياه تضعيفًا كثيرًا، وذلك هو الفضل الكبير من الله لهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-47', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-48">
+                <div class="ayah-text">وَلَا تُطِعِ <span class="tj-slt">ٱ</span>لۡكَ<span class="tj-mdd">ـٰ</span>فِرِینَ وَ<span class="tj-slt">ٱ</span>لۡمُنَ<span class="tj-mdd">ـٰ</span>فِقِینَ وَدَعۡ أَذَ<span class="tj-mdd">ىٰ</span>هُمۡ وَتَوَكَّلۡ عَلَى <span class="tj-slt">ٱ</span>للَّهِۚ وَكَفَ<span class="tj-mdd">ىٰ</span> بِ<span class="tj-slt">ٱ</span>للَّهِ وَكِیلࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٤٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">ونهى الله نبيه ﷺ عن طاعة الكافرين والمنافقين فيما يدعونه إليه، وأمره أن يُعرض عن أذاهم ويصبر عليه، وأن يفوّض أمره إلى الله، فهو الكافي الحافظ.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-48">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-48">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-48">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-48">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-48">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-48">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-48">لمّا كان من الناس طائفة مستعدة لصدّ الداعين إلى الله، وهم المنافقون والكفار، نهاه عن طاعتهم في كل أمر يصد عن سبيل الله. ولا يقتضي ذلك أذاهم، بل ودع أذاهم، فإن ذلك جالب لهم وداع إلى قبول الإسلام وكفّ كثير من أذاهم. وتوكّل على الله في إتمام أمرك وخذلان عدوك، وكفى بالله وكيلًا تُوكل إليه الأمور المهمة فيقوم بها ويسهّلها على عبده.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-48', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-48">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-48">ولا تطع الكافرين والمنافقين: أي لا تطعهم ولا تسمع منهم في الذي يقولونه. ودع أذاهم: أي اصفح وتجاوز عنهم، وكِلْ أمرهم إلى الله، فإن فيه كفاية لهم، ولهذا قال: وتوكّل على الله وكفى بالله وكيلًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-48', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-48">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-48">أحال في معنى النهي عن طاعتهم على تفسير أول السورة. ودع أذاهم: قال ابن عباس وقتادة: اصبر على أذاهم، وقال الزجاج: لا تجازهم عليه، وهذا منسوخ بآية القتال. وتوكّل على الله وكفى بالله وكيلًا: أي حافظًا.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-48', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-48">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-48">أي لا تطعهم فيما يشيرون عليك من المداهنة في الدين. والكافرون: أبو سفيان وعكرمة وأبو الأعور السلمي، قالوا: لا تذكر آلهتنا بسوء نتّبعك، والمنافقون: عبد الله بن أُبيّ وأصحابه. ودع أذاهم فيه تأويلان: دع أن تؤذيهم مجازاةً على إذايتهم، فالمصدر مضاف إلى المفعول، أو أعرض عن أقوالهم وما يؤذونك به، فهو مضاف إلى الفاعل وهو قول مجاهد، وعلى كليهما نُسخ ما يخص الكافرين بآية السيف. وفي «وكفى بالله وكيلًا» وعد بالنصر.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-48', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-48">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-48">لا تطع قول كافر ولا منافق فتسمع منه دعاءه إياك إلى التقصير في تبليغ رسالات الله. ودع أذاهم: أعرض عن أذاهم لك واصبر عليه، ولا يمنعك ذلك عن القيام بأمر الله، وأسند عن مجاهد: أعرض عنهم، وعن قتادة: اصبر على أذاهم. وتوكّل على الله: فوّض إليه أمورك وثق به فإنه كافيك، وحسبك بالله قيّمًا بأمورك وحافظًا لك.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-48', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-11.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">خاتم النبيين والأمر بذكر الله</span>
+            </a>
+            <a href="section-13.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">الطلاق قبل الدخول وما أُحلّ للنبي ﷺ من النساء</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة الأحزاب — الموضوع ١٢: صفات النبي ﷺ ومهمته<br>
+        <small>آيات ٤٥ – ٤٨ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>

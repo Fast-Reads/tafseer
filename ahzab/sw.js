@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tafseer-ahzab-v1';
+const CACHE_NAME = 'tafseer-ahzab-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -10,7 +10,21 @@ const ASSETS = [
   './section-01.html',
   './section-02.html',
   './section-03.html',
-  './section-04.html'
+  './section-04.html',
+  './section-05.html',
+  './section-06.html',
+  './section-07.html',
+  './section-08.html',
+  './section-09.html',
+  './section-10.html',
+  './section-11.html',
+  './section-12.html',
+  './section-13.html',
+  './section-14.html',
+  './section-15.html',
+  './section-16.html',
+  './section-17.html',
+  './section-18.html'
 ];
 
 // Install: cache all assets

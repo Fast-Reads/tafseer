@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bookmarks-key="az-bookmarks">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>سورة الأحزاب — الصلاة على النبي ﷺ وحرمة أذاه وأذى المؤمنين</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="bismillah">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ</div>
+            <h1 class="surah-title">سورة الأحزاب</h1>
+            <p class="surah-subtitle">الموضوع ١٥ من ١٨</p>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="font-controls">
+            <button onclick="changeFontSize(-1)">−</button>
+            <span id="fontLabel">١٠٠%</span>
+            <button onclick="changeFontSize(1)">+</button>
+        </div>
+        <button onclick="cycleTheme()">المظهر</button>
+        <button id="memorizeBtn" onclick="toggleMemorize()">وضع الحفظ</button>
+        <button id="hintsBtn" onclick="toggleHintsPanel()">الكلمات الأولى</button>
+        <button id="tajweedBtn" onclick="toggleTajweed()">التجويد</button>
+        <button id="bookmarksBtn" onclick="toggleBookmarksPanel()">العلامات</button>
+        <a href="index.html">الفهرس</a>
+    </div>
+
+    <div class="container">
+        <div class="section-banner" style="--accent-color:#16a085">
+            <div class="section-num">١٥</div>
+            <div class="section-titles">
+                <h2 class="section-title-ar">الصلاة على النبي ﷺ وحرمة أذاه وأذى المؤمنين</h2>
+                <h3 class="section-title-en">Blessings upon the Prophet &amp; the Sin of Harming Him and the Believers</h3>
+            </div>
+            <div class="section-ayah-range">آيات ٥٦ – ٥٨</div>
+        </div>
+
+        <div class="section-desc">
+            <p>صلاة الله وملائكته على النبي ﷺ وأمر المؤمنين بالصلاة والتسليم عليه، ثم الوعيد باللعن والعذاب المهين لمن آذى الله ورسوله، وبالبهتان والإثم المبين لمن آذى المؤمنين والمؤمنات بغير ذنب</p>
+        </div>
+
+        <div class="section-context">
+            <span class="section-context-label">موقع القسم من السورة</span>
+            <p>ولمّا صان الله بيوت نبيه ﷺ وأزواجه بالإذن والحجاب وحرّم أذاه ونكاح أزواجه من بعده، رفع ذكره إلى الملأ الأعلى: إن الله وملائكته يصلون عليه، وأمر المؤمنين أن يصلّوا عليه ويسلّموا. ثم قابل التعظيم بضدّه، فتوعّد من آذى الله ورسوله باللعن والعذاب المهين، ومن آذى المؤمنين والمؤمنات بالبهتان والإثم المبين، تمهيدًا لما يليه من صيانة نساء المؤمنين بالجلابيب ووعيد المنافقين الذين يؤذونهن.</p>
+        </div>
+
+        <div class="flow-diagram" id="flowDiagram">
+            <div class="flow-header">
+                <button class="flow-toggle" onclick="toggleFlowDiagram()">
+                    <span class="flow-toggle-icon">▼</span>
+                    التسلسل الموضوعي
+                </button>
+            </div>
+            <div class="flow-body">
+                <div class="flow-track">
+                    <div class="flow-node" data-ayahs="56">
+                        <div class="flow-node-num">٥٦</div>
+                        <div class="flow-node-text">صلاة الله وملائكته على النبي ﷺ وأمر المؤمنين بالصلاة والتسليم عليه</div>
+                        <div class="flow-node-key">إِنَّ ٱللَّهَ وَمَلَـٰۤئِكَتَهُۥ یُصَلُّونَ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا أمر بتعظيم رسوله ﷺ والصلاة والسلام عليه، نهى عن ضدّ ذلك وهو أذيته، وقرنها بأذى الله تعظيمًا لشأنها، وتوعّد عليها باللعن والعذاب المهين.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="57">
+                        <div class="flow-node-num">٥٧</div>
+                        <div class="flow-node-text">لعن من يؤذي الله ورسوله في الدنيا والآخرة</div>
+                        <div class="flow-node-key">إِنَّ ٱلَّذِینَ یُؤۡذُونَ ٱللَّهَ وَرَسُولَهُۥ</div>
+                    </div>
+                    <div class="flow-arrow has-link">
+                        <span class="flow-arrow-mark">↓</span>
+                        <span class="flow-link">ولمّا أطلق الوعيد في أذى الله ورسوله، ذكر أذى المؤمنين وقيّده بأن يكون بغير ما اكتسبوا، وجعل جزاءه احتمال البهتان والإثم المبين.</span>
+                    </div>
+                    <div class="flow-node" data-ayahs="58">
+                        <div class="flow-node-num">٥٨</div>
+                        <div class="flow-node-text">أذى المؤمنين والمؤمنات بغير ذنب بهتان وإثم مبين</div>
+                        <div class="flow-node-key">وَٱلَّذِینَ یُؤۡذُونَ ٱلۡمُؤۡمِنِینَ وَٱلۡمُؤۡمِنَـٰتِ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ayah-list">
+            <div class="ayah" id="ayah-56">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱ</span>للَّهَ وَمَلَ<span class="tj-mdd">ـٰۤ</span>ئِكَتَهُۥ یُصَلُّونَ عَلَى <span class="tj-slt">ٱل</span><span class="tj-ghn">نَّ</span>بِیِّۚ یَ<span class="tj-mdd">ـٰۤ</span>أَیُّهَا <span class="tj-slt">ٱلَّ</span>ذِینَ ءَامَنُو<span class="tj-slt">ا۟</span> صَلُّو<span class="tj-slt">ا۟</span> عَلَیۡهِ وَسَلِّمُو<span class="tj-slt">ا۟</span> تَسۡلِیمًا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٥٦</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن الله يثني على نبيه ﷺ عند الملائكة المقربين، والملائكة يثنون عليه ويدعون له، فأمر الله المؤمنين أن يصلّوا عليه ويسلّموا تسليمًا، تعظيمًا له واقتداءً بالله وملائكته، فيجتمع له الثناء من أهل السماء وأهل الأرض.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-56">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-56">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-56">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-56">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-56">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-56">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-56">فيها تنبيه على كمال رسول الله ﷺ ورفعة درجته وعلو منزلته عند الله وعند خلقه. وصلاة الله عليه: ثناؤه عليه بين الملائكة وفي الملأ الأعلى لمحبته له، وصلاة الملائكة: ثناؤهم عليه ودعاؤهم له. وأمر المؤمنين بالصلاة والسلام عليه اقتداءً بالله وملائكته، وجزاءً له على بعض حقوقه، وتكميلًا لإيمانهم، وزيادةً في حسناتهم وتكفيرًا لسيئاتهم. وأفضل هيئاتها ما علّمه أصحابه: اللهم صل على محمد وعلى آل محمد كما صليت على آل إبراهيم... وهي مشروعة في جميع الأوقات، وأوجبها كثير من العلماء في الصلاة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-56', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-56">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-56">نقل عن أبي العالية: صلاة الله ثناؤه عليه عند الملائكة، وصلاة الملائكة الدعاء، وعن ابن عباس: يصلون: يبرّكون. والمقصود أن الله أخبر بمنزلة نبيه عنده في الملأ الأعلى، ثم أمر أهل العالم السفلي بالصلاة والتسليم عليه ليجتمع له الثناء من العالمين. وساق الأحاديث في كيفيتها كحديث كعب بن عجرة، وفي فضلها: «من صلى علي واحدة ، صلى الله عليه بها عشرا»، وانتصر للشافعي في إيجابها في التشهد الأخير ونفى الإجماع على خلافه، ثم عدّد مواطنها: بعد الأذان، وعند دخول المسجد، وفي صلاة الجنازة، وفي الدعاء، ويوم الجمعة.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-56', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-56">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-56">نقل عن ابن عباس: أراد أن الله يرحم النبي والملائكة يدعون له، وعنه أيضًا: يصلون: يتبركون، وقيل: الصلاة من الله الرحمة ومن الملائكة الاستغفار، وقال أبو العالية: صلاة الله ثناؤه عليه عند الملائكة. وصلّوا عليه: ادعوا له بالرحمة، وسلّموا تسليمًا: حيّوه بتحية الإسلام. وأسند حديث كعب بن عجرة وأبي حميد الساعدي في صفة الصلاة عليه، وأحاديث فضلها كقوله ﷺ: «من صلى علي واحدة صلى الله عليه عشرا»، وحديث الملائكة السياحين في الأرض الذين يبلغونه من أمته السلام.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-56', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-56">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-56">شرّف الله بها رسوله ﷺ حياته وموته. والصلاة من الله رحمته ورضوانه، ومن الملائكة الدعاء والاستغفار، ومن الأمة الدعاء والتعظيم لأمره. وذكر الخلاف في جمع الله والملائكة في ضمير يصلون، وقراءة ابن عباس «وملائكتُه» بالرفع والجمهور بالنصب. وقرّر أنه «لا خلاف في أن الصلاة عليه فرض في العمر مرة»، وأن الاحتياط الصلاة عند كل ذكر. وحكى أن الجمهور على أنها في الصلاة من سننها، وأن الشافعي شذّ فأوجب الإعادة على تاركها، ثم ذكر أن ابن المواز من المالكية قال بوجوبها واختاره ابن العربي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-56', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-56">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-56">يقول تعالى: إن الله وملائكته يبرّكون على النبي ﷺ، ونقل عن ابن عباس: يباركون على النبي. وقال: قد يحتمل أن المعنى أن الله يرحم النبي وتدعو له ملائكته ويستغفرون، لأن الصلاة في كلام العرب من غير الله إنما هي دعاء. وصلّوا عليه: ادعوا لنبي الله، وسلّموا تسليمًا: حيّوه تحية الإسلام. وأسند الآثار في صفتها عن طلحة وكعب بن عجرة وقتادة وغيرهم: لما نزلت قالوا: قد عرفنا السلام عليك فكيف الصلاة؟ فقال: قولوا اللهم صل على محمد وعلى آل محمد كما صليت على إبراهيم...</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-56', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-57">
+                <div class="ayah-text">إِ<span class="tj-ghn">نَّ</span> <span class="tj-slt">ٱلَّ</span>ذِینَ یُؤۡذُونَ <span class="tj-slt">ٱ</span>للَّهَ وَرَسُولَهُۥ لَعَنَهُمُ <span class="tj-slt">ٱ</span>للَّهُ فِی <span class="tj-slt">ٱل</span>دُّنۡیَا وَ<span class="tj-slt">ٱ</span>لۡءَاخِرَةِ وَأَعَدَّ لَهُمۡ عَذَابࣰا <span class="tj-ghn">مُّ</span>هِینࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٥٧</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">إن الذين يؤذون الله بالشرك والمعاصي ونسبة ما لا يليق به إليه، ويؤذون رسوله ﷺ بالقول أو الفعل، طردهم الله وأبعدهم من رحمته في الدنيا والآخرة، وأعدّ لهم عذابًا يذلّهم ويهينهم.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-57">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-57">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-57">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-57">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-57">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-57">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-57">لمّا أمر بتعظيم رسوله ﷺ والصلاة والسلام عليه نهى عن أذيته وتوعّد عليها، وهي تشمل كل أذية قولية أو فعلية، من سب وشتم، أو تنقص له أو لدينه. ولعنهم: أبعدهم وطردهم، ومن لعنهم في الدنيا أنه يتحتّم قتل من شتم الرسول وآذاه، وفي الآخرة العذاب المهين جزاءً على أذاه. وبيّن أن أذية الرسول ليست كأذية غيره، لأن العبد لا يؤمن بالله حتى يؤمن برسوله، وله من التعظيم الذي هو من لوازم الإيمان ما يقتضي ألّا يكون مثل غيره.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-57', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-57">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-57">وعيد لمن آذى الله بمخالفة أوامره وارتكاب زواجره والإصرار على ذلك، وآذى رسوله بعيب أو تنقص. ونقل عن عكرمة أنها نزلت في المصورين، وأورد حديث الصحيحين: «يؤذيني ابن آدم ، يسب الدهر ، وأنا الدهر»، وفسّره بأن أهل الجاهلية كانوا يسندون أفعال الله إلى الدهر ويسبونه. وعن ابن عباس أنها نزلت في الذين طعنوا على النبي ﷺ في تزويجه صفية بنت حيي. ثم قال: الظاهر أنها عامة في كل من آذاه بشيء، ومن آذاه فقد آذى الله، وأورد حديث: «ومن آذاهم فقد آذاني» في أصحابه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-57', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-57">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-57">نقل عن ابن عباس: هم اليهود والنصارى والمشركون؛ فاليهود قالوا عزير ابن الله ويد الله مغلولة، والنصارى قالوا المسيح ابن الله، والمشركون قالوا الملائكة بنات الله. وقيل: يلحدون في أسمائه وصفاته، وقال عكرمة: هم أصحاب التصاوير، وقال بعضهم: يؤذون أولياء الله. وبيّن أن معنى الأذى مخالفة أمر الله وارتكاب معاصيه، ذُكر على ما يتعارفه الناس، والله منزّه أن يلحقه أذى. وأذى الرسول: قال ابن عباس هو أنه شُجّ في وجهه وكُسرت رباعيته، وقيل: قولهم شاعر ساحر مجنون.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-57', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-57">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-57">فيه خمس مسائل. حكى عن الجمهور أن أذية الله بالكفر ونسبة الصاحبة والولد والشريك إليه، وعن عكرمة أنها بالتصوير، وقالت فرقة: على حذف مضاف أي يؤذون أولياء الله. وأذى الرسول بالأقوال كقولهم ساحر شاعر، وبالأفعال كشجّ وجهه يوم أحد. ونبّه على أنه أطلق إيذاء الله ورسوله وقيّد إيذاء المؤمنين، لأن الأول لا يكون إلا بغير حق أبدًا. وعدّ من أذاه ﷺ الطعن في إمرة أسامة بن زيد، واستنبط منه جواز إمامة المولى والمفضول. واللعن في اللغة: الإبعاد.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-57', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-57">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-57">إن الذين يؤذون ربهم بمعصيتهم إياه وركوبهم ما حرّم عليهم، وقيل: عنى أصحاب التصاوير لأنهم يرومون تكوين خلق مثل خلق الله، وأسنده عن عكرمة. ونقل عن قتادة: «يا سبحان الله ما زال أناس من جهلة بني آدم حتى تعاطوا أذى ربهم»، وأن أذاهم رسول الله ﷺ طعنهم عليه في نكاحه صفية بنت حيي، وأسند مثله عن ابن عباس. ولعنهم: أبعدهم من رحمته في الدنيا والآخرة، وأعدّ لهم في الآخرة عذابًا يهينهم فيه بالخلود فيه.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-57', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ayah" id="ayah-58">
+                <div class="ayah-text">وَ<span class="tj-slt">ٱلَّ</span>ذِینَ یُؤۡذُونَ <span class="tj-slt">ٱ</span>لۡمُؤۡمِنِینَ وَ<span class="tj-slt">ٱ</span>لۡمُؤۡمِنَ<span class="tj-mdd">ـٰ</span>تِ بِغَیۡرِ مَا <span class="tj-slt">ٱ</span>كۡتَسَبُو<span class="tj-slt">ا۟</span> فَقَدِ <span class="tj-slt">ٱ</span>حۡتَمَلُو<span class="tj-slt">ا۟</span> بُهۡتَ<span class="tj-mdd">ـٰ</span>نࣰا وَإِثۡمࣰا <span class="tj-ghn">مُّ</span>بِینࣰا</div>
+                <div class="ayah-num-wrap">
+                    <span class="ayah-badge">٥٨</span>
+                </div>
+                <div class="tafseer-block">
+                    <div class="tafseer-summary">والذين يؤذون المؤمنين والمؤمنات بقول أو فعل من غير ذنب عملوه، فقد حملوا على أنفسهم أفحش الكذب، وارتكبوا إثمًا ظاهرًا يستحقون به العقاب.</div>
+                    <div class="tafseer-tab-headers">
+                        <button class="tafseer-tab-btn active" data-tab="saadi-58">السعدي</button>
+                        <button class="tafseer-tab-btn" data-tab="katheer-58">ابن كثير</button>
+                        <button class="tafseer-tab-btn" data-tab="baghawy-58">البغوي</button>
+                        <button class="tafseer-tab-btn" data-tab="qortoby-58">القرطبي</button>
+                        <button class="tafseer-tab-btn" data-tab="tabary-58">الطبري</button>
+                    </div>
+                    <div class="tafseer-tab-content active" id="saadi-58">
+                        <div class="tafseer-text collapsed-text" id="t-saadi-58">أذية المؤمنين عظيمة وإثمها عظيم. وبغير ما اكتسبوا: بغير جناية منهم توجب الأذى. فقد احتملوا على ظهورهم بهتانًا حيث آذوهم بغير سبب، وإثمًا مبينًا حيث تعدّوا عليهم وانتهكوا حرمة أمر الله باحترامها. ولهذا كان سبّ آحاد المؤمنين موجبًا للتعزير بحسب حالته وعلو مرتبته، فتعزير من سبّ الصحابة أبلغ، وتعزير من سبّ العلماء وأهل الدين أعظم من غيرهم.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-saadi-58', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="katheer-58">
+                        <div class="tafseer-text collapsed-text" id="t-katheer-58">أي ينسبون إليهم ما هم برآء منه لم يعملوه، وهذا هو البهت البيّن: أن يُحكى عن المؤمنين والمؤمنات ما لم يفعلوه على سبيل العيب والتنقص. وذكر أن من أكثر من يدخل في هذا الوعيد الكفرة بالله ورسوله، ثم الرافضة الذين يتنقصون الصحابة ويعيبونهم بما قد برّأهم الله منه. وأورد حديث الغيبة: «إن كان فيه ما تقول فقد اغتبته ، وإن لم يكن فيه ما تقول فقد بهته»، وحديث عائشة: «أربى الربا عند الله استحلال عرض امرئ مسلم» ثم قرأ هذه الآية.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-katheer-58', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="baghawy-58">
+                        <div class="tafseer-text collapsed-text" id="t-baghawy-58">بغير ما اكتسبوا: من غير أن عملوا ما أوجب أذاهم، وقال مجاهد: يقعون فيهم ويرمونهم بغير جرم. وذكر في سبب نزولها أقوالًا: قال مقاتل: نزلت في علي بن أبي طالب، كان ناس من المنافقين يؤذونه ويشتمونه، وقيل: في شأن عائشة، وقال الضحاك والكلبي: في الزناة الذين كانوا يتبعون النساء في طرق المدينة إذا خرجن ليلًا لحوائجهن، وكانوا يطلبون الإماء ولا يعرفون الحرة من الأمة لأن زيّ الكل كان واحدًا، فشكون ذلك فنزلت.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-baghawy-58', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="qortoby-58">
+                        <div class="tafseer-text collapsed-text" id="t-qortoby-58">أذية المؤمنين تكون بالأفعال والأقوال القبيحة كالبهتان والتكذيب الفاحش المختلق، والآية نظير آية النساء: ومن يكسب خطيئة أو إثما ثم يرم به بريئا. وقيل: من الأذية تعييره بحسب مذموم أو حرفة مذمومة. وقال: ميّز الله بين أذاه وأذى الرسول وأذى المؤمنين «فجعل الأول كفرا والثاني كبيرة». وروي أن عمر فزع منها لأنه يضرب الناس وينهرهم، فقال له أبي بن كعب: لست منهم، إنما أنت معلم ومقوّم. وقيل: نزلت في أهل جارية من الأنصار آذوا عمر لمّا ضربها، وقيل: في علي.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-qortoby-58', this)">عرض المزيد</button>
+                    </div>
+                    <div class="tafseer-tab-content" id="tabary-58">
+                        <div class="tafseer-text collapsed-text" id="t-tabary-58">نقل عن مجاهد أن معنى يؤذون: يقفون، أي يعيبونهم طلبًا لشينهم، وبغير ما اكتسبوا: بغير ما عملوا. وأسند عن ابن عمر أنه قرأها فقال: فكيف بالذي يأتي إليهم المعروف فيُؤذى؟ فذلك يُضاعف له العذاب، وعن قتادة: «فإياكم وأذى المؤمن، فإن الله يحوطه، ويغضب له». والبهتان: أفحش الكذب، فقد احتملوا زورًا وفرية شنيعة، وإثمًا مبينًا: يبين لسامعه أنه إثم وزور.</div>
+                        <button class="tafseer-toggle" onclick="toggleTafseerText('t-tabary-58', this)">عرض المزيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <a href="section-14.html" class="nav-btn">
+                <span class="nav-label">الموضوع السابق →</span>
+                <span class="nav-title">آداب بيوت النبي ﷺ وآية الحجاب</span>
+            </a>
+            <a href="section-16.html" class="nav-btn" style="text-align:left">
+                <span class="nav-label">← الموضوع التالي</span>
+                <span class="nav-title">آية الجلابيب ووعيد المنافقين والمرجفين</span>
+            </a>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <div class="footer">
+        سورة الأحزاب — الموضوع ١٥: الصلاة على النبي ﷺ وحرمة أذاه وأذى المؤمنين<br>
+        <small>آيات ٥٦ – ٥٨ &bull; السعدي · ابن كثير · البغوي · القرطبي · الطبري
+        &bull; <a href="index.html" style="color:var(--gold)">العودة للفهرس</a></small>
+    </div>
+
+    <!-- TAJWEED LEGEND -->
+    <div class="tajweed-legend">
+        <div class="legend-header">
+            <span class="legend-title">أحكام التجويد</span>
+        </div>
+        <div class="legend-item"><span class="legend-swatch sw-ghn"></span>غنة</div>
+        <div class="legend-item"><span class="legend-swatch sw-khf"></span>إخفاء</div>
+        <div class="legend-item"><span class="legend-swatch sw-dgm"></span>إدغام</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlb"></span>إقلاب</div>
+        <div class="legend-item"><span class="legend-swatch sw-qlq"></span>قلقلة</div>
+        <div class="legend-item"><span class="legend-swatch sw-mdd"></span>مد</div>
+        <div class="legend-item"><span class="legend-swatch sw-slt"></span>حرف لا يُلفظ</div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    </script>
+</body>
+</html>
