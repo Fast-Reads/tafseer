@@ -336,6 +336,13 @@ function toggleTafseerText(id, btn) {
     btn.textContent = el.classList.contains('collapsed-text') ? 'عرض المزيد' : 'عرض أقل';
 }
 
+function toggleTafseel(id, btn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.hidden = !el.hidden;
+    btn.classList.toggle('open', !el.hidden);
+}
+
 // === TAFSEER TABS ===
 document.addEventListener('click', e => {
     const tab = e.target.closest('.tafseer-tab-btn');
